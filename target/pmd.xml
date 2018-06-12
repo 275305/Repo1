@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="5.6.1" timestamp="2018-06-08T12:57:13.960">
+<file name="C:\Users\NavneetKumar\workspace\Fulfilment\src\test\java\com\test\Fulfilment\ReusableActions.java">
+<violation beginline="129" endline="130" begincolumn="19" endcolumn="17" rule="EmptyCatchBlock" ruleset="Empty Code" package="com.test.Fulfilment" class="ReusableActions" method="waitTillPageLoaded" externalInfoUrl="https://pmd.github.io/pmd-5.6.1/pmd-java/rules/java/empty.html#EmptyCatchBlock" priority="3">
+Avoid empty catch blocks
+</violation>
+</file>
+</pmd>

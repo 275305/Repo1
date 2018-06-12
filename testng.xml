@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite thread-count="1" name="LoginPage">
+  <test name="Functional Web Test" parallel="none" preserve-order="true">
+    <classes>
+     
+      <class name="com.test.Fulfilment.Firstclass"></class> 
+
+    </classes>
+  </test> <!-- Test -->
+
+</suite>

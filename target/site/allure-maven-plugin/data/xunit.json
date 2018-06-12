@@ -1,0 +1,38 @@
+{
+  "time" : {
+    "start" : 1528442819283,
+    "stop" : 1528442826980,
+    "duration" : 7697
+  },
+  "testSuites" : [ {
+    "uid" : "437ca1ed33edaca4",
+    "name" : "LoginPage : Functional Web Test",
+    "title" : "LoginPage : Functional Web Test",
+    "time" : {
+      "start" : 1528442819283,
+      "stop" : 1528442826980,
+      "duration" : 7697
+    },
+    "statistic" : {
+      "total" : 1,
+      "passed" : 1,
+      "pending" : 0,
+      "canceled" : 0,
+      "failed" : 0,
+      "broken" : 0
+    },
+    "description" : null,
+    "testCases" : [ {
+      "uid" : "79ea918999f4622c",
+      "name" : "testlogin",
+      "title" : "Testlogin",
+      "time" : {
+        "start" : 1528442819283,
+        "stop" : 1528442826980,
+        "duration" : 7697
+      },
+      "severity" : "NORMAL",
+      "status" : "PASSED"
+    } ]
+  } ]
+}

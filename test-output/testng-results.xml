@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="LoginPage" duration-ms="10007" started-at="2018-06-06T11:28:02Z" finished-at="2018-06-06T11:28:12Z">
+    <groups>
+    </groups>
+    <test name="Functional Web Test" duration-ms="10007" started-at="2018-06-06T11:28:02Z" finished-at="2018-06-06T11:28:12Z">
+      <class name="com.test.Fulfilment.Firstclass">
+        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:com.test.Fulfilment.Firstclass@6ebc9573]" name="launchBrowser" is-config="true" duration-ms="4145" started-at="2018-06-06T16:58:02Z" finished-at="2018-06-06T16:58:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method status="PASS" signature="testlogin()[pri:0, instance:com.test.Fulfilment.Firstclass@6ebc9573]" name="testlogin" duration-ms="5758" started-at="2018-06-06T16:58:06Z" finished-at="2018-06-06T16:58:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testlogin -->
+      </class> <!-- com.test.Fulfilment.Firstclass -->
+    </test> <!-- Functional Web Test -->
+  </suite> <!-- LoginPage -->
+</testng-results>

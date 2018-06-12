@@ -1,0 +1,20 @@
+{
+  "hosts" : [ {
+    "title" : "MONO-NCR-LAP-3",
+    "threads" : [ {
+      "title" : "14692@MONO-NCR-LAP-3.main(1)",
+      "testCases" : [ {
+        "uid" : "79ea918999f4622c",
+        "name" : "testlogin",
+        "title" : "Testlogin",
+        "time" : {
+          "start" : 1528442819283,
+          "stop" : 1528442826980,
+          "duration" : 7697
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      } ]
+    } ]
+  } ]
+}
