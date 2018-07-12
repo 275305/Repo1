@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="LoginPage" duration-ms="11756" started-at="2018-06-08T07:26:55Z" finished-at="2018-06-08T07:27:06Z">
+  <suite name="LoginPage" duration-ms="39202" started-at="2018-06-14T05:05:46Z" finished-at="2018-06-14T05:06:25Z">
     <groups>
     </groups>
-    <test name="Functional Web Test" duration-ms="11756" started-at="2018-06-08T07:26:55Z" finished-at="2018-06-08T07:27:06Z">
-      <class name="com.test.Fulfilment.Firstclass">
-        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:com.test.Fulfilment.Firstclass@73437222]" name="launchBrowser" is-config="true" duration-ms="3909" started-at="2018-06-08T12:56:55Z" finished-at="2018-06-08T12:56:59Z">
+    <test name="Functional Web Test" duration-ms="39202" started-at="2018-06-14T05:05:46Z" finished-at="2018-06-14T05:06:25Z">
+      <class name="com.test.fulfilment.LoginTest">
+        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:com.test.fulfilment.LoginTest@4d62f4c6]" name="launchBrowser" is-config="true" duration-ms="4620" started-at="2018-06-14T10:35:46Z" finished-at="2018-06-14T10:35:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method status="PASS" signature="testlogin()[pri:0, instance:com.test.Fulfilment.Firstclass@73437222]" name="testlogin" duration-ms="7757" started-at="2018-06-08T12:56:59Z" finished-at="2018-06-08T12:57:06Z">
+        <test-method status="PASS" signature="testlogin()[pri:0, instance:com.test.fulfilment.LoginTest@4d62f4c6]" name="testlogin" duration-ms="26445" started-at="2018-06-14T10:35:50Z" finished-at="2018-06-14T10:36:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testlogin -->
-      </class> <!-- com.test.Fulfilment.Firstclass -->
+        <test-method status="PASS" signature="testlogin1()[pri:1, instance:com.test.fulfilment.LoginTest@4d62f4c6]" name="testlogin1" duration-ms="3588" started-at="2018-06-14T10:36:17Z" finished-at="2018-06-14T10:36:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testlogin1 -->
+        <test-method status="PASS" signature="close()[pri:0, instance:com.test.fulfilment.LoginTest@4d62f4c6]" name="close" is-config="true" duration-ms="4462" started-at="2018-06-14T10:36:20Z" finished-at="2018-06-14T10:36:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+      </class> <!-- com.test.fulfilment.LoginTest -->
     </test> <!-- Functional Web Test -->
   </suite> <!-- LoginPage -->
 </testng-results>

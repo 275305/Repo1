@@ -1,9 +1,16 @@
-package com.test.Fulfilment;
+package com.test.fulfilment;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
@@ -28,6 +35,7 @@ public class ReusableActions {
 	
 	
 	public static Logger logger = LoggerFactory.getLogger(LoginPage.class);
+	//public static Logger Loginpagelogger = LoggerFactory.getLogger(LoginTest.class);
 
 
 	
@@ -51,6 +59,37 @@ public class ReusableActions {
 		    }
 	
 	
+			
+			// Function for Read the data from Properties File
+			public static File file = null;
+			public static FileInputStream fileInput = null;
+		    //public String filepath="D:\\Max_Life Resolved Issues\\MAX_QA_FunctionalTest\\File Paths\\geckodriver.exe";
+			public static Properties prop;
+			
+			public static Properties readProperties()
+			{
+				file = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\Input.properties");
+				FileInputStream fileInput = null;
+
+				try {
+					fileInput = new FileInputStream(file);
+					prop = new Properties();
+					prop.load(fileInput);
+				} catch (FileNotFoundException e) {
+					e.printStackTrace();
+				}
+
+				catch (IOException e1) {
+					logger.error(e1.getMessage());
+				}
+			
+			return prop;
+			}
+
+			
+			
+			
+			
 	public static WebElement waitTillElementLocated(WebElement element) {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		WebElement elementloaded = wait.until(ExpectedConditions.elementToBeClickable(element));
@@ -117,6 +156,22 @@ public class ReusableActions {
 	}
 	
 	
+	public static String readingdata(int sheetno, int rownum, int colnum) throws Exception {
+		File file = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\Maxlife_Testdata.xlsx");
+		FileInputStream fileInputStream = new FileInputStream(file);
+		XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
+		XSSFSheet sheet = hssfWorkbook.getSheetAt(sheetno);
+		XSSFCell cell = sheet.getRow(rownum).getCell(colnum);
+		DataFormatter df = new DataFormatter();
+		String data = df.formatCellValue(cell);
+		hssfWorkbook.close();
+		return data;
+
+	}
+
+	
+
+	
 	public static void waitTillPageLoaded(WebDriver driver) {
 		ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
 			public Boolean apply(WebDriver driver) {
@@ -127,6 +182,7 @@ public class ReusableActions {
 		try {
 			wait.until(expectation);
 		} catch (Throwable error) {
+			
 		}
 	}
 

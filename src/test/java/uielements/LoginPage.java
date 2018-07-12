@@ -1,12 +1,19 @@
 package uielements;
 
 import static org.testng.Assert.assertEquals;
+
+import java.io.File;
+import java.io.FileInputStream;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.test.Fulfilment.ReusableActions;
+import com.test.fulfilment.ReusableActions;
+
+import jxl.Sheet;
+import jxl.Workbook;
 
 
 public class LoginPage extends ReusableActions{
@@ -15,11 +22,11 @@ public class LoginPage extends ReusableActions{
 
 	
     // Locating User name Text box
-    @FindBy(xpath="//input[@label='User ID']")
+    @FindBy(id="userId")
     static WebElement Username;
     
     // Locating Password Text box
-    @FindBy(xpath="//input[@label='Password']")
+    @FindBy(id="password")
     static WebElement Password; 
 
     // Locating Login Button
@@ -38,8 +45,8 @@ public class LoginPage extends ReusableActions{
     @FindBy(xpath="//span[@class='InputCheckBox__checkmark__Xfidv']")
     static WebElement Remembermechkbox;
     
-    // Locating Remember me check box
-    @FindBy(xpath="//div[text()='Incorrect user id or password']")
+    // Locating Login error message text
+    @FindBy(xpath="//div[text()='Incorrect userId or Password !!']")
     static WebElement LoginErrorMsg;
     
     
@@ -57,6 +64,7 @@ public class LoginPage extends ReusableActions{
 	// Enter Username
 		static void setUserName(String strUserName) throws Exception {
 			waitTillElementLocated(Username);
+			
 			type(Username, strUserName);
 
 		}
@@ -64,7 +72,6 @@ public class LoginPage extends ReusableActions{
 		
 		// Enter password
 		static void setPwdName(String strPassword) throws Exception {
-
 			type(Password, strPassword);
 
 		}
@@ -86,22 +93,80 @@ public class LoginPage extends ReusableActions{
 		}
 		
 		
-				
+		// Return text for error message button
+		public static String Actualtext() throws Exception {
+			waitTillElementLocated(LoginErrorMsg);
+			return LoginErrorMsg.getText();
+			
+	
+		}	
+		
+		
+	public static void verifyErrormessage() throws Exception {
+			
+			
+			String actualError = Actualtext();
+			String expectedError = "Incorrect userId or Password !!";
+			assertEquals(actualError, expectedError);
+			logger.info("Proper error message is displayed.");
+
+		}
 				
 		
 		
 		//Login Functionality positive test
 		public static void logintest(String strUserName, String strPassword) throws Exception {
 			PageFactory.initElements(driver, LoginPage.class);
-			waitTillPageLoaded(driver);
+			Username.clear();
+			//waitTillPageLoaded(driver);
 			setUserName(strUserName);
 			logger.info("Usename entered successfully");
+            Password.clear();
 			setPwdName(strPassword);
 			logger.info("Password entered successfully");
 			//clickRememberme();
 			//logger.info("Remember me checkbox checked successfully");
 			clickLogin();
 			logger.info("Sign in button clicked successfully");
+			
+
+		}
+		
+		
+		
+		// Login test case testing with multiple test data for negative scenario
+		// Getting test data from Excel sheet
+		public static void Login_Neg() throws Exception {
+
+			PageFactory.initElements(driver, LoginPage.class);
+			waitTillPageLoaded(driver);
+			File file = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\LoginData.xls");
+			FileInputStream fileInputStream = new FileInputStream(file);
+			Workbook w = Workbook.getWorkbook(fileInputStream);
+			Sheet s = w.getSheet("Login");
+
+			for (int i = 1; i < s.getRows(); i++) {
+
+				try {
+					System.out.println(s.getRows());
+					Username.clear();
+					Username.sendKeys(s.getCell(0, i).getContents());
+					logger.info("Test data getting from Excel sheet which is appended in resources folder");
+					Password.clear();
+					Password.sendKeys(s.getCell(1, i).getContents());
+					logger.info("Test data getting from Excel sheet which is appended in resources folder for password");
+					clickLogin();
+					verifyErrormessage();
+					System.out.println("pass");
+
+				} catch (Exception e) {
+
+					logger.error(e.getMessage());
+					throw e;
+				}
+
+			}
+
 		}
 		
 		

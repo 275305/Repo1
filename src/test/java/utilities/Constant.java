@@ -2,9 +2,9 @@ package utilities;
 
 public class Constant {
 
-    public static final String URL = "http://192.168.1.100:3000";
+    public static final String URL = "http://10.253.10.57:3000/";
     
-    public static final String Username = "585529";
+    public static final String Username = "5855ss29";
 	 
     public static final String Password = "max@1234";
 

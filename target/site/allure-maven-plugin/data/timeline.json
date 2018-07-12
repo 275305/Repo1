@@ -2,15 +2,26 @@
   "hosts" : [ {
     "title" : "MONO-NCR-LAP-3",
     "threads" : [ {
-      "title" : "14692@MONO-NCR-LAP-3.main(1)",
+      "title" : "15716@MONO-NCR-LAP-3.main(1)",
       "testCases" : [ {
-        "uid" : "79ea918999f4622c",
+        "uid" : "344817ff4981e85b",
         "name" : "testlogin",
         "title" : "Testlogin",
         "time" : {
-          "start" : 1528442819283,
-          "stop" : 1528442826980,
-          "duration" : 7697
+          "start" : 1528952751244,
+          "stop" : 1528952777341,
+          "duration" : 26097
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "112ff09776501ef",
+        "name" : "testlogin1",
+        "title" : "Testlogin 1",
+        "time" : {
+          "start" : 1528952777355,
+          "stop" : 1528952780929,
+          "duration" : 3574
         },
         "severity" : "NORMAL",
         "status" : "PASSED"

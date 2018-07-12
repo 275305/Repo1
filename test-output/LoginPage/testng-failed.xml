@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [LoginPage]">
+  <test name="Functional Web Test(failed)">
+    <classes>
+      <class name="com.test.fulfilment.LoginTest">
+        <methods>
+          <include name="testlogin"/>
+          <include name="close"/>
+          <include name="launchBrowser"/>
+          <include name="testlogin1"/>
+        </methods>
+      </class> <!-- com.test.fulfilment.LoginTest -->
+    </classes>
+  </test> <!-- Functional Web Test(failed) -->
+</suite> <!-- Failed suite [LoginPage] -->

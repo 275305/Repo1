@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1530705741155" stop="1530705767418" version="1.5.4" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>Default suite : Default test</name>
+    <title>Default suite : Default test</title>
+    <test-cases>
+        <test-case start="1530705745341" stop="1530705760693" status="passed">
+            <name>testlogin</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Default suite"/>
+                <label name="testGroup" value="Default test"/>
+                <label name="testClass" value="com.test.fulfilment.LoginTest"/>
+                <label name="testMethod" value="testlogin"/>
+                <label name="host" value="MONO-NCR-LAP-3"/>
+                <label name="thread" value="1948@MONO-NCR-LAP-3.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1530705760707" stop="1530705764261" status="passed">
+            <name>testlogin1</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Default suite"/>
+                <label name="testGroup" value="Default test"/>
+                <label name="testClass" value="com.test.fulfilment.LoginTest"/>
+                <label name="testMethod" value="testlogin1"/>
+                <label name="host" value="MONO-NCR-LAP-3"/>
+                <label name="thread" value="1948@MONO-NCR-LAP-3.main(1)"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="TestNG"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>

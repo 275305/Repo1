@@ -3,17 +3,17 @@
   "plugins" : {
     "total" : {
       "statistic" : {
-        "total" : 1,
-        "passed" : 1,
+        "total" : 2,
+        "passed" : 2,
         "pending" : 0,
         "canceled" : 0,
         "failed" : 0,
         "broken" : 0
       },
       "time" : {
-        "start" : 1528442819283,
-        "stop" : 1528442826980,
-        "duration" : 7697
+        "start" : 1528952751244,
+        "stop" : 1528952780929,
+        "duration" : 29685
       }
     },
     "defects" : {
@@ -23,11 +23,11 @@
     "xunit" : {
       "totalCount" : 1,
       "items" : [ {
-        "uid" : "437ca1ed33edaca4",
+        "uid" : "55ea42a58c05de17",
         "title" : "LoginPage : Functional Web Test",
         "statistic" : {
-          "total" : 1,
-          "passed" : 1,
+          "total" : 2,
+          "passed" : 2,
           "pending" : 0,
           "canceled" : 0,
           "failed" : 0,
@@ -40,8 +40,8 @@
       "items" : [ {
         "title" : "Without feature",
         "statistic" : {
-          "total" : 1,
-          "passed" : 1,
+          "total" : 2,
+          "passed" : 2,
           "pending" : 0,
           "canceled" : 0,
           "failed" : 0,

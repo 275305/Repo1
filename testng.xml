@@ -5,7 +5,7 @@
   <test name="Functional Web Test" parallel="none" preserve-order="true">
     <classes>
      
-      <class name="com.test.Fulfilment.Firstclass"></class> 
+      <class name="com.test.fulfilment.LoginTest"></class> 
 
     </classes>
   </test> <!-- Test -->
