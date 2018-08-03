@@ -26,6 +26,7 @@ import org.slf4j.LoggerFactory;
 
 import ru.yandex.qatools.allure.annotations.Attachment;
 import ru.yandex.qatools.allure.annotations.Step;
+import uielements.JourneyScreenOne;
 import uielements.LoginPage;
 
 public class ReusableActions {
@@ -35,7 +36,7 @@ public class ReusableActions {
 	
 	
 	public static Logger logger = LoggerFactory.getLogger(LoginPage.class);
-	//public static Logger Loginpagelogger = LoggerFactory.getLogger(LoginTest.class);
+	public static Logger JourneyScreenOnelogger = LoggerFactory.getLogger(JourneyScreenOneTest.class);
 
 
 	
@@ -157,7 +158,8 @@ public class ReusableActions {
 	
 	
 	public static String readingdata(int sheetno, int rownum, int colnum) throws Exception {
-		File file = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\Maxlife_Testdata.xlsx");
+		File file = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\MasterData.xlsx");
+
 		FileInputStream fileInputStream = new FileInputStream(file);
 		XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
 		XSSFSheet sheet = hssfWorkbook.getSheetAt(sheetno);

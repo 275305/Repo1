@@ -3,9 +3,14 @@
 <suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [LoginPage]">
   <test name="Functional Web Test(failed)">
     <classes>
+      <class name="com.test.fulfilment.JourneyScreenOneTest">
+        <methods>
+          <include name="launchBrowser"/>
+          <include name="NewApp"/>
+        </methods>
+      </class> <!-- com.test.fulfilment.JourneyScreenOneTest -->
       <class name="com.test.fulfilment.LoginTest">
         <methods>
-          <include name="testlogin"/>
           <include name="close"/>
           <include name="launchBrowser"/>
           <include name="testlogin1"/>

@@ -14,6 +14,17 @@ public class HomePage extends ReusableActions{
     static WebElement Logout;
     
     
+	// Locating New Application Button
+    @FindBy(xpath="//span[text()='New Application']")
+    public static WebElement NewAppbtn; 
+    
+    
+	// Locating Dashboard Button
+    @FindBy(xpath="//a[@href='/dashboard']")
+    public static WebElement Dashboardbtn;
+    
+  
+    
  // Initializing the Objects
  	public HomePage(WebDriver driver)
  	{
@@ -27,8 +38,25 @@ public class HomePage extends ReusableActions{
 		click(Logout);
 		
  	 }
+ 	
+ 	
+    // Click at New Application button 
+   	public static void clickNewApp() throws Exception {
+   		PageFactory.initElements(driver, HomePage.class);
+   		waitTillElementLocated(NewAppbtn);
+ 			click(NewAppbtn);
+ 			
+ 		}
  	 
- 	 
+ // Click at Dashboard button 
+   	public static void clickDashboard() throws Exception {
+   		PageFactory.initElements(driver, HomePage.class);
+   		waitTillElementLocated(Dashboardbtn);
+ 			click(Dashboardbtn);
+ 			
+ 		}
+   	
+    // Click at Logout button 
  	public static void Logout() throws Exception{
  		PageFactory.initElements(driver, HomePage.class);
 		waitTillPageLoaded(driver);
