@@ -15,7 +15,13 @@ import com.test.fulfilment.ReusableActions;
 import jxl.Sheet;
 import jxl.Workbook;
 
-
+/**
+ * This class is used to find the elements and create functions for each elements of Login Page...............
+ * 
+ * 
+ * @author NavneetKumar
+ *
+ */
 public class LoginPage extends ReusableActions{
 	
 	// Login repository

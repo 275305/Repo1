@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1533726478183" stop="1533726616343" version="1.5.4" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>Default suite : Default test</name>
+    <title>Default suite : Default test</title>
+    <test-cases>
+        <test-case start="1533726494808" stop="1533726510644" status="passed">
+            <name>Indian</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Default suite"/>
+                <label name="testGroup" value="Default test"/>
+                <label name="testClass" value="com.test.fulfilment.JourneyScreenOneTest"/>
+                <label name="testMethod" value="Indian"/>
+                <label name="host" value="MONO-NCR-LAP-3"/>
+                <label name="thread" value="10388@MONO-NCR-LAP-3.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1533726510652" stop="1533726522514" status="passed">
+            <name>InvalidAadharTest</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Default suite"/>
+                <label name="testGroup" value="Default test"/>
+                <label name="testClass" value="com.test.fulfilment.JourneyScreenOneTest"/>
+                <label name="testMethod" value="InvalidAadharTest"/>
+                <label name="host" value="MONO-NCR-LAP-3"/>
+                <label name="thread" value="10388@MONO-NCR-LAP-3.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1533726522518" stop="1533726557595" status="passed">
+            <name>InvalidOTPTest</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Default suite"/>
+                <label name="testGroup" value="Default test"/>
+                <label name="testClass" value="com.test.fulfilment.JourneyScreenOneTest"/>
+                <label name="testMethod" value="InvalidOTPTest"/>
+                <label name="host" value="MONO-NCR-LAP-3"/>
+                <label name="thread" value="10388@MONO-NCR-LAP-3.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1533726557598" stop="1533726578025" status="passed">
+            <name>ScreenOneTestIndian</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Default suite"/>
+                <label name="testGroup" value="Default test"/>
+                <label name="testClass" value="com.test.fulfilment.JourneyScreenOneTest"/>
+                <label name="testMethod" value="ScreenOneTestIndian"/>
+                <label name="host" value="MONO-NCR-LAP-3"/>
+                <label name="thread" value="10388@MONO-NCR-LAP-3.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1533726578031" stop="1533726616303" status="passed">
+            <name>screenTwoProceedButtonClickability</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Default suite"/>
+                <label name="testGroup" value="Default test"/>
+                <label name="testClass" value="com.test.fulfilment.JourneyScreenOneTest"/>
+                <label name="testMethod" value="screenTwoProceedButtonClickability"/>
+                <label name="host" value="MONO-NCR-LAP-3"/>
+                <label name="thread" value="10388@MONO-NCR-LAP-3.main(1)"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="TestNG"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>

@@ -1,7 +1,11 @@
 package uielements;
 
+import static org.testng.Assert.assertEquals;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -45,7 +49,7 @@ public class JourneyScreenOne extends ReusableActions{
     
     // Locating Aadhar number text field
     @FindBy(xpath="//input[@name='Aadhaar']")
-    static WebElement AadharTxtfld;
+	public static WebElement AadharTxtfld;
     
     // Locating Don't have Aadhar number link
     @FindBy(xpath="//a[contains(text(),'t Have Aadhaar Number?')]")
@@ -101,7 +105,7 @@ public class JourneyScreenOne extends ReusableActions{
     static WebElement Savebtn;
   
     // Locating Proceed button
-    @FindBy(xpath="//button[@type='submit']")
+    @FindBy(xpath="//button[@type='button']")
     static WebElement Proceedbtn; 
     
     
@@ -164,7 +168,7 @@ public class JourneyScreenOne extends ReusableActions{
     static WebElement Otpverifylbl;
     
     // Locating OTP text field on verify otp popup
-    @FindBy(xpath="//div[6]/input[@type='tel']")
+    @FindBy(xpath="//div[1]/input[@type='tel']")
     static WebElement OTPtxtfld1;
     
     
@@ -204,8 +208,27 @@ public class JourneyScreenOne extends ReusableActions{
     static WebElement InvalidOKbtn;
     
     // Locating Proceed button on Invalid OTP Popup
-    @FindBy(xpath="//span[text()='Proceed']")
+    @FindBy(xpath="//div//button[2]//span[text()='Proceed']")
     static WebElement InvalidProceedbtn;
+    
+    
+ // Locating Logo of Max life
+    @FindBy(xpath="//a[@class='Logo__logohead__2fZWZ']")
+    //@FindBy(xpath="//a[@class='Logo__logohead__NbryV']")
+    static WebElement MaxLogo;
+    
+    @FindBy(xpath="//a[contains(text(),\"Don't Have Aadhaar Number?\")]")
+    static WebElement dontHaveAadhaar;
+    
+    @FindBy(xpath="//label[contains(text(),\"Never applied\")]")
+    static WebElement neverApplied;
+    
+    @FindBy(xpath="//label[contains(text(),\"Jammu & Kashmir\")]")
+    static WebElement jammuKashmir;
+    
+    @FindBy(xpath="//*[@id='alert-dialog-aadhaar']/div[3]/div/div/div/button//span[contains(text(),\"Proceed\")]")
+    static WebElement popupProceedButton;
+    
     
  // Initializing the Objects
  	public JourneyScreenOne(WebDriver driver)
@@ -214,7 +237,30 @@ public class JourneyScreenOne extends ReusableActions{
  	}
  	
  	
+ 	public static void dontHaveAadhaar() throws Exception {
+
+		click(dontHaveAadhaar);
+		
+	}
  	
+	public static void neverApplied() throws Exception {
+
+	click(neverApplied);
+	
+}
+	
+	public static void jammuKashmir() throws Exception {
+
+	click(jammuKashmir);
+	
+}
+	
+	
+	public static void popupProceedButton() throws Exception {
+
+		click(popupProceedButton);
+		
+	}
 
  	
  // Select Indian as an nationality 
@@ -280,6 +326,12 @@ public class JourneyScreenOne extends ReusableActions{
  			type(AadharTxtfld, readingdata(x, y, z));
 
  		}
+		
+		   // Clear Aadhaar Number
+				public static void clearAadhar() throws Exception {
+					AadharTxtfld.clear();
+		 			
+		 		}
  	
 		 // Click on Don't have aadhar link
 		public static void clickDonthaveAadhar() throws Exception {
@@ -434,6 +486,130 @@ public class JourneyScreenOne extends ReusableActions{
 			}
 			
 	}
+		
+		
+		
+		public static void verifyOtpPage() throws Exception {
+			
+			
+			String actualLabel = Otpverifylbl.getText();
+			String expectedLabel = "Please enter the OTP sent to your registered mobile number.";
+			assertEquals(actualLabel, expectedLabel);
+			logger.info("User is landed to Verify OTP Screen successfully.");
+
+		
+		
+		}
+		
+		 // Enter digit one for OTP
+		public static void setOTPfld1(int x, int y, int z) throws Exception {
+			
+			OTPtxtfld1.clear();
+ 			type(OTPtxtfld1, readingdata(x, y, z));
+
+ 		}
+		
+		 // Enter digit two for OTP
+		public static void setOTPfld2(int x, int y, int z) throws Exception {
+			
+			OTPtxtfld2.clear();
+			type(OTPtxtfld2, readingdata(x, y, z));
+
+		}
+		
+		 // Enter digit three for OTP
+		public static void setOTPfld3(int x, int y, int z) throws Exception {
+			
+			OTPtxtfld3.clear();
+			type(OTPtxtfld3, readingdata(x, y, z));
+
+		}
+		
+		 // Enter digit four for OTP
+		public static void setOTPfld4(int x, int y, int z) throws Exception {
+			
+			OTPtxtfld4.clear();
+			type(OTPtxtfld4, readingdata(x, y, z));
+
+		}
+		
+		 // Enter digit five for OTP
+		public static void setOTPfld5(int x, int y, int z) throws Exception {
+			
+			OTPtxtfld5.clear();
+			type(OTPtxtfld5, readingdata(x, y, z));
+
+		}
+		
+		 // Enter digit Six for OTP
+		public static void setOTPfld6(int x, int y, int z) throws Exception {
+			
+			OTPtxtfld6.clear();
+			type(OTPtxtfld6, readingdata(x, y, z));
+
+		}
+		
+		
+		public static void verifyInvalidOtpPage() throws Exception {
+			
+			waitTillElementLocated(Invalidlbl);
+			String actualLabel = Invalidlbl.getText();
+			String expectedLabel = "Invalid OTP";
+			assertEquals(actualLabel, expectedLabel);
+			logger.info("Entered OTP is not Valid.");
+
+		
+		
+		}
+		
+		 // Click on OK Button on Invalid OTP page
+		public static void ClickInvalidOTPOK() throws Exception {
+			
+			InvalidOKbtn.click();
+			
+
+		}
+
+		
+		 // Click on Proceed Button on Invalid OTP page
+		public static void ClickInvalidOTPProceed() throws Exception {
+			
+			InvalidProceedbtn.click();
+			
+
+		}
+		
+		
+       public static void verifyInvalidAadharPage() throws Exception {
+			
+			waitTillElementLocated(Invalidaadharmsg);
+			String actualLabel = Invalidaadharmsg.getText();
+			String expectedLabel = "Invalid aadhaar number/Service not responding.";
+			assertEquals(actualLabel, expectedLabel);
+			logger.info("Entered Aadhar number is not Valid or Service not responding.");
+
+		
+		}
+		
+       // Click on Ok Button on Invalid Aadhar page
+		public static void ClickInvalidAadharOk() throws Exception {
+			
+			Okbtn.click();
+			
+		}
+		
+		
+		 // Click on Ok Button on Invalid Aadhar page
+		public static void ClickMaxLogo() throws Exception {
+			Actions actions = new Actions(driver);
+			actions.moveToElement(MaxLogo).click().perform();
+			
+		}
+		
+
+
+		
+		
 		
 		
 		

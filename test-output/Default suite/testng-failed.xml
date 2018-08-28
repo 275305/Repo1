@@ -5,8 +5,8 @@
     <classes>
       <class name="com.test.fulfilment.JourneyScreenOneTest">
         <methods>
-          <include name="ScreenOneTestNRI"/>
           <include name="launchBrowser"/>
+          <include name="screenTwoProceedButtonClickability"/>
         </methods>
       </class> <!-- com.test.fulfilment.JourneyScreenOneTest -->
     </classes>

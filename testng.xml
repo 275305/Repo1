@@ -8,6 +8,7 @@
       <class name="com.test.fulfilment.LoginTest"></class> 
       <class name="com.test.fulfilment.JourneyScreenOneTest"></class> 
       
+      
 
     </classes>
   </test> <!-- Test -->
