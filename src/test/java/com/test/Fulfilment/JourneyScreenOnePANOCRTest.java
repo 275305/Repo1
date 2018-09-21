@@ -3,15 +3,15 @@ package com.test.fulfilment;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import uielements.HomePage;
 import uielements.JourneyScreenOne;
+import uielements.JourneyScreenOnePANOCR;
 import uielements.LoginPage;
 
-public class JourneyScreenOneTest extends ReusableActions{
+public class JourneyScreenOnePANOCRTest extends ReusableActions{
 	
 	 @BeforeClass
 	    public void launchBrowser() throws Exception{
@@ -41,35 +41,23 @@ public class JourneyScreenOneTest extends ReusableActions{
 	    }
 	 
 	 
-	//TC -01 Verify the by default status of Nationality, Policy for and Proceed button on Journey Screen one
-		@Test(priority = 0, enabled=true)
-	    public void Indian() throws Exception{
-			try{
-				
-				HomePage.clickNewApp();
-				JourneyScreenOne.isIndianSelected();
-				JourneyScreenOne.isSelfSelected();
-				JourneyScreenOne.isProceedEnabled();
-				
-				}
-			catch (Exception e) {
-				logger.error("Test case failed: " + e.getMessage());
-				throw e;
-		 		}
-	        }	
+	
 	 
 
 	//TC -02 Test case for positive value for saving the first screen data
 			@Test(priority = 1, enabled=true)
-		    public void ScreenOneTestIndian() throws Exception{
+		    public void aadhaarOCRPrepopulatedDataValidation() throws Exception{
 				try{
-					
-					JourneyScreenOne.setAadhar(1,1,0);
-					JourneyScreenOne.setPanNumber(1,1,1);
-					JourneyScreenOne.setMobNumber(1,1,2);
-					JourneyScreenOne.setEmailId(1,1,3);
-					JourneyScreenOne.setPreIssuanceNumber(1,1,4);
-					JourneyScreenOne.clickProceed();
+					PageFactory.initElements(driver, JourneyScreenOnePANOCRTest.class);
+					HomePage.clickNewApp();
+					JourneyScreenOnePANOCR.prePopulationOCRAadhar();
+					JourneyScreenOnePANOCR.setPanNumber(1,1,1);
+					JourneyScreenOnePANOCR.setMobNumberOCR(1,1,2);
+					JourneyScreenOnePANOCR.setEmailId(1,1,3);
+					JourneyScreenOnePANOCR.setPreIssuanceNumber(1,1,4);
+					JourneyScreenOnePANOCR.clickProceed();
+					Thread.sleep(4000);
+					JourneyScreenOnePANOCR.checkPrePopulatedDataAfterAadhaarOCR();
 					
 				 	}
 				catch (Exception e) {
@@ -79,26 +67,31 @@ public class JourneyScreenOneTest extends ReusableActions{
 		        }	
 			
 			
-			//TC -02 Test case for positive value for saving the first screen data
-			@Test(priority = 2, enabled=false)
-		    public void ScreenOneTestNRI() throws Exception{
+
+			@Test(priority = 2, enabled=true)
+		    public void PANOCRPrepopulatedDataValidation() throws Exception{
 				try{
 					HomePage.clickDashboard();
 					HomePage.clickNewApp();
-					JourneyScreenOne.selectNRI();
-					JourneyScreenOne.setAadhar(1,1,0);
-					JourneyScreenOne.setPanNumber(1,1,1);
-					JourneyScreenOne.setMobNumber(1,1,2);
-					JourneyScreenOne.setEmailId(1,1,3);
-					JourneyScreenOne.setPreIssuanceNumber(1,1,4);
-					JourneyScreenOne.clickProceed();
-					
+					JourneyScreenOnePANOCR.setAadhar(1,1,0);
+					Thread.sleep(5000);
+					JourneyScreenOnePANOCR.prePopulationPanOCR();
+					JourneyScreenOnePANOCR.setMobNumber(1,1,2);
+					JourneyScreenOnePANOCR.setEmailId(1,1,3);
+					JourneyScreenOnePANOCR.setPreIssuanceNumber(1,1,4);
+					JourneyScreenOnePANOCR.clickProceed();
+					Thread.sleep(4000);
+					JourneyScreenOnePANOCR.checkPrePopulatedDataAfterPANOCR();
 				 	}
 				catch (Exception e) {
 					logger.error("Test case failed: " + e.getMessage());
 					throw e;
 			 		}
 		        }	
+			
+			
+			
+		
 			
 			
 			

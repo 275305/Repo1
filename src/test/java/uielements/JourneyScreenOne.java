@@ -1,13 +1,11 @@
 package uielements;
 
-import static org.testng.Assert.assertEquals;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import com.test.fulfilment.ReusableActions;
 
@@ -49,7 +47,7 @@ public class JourneyScreenOne extends ReusableActions{
     
     // Locating Aadhar number text field
     @FindBy(xpath="//input[@name='Aadhaar']")
-	public static WebElement AadharTxtfld;
+    static WebElement AadharTxtfld;
     
     // Locating Don't have Aadhar number link
     @FindBy(xpath="//a[contains(text(),'t Have Aadhaar Number?')]")
@@ -105,7 +103,7 @@ public class JourneyScreenOne extends ReusableActions{
     static WebElement Savebtn;
   
     // Locating Proceed button
-    @FindBy(xpath="//button[@type='button']")
+    @FindBy(xpath="//span[text()='Proceed']")
     static WebElement Proceedbtn; 
     
     
@@ -168,7 +166,7 @@ public class JourneyScreenOne extends ReusableActions{
     static WebElement Otpverifylbl;
     
     // Locating OTP text field on verify otp popup
-    @FindBy(xpath="//div[1]/input[@type='tel']")
+    @FindBy(xpath="//div[6]/input[@type='tel']")
     static WebElement OTPtxtfld1;
     
     
@@ -208,14 +206,8 @@ public class JourneyScreenOne extends ReusableActions{
     static WebElement InvalidOKbtn;
     
     // Locating Proceed button on Invalid OTP Popup
-    @FindBy(xpath="//div//button[2]//span[text()='Proceed']")
+    @FindBy(xpath="//span[text()='Proceed']")
     static WebElement InvalidProceedbtn;
-    
-    
- // Locating Logo of Max life
-    @FindBy(xpath="//a[@class='Logo__logohead__2fZWZ']")
-    //@FindBy(xpath="//a[@class='Logo__logohead__NbryV']")
-    static WebElement MaxLogo;
     
     @FindBy(xpath="//a[contains(text(),\"Don't Have Aadhaar Number?\")]")
     static WebElement dontHaveAadhaar;
@@ -229,6 +221,13 @@ public class JourneyScreenOne extends ReusableActions{
     @FindBy(xpath="//*[@id='alert-dialog-aadhaar']/div[3]/div/div/div/button//span[contains(text(),\"Proceed\")]")
     static WebElement popupProceedButton;
     
+    @FindBy(xpath="//p[text()='+91']")
+    static WebElement preFixOfMobileNumber;
+    
+
+    @FindBy(xpath="//*[@id='root']/main/div/div[2]/form/div/div/div[2]/div[3]/div[2]/div/div[2]/label/span[1]/span[1]")
+    static WebElement dontHavePANCheckbox;
+   
     
  // Initializing the Objects
  	public JourneyScreenOne(WebDriver driver)
@@ -236,32 +235,30 @@ public class JourneyScreenOne extends ReusableActions{
  		PageFactory.initElements(driver, this);
  	}
  	
- 	
  	public static void dontHaveAadhaar() throws Exception {
 
-		click(dontHaveAadhaar);
+			click(dontHaveAadhaar);
+			
+		}
+	 	
+ 	public static void neverApplied() throws Exception {
+
+		click(neverApplied);
 		
 	}
  	
-	public static void neverApplied() throws Exception {
+ 	public static void jammuKashmir() throws Exception {
 
-	click(neverApplied);
-	
-}
-	
-	public static void jammuKashmir() throws Exception {
-
-	click(jammuKashmir);
-	
-}
-	
-	
-	public static void popupProceedButton() throws Exception {
+		click(jammuKashmir);
+		
+	}
+ 	
+ 	public static void popupProceedButton() throws Exception {
 
 		click(popupProceedButton);
 		
 	}
-
+ 	
  	
  // Select Indian as an nationality 
  		public static void selectIndian() throws Exception {
@@ -322,16 +319,21 @@ public class JourneyScreenOne extends ReusableActions{
 		
         // Enter Aadhaar Number
 		public static void setAadhar(int x, int y, int z) throws Exception {
+			PageFactory.initElements(driver, JourneyScreenOne.class);
 			AadharTxtfld.clear();
  			type(AadharTxtfld, readingdata(x, y, z));
+ 			String aAdharTxtfldPassedFromExcel=	AadharTxtfld.getAttribute("value");
+ 			int size = aAdharTxtfldPassedFromExcel.length();
+ 			if((size==14) && (!aAdharTxtfldPassedFromExcel.contains("A")&& !aAdharTxtfldPassedFromExcel.contains("*")&& aAdharTxtfldPassedFromExcel.contains("-"))) 
+ 			{
+ 				logger.info("Test case pass:- As aadhar feild length is 12 and accepting only numbers");
+ 			}else 
+ 			{
+ 				Assert.fail("Test case fail:-As either aadhar feild length is not 12 or not accepting only numbers");
+ 			}
+ 			
 
  		}
-		
-		   // Clear Aadhaar Number
-				public static void clearAadhar() throws Exception {
-					AadharTxtfld.clear();
-		 			
-		 		}
  	
 		 // Click on Don't have aadhar link
 		public static void clickDonthaveAadhar() throws Exception {
@@ -351,12 +353,21 @@ public class JourneyScreenOne extends ReusableActions{
 		
         // Enter PAN Number
 		public static void setPanNumber(int x, int y, int z) throws Exception {
-			
  			//type(PanNumbertxtfld, strPanNumber);
  			PanNumbertxtfld.clear();
  			type(PanNumbertxtfld, readingdata(x, y, z));
-
- 		}
+ 			String panNumberCPassedFromExcel=	PanNumbertxtfld.getAttribute("value");
+ 			int size = panNumberCPassedFromExcel.length();
+ 			if((size==10) && (panNumberCPassedFromExcel.contains("C")&& panNumberCPassedFromExcel.contains("4")&& !panNumberCPassedFromExcel.contains("#"))) 
+ 			{
+ 				logger.info("Test case pass:- As PAN feild length is 10 and accepting only alphabnumeric value and not accepting special character");
+ 			}else 
+ 			{
+ 				Assert.fail("Test case fail:-As either PAN feild length is not of 10 or not accepting only alphabnumeric value or accepting special character");
+ 			}
+ 			
+		
+		}
 		
 		
 		public static void clickDontHavePan() throws Exception {
@@ -372,7 +383,29 @@ public class JourneyScreenOne extends ReusableActions{
  			//type(MobNumtxtfld, strMobNumber);
  			MobNumtxtfld.clear();
  			type(MobNumtxtfld, readingdata(x, y, z));
+ 			type(MobNumtxtfld, readingdata(x, y, z));
+ 			String mobileNumberPassedFromExcel=	MobNumtxtfld.getAttribute("value");
+ 			int size = mobileNumberPassedFromExcel.length();
+ 			if((size==12) && (!mobileNumberPassedFromExcel.contains("A")&& mobileNumberPassedFromExcel.contains("9")&& !mobileNumberPassedFromExcel.contains("@")
+ 					&& mobileNumberPassedFromExcel.contains("-"))) 
+ 			{
+ 				logger.info("Test case pass:- As Mobile number feild length is 10 and accepting only numeric value,not accepting special character and alphabets ");
+ 			}else 
+ 			{
+ 				Assert.fail("Test case fail:-As either Mobile number feild length is not 10 or not accepting only numeric value,accepting special character or alphabets");
+ 			}
 
+ 		}
+		
+public static void preFixOfMobileNumber(int x, int y, int z) throws Exception {
+			
+	if(preFixOfMobileNumber.isDisplayed()){
+		
+	}else 
+	{
+		
+	}
+ 			
  		}
 		
         // Enter Email id
@@ -381,6 +414,14 @@ public class JourneyScreenOne extends ReusableActions{
  			//type(Emailtxtfld, strEmailId);
  			Emailtxtfld.clear();
  			type(Emailtxtfld, readingdata(x, y, z));
+ 			String emailPassedFromExcel=	Emailtxtfld.getAttribute("value");
+ 			int size = emailPassedFromExcel.length();
+ 	 		  if(emailPassedFromExcel.endsWith("@gmail.com")) {
+ 	 			logger.info("Test case pass:-As entered email format is correct ");  
+ 	 		  }else
+ 	 		  {
+ 	 			  Assert.fail("Test case fail:-As entered email format is not correct");
+ 	 		  } 	 		  
 
  		}
 		
@@ -391,8 +432,19 @@ public class JourneyScreenOne extends ReusableActions{
  			//type(PreIssuancetxtfld, strPreIssuance);
  			PreIssuancetxtfld.clear();
  			type(PreIssuancetxtfld, readingdata(x, y, z));
+ 			String preIssuranceNumberPassedFromExcel=	PreIssuancetxtfld.getAttribute("value");
+ 			int size = preIssuranceNumberPassedFromExcel.length();
+ 	 		  if(preIssuranceNumberPassedFromExcel.length()==8) {
+ 	 			logger.info("Test case pass:-As entered preInsurance number is of expected length");  
+ 	 		  }else
+ 	 		  {
+ 	 			  Assert.fail("Test case fail:-As entered preInsurance number is not of expected length");
+ 	 		  } 	 		  
 
  		}
+ 			
+
+ 		
 		
 		
         // Enter Passport Number Number
@@ -487,128 +539,7 @@ public class JourneyScreenOne extends ReusableActions{
 			
 	}
 		
-		
-		
-		public static void verifyOtpPage() throws Exception {
-			
-			
-			String actualLabel = Otpverifylbl.getText();
-			String expectedLabel = "Please enter the OTP sent to your registered mobile number.";
-			assertEquals(actualLabel, expectedLabel);
-			logger.info("User is landed to Verify OTP Screen successfully.");
 
-		
-		
-		}
-		
-		 // Enter digit one for OTP
-		public static void setOTPfld1(int x, int y, int z) throws Exception {
-			
-			OTPtxtfld1.clear();
- 			type(OTPtxtfld1, readingdata(x, y, z));
-
- 		}
-		
-		 // Enter digit two for OTP
-		public static void setOTPfld2(int x, int y, int z) throws Exception {
-			
-			OTPtxtfld2.clear();
-			type(OTPtxtfld2, readingdata(x, y, z));
-
-		}
-		
-		 // Enter digit three for OTP
-		public static void setOTPfld3(int x, int y, int z) throws Exception {
-			
-			OTPtxtfld3.clear();
-			type(OTPtxtfld3, readingdata(x, y, z));
-
-		}
-		
-		 // Enter digit four for OTP
-		public static void setOTPfld4(int x, int y, int z) throws Exception {
-			
-			OTPtxtfld4.clear();
-			type(OTPtxtfld4, readingdata(x, y, z));
-
-		}
-		
-		 // Enter digit five for OTP
-		public static void setOTPfld5(int x, int y, int z) throws Exception {
-			
-			OTPtxtfld5.clear();
-			type(OTPtxtfld5, readingdata(x, y, z));
-
-		}
-		
-		 // Enter digit Six for OTP
-		public static void setOTPfld6(int x, int y, int z) throws Exception {
-			
-			OTPtxtfld6.clear();
-			type(OTPtxtfld6, readingdata(x, y, z));
-
-		}
-		
-		
-		public static void verifyInvalidOtpPage() throws Exception {
-			
-			waitTillElementLocated(Invalidlbl);
-			String actualLabel = Invalidlbl.getText();
-			String expectedLabel = "Invalid OTP";
-			assertEquals(actualLabel, expectedLabel);
-			logger.info("Entered OTP is not Valid.");
-
-		
-		
-		}
-		
-		 // Click on OK Button on Invalid OTP page
-		public static void ClickInvalidOTPOK() throws Exception {
-			
-			InvalidOKbtn.click();
-			
-
-		}
-
-		
-		 // Click on Proceed Button on Invalid OTP page
-		public static void ClickInvalidOTPProceed() throws Exception {
-			
-			InvalidProceedbtn.click();
-			
-
-		}
-		
-		
-       public static void verifyInvalidAadharPage() throws Exception {
-			
-			waitTillElementLocated(Invalidaadharmsg);
-			String actualLabel = Invalidaadharmsg.getText();
-			String expectedLabel = "Invalid aadhaar number/Service not responding.";
-			assertEquals(actualLabel, expectedLabel);
-			logger.info("Entered Aadhar number is not Valid or Service not responding.");
-
-		
-		}
-		
-       // Click on Ok Button on Invalid Aadhar page
-		public static void ClickInvalidAadharOk() throws Exception {
-			
-			Okbtn.click();
-			
-		}
-		
-		
-		 // Click on Ok Button on Invalid Aadhar page
-		public static void ClickMaxLogo() throws Exception {
-			Actions actions = new Actions(driver);
-			actions.moveToElement(MaxLogo).click().perform();
-			
-		}
-		
-
-
-		
 		
 		
 		

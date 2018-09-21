@@ -15,13 +15,7 @@ import com.test.fulfilment.ReusableActions;
 import jxl.Sheet;
 import jxl.Workbook;
 
-/**
- * This class is used to find the elements and create functions for each elements of Login Page...............
- * 
- * 
- * @author NavneetKumar
- *
- */
+
 public class LoginPage extends ReusableActions{
 	
 	// Login repository
@@ -180,7 +174,8 @@ public class LoginPage extends ReusableActions{
 			
 			
 			String actualTitle = driver.getTitle();
-			String expectedTitle = "Fulfillment 2.0";
+			//String expectedTitle = "Fulfillment 2.0";
+			String expectedTitle = "mPRO";
 			assertEquals(actualTitle, expectedTitle);
 			logger.info("User is landed to Login Page successfully.");
 

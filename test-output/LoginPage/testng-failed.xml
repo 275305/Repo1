@@ -5,11 +5,8 @@
     <classes>
       <class name="com.test.fulfilment.JourneyScreenOneTest">
         <methods>
-          <include name="InvalidAadharTest"/>
-          <include name="ScreenOneTestIndian"/>
           <include name="launchBrowser"/>
-          <include name="screenTwoProceedButtonClickability"/>
-          <include name="InvalidOTPTest"/>
+          <include name="NewApp"/>
         </methods>
       </class> <!-- com.test.fulfilment.JourneyScreenOneTest -->
       <class name="com.test.fulfilment.LoginTest">

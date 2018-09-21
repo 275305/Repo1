@@ -4,9 +4,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.List;
 import java.util.Properties;
 
-import org.apache.commons.io.FileUtils;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -17,27 +17,29 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+
 import ru.yandex.qatools.allure.annotations.Attachment;
 import ru.yandex.qatools.allure.annotations.Step;
-import uielements.JourneyScreenOne;
+
 import uielements.LoginPage;
 
 public class ReusableActions {
 	
-	
+	//WebDriver driver;
 	public static WebDriver driver;
 	
 	
 	public static Logger logger = LoggerFactory.getLogger(LoginPage.class);
 	public static Logger JourneyScreenOnelogger = LoggerFactory.getLogger(JourneyScreenOneTest.class);
+	public static Logger JourneyScreenTwologger = LoggerFactory.getLogger(JourneyScreenTwoTest.class);
 
 
 	
@@ -93,7 +95,7 @@ public class ReusableActions {
 			
 			
 	public static WebElement waitTillElementLocated(WebElement element) {
-		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebDriverWait wait = new WebDriverWait(driver, 60);
 		WebElement elementloaded = wait.until(ExpectedConditions.elementToBeClickable(element));
 		return elementloaded;
 	}
@@ -189,7 +191,7 @@ public class ReusableActions {
 		}
 	}
 
-	public static void captureScreenShot(WebDriver ldriver) {
+	/*public static void captureScreenShot(WebDriver ldriver) {
 		// Take screenshot and store as a file format
 		File src = ((TakesScreenshot) ldriver).getScreenshotAs(OutputType.FILE);
 		try {
@@ -201,10 +203,27 @@ public class ReusableActions {
 		{
 			System.out.println(e.getMessage());
 		}
-
-	}
+}*/
 	
+	//Selecting value by date picker
+	 public static void datePicker(List<WebElement> columns,int i,String Y) throws Exception{
+		   // List<WebElement> columns=driver.findElements(By.xpath("//div[contains(@class, 'react-datepicker__month-container')]/div/div[1]/div"));
+		    {
+		    for (WebElement cell: columns){
+		    	// String datePickerText=cell.getText();
+		    	// System.out.print("dataaaa"+datePickerText);
+		    	// boolean date=cell.getText().equals("3");
+		    	// System.out.print(date);
+		    	// String X="3";
+		       if (cell.getText().equals(i)){
+		    	  //  Y="//div[contains(@class, 'react-datepicker__month-container')]/div[2]/div[1]/div[text()="+Z+"]";
+		    	   cell.findElement(By.xpath(Y)).click();
+		          break;
+		     }}}
+		    }
 	
-		
-
+	 
+	 
+	 
+	
 }
