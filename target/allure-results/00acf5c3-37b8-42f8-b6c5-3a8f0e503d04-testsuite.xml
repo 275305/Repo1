@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1536045970505" stop="1536046065885" version="1.5.4" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>Default suite : Default test</name>
+    <title>Default suite : Default test</title>
+    <test-cases>
+        <test-case start="1536045983793" stop="1536046032609" status="passed">
+            <name>ScreenOneTestIndian</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Default suite"/>
+                <label name="testGroup" value="Default test"/>
+                <label name="testClass" value="com.test.fulfilment.JourneyScreenThreeTest"/>
+                <label name="testMethod" value="ScreenOneTestIndian"/>
+                <label name="host" value="MONO-NCR-LAP-3"/>
+                <label name="thread" value="22612@MONO-NCR-LAP-3.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1536046032619" stop="1536046032733" status="passed">
+            <name>VerifyJourneyScreenThreeLanding</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Default suite"/>
+                <label name="testGroup" value="Default test"/>
+                <label name="testClass" value="com.test.fulfilment.JourneyScreenThreeTest"/>
+                <label name="testMethod" value="VerifyJourneyScreenThreeLanding"/>
+                <label name="host" value="MONO-NCR-LAP-3"/>
+                <label name="thread" value="22612@MONO-NCR-LAP-3.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1536046032736" stop="1536046041754" status="passed">
+            <name>EnterFatherName</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Default suite"/>
+                <label name="testGroup" value="Default test"/>
+                <label name="testClass" value="com.test.fulfilment.JourneyScreenThreeTest"/>
+                <label name="testMethod" value="EnterFatherName"/>
+                <label name="host" value="MONO-NCR-LAP-3"/>
+                <label name="thread" value="22612@MONO-NCR-LAP-3.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1536046041758" stop="1536046042288" status="passed">
+            <name>VerifyMaritalStatusList</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Default suite"/>
+                <label name="testGroup" value="Default test"/>
+                <label name="testClass" value="com.test.fulfilment.JourneyScreenThreeTest"/>
+                <label name="testMethod" value="VerifyMaritalStatusList"/>
+                <label name="host" value="MONO-NCR-LAP-3"/>
+                <label name="thread" value="22612@MONO-NCR-LAP-3.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1536046042290" stop="1536046043471" status="passed">
+            <name>SelectMaritalStatus</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Default suite"/>
+                <label name="testGroup" value="Default test"/>
+                <label name="testClass" value="com.test.fulfilment.JourneyScreenThreeTest"/>
+                <label name="testMethod" value="SelectMaritalStatus"/>
+                <label name="host" value="MONO-NCR-LAP-3"/>
+                <label name="thread" value="22612@MONO-NCR-LAP-3.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1536046043475" stop="1536046049283" status="passed">
+            <name>VerifyEducationList</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Default suite"/>
+                <label name="testGroup" value="Default test"/>
+                <label name="testClass" value="com.test.fulfilment.JourneyScreenThreeTest"/>
+                <label name="testMethod" value="VerifyEducationList"/>
+                <label name="host" value="MONO-NCR-LAP-3"/>
+                <label name="thread" value="22612@MONO-NCR-LAP-3.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1536046049287" stop="1536046050378" status="passed">
+            <name>SelectEducation</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Default suite"/>
+                <label name="testGroup" value="Default test"/>
+                <label name="testClass" value="com.test.fulfilment.JourneyScreenThreeTest"/>
+                <label name="testMethod" value="SelectEducation"/>
+                <label name="host" value="MONO-NCR-LAP-3"/>
+                <label name="thread" value="22612@MONO-NCR-LAP-3.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1536046050380" stop="1536046051772" status="passed">
+            <name>EnterIncome</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Default suite"/>
+                <label name="testGroup" value="Default test"/>
+                <label name="testClass" value="com.test.fulfilment.JourneyScreenThreeTest"/>
+                <label name="testMethod" value="EnterIncome"/>
+                <label name="host" value="MONO-NCR-LAP-3"/>
+                <label name="thread" value="22612@MONO-NCR-LAP-3.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1536046051776" stop="1536046057579" status="passed">
+            <name>VerifyIndustryTypeList</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Default suite"/>
+                <label name="testGroup" value="Default test"/>
+                <label name="testClass" value="com.test.fulfilment.JourneyScreenThreeTest"/>
+                <label name="testMethod" value="VerifyIndustryTypeList"/>
+                <label name="host" value="MONO-NCR-LAP-3"/>
+                <label name="thread" value="22612@MONO-NCR-LAP-3.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1536046057582" stop="1536046058667" status="passed">
+            <name>SelectIndustryType</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Default suite"/>
+                <label name="testGroup" value="Default test"/>
+                <label name="testClass" value="com.test.fulfilment.JourneyScreenThreeTest"/>
+                <label name="testMethod" value="SelectIndustryType"/>
+                <label name="host" value="MONO-NCR-LAP-3"/>
+                <label name="thread" value="22612@MONO-NCR-LAP-3.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1536046058670" stop="1536046064768" status="passed">
+            <name>VerifyOrganisationTypeList</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Default suite"/>
+                <label name="testGroup" value="Default test"/>
+                <label name="testClass" value="com.test.fulfilment.JourneyScreenThreeTest"/>
+                <label name="testMethod" value="VerifyOrganisationTypeList"/>
+                <label name="host" value="MONO-NCR-LAP-3"/>
+                <label name="thread" value="22612@MONO-NCR-LAP-3.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1536046064771" stop="1536046065854" status="passed">
+            <name>SelectOrganisationType</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Default suite"/>
+                <label name="testGroup" value="Default test"/>
+                <label name="testClass" value="com.test.fulfilment.JourneyScreenThreeTest"/>
+                <label name="testMethod" value="SelectOrganisationType"/>
+                <label name="host" value="MONO-NCR-LAP-3"/>
+                <label name="thread" value="22612@MONO-NCR-LAP-3.main(1)"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="TestNG"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>
