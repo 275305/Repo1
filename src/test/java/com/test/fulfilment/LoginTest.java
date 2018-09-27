@@ -17,6 +17,7 @@ public class LoginTest extends ReusableActions{
 	
 	 @BeforeClass
 	    public void launchBrowser() throws Exception{
+		 
 		 try {
 	    System.setProperty("webdriver.chrome.driver", ".\\lib\\Drivers\\chromedriver.exe");
 	    driver = new ChromeDriver();

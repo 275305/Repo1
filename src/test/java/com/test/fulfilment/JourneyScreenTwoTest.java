@@ -41,6 +41,7 @@ public class JourneyScreenTwoTest extends ReusableActions{
 	//TC -01 Verify the by default status of Nationality, Policy for and Proceed button on Journey Screen one
 		@Test(priority = 0, enabled=true)
 	    public void Indian() throws Exception{
+		
 			try{
 				
 				HomePage.clickNewApp();
@@ -96,9 +97,9 @@ public class JourneyScreenTwoTest extends ReusableActions{
     	   try {
     		JourneyScreenTwo.setFirstName(3, 1, 0);
     		JourneyScreenTwo.setLastName(3, 1, 1);
-    		JourneyScreenThree.datePicker();
+    		JourneyScreenThree.currentDatePicker();
     		JourneyScreenTwo.selectByDropdown();
-    		Thread.sleep(5000);
+    		Thread.sleep(1500);
     		JourneyScreenTwo.setHouseNo(3, 1, 3);
     		JourneyScreenTwo.setRoadNo(3, 1, 4);
     		JourneyScreenTwo.setVillageTown(3, 1, 5);
@@ -121,11 +122,17 @@ public class JourneyScreenTwoTest extends ReusableActions{
 				throw e; 
     		   
     	   
-    	   }
+    	   }}
     	
     		
     	  
-    	   
+    	   @Test(priority = 4, enabled=true)
+           public void asNomineeIsMinorProvideGuardianNameDetails() throws Exception{
+    		   JourneyScreenThree.currentDatePicker();
+    		  JourneyScreenThree.asNomineeIsMinorProvideGuardianname();
+    		   
+    		   
+    		   
+    	   }
 	
-
-}}
+}
