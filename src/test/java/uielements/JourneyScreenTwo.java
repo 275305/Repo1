@@ -925,7 +925,7 @@ public static void selectByDropdownSumAssuredAvailable() throws Exception {
 		public static void checkDropdownValue() throws Exception {
 	  		PageFactory.initElements(driver, JourneyScreenTwo.class);
 	         waitTillElementToBeClickable(proofTypeDropDown);
-	         proofTypeDropDown.click();
+          proofTypeDropDown.click();
 	         List<WebElement>profType=driver.findElements(By.xpath("//*[@id='menu-ProofType']/div[2]/ul/li"));
              int numberOfdropdDownOtions=profType.size();
             System.out.println(numberOfdropdDownOtions);
