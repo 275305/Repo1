@@ -1,6 +1,7 @@
 package com.test.fulfilment;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import uielements.HomePage;
@@ -15,7 +16,8 @@ public class JourneyScreenTwoTest extends ReusableActions{
 		 try {
 	    System.setProperty("webdriver.chrome.driver", ".\\lib\\Drivers\\chromedriver.exe");
 	    driver = new ChromeDriver();
-	    
+		//System.setProperty("webdriver.firefox.marionette", "C:\\Users\\sp104\\Documents\\geckodriver-v0.21.0-win64");
+	    //driver=new FirefoxDriver();
 	    logger.info("Test Started");
 		prop = ReusableActions.readProperties();
 
@@ -99,6 +101,7 @@ public class JourneyScreenTwoTest extends ReusableActions{
     		JourneyScreenTwo.setLastName(3, 1, 1);
     		JourneyScreenThree.currentDatePicker();
     		JourneyScreenTwo.selectByDropdown();
+    		JourneyScreenTwo.checkDropdownValue();
     		Thread.sleep(1500);
     		JourneyScreenTwo.setHouseNo(3, 1, 3);
     		JourneyScreenTwo.setRoadNo(3, 1, 4);
@@ -128,7 +131,7 @@ public class JourneyScreenTwoTest extends ReusableActions{
     	  
     	   @Test(priority = 4, enabled=true)
            public void asNomineeIsMinorProvideGuardianNameDetails() throws Exception{
-    		   JourneyScreenThree.currentDatePicker();
+    		  JourneyScreenThree.currentDatePicker();
     		  JourneyScreenThree.asNomineeIsMinorProvideGuardianname();
     		   
     		   

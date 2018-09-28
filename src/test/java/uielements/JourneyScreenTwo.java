@@ -2,6 +2,7 @@ package uielements;
 
 import static org.testng.Assert.fail;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -266,6 +267,33 @@ public class JourneyScreenTwo extends ReusableActions{
  	@FindBy(xpath="//*[@id='menu-ProofType']/div[2]/ul/li[@data-value='Aadhaar']")
     static WebElement proofTypeAadhaar;
  	
+ 	@FindBy(xpath="//*[@id='menu-ProofType']/div[2]/ul/li[@data-value='Passport']")
+    static WebElement proofTypePassport;
+ 	
+ 	@FindBy(xpath="//*[@id='menu-ProofType']/div[2]/ul/li[@data-value='Driving License']")
+    static WebElement proofTypeDrivingLicense;
+ 	
+ 	@FindBy(xpath="//*[@id='menu-ProofType']/div[2]/ul/li[@data-value='Voter’s Identity Card issued by Election Commission of India']")
+    static WebElement proofTypeVotersIdentityCardIssuedByElectionCommissionOfIndia;
+ 	
+ 	@FindBy(xpath="//*[@id='menu-ProofType']/div[2]/ul/li[@data-value='Job-card issued by NREGA']")
+    static WebElement proofTypeJobCardIssuedByNREGA;
+ 	
+ 	@FindBy(xpath="//*[@id='menu-ProofType']/div[2]/ul/li[@data-value='Letter issued by the National Population Registrar']")
+    static WebElement proofTypeLetterIssuedByTheNationalPopulationRegistrar;
+ 	
+ 	@FindBy(xpath="//*[@id='menu-ProofType']/div[2]/ul/li[@data-value='Utility bill not more than 2 months (electricity, telephone, post-paid mobile, piped gas, water bill)']")
+    static WebElement proofTypeUtilityBillNotMoreThan2Months;
+ 	
+ 	@FindBy(xpath="//*[@id='menu-ProofType']/div[2]/ul/li[@data-value='Property or municipal tax receipt']")
+    static WebElement proofTypePropertyOrMunicipalTaxReceipt;
+ 	
+ 	@FindBy(xpath="//*[@id='menu-ProofType']/div[2]/ul/li[@data-value='Pension or family pension payment orders issued by government departments or PSU undertakings']")
+    static WebElement proofTypePensionOrFamilyPensionPaymentOrdersIssuedByGovernmentDepartments;
+ 	
+ 	@FindBy(xpath="//*[@id='menu-ProofType']/div[2]/ul/li[@data-value='Letter of allotment & Leave and License Agreement from employers who are governments, statutory or regulatory bodies, PSUs, financial institutions and listed companies']")
+    static WebElement proofTypeLetterOfAllotmentLeaveAndLicenseAgreementFromEmployers ;
+ 	
  	 @FindBy(xpath="//label[contains(text(),\"Traditional\")]")
      static WebElement traditional;
      
@@ -355,27 +383,9 @@ public class JourneyScreenTwo extends ReusableActions{
   	public static void selectByDropdown() throws Exception {
   		PageFactory.initElements(driver, JourneyScreenTwo.class);
          waitTillElementToBeClickable(proofTypeDropDown);
-        /* proofTypeDropDown.click();
-         Thread.sleep(500);
-         System.out.println("111111111111111111");
-         driver.findElement(By.xpath("//*[@id='menu-ProofType']/div[2]/ul/li[1]")).click();
-         Thread.sleep(500);
-         proofTypeDropDown.click();
-         System.out.println("222222222222222222");
-         Thread.sleep(500);
-         driver.findElement(By.xpath("//*[@id='menu-ProofType']/div[2]/ul/li[2]")).click();
-         System.out.println("3333333333333333333");
-         proofTypeDropDown.click();
-         System.out.println("4444444444444444444");
-         Thread.sleep(500);
-         driver.findElement(By.xpath("//*[@id='menu-ProofType']/div[2]/ul/li[3]")).click();
-         Thread.sleep(500);
-       // WebElement element=driver.findElement(By.xpath("//*[@id='menu-ProofType']/div[2]/ul/li[1]"));
-       // new Actions(driver).moveToElement(element).click().perform();*/
         for (int i=1;i<=3;i++) {
          proofTypeDropDown.click();
          Thread.sleep(500);
-         System.out.println("111111111111111111");
          driver.findElement(By.xpath("//*[@id='menu-ProofType']/div[2]/ul/li["+i+"]")).click();
          Thread.sleep(500);
          if(aadhaarOcr.isEnabled()) {
@@ -912,7 +922,30 @@ public static void selectByDropdownSumAssuredAvailable() throws Exception {
 			
 	}	
 
-
+		public static void checkDropdownValue() throws Exception {
+	  		PageFactory.initElements(driver, JourneyScreenTwo.class);
+	         waitTillElementToBeClickable(proofTypeDropDown);
+	         proofTypeDropDown.click();
+	         List<WebElement>profType=driver.findElements(By.xpath("//*[@id='menu-ProofType']/div[2]/ul/li"));
+             int numberOfdropdDownOtions=profType.size();
+            System.out.println(numberOfdropdDownOtions);
+	         Thread.sleep(500);
+		if (numberOfdropdDownOtions==10 && proofTypeAadhaar.isEnabled() && proofTypePassport.isEnabled() && proofTypeDrivingLicense.isEnabled()
+				&& proofTypeVotersIdentityCardIssuedByElectionCommissionOfIndia.isEnabled()
+				&& proofTypeJobCardIssuedByNREGA.isEnabled()
+				&& proofTypeLetterIssuedByTheNationalPopulationRegistrar.isEnabled()
+				&& proofTypeUtilityBillNotMoreThan2Months.isEnabled()
+				&& proofTypePropertyOrMunicipalTaxReceipt.isEnabled()
+				&& proofTypePensionOrFamilyPensionPaymentOrdersIssuedByGovernmentDepartments.isEnabled()
+				&& proofTypeLetterOfAllotmentLeaveAndLicenseAgreementFromEmployers.isEnabled()) {
+			System.out.println("Test case pass as all the drop down options is present");
+		}else {
+			Assert.fail("Test case fail as all the drop down options is not present");
+		}
+			  
+			driver.findElement(By.xpath("//*[@id='menu-ProofType']/div[2]/ul/li[1]")).click();
+	        
+	  	}
 
 
 
