@@ -1,7 +1,6 @@
 package getRequest;
 import static org.testng.Assert.assertEquals;
 
-import org.json.simple.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.test.fulfilment.ReusableActions;
+import com.test.fulfilment.ReusableActionsUpdate;
 
-public class HomePage extends ReusableActions{
+public class HomePage extends ReusableActionsUpdate{
 	
 	// Locating User name Text box
     @FindBy(xpath="//a[@href='/logout']")

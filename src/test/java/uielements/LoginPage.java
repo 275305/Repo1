@@ -10,13 +10,19 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.test.fulfilment.ReusableActions;
+import com.test.fulfilment.ReusableActionsUpdate;
 
 import jxl.Sheet;
 import jxl.Workbook;
 
-
-public class LoginPage extends ReusableActions{
+/**
+ * This class is used to find the elements and create functions for each elements of Login Page...............
+ * 
+ * 
+ * @author NavneetKumar
+ *
+ */
+public class LoginPage extends ReusableActionsUpdate{
 	
 	// Login repository
 
@@ -174,8 +180,7 @@ public class LoginPage extends ReusableActions{
 			
 			
 			String actualTitle = driver.getTitle();
-			//String expectedTitle = "Fulfillment 2.0";
-			String expectedTitle = "mPRO";
+			String expectedTitle = "Fulfillment 2.0";
 			assertEquals(actualTitle, expectedTitle);
 			logger.info("User is landed to Login Page successfully.");
 

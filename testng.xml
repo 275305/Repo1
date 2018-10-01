@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-
-<suite thread-count="1" name="LoginPage">
-  <test name="Functional Web Test" parallel="none" preserve-order="true">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
     <classes>
-     
-      <class name="com.test.fulfilment.LoginTest"></class> 
-      <class name="com.test.fulfilment.JourneyScreenOneTest"></class> 
-      
-
+      <class name="com.test.fulfilment.JourneyScreenTwoTest"/>
+      <class name="com.test.fulfilment.JourneyScreenOneTest"/>
+      <class name="com.test.fulfilment.JourneyScreenOnePANOCRTest"/>
+      <class name="com.test.fulfilment.JourneyScreenThreeTest"/>
+      <class name="com.test.fulfilment.LoginTest"/>
+      <class name="getRequest.getData"/>
     </classes>
   </test> <!-- Test -->
-
-</suite>
+</suite> <!-- Suite -->

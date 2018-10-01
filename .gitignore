@@ -13,7 +13,6 @@ gradle.properties
 ivy*
 javadocs
 kobaltBuild
-lib
 target
 maven-testng-plugin-1.2.jar
 nb-configuration.xml

@@ -11,13 +11,12 @@ import uielements.HomePage;
 import uielements.LoginPage;
 
 
-public class LoginTest extends ReusableActions{
+public class LoginTest extends ReusableActionsUpdate{
   
 
 	
 	 @BeforeClass
 	    public void launchBrowser() throws Exception{
-		 
 		 try {
 	    System.setProperty("webdriver.chrome.driver", ".\\lib\\Drivers\\chromedriver.exe");
 	    driver = new ChromeDriver();
@@ -39,7 +38,7 @@ public class LoginTest extends ReusableActions{
 			try{
 				
 				logger.info("Test Started");
-				prop = ReusableActions.readProperties();
+				prop = ReusableActionsUpdate.readProperties();
 
 			 	driver.get(prop.getProperty("SampleURL"));
 			 	LoginPage.verifyloginpage();
