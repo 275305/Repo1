@@ -5,7 +5,7 @@ import static org.testng.Assert.assertEquals;
 import java.io.File;
 import java.io.FileInputStream;
 
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -24,8 +24,13 @@ import jxl.Workbook;
  */
 public class LoginPage extends ReusableActionsUpdate{
 	
+	
 	// Login repository
-
+	 // Initializing the Objects
+  /*   public LoginPage(WebDriver driver)
+		{
+			PageFactory.initElements(driver, this);
+		}*/
 	
     // Locating User name Text box
     @FindBy(id="userId")
@@ -60,11 +65,7 @@ public class LoginPage extends ReusableActionsUpdate{
     
   
     
-	// Initializing the Objects
-	public LoginPage(WebDriver driver)
-	{
-		PageFactory.initElements(driver, this);
-	}
+	
 	
 
 	// Enter Username
@@ -177,16 +178,18 @@ public class LoginPage extends ReusableActionsUpdate{
 		
 		
 		public static void verifyloginpage() throws Exception {
-			
-			
-			String actualTitle = driver.getTitle();
-			String expectedTitle = "Fulfillment 2.0";
+			//System.out.println(driver);
+			PageFactory.initElements(driver, LoginPage.class);
+			String str=driver.findElement(By.xpath("//img[contains(@src,'data:image/png;')]")).getText();
+			System.out.println(str);
+			//System.out.println(driver);
+			String actualTitle =driver.getTitle();
+			String expectedTitle = "mPRO";
 			assertEquals(actualTitle, expectedTitle);
 			logger.info("User is landed to Login Page successfully.");
-
 		}
 	
-  
+		
   
     
 }

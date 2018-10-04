@@ -1,26 +1,25 @@
 package com.test.fulfilment;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import uielements.HomePage;
 import uielements.JourneyScreenOne;
 import uielements.JourneyScreenThree;
+import uielements.JourneyScreenThreeUpdate;
 import uielements.JourneyScreenTwo;
+import uielements.JourneyScreenTwoUpdate;
 import uielements.LoginPage;
-public class JourneyScreenTwoTest extends ReusableActions{
+public class sprintEight extends ReusableActionsUpdate{
 	
 	 @BeforeClass
 	    public void launchBrowser() throws Exception{
 		 try {
 	   // System.setProperty("webdriver.chrome.driver", ".\\lib\\Drivers\\chromedriver.exe");
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\sp104\\Desktop\\code backup\\qa\\lib\\Drivers\\chromedriver.exe");
-		driver = new ChromeDriver();
-		//System.setProperty("webdriver.firefox.marionette", "C:\\Users\\sp104\\Documents\\geckodriver-v0.21.0-win64");
-	    //driver=new FirefoxDriver();
+			 System.setProperty("webdriver.chrome.driver", "C:\\Users\\sp104\\Desktop\\code backup\\qa\\lib\\Drivers\\chromedriver.exe");
+			 driver = new ChromeDriver();
 	    logger.info("Test Started");
-		prop = ReusableActions.readProperties();
+		prop = ReusableActionsUpdate.readProperties();
 
 	 	driver.get(prop.getProperty("SampleURL"));
 	 	LoginPage.verifyloginpage();
@@ -44,7 +43,6 @@ public class JourneyScreenTwoTest extends ReusableActions{
 	//TC -01 Verify the by default status of Nationality, Policy for and Proceed button on Journey Screen one
 		@Test(priority = 0, enabled=true)
 	    public void Indian() throws Exception{
-		
 			try{
 				
 				HomePage.clickNewApp();
@@ -83,60 +81,50 @@ public class JourneyScreenTwoTest extends ReusableActions{
 			 		}
 		        }	
 			
-			@Test(priority = 2, enabled=true)
-		    public void screenTwoProceedButtonEnablility() throws Exception{
-			try {
-			JourneyScreenTwo.isProceedEnabled();
-			}catch(Exception e) 
-			{
-				logger.error("Test case failed: " + e.getMessage());
-				throw e;
-			}
-			}
 		        
 			
        @Test(priority = 3, enabled=true)
        public void LE2ServiceIntegrationForTradProducts() throws Exception{
     	   try {
-    		JourneyScreenTwo.setFirstName(3, 1, 0);
-    		JourneyScreenTwo.setLastName(3, 1, 1);
-    		JourneyScreenThree.currentDatePicker();
-    		JourneyScreenTwo.selectByDropdown();
-    		JourneyScreenTwo.checkDropdownValue();
-    		Thread.sleep(1500);
-    		JourneyScreenTwo.setHouseNo(3, 1, 3);
-    		JourneyScreenTwo.setRoadNo(3, 1, 4);
-    		JourneyScreenTwo.setVillageTown(3, 1, 5);
-    		JourneyScreenTwo.setCountry(3, 1, 6);
-    		JourneyScreenTwo.setState(3, 1, 7);
-    		JourneyScreenTwo.setCity(3, 1, 8);
-    		JourneyScreenTwo.setPinCode(3, 1, 9);
-    		JourneyScreenTwo.setAlternateMobileNo(3, 1, 10);
-    		JourneyScreenTwo.traditional();
-    		JourneyScreenTwo.selectByDropdownProductName();
-    		Thread.sleep(1500);
-    		JourneyScreenTwo.isAllTheRequiredFeildIsPresentAsPerPayorDetailssectionOfSuperTermPlan();
-    		Thread.sleep(1500);
-    		JourneyScreenTwo.selectByDropdownCancerInsurancePlan();
-    		JourneyScreenTwo.isAllTheRequiredFeildIsPresentAsPerPayorDetailssectionofCancerInsurancePlan();
-    		JourneyScreenTwo.fillingAllTheRequiredFeildsToReachThirdScreen();
-    		JourneyScreenTwo.clickSubmitButton();
-    	   }catch(Exception e) {
-    		   logger.error("Test case failed " + e.getMessage());
-				throw e; 
+    		   JourneyScreenTwo.setFirstName(3, 1, 0);
+       		JourneyScreenTwo.setLastName(3, 1, 1);
+       		JourneyScreenThree.currentDatePicker();
+       		JourneyScreenTwo.selectByDropdown();
+       		JourneyScreenTwo.checkDropdownValue();
+       		Thread.sleep(1500);
+       		JourneyScreenTwo.setHouseNo(3, 1, 3);
+       		JourneyScreenTwo.setRoadNo(3, 1, 4);
+       		JourneyScreenTwo.setVillageTown(3, 1, 5);
+       		JourneyScreenTwo.setCountry(3, 1, 6);
+       		JourneyScreenTwo.setState(3, 1, 7);
+       		JourneyScreenTwo.setCity(3, 1, 8);
+       		JourneyScreenTwo.setPinCode(3, 1, 9);
+       		JourneyScreenTwo.setAlternateMobileNo(3, 1, 10);
+       		JourneyScreenTwo.traditional();
+       		JourneyScreenTwo.selectByDropdownProductName();
+       		Thread.sleep(1500);
+       		JourneyScreenTwo.isAllTheRequiredFeildIsPresentAsPerPayorDetailssectionOfSuperTermPlan();
+       		Thread.sleep(1500);
+       		JourneyScreenTwo.selectByDropdownCancerInsurancePlan();
+       		JourneyScreenTwo.isAllTheRequiredFeildIsPresentAsPerPayorDetailssectionofCancerInsurancePlan();
+       		JourneyScreenTwo.fillingAllTheRequiredFeildsToReachThirdScreen();
+       		JourneyScreenTwo.clickSubmitButton();
+       	   }catch(Exception e) {
+       		   logger.error("Test case failed " + e.getMessage());
+   				throw e; 
+       		   
+       	   
+       	   }
+    	   
+    	   
+    	
+	   }	
+			
+					   
     		   
     	   
-    	   }}
-    	
-    		
     	  
-    	   @Test(priority = 4, enabled=true)
-           public void asNomineeIsMinorProvideGuardianNameDetails() throws Exception{
-    		  JourneyScreenThree.currentDatePicker();
-    		  JourneyScreenThree.asNomineeIsMinorProvideGuardianname();
-    		   
-    		   
-    		   
-    	   }
+    	   
 	
+
 }

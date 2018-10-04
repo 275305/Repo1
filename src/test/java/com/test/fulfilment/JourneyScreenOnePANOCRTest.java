@@ -19,8 +19,8 @@ public class JourneyScreenOnePANOCRTest extends ReusableActionsUpdate{
 	@BeforeClass
     public void launchBrowser() throws Exception{
 	 try {
-    //System.setProperty("webdriver.chrome.driver", ".\\lib\\Drivers\\chromedriver.exe");
-	System.setProperty("webdriver.chrome.driver", "C:\\Matrix\\AutomationQA\\automationqa\\src\\test\\resources\\driver\\chromedriver.exe");
+    System.setProperty("webdriver.chrome.driver", ".\\lib\\Drivers\\chromedriver.exe");
+	//System.setProperty("webdriver.chrome.driver", "C:\\Matrix\\AutomationQA\\automationqa\\src\\test\\resources\\driver\\chromedriver.exe");
 	driver = new ChromeDriver();
     
     logger.info("Test Started");

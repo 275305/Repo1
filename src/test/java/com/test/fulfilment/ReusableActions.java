@@ -33,14 +33,12 @@ import uielements.LoginPage;
 
 public class ReusableActions {
 	
-	//WebDriver driver;
 	public static WebDriver driver;
-	
-	
+	//public static WebDriver driver;
 	public static Logger logger = LoggerFactory.getLogger(LoginPage.class);
 	public static Logger JourneyScreenOnelogger = LoggerFactory.getLogger(JourneyScreenOneTest.class);
 	public static Logger JourneyScreenTwologger = LoggerFactory.getLogger(JourneyScreenTwoTest.class);
-
+	public static Logger JourneyScreenThreelogger = LoggerFactory.getLogger(JourneyScreenThreeTest.class);
 
 	
 	//Function for Print the steps in allure report

@@ -5,8 +5,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
-
-import org.apache.commons.io.FileUtils;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -18,6 +16,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
@@ -34,11 +33,9 @@ public class ReusableActionsUpdate {
 	
 	
 	public static WebDriver driver;
-	
-	
 	public static Logger logger = LoggerFactory.getLogger(LoginPage.class);
 	public static Logger JourneyScreenOnelogger = LoggerFactory.getLogger(JourneyScreenOneTest.class);
-
+	public static Logger JourneyScreenTwologger = LoggerFactory.getLogger(JourneyScreenTwoTest.class);
 
 	
 	//Function for Print the steps in allure report
@@ -189,7 +186,7 @@ public class ReusableActionsUpdate {
 		}
 	}
 
-	public static void captureScreenShot(WebDriver ldriver) {
+	/*public static void captureScreenShot(WebDriver ldriver) {
 		// Take screenshot and store as a file format
 		File src = ((TakesScreenshot) ldriver).getScreenshotAs(OutputType.FILE);
 		try {
@@ -205,6 +202,6 @@ public class ReusableActionsUpdate {
 	}
 	
 	
-		
+		*/
 
 }

@@ -19,8 +19,9 @@ public class JourneyScreenThreeTest extends ReusableActions{
 	 @BeforeClass
 	    public void launchBrowser() throws Exception{
 		 try {
-	    System.setProperty("webdriver.chrome.driver",".\\lib\\Drivers\\chromedriver.exe");
-	    PageFactory.initElements(driver, JourneyScreenThree.class);
+	  //  System.setProperty("webdriver.chrome.driver",".\\lib\\Drivers\\chromedriver.exe");
+		 System.setProperty("webdriver.chrome.driver", "C:\\Users\\sp104\\Desktop\\code backup\\qa\\lib\\Drivers\\chromedriver.exe");
+		PageFactory.initElements(driver, JourneyScreenThree.class);
 	    driver = new ChromeDriver();
 	    logger.info("Test Started");
 		prop = ReusableActions.readProperties();

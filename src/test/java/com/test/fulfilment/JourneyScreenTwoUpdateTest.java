@@ -13,12 +13,11 @@ public class JourneyScreenTwoUpdateTest extends ReusableActionsUpdate{
 	 @BeforeClass
 	    public void launchBrowser() throws Exception{
 		 try {
-	    System.setProperty("webdriver.chrome.driver", ".\\lib\\Drivers\\chromedriver.exe");
-	    driver = new ChromeDriver();
-	    
+	   // System.setProperty("webdriver.chrome.driver", ".\\lib\\Drivers\\chromedriver.exe");
+			 System.setProperty("webdriver.chrome.driver", "C:\\Users\\sp104\\Desktop\\code backup\\qa\\lib\\Drivers\\chromedriver.exe");
+			 driver = new ChromeDriver();
 	    logger.info("Test Started");
 		prop = ReusableActionsUpdate.readProperties();
-
 	 	driver.get(prop.getProperty("SampleURL"));
 	 	LoginPage.verifyloginpage();
 	 			
