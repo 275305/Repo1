@@ -1,195 +1,188 @@
 package uielements;
 
-import static org.testng.Assert.assertEquals;
 
-import java.io.File;
-import java.io.FileInputStream;
+	import static org.testng.Assert.assertEquals;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+	import java.io.File;
+	import java.io.FileInputStream;
 
-import com.test.fulfilment.ReusableActionsUpdate;
+	import org.openqa.selenium.WebDriver;
+	import org.openqa.selenium.WebElement;
+	import org.openqa.selenium.support.FindBy;
+	import org.openqa.selenium.support.PageFactory;
 
-import jxl.Sheet;
-import jxl.Workbook;
+	import uielements.ReusableActions;
 
-/**
- * This class is used to find the elements and create functions for each elements of Login Page...............
- * 
- * 
- * @author NavneetKumar
- *
- */
-public class LoginPage extends ReusableActionsUpdate{
-	
-	
-	// Login repository
-	 // Initializing the Objects
-  /*   public LoginPage(WebDriver driver)
+	import jxl.Sheet;
+	import jxl.Workbook;
+
+
+	public class loginpage extends ReusableActions{
+		
+		// Login repository
+
+		
+	    // Locating User name Text box
+	    @FindBy(id="userId")
+	    static WebElement Username;
+	    
+	    // Locating Password Text box
+	    @FindBy(id="password")
+	    static WebElement Password; 
+
+	    // Locating Login Button
+	    @FindBy(xpath="//button[text()='SIGN IN']")
+	    static WebElement Loginbtn; 
+	    
+	    // Locating Login Label
+	    @FindBy(xpath="//p[text()='Login']")
+	    static WebElement Loginlbl; 
+	    
+	    // Locating Password Link
+	    @FindBy(xpath="//a[text()='Forgot Password?']")
+	    static WebElement Forgotbtn;
+	    
+	    // Locating Remember me check box
+	    @FindBy(xpath="//span[@class='InputCheckBox__checkmark__Xfidv']")
+	    static WebElement Remembermechkbox;
+	    
+	    // Locating Login error message text
+	    @FindBy(xpath="//div[text()='Incorrect userId or Password !!']")
+	    static WebElement LoginErrorMsg;
+	    
+	    
+	    
+	    
+	  
+	    
+		// Initializing the Objects
+		public loginpage(WebDriver driver)
 		{
 			PageFactory.initElements(driver, this);
-		}*/
-	
-    // Locating User name Text box
-    @FindBy(id="userId")
-    static WebElement Username;
-    
-    // Locating Password Text box
-    @FindBy(id="password")
-    static WebElement Password; 
-
-    // Locating Login Button
-    @FindBy(xpath="//button[text()='SIGN IN']")
-    static WebElement Loginbtn; 
-    
-    // Locating Login Label
-    @FindBy(xpath="//p[text()='Login']")
-    static WebElement Loginlbl; 
-    
-    // Locating Password Link
-    @FindBy(xpath="//a[text()='Forgot Password?']")
-    static WebElement Forgotbtn;
-    
-    // Locating Remember me check box
-    @FindBy(xpath="//span[@class='InputCheckBox__checkmark__Xfidv']")
-    static WebElement Remembermechkbox;
-    
-    // Locating Login error message text
-    @FindBy(xpath="//div[text()='Incorrect userId or Password !!']")
-    static WebElement LoginErrorMsg;
-    
-    
-    
-    
-  
-    
-	
-	
-
-	// Enter Username
-		static void setUserName(String strUserName) throws Exception {
-			waitTillElementLocated(Username);
-			
-			type(Username, strUserName);
-
 		}
 		
-		
-		// Enter password
-		static void setPwdName(String strPassword) throws Exception {
-			type(Password, strPassword);
 
-		}
-		
-		
-		// Click Login button
-		public static void clickLogin() throws Exception {
+		// Enter Username
+			static void setUserName(String strUserName) throws Exception {
+				waitTillElementLocated(Username);
+				
+				type(Username, strUserName);
 
-			click(Loginbtn);
+			}
 			
-		}
-		
-		
-		// Click Remember me check box
-		public static void clickRememberme() throws Exception {
+			
+			// Enter password
+			static void setPwdName(String strPassword) throws Exception {
+				type(Password, strPassword);
 
-			click(Remembermechkbox);
-			
-		}
-		
-		
-		// Return text for error message button
-		public static String Actualtext() throws Exception {
-			waitTillElementLocated(LoginErrorMsg);
-			return LoginErrorMsg.getText();
-			
-	
-		}	
-		
-		
-	public static void verifyErrormessage() throws Exception {
+			}
 			
 			
-			String actualError = Actualtext();
-			String expectedError = "Incorrect userId or Password !!";
-			assertEquals(actualError, expectedError);
-			logger.info("Proper error message is displayed.");
+			// Click Login button
+			public static void clickLogin() throws Exception {
 
-		}
+				click(Loginbtn);
+				
+			}
+			
+			
+			// Click Remember me check box
+			public static void clickRememberme() throws Exception {
+
+				click(Remembermechkbox);
+				
+			}
+			
+			
+			// Return text for error message button
+			public static String Actualtext() throws Exception {
+				waitTillElementLocated(LoginErrorMsg);
+				return LoginErrorMsg.getText();
 				
 		
-		
-		//Login Functionality positive test
-		public static void logintest(String strUserName, String strPassword) throws Exception {
-			PageFactory.initElements(driver, LoginPage.class);
-			Username.clear();
-			//waitTillPageLoaded(driver);
-			setUserName(strUserName);
-			logger.info("Usename entered successfully");
-            Password.clear();
-			setPwdName(strPassword);
-			logger.info("Password entered successfully");
-			//clickRememberme();
-			//logger.info("Remember me checkbox checked successfully");
-			clickLogin();
-			logger.info("Sign in button clicked successfully");
+			}	
 			
+			
+		public static void verifyErrormessage() throws Exception {
+				
+				
+				String actualError = Actualtext();
+				String expectedError = "Incorrect userId or Password !!";
+				assertEquals(actualError, expectedError);
+				logger.info("Proper error message is displayed.");
 
-		}
-		
-		
-		
-		// Login test case testing with multiple test data for negative scenario
-		// Getting test data from Excel sheet
-		public static void Login_Neg() throws Exception {
+			}
+					
+			
+			
+			//Login Functionality positive test
+			public static void logintest(String strUserName, String strPassword) throws Exception {
+				PageFactory.initElements(driver, loginpage.class);
+				Username.clear();
+				//waitTillPageLoaded(driver);
+				setUserName(strUserName);
+				logger.info("Usename entered successfully");
+	            Password.clear();
+				setPwdName(strPassword);
+				logger.info("Password entered successfully");
+				//clickRememberme();
+				//logger.info("Remember me checkbox checked successfully");
+				clickLogin();
+				logger.info("Sign in button clicked successfully");
+				
 
-			PageFactory.initElements(driver, LoginPage.class);
-			waitTillPageLoaded(driver);
-			File file = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\LoginData.xls");
-			FileInputStream fileInputStream = new FileInputStream(file);
-			Workbook w = Workbook.getWorkbook(fileInputStream);
-			Sheet s = w.getSheet("Login");
+			}
+			
+			
+			
+			// Login test case testing with multiple test data for negative scenario
+			// Getting test data from Excel sheet
+			public static void Login_Neg() throws Exception {
 
-			for (int i = 1; i < s.getRows(); i++) {
+				PageFactory.initElements(driver, loginpage.class);
+				waitTillPageLoaded(driver);
+				File file = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\LoginData.xls");
+				FileInputStream fileInputStream = new FileInputStream(file);
+				Workbook w = Workbook.getWorkbook(fileInputStream);
+				Sheet s = w.getSheet("Login");
+				for (int i = 1; i < s.getRows(); i++) {
 
-				try {
-					System.out.println(s.getRows());
-					Username.clear();
-					Username.sendKeys(s.getCell(0, i).getContents());
-					logger.info("Test data getting from Excel sheet which is appended in resources folder");
-					Password.clear();
-					Password.sendKeys(s.getCell(1, i).getContents());
-					logger.info("Test data getting from Excel sheet which is appended in resources folder for password");
-					clickLogin();
-					verifyErrormessage();
-					System.out.println("pass");
+					try {
+						System.out.println(s.getRows());
+						Username.clear();
+						Username.sendKeys(s.getCell(0, i).getContents());
+						logger.info("Test data getting from Excel sheet which is appended in resources folder");
+						Password.clear();
+						Password.sendKeys(s.getCell(1, i).getContents());
+						logger.info("Test data getting from Excel sheet which is appended in resources folder for password");
+						clickLogin();
+						verifyErrormessage();
+						System.out.println("pass");
 
-				} catch (Exception e) {
+					} catch (Exception e) {
 
-					logger.error(e.getMessage());
-					throw e;
+						logger.error(e.getMessage());
+						throw e;
+					}
+
 				}
 
 			}
+			
+			
+			public static void verifyloginpage() throws Exception {
+				
+				
+				String actualTitle = driver.getTitle();
+				//String expectedTitle = "Fulfillment 2.0";
+				String expectedTitle = "mPRO";
+				assertEquals(actualTitle, expectedTitle);
+				logger.info("User is landed to Login Page successfully.");
 
-		}
+			}
 		
-		
-		public static void verifyloginpage() throws Exception {
-			//System.out.println(driver);
-			PageFactory.initElements(driver, LoginPage.class);
-			String str=driver.findElement(By.xpath("//img[contains(@src,'data:image/png;')]")).getText();
-			System.out.println(str);
-			//System.out.println(driver);
-			String actualTitle =driver.getTitle();
-			String expectedTitle = "mPRO";
-			assertEquals(actualTitle, expectedTitle);
-			logger.info("User is landed to Login Page successfully.");
-		}
-	
-		
-  
-    
-}
+	  
+	  
+	    
+	}
+

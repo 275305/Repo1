@@ -2,6 +2,7 @@ package uielements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -9,9 +10,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.sikuli.script.Pattern;
 import org.sikuli.script.Screen;
 import org.testng.Assert;
-import com.test.fulfilment.ReusableActionsUpdate;
+import uielements.ReusableActions;
 
-public class JourneyScreenOnePANOCR extends ReusableActionsUpdate {
+public class JourneyScreenOnePANOCR extends ReusableActions{
     
     
     // Locating Indian Nationality radio Button
@@ -253,10 +254,10 @@ public class JourneyScreenOnePANOCR extends ReusableActionsUpdate {
     
     
  // Initializing the Objects
-    // public journeyScreenPANOCR(WebDriver driver)
-    // {
-      //   PageFactory.initElements(driver, this);
-    // }
+     public JourneyScreenOnePANOCR(WebDriver driver)
+     {
+         PageFactory.initElements(driver, this);
+     }
      
      public static void dontHaveAadhaar() throws Exception {
 
@@ -339,7 +340,7 @@ public class JourneyScreenOnePANOCR extends ReusableActionsUpdate {
         }
         
         public static void aadhaarOCR() throws Exception {
-        	//PageFactory.initElements(driver, journeyScreenPANOCR.class);
+        	PageFactory.initElements(driver, JourneyScreenOnePANOCR.class);
             click(aadhaarOcr);
             
         }
@@ -362,15 +363,15 @@ public class JourneyScreenOnePANOCR extends ReusableActionsUpdate {
         public static void prePopulationOCRAadhar() throws Exception {
         	PageFactory.initElements(driver, JourneyScreenOnePANOCR.class);
             Screen s = new Screen();
-            String filepath="C:\\Matrix\\qa\\src\\test\\resources\\SkuliImages\\";
-            String inputFilePath ="C:\\Matrix\\qa\\src\\test\\resources\\SkuliImages\\";
+            String filepath="C:\\Matrix\\qa\\target\\SkuliImages\\";
+            String inputFilePath ="C:\\Matrix\\qa\\target\\SkuliImages\\";
             Pattern openButton = new Pattern(filepath + "Open.PNG");
-            Pattern fileName = new Pattern(filepath + "ToBeEnterThePath.PNG");
+            Pattern fileNameText = new Pattern(filepath + "FileNameText.PNG");
             aadhaarOCR();
             Thread.sleep(500);
             frontUpload();
-            s.wait(fileName, 80);
-            s.type(fileName, inputFilePath + "AadharCard.jpg");
+            s.wait(fileNameText, 80);
+            s.type(fileNameText, inputFilePath + "AadharCard.jpg");
             s.click(openButton);
             Thread.sleep(8000);
             Actions action = new Actions(driver);
@@ -502,8 +503,6 @@ public class JourneyScreenOnePANOCR extends ReusableActionsUpdate {
 
 
         public static void checkPrePopulatedDataAfterPANOCR() throws Exception {
-
-        	PageFactory.initElements(driver, JourneyScreenOnePANOCR.class);
         String sPrePopulatedFirstName=prePopulatedFirstName.getAttribute("value");
          String sPrePopulatedLastName=prePopulatedLastName.getAttribute("value");
          String sPrePopulatedDateOfBirth=prePopulatedDateOfBirth.getAttribute("value");
@@ -520,8 +519,6 @@ public class JourneyScreenOnePANOCR extends ReusableActionsUpdate {
         }}
 
      public static void checkPrePopulatedDataAfterAadhaarOCR() throws Exception {
-
-     	PageFactory.initElements(driver, JourneyScreenOnePANOCR.class);
         String   sPrePopulatedFirstName=prePopulatedFirstName.getAttribute("value");
         String    sPrePopulatedLastName=prePopulatedLastName.getAttribute("value");
         String sPrePopulatedDateOfBirth=prePopulatedDateOfBirth.getAttribute("value");
@@ -537,7 +534,5 @@ public class JourneyScreenOnePANOCR extends ReusableActionsUpdate {
 
    }
 
+
 }
-
-
-
