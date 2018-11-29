@@ -8,6 +8,8 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.ss.usermodel.Cell;
@@ -19,8 +21,10 @@ import org.apache.poi.xssf.usermodel.XSSFFormulaEvaluator;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.server.handler.SubmitElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -44,6 +48,9 @@ public class JourneyScreenOne extends ReusableActions{
     
     @FindBy(xpath="//*[@id='alert-dialog-title']/h2[(text()=\"Update PAN Number\")]")
 	 public static WebElement updatePANPOPUP;
+    
+    @FindBy(xpath=".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[6]/div[2]/div/p[(text()=\"Invalid email id\")]")
+	 public static WebElement emailIdErrorMessage;
     
     @FindBy(xpath="//input[@name='income']")
 	 public static WebElement annualIncomeInsurersDetailsDependent;
@@ -78,7 +85,7 @@ public class JourneyScreenOne extends ReusableActions{
     static WebElement Companybtn;
     
     // Locating Aadhar number text field
-    @FindBy(xpath="//input[@name='Aadhaar']")
+    @FindBy(xpath="//input[@name='aadhaarNo']")
     static WebElement AadharTxtfld;
     
     // Locating Don't have Aadhar number link
@@ -90,7 +97,7 @@ public class JourneyScreenOne extends ReusableActions{
     static WebElement GetOTPbtn;
     
     // Locating Pan Number text field
-    @FindBy(xpath="//input[@name='PanNumber']")
+    @FindBy(xpath="//input[@name='panNumber']")
     static WebElement PanNumbertxtfld;
     
     @FindBy(xpath="//input[@name='insurerAnnualIncome']")
@@ -149,6 +156,13 @@ public class JourneyScreenOne extends ReusableActions{
 	
 	@FindBy(xpath="//label[contains(text(),\"Non-Flying role\")]")
    static WebElement nonFlyingRoleInsurer ;
+	
+	
+	@FindBy(xpath=".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[5]/div[1]/div/div[1]/p[text()=\"Please enter 12 digit Aadhaar Number\"]")
+	static WebElement aadharErrorMsg ;
+	
+	@FindBy(xpath=".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[5]/div[2]/div/div/p[text()=\"Invalid PAN Number\"]")
+	static WebElement PANErrorMsg ;
     
     
     // Locating Don't Have PAN? link
@@ -361,7 +375,7 @@ public class JourneyScreenOne extends ReusableActions{
     @FindBy(xpath="//input[@name='PreIssuanceVerificationNumber']")
     static WebElement preIssuranceVerificationNRI;
     
-    @FindBy(xpath="//*[@id='root']/main/div/div[2]/form/div/div/div[2]/div[2]/div[1]/div[2]/div/div/div/div/div[@role=\"button\"]")
+    @FindBy(xpath=".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[3]/div[1]/div[2]/div/div/div/div/div[@role=\"button\"]")
     static WebElement typeOfVisa;
     
     @FindBy(xpath="//*[@id='menu-passportVisaType']/div[2]/ul/li[contains(text(),\"Dependent\")]")
@@ -376,7 +390,7 @@ public class JourneyScreenOne extends ReusableActions{
     @FindBy(xpath="//*[@id='menu-passportVisaType']/div[2]/ul/li[contains(text(),\"Others\")]")
     static WebElement othersTypeOfVisa;
     
-    @FindBy(xpath="//input[@name='PassportNumber']")
+    @FindBy(xpath="//input[@name='passportNumber']")
     static WebElement passportTextfld;
     
     @FindBy(xpath="//input[@placeholder='Search a country']")
@@ -385,7 +399,7 @@ public class JourneyScreenOne extends ReusableActions{
     @FindBy(xpath="//*[@id='react-autowhatever-1--item-0']/div[1]")
     static WebElement passportIssuingCountryOptionSelection;
     
-    @FindBy(xpath="//input[@name='Isd']")
+    @FindBy(xpath=".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[6]/div[1]/div/div[1]/div/div[1]/div/input[@placeholder='Country']")
     static WebElement isdCode;
     
     @FindBy(xpath="//label[text()='Dependent']")
@@ -898,7 +912,7 @@ public class JourneyScreenOne extends ReusableActions{
 		
 	}
  	public static void passportIssuingCountryOptionSelection() throws Exception {
-
+        Thread.sleep(200);
 		click(passportIssuingCountryOptionSelection);
 		
 	}
@@ -988,6 +1002,49 @@ public class JourneyScreenOne extends ReusableActions{
 			
 		}
 		
+		public static boolean checkAdhaarErrorMsgMultipleData() throws Exception {
+			File file = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\MasterData.xlsx");
+			FileInputStream fileInputStream = new FileInputStream(file);
+			XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
+			XSSFSheet sheet = hssfWorkbook.getSheetAt(1);
+			int totalNumOfRows = sheet.getLastRowNum();
+			System.out.println("\n Total num of rows found " + totalNumOfRows);
+			
+			for (int rowNum = 1; rowNum < totalNumOfRows; rowNum++) {
+				validatingErrorMsgForAdhaarNumberNRI(sheet, rowNum);
+			}
+			hssfWorkbook.close();
+			return false;
+		}
+		
+		
+		public static void validatingErrorMsgForAdhaarNumberNRI(XSSFSheet sheet, int rowNum) throws Exception {
+			
+			System.out.println("\n Going to pick run test cases for row number " + rowNum);
+			XSSFCell aadharNumber = sheet.getRow(rowNum).getCell(0);
+			String aadharNumberFromExcell = aadharNumber.getStringCellValue();
+			AadharTxtfld.clear();
+			AadharTxtfld.sendKeys(aadharNumberFromExcell);
+			String aadharNumberFromUI=AadharTxtfld.getAttribute("value");
+			Thread.sleep(200);
+			driver.findElement(By.xpath(".//*[@id='root']/main/div[2]/form/div/div/div[3]")).click();
+			Thread.sleep(200);
+			if(aadharNumberFromUI.length()<12)
+			{
+				
+			if(isElementDisplayed(aadharErrorMsg)) {
+				System.out.println("12  Test case pass:As error message for aadhaar number less than 12 is displaying");
+			}else {
+				Assert.fail("Test case fail:As error message for aadhaar number less than 12 is not displaying");
+			}
+				
+			}else  {
+				
+				System.out.println("Test case pass as error message for aadhar number length 12 is not dispalying ");
+				
+			}			
+		}
+		
 		
 		
         // Enter Aadhaar Number
@@ -997,7 +1054,7 @@ public class JourneyScreenOne extends ReusableActions{
  			type(AadharTxtfld, readingdata(x, y, z));
  			String aAdharTxtfldPassedFromExcel=	AadharTxtfld.getAttribute("value");
  			int size = aAdharTxtfldPassedFromExcel.length();
- 			if((size==14) && (!aAdharTxtfldPassedFromExcel.contains("A")&& !aAdharTxtfldPassedFromExcel.contains("*")&& aAdharTxtfldPassedFromExcel.contains("-"))) 
+ 			if((size==12) && (!aAdharTxtfldPassedFromExcel.contains("A")&& !aAdharTxtfldPassedFromExcel.contains("*"))) 
  			{
  				logger.info("Test case pass:- As aadhar feild length is 12 and accepting only numbers");
  			}else 
@@ -1032,6 +1089,17 @@ public class JourneyScreenOne extends ReusableActions{
 		}
 		
 		
+		public static void getvalues(String s1) { 
+			if(s1.matches("[A-Z]{3}[0-9]{4}[A-Z]{1}")) 
+			{ 
+			System.out.println("Valid"); 
+			} 
+			else {
+			System.out.println("Invalid"); 
+			} 
+			} 
+		
+		
         // Enter PAN Number
 		public static void setPanNumber(int x, int y, int z) throws Exception {
  			//type(PanNumbertxtfld, strPanNumber);
@@ -1048,6 +1116,54 @@ public class JourneyScreenOne extends ReusableActions{
  			}
  			
 		
+		}
+		
+		public static boolean checkPANErrorMsgWithMultipleData() throws Exception {
+			File file = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\MasterData.xlsx");
+			FileInputStream fileInputStream = new FileInputStream(file);
+			XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
+			XSSFSheet sheet = hssfWorkbook.getSheetAt(1);
+			int totalNumOfRows = sheet.getLastRowNum();
+			System.out.println("\n Total num of rows found " + totalNumOfRows);
+			
+			for (int rowNum = 1; rowNum < totalNumOfRows; rowNum++) {
+				validatingErrorMsgForPANNRI(sheet, rowNum);
+				Thread.sleep(1000);
+			}
+			hssfWorkbook.close();
+			return false;
+		}
+		
+		
+      public static void validatingErrorMsgForPANNRI(XSSFSheet sheet, int rowNum) throws Exception {
+			
+			System.out.println("\n Going to pick run test cases for row number " + rowNum);
+			XSSFCell PANNumber = sheet.getRow(rowNum).getCell(1);
+			String PANNumberFromExcell = PANNumber.getStringCellValue();
+			PanNumbertxtfld.clear();
+			PanNumbertxtfld.sendKeys(PANNumberFromExcell);
+			String aadharNumberFromUI=PanNumbertxtfld.getAttribute("value");
+			System.out.println(aadharNumberFromUI);
+			Thread.sleep(200);
+			driver.findElement(By.xpath(".//*[@id='root']/main/div[2]/form/div/div/div[3]")).click();
+			Pattern pattern = Pattern.compile("[A-Z]{5}[0-9]{4}[A-Z]{1}");
+			Matcher matcher = pattern.matcher(aadharNumberFromUI);
+			if(matcher.matches())
+			{
+				
+			if(isElementDisplayed(PANErrorMsg)) {
+				Assert.fail("Test case fail as error message is displaying but PAN number is correct");
+			}else {
+				System.out.println("Test case pass:As error message for correct PAN number error message is not displaying");
+			}
+				
+			}else  {
+				if(isElementDisplayed(PANErrorMsg)) {
+				System.out.println("Test case pass:As error message for correct PAN number error message is not displaying");
+				}else {
+					Assert.fail("Test case fail as error message is displaying but PAN number is correct");	
+				}
+			}			
 		}
 		
 		
@@ -1102,6 +1218,50 @@ public static void preFixOfMobileNumber(int x, int y, int z) throws Exception {
 
  		}
 		
+		public static boolean checkEmailErrorMsgWithMultipleData() throws Exception {
+			File file = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\MasterData.xlsx");
+			FileInputStream fileInputStream = new FileInputStream(file);
+			XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
+			XSSFSheet sheet = hssfWorkbook.getSheetAt(1);
+			int totalNumOfRows = sheet.getLastRowNum();
+			System.out.println("\n Total num of rows found " + totalNumOfRows);
+			
+			for (int rowNum = 1; rowNum < totalNumOfRows; rowNum++) {
+				validatingErrorMsgEmailIDNRI(sheet, rowNum);
+				Thread.sleep(1000);
+			}
+			hssfWorkbook.close();
+			return false;
+		}
+		
+      public static void validatingErrorMsgEmailIDNRI(XSSFSheet sheet, int rowNum) throws Exception {
+			System.out.println("\n Going to pick run test cases for row number " + rowNum);
+			XSSFCell cEmail = sheet.getRow(rowNum).getCell(3);
+			String sEmailFromExcell = cEmail.getStringCellValue();
+			Emailtxtfld.clear();
+			Emailtxtfld.sendKeys(sEmailFromExcell);
+			String eEmailIDFromUI=Emailtxtfld.getAttribute("value");
+			driver.findElement(By.xpath(".//*[@id='root']/main/div[2]/form/div/div/div[3]")).click();
+			System.out.println(eEmailIDFromUI);
+			 if (isValid(eEmailIDFromUI)) {
+				 if(isElementDisplayed(emailIdErrorMessage)) {
+					 Assert.fail("Test case fail as error message is displaying with correct email ID");
+				 }else {
+					 System.out.println("Test case pass:As error message is not displaying with correct email ID");
+				 }
+				 
+		            }
+		        else {
+		        	Thread.sleep(200);
+		        	 if(isElementDisplayed(emailIdErrorMessage)) {
+		        		 System.out.println("Test case pass as error message is displaying with incorrect email ID");
+					 }else {
+						 Assert.fail("Test case fail:As error message is not displaying with incorrect email ID");
+					 } 
+		    } 
+     
+      
+      }
 		
         // Enter PreIssuance Verification Number
 		public static void setPreIssuanceNumber(int x, int y, int z) throws Exception {
@@ -1305,15 +1465,10 @@ public static void preFixOfMobileNumber(int x, int y, int z) throws Exception {
 		
 			public static void isAllTheTypeOfVisaListIsPresent() throws Exception {
 			typeOfVisa();
-				if(dependentTypeOfVisa.isDisplayed()&&workingTypeOfVisa.isDisplayed()&&visitingTypeOfVisa.isDisplayed()
-						&&othersTypeOfVisa.isDisplayed())
-				{		
-				logger.info("All the type of visa is present");
-				}
-				else
-				{
-				Assert.fail("All the type of visa is not present");
-				}
+			String xtypeOfVisa=".//*[@id='menu-passportVisaType']/div[2]/ul/li";
+			String sheetPath="\\src\\test\\resources\\TestData.xlsx";
+			comparingExcelDataWithUIBySheetPath(xtypeOfVisa, 1, 2, sheetPath);	
+			
 				dependentTypeOfVisa();
 			
 			}
@@ -1323,7 +1478,7 @@ public static void preFixOfMobileNumber(int x, int y, int z) throws Exception {
 	 			type(passportTextfld, readingdata(x, y, z));
 	 			String passportNumberPassedFromExcel=	passportTextfld.getAttribute("value");
 	 			int size = passportNumberPassedFromExcel.length();
-	 			if((size==20) && (!passportNumberPassedFromExcel.contains("@"))) 
+	 			if((size==20) && (passportNumberPassedFromExcel.contains("@"))) 
 	 			{
 	 				logger.info("Test case pass:- As Passport number feild length is 20 and not accepting special character ");
 	 			}else 
@@ -1351,14 +1506,18 @@ public static void preFixOfMobileNumber(int x, int y, int z) throws Exception {
 			
 			public static void isdCode(int x, int y, int z) throws Exception {
 	 			//type(MobNumtxtfld, strMobNumber);
+				Thread.sleep(200);
 				isdCode.clear();
 	 			type(isdCode, readingdata(x, y, z));
-				String isdCodeFromUI=	isdCode.getAttribute("placeholder");
+	 			Thread.sleep(200);
+	 			driver.findElement(By.xpath(".//*[@id='react-autowhatever-1--item-0']/div[1]")).click();
+	 			Thread.sleep(200);
+				String isdCodeFromUI=	isdCode.getAttribute("value");
 				if(isdCodeFromUI.equals("+91")) {
-					logger.info("Test case pass:-As ISD code feild carry +91 by default");
+					logger.info("Test case pass:-As ISD code feild carry +91 when select India");
 				}
 				else {
-					Assert.fail("Test Case fail:-As ISD code feild dont have +91 by default");
+					Assert.fail("Test Case fail:-As ISD code feild dont have +91 when India is selected");
 				}
 	 			
 	 		}

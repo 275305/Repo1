@@ -1271,7 +1271,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		type(firtsName, readingdata(x, y, z));
 		String firstNamePassedFromExcel = firtsName.getAttribute("value");
 		int size = firstNamePassedFromExcel.length();
-		if ((size == 25 && !firstNamePassedFromExcel.contains("@") && !firstNamePassedFromExcel.contains("1"))) {
+		if ((size == 50 && !firstNamePassedFromExcel.contains("@") && !firstNamePassedFromExcel.contains("1"))) {
 			logger.info("Test case pass:- As first name feild length is 50 and accepting only alphabets");
 		} else {
 			Assert.fail(
@@ -1307,7 +1307,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		type(lastName, readingdata(x, y, z));
 		String lastNamePassedFromExcel = lastName.getAttribute("value");
 		int size = lastNamePassedFromExcel.length();
-		if ((size == 25 && !lastNamePassedFromExcel.contains("@") && !lastNamePassedFromExcel.contains("1"))) {
+		if ((size == 50 && !lastNamePassedFromExcel.contains("@") && !lastNamePassedFromExcel.contains("1"))) {
 			logger.info("Test case pass:- As last name feild length is 50 and accepting only alphabets");
 		} else {
 			Assert.fail(

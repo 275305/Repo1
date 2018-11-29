@@ -1,6 +1,8 @@
 package uielements;
 
-	import java.awt.Robot;
+	import static org.testng.Assert.fail;
+
+import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.io.File;
 	import java.io.FileInputStream;
@@ -10,8 +12,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 	import java.util.Properties;
+import java.util.regex.Pattern;
 
-	import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.FormulaEvaluator;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFFormulaEvaluator;
@@ -365,7 +368,7 @@ import ru.yandex.qatools.allure.annotations.Attachment;
 		  			{
 		  				System.out.println("Test case pass:Drop down list is same as per the requirement");
 		  			}else {
-		  				System.out.println("Test case fail :Drop down list is not same as per the requirement");
+		  				Assert.fail("Test case fail :Drop down list is not same as per the requirement");
 		  			}
 		 }
 		 
@@ -386,7 +389,20 @@ import ru.yandex.qatools.allure.annotations.Attachment;
 			    return elementDisplayed;
 
 			}
-			
+		
+		 
+		 public static boolean isValid(String email) 
+		    { 
+		        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\."+ 
+		                            "[a-zA-Z0-9_+&*-]+)*@" + 
+		                            "(?:[a-zA-Z0-9-]+\\.)+[a-z" + 
+		                            "A-Z]{2,7}$"; 
+		                              
+		        Pattern pat = Pattern.compile(emailRegex); 
+		        if (email == null) 
+		            return false; 
+		        return pat.matcher(email).matches(); 
+		    } 
 	
 		 public static void escapeFunction() throws Exception {
 				Actions action = new Actions(driver);

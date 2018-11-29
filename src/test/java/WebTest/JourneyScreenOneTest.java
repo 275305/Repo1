@@ -125,7 +125,7 @@ public class JourneyScreenOneTest extends ReusableActions{
 			
 			
 			//TC -02 Test case for positive value for saving the first screen data
-			@Test(priority = 2, enabled=false)
+			@Test(priority = 2, enabled=true)
 		    public void ScreenOneTestNRI() throws Exception{
 				try{
 					HomePage.clickDashboard();
@@ -133,9 +133,34 @@ public class JourneyScreenOneTest extends ReusableActions{
 					JourneyScreenOne.optionNRI();
 					JourneyScreenOne.setPassportNumber(1,1,5);
 					JourneyScreenOne.isAllTheTypeOfVisaListIsPresent();
-					JourneyScreenThree.currentDatePicker();
+					JourneyScreenThree.visaValidTill();
 					JourneyScreenOne.passportIssuingCountry(1, 1, 6);
-					JourneyScreenOne.setAadhar(1,1,0);
+					JourneyScreenOne.checkAdhaarErrorMsgMultipleData();
+					JourneyScreenOne.checkPANErrorMsgWithMultipleData();
+					JourneyScreenOne.isdCode(1, 1, 7);
+					JourneyScreenOne.setMobNumber(1,1,2);
+					JourneyScreenOne.checkEmailErrorMsgWithMultipleData();
+					JourneyScreenOne.setPreIssuanceNumber(1,1,4);
+					JourneyScreenOne.clickProceed();
+					
+				 	}
+				catch (Exception e) {
+					logger.error("Test case failed: " + e.getMessage());
+					throw e;
+			 		}
+		        }	
+			
+			
+		    public void ScreenOneTestNRIFunctionToReachScreenTwo() throws Exception{
+				try{
+					HomePage.clickDashboard();
+					HomePage.clickNewApp();
+					JourneyScreenOne.optionNRI();
+					JourneyScreenOne.setPassportNumber(1,1,5);
+					JourneyScreenOne.isAllTheTypeOfVisaListIsPresent();
+					JourneyScreenThree.visaValidTill();
+					JourneyScreenOne.passportIssuingCountry(1, 1, 6);
+					JourneyScreenOne.setAadhar(1, 0, 1);
 					JourneyScreenOne.setPanNumber(1,1,1);
 					JourneyScreenOne.isdCode(1, 1, 7);
 					JourneyScreenOne.setMobNumber(1,1,2);
@@ -271,7 +296,7 @@ public class JourneyScreenOneTest extends ReusableActions{
 		        }
 			
 			
-			@Test(priority = 4, enabled=true)
+			@Test(priority = 4, enabled=false)
 		    public void insurerDetailsFillingAllTheFeildsToReachScreenFourSelectingDependent() throws Exception{
 				try{
 					checkInsurersDetailsIsPresentOnScreenSelectingDependent();

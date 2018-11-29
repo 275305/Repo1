@@ -177,6 +177,9 @@ public class JourneyScreenThree extends ReusableActions{
     @FindBy(xpath="//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[1]//input[@placeholder='DD/MM/YYYY']")
     static WebElement dateOfBirth;
     
+    @FindBy(xpath=".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[3]/div[2]/div[1]/div/div/div/div/div/div/input[@placeholder='DD/MM/YYYY']")
+    static WebElement visaValidTill;
+    
     @FindBy(xpath="//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]//input[@placeholder='DD/MM/YYYY']")
     static WebElement dateOfBirthIssurer;
     
@@ -486,7 +489,7 @@ public class JourneyScreenThree extends ReusableActions{
     
     public static void checkTheDateOfBirthFormatAndFutureDateRestrictions() throws Exception {
     	PageFactory.initElements(driver, JourneyScreenThree.class);
-    	String dateOfBirthFormat=dateOfBirth.getAttribute("placeholder");
+    	String dateOfBirthFormat=visaValidTill.getAttribute("placeholder");
     	if(dateOfBirthFormat.equalsIgnoreCase("DD/MM/YYYY"))
 		{		
 		logger.info("Test Case Pass: Date of Birth - Field format DD/MM/YYYY");
@@ -513,21 +516,39 @@ public class JourneyScreenThree extends ReusableActions{
     
     
     
-    	public static void futureDateEnability() throws Exception {
-    	dateOfBirth();
+    	public static void futureDateEnabilityVisaValidTill() throws Exception {
+    		visaValidTill.click();
         Calendar calendar = Calendar.getInstance();
         int currentDay = calendar.get(Calendar.DAY_OF_MONTH);
         int futuredate=currentDay+1;
         String runtimeXpathForSelectingDate= "day-"+futuredate+"";
-        boolean	checkFutureDateIsEnabled= driver.findElement(By.xpath("//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\""+runtimeXpathForSelectingDate+"\"]")).isSelected();
+        boolean	checkFutureDateIsEnabled= driver.findElement(By.xpath("//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\""+runtimeXpathForSelectingDate+"\"]")).isEnabled();
+        System.out.println(runtimeXpathForSelectingDate);
+        System.out.println(checkFutureDateIsEnabled);
         if(checkFutureDateIsEnabled) {
-    		logger.info("Test Case Fail:Future Date is enabled ");
+    		logger.info("Test Case Pass:Future Date is enabled as per the requirement of visa valid till ");
     	}else 
     	{
-    		logger.info("Test Case Pass:Future Date is disabled");
+    		Assert.fail("Test Case fail:Future Date is disabled as per the requirement of visa valid till");
     	}
     	}
         
+    	
+    	public static void futureDateEnability() throws Exception {
+        	dateOfBirth();
+            Calendar calendar = Calendar.getInstance();
+            int currentDay = calendar.get(Calendar.DAY_OF_MONTH);
+            int futuredate=currentDay+1;
+            String runtimeXpathForSelectingDate= "day-"+futuredate+"";
+            boolean	checkFutureDateIsEnabled= driver.findElement(By.xpath("//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\""+runtimeXpathForSelectingDate+"\"]")).isSelected();
+            if(checkFutureDateIsEnabled) {
+        		logger.info("Test Case Fail:Future Date is enabled ");
+        	}else 
+        	{
+        		logger.info("Test Case Pass:Future Date is disabled");
+        	}
+        	}
+            
         
         public static void futureDateEnabilityNomineeDetails() throws Exception {
         	dateOfBirthNomineeDetails();
@@ -586,6 +607,19 @@ public class JourneyScreenThree extends ReusableActions{
     driver.findElement(By.xpath("//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'disabled'))] [@aria-label=\""+runtimeXpathForSelectingDate+"\"]")).click();
    
    }
+   
+   public static void visaValidTill() throws Exception{
+	  Thread.sleep(200);
+	   checkTheDateOfBirthFormatAndFutureDateRestrictions();
+	    futureDateEnabilityVisaValidTill();
+	    Calendar calendar = Calendar.getInstance();
+	    int currentDay = calendar.get(Calendar.DAY_OF_MONTH);
+	   // System.out.println(currentDay);
+	    String runtimeXpathForSelectingDate= "day-"+currentDay+"";
+	    driver.switchTo().defaultContent();
+	    driver.findElement(By.xpath("//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'disabled'))] [@aria-label=\""+runtimeXpathForSelectingDate+"\"]")).click();
+	   
+	   }
    
    
    
@@ -1569,7 +1603,7 @@ public class JourneyScreenThree extends ReusableActions{
 		type(identityProofNumber, readingdataTestData(x, y, z));
 		String identityProofNumberFromExcel=identityProofNumber.getAttribute("value");
 	    int size = identityProofNumberFromExcel.length();
-		if(size==12) 
+		if(size==25) 
 		{
 			logger.info("Test case pass:-As identity Proof Number is of 12 length");
 		}else 
