@@ -7,16 +7,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import uielements.HomePage;
-import uielements.ReusableActions;
-import uielements.loginpage;
 
+import uielements.HomePage;
+import uielements.LoginPage;
+import uielements.ReusableActions;
 public class LoginTest extends ReusableActions {
 	
 
@@ -27,8 +24,8 @@ public class LoginTest extends ReusableActions {
 		//sa-aut
 		//bws-if
 		/*String testRun1=testrun1;*/
-		if (testRun.equals("run"))
-			//if (testRun.equals("runb")) 
+		//if (testRun.equals("run"))
+			if (testRun.equals("runbsw")) 
 			{
 			
 			try {
@@ -55,8 +52,8 @@ public class LoginTest extends ReusableActions {
 		}
 			
 		else 
-			if(testRun.equals("runfa"))
-			//if(testRun.equals("run")) 
+			//	if(testRun.equals("runfa"))
+			if(testRun.equals("run")) 
 		{
 			// @BeforeClass
 			//public void launchBrowser() throws Exception{
@@ -81,13 +78,13 @@ public class LoginTest extends ReusableActions {
 			prop = ReusableActions.readProperties();
 
 			driver.get(prop.getProperty("SampleURL"));
-			loginpage.verifyloginpage();
+			LoginPage.verifyloginpage();
 
 			// Maximizing the browser window
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 			logger.info("Fulfilment URL opened successfully");
-			loginpage.Login_Neg();
+			LoginPage.Login_Neg();
 
 		} catch (Exception e) {
 			logger.error("Test case failed: " + e.getMessage());
@@ -103,7 +100,7 @@ public class LoginTest extends ReusableActions {
 			// Taking username and password from properties file
 			// prop = ReusableActions.readProperties();
 
-			loginpage.logintest(prop.getProperty("username"), prop.getProperty("password"));
+			LoginPage.logintest(prop.getProperty("username"), prop.getProperty("password"));
 			logger.info("User logged in successfully");
 
 		} catch (Exception e) {

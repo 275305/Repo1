@@ -1,5 +1,10 @@
 package uielements;
 
+import java.io.File;
+import java.io.FileInputStream;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -10,9 +15,11 @@ import org.openqa.selenium.support.PageFactory;
 import org.sikuli.script.Pattern;
 import org.sikuli.script.Screen;
 import org.testng.Assert;
-import uielements.ReusableActions;
 
-public class JourneyScreenOnePANOCR extends ReusableActions{
+import WebTest.JourneyScreenThreeTest;
+import util.AppConstant;
+
+public class POSVFlowForSAPMIAP extends ReusableActions{
     
     
     // Locating Indian Nationality radio Button
@@ -22,6 +29,9 @@ public class JourneyScreenOnePANOCR extends ReusableActions{
     // Locating NRI Nationality radio Button
     @FindBy(xpath="//input[@value='nri']")
     static WebElement NRIbtn;
+    
+    @FindBy(xpath = "//*[@name='firstName']")
+	static WebElement firtsName;
     
     // Locating PIO Nationality radio Button
     @FindBy(xpath="//input[@value='pio']")
@@ -40,6 +50,9 @@ public class JourneyScreenOnePANOCR extends ReusableActions{
     @FindBy(xpath="//input[@value='dependent']")
     static WebElement Dependentbtn;
     
+    @FindBy(xpath="//label[@for='premiumCommitment']")
+    static WebElement premiumCommitmentMIAPYesOptionSelection;
+    
     
     // Locating Company Policy For radio Button
     @FindBy(xpath="//input[@value='company']")
@@ -52,6 +65,9 @@ public class JourneyScreenOnePANOCR extends ReusableActions{
     // Locating Don't have Aadhar number link
     @FindBy(xpath="//a[contains(text(),'t Have Aadhaar Number?')]")
     static WebElement DonthaveAadharLink;
+    
+    @FindBy(xpath="//input[@name='annualIncome']")
+    static WebElement annualIncomeMIAP;
     
     // Locating Get OTP button
     @FindBy(xpath="//a[text()='Get OTP']")
@@ -101,6 +117,9 @@ public class JourneyScreenOnePANOCR extends ReusableActions{
     // Locating Save button
     @FindBy(xpath="//span[text()='Save']")
     static WebElement Savebtn;
+    
+    @FindBy(xpath="//span[contains(text(),\"Product Details\")]")
+    static WebElement productDetails;
  
     // Locating Proceed button
     @FindBy(xpath="//span[text()='Proceed']")
@@ -254,7 +273,7 @@ public class JourneyScreenOnePANOCR extends ReusableActions{
     
     
  // Initializing the Objects
-     public JourneyScreenOnePANOCR(WebDriver driver)
+     public POSVFlowForSAPMIAP(WebDriver driver)
      {
          PageFactory.initElements(driver, this);
      }
@@ -262,8 +281,12 @@ public class JourneyScreenOnePANOCR extends ReusableActions{
      public static void dontHaveAadhaar() throws Exception {
 
             click(dontHaveAadhaar);
-            
         }
+     
+     public static void productDetails() throws Exception {
+
+         productDetails.click();
+     }
          
      public static void neverApplied() throws Exception {
 
@@ -340,7 +363,7 @@ public class JourneyScreenOnePANOCR extends ReusableActions{
         }
         
         public static void aadhaarOCR() throws Exception {
-        	PageFactory.initElements(driver, JourneyScreenOnePANOCR.class);
+        	PageFactory.initElements(driver, POSVFlowForSAPMIAP.class);
             click(aadhaarOcr);
             
         }
@@ -354,14 +377,14 @@ public class JourneyScreenOnePANOCR extends ReusableActions{
         
         // Enter Aadhaar Number
         public static void setAadhar(int x, int y, int z) throws Exception {
-            PageFactory.initElements(driver, JourneyScreenOnePANOCR.class);
+            PageFactory.initElements(driver, POSVFlowForSAPMIAP.class);
             AadharTxtfld.clear();
              type(AadharTxtfld, readingdata(x, y, z));
 
          }
         
         public static void prePopulationOCRAadhar() throws Exception {
-        	PageFactory.initElements(driver, JourneyScreenOnePANOCR.class);
+        	PageFactory.initElements(driver, POSVFlowForSAPMIAP.class);
             Screen s = new Screen();
             String filepath="C:\\Matrix\\qa\\target\\SkuliImages\\";
             String inputFilePath ="C:\\Matrix\\qa\\target\\SkuliImages\\";
@@ -397,7 +420,7 @@ public class JourneyScreenOnePANOCR extends ReusableActions{
         
         // Enter PAN Number
         public static void setPanNumber(int x, int y, int z) throws Exception {
-        	PageFactory.initElements(driver, JourneyScreenOnePANOCR.class);
+        	PageFactory.initElements(driver, POSVFlowForSAPMIAP.class);
         	PanNumbertxtfld.clear();
              type(PanNumbertxtfld, readingdata(x, y, z));
         }
@@ -535,4 +558,114 @@ public class JourneyScreenOnePANOCR extends ReusableActions{
    }
 
 
+     public static boolean posvForSAPMultipleFirstNameTest() throws Exception {
+    	 PageFactory.initElements(driver, POSVFlowForSAPMIAP.class);
+    	File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
+ 		FileInputStream fileInputStream = new FileInputStream(file);
+ 		XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
+ 		XSSFSheet sheet = hssfWorkbook.getSheetAt(5);
+ 		int totalNumOfRows = sheet.getLastRowNum();
+ 		System.out.println("\n Total num of rows found " + totalNumOfRows);
+ 		
+ 		for (int rowNum = 1; rowNum < totalNumOfRows; rowNum++) {
+ 			posvForSAPMultipleFirstName(sheet, rowNum);
+ 		}
+ 		hssfWorkbook.close();
+ 		return false;
+ 	}
+   
+     
+     public static void posvForSAPMultipleFirstName(XSSFSheet sheet, int rowNum) throws Exception {
+    	HomePage.clickDashboard();
+ 		HomePage.clickNewApp();
+ 		JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
+ 		Thread.sleep(500);
+ 		XSSFCell cellRep = sheet.getRow(rowNum).getCell(4);
+		String firstNameFromExcel = cellRep.getStringCellValue();
+		firtsName.clear();
+ 		firtsName.sendKeys(firstNameFromExcel);
+ 		JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2WithoutFirstName();
+ 		JourneyScreenTwo.traditional();
+		JourneyScreenTwo.selectByDropdownSAP();
+		JourneyScreenTwo.fillingAllTheRequiredFeildsForSAP();
+		JourneyScreenTwo.checkPOSVforSAPPremiumCommitment(3,1,19);
+ 		
+ 		JourneyScreenThreeTest.proposerPersonalDetailsSection();
+		JourneyScreenTwo.proposerPersonalDetailsIncome(9,1,10);
+		JourneyScreenThreeTest.nomineeDetailsWithoutDependentSelection();
+		JourneyScreenThreeTest.bankDetailsSectionFillingData();
+		JourneyScreenOne.fillingAnnualIncomeTOProceed(0,1,3);
+		Thread.sleep(1000);
+		JourneyScreenThree.form60RelatedDetailsIdentityProofNameOptionSelection();
+		JourneyScreenThree.setIdentityProofNumberValidation(0,1,6);
+		JourneyScreenThree.identityProofIssuingAuthority();
+		JourneyScreenThree.iAmExemptFromTheRequirementOfPANUnderTheFollowingProvisionsOfTheITAct1961();
+		
+		JourneyScreenThree.arrowDownFunctionToScrollDownTillBottom();
+		JourneyScreenThree.criticalIllnessNoOption();
+		JourneyScreenThree.hazardousActivitiesNo();
+		JourneyScreenThree.selectCriminalChargesNo();
+		JourneyScreenThree.feetInchesKgsSelectionToMoveToScreen5POSV();
+		JourneyScreenThree.agreePopupToProceedToSendPreIssuranceVerificationLinkToCustomer();
+ 		
+ 	}
+   
+     public static boolean posvForMIAPMultipleFirstNameTest() throws Exception {
+    	 PageFactory.initElements(driver, POSVFlowForSAPMIAP.class);
+    	File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
+ 		FileInputStream fileInputStream = new FileInputStream(file);
+ 		XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
+ 		XSSFSheet sheet = hssfWorkbook.getSheetAt(5);
+ 		int totalNumOfRows = sheet.getLastRowNum();
+ 		System.out.println("\n Total num of rows found " + totalNumOfRows);
+ 		
+ 		for (int rowNum = 1; rowNum < totalNumOfRows; rowNum++) {
+ 			posvForMIAPMultipleFirstName(sheet, rowNum);
+ 		}
+ 		hssfWorkbook.close();
+ 		return false;
+ 	}
+ 
+     
+     public static void posvForMIAPMultipleFirstName(XSSFSheet sheet, int rowNum) throws Exception {
+     	HomePage.clickDashboard();
+  		HomePage.clickNewApp();
+  		JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
+  		Thread.sleep(500);
+  		XSSFCell cellRep = sheet.getRow(rowNum).getCell(5);
+ 		String firstNameFromExcel = cellRep.getStringCellValue();
+ 		firtsName.clear();
+  		firtsName.sendKeys(firstNameFromExcel);
+  		JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2WithoutFirstName();
+  		JourneyScreenTwo.traditional();
+  		
+  		JourneyScreenTwo.selectByDropdownMIAP();
+		JourneyScreenTwo.fillingAllTheRequiredFeildsForMIAP();
+  		Thread.sleep(300);
+		premiumCommitmentMIAPYesOptionSelection.click();
+		
+		JourneyScreenTwo.checkPOSVforMIAPAnnualIncome(3,1,12);
+		
+ 		
+  		
+  		JourneyScreenThreeTest.proposerPersonalDetailsSection();
+ 		JourneyScreenTwo.proposerPersonalDetailsIncome(9,1,10);
+ 		JourneyScreenThreeTest.nomineeDetailsWithoutDependentSelection();
+ 		JourneyScreenThreeTest.bankDetailsSectionFillingData();
+ 		JourneyScreenOne.fillingAnnualIncomeTOProceed(0,1,3);
+ 		Thread.sleep(1000);
+ 		JourneyScreenThree.form60RelatedDetailsIdentityProofNameOptionSelection();
+ 		JourneyScreenThree.setIdentityProofNumberValidation(0,1,6);
+ 		JourneyScreenThree.identityProofIssuingAuthority();
+ 		JourneyScreenThree.iAmExemptFromTheRequirementOfPANUnderTheFollowingProvisionsOfTheITAct1961();
+ 		
+ 		JourneyScreenThree.arrowDownFunctionToScrollDownTillBottom();
+ 		JourneyScreenThree.criticalIllnessNoOption();
+ 		JourneyScreenThree.hazardousActivitiesNo();
+ 		JourneyScreenThree.selectCriminalChargesNo();
+ 		JourneyScreenThree.feetInchesKgsSelectionToMoveToScreen5POSV();
+ 		JourneyScreenThree.agreePopupToProceedToSendPreIssuranceVerificationLinkToCustomer();
+  		
+  	}
+     
 }

@@ -12,12 +12,12 @@ package uielements;
 	import org.openqa.selenium.support.PageFactory;
 
 	import uielements.ReusableActions;
-
-	import jxl.Sheet;
+import util.AppConstant;
+import jxl.Sheet;
 	import jxl.Workbook;
 
 
-	public class loginpage extends ReusableActions{
+	public class LoginPage extends ReusableActions{
 		
 		// Login repository
 
@@ -56,7 +56,7 @@ package uielements;
 	  
 	    
 		// Initializing the Objects
-		public loginpage(WebDriver driver)
+		public LoginPage(WebDriver driver)
 		{
 			PageFactory.initElements(driver, this);
 		}
@@ -117,7 +117,7 @@ package uielements;
 			
 			//Login Functionality positive test
 			public static void logintest(String strUserName, String strPassword) throws Exception {
-				PageFactory.initElements(driver, loginpage.class);
+				PageFactory.initElements(driver, LoginPage.class);
 				Username.clear();
 				//waitTillPageLoaded(driver);
 				setUserName(strUserName);
@@ -139,9 +139,9 @@ package uielements;
 			// Getting test data from Excel sheet
 			public static void Login_Neg() throws Exception {
 
-				PageFactory.initElements(driver, loginpage.class);
+				PageFactory.initElements(driver, LoginPage.class);
 				waitTillPageLoaded(driver);
-				File file = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\LoginData.xls");
+				File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.LOGIN_DATA_EXCELL);
 				FileInputStream fileInputStream = new FileInputStream(file);
 				Workbook w = Workbook.getWorkbook(fileInputStream);
 				Sheet s = w.getSheet("Login");

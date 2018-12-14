@@ -2,12 +2,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="MainTestSuite">
-    <suite-files>
-       <suite-file path="Login.xml" />   
-       <suite-file path="JourneyScreenOne.xml" />  
-       <suite-file path="JourneyScreenOnePANOCR.xml" />  
-       <suite-file path="JourneyScreenTwo.xml" /> 
-      <suite-file path="JourneyScreenThreeTest.xml" />         
-             
-    </suite-files>
+	<suite-files>
+		<suite-file path="Login.xml" />
+		<suite-file path="JourneyScreenOne.xml" />
+		<suite-file path="JourneyScreenTwo.xml" />
+		<suite-file path="JourneyScreenThree.xml" />
+        <suite-file path="POSVFlowForSAPMIAP.xml" />
+	</suite-files>
 </suite>

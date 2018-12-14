@@ -4,19 +4,20 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
 import uielements.HomePage;
 import uielements.JourneyScreenOne;
 import uielements.JourneyScreenThree;
 import uielements.JourneyScreenTwo;
+import uielements.LoginPage;
 import uielements.ReusableActions;
-import uielements.loginpage;
 public class JourneyScreenTwoTest extends ReusableActions{
 
 	@BeforeTest
@@ -24,8 +25,8 @@ public class JourneyScreenTwoTest extends ReusableActions{
 	public void setUp(String browser, String version, String platform,String testrun) throws Exception {
 		String testRun= testrun;
 		/*String testRun1=testrun1;*/
-		if (testRun.equals("run"))	
-			//if (testRun.equals("runbsw")) 
+		//	if (testRun.equals("run"))	
+			if (testRun.equals("runbsw")) 
 			{
 			
 			try {
@@ -50,8 +51,8 @@ public class JourneyScreenTwoTest extends ReusableActions{
 			}
 			//break;
 		}
-		//else if(testRun.equals("run")) 	
-		else if(testRun.equals("runfa")) 
+		else if(testRun.equals("run")) 	
+			//else if(testRun.equals("runfa")) 
 		{
 			// @BeforeClass
 			//public void launchBrowser() throws Exception{
@@ -77,14 +78,14 @@ public class JourneyScreenTwoTest extends ReusableActions{
 				prop = ReusableActions.readProperties();
 
 			 	driver.get(prop.getProperty("SampleURL"));
-			 	loginpage.verifyloginpage();
+			 	LoginPage.verifyloginpage();
 			 			
 			 	// Maximizing the browser window
 			 	driver.manage().window().maximize();
 			 	driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 			 	logger.info("Fulfilment URL opened successfully");
 			 	
-			 	loginpage.logintest(prop.getProperty("username"), prop.getProperty("password"));
+			 	LoginPage.logintest(prop.getProperty("username"), prop.getProperty("password"));
 			 	logger.info("User logged in successfully");
 				HomePage.clickNewApp();
 				JourneyScreenOne.isIndianSelected();

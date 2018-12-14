@@ -2,37 +2,20 @@ package uielements;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.poi.hssf.usermodel.HSSFCell;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.DataFormatter;
-import org.apache.poi.ss.usermodel.FormulaEvaluator;
-import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFFormulaEvaluator;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.remote.server.handler.SubmitElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import uielements.ReusableActions;
+import util.AppConstant;
 
 public class JourneyScreenOne extends ReusableActions{
 	
@@ -49,7 +32,7 @@ public class JourneyScreenOne extends ReusableActions{
     @FindBy(xpath="//*[@id='alert-dialog-title']/h2[(text()=\"Update PAN Number\")]")
 	 public static WebElement updatePANPOPUP;
     
-    @FindBy(xpath=".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[6]/div[2]/div/p[(text()=\"Invalid email id\")]")
+    @FindBy(xpath="//p[(text()=\"Invalid Email Address\")]")
 	 public static WebElement emailIdErrorMessage;
     
     @FindBy(xpath="//input[@name='income']")
@@ -158,11 +141,14 @@ public class JourneyScreenOne extends ReusableActions{
    static WebElement nonFlyingRoleInsurer ;
 	
 	
-	@FindBy(xpath=".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[5]/div[1]/div/div[1]/p[text()=\"Please enter 12 digit Aadhaar Number\"]")
+	@FindBy(xpath="//p[text()=\"Please Enter 12 digit Aadhaar Number\"]")
 	static WebElement aadharErrorMsg ;
 	
-	@FindBy(xpath=".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[5]/div[2]/div/div/p[text()=\"Invalid PAN Number\"]")
+	@FindBy(xpath="//p[text()=\"Invalid PAN Number\"]")
 	static WebElement PANErrorMsg ;
+	
+	@FindBy(xpath="//p[text()=\"Invalid Mobile Number\"]")
+	static WebElement phoneNumberErrorMsg ;
     
     
     // Locating Don't Have PAN? link
@@ -869,7 +855,8 @@ public class JourneyScreenOne extends ReusableActions{
  	
  	
  	public static void dontHavePAN() throws Exception {
-
+ 		PageFactory.initElements(driver, JourneyScreenOne.class);
+ 		Thread.sleep(300);
 		click(dontHavePAN);
 		
 	}
@@ -1003,15 +990,16 @@ public class JourneyScreenOne extends ReusableActions{
 		}
 		
 		public static boolean checkAdhaarErrorMsgMultipleData() throws Exception {
-			File file = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\MasterData.xlsx");
+			File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
 			FileInputStream fileInputStream = new FileInputStream(file);
 			XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
 			XSSFSheet sheet = hssfWorkbook.getSheetAt(1);
-			int totalNumOfRows = sheet.getLastRowNum();
-			System.out.println("\n Total num of rows found " + totalNumOfRows);
+			//int totalNumOfRows = sheet.getLastRowNum();
+			//System.out.println("\n Total num of rows found " + totalNumOfRows);
 			
-			for (int rowNum = 1; rowNum < totalNumOfRows; rowNum++) {
+			for (int rowNum = 1; rowNum < 8; rowNum++) {
 				validatingErrorMsgForAdhaarNumberNRI(sheet, rowNum);
+				Thread.sleep(1000);
 			}
 			hssfWorkbook.close();
 			return false;
@@ -1021,26 +1009,45 @@ public class JourneyScreenOne extends ReusableActions{
 		public static void validatingErrorMsgForAdhaarNumberNRI(XSSFSheet sheet, int rowNum) throws Exception {
 			
 			System.out.println("\n Going to pick run test cases for row number " + rowNum);
-			XSSFCell aadharNumber = sheet.getRow(rowNum).getCell(0);
+			XSSFCell aadharNumber = sheet.getRow(rowNum).getCell(10);
 			String aadharNumberFromExcell = aadharNumber.getStringCellValue();
+			Thread.sleep(500);
+			AadharTxtfld.click();
 			AadharTxtfld.clear();
+			System.out.println("i am clearing");
 			AadharTxtfld.sendKeys(aadharNumberFromExcell);
 			String aadharNumberFromUI=AadharTxtfld.getAttribute("value");
 			Thread.sleep(200);
-			driver.findElement(By.xpath(".//*[@id='root']/main/div[2]/form/div/div/div[3]")).click();
+		//	driver.findElement(By.xpath(".//*[@id='root']/main/div[2]/form/div/div/div[3]")).click();
 			Thread.sleep(200);
-			if(aadharNumberFromUI.length()<12)
-			{
+			System.out.println("i am talking abot this from excell"+"  " +aadharNumberFromExcell);
+			System.out.print("i am talking about this from UI "+"       "+aadharNumberFromUI);
+			if(aadharNumberFromUI.length()==12)
 				
+			{
+				Thread.sleep(800);
+				//System.out.println(isElementDisplayed(aadharErrorMsg));
 			if(isElementDisplayed(aadharErrorMsg)) {
-				System.out.println("12  Test case pass:As error message for aadhaar number less than 12 is displaying");
+				
+				Assert.fail("Test case fail:As error message for aadhaar number length 12 is displaying");
 			}else {
-				Assert.fail("Test case fail:As error message for aadhaar number less than 12 is not displaying");
+				System.out.println("Test case pass:As error message for aadhaar number length 12 is not displaying");
 			}
 				
 			}else  {
 				
-				System.out.println("Test case pass as error message for aadhar number length 12 is not dispalying ");
+				System.out.println("i am in else");
+				driver.findElement(By.xpath(".//*[@id='root']/main/div[2]/form/div/div/div[1]")).click();
+				Thread.sleep(500);
+				if(isElementDisplayed(aadharErrorMsg)) {
+					System.out.println("Test case pass:As error message for aadhaar number length i.e != 12 is displaying");
+					
+				}else {
+					
+					Assert.fail("Test case fail:As error message for aadhaar number length i.e !=12 is not displaying");
+					
+				}
+				
 				
 			}			
 		}
@@ -1119,14 +1126,14 @@ public class JourneyScreenOne extends ReusableActions{
 		}
 		
 		public static boolean checkPANErrorMsgWithMultipleData() throws Exception {
-			File file = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\MasterData.xlsx");
+			File file = new File(System.getProperty(AppConstant.USER_DIR) +AppConstant.MASTER_DATA_EXCELL);
 			FileInputStream fileInputStream = new FileInputStream(file);
 			XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
 			XSSFSheet sheet = hssfWorkbook.getSheetAt(1);
-			int totalNumOfRows = sheet.getLastRowNum();
-			System.out.println("\n Total num of rows found " + totalNumOfRows);
+		//	int totalNumOfRows = sheet.getLastRowNum();
+		//	System.out.println("\n Total num of rows found " + totalNumOfRows);
 			
-			for (int rowNum = 1; rowNum < totalNumOfRows; rowNum++) {
+			for (int rowNum = 1; rowNum < 8; rowNum++) {
 				validatingErrorMsgForPANNRI(sheet, rowNum);
 				Thread.sleep(1000);
 			}
@@ -1140,8 +1147,13 @@ public class JourneyScreenOne extends ReusableActions{
 			System.out.println("\n Going to pick run test cases for row number " + rowNum);
 			XSSFCell PANNumber = sheet.getRow(rowNum).getCell(1);
 			String PANNumberFromExcell = PANNumber.getStringCellValue();
+            Thread.sleep(300);
+			PanNumbertxtfld.click();
+			Thread.sleep(300);
 			PanNumbertxtfld.clear();
+			Thread.sleep(300);
 			PanNumbertxtfld.sendKeys(PANNumberFromExcell);
+			Thread.sleep(300);
 			String aadharNumberFromUI=PanNumbertxtfld.getAttribute("value");
 			System.out.println(aadharNumberFromUI);
 			Thread.sleep(200);
@@ -1165,6 +1177,61 @@ public class JourneyScreenOne extends ReusableActions{
 				}
 			}			
 		}
+      
+      
+      
+      
+      public static void validatingErrorMsgForPhoneNumberScreenOne(XSSFSheet sheet, int rowNum) throws Exception {
+			System.out.println("\n Going to pick run test cases for row number " + rowNum);
+			XSSFCell phoneNumber = sheet.getRow(rowNum).getCell(2);
+			String phoneNumberFromExcell = phoneNumber.getStringCellValue();
+			System.out.println("From excell "+phoneNumberFromExcell);
+			MobNumtxtfld.click();
+			Thread.sleep(200);
+			MobNumtxtfld.clear();
+			Thread.sleep(200);
+			MobNumtxtfld.sendKeys(phoneNumberFromExcell);
+			
+			String phoneNumberFromUI=MobNumtxtfld.getAttribute("value");
+			System.out.println(phoneNumberFromUI);
+			Thread.sleep(200);
+			driver.findElement(By.xpath(".//*[@id='root']/main/div[2]/form/div/div/div[3]")).click();
+			
+			if(phoneNumberFromUI.length()==10)
+			{
+				
+			if(isElementDisplayed(phoneNumberErrorMsg)) {
+				Assert.fail("Test case fail as error message is displaying for correct phone number");
+			}else {
+				System.out.println("Test case pass:As error message for correct phone number is not displaying");
+			}
+				
+			}else  {
+				if(isElementDisplayed(phoneNumberErrorMsg)) {
+					System.out.println("Test case pass:As error message for wrong phone number is displaying");
+					
+				}else {
+						
+					Assert.fail("Test case fail as error message is not displaying for wrong phone number");
+				}
+			}			
+		}
+		
+      
+      public static boolean checkPhoneNumberErrorMsgWithMultipleData() throws Exception {
+			File file = new File(System.getProperty(AppConstant.USER_DIR) +AppConstant.MASTER_DATA_EXCELL);
+			FileInputStream fileInputStream = new FileInputStream(file);
+			XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
+			XSSFSheet sheet = hssfWorkbook.getSheetAt(1);
+			//int totalNumOfRows = sheet.getLastRowNum();
+			//System.out.println("\n Total num of rows found " + totalNumOfRows);
+			for (int rowNum = 1; rowNum < 8; rowNum++) {
+				validatingErrorMsgForPhoneNumberScreenOne(sheet, rowNum);
+				Thread.sleep(1000);
+			}
+			hssfWorkbook.close();
+			return false;
+		}
 		
 		
 		public static void clickDontHavePan() throws Exception {
@@ -1173,6 +1240,16 @@ public class JourneyScreenOne extends ReusableActions{
 			
 		}
 		
+		  // Enter Mobile Number
+				public static void checkSetMobNumber(int x, int y, int z) throws Exception {
+		 			//type(MobNumtxtfld, strMobNumber);
+		 			MobNumtxtfld.clear();
+		 			type(MobNumtxtfld, readingdata(x, y, z));
+		 			String mobile=MobNumtxtfld.getAttribute("value");
+		 			System.out.println(mobile);
+		 			
+		 			
+				}
 		
         // Enter Mobile Number
 		public static void setMobNumber(int x, int y, int z) throws Exception {
@@ -1208,25 +1285,34 @@ public static void preFixOfMobileNumber(int x, int y, int z) throws Exception {
  			Emailtxtfld.clear();
  			type(Emailtxtfld, readingdata(x, y, z));
  			String emailPassedFromExcel=	Emailtxtfld.getAttribute("value");
- 			int size = emailPassedFromExcel.length();
- 	 		  if(emailPassedFromExcel.endsWith("@gmail.com")) {
+ 			/*int size = emailPassedFromExcel.length();
+ 	 		  if(emailPassedFromExcel.endsWith("@gmail.com")||emailPassedFromExcel.endsWith("@monocept.com") ) {
  	 			logger.info("Test case pass:-As entered email format is correct ");  
  	 		  }else
  	 		  {
  	 			  Assert.fail("Test case fail:-As entered email format is not correct");
- 	 		  } 	 		  
+ 	 		  } */
+ 			
+ 			
+ 			if (isValid(emailPassedFromExcel)) {
+ 				 System.out.println("Test case pass:As email ID is valid");
+					
+				 }else {
+					 Assert.fail("Test case fail As email ID is not valid");
+				 }
+				 
 
  		}
 		
 		public static boolean checkEmailErrorMsgWithMultipleData() throws Exception {
-			File file = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\MasterData.xlsx");
+			File file = new File(System.getProperty(AppConstant.USER_DIR) +AppConstant.MASTER_DATA_EXCELL);
 			FileInputStream fileInputStream = new FileInputStream(file);
 			XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
 			XSSFSheet sheet = hssfWorkbook.getSheetAt(1);
-			int totalNumOfRows = sheet.getLastRowNum();
-			System.out.println("\n Total num of rows found " + totalNumOfRows);
+			//int totalNumOfRows = sheet.getLastRowNum();
+			//System.out.println("\n Total num of rows found " + totalNumOfRows);
 			
-			for (int rowNum = 1; rowNum < totalNumOfRows; rowNum++) {
+			for (int rowNum = 1; rowNum < 8; rowNum++) {
 				validatingErrorMsgEmailIDNRI(sheet, rowNum);
 				Thread.sleep(1000);
 			}
@@ -1238,7 +1324,11 @@ public static void preFixOfMobileNumber(int x, int y, int z) throws Exception {
 			System.out.println("\n Going to pick run test cases for row number " + rowNum);
 			XSSFCell cEmail = sheet.getRow(rowNum).getCell(3);
 			String sEmailFromExcell = cEmail.getStringCellValue();
+			Thread.sleep(300);
+			Emailtxtfld.click();
+			Thread.sleep(300);
 			Emailtxtfld.clear();
+			Thread.sleep(300);
 			Emailtxtfld.sendKeys(sEmailFromExcell);
 			String eEmailIDFromUI=Emailtxtfld.getAttribute("value");
 			driver.findElement(By.xpath(".//*[@id='root']/main/div[2]/form/div/div/div[3]")).click();
@@ -1270,7 +1360,7 @@ public static void preFixOfMobileNumber(int x, int y, int z) throws Exception {
  			PreIssuancetxtfld.clear();
  			type(PreIssuancetxtfld, readingdata(x, y, z));
  			String preIssuranceNumberPassedFromExcel=	PreIssuancetxtfld.getAttribute("value");
- 			int size = preIssuranceNumberPassedFromExcel.length();
+ 		//	int size = preIssuranceNumberPassedFromExcel.length();
  	 		  if(preIssuranceNumberPassedFromExcel.length()==8) {
  	 			logger.info("Test case pass:-As entered preInsurance number is of expected length");  
  	 		  }else
@@ -1294,7 +1384,7 @@ public static void preFixOfMobileNumber(int x, int y, int z) throws Exception {
  	
 		public static boolean annualIncomePersonalDetailsDependent() throws Exception {
 			Thread.sleep(200);
-			File file = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\TestData.xlsx");
+			File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.TEST_DATA_EXCELL);
 			FileInputStream fileInputStream = new FileInputStream(file);
 			XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
 			XSSFSheet sheet = hssfWorkbook.getSheetAt(0);
@@ -1466,7 +1556,7 @@ public static void preFixOfMobileNumber(int x, int y, int z) throws Exception {
 			public static void isAllTheTypeOfVisaListIsPresent() throws Exception {
 			typeOfVisa();
 			String xtypeOfVisa=".//*[@id='menu-passportVisaType']/div[2]/ul/li";
-			String sheetPath="\\src\\test\\resources\\TestData.xlsx";
+			String sheetPath=AppConstant.TEST_DATA_EXCELL;
 			comparingExcelDataWithUIBySheetPath(xtypeOfVisa, 1, 2, sheetPath);	
 			
 				dependentTypeOfVisa();
@@ -1644,6 +1734,10 @@ public static void preFixOfMobileNumber(int x, int y, int z) throws Exception {
 				Thread.sleep(500);
 				
 			}
+			
+			
+			
+			 
 			
 			public static void checkAllTheInsurersDetailsFeildsPresentOrNot() throws Exception {
                if(insurersName.isDisplayed()&&insurersGenderMale.isDisplayed()&&insurersGenderFemale.isDisplayed()&&dateOfBirthIssurer.isDisplayed()&&

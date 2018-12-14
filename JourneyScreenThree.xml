@@ -9,7 +9,7 @@
 		<parameter name="testrun" value="runbsw" />
 		<classes>
 
-			<class name="WebTest.JourneyScreenThreeTest" /> 
+			<class name="WebTest.JourneyScreenThreeTest" />
 
 		</classes>
 	</test> <!-- Test -->

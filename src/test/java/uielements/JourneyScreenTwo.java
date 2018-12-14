@@ -1,25 +1,13 @@
 package uielements;
-
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.fail;
-
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
-
-import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.FormulaEvaluator;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFFormulaEvaluator;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -27,29 +15,20 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import WebTest.JourneyScreenThreeTest;
-import jxl.Sheet;
-import jxl.Workbook;
-import uielements.ReusableActions;
-
-import net.bytebuddy.asm.Advice.Return;
+import util.AppConstant;
 
 public class JourneyScreenTwo extends ReusableActions {
 
-	private static final String Webelement = null;
+	//private static final String Webelement = null;
 
 	public static int i = 1;
 	public static int k;
@@ -135,6 +114,15 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath=".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[1]/div[2]/div/div/div/div/div[4]/div[2]/div/div/div/div/div[@role='button']")
 	 public static WebElement occupation;
 	
+	@FindBy(xpath=".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[1]/div[2]/div/div/div/div/div[4]/div[1]/div/div/div/div/div[@role='button']")
+	 public static WebElement occupationCancerProductSelected;
+	
+	@FindBy(xpath=".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[1]/div[2]/div/div/div/div/div[4]/div[3]/div/div/div/div/div[@role='button']")
+	 public static WebElement preferedLanguageOfCommunication;
+	
+	@FindBy(xpath=".//*[@id='menu-preferredLanguageOfCommunication']/div[2]/ul/li[1]")
+	 public static WebElement preferredLanguageOfCommunicationOptionSelection;
+	
 	@FindBy(xpath=".//*[@id='menu-organisationType']/div[2]/ul/li[1]")
 	 public static WebElement organizationType1stOption;
 	
@@ -159,6 +147,9 @@ public class JourneyScreenTwo extends ReusableActions {
 	
 	@FindBy(xpath = "//input[@value='indian']")
 	static WebElement Indianbtn;
+	
+	 @FindBy(xpath="//label[@for='premiumCommitment']")
+	 static WebElement premiumCommitmentMIAPYesOptionSelection;
 	
 	 @FindBy(xpath="//input[@name='bankAccountIFSC']")
 	 public static WebElement IFSC;
@@ -421,7 +412,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//label[contains(text(),\"ULIP\")]")
 	static WebElement ulipProductType;
 	
-	@FindBy(xpath = "//p[(text()=\"Total percentage should be less than 100\")]")
+	@FindBy(xpath = "//p[(text()=\"Total Percentage Should Be 100\")]")
 	static WebElement totalPercentage;
 
 	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[3]/div[2]/div/div/div/div/div[@role='button']")
@@ -466,7 +457,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[1]/div/div/div/div/div[@role='button']")
 	static WebElement premiumTypeSAP;
 
-	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[6]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[7]/div/div/div/div/div[@role='button']")
 	static WebElement dividentOptionMIAP;
 
 	@FindBy(xpath = "//label[text()='Premium Payment Term']")
@@ -519,6 +510,9 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	@FindBy(xpath = "//input[@name='annualIncome']")
 	static WebElement annualIncome;
+	
+	@FindBy(xpath = "//input[@name='income']")
+	static WebElement proposerPersonalDetailsAnnualIncome;
 
 	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[1]/div[1]/div/div/div/div/div[@role='button']")
 	static WebElement needOfInsurance;
@@ -583,28 +577,28 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = ".//*[@id='menu-dividendAdjustment']/div[2]/ul/li[1]")
 	static WebElement dividentOption1stOption;
 
-	@FindBy(xpath = "//*[@id='menu-dividentOption']/div[2]/ul/li[1]")
+	@FindBy(xpath = ".//*[@id='menu-dividendOption']/div[2]/ul/li[1]")
 	static WebElement divident1stOption;
 
 	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[7]/div/div/div/div/div[@role='button']")
 	static WebElement modeOfPaymentSTP;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[4]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[3]/div/div/div/div/div[@role='button']")
 	static WebElement modeOfPaymentMIAP;
 
-	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[5]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[4]/div/div/div/div/div[@role='button']")
 	static WebElement modeOfPaymentSAP;
 
-	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[4]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[3]/div/div/div/div/div[@role='button']")
 	static WebElement modeOfPaymentFTSP;
 
-	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[5]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[4]/div/div/div/div/div[@role='button']")
 	static WebElement modeOfPaymentWLS;
 
 	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[6]/div/div/div/div/div[@role='button']")
 	static WebElement dividentAdjustment;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[4]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[3]/div/div/div/div/div[@role='button']")
 	static WebElement dividentAdjustmentWLS;
 
 	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[2]/div/div/div/div/div[@role='button']")
@@ -691,7 +685,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[1]//input[@placeholder='DD/MM/YYYY']")
 	static WebElement dateOfBirthPersonalDetails;
 
-	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[2]/div[2]/div/div/div/div/div/div/input[@placeholder='DD/MM/YYYY']")
+	@FindBy(xpath = "//input[@placeholder='DD/MM/YYYY']")
 	static WebElement dateOfBirthNomineeDetails;
 
 	@FindBy(xpath = "//*[@id='react-autowhatever-1--item-0']/div/div/span[1]")
@@ -835,6 +829,8 @@ public class JourneyScreenTwo extends ReusableActions {
 		waitTillElementToBeClickable(policyTermFTSPOption);
 		policyTermFTSPOption.click();
 		Thread.sleep(2000);
+		driver.findElement(By.xpath(".//*[@id='root']/main/div[2]/form/div/div/div[3]")).click();
+	    Thread.sleep(300);
 	}
 
 	public static void sumAssuredOptionSTP() throws Exception {
@@ -1134,6 +1130,7 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	public static void modeOfPaymentFTSP() throws Exception {
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Thread.sleep(400);
 		waitTillElementToBeClickable(modeOfPaymentFTSP);
 		modeOfPaymentFTSP.click();
 		waitTillElementToBeClickable(modeOfPayment1stOption);
@@ -1293,8 +1290,13 @@ public class JourneyScreenTwo extends ReusableActions {
 	
 	}
 
-	public static void setDateBirthNomineeDetails(int x, int y, int z) throws Exception {
+	public static void setDateBirthNomineeDetails() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
+		driver.findElement(By.xpath(".//*[@id='root']/main/div[2]/form/div/div/div[3]")).click();
+		Thread.sleep(200);
+		Actions action = new Actions(driver);
+		 action.sendKeys(Keys.ARROW_DOWN).build().perform();
+		 System.out.println("I am down");
 		waitTillElementToBeClickable(dateOfBirthNomineeDetails);
 		dateOfBirthNomineeDetails.click();
 		JourneyScreenThree.dateOfBirthSelctionFunction();
@@ -1307,11 +1309,11 @@ public class JourneyScreenTwo extends ReusableActions {
 		type(lastName, readingdata(x, y, z));
 		String lastNamePassedFromExcel = lastName.getAttribute("value");
 		int size = lastNamePassedFromExcel.length();
-		if ((size == 50 && !lastNamePassedFromExcel.contains("@") && !lastNamePassedFromExcel.contains("1"))) {
-			logger.info("Test case pass:- As last name feild length is 50 and accepting only alphabets");
+		if ((size == 25 && !lastNamePassedFromExcel.contains("@") && !lastNamePassedFromExcel.contains("1"))) {
+			logger.info("Test case pass:- As last name feild length is 25 and accepting only alphabets");
 		} else {
 			Assert.fail(
-					"Test case fail:- As either last name feild length is not of 50 or not accepting only alphabets");
+					"Test case fail:- As either last name feild length is not of 25 or not accepting only alphabets");
 		}
 
 	}
@@ -1344,7 +1346,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		type(houseNo, readingdata(x, y, z));
 		String houseNoDataFromExcel = houseNo.getAttribute("value");
 		int size = houseNoDataFromExcel.length();
-		if ((size == 60 && houseNoDataFromExcel.contains("1") && houseNoDataFromExcel.contains("!"))) {
+		if ((size == 60 && houseNoDataFromExcel.contains("1") && !houseNoDataFromExcel.contains("!"))) {
 			logger.info(
 					"Test case pass:- As house number feild length is 60 and accepting alphanumeric and special character ");
 		} else {
@@ -1360,7 +1362,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		type(roadNo, readingdata(x, y, z));
 		String houseNoDataFromExcel = roadNo.getAttribute("value");
 		int size = houseNoDataFromExcel.length();
-		if ((size == 60 && houseNoDataFromExcel.contains("1") && houseNoDataFromExcel.contains("!"))) {
+		if ((size == 60 && houseNoDataFromExcel.contains("1") && !houseNoDataFromExcel.contains("!"))) {
 			logger.info(
 					"Test case pass:- As Road number feild length is 60 and accepting alphanumeric and special character ");
 		} else {
@@ -1377,7 +1379,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		type(villageTown, readingdata(x, y, z));
 		String houseNoDataFromExcel = villageTown.getAttribute("value");
 		int size = houseNoDataFromExcel.length();
-		if ((size == 60 && houseNoDataFromExcel.contains("1") && houseNoDataFromExcel.contains("!"))) {
+		if ((size == 60 && houseNoDataFromExcel.contains("1") && !houseNoDataFromExcel.contains("!"))) {
 			logger.info(
 					"Test case pass:- As village town feild length is 60 and accepting alphanumeric and special character ");
 		} else {
@@ -1943,6 +1945,27 @@ public class JourneyScreenTwo extends ReusableActions {
         occupation2ndOption.click();
 		Thread.sleep(700);
 	}
+	
+	
+	public static void occupationOptionSelectionWithCancerProduct() throws Exception {
+		Thread.sleep(200);
+		waitTillElementToBeClickable(occupationCancerProductSelected);
+		occupationCancerProductSelected.click();
+		Thread.sleep(200);
+	    waitTillElementToBeClickable(occupation2ndOption);
+        occupation2ndOption.click();
+		Thread.sleep(700);
+	}
+	
+	public static void preferredLanguageOfCommunicationOptionSelectionWithSAPProduct() throws Exception {
+		Thread.sleep(200);
+		waitTillElementToBeClickable(preferedLanguageOfCommunication);
+		preferedLanguageOfCommunication.click();
+		Thread.sleep(200);
+	    waitTillElementToBeClickable(preferredLanguageOfCommunicationOptionSelection);
+	    preferredLanguageOfCommunicationOptionSelection.click();
+		Thread.sleep(700);
+	}
 
 	public static void checkNameOfCompanyDisplayingWhenSalariedSelected() throws Exception {
 		if(isElementDisplayed(companyNameWhenSalariedFromOccupationSelected)) {
@@ -1976,7 +1999,7 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	// -----------------------------------------------------------------------------------------------------------------
 
-	public static String Actualtext() throws Exception {
+/*	public static String Actualtext() throws Exception {
 		List<WebElement> listOfErrors = driver
 				.findElements(By.xpath("//*[@id='alert-dialog-description']/div/div/div/div/div/ul/li"));
 		int i = listOfErrors.size();
@@ -1990,7 +2013,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		}
 		return null;
 
-	}
+	}*/
 
 	public static void ifConditionForTabSizeTwoPDFIllustration() throws Exception {
 		System.out.println("Test case pass:As PDF illustration is working");
@@ -2012,6 +2035,24 @@ public class JourneyScreenTwo extends ReusableActions {
         driver.findElement(By.xpath("//span[contains(text(),\"Product Details\")]")).click();
 	}
 
+	public static void ifConditionForTabSizeTwoPDFIllustrationSelectingLifestyleScreen() throws Exception {
+		System.out.println("Test case pass:As PDF illustration is working");
+		String parent=driver.getWindowHandle();
+		Set<String>s1=driver.getWindowHandles();
+		Iterator<String> I1= s1.iterator();
+		while(I1.hasNext())
+		{
+		   String child_window=I1.next();
+		if(!parent.equals(child_window))
+		{
+		driver.switchTo().window(child_window);
+		System.out.println(driver.switchTo().window(child_window).getTitle());
+		driver.close();
+		}
+		}
+		driver.switchTo().window(parent);
+		Thread.sleep(7000);
+	}
 	
 
 
@@ -2062,7 +2103,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	
 	
 	
-	public static void excelReader() {
+	/*public static void excelReader() {
 	    String data;
 	    try {
 	        InputStream is = new FileInputStream("C:\\Users\\sp104\\Desktop\\browserstack_max\\browserstack_max\\src\\test\\resources\\MasterData.xlsx");
@@ -2096,7 +2137,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	    }
 	}
 	
-	
+	*/
 
 	public static ExpectedCondition<Boolean> waitForAjaCalls() {
 	        return new ExpectedCondition<Boolean>() {
@@ -2134,7 +2175,7 @@ public class JourneyScreenTwo extends ReusableActions {
 			 removeNulls(actualResult);
 			 System.out.println("Size of list of UI error msg   "+actualResult.size());
 			 System.out.println("List of UI error msg   "+actualResult);
-				File file = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\MasterData.xlsx");
+				File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
 	  			FileInputStream fileInputStream = new FileInputStream(file);
 	  			XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
 	  			XSSFSheet sheet = hssfWorkbook.getSheetAt(sheetNo);
@@ -2220,7 +2261,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	
 
 	public static boolean sumAssured() throws Exception {
-		File file = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\MasterData.xlsx");
+		File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
 		FileInputStream fileInputStream = new FileInputStream(file);
 		XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
 		XSSFSheet sheet = hssfWorkbook.getSheetAt(3);
@@ -2241,22 +2282,21 @@ public class JourneyScreenTwo extends ReusableActions {
 	public static void validatingErrorMsgForMIAP(XSSFSheet sheet, int rowNum) throws Exception {
 		
 		System.out.println("\n Going to pick run test cases for row number " + rowNum);
-		XSSFCell cellpremiumCommitment = sheet.getRow(rowNum).getCell(12);
+		XSSFCell cellAnnualIncome = sheet.getRow(rowNum).getCell(14);
+		String annualIncomelFromExcell = cellAnnualIncome.getStringCellValue();
+		
+		
+	/*	XSSFCell cellpremiumCommitment = sheet.getRow(rowNum).getCell(12);
 		String premiumCommitmentFromExcell = cellpremiumCommitment.getStringCellValue();
 		
 		XSSFCell celldesiredAnnualIncome = sheet.getRow(rowNum).getCell(13);
 		String desiredAnnualIncomeFromExcell = celldesiredAnnualIncome.getStringCellValue();
 		
-		XSSFCell cellAnnualIncome = sheet.getRow(rowNum).getCell(14);
-		String annualIncomelFromExcell = cellAnnualIncome.getStringCellValue();
-		
-		
-		
 		premiumCommitment.clear();
 		premiumCommitment.sendKeys(premiumCommitmentFromExcell);
 		
 		desiredAnnualIncome.clear();
-		desiredAnnualIncome.sendKeys(desiredAnnualIncomeFromExcell);
+		desiredAnnualIncome.sendKeys(desiredAnnualIncomeFromExcell);*/
 		
 		annualIncome.clear();
 		annualIncome.sendKeys(annualIncomelFromExcell);
@@ -2332,11 +2372,11 @@ public static void validatingErrorMsgForFTSP(XSSFSheet sheet, int rowNum) throws
 				+convertingInNumGrowthFundFromExcell;
 		
 		if(isElementDisplayed(totalPercentage)) {
-			if(totalPercentageCount>100) {
-			String totalPercentageErrorMsg=totalPercentage.getText();
-			System.out.println("Test case pass as Getting error message i.e"+totalPercentageErrorMsg);
+			if(totalPercentageCount==100) {
+			//String totalPercentageErrorMsg=totalPercentage.getText();
+			Assert.fail("Test case fail as Getting error message for sum 100");
 			}else {
-				Assert.fail("Error message is not displaying properly as total fund is"+""+totalPercentageCount+""+"which is less than 100");
+				System.out.println("Test case pass:Error message is displaying properly as total fund is"+""+totalPercentageCount+""+"which is less or more than 100");
 			}
 		}else {
 		JourneyScreenTwo.clickSubmitButton();
@@ -2373,7 +2413,7 @@ public static void validatingErrorMsgForFTSP(XSSFSheet sheet, int rowNum) throws
 	
 	
 	public static boolean premiumCommitmentDesiredAnnualIncomeAnnualIncome() throws Exception {
-		File file = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\MasterData.xlsx");
+		File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
 		FileInputStream fileInputStream = new FileInputStream(file);
 		XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
 		XSSFSheet sheet = hssfWorkbook.getSheetAt(3);
@@ -2388,7 +2428,7 @@ public static void validatingErrorMsgForFTSP(XSSFSheet sheet, int rowNum) throws
 	}
 
 	public static boolean premiumCommitmentWLS() throws Exception {
-		File file = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\MasterData.xlsx");
+		File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
 		FileInputStream fileInputStream = new FileInputStream(file);
 		XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
 		XSSFSheet sheet = hssfWorkbook.getSheetAt(3);
@@ -2404,7 +2444,7 @@ public static void validatingErrorMsgForFTSP(XSSFSheet sheet, int rowNum) throws
 
 	
 	public static boolean premiumCommitmentPremiumFundYes() throws Exception {
-		File file = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\MasterData.xlsx");
+		File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
 		FileInputStream fileInputStream = new FileInputStream(file);
 		XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
 		XSSFSheet sheet = hssfWorkbook.getSheetAt(8);
@@ -2419,7 +2459,7 @@ public static void validatingErrorMsgForFTSP(XSSFSheet sheet, int rowNum) throws
 	}
 
 	public static boolean bankDetailsFeildsValidation() throws Exception {
-		File file = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\MasterData.xlsx");
+		File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
 		FileInputStream fileInputStream = new FileInputStream(file);
 		XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
 		XSSFSheet sheet = hssfWorkbook.getSheetAt(4);
@@ -2473,8 +2513,8 @@ public static void validatingErrorMsgForFTSP(XSSFSheet sheet, int rowNum) throws
 	}
 		
 	
-	public static boolean premiumCommitmentSAP() throws Exception {
-		File file = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\MasterData.xlsx");
+	public static boolean premiumCommitmentSAPCheckingMultipleDataForErrorMessage() throws Exception {
+		File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
 		FileInputStream fileInputStream = new FileInputStream(file);
 		XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
 		XSSFSheet sheet = hssfWorkbook.getSheetAt(3);
@@ -2551,6 +2591,82 @@ public static void validatingErrorMsgForFTSP(XSSFSheet sheet, int rowNum) throws
 		
 	}
 	
+	
+	
+	public static void checkPOSVforSAPPremiumCommitment(int x,int y,int z) throws Exception {
+		
+		premiumCommitment.clear();
+		type(premiumCommitment, readingdata(x, y, z));
+		
+		
+		JourneyScreenTwo.clickSubmitButton();
+		 Thread.sleep(14000);
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		System.out.println(tabs.size());
+	
+		if (tabs.size() == 2) {
+			ifConditionForTabSizeTwoPDFIllustrationSelectingLifestyleScreen();	
+		} 
+		
+		else 
+		{
+			Assert.fail("Either PDF is not generating or Loading time is too much for SAP");
+			
+		}
+		
+	}
+	
+public static void checkPOSVforMIAPPremiumCommitment(int x,int y,int z) throws Exception {
+		premiumCommitment.clear();
+		type(premiumCommitment, readingdata(x, y, z));
+		
+	}
+
+public static void checkPOSVforMIAPDesiredAnnualIncome(int x,int y,int z) throws Exception {
+	desiredAnnualIncome.clear();
+	type(desiredAnnualIncome, readingdata(x, y, z));
+}
+
+
+public static void checkPOSVforMIAPAnnualIncome(int x,int y,int z) throws Exception {
+	Thread.sleep(300);
+	annualIncome.clear();
+	type(annualIncome, readingdata(x, y, z));
+	JourneyScreenTwo.clickSubmitButton();
+	 Thread.sleep(14000);
+	ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+	System.out.println(tabs.size());
+
+	if (tabs.size() == 2) {
+		ifConditionForTabSizeTwoPDFIllustrationSelectingLifestyleScreen();	
+	} 
+	
+	else 
+	{
+		Assert.fail("Either PDF is not generating or Loading time is too much for SAP");
+		
+	}
+	
+}
+	
+public static void checkPOSVforSAPLoop() throws Exception {
+		JourneyScreenTwo.clickSubmitButton();
+		 Thread.sleep(14000);
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		System.out.println(tabs.size());
+	
+		if (tabs.size() == 2) {
+			ifConditionForTabSizeTwoPDFIllustrationSelectingLifestyleScreen();	
+		} 
+		
+		else 
+		{
+			Assert.fail("Either PDF is not generating or Loading time is too much for SAP");
+			
+		}
+		
+	}
+	
 	// ------------------------------------------------------------------------------------------------------------
 
 	public static void premiumCommitment(int x, int y, int z) throws Exception {
@@ -2608,6 +2724,13 @@ public static void validatingErrorMsgForFTSP(XSSFSheet sheet, int rowNum) throws
 		type(annualIncome, readingdata(x, y, z));
 
 	}
+	
+	public static void proposerPersonalDetailsIncome(int x, int y, int z) throws Exception {
+		PageFactory.initElements(driver, JourneyScreenTwo.class);
+		proposerPersonalDetailsAnnualIncome.clear();
+		type(proposerPersonalDetailsAnnualIncome, readingdata(x, y, z));
+
+	}
 
 	public static void fillingAllTheRequiredFeildsToReachThirdScreen() throws Exception {
 		selectByDropdownNeedOfInsurance();
@@ -2662,9 +2785,10 @@ public static void validatingErrorMsgForFTSP(XSSFSheet sheet, int rowNum) throws
 		policyTermMIAP();
 		modeOfPaymentMIAP();
 		dividentOptionMIAP();
-		premiumCommitmentDesiredAnnualIncomeAnnualIncome();
-		
-		
+		Thread.sleep(500);
+	//	waitTillElementToBeClickable(POSVFlowForSAPMIAP.premiumCommitmentMIAPYesOptionSelection);
+		premiumCommitmentMIAPYesOptionSelection.click();
+		Thread.sleep(500);
 	}
 
 	public static void fillingAllTheRequiredFeildsForWLS() throws Exception {
@@ -2687,7 +2811,7 @@ public static void validatingErrorMsgForFTSP(XSSFSheet sheet, int rowNum) throws
 		modeOfPaymentSAP();
 		dividentOptionWLS();
 		WOPPlusRider();
-		premiumCommitmentSAP();
+		
 	}
 
 	public static void fillingAllTheRequiredFeildsForFTSP() throws Exception {
@@ -2695,6 +2819,7 @@ public static void validatingErrorMsgForFTSP(XSSFSheet sheet, int rowNum) throws
 		selectByDropdownLifeStge();
 		premiumPayementTermFTSP();
 		policyTermFTSP();
+		JourneyScreenThree.arrowDownFunctionToScrollDown();
 		modeOfPaymentFTSP();
 		dynamicFundAllocationNo();
 		systematicTransferPlanNo();

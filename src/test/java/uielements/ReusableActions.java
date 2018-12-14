@@ -1,17 +1,15 @@
 package uielements;
 
-	import static org.testng.Assert.fail;
-
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.io.File;
-	import java.io.FileInputStream;
-	import java.io.FileNotFoundException;
-	import java.io.IOException;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-	import java.util.Properties;
+import java.util.Properties;
 import java.util.regex.Pattern;
 
 import org.apache.poi.ss.usermodel.DataFormatter;
@@ -19,31 +17,28 @@ import org.apache.poi.ss.usermodel.FormulaEvaluator;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFFormulaEvaluator;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
-	import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-	import org.openqa.selenium.By;
-	import org.openqa.selenium.JavascriptExecutor;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
-	import org.openqa.selenium.TakesScreenshot;
-	import org.openqa.selenium.WebDriver;
-	import org.openqa.selenium.WebElement;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
-	import org.openqa.selenium.support.ui.ExpectedConditions;
-	import org.openqa.selenium.support.ui.Select;
-	import org.openqa.selenium.support.ui.Wait;
-	import org.openqa.selenium.support.ui.WebDriverWait;
-	import org.slf4j.Logger;
-	import org.slf4j.LoggerFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 
 import WebTest.JourneyScreenOneTest;
 import WebTest.JourneyScreenTwoTest;
-import jxl.Sheet;
-import jxl.Workbook;
 import ru.yandex.qatools.allure.annotations.Attachment;
-	import ru.yandex.qatools.allure.annotations.Step;
+import ru.yandex.qatools.allure.annotations.Step;
+import util.AppConstant;
 
 	public class ReusableActions {
 		
@@ -51,7 +46,7 @@ import ru.yandex.qatools.allure.annotations.Attachment;
 		public static WebDriver driver;
 		
 		
-		public static Logger logger = LoggerFactory.getLogger(loginpage.class);
+		public static Logger logger = LoggerFactory.getLogger(LoginPage.class);
 		public static Logger JourneyScreenOnelogger = LoggerFactory.getLogger(JourneyScreenOneTest.class);
 		public static Logger JourneyScreenTwologger = LoggerFactory.getLogger(JourneyScreenTwoTest.class);
 
@@ -86,7 +81,7 @@ import ru.yandex.qatools.allure.annotations.Attachment;
 				
 				public static Properties readProperties()
 				{
-					file = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\Input.properties");
+					file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.INPUT_PROPERTIES_EXCELL);
 					FileInputStream fileInput = null;
 
 					try {
@@ -186,7 +181,7 @@ import ru.yandex.qatools.allure.annotations.Attachment;
 		}
 		
 		public static String readingdata(int sheetno, int rownum, int colnum) throws Exception {
-			File file = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\MasterData.xlsx");
+			File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
 			FileInputStream fileInputStream = new FileInputStream(file);
 			XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
 			XSSFSheet sheet = hssfWorkbook.getSheetAt(sheetno);
@@ -199,7 +194,7 @@ import ru.yandex.qatools.allure.annotations.Attachment;
 		}
 
 		public static String readingdataTestData(int sheetno, int rownum, int colnum) throws Exception {
-			File file = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\TestData.xlsx");
+			File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.TEST_DATA_EXCELL);
 			FileInputStream fileInputStream = new FileInputStream(file);
 			XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
 			XSSFSheet sheet = hssfWorkbook.getSheetAt(sheetno);
@@ -282,7 +277,7 @@ import ru.yandex.qatools.allure.annotations.Attachment;
 				}
 				 System.out.println(actualResult.size());
 				 System.out.println(actualResult);
-					File file = new File(System.getProperty("user.dir") + "\\src\\test\\resources\\MasterData.xlsx");
+					File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
 		  			FileInputStream fileInputStream = new FileInputStream(file);
 		  			XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
 		  			XSSFSheet sheet = hssfWorkbook.getSheetAt(sheetNo);
@@ -409,6 +404,14 @@ import ru.yandex.qatools.allure.annotations.Attachment;
 				action.sendKeys(Keys.ESCAPE).build().perform();
 				Thread.sleep(1000);		
 			}
+		 
+		 public static void backSpaceFunction() throws Exception {
+			for(int i=1;i<=12;i++) {
+			 Actions action = new Actions(driver);
+				action.sendKeys(Keys.BACK_SPACE).build().perform();
+				Thread.sleep(1000);		
+		 }	
+		 }
 	
 		 public static void tabClose() throws Exception {
 		 Robot robot = new Robot();
@@ -432,8 +435,14 @@ import ru.yandex.qatools.allure.annotations.Attachment;
 			    driver.switchTo().window(originalHandle);
 		   }
 	
-	
-	
+	/*	 public static void testDatafForNameGenerator() {
+			    DataFactory df = new DataFactory();
+			    for (int i = 0; i < 200; i++) {          
+			        String name = df.getFirstName() + " "+ df.getLastName();
+			        System.out.println(name);
+			    }
+			  }
+	*/
 	
 	}
 

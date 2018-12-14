@@ -1,7 +1,5 @@
 package WebTest;
 
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
@@ -9,8 +7,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -19,18 +15,18 @@ import uielements.HomePage;
 import uielements.JourneyScreenOne;
 import uielements.JourneyScreenThree;
 import uielements.JourneyScreenTwo;
+import uielements.LoginPage;
 import uielements.ReusableActions;
-import uielements.loginpage;
-
 public class JourneyScreenOneTest extends ReusableActions{
 
 	@BeforeTest
+	
 	@Parameters(value = { "browser", "version", "platform","testrun"})
 	public void setUp(String browser, String version, String platform,String testrun) throws Exception {
 		String testRun= testrun;
 		/*String testRun1=testrun1;*/
-		if (testRun.equals("run"))
-			//if (testRun.equals("runbsw"))
+		//if (testRun.equals("run"))
+			if (testRun.equals("runbsw"))
 			{
 			
 			try {
@@ -57,12 +53,13 @@ public class JourneyScreenOneTest extends ReusableActions{
 		}
 			
 		else
-			if(testRun.equals("runfa"))
-			//if(testRun.equals("run")) {
+			//if(testRun.equals("runfa"))
+			if(testRun.equals("run")) 
 			// @BeforeClass
 			//public void launchBrowser() throws Exception{
 
 			try {
+				
 				//System.setProperty("webdriver.chrome.driver", "D:\\chromedriver_win32\\chromedriver.exe");
 				System.setProperty("webdriver.chrome.driver", "C:\\Matrix\\AutomationQA\\automationqa\\src\\test\\resources\\driver\\chromedriver.exe");
 				driver = new ChromeDriver();
@@ -82,19 +79,20 @@ public class JourneyScreenOneTest extends ReusableActions{
 				prop = ReusableActions.readProperties();
 
 			 	driver.get(prop.getProperty("SampleURL"));
-			 	loginpage.verifyloginpage();
+			 	LoginPage.verifyloginpage();
 			 			
 			 	// Maximizing the browser window
 			 	driver.manage().window().maximize();
 			 	driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 			 	logger.info("Fulfilment URL opened successfully");
 			 	
-			 	loginpage.logintest(prop.getProperty("username"), prop.getProperty("password"));
+			 	LoginPage.logintest(prop.getProperty("username"), prop.getProperty("password"));
 			 	logger.info("User logged in successfully");
 				HomePage.clickNewApp();
 				JourneyScreenOne.isIndianSelected();
 				JourneyScreenOne.isSelfSelected();
 				JourneyScreenOne.isProceedEnabled();
+				
 				
 				}
 			catch (Exception e) {
@@ -106,7 +104,7 @@ public class JourneyScreenOneTest extends ReusableActions{
 
 	//TC -02 Test case for positive value for saving the first screen data
 			@Test(priority = 1, enabled=false)
-		    public void ScreenOneTestIndian() throws Exception{
+		    public void ScreenOneTestIndianToScreenTwo() throws Exception{
 				try{
 					
 					JourneyScreenOne.setAadhar(1,1,0);
@@ -123,16 +121,34 @@ public class JourneyScreenOneTest extends ReusableActions{
 			 		}
 		        }	
 			
+			@Test(priority = 1, enabled=true)
+		    public void ScreenOneTestIndianMultipleData() throws Exception{
+				try{
+					
+					//JourneyScreenOne.checkAdhaarErrorMsgMultipleData();
+					JourneyScreenOne.checkPANErrorMsgWithMultipleData();
+					JourneyScreenOne.checkPhoneNumberErrorMsgWithMultipleData();
+					JourneyScreenOne.checkEmailErrorMsgWithMultipleData();
+					JourneyScreenOne.setPreIssuanceNumber(1,1,4);
+					JourneyScreenOne.clickProceed();
+					
+				 	}
+				catch (Exception e) {
+					logger.error("Test case failed: " + e.getMessage());
+					throw e;
+			 		}
+		        }	
+			
 			
 			//TC -02 Test case for positive value for saving the first screen data
-			@Test(priority = 2, enabled=true)
+			@Test(priority = 2, enabled=false)
 		    public void ScreenOneTestNRI() throws Exception{
 				try{
 					HomePage.clickDashboard();
 					HomePage.clickNewApp();
 					JourneyScreenOne.optionNRI();
 					JourneyScreenOne.setPassportNumber(1,1,5);
-					JourneyScreenOne.isAllTheTypeOfVisaListIsPresent();
+				    JourneyScreenOne.isAllTheTypeOfVisaListIsPresent();
 					JourneyScreenThree.visaValidTill();
 					JourneyScreenOne.passportIssuingCountry(1, 1, 6);
 					JourneyScreenOne.checkAdhaarErrorMsgMultipleData();

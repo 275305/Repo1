@@ -15,7 +15,7 @@
 
 		</classes>
 	</test> <!-- Test -->
-	
+
 	<!-- IE Browser -->
 	<test name="Parallel Test on IE 11 -Windows">
 		<parameter name="browser" value="IE" />
@@ -30,91 +30,91 @@
 
 		</classes>
 	</test> <!-- Test -->
-          <!-- Firefox browsers -->
+	<!-- Firefox browsers -->
 	<test name="Parallel Test on firefox 55 -Windows">
 		<parameter name="browser" value="firefox" />
 		<parameter name="version" value="53.0" />
 		<parameter name="platform" value="WINDOWS" />
 		<parameter name="testrun" value="runbsw" />
-		
+
 		<classes>
 
 			<class name="WebTest.LoginTest" />
 
 		</classes>
 	</test> <!-- Test -->
-	
+
 	<test name="Parallel Test on firefox 56 -Windows">
 		<parameter name="browser" value="firefox" />
 		<parameter name="version" value="53.0" />
 		<parameter name="platform" value="WINDOWS" />
 		<parameter name="testrun" value="runbsw" />
-		
+
 		<classes>
 
 			<class name="WebTest.LoginTest" />
 
 		</classes>
 	</test> <!-- Test -->
-	
+
 	<test name="Parallel Test on firefox 57 -Windows">
 		<parameter name="browser" value="firefox" />
 		<parameter name="version" value="53.0" />
 		<parameter name="platform" value="WINDOWS" />
 		<parameter name="testrun" value="runbsw" />
-		
+
 		<classes>
 
 			<class name="WebTest.LoginTest" />
 
 		</classes>
 	</test> <!-- Test -->
-	
+
 	<test name="Parallel Test on firefox 58 -Windows">
 		<parameter name="browser" value="firefox" />
 		<parameter name="version" value="53.0" />
 		<parameter name="platform" value="WINDOWS" />
 		<parameter name="testrun" value="runbsw" />
-		
+
 		<classes>
 
 			<class name="WebTest.LoginTest" />
 
 		</classes>
 	</test> <!-- Test -->
-	
+
 	<test name="Parallel Test on firefox 59 -Windows">
 		<parameter name="browser" value="firefox" />
 		<parameter name="version" value="53.0" />
 		<parameter name="platform" value="WINDOWS" />
 		<parameter name="testrun" value="runbsw" />
-		
+
 		<classes>
 
 			<class name="WebTest.LoginTest" />
 
 		</classes>
 	</test> <!-- Test -->
-	
+
 	<test name="Parallel Test on firefox 60 -Windows">
 		<parameter name="browser" value="firefox" />
 		<parameter name="version" value="53.0" />
 		<parameter name="platform" value="WINDOWS" />
 		<parameter name="testrun" value="runbsw" />
-		
+
 		<classes>
 
 			<class name="WebTest.LoginTest" />
 
 		</classes>
 	</test> <!-- Test -->
-	
+
 	<test name="Parallel Test on firefox 61 -Windows">
 		<parameter name="browser" value="firefox" />
 		<parameter name="version" value="53.0" />
 		<parameter name="platform" value="WINDOWS" />
 		<parameter name="testrun" value="runbsw" />
-		
+
 		<classes>
 
 			<class name="WebTest.LoginTest" />

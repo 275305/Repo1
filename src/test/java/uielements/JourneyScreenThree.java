@@ -1,57 +1,33 @@
 package uielements;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.fail;
 
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
-import java.io.File;
-import java.io.FileInputStream;
-import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-import java.util.TimeZone;
-import java.util.concurrent.TimeUnit;
 
-import javax.swing.text.Element;
-
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import WebTest.JourneyScreenThreeTest;
-import uielements.ReusableActions;
-
-import ch.qos.logback.classic.Logger;
-import jxl.Sheet;
-import jxl.Workbook;
-import net.bytebuddy.asm.Advice.Return;
+import util.AppConstant;
 
 public class JourneyScreenThree extends ReusableActions{
     
     
-    private static final String Webelement = null;
+  //  private static final String Webelement = null;
 
 	    
  // Initializing the Objects
@@ -63,6 +39,12 @@ public class JourneyScreenThree extends ReusableActions{
  // Locating Indian Nationality radio Button
     @FindBy(xpath="//label[text()='No']")
 	public static WebElement payorDetailsNo;
+    
+    @FindBy(xpath="//h2[(text()='Proceed to send Pre Issuance Verification Link to customer?')]")
+   	public static WebElement proceedToSendPreInsuranceVerificationLinkToCustomerLabel;
+    
+    @FindBy(xpath="//input[@placeholder='DD/MM/YYYY']")
+	public static WebElement identityProofExpiryDate;
     
     @FindBy(xpath="//span[text()='Proceed']")
 	public static WebElement Proceedbtn;
@@ -81,6 +63,9 @@ public class JourneyScreenThree extends ReusableActions{
     
     @FindBy(xpath="//input[@name='eiAccountNo']")
    	public static WebElement enterEIANo;
+    
+    @FindBy(xpath="//span [(text()=\"Section 139A : Neither my income of any other person in respect of which I am assessable under the act was in excess of the maximum amount not chargeable to income tax in any previous year.\")]")
+   	public static WebElement isChargeableIncome;
     
     @FindBy(xpath=".//*[@id='root']/main/div[2]/form/div/div/div[3]")
    	public static WebElement outsideClickScreenFour;
@@ -116,6 +101,9 @@ public class JourneyScreenThree extends ReusableActions{
     @FindBy(xpath=".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[4]/div[2]/div/div/div/div/div[4]/div[1]/div/div[1]/div/div/div/div/div[@role=\"button\"]")
    	public static WebElement feetDropDown;
     
+    @FindBy(xpath=".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[4]/div[2]/div/div/div/div/div[5]/div[1]/div/div[1]/div/div/div/div/div[@role=\"button\"]")
+   	public static WebElement feetDropDownSAPPOSV;
+    
     @FindBy(xpath="//*[@id='menu-feet']/div[2]/ul/li[1]")
    	public static WebElement feetDropDown1stOption;
     
@@ -123,9 +111,14 @@ public class JourneyScreenThree extends ReusableActions{
    	public static WebElement inchesDropDown1stOption;
     
     
-    @FindBy(xpath=".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[4]/div[2]/div/div/div/div/div[4]/div[1]/div/div[2]/div/div/div/div/div[@role=\"button\"]")
+    @FindBy(xpath=".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[4]/div[2]/div/div/div/div/div[5]/div[1]/div/div[2]/div/div/div/div/div[@role=\"button\"]")
    	public static WebElement inchesDropDown;
     
+    @FindBy(xpath=".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[4]/div[2]/div/div/div/div/div[5]/div[1]/div/div[2]/div/div/div/div/div[@role=\"button\"]")
+   	public static WebElement inchesDropDownSAPPOSV;
+    
+    @FindBy(xpath="//label[(text()=\"I am Exempt from the requirement of PAN under the following provisions of the IT Act 1961\")]")
+   	public static WebElement iAmExemptFromTheRequirementOfPANUnderTheFollowingProvisionsOfTheITAct1961;
     
     @FindBy(xpath="//label[contains(@for, 'HazardousActivitiesNo')]")
    	public static WebElement hazardousActivitiesNo;
@@ -153,6 +146,9 @@ public class JourneyScreenThree extends ReusableActions{
     
     @FindBy(xpath="//input[@name='weight']")
    	public static WebElement kgsTextBox;
+    
+    @FindBy(xpath="//button[2]/span[(text()='Proceed')]")
+   	public static WebElement agreePopup;
     
     
     @FindBy(xpath=".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[2]/div[2]/div/div/div/div/div[@role=\"button\"]")
@@ -201,7 +197,7 @@ public class JourneyScreenThree extends ReusableActions{
     @FindBy(xpath=".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[7]/div/div/div/div/div/div[@role=\"button\"]")
     public static WebElement relationshipPayorWithProposer;
     
-    @FindBy(xpath="//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[3]/div[2]/div/div/div/div/div[@role=\"button\"]")
+    @FindBy(xpath=".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div[2]/div/div/div/div/div[@role=\"button\"]")
     public static WebElement relationshipWithNominee;
     
     @FindBy(xpath="//*[@id='menu-relationshipWithNominee']/div[2]/ul/li")
@@ -1060,7 +1056,7 @@ public class JourneyScreenThree extends ReusableActions{
 	 waitTillElementToBeClickable(identityProofOption);
 	 Thread.sleep(200);
 	String xIdentityProofOption=".//*[@id='menu-identityProof']/div[2]/ul/li";
-	String sheetPath="\\src\\test\\resources\\TestData.xlsx";
+	String sheetPath=AppConstant.TEST_DATA_EXCELL;
 	comparingExcelDataWithUIBySheetPath(xIdentityProofOption,0,4,sheetPath);
 	identityProofOption.click();
 	 
@@ -1158,21 +1154,32 @@ public class JourneyScreenThree extends ReusableActions{
 		 waitTillElementToBeClickable(selectDropDownForToWhatExtentYouAreInvolvedInForHazardousYes1stOption);
 		 Thread.sleep(200);
 		 String xpathOFList=".//*[@id='menu-involvementExtend']/div[2]/ul/li";
-		 String sheetPath="\\src\\test\\resources\\TestData.xlsx";
+		 String sheetPath=AppConstant.TEST_DATA_EXCELL;
 		 comparingExcelDataWithUIBySheetPath(xpathOFList, 1, 0, sheetPath);
 		 selectDropDownForToWhatExtentYouAreInvolvedInForHazardousYes1stOption.click();
 		 Thread.sleep(200);
 		 hazardousActivitiesNo.click();
 		 
-		 
-		
 			}
  
  public static void selectCriminalChargesNo() throws Exception {
 		Thread.sleep(200);
 		criminalChargesNo.click();	
 		Thread.sleep(200);
-		 
+			}
+ 
+ 
+ public static void hazardousActivitiesNo() throws Exception {
+		Thread.sleep(200);
+		hazardousActivitiesNo.click();	
+		Thread.sleep(200);
+			}
+ 
+ public static void criticalIllnessNoOption() throws Exception {
+		Thread.sleep(200);
+		criticalIllnessNoOption.click();	
+		Thread.sleep(200);
+		
 		 
 		 
 			}
@@ -1185,8 +1192,8 @@ public class JourneyScreenThree extends ReusableActions{
 	 Thread.sleep(300);
 	 feetDropDown1stOption.click();
 	 Thread.sleep(300);
-	 waitTillElementToBeClickable(inchesDropDown);
-	 inchesDropDown.click();
+	 waitTillElementToBeClickable(inchesDropDownSAPPOSV);
+	 inchesDropDownSAPPOSV.click();
 	 Thread.sleep(300);
 	 waitTillElementToBeClickable(inchesDropDown1stOption);
 	 inchesDropDown1stOption.click();
@@ -1195,9 +1202,31 @@ public class JourneyScreenThree extends ReusableActions{
 	 Thread.sleep(300);
 	 outsideClickScreenFour.click();
 	 Thread.sleep(300);
-	// Proceedbtn.click();
+	 Proceedbtn.click();
 	 
 			}
+ 
+ public static void feetInchesKgsSelectionToMoveToScreen5POSV() throws Exception {
+		Thread.sleep(300);
+		waitTillElementVisible(feetDropDownSAPPOSV);
+		feetDropDownSAPPOSV.click();
+		 waitTillElementToBeClickable(feetDropDown1stOption);
+		 Thread.sleep(300);
+		 feetDropDown1stOption.click();
+		 Thread.sleep(600);
+		 waitTillElementToBeClickable(inchesDropDown);
+		 inchesDropDown.click();
+		 Thread.sleep(600);
+		 waitTillElementToBeClickable(inchesDropDown1stOption);
+		 inchesDropDown1stOption.click();
+		 Thread.sleep(300);
+		 setKgsForLifestyle(1,1,1);
+		 Thread.sleep(300);
+		 outsideClickScreenFour.click();
+		 Thread.sleep(300);
+		 Proceedbtn.click();
+		 
+				}
 
  public static void setKgsForLifestyle(int x, int y, int z) throws Exception {
 	 kgsTextBox.clear();
@@ -1205,15 +1234,40 @@ public class JourneyScreenThree extends ReusableActions{
 					
 	   }
  
- public static void identityProofIssuingAuthority() throws Exception {
+ public static void agreePopupToProceedToSendPreIssuranceVerificationLinkToCustomer() throws Exception {
+	// driver.switchTo().defaultContent();
+     // driver.switchTo().alert();
+	Thread.sleep(500);
+	waitTillElementToBeClickable(proceedToSendPreInsuranceVerificationLinkToCustomerLabel);
+	proceedToSendPreInsuranceVerificationLinkToCustomerLabel.isDisplayed();
+	waitTillElementToBeClickable(agreePopup);
+	System.out.println(agreePopup.isDisplayed());
+    Thread.sleep(500);
+     agreePopup.click();
+	 Thread.sleep(500);
+
+					
+	   }
+ 
+ public static void identityProofIssuingAuthorityWithoutValidation() throws Exception {
 	 Thread.sleep(200);
 	 waitTillElementToBeClickable(identityProofIssuingAuthority);
 	 identityProofIssuingAuthority.click();
 	 waitTillElementToBeClickable(uniqueIdentificationAuthorityOfIndia);
 	 Thread.sleep(200);
 	String xIdentityProofOption=".//*[@id='menu-identityProofIssuingAuthority']/div[2]/ul/li";
-	String sheetPath="\\src\\test\\resources\\TestData.xlsx";
+	String sheetPath=AppConstant.TEST_DATA_EXCELL;
 	comparingExcelDataWithUIBySheetPath(xIdentityProofOption,0,5,sheetPath);
+	uniqueIdentificationAuthorityOfIndia.click();
+	 
+	}
+ 
+ public static void identityProofIssuingAuthority() throws Exception {
+	 Thread.sleep(200);
+	 waitTillElementToBeClickable(identityProofIssuingAuthority);
+	 identityProofIssuingAuthority.click();
+	 waitTillElementToBeClickable(uniqueIdentificationAuthorityOfIndia);
+	 Thread.sleep(200);
 	uniqueIdentificationAuthorityOfIndia.click();
 	 
 	}
@@ -1373,7 +1427,7 @@ public class JourneyScreenThree extends ReusableActions{
 	Thread.sleep(200);
 	waitTillElementToBeClickable(relationshipPayorWithProposer);
 	 relationshipPayorWithProposer.click();
-	String sheetpath="\\src\\test\\resources\\TestData.xlsx";
+	String sheetpath=AppConstant.TEST_DATA_EXCELL;
 	String xRelationshipWithProposer=".//*[@id='menu-payorRelationship']/div[2]/ul/li";
 	comparingExcelDataWithUIBySheetPath(xRelationshipWithProposer, 0, 9, sheetpath);
    Thread.sleep(200);
@@ -1434,7 +1488,7 @@ public class JourneyScreenThree extends ReusableActions{
 		selectPreferredInsuranceRepositoryThatYouWouldLikeToHaveEIAWith.click();
 		waitTillElementToBeClickable(select1stOptionPreferredInsuranceRepositoryThatYouWouldLikeToHaveEIAWith);
 		Thread.sleep(200);
-		String filePath="\\src\\test\\resources\\TestData.xlsx";
+		String filePath=AppConstant.TEST_DATA_EXCELL;
 		String xpathSelectPreferredInsuranceRepositoryThatYouWouldLikeToHaveEIAWith=".//*[@id='menu-preferredInsurance']/div[2]/ul/li";
 		comparingExcelDataWithUIBySheetPath(xpathSelectPreferredInsuranceRepositoryThatYouWouldLikeToHaveEIAWith, 0, 10, filePath);
 		Thread.sleep(200);
@@ -1477,8 +1531,8 @@ public class JourneyScreenThree extends ReusableActions{
 	   }
  
  public static void dateOfBirthSelctionFunction() throws Exception{
- 	    Thread.sleep(200);
- 		driver.findElement(By.xpath(".//*[@class='react-datepicker__year-select']")).click();
+ 	    Thread.sleep(500);
+ 		driver.findElement(By.xpath("//select[@class='react-datepicker__year-select']")).click();
  		Thread.sleep(200);
  		driver.findElement(By.xpath(".//*[@class='react-datepicker__year-select']/option[@value='1991']")).click();
  		Thread.sleep(200);
@@ -1488,6 +1542,16 @@ public class JourneyScreenThree extends ReusableActions{
 	   }
 
  
+ public static void identityProofExpiryDateOfBirth() throws Exception{
+	    Thread.sleep(500);
+		driver.findElement(By.xpath("//select[@class='react-datepicker__year-select']")).click();
+		Thread.sleep(200);
+		driver.findElement(By.xpath(".//*[@class='react-datepicker__year-select']/option[@value='2021']")).click();
+		Thread.sleep(200);
+		driver.findElement(By.xpath("//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\"day-22\"]")).click();
+		Thread.sleep(200);
+	    
+	   }
  
  public static void setDateBirthdateOfApplicationWithoutValidation() throws Exception{
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
@@ -1619,6 +1683,23 @@ public class JourneyScreenThree extends ReusableActions{
 		type(identityProofNumber, readingdataTestData(x, y, z));
 		
 	}
+ 
+ 
+ public static void identityProofExpiryDate() throws Exception {
+		Thread.sleep(200);
+		identityProofExpiryDate.click();
+		identityProofExpiryDateOfBirth();	
+	}
+ 
+ public static void iAmExemptFromTheRequirementOfPANUnderTheFollowingProvisionsOfTheITAct1961() throws Exception {
+		Thread.sleep(200);
+		iAmExemptFromTheRequirementOfPANUnderTheFollowingProvisionsOfTheITAct1961.click();
+		arrowDownFunctionToScrollDown();
+        waitTillElementToBeClickable(isChargeableIncome);
+        Thread.sleep(200);
+        isChargeableIncome.click();
+        Thread.sleep(200);
+ }
 		
 		
 		      
