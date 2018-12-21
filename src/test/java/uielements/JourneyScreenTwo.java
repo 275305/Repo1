@@ -2435,7 +2435,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		selectByDropdownLifeStge();
 		premiumPayementTermFTSP();
 		policyTermFTSP();
-		JourneyScreenThree.arrowDownFunctionToScrollDown();
+		JourneyScreenFour.arrowDownFunctionToScrollDown();
 		modeOfPaymentFTSP();
 		dynamicFundAllocationNo();
 		systematicTransferPlanNo();

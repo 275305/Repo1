@@ -8,5 +8,6 @@
 		<suite-file path="JourneyScreenTwo.xml" />
 		<suite-file path="JourneyScreenThree.xml" />
         <suite-file path="POSVFlowForSAPMIAP.xml" />
+        <suite-file path="JourneyScreenFour.xml" />
 	</suite-files>
 </suite>

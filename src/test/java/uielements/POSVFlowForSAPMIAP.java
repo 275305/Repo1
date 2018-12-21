@@ -601,20 +601,22 @@ public class POSVFlowForSAPMIAP extends ReusableActions{
 		JourneyScreenThreeTest.bankDetailsSectionFillingData();
 		JourneyScreenThree.fillingAnnualIncomeTOProceed(0, 1, 3);
 		Thread.sleep(1000);
-		JourneyScreenThree.form60RelatedDetailsIdentityProofNameOptionSelection();
-		JourneyScreenThree.setIdentityProofNumberValidation(0,1,6);
-		JourneyScreenThree.identityProofIssuingAuthority();
-		JourneyScreenThree.iAmExemptFromTheRequirementOfPANUnderTheFollowingProvisionsOfTheITAct1961();
+		JourneyScreenFour.form60RelatedDetailsIdentityProofNameOptionSelection();
+		JourneyScreenFour.setIdentityProofNumberValidation(0, 1, 6);
+		JourneyScreenFour.identityProofIssuingAuthority();
+		JourneyScreenFour.iAmExemptFromTheRequirementOfPANUnderTheFollowingProvisionsOfTheITAct1961();
 		
-		JourneyScreenThree.arrowDownFunctionToScrollDownTillBottom();
-		JourneyScreenThree.criticalIllnessNoOption();
-		JourneyScreenThree.hazardousActivitiesNo();
-		JourneyScreenThree.selectCriminalChargesNo();
-		JourneyScreenThree.feetInchesKgsSelectionToMoveToScreen5POSV();
+		JourneyScreenFour.arrowDownFunctionToScrollDownTillBottom();
+		JourneyScreenFour.criticalIllnessNoOption();
+		JourneyScreenFour.hazardousActivitiesNo();
+		JourneyScreenFour.selectCriminalChargesNo();
+		JourneyScreenFour.feetInchesKgsSelectionToMoveToScreen5POSV();
 		JourneyScreenThree.agreePopupToProceedToSendPreIssuranceVerificationLinkToCustomer();
  		
  	}
    
+     
+
      public static boolean posvForMIAPMultipleFirstNameTest() throws Exception {
     	 PageFactory.initElements(driver, POSVFlowForSAPMIAP.class);
     	File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
@@ -659,16 +661,16 @@ public class POSVFlowForSAPMIAP extends ReusableActions{
  		JourneyScreenThreeTest.bankDetailsSectionFillingData();
 		JourneyScreenThree.fillingAnnualIncomeTOProceed(0, 1, 3);
  		Thread.sleep(1000);
- 		JourneyScreenThree.form60RelatedDetailsIdentityProofNameOptionSelection();
- 		JourneyScreenThree.setIdentityProofNumberValidation(0,1,6);
- 		JourneyScreenThree.identityProofIssuingAuthority();
- 		JourneyScreenThree.iAmExemptFromTheRequirementOfPANUnderTheFollowingProvisionsOfTheITAct1961();
+		JourneyScreenFour.form60RelatedDetailsIdentityProofNameOptionSelection();
+		JourneyScreenFour.setIdentityProofNumberValidation(0, 1, 6);
+		JourneyScreenFour.identityProofIssuingAuthority();
+		JourneyScreenFour.iAmExemptFromTheRequirementOfPANUnderTheFollowingProvisionsOfTheITAct1961();
  		
- 		JourneyScreenThree.arrowDownFunctionToScrollDownTillBottom();
- 		JourneyScreenThree.criticalIllnessNoOption();
- 		JourneyScreenThree.hazardousActivitiesNo();
- 		JourneyScreenThree.selectCriminalChargesNo();
- 		JourneyScreenThree.feetInchesKgsSelectionToMoveToScreen5POSV();
+		JourneyScreenFour.arrowDownFunctionToScrollDownTillBottom();
+		JourneyScreenFour.criticalIllnessNoOption();
+		JourneyScreenFour.hazardousActivitiesNo();
+		JourneyScreenFour.selectCriminalChargesNo();
+		JourneyScreenFour.feetInchesKgsSelectionToMoveToScreen5POSV();
  		JourneyScreenThree.agreePopupToProceedToSendPreIssuranceVerificationLinkToCustomer();
   		
   	}

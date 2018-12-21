@@ -12,6 +12,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import uielements.HomePage;
+import uielements.JourneyScreenFour;
 import uielements.JourneyScreenOne;
 import uielements.JourneyScreenThree;
 import uielements.JourneyScreenTwo;
@@ -448,7 +449,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 
 	
 	
-	public void personalDetailsbankDetailsScreenThreeReachingFunction() throws Exception {
+	public static void personalDetailsbankDetailsScreenThreeReachingFunction() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
 			alwaysCloseAllChildTabs();
@@ -619,7 +620,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 	}
 	
 	
-	public void reachingScreenFourFillingAnnualIncomeFunction() throws Exception
+	public static void reachingScreenFourFillingAnnualIncomeFunction() throws Exception
 
 	{
 		try {
@@ -637,21 +638,17 @@ public class JourneyScreenThreeTest extends ReusableActions {
 
 	}
 	
-	@Test(priority = 6, enabled = false)
-	public void reachingScreenFourFillingAnnualIncomeform60RelatedDetailsFeilds() throws Exception
+	@Test(priority = 19, enabled = false)
+	public void EIAScreeenFourValidation() throws Exception
 
 	{
 		try {
-			reachingScreenFourFillingAnnualIncomeFunction();
-			JourneyScreenThree.form60RelatedDetailsFeildsIsPresent();
-			JourneyScreenThree.form60RelatedDetailsIdentityProofNameDropDownValidation();
-			JourneyScreenThree.identityProofNumberValidation(0,1,6);
-			JourneyScreenThree.identityProofIssuingAuthority();
-			JourneyScreenThree.idontHavePANNumberAsIhaveAppliedForPANAcknowledgementSelectFeildsValidation();
-			JourneyScreenThree.fillPanApplicationAcknowledgeNo();
-			JourneyScreenThree.setDateBirthdateOfApplication(1,1,9);
-			JourneyScreenThree.iAmExemptFromRequirementOfPANUnderFollowingProvisionsSelectFeildsValidation();
-			
+			JourneyScreenThreeTest.fillingPersonalDetailsFunction();
+			JourneyScreenThree.EIAYesOptionSelectionFeildsPresent();
+			JourneyScreenThree.providentExistingEInsuranceAccountNumberFeildsValidation();
+			JourneyScreenThree.openNewEInsuranceAccountNumberFeildValidation();
+			JourneyScreenThree.politicallypowerNoClick();
+
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
 			throw e;
@@ -659,20 +656,17 @@ public class JourneyScreenThreeTest extends ReusableActions {
 		}
 
 	}
-	
-	
-	
-	public void fillingPersonalDetailsFunction() throws Exception
+	public static void fillingPersonalDetailsFunction() throws Exception
 
 	{
 		try {
-			reachingScreenFourFillingAnnualIncomeFunction();
-			JourneyScreenThree.form60RelatedDetailsIdentityProofNameOptionSelection();
-			JourneyScreenThree.setIdentityProofNumberValidation(0,1,6);
-			JourneyScreenThree.identityProofIssuingAuthorityOptionSelection();
-			//JourneyScreenThree.fillPanApplicationAcknowledgeNowWithoutValidation();
-			//JourneyScreenThree.setDateBirthdateOfApplicationWithoutValidation(1,1,9);
-			
+			JourneyScreenThreeTest.reachingScreenFourFillingAnnualIncomeFunction();
+			JourneyScreenFour.form60RelatedDetailsIdentityProofNameOptionSelection();
+			JourneyScreenFour.setIdentityProofNumberValidation(0, 1, 6);
+			JourneyScreenFour.identityProofIssuingAuthorityOptionSelection();
+			// JourneyScreenThree.fillPanApplicationAcknowledgeNowWithoutValidation();
+			// JourneyScreenThree.setDateBirthdateOfApplicationWithoutValidation(1,1,9);
+
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
 			throw e;
@@ -689,20 +683,17 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			fillingPersonalDetailsFunction();
 			JourneyScreenThree.payorDetailsFeildsIsPresent();
 			JourneyScreenThree.payorDetailsYesOptionSelectedCheckFeilds();
-			JourneyScreenThree.payorDetailsYesOptionSelectedFeildsValidation(3,1,0);
-			JourneyScreenThree.setDateBirthPayorDetails(1,1,9);
+			JourneyScreenThree.payorDetailsYesOptionSelectedFeildsValidation(3, 1, 0);
+			JourneyScreenThree.setDateBirthPayorDetails(1, 1, 9);
 			JourneyScreenThree.maleOptionSelectedByDefaultPayorDetails();
-			JourneyScreenThree.adressPayorDetailsCheckValidation(3,1,3);
+			JourneyScreenThree.adressPayorDetailsCheckValidation(3, 1, 3);
 			JourneyScreenThree.setState(3, 1, 7);
 			JourneyScreenThree.annualIncome(0, 1, 8);
-			JourneyScreenThree.payorAadhaarWhenYesOptionSelected(1,1,0);
+			JourneyScreenThree.payorAadhaarWhenYesOptionSelected(1, 1, 0);
 			JourneyScreenThree.dontHavePANPayorDetails();
 			JourneyScreenThree.relationshipPayorWithProposerPayorDetailsDropDownValidation();
 			JourneyScreenThree.isPayorDifferentFromProposerNo();
-			
-			
-			
-			
+
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
 			throw e;
@@ -711,51 +702,11 @@ public class JourneyScreenThreeTest extends ReusableActions {
 	
 	}
 	
-	@Test(priority = 19, enabled = false)
-	public void EIAScreeenFourValidation() throws Exception
-
-	{
-		try {
-			fillingPersonalDetailsFunction();
-			JourneyScreenThree.EIAYesOptionSelectionFeildsPresent();
-			JourneyScreenThree.providentExistingEInsuranceAccountNumberFeildsValidation();
-			JourneyScreenThree.openNewEInsuranceAccountNumberFeildValidation();
-			JourneyScreenThree.politicallypowerNoClick();
-			
-		} catch (Exception e) {
-			logger.error("Test case failed " + e.getMessage());
-			throw e;
-
-		}
 	
-	}
 
-	@Test(priority = 20, enabled = false)
-	public void lifeStyleScreeenFourValidation() throws Exception
-
-	{
-		try {
-			fillingPersonalDetailsFunction();
-			JourneyScreenThree.arrowDownFunctionToScrollDown();
-		//	JourneyScreenThree.lifestyleFeildsValidation();
-		//	JourneyScreenThree.lifestyleFeildsValidationForYes();
-		//	JourneyScreenThree.FeildsValidationHazardousForYes();
-			JourneyScreenThree.selectCriminalChargesNo();
-			JourneyScreenThree.feetInchesKgsSelectionToMoveToScreen5();
-			JourneyScreenThree.arrowUpFunctionToScrollUpTillTop();
-			JourneyScreenThree.idontHavePANNumberAsIhaveAppliedForPANAcknowledgementSelectOption();
-			JourneyScreenThree.fillPanApplicationAcknowledgeNowWithoutValidation();
-			JourneyScreenThree.setDateBirthdateOfApplicationWithoutValidation();
-			JourneyScreenThree.arrowDownFunctionToScrollDownTillBottom();
-			
-			
-		} catch (Exception e) {
-			logger.error("Test case failed " + e.getMessage());
-			throw e;
-
-		}
 	
-	}
+	
+	
 
 	
 	@Test(priority = 3, enabled = false)
