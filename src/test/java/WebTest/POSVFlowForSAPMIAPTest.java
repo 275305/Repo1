@@ -22,8 +22,8 @@ public class POSVFlowForSAPMIAPTest extends ReusableActions {
 	public void setUp(String browser, String version, String platform,String testrun) throws Exception {
 		String testRun= testrun;
 		/*String testRun1=testrun1;*/
-			//if (testRun.equals("run"))
-				if (testRun.equals("runbsw")) 
+		// if (testRun.equals("run"))
+		if (testRun.equals("runbsw"))
 			{
 			
 			try {
@@ -50,8 +50,8 @@ public class POSVFlowForSAPMIAPTest extends ReusableActions {
 		}
 			
 		else 
-			//if(testRun.equals("runfa")) 
-				if(testRun.equals("run"))
+		// if (testRun.equals("runfa"))
+		if (testRun.equals("run"))
 			{
 			// @BeforeClass
 			//public void launchBrowser() throws Exception{

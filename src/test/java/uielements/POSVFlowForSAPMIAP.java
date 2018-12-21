@@ -2,6 +2,7 @@ package uielements;
 
 import java.io.File;
 import java.io.FileInputStream;
+
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -17,6 +18,7 @@ import org.sikuli.script.Screen;
 import org.testng.Assert;
 
 import WebTest.JourneyScreenThreeTest;
+import WebTest.JourneyScreenTwoTest;
 import util.AppConstant;
 
 public class POSVFlowForSAPMIAP extends ReusableActions{
@@ -268,6 +270,8 @@ public class POSVFlowForSAPMIAP extends ReusableActions{
     @FindBy(xpath="//label/span/img[contains(@src,'data:image/png;')]")
     public static WebElement aadhaarOcr;
     
+	@FindBy(xpath = "//input[@name='companyName']")
+	public static WebElement companyNameProposerPersonalDetails;
    
     
     
@@ -431,6 +435,7 @@ public class POSVFlowForSAPMIAP extends ReusableActions{
 		}
         
         
+
         public static void clickDontHavePan() throws Exception {
 
             click(DontHavePanlink);
@@ -584,7 +589,7 @@ public class POSVFlowForSAPMIAP extends ReusableActions{
 		String firstNameFromExcel = cellRep.getStringCellValue();
 		firtsName.clear();
  		firtsName.sendKeys(firstNameFromExcel);
- 		JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2WithoutFirstName();
+		JourneyScreenTwoTest.fillingAllTheRequiredFeildForScreen2WithoutFirstName();
  		JourneyScreenTwo.traditional();
 		JourneyScreenTwo.selectByDropdownSAP();
 		JourneyScreenTwo.fillingAllTheRequiredFeildsForSAP();
@@ -594,7 +599,7 @@ public class POSVFlowForSAPMIAP extends ReusableActions{
 		JourneyScreenTwo.proposerPersonalDetailsIncome(9,1,10);
 		JourneyScreenThreeTest.nomineeDetailsWithoutDependentSelection();
 		JourneyScreenThreeTest.bankDetailsSectionFillingData();
-		JourneyScreenOne.fillingAnnualIncomeTOProceed(0,1,3);
+		JourneyScreenThree.fillingAnnualIncomeTOProceed(0, 1, 3);
 		Thread.sleep(1000);
 		JourneyScreenThree.form60RelatedDetailsIdentityProofNameOptionSelection();
 		JourneyScreenThree.setIdentityProofNumberValidation(0,1,6);
@@ -636,7 +641,7 @@ public class POSVFlowForSAPMIAP extends ReusableActions{
  		String firstNameFromExcel = cellRep.getStringCellValue();
  		firtsName.clear();
   		firtsName.sendKeys(firstNameFromExcel);
-  		JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2WithoutFirstName();
+		JourneyScreenTwoTest.fillingAllTheRequiredFeildForScreen2WithoutFirstName();
   		JourneyScreenTwo.traditional();
   		
   		JourneyScreenTwo.selectByDropdownMIAP();
@@ -652,7 +657,7 @@ public class POSVFlowForSAPMIAP extends ReusableActions{
  		JourneyScreenTwo.proposerPersonalDetailsIncome(9,1,10);
  		JourneyScreenThreeTest.nomineeDetailsWithoutDependentSelection();
  		JourneyScreenThreeTest.bankDetailsSectionFillingData();
- 		JourneyScreenOne.fillingAnnualIncomeTOProceed(0,1,3);
+		JourneyScreenThree.fillingAnnualIncomeTOProceed(0, 1, 3);
  		Thread.sleep(1000);
  		JourneyScreenThree.form60RelatedDetailsIdentityProofNameOptionSelection();
  		JourneyScreenThree.setIdentityProofNumberValidation(0,1,6);
