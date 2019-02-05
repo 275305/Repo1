@@ -136,6 +136,12 @@ public class JourneyScreenFour extends ReusableActions {
 	@FindBy(xpath = "//label[(text()=\"I am Exempt from the requirement of PAN under the following provisions of the IT Act 1961\")]")
 	public static WebElement iAmExemptFromTheRequirementOfPANUnderTheFollowingProvisionsOfTheITAct1961;
 
+	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[3]")
+	public static WebElement outsideClickScreenFour;
+
+	@FindBy(xpath = "//span[text()='Proceed']")
+	public static WebElement Proceedbtn;
+
 	public static void form60RelatedDetailsFeildsIsPresent() throws Exception {
 		if (identityProofName.isDisplayed() && identityProofNumber.isDisplayed()
 				&& idontHavePANNumberAsIhaveAppliedForPANAcknowledgement.isDisplayed()
@@ -161,6 +167,7 @@ public class JourneyScreenFour extends ReusableActions {
 	}
 
 	public static void form60RelatedDetailsIdentityProofNameOptionSelection() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenFour.class);
 		Thread.sleep(200);
 		waitTillElementToBeClickable(identityProofName);
 		identityProofName.click();
@@ -206,11 +213,7 @@ public class JourneyScreenFour extends ReusableActions {
 
 	}
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[3]")
-	public static WebElement outsideClickScreenFour;
 
-	@FindBy(xpath = "//span[text()='Proceed']")
-	public static WebElement Proceedbtn;
 
 	public static void feetInchesKgsSelectionToMoveToScreen5() throws Exception {
 		Thread.sleep(300);
@@ -397,7 +400,7 @@ public class JourneyScreenFour extends ReusableActions {
 	}
 
 	public static void setDateBirthdateOfApplication(int x, int y, int z) throws Exception {
-		PageFactory.initElements(driver, JourneyScreenThree.class);
+		PageFactory.initElements(driver, JourneyScreenFour.class);
 		String dateFormat = dateOfApplication.getAttribute("placeholder");
 		if (dateFormat.equalsIgnoreCase("DD/MM/YYYY")) {
 			System.out.println("Test case pass:As DD/MM/YYYY is the format and displaying in date text box");

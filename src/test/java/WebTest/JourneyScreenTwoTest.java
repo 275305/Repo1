@@ -137,7 +137,7 @@ public class JourneyScreenTwoTest extends ReusableActions {
 
 	public static void fillingFeildsScreenTwoFunction() throws Exception {
 		try {
-			JourneyScreenOneTest.fillingScreenOneFeildsFunction();
+			JourneyScreenOneTest.fillingScreenOneFeildsFunctionForDependent();
 			JourneyScreenTwo.setFirstName(3, 1, 0);
 			JourneyScreenTwo.setLastName(3, 1, 1);
 			JourneyScreenTwo.setDateBirthPersonalDetails();
@@ -156,16 +156,28 @@ public class JourneyScreenTwoTest extends ReusableActions {
 		}
 	}
 
+	public static void fillingInsurersDetailsScreenTwo() throws Exception {
+		try {
+			JourneyScreenTwo.fillingIssurersName(1, 1, 8);
+			JourneyScreenTwo.insurersGenderFemale();
+			JourneyScreenTwo.setDateBirthInsurersDetails(1, 1, 9);
+			JourneyScreenTwo.selectRelationshipWithProposerOption();
+		} catch (Exception e) {
+			logger.error("Test case failed: " + e.getMessage());
+			throw e;
+		}
+	}
+
 	// Test case---> describing Insurers details on screen two and three,Select
 	// dependent on first screen.
 	@Test(priority = 4, enabled = true)
-	public void checkInsurersDetailsIsPresentScreenTwo() throws Exception {
+	public void checkInsurersDetailsIsPresentAndFillingTheDetailsScreenTwo() throws Exception {
 		try {
 			fillingFeildsScreenTwoFunction();
 			JourneyScreenTwo.checkAllTheInsurersDetailsFeildsPresentOrNot();
 			JourneyScreenTwo.checkAndFillIssurersNameValidation(1, 1, 8);
 			JourneyScreenTwo.insurersGenderFemale();
-			JourneyScreenTwo.setDateBirthInsurersDetails(1, 1, 9);
+			JourneyScreenTwo.checkDateOfBirthFormatFutureDateRestrictionSetDateBirthInsurersDetails(1, 1, 9);
 			// Test case--> describing the dropDown list of relationship with proposer First
 			// screen--Select dependent and check on Insurers Details section
 			JourneyScreenTwo.selectAndCheckRelationshipWithProposerOption();
@@ -190,6 +202,7 @@ public class JourneyScreenTwoTest extends ReusableActions {
 			JourneyScreenTwo.setCountry(3, 1, 6);
 			JourneyScreenTwo.setState(3, 1, 7);
 			JourneyScreenTwo.setCity(3, 1, 8);
+
 			JourneyScreenTwo.setPinCode(3, 1, 9);
 			JourneyScreenTwo.setAlternateMobileNo(3, 1, 10);
 

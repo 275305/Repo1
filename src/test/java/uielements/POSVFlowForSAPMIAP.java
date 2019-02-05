@@ -17,6 +17,7 @@ import org.sikuli.script.Pattern;
 import org.sikuli.script.Screen;
 import org.testng.Assert;
 
+import WebTest.JourneyScreenOneTest;
 import WebTest.JourneyScreenThreeTest;
 import WebTest.JourneyScreenTwoTest;
 import util.AppConstant;
@@ -563,7 +564,7 @@ public class POSVFlowForSAPMIAP extends ReusableActions{
    }
 
 
-     public static boolean posvForSAPMultipleFirstNameTest() throws Exception {
+	public static boolean posvForSAPMultipleFirstNameTestForSelf() throws Exception {
     	 PageFactory.initElements(driver, POSVFlowForSAPMIAP.class);
     	File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
  		FileInputStream fileInputStream = new FileInputStream(file);
@@ -617,7 +618,23 @@ public class POSVFlowForSAPMIAP extends ReusableActions{
    
      
 
-     public static boolean posvForMIAPMultipleFirstNameTest() throws Exception {
+	public static boolean posvForMIAPMultipleFirstNameTestForSelf() throws Exception {
+		PageFactory.initElements(driver, POSVFlowForSAPMIAP.class);
+		File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
+		FileInputStream fileInputStream = new FileInputStream(file);
+		XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
+		XSSFSheet sheet = hssfWorkbook.getSheetAt(5);
+		int totalNumOfRows = sheet.getLastRowNum();
+		System.out.println("\n Total num of rows found " + totalNumOfRows);
+
+		for (int rowNum = 1; rowNum < totalNumOfRows; rowNum++) {
+			posvForMIAPMultipleFirstName(sheet, rowNum);
+		}
+		hssfWorkbook.close();
+		return false;
+	}
+
+	public static boolean posvForSAPMultipleFirstNameForDependent() throws Exception {
     	 PageFactory.initElements(driver, POSVFlowForSAPMIAP.class);
     	File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
  		FileInputStream fileInputStream = new FileInputStream(file);
@@ -627,52 +644,90 @@ public class POSVFlowForSAPMIAP extends ReusableActions{
  		System.out.println("\n Total num of rows found " + totalNumOfRows);
  		
  		for (int rowNum = 1; rowNum < totalNumOfRows; rowNum++) {
- 			posvForMIAPMultipleFirstName(sheet, rowNum);
+			posvForSAPMultipleFirstNameForDependent(sheet, rowNum);
  		}
  		hssfWorkbook.close();
  		return false;
  	}
  
-     
-     public static void posvForMIAPMultipleFirstName(XSSFSheet sheet, int rowNum) throws Exception {
-     	HomePage.clickDashboard();
-  		HomePage.clickNewApp();
-  		JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
-  		Thread.sleep(500);
-  		XSSFCell cellRep = sheet.getRow(rowNum).getCell(5);
- 		String firstNameFromExcel = cellRep.getStringCellValue();
- 		firtsName.clear();
-  		firtsName.sendKeys(firstNameFromExcel);
+	public static void posvForSAPMultipleFirstNameForDependent(XSSFSheet sheet, int rowNum) throws Exception {
+		HomePage.clickDashboard();
+		HomePage.clickNewApp();
+		JourneyScreenOneTest.fillingScreenOneFeildsFunctionForDependent();
+		Thread.sleep(500);
+		XSSFCell cellRep = sheet.getRow(rowNum).getCell(5);
+		String firstNameFromExcel = cellRep.getStringCellValue();
+		firtsName.clear();
+		firtsName.sendKeys(firstNameFromExcel);
 		JourneyScreenTwoTest.fillingAllTheRequiredFeildForScreen2WithoutFirstName();
-  		JourneyScreenTwo.traditional();
-  		
-  		JourneyScreenTwo.selectByDropdownMIAP();
-		JourneyScreenTwo.fillingAllTheRequiredFeildsForMIAP();
-  		Thread.sleep(300);
-		premiumCommitmentMIAPYesOptionSelection.click();
-		
-		JourneyScreenTwo.checkPOSVforMIAPAnnualIncome(3,1,12);
-		
- 		
-  		
-  		JourneyScreenThreeTest.proposerPersonalDetailsSection();
- 		JourneyScreenTwo.proposerPersonalDetailsIncome(9,1,10);
- 		JourneyScreenThreeTest.nomineeDetailsWithoutDependentSelection();
- 		JourneyScreenThreeTest.bankDetailsSectionFillingData();
+		JourneyScreenTwoTest.fillingInsurersDetailsScreenTwo();
+		JourneyScreenTwo.traditional();
+		JourneyScreenTwo.selectByDropdownSTPDependent();
+
+
+		JourneyScreenTwo.fillingAllTheRequiredFeildsForSTPDependent();
+		Thread.sleep(300);
+
+		// premiumCommitmentMIAPYesOptionSelection.click();
+		JourneyScreenTwo.checkPOSVforSAPLoop();
+
+		JourneyScreenThreeTest.proposerPersonalDetailsSection();
+		JourneyScreenTwo.proposerPersonalDetailsIncome(9, 1, 10);
+		JourneyScreenThreeTest.nomineeDetailsWithoutDependentSelection();
+		JourneyScreenThreeTest.bankDetailsSectionFillingData();
 		JourneyScreenThree.fillingAnnualIncomeTOProceed(0, 1, 3);
- 		Thread.sleep(1000);
+		Thread.sleep(1000);
 		JourneyScreenFour.form60RelatedDetailsIdentityProofNameOptionSelection();
 		JourneyScreenFour.setIdentityProofNumberValidation(0, 1, 6);
 		JourneyScreenFour.identityProofIssuingAuthority();
 		JourneyScreenFour.iAmExemptFromTheRequirementOfPANUnderTheFollowingProvisionsOfTheITAct1961();
- 		
+
 		JourneyScreenFour.arrowDownFunctionToScrollDownTillBottom();
 		JourneyScreenFour.criticalIllnessNoOption();
 		JourneyScreenFour.hazardousActivitiesNo();
 		JourneyScreenFour.selectCriminalChargesNo();
 		JourneyScreenFour.feetInchesKgsSelectionToMoveToScreen5POSV();
- 		JourneyScreenThree.agreePopupToProceedToSendPreIssuranceVerificationLinkToCustomer();
-  		
-  	}
+		JourneyScreenThree.agreePopupToProceedToSendPreIssuranceVerificationLinkToCustomer();
+
+	}
      
+	public static void posvForMIAPMultipleFirstName(XSSFSheet sheet, int rowNum) throws Exception {
+		HomePage.clickDashboard();
+		HomePage.clickNewApp();
+		JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
+		Thread.sleep(500);
+		XSSFCell cellRep = sheet.getRow(rowNum).getCell(5);
+		String firstNameFromExcel = cellRep.getStringCellValue();
+		firtsName.clear();
+		firtsName.sendKeys(firstNameFromExcel);
+		JourneyScreenTwoTest.fillingAllTheRequiredFeildForScreen2WithoutFirstName();
+		JourneyScreenTwo.traditional();
+
+		JourneyScreenTwo.selectByDropdownMIAP();
+		JourneyScreenTwo.fillingAllTheRequiredFeildsForMIAP();
+		Thread.sleep(300);
+		premiumCommitmentMIAPYesOptionSelection.click();
+
+		JourneyScreenTwo.checkPOSVforMIAPAnnualIncome(3, 1, 12);
+
+		JourneyScreenThreeTest.proposerPersonalDetailsSection();
+		JourneyScreenTwo.proposerPersonalDetailsIncome(9, 1, 10);
+		JourneyScreenThreeTest.nomineeDetailsWithoutDependentSelection();
+		JourneyScreenThreeTest.bankDetailsSectionFillingData();
+		JourneyScreenThree.fillingAnnualIncomeTOProceed(0, 1, 3);
+		Thread.sleep(1000);
+		JourneyScreenFour.form60RelatedDetailsIdentityProofNameOptionSelection();
+		JourneyScreenFour.setIdentityProofNumberValidation(0, 1, 6);
+		JourneyScreenFour.identityProofIssuingAuthority();
+		JourneyScreenFour.iAmExemptFromTheRequirementOfPANUnderTheFollowingProvisionsOfTheITAct1961();
+
+		JourneyScreenFour.arrowDownFunctionToScrollDownTillBottom();
+		JourneyScreenFour.criticalIllnessNoOption();
+		JourneyScreenFour.hazardousActivitiesNo();
+		JourneyScreenFour.selectCriminalChargesNo();
+		JourneyScreenFour.feetInchesKgsSelectionToMoveToScreen5POSV();
+		JourneyScreenThree.agreePopupToProceedToSendPreIssuranceVerificationLinkToCustomer();
+
+	}
+
 }

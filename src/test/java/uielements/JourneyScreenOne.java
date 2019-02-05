@@ -2,6 +2,7 @@ package uielements;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.time.LocalDate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -24,7 +25,10 @@ public class JourneyScreenOne extends ReusableActions {
 	static WebElement Indianbtn;
 
 	@FindBy(xpath = "//p[(text()=\"Invalid Email Address\")]")
-	public static WebElement emailIdErrorMessage;
+	public static WebElement emailIdErrorMessageIndian;
+
+	@FindBy(xpath = "//p[(text()=\"Invalid Email Id\")]")
+	public static WebElement emailIdErrorMessageNRI;
 
 	@FindBy(xpath = "//input[@name='income']")
 	public static WebElement annualIncomeInsurersDetailsDependent;
@@ -72,8 +76,11 @@ public class JourneyScreenOne extends ReusableActions {
 	@FindBy(xpath = "//label[@for='Insurer2']")
 	static WebElement indianInsurerNationality;
 
-	@FindBy(xpath = "//p[text()=\"Please Enter 12 digit Aadhaar Number\"]")
+	@FindBy(xpath = "//p[text()=\"Please Enter 12 Digit Aadhaar Number\"]")
 	static WebElement aadharErrorMsg;
+
+	@FindBy(xpath = "//p[text()=\"Please Enter 12 digit Aadhaar Number\"]")
+	static WebElement aadharErrorMsgIndian;
 
 	@FindBy(xpath = "//p[text()=\"Invalid PAN Number\"]")
 	static WebElement PANErrorMsg;
@@ -234,14 +241,23 @@ public class JourneyScreenOne extends ReusableActions {
 	@FindBy(xpath = "//*[@id='root']/main/div/div[2]/form/div/div/div[2]/div[3]/div[2]/div/div[2]/label/span[1]/span[1]")
 	static WebElement dontHavePANCheckbox;
 
-	@FindBy(xpath = "//label[text()='NRI']")
-	static WebElement optionNRI;
+	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div/div[1]/div[2]/label[text()='NRI']")
+	static WebElement residentialsStatusNRI;
 
 	@FindBy(xpath = "//input[@name='passportNumber']")
 	static WebElement passportNumberNRI;
 
+	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[2]/div/div[1]/div[2]/label[text()='NRI']")
+	static WebElement nationalityNRI;
+
 	@FindBy(xpath = "//input[@placeholder='DD/MM/YYYY']")
 	static WebElement visaValidDateNRI;
+
+	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[3]/div[2]/div[1]/div/label[contains(text(),\"Visa valid till\")]")
+	static WebElement visaValidTillLabelHeading;
+
+	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[3]/div[3]/div/div/label[contains(text(),\"Passport Exipry Date\")]")
+	static WebElement passportExipryDate;
 
 	@FindBy(xpath = "//input[@placeholder='Search a country']")
 	static WebElement pasportIssuingCountryNRI;
@@ -258,22 +274,22 @@ public class JourneyScreenOne extends ReusableActions {
 	@FindBy(xpath = "//label[text()='Company']")
 	static WebElement CompanyNRI;
 
-	@FindBy(xpath = "//input[@name='Aadhaar']")
+	@FindBy(xpath = "//input[@name='aadhaarNo']")
 	static WebElement AadhaarNRI;
 
-	@FindBy(xpath = "//input[@name='PanNumber']")
+	@FindBy(xpath = "//input[@name='panNumber']")
 	static WebElement PanNumberNRI;
 
 	@FindBy(xpath = "//input[@name='Isd']")
 	static WebElement isdCodeNRI;
 
-	@FindBy(xpath = "//input[@name='MobileNumber']")
+	@FindBy(xpath = "//input[@name='mobileNumber']")
 	static WebElement mobileNumberNRI;
 
-	@FindBy(xpath = "//input[@name='Email']")
+	@FindBy(xpath = "//input[@name='email']")
 	static WebElement emailAddressNRI;
 
-	@FindBy(xpath = "//input[@name='PreIssuanceVerificationNumber']")
+	@FindBy(xpath = "//input[@name='preIssuanceVerificationNumber']")
 	static WebElement preIssuranceVerificationNRI;
 
 	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[3]/div[1]/div[2]/div/div/div/div/div[@role=\"button\"]")
@@ -293,6 +309,12 @@ public class JourneyScreenOne extends ReusableActions {
 
 	@FindBy(xpath = "//input[@name='passportNumber']")
 	static WebElement passportTextfld;
+
+	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[3]/div[2]/div[1]/div/div/div/div/div/div/input[@placeholder='DD/MM/YYYY']")
+	static WebElement visaValidTill;
+
+	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[3]/div[3]/div/div/div/div/div/div/div/input[@placeholder='DD/MM/YYYY']")
+	static WebElement passportExpiryDate;
 
 	@FindBy(xpath = "//input[@placeholder='Search a country']")
 	static WebElement passportIssuingCountry;
@@ -358,11 +380,18 @@ public class JourneyScreenOne extends ReusableActions {
 
 	}
 
-	public static void optionNRI() throws Exception {
-
-		click(optionNRI);
+	public static void residentialsStatusNRI() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenOne.class);
+		click(residentialsStatusNRI);
 
 	}
+
+	public static void nationalityNRI() throws Exception {
+
+		click(nationalityNRI);
+
+	}
+
 
 	public static void neverApplied() throws Exception {
 
@@ -423,7 +452,7 @@ public class JourneyScreenOne extends ReusableActions {
 		waitTillElementVisible(NRIbtn);
 		boolean d = NRIbtn.isDisplayed();
 		System.out.println(d);
-		click(optionNRI);
+		click(residentialsStatusNRI);
 		// waitTillElementVisible(NRIbtn);
 
 	}
@@ -463,7 +492,69 @@ public class JourneyScreenOne extends ReusableActions {
 
 	}
 
-	public static boolean checkAdhaarErrorMsgMultipleData() throws Exception {
+	public static boolean checkAdhaarErrorMsgMultipleDataIndian() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenOne.class);
+		File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
+		FileInputStream fileInputStream = new FileInputStream(file);
+		XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
+		XSSFSheet sheet = hssfWorkbook.getSheetAt(1);
+		// int totalNumOfRows = sheet.getLastRowNum();
+		// System.out.println("\n Total num of rows found " + totalNumOfRows);
+
+		for (int rowNum = 1; rowNum < 8; rowNum++) {
+			validatingErrorMsgForAdhaarNumberIndian(sheet, rowNum);
+			Thread.sleep(1000);
+		}
+		hssfWorkbook.close();
+		return false;
+	}
+
+	public static void validatingErrorMsgForAdhaarNumberIndian(XSSFSheet sheet, int rowNum) throws Exception {
+
+		System.out.println("\n Going to pick run test cases for row number " + rowNum);
+		XSSFCell aadharNumber = sheet.getRow(rowNum).getCell(10);
+		String aadharNumberFromExcell = aadharNumber.getStringCellValue();
+		Thread.sleep(500);
+		AadharTxtfld.click();
+		AadharTxtfld.clear();
+		System.out.println("i am clearing");
+		AadharTxtfld.sendKeys(aadharNumberFromExcell);
+		Thread.sleep(500);
+		String aadharNumberFromUI = AadharTxtfld.getAttribute("value");
+		Thread.sleep(200);
+		// driver.findElement(By.xpath(".//*[@id='root']/main/div[2]/form/div/div/div[3]")).click();
+		Thread.sleep(200);
+		if (aadharNumberFromUI.length() == 12)
+
+		{
+			Thread.sleep(800);
+			// System.out.println(isElementDisplayed(aadharErrorMsg));
+			if (isElementDisplayed(aadharErrorMsgIndian)) {
+
+				Assert.fail("Test case fail:As error message for aadhaar number length 12 is displaying");
+			} else {
+				System.out.println("Test case pass:As error message for aadhaar number length 12 is not displaying");
+			}
+
+		} else {
+
+			System.out.println("i am in else");
+			driver.findElement(By.xpath(".//*[@id='root']/main/div[2]/form/div/div/div[1]")).click();
+			Thread.sleep(500);
+			if (isElementDisplayed(aadharErrorMsgIndian)) {
+				System.out.println("Test case pass:As error message for aadhaar number length i.e != 12 is displaying");
+
+			} else {
+
+				Assert.fail("Test case fail:As error message for aadhaar number length i.e !=12 is not displaying");
+
+			}
+
+		}
+	}
+
+	public static boolean checkAdhaarErrorMsgMultipleDataNRI() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenOne.class);
 		File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
 		FileInputStream fileInputStream = new FileInputStream(file);
 		XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
@@ -489,12 +580,11 @@ public class JourneyScreenOne extends ReusableActions {
 		AadharTxtfld.clear();
 		System.out.println("i am clearing");
 		AadharTxtfld.sendKeys(aadharNumberFromExcell);
+		Thread.sleep(500);
 		String aadharNumberFromUI = AadharTxtfld.getAttribute("value");
 		Thread.sleep(200);
 		// driver.findElement(By.xpath(".//*[@id='root']/main/div[2]/form/div/div/div[3]")).click();
 		Thread.sleep(200);
-		System.out.println("i am talking abot this from excell" + "  " + aadharNumberFromExcell);
-		System.out.print("i am talking about this from UI " + "       " + aadharNumberFromUI);
 		if (aadharNumberFromUI.length() == 12)
 
 		{
@@ -756,7 +846,203 @@ public class JourneyScreenOne extends ReusableActions {
 
 	}
 
-	public static boolean checkEmailErrorMsgWithMultipleData() throws Exception {
+	public static void FormatVisaValidTill() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenOne.class);
+		String dateOfBirthFormat = visaValidTill.getAttribute("placeholder");
+		System.out.println("is hidden label is " + dateOfBirthFormat);
+		System.out.println(dateOfBirthFormat.equalsIgnoreCase("DD/MM/YYYY"));
+		if (dateOfBirthFormat.equalsIgnoreCase("DD/MM/YYYY")) {
+			logger.info("Test Case Pass: Date of Birth - Field format DD/MM/YYYY");
+		} else {
+			Assert.fail("Test Case Fail:Date of Birth - Field format DD/MM/YYYY is not as per functionality");
+		}
+	}
+
+	public static void FormatPassportExpiryDate() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenOne.class);
+		String passportExpiryDateFormat = passportExpiryDate.getAttribute("placeholder");
+		if (passportExpiryDateFormat.equalsIgnoreCase("DD/MM/YYYY")) {
+			logger.info("Test Case Pass: Passport expiry date - Field format DD/MM/YYYY");
+		} else {
+			Assert.fail("Test Case Fail:Passport expiry date - Field format DD/MM/YYYY is not as per functionality");
+		}
+	}
+
+	public static void futureDateEnabilityVisaValidTill() throws Exception {
+		visaValidTill.click();
+		LocalDate datw = LocalDate.now().plusDays(1L);
+		int day = datw.getDayOfMonth();
+		String runtimeXpathForSelectingDate = "day-" + day + "";
+		System.out.println(day);
+		System.out.println(runtimeXpathForSelectingDate);
+		boolean checkFutureDateIsEnabled = driver.findElement(By.xpath(
+				"///div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))][@aria-label="
+						+ runtimeXpathForSelectingDate + "]"))
+				.isEnabled();
+
+		if (checkFutureDateIsEnabled) {
+			logger.info("Test Case Pass:Cuurent Date is enabled as per the requirement of visa valid till ");
+		} else {
+			Assert.fail("Test Case fail:Pass:Cuurent Date is disabled as per the requirement of visa valid till");
+		}
+	}
+
+	public static void futureDateEnabilityPassportExpiryDate() throws Exception {
+		passportExpiryDate.click();
+		LocalDate datw = LocalDate.now().plusDays(1L);
+		int day = datw.getDayOfMonth();
+		String runtimeXpathForSelectingDate = "day-" + day + "";
+		System.out.println(day);
+		System.out.println(runtimeXpathForSelectingDate);
+		boolean checkFutureDateIsEnabled = driver.findElement(By.xpath(
+				"///div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))][@aria-label="
+						+ runtimeXpathForSelectingDate + "]"))
+				.isEnabled();
+
+		if (checkFutureDateIsEnabled) {
+			logger.info("Test Case Pass:Cuurent Date is enabled as per the requirement of passport expiry date");
+		} else {
+			Assert.fail("Test Case fail:Pass:Cuurent Date is disabled as per the requirement of passport expiry date");
+		}
+	}
+
+	public static void checkVisaValidAndExpiryDateFutureDateEnability() throws Exception {
+		LocalDate datw = LocalDate.now().plusDays(1L);
+		System.out.println(datw);
+		int day = datw.getDayOfMonth();
+		String runtimeXpathForSelectingDate = "day-" + day + "";
+		WebElement checkFutureDateIsEnabled = driver.findElement(By.xpath(
+				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\""
+						+ runtimeXpathForSelectingDate + "\"]"));
+		String classes = checkFutureDateIsEnabled.getAttribute("class");
+		boolean isDisabled = classes.contains("day--disabled");
+		System.out.println("class" + classes);
+		System.out.println("is disable" + isDisabled);
+		if (isDisabled) {
+			Assert.fail("Test Case Fail:'SCREEN ONE'Future Date is disabled for insurers details ");
+		} else {
+			logger.info("Test Case pass:'SCREEN ONE'As Future Date is enabled for insurers details");
+
+		}
+
+		driver.switchTo().defaultContent();
+		driver.findElement(By.xpath(
+				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'disabled'))] [@aria-label=\""
+						+ runtimeXpathForSelectingDate + "\"]"))
+				.click();
+	}
+
+	public static void visaValidAndExpiryDateDateSelection() throws Exception {
+		LocalDate datw = LocalDate.now().plusDays(1L);
+		int day = datw.getDayOfMonth();
+		String runtimeXpathForSelectingDate = "day-" + day + "";
+		driver.findElement(By.xpath(
+				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'disabled'))] [@aria-label=\""
+						+ runtimeXpathForSelectingDate + "\"]"))
+				.click();
+	}
+
+	public static void visaValidTillMultipleData() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenOne.class);
+		Thread.sleep(200);
+		FormatVisaValidTill();
+		Thread.sleep(500);
+		visaValidTill.click();
+		// futureDateEnabilityVisaValidTill();
+		checkVisaValidAndExpiryDateFutureDateEnability();
+
+	}
+
+	public static void visaValidTillSingleData() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenOne.class);
+		Thread.sleep(200);
+		visaValidTill.click();
+		/*
+		 * Calendar calendar = Calendar.getInstance(); int currentDay =
+		 * calendar.get(Calendar.DAY_OF_MONTH); String runtimeXpathForSelectingDate =
+		 * "day-" + currentDay + ""; driver.switchTo().defaultContent();
+		 * driver.findElement(By.xpath(
+		 * "//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'disabled'))] [@aria-label=\""
+		 * + runtimeXpathForSelectingDate + "\"]")) .click();
+		 */
+		visaValidAndExpiryDateDateSelection();
+	}
+
+	public static void passportExpiryDateMultiple() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenOne.class);
+		Thread.sleep(200);
+		FormatPassportExpiryDate();
+		Thread.sleep(500);
+		passportExpiryDate.click();
+		// futureDateEnabilityPassportExpiryDate();
+		checkVisaValidAndExpiryDateFutureDateEnability();
+
+	}
+
+	public static void passportExpiryDateForSingleData() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenOne.class);
+		Thread.sleep(200);
+		passportExpiryDate.click();
+		/*
+		 * Calendar calendar = Calendar.getInstance(); int currentDay =
+		 * calendar.get(Calendar.DAY_OF_MONTH); String runtimeXpathForSelectingDate =
+		 * "day-" + currentDay + ""; driver.switchTo().defaultContent();
+		 * driver.findElement(By.xpath(
+		 * "//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'disabled'))] [@aria-label=\""
+		 * + runtimeXpathForSelectingDate + "\"]")) .click();
+		 */
+		visaValidAndExpiryDateDateSelection();
+
+	}
+
+	public static boolean checkEmailErrorMsgWithMultipleDataIndian() throws Exception {
+		File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
+		FileInputStream fileInputStream = new FileInputStream(file);
+		XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
+		XSSFSheet sheet = hssfWorkbook.getSheetAt(1);
+		// int totalNumOfRows = sheet.getLastRowNum();
+		// System.out.println("\n Total num of rows found " + totalNumOfRows);
+
+		for (int rowNum = 1; rowNum < 8; rowNum++) {
+			validatingErrorMsgEmailIndian(sheet, rowNum);
+			Thread.sleep(1000);
+		}
+		hssfWorkbook.close();
+		return false;
+	}
+
+	public static void validatingErrorMsgEmailIndian(XSSFSheet sheet, int rowNum) throws Exception {
+		System.out.println("\n Going to pick run test cases for row number " + rowNum);
+		XSSFCell cEmail = sheet.getRow(rowNum).getCell(3);
+		String sEmailFromExcell = cEmail.getStringCellValue();
+		Thread.sleep(300);
+		Emailtxtfld.click();
+		Thread.sleep(300);
+		Emailtxtfld.clear();
+		Thread.sleep(300);
+		Emailtxtfld.sendKeys(sEmailFromExcell);
+		String eEmailIDFromUI = Emailtxtfld.getAttribute("value");
+		driver.findElement(By.xpath(".//*[@id='root']/main/div[2]/form/div/div/div[3]")).click();
+		System.out.println(eEmailIDFromUI);
+		if (isValid(eEmailIDFromUI)) {
+			if (isElementDisplayed(emailIdErrorMessageIndian)) {
+				Assert.fail("Test case fail as error message is displaying with correct email ID");
+			} else {
+				System.out.println("Test case pass:As error message is not displaying with correct email ID");
+			}
+
+		} else {
+			Thread.sleep(200);
+			if (isElementDisplayed(emailIdErrorMessageIndian)) {
+				System.out.println("Test case pass as error message is displaying with incorrect email ID");
+			} else {
+				Assert.fail("Test case fail:As error message is not displaying with incorrect email ID");
+			}
+		}
+
+	}
+
+	public static boolean checkEmailErrorMsgWithMultipleDataNRI() throws Exception {
 		File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
 		FileInputStream fileInputStream = new FileInputStream(file);
 		XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
@@ -786,7 +1072,7 @@ public class JourneyScreenOne extends ReusableActions {
 		driver.findElement(By.xpath(".//*[@id='root']/main/div[2]/form/div/div/div[3]")).click();
 		System.out.println(eEmailIDFromUI);
 		if (isValid(eEmailIDFromUI)) {
-			if (isElementDisplayed(emailIdErrorMessage)) {
+			if (isElementDisplayed(emailIdErrorMessageNRI)) {
 				Assert.fail("Test case fail as error message is displaying with correct email ID");
 			} else {
 				System.out.println("Test case pass:As error message is not displaying with correct email ID");
@@ -794,7 +1080,7 @@ public class JourneyScreenOne extends ReusableActions {
 
 		} else {
 			Thread.sleep(200);
-			if (isElementDisplayed(emailIdErrorMessage)) {
+			if (isElementDisplayed(emailIdErrorMessageNRI)) {
 				System.out.println("Test case pass as error message is displaying with incorrect email ID");
 			} else {
 				Assert.fail("Test case fail:As error message is not displaying with incorrect email ID");
@@ -897,11 +1183,13 @@ public class JourneyScreenOne extends ReusableActions {
 	}
 
 	public static void isAllTheFeildsOfNRIDisplayed() throws Exception {
-		optionNRI();
-		if (passportNumberNRI.isDisplayed() && visaValidDateNRI.isDisplayed() && pasportIssuingCountryNRI.isDisplayed()
+		residentialsStatusNRI();
+		if (passportNumberNRI.isDisplayed() && visaValidTillLabelHeading.isDisplayed()
+				&& passportExipryDate.isDisplayed()
+				&& pasportIssuingCountryNRI.isDisplayed()
 				&& policyForNRI.isDisplayed() && selfNRI.isDisplayed() && dependentNRI.isDisplayed()
-				&& CompanyNRI.isDisplayed() && AadhaarNRI.isDisplayed() && PanNumberNRI.isDisplayed()
-				&& isdCodeNRI.isDisplayed() && mobileNumberNRI.isDisplayed() && emailAddressNRI.isDisplayed()
+				&& AadhaarNRI.isDisplayed() && PanNumberNRI.isDisplayed()
+				&& mobileNumberNRI.isDisplayed() && emailAddressNRI.isDisplayed()
 				&& preIssuranceVerificationNRI.isDisplayed()) {
 			logger.info("Test Case Pass as all the feilds of NRI is displayed");
 		} else {
@@ -926,11 +1214,11 @@ public class JourneyScreenOne extends ReusableActions {
 		type(passportTextfld, readingdata(x, y, z));
 		String passportNumberPassedFromExcel = passportTextfld.getAttribute("value");
 		int size = passportNumberPassedFromExcel.length();
-		if ((size == 9) && (passportNumberPassedFromExcel.contains("@"))) {
-			logger.info("Test case pass:- As Passport number feild length is 9 and not accepting special character ");
+		if (size == 9) {
+			logger.info("Test case pass:- As Passport number feild length is 9");
 		} else {
 			Assert.fail(
-					"Test case fail:-Test case pass:- As Passport number feild length is either not of 9 or accepting special character");
+					"Test case fail:-Test case pass:- As Passport number feild length is not of 9");
 		}
 
 	}

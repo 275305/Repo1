@@ -22,8 +22,8 @@ public class POSVFlowForSAPMIAPTest extends ReusableActions {
 	public void setUp(String browser, String version, String platform,String testrun) throws Exception {
 		String testRun= testrun;
 		/*String testRun1=testrun1;*/
-		// if (testRun.equals("run"))
-		if (testRun.equals("runbsw"))
+		if (testRun.equals("run"))
+		// if (testRun.equals("runbsw"))
 			{
 			
 			try {
@@ -50,8 +50,8 @@ public class POSVFlowForSAPMIAPTest extends ReusableActions {
 		}
 			
 		else 
-		// if (testRun.equals("runfa"))
-		if (testRun.equals("run"))
+		if (testRun.equals("runfa"))
+		// if (testRun.equals("run"))
 			{
 			// @BeforeClass
 			//public void launchBrowser() throws Exception{
@@ -174,10 +174,10 @@ public class POSVFlowForSAPMIAPTest extends ReusableActions {
 		}}*/
 	
 	@Test(priority = 8, enabled = false)
-	public static void checkPOSVFlowForSAPWithMutipleFirstName() throws Exception {
+	public static void checkPOSVFlowForSAPWithMutipleFirstNameForSelf() throws Exception {
 		PageFactory.initElements(driver, POSVFlowForSAPMIAP.class);
 		try {
-			POSVFlowForSAPMIAP.posvForSAPMultipleFirstNameTest();
+			POSVFlowForSAPMIAP.posvForSAPMultipleFirstNameTestForSelf();
 			
 			   	   
 		} catch (Exception e) {
@@ -188,11 +188,24 @@ public class POSVFlowForSAPMIAPTest extends ReusableActions {
 	
 	
 	
+	@Test(priority = 8, enabled = false)
+	public static void checkPOSVFlowForMIAPWithMutipleFirstNameForSelf() throws Exception {
+		PageFactory.initElements(driver, POSVFlowForSAPMIAP.class);
+		try {
+			POSVFlowForSAPMIAP.posvForMIAPMultipleFirstNameTestForSelf();
+
+		} catch (Exception e) {
+			logger.error("Test case failed " + e.getMessage());
+			throw e;
+
+		}
+	}
+
 	@Test(priority = 8, enabled = true)
-	public static void checkPOSVFlowForMIAPWithMutipleFirstName() throws Exception {
+	public static void checkPOSVFlowForSAPWithMutipleFirstNameForDependent() throws Exception {
 		PageFactory.initElements(driver, POSVFlowForSAPMIAP.class);
 		try {
-			POSVFlowForSAPMIAP.posvForMIAPMultipleFirstNameTest();
+			POSVFlowForSAPMIAP.posvForSAPMultipleFirstNameForDependent();
 			
 			   	   
 		} catch (Exception e) {
@@ -200,4 +213,5 @@ public class POSVFlowForSAPMIAPTest extends ReusableActions {
 			throw e;
 
 		}}
+
 }

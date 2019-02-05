@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite thread-count="5" name="BranchViewPage" parallel="none">
+	<test name="parallel Test on safari 9-Mac">
+		<parameter name="browser" value="safari" />
+		<parameter name="version" value="9.0" />
+		<parameter name="platform" value="MAC" />
+		<parameter name="testrun" value="runbsw" />
+		<classes>
+
+			<class name="WebTest.RegressionSuitTest" />
+
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="Parallel Test on IE 11 -Windows">
+		<parameter name="browser" value="IE" />
+		<parameter name="version" value="11.0" />
+		<parameter name="platform" value="WINDOWS" />
+		<parameter name="testrun" value="runbsw" />
+		<classes>
+
+			<class name="WebTest.RegressionSuitTest" />
+
+		</classes>
+	</test> <!-- Test -->
+
+	<test name="Parallel Test on firefox 53 -Windows">
+		<parameter name="browser" value="firefox" />
+		<parameter name="version" value="53.0" />
+		<parameter name="platform" value="WINDOWS" />
+		<parameter name="testrun" value="runbsw" />
+		<parameter name="testrun" value="runfa" />
+		<classes>
+
+			<class name="WebTest.RegressionSuitTest" />
+
+		</classes>
+	</test> <!-- Test -->
+
+	<!-- <test name="Parallel Test on IE 10-Windows"> <parameter name="browser" 
+		value="IE"/> <parameter name="version" value="10.0"/> <parameter name="platform" 
+		value="WINDOWS"/> <classes> <class name="WebTest.JourneyScreenTwoTest"/> 
+		</classes> </test> Test -->
+
+	<!-- <test name="Parallel Test on safari 10-Mac"> <parameter name="browser" 
+		value="safari"/> <parameter name="version" value="10.0"/> <parameter name="platform" 
+		value="MAC"/> <classes> <class name="WebTest.JourneyScreenTwoTest"/> </classes> 
+		</test> Test -->
+</suite> <!-- Suite -->

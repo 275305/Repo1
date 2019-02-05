@@ -12,7 +12,6 @@ import org.testng.annotations.Test;
 
 import uielements.HomePage;
 import uielements.JourneyScreenOne;
-import uielements.JourneyScreenThree;
 import uielements.LoginPage;
 import uielements.ReusableActions;
 
@@ -24,8 +23,8 @@ public class JourneyScreenOneTest extends ReusableActions {
 	public void setUp(String browser, String version, String platform, String testrun) throws Exception {
 		String testRun = testrun;
 		/* String testRun1=testrun1; */
-		// if (testRun.equals("run"))
-		if (testRun.equals("runbsw"))
+		if (testRun.equals("run"))
+		// if (testRun.equals("runbsw"))
 		{
 
 			try {
@@ -52,8 +51,8 @@ public class JourneyScreenOneTest extends ReusableActions {
 		}
 
 		else
-		// if (testRun.equals("runfa"))
-		if (testRun.equals("run"))
+		if (testRun.equals("runfa"))
+			// if (testRun.equals("run"))
 			// @BeforeClass
 			// public void launchBrowser() throws Exception{
 
@@ -100,7 +99,7 @@ public class JourneyScreenOneTest extends ReusableActions {
 	}
 
 	// TC -02 Test case for positive value for saving the first screen data
-	@Test(priority = 1, enabled = true)
+	@Test(priority = 1, enabled = false)
 	public void ScreenOneTestIndianToScreenTwo() throws Exception {
 		try {
 			System.out.println(
@@ -122,17 +121,17 @@ public class JourneyScreenOneTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 2, enabled = false)
 	public void ScreenOneTestIndianMultipleData() throws Exception {
 		try {
 			System.out.println(
 					"-------------------ScreenOneTestIndianMultipleData Started----------------------------------------");
 			HomePage.clickDashboard();
 			HomePage.clickNewApp();
-			JourneyScreenOne.checkAdhaarErrorMsgMultipleData();
+			JourneyScreenOne.checkAdhaarErrorMsgMultipleDataIndian();
 			JourneyScreenOne.checkPANErrorMsgWithMultipleData();
 			JourneyScreenOne.checkPhoneNumberErrorMsgWithMultipleData();
-			JourneyScreenOne.checkEmailErrorMsgWithMultipleData();
+			JourneyScreenOne.checkEmailErrorMsgWithMultipleDataIndian();
 			JourneyScreenOne.setPreIssuanceNumber(1, 1, 4);
 			JourneyScreenOne.clickProceed();
 			System.out.println(
@@ -145,26 +144,26 @@ public class JourneyScreenOneTest extends ReusableActions {
 	}
 
 	// TC -02 Test case for positive value for saving the first screen data
-	@Test(priority = 3, enabled = true)
-	public void ScreenOneTestNRI() throws Exception {
+	@Test(priority = 3, enabled = false)
+	public void ScreenOneTestNRIWithMultipleDataValidation() throws Exception {
 		try {
 
-			System.out.println("-------------------ScreenOneTestNRI Started----------------------------------------");
 			HomePage.clickDashboard();
 			HomePage.clickNewApp();
-			JourneyScreenOne.optionNRI();
+			JourneyScreenOne.residentialsStatusNRI();
+			JourneyScreenOne.nationalityNRI();
 			JourneyScreenOne.setPassportNumber(1, 1, 5);
 			JourneyScreenOne.isAllTheTypeOfVisaListIsPresent();
-			JourneyScreenThree.visaValidTill();
+			JourneyScreenOne.visaValidTillMultipleData();
 			JourneyScreenOne.passportIssuingCountry(1, 1, 6);
-			JourneyScreenOne.checkAdhaarErrorMsgMultipleData();
+			JourneyScreenOne.passportExpiryDateMultiple();
+			JourneyScreenOne.checkAdhaarErrorMsgMultipleDataNRI();
 			JourneyScreenOne.checkPANErrorMsgWithMultipleData();
-			JourneyScreenOne.isdCode(1, 1, 7);
+			// JourneyScreenOne.isdCode(1, 1, 7);
 			JourneyScreenOne.setMobNumber(1, 1, 2);
-			JourneyScreenOne.checkEmailErrorMsgWithMultipleData();
+			JourneyScreenOne.checkEmailErrorMsgWithMultipleDataNRI();
 			JourneyScreenOne.setPreIssuanceNumber(1, 1, 4);
 			JourneyScreenOne.clickProceed();
-			System.out.println("-------------------ScreenOneTestNRI Finished----------------------------------------");
 
 		} catch (Exception e) {
 			logger.error("Test case failed: " + e.getMessage());
@@ -176,11 +175,12 @@ public class JourneyScreenOneTest extends ReusableActions {
 		try {
 			HomePage.clickDashboard();
 			HomePage.clickNewApp();
-			JourneyScreenOne.optionNRI();
+			JourneyScreenOne.residentialsStatusNRI();
 			JourneyScreenOne.setPassportNumber(1, 1, 5);
 			JourneyScreenOne.isAllTheTypeOfVisaListIsPresent();
-			JourneyScreenThree.visaValidTill();
+			JourneyScreenOne.visaValidTillSingleData();
 			JourneyScreenOne.passportIssuingCountry(1, 1, 6);
+			JourneyScreenOne.passportExpiryDateForSingleData();
 			JourneyScreenOne.setAadhar(1, 0, 1);
 			JourneyScreenOne.setPanNumber(1, 1, 1);
 			JourneyScreenOne.isdCode(1, 1, 7);
@@ -198,11 +198,9 @@ public class JourneyScreenOneTest extends ReusableActions {
 	// Test case---> describing all the fields are present on the screen first when
 	// NRI is selected.
 
-	@Test(priority = 4, enabled = true)
+	@Test(priority = 4, enabled = false)
 	public void checkNRIFeildsDisabled() throws Exception {
 		try {
-			System.out.println(
-					"-------------------checkNRIFeildsDisabled Started----------------------------------------");
 			HomePage.clickDashboard();
 			HomePage.clickNewApp();
 			JourneyScreenOne.isAllTheFeildsOfNRIDisplayed();
@@ -210,15 +208,13 @@ public class JourneyScreenOneTest extends ReusableActions {
 			// Test case---> drop down list for visa when NRI is selected on first screen.
 
 			JourneyScreenOne.isAllTheTypeOfVisaListIsPresent();
-			System.out.println(
-					"-------------------checkNRIFeildsDisabled Finished----------------------------------------");
 		} catch (Exception e) {
 			logger.error("Test case failed: " + e.getMessage());
 			throw e;
 		}
 	}
 
-	public static void fillingScreenOneFeildsFunction() throws Exception {
+	public static void fillingScreenOneFeildsFunctionForDependent() throws Exception {
 		try {
 			HomePage.clickDashboard();
 			HomePage.clickNewApp();
