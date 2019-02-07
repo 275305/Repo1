@@ -9,7 +9,7 @@ import uielements.FactoryPattern.GetPlanFactory;
 public class FactoryPattern {
 
 	public class GetPlanFactory {
-
+		
 		// use getPlan method to get object of type Plan
 		public Plan getPlan(String planType) {
 			if (planType == null) {
@@ -25,7 +25,9 @@ public class FactoryPattern {
 			return null;
 		}
 	}
+	
 }
+
 
 abstract class Plan {
 	protected double rate;
@@ -54,16 +56,17 @@ class CommercialPlan extends Plan {
 }
 
 class InstitutionalPlan extends Plan {
-	// @override
+
+	
 	@Override
 	public void getRate() {
 		rate = 5.50;
 	}
-}
+
 
 
 	public static void main(String args[]) throws IOException {
-		GetPlanFactory planFactory = new GetPlanFactory();
+		//GetPlanFactory planFactory = new GetPlanFactory();
 
 		System.out.print("Enter the name of plan for which the bill will be generated: ");
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -72,11 +75,11 @@ class InstitutionalPlan extends Plan {
 		System.out.print("Enter the number of units for bill will be calculated: ");
 		int units = Integer.parseInt(br.readLine());
 
-		Plan p = planFactory.getPlan(planName);
+		//Plan p = planFactory.getPlan(planName);
 		// call getRate() method and calculateBill()method of DomesticPaln.
 
 		System.out.print("Bill amount for " + planName + " of  " + units + " units is: ");
-		p.getRate();
-		p.calculateBill(units);
+		//p.getRate();
+		//p.calculateBill(units);
 	}
 }

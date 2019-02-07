@@ -959,7 +959,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	}
 
 
-	public static void selectByDropdownTradAllProduct() throws Exception {
+	/*public static void selectByDropdownTradAllProduct() throws Exception {
 		waitTillElementToBeClickable(productNm);
 		productNm.click();
 		Thread.sleep(1000);
@@ -1052,7 +1052,7 @@ public class JourneyScreenTwo extends ReusableActions {
 			}
 		}
 	}
-
+*/
 	public static void selectByDropdownULIPAllProduct() throws Exception {
 		waitTillElementToBeClickable(productNm);
 		productNm.click();
@@ -1562,7 +1562,6 @@ public class JourneyScreenTwo extends ReusableActions {
 	public static void waitForNumberOfWindowsToEqual(final int numberOfWindows) {
 		new WebDriverWait(driver, 20) {
 		}.until(new ExpectedCondition<Boolean>() {
-			@Override
 			public Boolean apply(WebDriver driver) {
 				return (driver.getWindowHandles().size() == numberOfWindows);
 			}
@@ -1930,7 +1929,6 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	public static ExpectedCondition<Boolean> waitForAjaCalls() {
 		return new ExpectedCondition<Boolean>() {
-			@Override
 			public Boolean apply(WebDriver driver) {
 				return Boolean.valueOf(((JavascriptExecutor) driver).executeScript(
 						"return (window.angular !== undefined) && (angular.element(document).injector() !== undefined) && (angular.element(document).injector().get('$http').pendingRequests.length === 0)")
