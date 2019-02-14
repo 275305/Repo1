@@ -205,7 +205,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 
 	/*Test case:-To check PDF is generating or not for CANCER INSURANCE PLAN
 	*/
-	@Test(priority = 4, enabled = false)
+	@Test(priority = 4, enabled = true)
 	public void CheckproductConfigrationCancerAndPdf() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {

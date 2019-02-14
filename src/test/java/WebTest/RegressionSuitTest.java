@@ -75,7 +75,7 @@ public class RegressionSuitTest extends ReusableActions {
 
 	}
 
-	@Test(priority = 0, enabled = true)
+	@Test(priority = 0, enabled = false)
 	public void testLoginFunctionalityWithMultipeData() throws Exception {
 		try {
 			logger.info("Test Started");
@@ -402,7 +402,7 @@ public class RegressionSuitTest extends ReusableActions {
 	 * SAVINGS ADVANTAGES PLAN
 	 */
 
-	@Test(priority = 16, enabled = true)
+	@Test(priority = 16, enabled = false)
 	public void checkingAllTheFeildsForTraditionalProduct() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -439,7 +439,7 @@ public class RegressionSuitTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 17, enabled = true)
+	@Test(priority = 17, enabled = false)
 	public void checkingAllTheFeildsForULIPProduct() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -447,7 +447,7 @@ public class RegressionSuitTest extends ReusableActions {
 			HomePage.clickNewApp();
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
 			JourneyScreenTwo.ulip();
-			JourneyScreenTwo.selectByDropdownULIPAllProduct();
+			JourneyScreenTwo.selectByDropdownUlipAllProduct();
 
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
@@ -456,25 +456,24 @@ public class RegressionSuitTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 18, enabled = true)
-	public void isPayorDetailsNoOptionSelectedByDefault() throws Exception {
-		PageFactory.initElements(driver, JourneyScreenThree.class);
-		try {
-			JourneyScreenTwo.clickSubmitButton();
-			waitTillPageLoaded(driver);
-			waitTillElementLocated(JourneyScreenThree.payorDetailsNo);
-			JourneyScreenThree.isPayorDetailsNoOptionSelectedByDefault();
-
-		} catch (Exception e) {
-			logger.error("Test case failed " + e.getMessage());
-			throw e;
-
-		}
-
-	}
+	/*
+	 * @Test(priority = 18, enabled = true) public void
+	 * isPayorDetailsNoOptionSelectedByDefault() throws Exception {
+	 * PageFactory.initElements(driver, JourneyScreenThree.class); try {
+	 * JourneyScreenTwo.clickSubmitButton(); waitTillPageLoaded(driver);
+	 * waitTillElementLocated(JourneyScreenThree.payorDetailsNo);
+	 * JourneyScreenThree.isPayorDetailsNoOptionSelectedByDefault();
+	 * 
+	 * } catch (Exception e) { logger.error("Test case failed " + e.getMessage());
+	 * throw e;
+	 * 
+	 * }
+	 * 
+	 * }
+	 */
 
 	// Ful2-140 Nominee Details section
-	@Test(priority = 19, enabled = true)
+	@Test(priority = 19, enabled = false)
 	public void PayorDetailsSection() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenThree.class);
 		try {

@@ -44,6 +44,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//input[@name='premiumCommitment']")
 	public static WebElement premiumCommitmentDependent;
 
+
 	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[1]/div[2]/div/div/div/div/div[4]/div[1]/div/div/div/div/div[@role='button']")
 	public static WebElement occupationCancerProductSelected;
 
@@ -377,16 +378,28 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//label[text()='Policy Term']")
 	static WebElement policyTerm;
 
+	@FindBy(xpath = "//label[contains(text(),'Vesting Age')]")
+	static WebElement vestigeAge;
+
+	@FindBy(xpath = "//span[contains(text(),'Save More Tomorrow')]")
+	static WebElement saveMoreTomorrowLabel;
+
+	@FindBy(xpath = "//label[contains(text(),'Fund Option')]")
+	static WebElement fundOptionLabel;
+
 	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[1]/div/div/div/div/div[@role='button']")
 	static WebElement premiumPayementTermSTP;
 
 	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[4]/div/div[1]/div/div/div/div/div[@role='button']")
 	static WebElement premiumPayementTermSTPDependent;
 
-	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[1]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//label[contains(text(),'Premium Type')]")
 	static WebElement premiumTypeSAP;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[7]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//*[@id='root']/main[1]/div[2]/form[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1][@role='button']")
+	static WebElement premiumTypeSAPDropDown;
+
+	@FindBy(xpath = "//label[contains(text(),'Dividend Option')]")
 	static WebElement dividentOptionMIAP;
 
 	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[4]/div/div[7]/div/div/div/div/div[@role='button']")
@@ -394,6 +407,9 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	@FindBy(xpath = "//label[text()='Premium Payment Term']")
 	static WebElement premiumPaymentTerm;
+
+	@FindBy(xpath = "//label[contains(text(),'Premium Type')]")
+	static WebElement premiumType;
 
 	@FindBy(xpath = "//span[text()='Choose Your Fund']")
 	static WebElement chooseYourFund;
@@ -427,6 +443,9 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	@FindBy(xpath = "//span[contains(text(), 'WOP Plus Rider')]")
 	static WebElement WOPPlusRider;
+
+	@FindBy(xpath = "//input[@value='WOP Plus Rider']")
+	static WebElement WOPPlusRiderCheckBox;
 
 	@FindBy(xpath = "//span[contains(text(), 'Term Plus Rider')]")
 	static WebElement termPlusRider;
@@ -525,7 +544,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	static WebElement modeOfPaymentMIAP;
 
 	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[4]/div/div/div/div/div[@role='button']")
-	static WebElement modeOfPaymentSAP;
+	static WebElement modeOfPaymentSAPDropDown;
 
 	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[4]/div/div[7]/div/div/div/div/div[@role='button']")
 	static WebElement modeOfPaymentSTPDependent;
@@ -578,6 +597,21 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//input[@name='premiumCommitment']")
 	static WebElement premiumCommitment;
 
+	@FindBy(xpath = "//span[contains(text(),'Partner Care Rider')]")
+	static WebElement partnerCareRider;
+
+	@FindBy(xpath = "//span[contains(text(),'Choose Your Fund')]")
+	static WebElement chooseYourFundLabel;
+
+	@FindBy(xpath = "//label[contains(text(),'Child Date Of Birth')]")
+	static WebElement childDateOfBirthLabel;
+
+	@FindBy(xpath = "//span[contains(text(),'Dynamic Fund Allocation')]")
+	static WebElement dynamicFundAlocationLabel;
+
+	@FindBy(xpath = "//span[contains(text(),'Systematic Transfer Plan')]")
+	static WebElement sysatematicTransferPlanLabel;
+
 	@FindBy(xpath = "//input[@name='growthSuperFund']")
 	static WebElement GrowthSuperFund;
 
@@ -599,7 +633,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//input[@name='growthFund']")
 	static WebElement growthFund;
 
-	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[3]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//label[contains(text(),'Sum Assured Available')]")
 	static WebElement dropDownSumAssuredAvailable;
 
 	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[3]/div/div/div/div/div[@role='button']")
@@ -614,13 +648,16 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = ".//*[@id='menu-sumAssuredAvailable']/div[2]/ul/li[(text()=2500000)]")
 	static WebElement sumAssuredAvailableOptionInsureresDetails;
 
-	@FindBy(xpath = "//input[@name='desiredAnnualIncome']")
+	@FindBy(xpath = "//span[contains(text(),'Desired Annual Income (₹)')]")
 	static WebElement desiredAnnualIncome;
 
-	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[7]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//label[contains(text(),'Dividend Option')]")
 	static WebElement dividendOptionWLS;
 
-	@FindBy(xpath = "//body//div[@id='root']//main[@class='Layout__Content__3pLYC']//div[@class='jss1327']//form//div[@class='Screen1__panelbox__gE3cl']//div[@class='jss1047 jss1071 wrapper']//div[@class='jss1048 jss1087 jss1101 jss1111']//div[@class='Screen2__Mainpanelwrap__1cJx1']//div[@class='jss1266 jss1269 jss1298 jss1299 Screen2__customPanelSlide__1-pbf']//div[@class='jss1294 jss1295']//div[@class='jss1296']//div[@class='jss1297']//div[@class='jss1293']//div[contains(@class,'width100')]//div//div[@class='jss1047']//div[3]//div[1]//div[1]//div[1]//div[1]//div[1]")
+	@FindBy(xpath = "//*[@id='root']/main[1]/div[2]/form[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[7]/div[1]/div[1]/div[1]/div[1]/div[1][@role='button']")
+	static WebElement dividendOptionWLSDropDown;
+
+	@FindBy(xpath = "//label[contains(text(),'Sum Assured Option')]")
 	static WebElement sumAssuredOption;
 
 	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[4]/div/div[6]/div/div/div/div/div[@role='button']")
@@ -700,9 +737,9 @@ public class JourneyScreenTwo extends ReusableActions {
 		click(systematicNo);
 	}
 
-	public static void WOPPlusRider() throws Exception {
+	public static void WOPPlusRiderCheckBox() throws Exception {
 
-		click(WOPPlusRider);
+		click(WOPPlusRiderCheckBox);
 	}
 
 	public static void nonSmoker() throws Exception {
@@ -751,8 +788,10 @@ public class JourneyScreenTwo extends ReusableActions {
 	}
 
 	public static void premiumTypeSAP() throws Exception {
-		waitTillElementToBeClickable(premiumTypeSAP);
-		premiumTypeSAP.click();
+		System.out.println("111111111111");
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
 		waitTillElementToBeClickable(premiumType3rdOptionSAP);
 		premiumType3rdOptionSAP.click();
 		Thread.sleep(2000);
@@ -943,7 +982,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		waitTillElementToBeClickable(maxLifeSavingsAdvantagePlan);
 		Thread.sleep(1000);
 		maxLifeSavingsAdvantagePlan.click();
-		Thread.sleep(1000);
+		Thread.sleep(1500);
 
 	}
 
@@ -958,6 +997,14 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	}
 
+	public static void arrowDownFunctionToScrollDown() throws Exception {
+		Thread.sleep(400);
+		for (int i = 1; i < 12; i++) {
+			Actions action = new Actions(driver);
+			action.sendKeys(Keys.ARROW_DOWN).build().perform();
+		}
+		Thread.sleep(400);
+	}
 
 	public static void selectByDropdownTradAllProduct() throws Exception {
 		waitTillElementToBeClickable(productNm);
@@ -974,23 +1021,22 @@ public class JourneyScreenTwo extends ReusableActions {
 		}
 		System.out.println(actualResult.size());
 		System.out.println(actualResult);
+		driver.findElement(By.xpath("//*[@id='menu-productName']/div[2]/ul/li[1]")).click();
 
-		for (int i = 1; i <= actualListDOBProfInsureresDetails.size(); i++) {
+		for (int i = 0; i <= actualListDOBProfInsureresDetails.size(); i++) {
 			waitTillElementToBeClickable(productNm);
+			Thread.sleep(700);
 			productNm.click();
-			// waitTillElementToBeClickable(productNm);
-			// productNm.click();
-			// waitTillElementToBeClickable(
-			// driver.findElement(By.xpath("//*[@id='menu-productName']/div[2]/ul/li[" + i +
-			// "]")));
-			// driver.findElement(By.xpath("//*[@id='menu-productName']/div[2]/ul/li[" + i +
-			// "]")).click();
 			String strn = actualResult.get(i);
-			driver.findElement(By.xpath("//*[@id='menu-productName']/div[2]/ul/li[text()=" + strn + "]")).click();
-			Thread.sleep(1000);
+			System.out.println("here is the string which need to select" + strn);
+			driver.findElement(By.xpath("//*[@id='menu-productName']/div[2]/ul/li[text()= '" + strn + "']")).click();
+			Thread.sleep(1500);
+			driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[2]/form[1]/div[1]/div[1]/div[3]")).click();
+			Thread.sleep(800);
 			switch (strn) {
 			case "Max Life Super Term Plan":
-				System.out.println("Max Life Super Term Plan   MATCH");
+				System.out.println("Max Life Super Term Plan");
+				arrowDownFunctionToScrollDown();
 				if (sumAssured.isDisplayed() && sumAssuredOption.isDisplayed() && smokingHabit.isDisplayed()
 						&& policyTerm.isDisplayed() && premiumPaymentTerm.isDisplayed()
 						&& dividendAdjustment.isDisplayed() && modeOfPayment.isDisplayed()
@@ -1003,12 +1049,13 @@ public class JourneyScreenTwo extends ReusableActions {
 				}
 				break;
 			case "Max Life Monthly Income Advantage Plan":
-				System.out.println("Max Life Monthly Income Advantage Plan   MATCH");
+				System.out.println("Max Life Monthly Income Advantage Plan");
+				arrowDownFunctionToScrollDown();
 				if (policyTerm.isDisplayed() && dividentOptionMIAP.isDisplayed() && desiredAnnualIncome.isDisplayed()
-						&& premiumCommitment.isDisplayed() && premiumPaymentTerm.isDisplayed()
-						&& annualIncome.isDisplayed() && termPlusRider.isDisplayed() && modeOfPayment.isDisplayed()
+						&& premiumPaymentTerm.isDisplayed() && termPlusRider.isDisplayed()
+						&& modeOfPayment.isDisplayed()
 						&& effectiveDateOfCoverage.isDisplayed()
-						&& accidentalDeathAndDismembermentRider.isDisplayed()) {
+						&& accidentalDeathAndDismembermentRider.isDisplayed() && modeOfPayment.isDisplayed()) {
 
 					System.out.println(
 							"All the feilds are present as per the product MAX LIFE MONTHLY INCOME ADVANTAGE PLAN");
@@ -1018,27 +1065,102 @@ public class JourneyScreenTwo extends ReusableActions {
 
 				break;
 			case "Max Life Cancer Insurance Plan":
-				if (modeOfPayment.isDisplayed() && maturityAge.isDisplayed()
-						&& dropDownSumAssuredAvailable.isDisplayed()) {
+				System.out.println("Max Life Cancer Insurance Plan");
+				arrowDownFunctionToScrollDown();
+				if (isElementDisplayed(modeOfPayment) && isElementDisplayed(maturityAge)
+						&& isElementDisplayed(dropDownSumAssuredAvailable)) {
 
 					System.out.println("All the feilds are present as per the product MAX LIFE CANCER INSURANCE PLAN");
 				} else {
-					Assert.fail("All the feilds are not present as per the product MAX LIFE CANCER INSURANCE PLAN");
+					Assert.fail(
+							"All the feilds are not present as per the product MAX LIFE CANCER INSURANCE PLAN");
 				}
 				break;
-			case "Life Whole Life Super":
+
+			case "Max Life Assured Wealth Plan":
+				System.out.println("Max Life Assured Wealth Plan");
+				arrowDownFunctionToScrollDown();
+				if (isElementDisplayed(premiumPaymentTerm) && isElementDisplayed(policyTerm)
+						&& isElementDisplayed(modeOfPayment)
+						&& isElementDisplayed(premiumCommitment) && effectiveDateOfCoverage.isDisplayed()
+						&& accidentalDeathAndDismembermentRider.isDisplayed() && WOPPlusRider.isDisplayed()
+						&& termPlusRider.isDisplayed()) {
+
+					System.out.println("All the feilds are present as per the product Max Life Assured Wealth Plan");
+				} else {
+					Assert.fail(
+							"All the feilds are not present as per the product Max Life Assured Wealth Plan");
+				}
+				break;
+
+			case "Max Life Future Genius Education Plan":
+				System.out.println("Max Life Future Genius Education Plan");
+				arrowDownFunctionToScrollDown();
+				if (isElementDisplayed(premiumPaymentTerm) && isElementDisplayed(policyTerm)
+						&& isElementDisplayed(modeOfPayment) && effectiveDateOfCoverage.isDisplayed()
+						&& premiumCommitment.isDisplayed() && WOPPlusRider.isDisplayed() && termPlusRider.isDisplayed()
+						&& accidentalDeathAndDismembermentRider.isDisplayed() && dividentOptionMIAP.isDisplayed()&&
+						dividendAdjustment.isDisplayed()) {
+
+					System.out.println("All the feilds are present as per the product Max Life Future Genius Education Plan");
+				} else {
+					Assert.fail(
+							"All the feilds are not present as per the product Max Life Future Genius Education Plan");
+				}
+				break;
+
+			case "Max Life Life Perfect Partner Super":
+				System.out.println("Life Life Perfect Partner Super");
+				arrowDownFunctionToScrollDown();
+				if (isElementDisplayed(premiumPaymentTerm) && isElementDisplayed(policyTerm)
+						&& isElementDisplayed(modeOfPayment) && effectiveDateOfCoverage.isDisplayed()
+						&& premiumCommitment.isDisplayed() && WOPPlusRider.isDisplayed() && termPlusRider.isDisplayed()
+						&& accidentalDeathAndDismembermentRider.isDisplayed() && dividentOptionMIAP.isDisplayed()) {
+
+					System.out.println("All the feilds are present as per the product Life Life Perfect Partner Super");
+				} else {
+					Assert.fail(
+							"All the feilds are not present as per the product Life Life Perfect Partner Super");
+				}
+				break;
+
+				
+			case "Max Life Whole Life Super":
+				System.out.println("Max Life Whole Life Super");
+				arrowDownFunctionToScrollDown();
 				if (policyTerm.isDisplayed() && premiumCommitment.isDisplayed() && termPlusRider.isDisplayed()
 						&& premiumPaymentTerm.isDisplayed() && dividendAdjustment.isDisplayed()
 						&& dividendOptionWLS.isDisplayed() && modeOfPayment.isDisplayed()
 						&& effectiveDateOfCoverage.isDisplayed()
-						&& accidentalDeathAndDismembermentRider.isDisplayed()) {
+						&& accidentalDeathAndDismembermentRider.isDisplayed() && WOPPlusRider.isDisplayed()) {
 
 					System.out.println("All the feilds are present as per the product MAX LIFE WHOLE LIFE SUPER");
 				} else {
 					Assert.fail("All the feilds are not present as per the product MAX LIFE WHOLE LIFE SUPER");
 				}
 				break;
-			case "Life Savings Advantage Plan":
+				
+			case "Max Life Guaranteed Income Plan":
+				System.out.println("Max Life Guaranteed Income Plan");
+				JourneyScreenTwo.arrowDownFunctionToScrollDown();
+				if ( premiumCommitment.isDisplayed() 
+						&& premiumPaymentTerm.isDisplayed()
+						 && modeOfPayment.isDisplayed()
+						&& effectiveDateOfCoverage.isDisplayed()
+						) {
+
+					System.out.println("All the feilds are present as per the product Max Life Guaranteed Income Plan");
+				} else {
+					Assert.fail("All the feilds are not present as per the product Max Life Guaranteed Income Plan");
+				}
+				break;
+				
+				
+				
+				
+			case "Max Life Savings Advantage Plan":
+				System.out.println("Max Life Savings Advantage Plan");
+				arrowDownFunctionToScrollDown();
 				if (policyTerm.isDisplayed() && premiumPaymentTerm.isDisplayed() && termPlusRider.isDisplayed()
 						&& premiumCommitment.isDisplayed() && modeOfPayment.isDisplayed()
 						&& premiumTypeSAP.isDisplayed() && effectiveDateOfCoverage.isDisplayed()
@@ -1047,7 +1169,8 @@ public class JourneyScreenTwo extends ReusableActions {
 
 					System.out.println("All the feilds are present as per the product MAX LIFE SAVING ADVANTAGE PLAN");
 				} else {
-					Assert.fail("All the feilds are not present as per the product MAX LIFE SAVING ADVANTAGE PLAN");
+					Assert.fail(
+							"All the feilds are not present as per the product MAX LIFE SAVING ADVANTAGE PLAN");
 				}
 			}
 		}
@@ -1074,6 +1197,94 @@ public class JourneyScreenTwo extends ReusableActions {
 					"Test Case fail:As all the required feilds are not present for MAX LIFE FAST TRACK SUPER PLAN(ULIP)");
 		}
 
+	}
+
+	public static void selectByDropdownUlipAllProduct() throws Exception {
+		waitTillElementToBeClickable(productNm);
+		productNm.click();
+		Thread.sleep(1000);
+
+		String str = null;
+		List<String> actualResult = new ArrayList<String>();
+		List<WebElement> actualListDOBProfInsureresDetails = driver
+				.findElements(By.xpath("//*[@id='menu-productName']/div[2]/ul/li"));
+		for (int i = 0; i < actualListDOBProfInsureresDetails.size(); i++) {
+			str = actualListDOBProfInsureresDetails.get(i).getText();
+			actualResult.add(str);
+		}
+		System.out.println(actualResult.size());
+		System.out.println(actualResult);
+		driver.findElement(By.xpath("//*[@id='menu-productName']/div[2]/ul/li[1]")).click();
+		System.out.println(actualListDOBProfInsureresDetails.size());
+		for (int i = 0; i <= actualListDOBProfInsureresDetails.size(); i++) {
+			waitTillElementToBeClickable(productNm);
+			Thread.sleep(700);
+			productNm.click();
+			String strn = actualResult.get(i);
+			driver.findElement(By.xpath("//*[@id='menu-productName']/div[2]/ul/li[text()= '" + strn + "']")).click();
+			Thread.sleep(1500);
+			driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[2]/form[1]/div[1]/div[1]/div[3]")).click();
+			Thread.sleep(800);
+			switch (strn) {
+			case "Forever Young Pension Plan":
+				System.out.println("Forever Young Pension Plan");
+				arrowDownFunctionToScrollDown();
+				if (isElementDisplayed(premiumPaymentTerm) && isElementDisplayed(premiumType)
+						&& isElementDisplayed(policyTerm) && isElementDisplayed(vestigeAge)
+						&& isElementDisplayed(saveMoreTomorrowLabel) && isElementDisplayed(fundOptionLabel)
+						&& isElementDisplayed(modeOfPayment) && premiumCommitment.isDisplayed()
+						&& partnerCareRider.isDisplayed()) {
+
+					System.out.println("All the feilds are present as per the product Forever Young Pension Plan");
+				} else {
+					Assert.fail("All the feilds are not present as per the product Forever Young Pension Plan");
+				}
+				break;
+
+			case "Max Life Platinum Wealth Plan":
+				System.out.println("Max Life Platinum Wealth Plan");
+				arrowDownFunctionToScrollDown();
+				if (isElementDisplayed(premiumType) && isElementDisplayed(premiumPaymentTerm)
+						&& isElementDisplayed(policyTerm) && isElementDisplayed(modeOfPayment)
+						&& premiumCommitment.isDisplayed() && partnerCareRider.isDisplayed()
+						&& sysatematicTransferPlanLabel.isDisplayed() && dynamicFundAlocationLabel.isDisplayed()
+						&& chooseYourFundLabel.isDisplayed()) {
+
+					System.out.println("All the feilds are present as per the product Max Life Platinum Wealth Plan");
+				} else {
+					Assert.fail("All the feilds are not present as per the product Max Life Platinum Wealth Plan");
+				}
+				break;
+
+			case "Max Life Fast Track Super Plan":
+				System.out.println("Max Life Whole Life Super");
+				arrowDownFunctionToScrollDown();
+				if (policyTerm.isDisplayed() && premiumCommitment.isDisplayed() && premiumPaymentTerm.isDisplayed()
+						&& modeOfPayment.isDisplayed() && sysatematicTransferPlanLabel.isDisplayed()
+						&& dynamicFundAlocationLabel.isDisplayed() && chooseYourFundLabel.isDisplayed()) {
+
+					System.out.println("All the feilds are present as per the product Max Life Fast Track Super Plan");
+				} else {
+					Assert.fail(
+							"All the feilds are not present as per the product Max Life Fast Track Super Plan");
+				}
+				break;
+
+			default:
+				System.out.println("Max Life Shiksha Plus Super");
+				arrowDownFunctionToScrollDown();
+				if (premiumPaymentTerm.isDisplayed() && policyTerm.isDisplayed() && modeOfPayment.isDisplayed()
+						&& premiumCommitment.isDisplayed() && sysatematicTransferPlanLabel.isDisplayed()
+						&& dynamicFundAlocationLabel.isDisplayed() && chooseYourFundLabel.isDisplayed()
+						&& childDateOfBirthLabel.isDisplayed()) {
+
+					System.out.println("All the feilds are present as per the product Max Life Siksha Plus Super");
+				} else {
+					Assert.fail("All the feilds are not present as per the product Max Life Siksha Plus Super");
+				}
+			
+			}
+		}
 	}
 
 	public static void selectByDropdownNeedOfInsurance() throws Exception {
@@ -1180,8 +1391,8 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	public static void modeOfPaymentSAP() throws Exception {
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		waitTillElementToBeClickable(modeOfPaymentSAP);
-		modeOfPaymentSAP.click();
+		waitTillElementToBeClickable(modeOfPaymentSAPDropDown);
+		modeOfPaymentSAPDropDown.click();
 		waitTillElementToBeClickable(modeOfPayment1stOption);
 		modeOfPayment1stOption.click();
 		Thread.sleep(2000);
@@ -1226,8 +1437,8 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	public static void dividentOptionMIAP() throws Exception {
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		waitTillElementToBeClickable(dividentOptionMIAP);
-		dividentOptionMIAP.click();
+		waitTillElementToBeClickable(dividendOptionWLSDropDown);
+		dividendOptionWLSDropDown.click();
 		waitTillElementToBeClickable(divident1stOption);
 		divident1stOption.click();
 		Thread.sleep(2000);
@@ -1246,8 +1457,8 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	public static void dividentOptionWLS() throws Exception {
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		waitTillElementToBeClickable(dividendOptionWLS);
-		dividendOptionWLS.click();
+		waitTillElementToBeClickable(dividendOptionWLSDropDown);
+		dividendOptionWLSDropDown.click();
 		waitTillElementToBeClickable(divident1stOption);
 		divident1stOption.click();
 		Thread.sleep(2000);
@@ -1571,6 +1782,7 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	// Select PIO as an nationality
 	public static void clickSubmitButton() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		click(proceedBtn);
 		Thread.sleep(14000);
 	}
@@ -2584,7 +2796,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		nonSmoker();
 		dividentAdjustmentSTP();
 		modeOfPaymentSTP();
-		WOPPlusRider();
+		WOPPlusRiderCheckBox();
 		sumAssured();
 	}
 
@@ -2614,7 +2826,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		nonSmoker.click();
 		dividentAdjustmentSTPDependent();
 		modeOfPaymentSTPDependent();
-		WOPPlusRider();
+		WOPPlusRiderCheckBox();
 		Thread.sleep(500);
 		// waitTillElementToBeClickable(POSVFlowForSAPMIAP.premiumCommitmentMIAPYesOptionSelection);
 	}
@@ -2633,19 +2845,27 @@ public class JourneyScreenTwo extends ReusableActions {
 	public static void fillingAllTheRequiredFeildsForSAP() throws Exception {
 		selectByDropdownNeedOfInsur();
 		selectByDropdownLifeStge();
+
+		driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[2]/form[1]/div[1]/div[1]/div[3]")).click();
+		arrowDownFunctionToScrollDown();
+
 		premiumTypeSAP();
 		premiumPayementTermSAP();
 		policyTermSAP();
 
 		modeOfPaymentSAP();
 		dividentOptionWLS();
-		WOPPlusRider();
+		WOPPlusRiderCheckBox();
 
 	}
 
 	public static void fillingAllTheRequiredFeildsForFTSP() throws Exception {
 		selectByDropdownNeedOfInsur();
 		selectByDropdownLifeStge();
+
+		driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[2]/form[1]/div[1]/div[1]/div[3]")).click();
+		arrowDownFunctionToScrollDown();
+
 		premiumPayementTermFTSP();
 		policyTermFTSP();
 		JourneyScreenFour.arrowDownFunctionToScrollDown();
