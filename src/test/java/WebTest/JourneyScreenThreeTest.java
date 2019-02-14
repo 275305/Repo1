@@ -356,7 +356,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			HomePage.clickNewApp();
 			ScreenOneTestIndianFuntn();
 			JourneyScreenTwo.traditional();
-			JourneyScreenTwo.selectByDropdownTradAllProduct();
+			//JourneyScreenTwo.selectByDropdownTradAllProduct();
 			/*JourneyScreenTwo.setFirstName(3, 1, 0);
 			JourneyScreenTwo.setLastName(3, 1, 1);
 		    JourneyScreenTwo.setDateBirthPersonalDetails(1, 1, 9);

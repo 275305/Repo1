@@ -28,8 +28,8 @@ public class RegressionSuitTest extends ReusableActions {
 	public void setUp(String browser, String version, String platform, String testrun) throws Exception {
 		String testRun = testrun;
 		/* String testRun1=testrun1; */
-		if (testRun.equals("run"))
-		// if (testRun.equals("runbsw"))
+		//if (testRun.equals("run"))
+		 if (testRun.equals("runbsw"))
 		{
 
 			try {
@@ -56,8 +56,8 @@ public class RegressionSuitTest extends ReusableActions {
 		}
 
 		else
-		if (testRun.equals("runfa"))
-			// if (testRun.equals("run"))
+			//if (testRun.equals("runfa"))
+			 if (testRun.equals("run"))
 			// @BeforeClass
 			// public void launchBrowser() throws Exception{
 
@@ -115,7 +115,7 @@ public class RegressionSuitTest extends ReusableActions {
 	}
 
 
-	@Test(priority = 2, enabled = false)
+	@Test(priority = 2, enabled = true)
 	public void indianSelfByDefaultSelectedAndProceedEnabled() throws Exception {
 		try {
 			HomePage.clickDashboard();
@@ -131,7 +131,7 @@ public class RegressionSuitTest extends ReusableActions {
 	}
 
 	// TC -02 Test case for positive value for saving the first screen data
-	@Test(priority = 3, enabled = false)
+	@Test(priority = 3, enabled = true)
 	public void ScreenOneTestIndianToScreenTwo() throws Exception {
 		try {
 			HomePage.clickDashboard();
@@ -149,7 +149,7 @@ public class RegressionSuitTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 4, enabled = false)
+	@Test(priority = 4, enabled = true)
 	public void ScreenOneTestIndianMultipleData() throws Exception {
 		try {
 			HomePage.clickDashboard();
@@ -168,7 +168,7 @@ public class RegressionSuitTest extends ReusableActions {
 	}
 
 	// TC -02 Test case for positive value for saving the first screen data
-	@Test(priority = 5, enabled = false)
+	@Test(priority = 5, enabled = true)
 	public void ScreenOneTestNRIWithMultipleDataValidation() throws Exception {
 		try {
 
@@ -222,7 +222,7 @@ public class RegressionSuitTest extends ReusableActions {
 	// Test case---> describing all the fields are present on the screen first when
 	// NRI is selected.
 
-	@Test(priority = 6, enabled = false)
+	@Test(priority = 6, enabled = true)
 	public void checkNRIFeildsDisabled() throws Exception {
 		try {
 			HomePage.clickDashboard();
@@ -238,7 +238,7 @@ public class RegressionSuitTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 2, enabled = false)
+	@Test(priority = 7, enabled = true)
 	public void checkInsurersDetailsIsPresentAndFillingTheDetailsScreenTwo() throws Exception {
 		try {
 			JourneyScreenTwoTest.fillingFeildsScreenTwoFunction();
@@ -255,14 +255,14 @@ public class RegressionSuitTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 8, enabled = false)
+	@Test(priority = 8, enabled = true)
 	public void asNomineeIsMinorProvideGuardianNameDetails() throws Exception {
 		JourneyScreenThree.currentDatePicker();
 		JourneyScreenThree.asNomineeIsMinorProvideGuardianname();
 
 	}
 
-	@Test(priority = 10, enabled = false)
+	@Test(priority = 10, enabled = true)
 	public void CheckproductConfigrationCancerAndPdf() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -288,7 +288,7 @@ public class RegressionSuitTest extends ReusableActions {
 	/*
 	 * Test case:-To check PDF is generating or not for SUPER TERM PLAN
 	 */
-	@Test(priority = 11, enabled = false)
+	@Test(priority = 11, enabled = true)
 	public void CheckproductConfigrationSTPGeneratingPdf() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -312,7 +312,7 @@ public class RegressionSuitTest extends ReusableActions {
 	 * Test case:-To check PDF is generating or not for MAX LIFE MONTHLY INCOME
 	 * ADVANTAGE PLAN
 	 */
-	@Test(priority = 12, enabled = false)
+	@Test(priority = 12, enabled = true)
 	public void CheckproductConfigrationMIAPGeneratingPdf() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -333,7 +333,7 @@ public class RegressionSuitTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 13, enabled = false)
+	@Test(priority = 13, enabled = true)
 	public void CheckproductConfigrationWLSGeneratingPdf() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -353,7 +353,7 @@ public class RegressionSuitTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 14, enabled = false)
+	@Test(priority = 14, enabled = true)
 	public void CheckproductConfigrationSAPGeneratingPdf() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -374,7 +374,7 @@ public class RegressionSuitTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 15, enabled = false)
+	@Test(priority = 15, enabled = true)
 	public void CheckproductConfigrationFTSPUlipGeneratingPdf() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -456,21 +456,24 @@ public class RegressionSuitTest extends ReusableActions {
 		}
 	}
 
-	/*
-	 * @Test(priority = 18, enabled = true) public void
-	 * isPayorDetailsNoOptionSelectedByDefault() throws Exception {
-	 * PageFactory.initElements(driver, JourneyScreenThree.class); try {
-	 * JourneyScreenTwo.clickSubmitButton(); waitTillPageLoaded(driver);
-	 * waitTillElementLocated(JourneyScreenThree.payorDetailsNo);
-	 * JourneyScreenThree.isPayorDetailsNoOptionSelectedByDefault();
-	 * 
-	 * } catch (Exception e) { logger.error("Test case failed " + e.getMessage());
-	 * throw e;
-	 * 
-	 * }
-	 * 
-	 * }
-	 */
+
+	@Test(priority = 18, enabled = false)
+	public void isPayorDetailsNoOptionSelectedByDefault() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenThree.class);
+		try {
+			JourneyScreenTwo.clickSubmitButton();
+			waitTillPageLoaded(driver);
+			waitTillElementLocated(JourneyScreenThree.payorDetailsNo);
+			JourneyScreenThree.isPayorDetailsNoOptionSelectedByDefault();
+
+		} catch (Exception e) {
+			logger.error("Test case failed " + e.getMessage());
+			throw e;
+
+		}
+
+	}
+
 
 	// Ful2-140 Nominee Details section
 	@Test(priority = 19, enabled = false)
@@ -495,7 +498,7 @@ public class RegressionSuitTest extends ReusableActions {
 
 	}
 
-	@Test(priority = 20, enabled = true)
+	@Test(priority = 20, enabled = false)
 	public void bankDetailsSection() throws Exception
 
 	{
@@ -521,7 +524,7 @@ public class RegressionSuitTest extends ReusableActions {
 
 	}
 
-	@Test(priority = 21, enabled = true)
+	@Test(priority = 21, enabled = false)
 	public void personalDetailsSectionFeildsValidation() throws Exception
 
 	{
@@ -563,7 +566,7 @@ public class RegressionSuitTest extends ReusableActions {
 
 	}
 
-	@Test(priority = 23, enabled = true)
+	@Test(priority = 23, enabled = false)
 	public void EIAScreeenFourValidation() throws Exception
 
 	{
@@ -582,7 +585,7 @@ public class RegressionSuitTest extends ReusableActions {
 
 	}
 
-	@Test(priority = 24, enabled = true)
+	@Test(priority = 24, enabled = false)
 	public void payorDetailsFeildsIsPresentAndValidation() throws Exception
 
 	{
@@ -609,7 +612,7 @@ public class RegressionSuitTest extends ReusableActions {
 
 	}
 
-	@Test(priority = 25, enabled = true)
+	@Test(priority = 25, enabled = false)
 	public void checkInsurersDetailsIsPresentAndFeildsValidationScreenThree() throws Exception {
 		try {
 			JourneyScreenTwoTest.fillingFeildsScreenTwoFunction();
@@ -636,7 +639,7 @@ public class RegressionSuitTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 26, enabled = true)
+	@Test(priority = 26, enabled = false)
 	public void insurerDetailsFillingAllTheFeildsToReachScreenFourSelectingDependent() throws Exception {
 		try {
 			JourneyScreenTwoTest.fillingFeildsScreenTwoFunction();
@@ -662,7 +665,7 @@ public class RegressionSuitTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 27, enabled = true)
+	@Test(priority = 27, enabled = false)
 	public void lifeStyleScreeenFourValidation() throws Exception
 
 	{
@@ -688,7 +691,7 @@ public class RegressionSuitTest extends ReusableActions {
 
 	}
 
-	@Test(priority = 28, enabled = true)
+	@Test(priority = 28, enabled = false)
 	public void reachingScreenFourFillingAnnualIncomeform60RelatedDetailsFeilds() throws Exception
 
 	{
@@ -711,7 +714,7 @@ public class RegressionSuitTest extends ReusableActions {
 
 	}
 	
-	@Test(priority = 29, enabled = true)
+	@Test(priority = 29, enabled = false)
 	public static void checkPOSVFlowForSAPWithMutipleFirstNameForSelf() throws Exception {
 		PageFactory.initElements(driver, POSVFlowForSAPMIAP.class);
 		try {
@@ -724,7 +727,7 @@ public class RegressionSuitTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 30, enabled = true)
+	@Test(priority = 30, enabled = false)
 	public static void checkPOSVFlowForMIAPWithMutipleFirstNameForSelf() throws Exception {
 		PageFactory.initElements(driver, POSVFlowForSAPMIAP.class);
 		try {
@@ -737,7 +740,7 @@ public class RegressionSuitTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 31, enabled = true)
+	@Test(priority = 31, enabled = false)
 	public static void checkPOSVFlowForSAPWithMutipleFirstNameForDependent() throws Exception {
 		PageFactory.initElements(driver, POSVFlowForSAPMIAP.class);
 		try {
