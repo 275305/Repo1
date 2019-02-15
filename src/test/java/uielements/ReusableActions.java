@@ -77,7 +77,7 @@ import util.AppConstant;
 				public static File file = null;
 				public static FileInputStream fileInput = null;
 			    //public String filepath="D:\\Max_Life Resolved Issues\\MAX_QA_FunctionalTest\\File Paths\\geckodriver.exe";
-				public static Properties prop;
+	public static Properties prop;
 				
 				public static Properties readProperties()
 				{
@@ -210,6 +210,7 @@ import util.AppConstant;
 		
 		public static void waitTillPageLoaded(WebDriver driver) {
 			ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
+				@Override
 				public Boolean apply(WebDriver driver) {
 					return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
 				}

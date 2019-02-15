@@ -1588,6 +1588,33 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	}
 
+	public static void getAllTextBoxVaue() throws Exception {
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//span[contains(text(),'Product   Details')]")).click();
+		Thread.sleep(1000);
+		String str = null;
+	driver.findElements(By.xpath("//input[contains(@type,'text')]"));
+	List<String> actualResult = new ArrayList<String>();
+	List<WebElement> actualListDOBProfInsureresDetails=driver.findElements(By.xpath("//input[contains(@type,'text')]"));
+	for(int i=0;i<actualListDOBProfInsureresDetails.size();i++) {
+			str = actualListDOBProfInsureresDetails.get(i).getAttribute("value");
+	    actualResult.add(str);
+	}
+	 System.out.println(actualResult.size());
+	 System.out.println(actualResult);
+		driver.findElements(By.xpath("//div[contains(@aria-haspopup,'true')]"));
+		List<String> actualResult2 = new ArrayList<String>();
+		List<WebElement> actualListDOBProfInsureresDetails2 = driver
+				.findElements(By.xpath("//input[contains(@type,'text')]"));
+		for (int i = 0; i < actualListDOBProfInsureresDetails2.size(); i++) {
+			str = actualListDOBProfInsureresDetails.get(i).getAttribute("value");
+			actualResult2.add(str);
+		}
+		System.out.println(actualResult2.size());
+		System.out.println(actualResult2);
+
+	}
+
 	public static void setDateBirthNomineeDetails() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		driver.findElement(By.xpath(".//*[@id='root']/main/div[2]/form/div/div/div[3]")).click();

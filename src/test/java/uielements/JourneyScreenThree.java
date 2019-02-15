@@ -291,23 +291,6 @@ public class JourneyScreenThree extends ReusableActions {
 	@FindBy(xpath = "//span[(text()=\"Weight\")]")
 	static WebElement weightInsurersDetails;
 
-	@FindBy(xpath = "//label[contains(@for, 'InsurerCriticalIllnessYes')]")
-	static WebElement InsurerCriticalIllnessYesInsurersDetails;
-
-	@FindBy(xpath = "//label[contains(@for, 'InsurerCriticalIllnessNo')]")
-	static WebElement InsurerCriticalIllnessNoInsurersDetails;
-
-	@FindBy(xpath = "//label[contains(@for, 'InsurerHazardousActivitiesYes')]")
-	static WebElement InsurerHazardousActivitiesYesInsurersDetails;
-
-	@FindBy(xpath = "//label[contains(@for, 'InsurerHazardousActivitiesNo')]")
-	static WebElement InsurerHazardousActivitiesNoInsurersDetails;
-
-	@FindBy(xpath = "//label[contains(@for, 'InsurerCriminalChargesNo')]")
-	static WebElement InsurerCriminalChargesNoInsurersDetails;
-
-	@FindBy(xpath = "//label[contains(@for, 'InsurerCriminalChargesYes')]")
-	static WebElement InsurerCriminalChargesYesInsurersDetails;
 
 	@FindBy(xpath = "//label[contains(@for, 'Insurer2') and text()='Indian']")
 	static WebElement nationalityIndianInsurersDetails;
@@ -333,17 +316,9 @@ public class JourneyScreenThree extends ReusableActions {
 	@FindBy(xpath = "//label[contains(@for, 'InsurerCriminalChargesNo')]")
 	static WebElement nationalityInsurersDetails;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[8]/div[1]/div/div/div[1]/div/div/div/div/div[@role=\"button\"]")
-	static WebElement feetPersonalDetailsDependent;
 
-	@FindBy(xpath = ".//*[@id='menu-insurerHeightFeet']/div[2]/ul/li[5]")
-	static WebElement selectingFeetDropDownOptionSelection;
 
-	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[8]/div[1]/div/div/div[2]/div/div/div/div/div[@role=\"button\"]")
-	static WebElement inchPersonalDetailsDependent;
 
-	@FindBy(xpath = ".//*[@id='menu-insurerHeightInches']/div[2]/ul/li[5]")
-	static WebElement selectingInchesDropDownOptionSelection;
 
 	@FindBy(xpath = "//input[@name='insurerAnnualIncome']")
 	static WebElement insurerOtherDetailsAnnualIncome;
@@ -554,6 +529,24 @@ public class JourneyScreenThree extends ReusableActions {
 	@FindBy(xpath = ".//*[@id='menu-insurerProofType']/div[2]/ul/li[1]")
 	static WebElement dobProofInsurers1stOption;
 
+	@FindBy(xpath = "//label[contains(@for, 'InsurerCriticalIllnessYes')]")
+	static WebElement InsurerCriticalIllnessYesInsurersDetails;
+
+	@FindBy(xpath = "//label[contains(@for, 'InsurerCriticalIllnessNo')]")
+	static WebElement InsurerCriticalIllnessNoInsurersDetails;
+
+	@FindBy(xpath = "//label[contains(@for, 'InsurerHazardousActivitiesYes')]")
+	static WebElement InsurerHazardousActivitiesYesInsurersDetails;
+
+	@FindBy(xpath = "//label[contains(@for, 'InsurerHazardousActivitiesNo')]")
+	static WebElement InsurerHazardousActivitiesNoInsurersDetails;
+
+	@FindBy(xpath = "//label[contains(@for, 'InsurerCriminalChargesNo')]")
+	static WebElement InsurerCriminalChargesNoInsurersDetails;
+
+	@FindBy(xpath = "//label[contains(@for, 'InsurerCriminalChargesYes')]")
+	static WebElement InsurerCriminalChargesYesInsurersDetails;
+
 	public static void nomineeGender() throws Exception {
 
 		click(nomineeGender);
@@ -734,6 +727,7 @@ public class JourneyScreenThree extends ReusableActions {
 	public static void waitForNumberOfWindowsToEqual(final int numberOfWindows) {
 		new WebDriverWait(driver, 20) {
 		}.until(new ExpectedCondition<Boolean>() {
+			@Override
 			public Boolean apply(WebDriver driver) {
 				return (driver.getWindowHandles().size() == numberOfWindows);
 			}
@@ -1705,55 +1699,11 @@ public class JourneyScreenThree extends ReusableActions {
 
 	// from screen one------------------------------------
 
-	public static void checkAllTheIsurersDetailsFeildsIsPresentForScreenThree() throws Exception {
-		System.out.println("i ma checking");
-		if (dobProofInsurersDetails.isEnabled() && fathersNameInsurersDetails.isDisplayed()
-				&& CritiaclIllnessInsurersDetails.isDisplayed() && hazardousInsurersDetails.isDisplayed()
-				&& criminalChargesInsurersDetails.isDisplayed() && heightInsurersDetails.isDisplayed()
-				&& weightInsurersDetails.isDisplayed() && InsurerCriticalIllnessYesInsurersDetails.isDisplayed()
-				&& InsurerCriticalIllnessNoInsurersDetails.isDisplayed()
-				&& InsurerHazardousActivitiesYesInsurersDetails.isDisplayed()
-				&& InsurerHazardousActivitiesNoInsurersDetails.isDisplayed()
-				&& InsurerCriminalChargesYesInsurersDetails.isDisplayed()
-				&& InsurerCriminalChargesNoInsurersDetails.isDisplayed() && nationalityInsurersDetails.isDisplayed()
-				&& nationalityIndianInsurersDetails.isDisplayed() && nationalityNRIInsurersDetails.isDisplayed()
-				&& insurerEducationIInsurersDetails.isEnabled() && insurerMaritalStatusIInsurersDetails.isEnabled()
-				&& insurerIndustryTypeInsurersDetails.isEnabled() && insurerOrganizationTypeInsurersDetails.isEnabled()
-				&& insurerOccupationInsurersDetails.isEnabled()) {
-			System.out.println(
-					"Test case pass:-As all the required feilds for insurers details for screen three is present");
-		} else {
-			Assert.fail(
-					"Test case fail:-As all the required feilds for insurers details for screen three is not present");
-		}
-	}
 
-	public static void selectingFeetInchesWeight() throws Exception {
-		Thread.sleep(200);
-		waitTillElementToBeClickable(feetPersonalDetailsDependent);
-		feetPersonalDetailsDependent.click();
-		waitTillElementToBeClickable(selectingFeetDropDownOptionSelection);
-		selectingFeetDropDownOptionSelection.click();
-		Thread.sleep(500);
-		waitTillElementToBeClickable(inchPersonalDetailsDependent);
-		inchPersonalDetailsDependent.click();
-		waitTillElementToBeClickable(selectingInchesDropDownOptionSelection);
-		selectingInchesDropDownOptionSelection.click();
-		Thread.sleep(500);
 
-	}
 
-	public static void selectingNoOptionAndIndianForAllMedicalQusetion() throws Exception {
-		Thread.sleep(200);
-		waitTillElementToBeClickable(InsurerCriminalChargesNoInsurersDetails);
-		InsurerCriminalChargesNoInsurersDetails.click();
-		waitTillElementToBeClickable(InsurerHazardousActivitiesNoInsurersDetails);
-		InsurerHazardousActivitiesNoInsurersDetails.click();
-		waitTillElementToBeClickable(InsurerCriticalIllnessNoInsurersDetails);
-		InsurerCriticalIllnessNoInsurersDetails.click();
-		selectingFeetInchesWeight();
 
-	}
+
 
 	public static void fatherNameInsurersDetails(int x, int y, int z) throws Exception {
 		fathersNameInsurersDetails.clear();
@@ -1990,6 +1940,28 @@ public class JourneyScreenThree extends ReusableActions {
 		type(insurerOtherDetailsAnnualIncome, readingdataTestData(x, y, z));
 	}
 
+	public static void checkAllTheIsurersDetailsFeildsIsPresentForScreenThree() throws Exception {
+		System.out.println("i ma checking");
+		if (dobProofInsurersDetails.isEnabled() && fathersNameInsurersDetails.isDisplayed()
+				&& CritiaclIllnessInsurersDetails.isDisplayed() && hazardousInsurersDetails.isDisplayed()
+				&& criminalChargesInsurersDetails.isDisplayed() && heightInsurersDetails.isDisplayed()
+				&& weightInsurersDetails.isDisplayed() && InsurerCriticalIllnessYesInsurersDetails.isDisplayed()
+				&& InsurerCriticalIllnessNoInsurersDetails.isDisplayed()
+				&& InsurerHazardousActivitiesYesInsurersDetails.isDisplayed()
+				&& InsurerHazardousActivitiesNoInsurersDetails.isDisplayed()
+				&& InsurerCriminalChargesYesInsurersDetails.isDisplayed()
+				&& InsurerCriminalChargesNoInsurersDetails.isDisplayed() && nationalityInsurersDetails.isDisplayed()
+				&& nationalityIndianInsurersDetails.isDisplayed() && nationalityNRIInsurersDetails.isDisplayed()
+				&& insurerEducationIInsurersDetails.isEnabled() && insurerMaritalStatusIInsurersDetails.isEnabled()
+				&& insurerIndustryTypeInsurersDetails.isEnabled() && insurerOrganizationTypeInsurersDetails.isEnabled()
+				&& insurerOccupationInsurersDetails.isEnabled()) {
+			System.out.println(
+					"Test case pass:-As all the required feilds for insurers details for screen three is present");
+		} else {
+			Assert.fail(
+					"Test case fail:-As all the required feilds for insurers details for screen three is not present");
+		}
+	}
 	public static void isurersDetailsFeildsDropDownForScreenThree() throws Exception {
 		setfatherNameInsurersDetails(3, 1, 0);
 		dOBProofInsurersDetailsOption();
@@ -1998,7 +1970,7 @@ public class JourneyScreenThree extends ReusableActions {
 		insurersIndustryTypeOptionSelection();
 		organizationTypeInsurersDetailsDropDownOptionSelection();
 		occupationInsurersDetailsDropDownOptionSelection();
-		selectingNoOptionAndIndianForAllMedicalQusetion();
+		JourneyScreenFour.selectingNoOptionForAllMedicalQusetion();
 		weightPersonalDetailsDependent(0, 1, 0);
 		insurerOtherDetailsAnnualIncome(0, 1, 1);
 	}

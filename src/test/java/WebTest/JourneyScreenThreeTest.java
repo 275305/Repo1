@@ -664,8 +664,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			JourneyScreenFour.form60RelatedDetailsIdentityProofNameOptionSelection();
 			JourneyScreenFour.setIdentityProofNumberValidation(0, 1, 6);
 			JourneyScreenFour.identityProofIssuingAuthorityOptionSelection();
-			// JourneyScreenThree.fillPanApplicationAcknowledgeNowWithoutValidation();
-			// JourneyScreenThree.setDateBirthdateOfApplicationWithoutValidation(1,1,9);
+			JourneyScreenFour.fillPanApplicationAcknowledgeNowWithoutValidation();
 
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
