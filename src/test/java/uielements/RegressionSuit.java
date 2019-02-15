@@ -1,5 +1,6 @@
 package uielements;
 
-public class RegressionSuit {
+public class RegressionSuit extends ReusableActions {
+
 
 }

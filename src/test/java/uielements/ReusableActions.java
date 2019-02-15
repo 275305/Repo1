@@ -43,9 +43,9 @@ import util.AppConstant;
 	public class ReusableActions {
 		
 		//WebDriver driver;
-		public static WebDriver driver;
+	public static WebDriver driver;
 		
-		
+
 		public static Logger logger = LoggerFactory.getLogger(LoginPage.class);
 		public static Logger JourneyScreenOnelogger = LoggerFactory.getLogger(JourneyScreenOneTest.class);
 		public static Logger JourneyScreenTwologger = LoggerFactory.getLogger(JourneyScreenTwoTest.class);
@@ -77,7 +77,7 @@ import util.AppConstant;
 				public static File file = null;
 				public static FileInputStream fileInput = null;
 			    //public String filepath="D:\\Max_Life Resolved Issues\\MAX_QA_FunctionalTest\\File Paths\\geckodriver.exe";
-	public static Properties prop;
+	           public static Properties prop = null;
 				
 				public static Properties readProperties()
 				{

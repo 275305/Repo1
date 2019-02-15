@@ -3,18 +3,17 @@ package uielements;
 
 	import static org.testng.Assert.assertEquals;
 
-	import java.io.File;
-	import java.io.FileInputStream;
+import java.io.File;
+import java.io.FileInputStream;
 
-	import org.openqa.selenium.WebDriver;
-	import org.openqa.selenium.WebElement;
-	import org.openqa.selenium.support.FindBy;
-	import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-	import uielements.ReusableActions;
-import util.AppConstant;
 import jxl.Sheet;
-	import jxl.Workbook;
+import jxl.Workbook;
+import util.AppConstant;
 
 
 	public class LoginPage extends ReusableActions{
@@ -172,7 +171,7 @@ import jxl.Sheet;
 			
 			public static void verifyloginpage() throws Exception {
 				
-				
+		PageFactory.initElements(driver, LoginPage.class);
 				String actualTitle = driver.getTitle();
 				//String expectedTitle = "Fulfillment 2.0";
 				String expectedTitle = "mPRO";
