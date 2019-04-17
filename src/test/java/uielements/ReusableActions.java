@@ -18,6 +18,7 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFFormulaEvaluator;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.fluttercode.datafactory.impl.DataFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -121,6 +122,12 @@ import util.AppConstant;
 			return elementloaded;
 		}
 		
+	public static WebElement waitTillElementToBeClickableLongWait(WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, 660);
+		WebElement elementloaded = wait.until(ExpectedConditions.elementToBeClickable(element));
+		return elementloaded;
+	}
+
 		public static WebElement waitTillpresenceofElementLoacted(By element) {
 			WebDriverWait wait = new WebDriverWait(driver, 20);
 			WebElement elementloaded = wait.until(ExpectedConditions.presenceOfElementLocated(element));
@@ -278,7 +285,7 @@ import util.AppConstant;
 				}
 				 System.out.println(actualResult.size());
 				 System.out.println(actualResult);
-					File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
+		File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
 		  			FileInputStream fileInputStream = new FileInputStream(file);
 		  			XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
 		  			XSSFSheet sheet = hssfWorkbook.getSheetAt(sheetNo);
@@ -368,7 +375,89 @@ import util.AppConstant;
 		  			}
 		 }
 		 
-		 
+	public static void comparisonOfListForExpectedAndActualResult(List<String> expectedResult,
+			List<String> actualResultText) throws Exception {
+
+		expectedResult.removeAll(Arrays.asList("", null));
+		actualResultText.removeAll(Arrays.asList("", null));
+		int x = expectedResult.size();
+		for (String compare : actualResultText) {
+			expectedResult.contains(compare);
+			x--;
+			System.out.println(x);
+		}
+		System.out.println(x);
+
+		if (x == 0)
+
+		{
+			System.out.println("Test case pass:Drop down list is same as per the requirement");
+		} else {
+			System.out.println("Test case fail :Expected not same as actual result");
+		}
+
+	}
+
+	public static List<String> fetchingdataFromExcelExpectedResult(int columnNo, int columnSize) throws Exception {
+		XSSFCell cellRep = null;
+		File file = new File(System.getProperty("user.dir") + AppConstant.TEST_DATA_EXCELL);
+		FileInputStream fileInputStream = new FileInputStream(file);
+		XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
+		XSSFSheet sheet = hssfWorkbook.getSheetAt(2);
+		/*
+		 * int lastRow = sheet.getLastRowNum(); while (lastRow >= 0 &&
+		 * sheet.getRow(lastRow).getCell(0) == null) { lastRow--; } int columnSize =
+		 * lastRow + 1;
+		 */
+		List<String> expectedResultForDropDown = new ArrayList<String>();
+		for (int i = 1; i < columnSize; i++) {
+			cellRep = sheet.getRow(i).getCell(columnNo);
+			final FormulaEvaluator objFormulaEvaluator = new XSSFFormulaEvaluator(hssfWorkbook);
+			objFormulaEvaluator.evaluate(cellRep);
+			final DataFormatter dataFormatter = new DataFormatter();
+			final String cellValue = dataFormatter.formatCellValue(cellRep, objFormulaEvaluator);
+			expectedResultForDropDown.add(cellValue);
+		}
+		return expectedResultForDropDown;
+	}
+
+	public static List<String> fetchingdataFromExcelExpectedResultSheet(int columnNo, int columnSize, int SheetNo)
+			throws Exception {
+		XSSFCell cellRep = null;
+		File file = new File(System.getProperty("user.dir") + AppConstant.TEST_DATA_EXCELL);
+		FileInputStream fileInputStream = new FileInputStream(file);
+		XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
+		XSSFSheet sheet = hssfWorkbook.getSheetAt(SheetNo);
+		/*
+		 * int lastRow = sheet.getLastRowNum(); while (lastRow >= 0 &&
+		 * sheet.getRow(lastRow).getCell(0) == null) { lastRow--; } int columnSize =
+		 * lastRow + 1;
+		 */
+		List<String> expectedResultForDropDown = new ArrayList<String>();
+		for (int i = 1; i < columnSize; i++) {
+			cellRep = sheet.getRow(i).getCell(columnNo);
+			final FormulaEvaluator objFormulaEvaluator = new XSSFFormulaEvaluator(hssfWorkbook);
+			objFormulaEvaluator.evaluate(cellRep);
+			final DataFormatter dataFormatter = new DataFormatter();
+			final String cellValue = dataFormatter.formatCellValue(cellRep, objFormulaEvaluator);
+			expectedResultForDropDown.add(cellValue);
+		}
+		return expectedResultForDropDown;
+	}
+
+	public static List<String> fetchingdataFromUI(String xpathOfTexOnTheScreen) throws Exception {
+		String str = null;
+		// driver.findElements(By.xpath("//input[contains(@type,'text')]"));
+		List<String> actualResultText = new ArrayList<String>();
+		List<WebElement> actualListTextBox = driver.findElements(By.xpath(xpathOfTexOnTheScreen));
+		for (int i = 0; i < actualListTextBox.size(); i++) {
+			str = actualListTextBox.get(i).getAttribute("value");
+			actualResultText.add(str);
+		}
+		return actualResultText;
+
+
+	}
 		 
 		 
 		 
@@ -436,15 +525,18 @@ import util.AppConstant;
 			    driver.switchTo().window(originalHandle);
 		   }
 	
-	/*	 public static void testDatafForNameGenerator() {
+	public static String testDatafForNameGenerator() {
 			    DataFactory df = new DataFactory();
 			    for (int i = 0; i < 200; i++) {          
 			        String name = df.getFirstName() + " "+ df.getLastName();
 			        System.out.println(name);
+
+			return name;
 			    }
+		return null;
 			  }
-	*/
 	
+
 	}
 
 	

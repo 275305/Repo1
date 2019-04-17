@@ -11,4 +11,5 @@ public class AppConstant {
 	public static final String LOGIN_DATA_EXCELL = "/src/test/resources/LoginData.xls";
 	
 	public static final String INPUT_PROPERTIES_EXCELL = "/src/test/resources/Input.properties";
+
 }

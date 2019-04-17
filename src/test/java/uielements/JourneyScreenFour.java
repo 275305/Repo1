@@ -1,6 +1,9 @@
 package uielements;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -13,10 +16,10 @@ import org.testng.Assert;
 import util.AppConstant;
 
 public class JourneyScreenFour extends ReusableActions {
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[1]/div[2]/div/div/div/div/div[1]/div[1]/div/div/div/div/div[@role=\"button\"]")
+	@FindBy(xpath = "//div[@id='identityProof_id']")
 	static WebElement identityProofName;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[8]/div[1]/div/div/div[1]/div/div/div/div/div[@role=\"button\"]")
+	@FindBy(xpath = "//div[@id='insurerHeightFeet_id']")
 	static WebElement feetPersonalDetailsDependent;
 
 	@FindBy(xpath = ".//*[@id='menu-insurerHeightFeet']/div[2]/ul/li[5]")
@@ -25,7 +28,7 @@ public class JourneyScreenFour extends ReusableActions {
 	@FindBy(xpath = ".//*[@id='menu-feet']/div[2]/ul/li[5]")
 	static WebElement selectingFeetDropDownOptionSelectionIndian;
 
-	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[8]/div[1]/div/div/div[2]/div/div/div/div/div[@role=\"button\"]")
+	@FindBy(xpath = "//div[@id='insurerHeightInches_id']")
 	static WebElement inchPersonalDetailsDependent;
 
 	@FindBy(xpath = "//*[@id='root']/main[1]/div[2]/form[1]/div[1]/div[1]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1][@role=\"button\"]")
@@ -61,7 +64,7 @@ public class JourneyScreenFour extends ReusableActions {
 	@FindBy(xpath = "//span[contains(text(),\"Neither my income of any other person in respect of which I am assessable under the act was in excess of the maximum amount not chargeable to income tax in any previous year.\")]")
 	static WebElement CheckBox1stOfIamExemptFromTheRequirement;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[1]/div[2]/div/div/div/div/div[2]/div/div/div/div/div/div[@role=\"button\"]")
+	@FindBy(xpath = "//div[@id='identityProofIssuingAuthority_id']")
 	static WebElement identityProofIssuingAuthority;
 
 	@FindBy(xpath = ".//*[@id='menu-identityProofIssuingAuthority']/div[2]/ul/li[1]")
@@ -70,17 +73,18 @@ public class JourneyScreenFour extends ReusableActions {
 	@FindBy(xpath = "//label[contains(@for, 'CriminalChargesNo')]")
 	public static WebElement criminalChargesNo;
 
-	@FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[2]/form[1]/div[1]/div[1]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1][@role=\"button\"]")
-	public static WebElement feetDropDownIndian;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[4]/div[2]/div/div/div/div/div[4]/div[1]/div/div[1]/div/div/div/div/div[@role=\"button\"]")
+
+
+
+	@FindBy(xpath = "//div[@id='feet_id']")
 	public static WebElement feetDropDown;
 
 	@FindBy(xpath = "//*[@id='menu-feet']/div[2]/ul/li[1]")
 	public static WebElement feetDropDown1stOption;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[4]/div[2]/div/div/div/div/div[5]/div[1]/div/div[2]/div/div/div/div/div[@role=\"button\"]")
-	public static WebElement inchesDropDownSAPPOSV;
+	@FindBy(xpath = ".//*[@id='root']/main[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1][@role=\"button\"]")
+	public static WebElement inchesDropDown;
 
 	@FindBy(xpath = ".//*[@id='menu-inches']/div[2]/ul/li[1]")
 	public static WebElement inchesDropDown1stOption;
@@ -103,11 +107,36 @@ public class JourneyScreenFour extends ReusableActions {
 	@FindBy(xpath = ".//*[@id='menu-involvementExtend']/div[2]/ul/li[1]")
 	public static WebElement selectDropDownForToWhatExtentYouAreInvolvedInForHazardousYes1stOption;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[4]/div[2]/div/div/div/div/div[2]/div[4]/div[1]/div/div[1]/div/div/div/div/div[@role=\"button\"]")
+	@FindBy(xpath = "//p[contains(text(),'Pregnancy Details')]")
+	public static WebElement pregnancyDetailsLabelSection;
+
+	@FindBy(xpath = "//span[contains(text(),'Are you currently Pregnant ?')]")
+	public static WebElement areYouCurrentlyPregnantLabel;
+
+	@FindBy(xpath = "//label[@for='PregnantYes']")
+	public static WebElement pregnantYesRadioButton;
+
+	@FindBy(xpath = "//label[@for='PregnantsNo']")
+	public static WebElement pregnantNoRadioButton;
+
+	@FindBy(xpath = "//span[contains(text(),'How many Months ?')]")
+	public static WebElement howManyMonthsLabel;
+
+	@FindBy(xpath = "//span[contains(text(),'Do you have any complications related to pregnancy')]")
+	public static WebElement doYouYaveAnyComplicationsRelatedToPregnancy;
+
+	@FindBy(xpath = "//label[@for='PregnancyComplicationsYes']")
+	public static WebElement pregnancyComplicationsYes;
+
+	@FindBy(xpath = "//label[@for='PregnancyComplicationssNo']")
+	public static WebElement pregnancyComplicationssNo;
+
+	@FindBy(xpath = "//input[@name='pregnancyDetails']")
+	public static WebElement pregnancyDetails;
+
+	@FindBy(xpath = ".//*[@id='root']/main[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1][@role=\"button\"]")
 	public static WebElement feetDropDownSAPPOSV;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[4]/div[2]/div/div/div/div/div[2]/div[4]/div[1]/div/div[2]/div/div/div/div/div[@role=\"button\"]")
-	public static WebElement inchesDropDown;
 
 	@FindBy(xpath = "//span [(text()=\"Do you have any life or Critical Illness insurance policy issued, pending approval from any other insurance companies or has your application for Life/Health/Critical Illness insurance or its reinstatement ever been offered at modified terms, rejected or postponed?\")]")
 	public static WebElement labelCriticallIllness;
@@ -160,7 +189,7 @@ public class JourneyScreenFour extends ReusableActions {
 	@FindBy(xpath = "//label[(text()=\"I am Exempt from the requirement of PAN under the following provisions of the IT Act 1961\")]")
 	public static WebElement iAmExemptFromTheRequirementOfPANUnderTheFollowingProvisionsOfTheITAct1961;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[3]")
+	@FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[3]")
 	public static WebElement outsideClickScreenFour;
 
 	@FindBy(xpath = "//span[text()='Proceed']")
@@ -266,8 +295,8 @@ public class JourneyScreenFour extends ReusableActions {
 		Thread.sleep(300);
 		feetDropDown1stOption.click();
 		Thread.sleep(300);
-		waitTillElementToBeClickable(inchesDropDownSAPPOSV);
-		inchesDropDownSAPPOSV.click();
+		waitTillElementToBeClickable(inchesDropDown);
+		inchesDropDown.click();
 		Thread.sleep(300);
 		waitTillElementToBeClickable(inchesDropDown1stOption);
 		inchesDropDown1stOption.click();
@@ -292,7 +321,7 @@ public class JourneyScreenFour extends ReusableActions {
 
 	public static void arrowDownFunctionToScrollDownTillProceed() throws Exception {
 		Thread.sleep(400);
-		for (int i = 1; i < 21; i++) {
+		for (int i = 1; i < 16; i++) {
 			Actions action = new Actions(driver);
 			action.sendKeys(Keys.ARROW_DOWN).build().perform();
 		}
@@ -315,6 +344,48 @@ public class JourneyScreenFour extends ReusableActions {
 		Thread.sleep(200);
 		isChargeableIncome.click();
 		Thread.sleep(200);
+	}
+
+	public static void checkPregnancyDetailsSectionWhenFemaleIsSelected() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenFour.class);
+		if (pregnancyDetailsLabelSection.isDisplayed() && areYouCurrentlyPregnantLabel.isDisplayed()
+				&& pregnantYesRadioButton.isDisplayed() && pregnantNoRadioButton.isDisplayed()) {
+			System.out.println("Test case pass:As All the feilds for female selection is displaying");
+		} else {
+			Assert.fail("Test case fail:As All the feilds for female selection is not displaying");
+		}
+
+	}
+
+	public static void checkPregnancyDetailsSectionWhenMaleIsSelected() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenFour.class);
+		if (isElementDisplayed(pregnancyDetailsLabelSection) && isElementDisplayed(areYouCurrentlyPregnantLabel)
+				&& isElementDisplayed(pregnantYesRadioButton) && isElementDisplayed(pregnantNoRadioButton)) {
+			Assert.fail("Test case fail:As feilds for female selection is displaying");
+		} else {
+			System.out.println("Test case pass:As feilds for female selection is not displaying");
+		}
+
+	}
+
+	public static void checkPregnancyDetailsSectionWhenYesOptrionIsSelected() throws Exception {
+		Thread.sleep(500);
+		pregnantYesRadioButton.click();
+		Thread.sleep(500);
+		pregnancyComplicationsYes.click();
+		if (howManyMonthsLabel.isDisplayed() && doYouYaveAnyComplicationsRelatedToPregnancy.isDisplayed()
+				&& pregnancyComplicationsYes.isDisplayed() && pregnancyComplicationssNo.isDisplayed()
+				&& pregnancyDetails.isDisplayed()) {
+			System.out.println(
+					"Test case pass:As All the feilds for female displaying when complication is selected yes ");
+		} else {
+			Assert.fail("Test case fail:As All the feilds for female not displaying when complication is selected yes");
+		}
+
+		Thread.sleep(800);
+
+		pregnantNoRadioButton.click();
+
 	}
 
 	public static void lifestyleFeildsValidationForYes() throws Exception {
@@ -371,9 +442,11 @@ public class JourneyScreenFour extends ReusableActions {
 	}
 
 	public static void feetInchesKgsSelectionToMoveToScreen5POSV() throws Exception {
-		Thread.sleep(300);
+		PageFactory.initElements(driver, JourneyScreenFour.class);
+		Thread.sleep(800);
 		waitTillElementVisible(feetDropDownSAPPOSV);
 		feetDropDownSAPPOSV.click();
+		System.out.println("clicked");
 		waitTillElementToBeClickable(feetDropDown1stOption);
 		Thread.sleep(300);
 		feetDropDown1stOption.click();
@@ -388,6 +461,7 @@ public class JourneyScreenFour extends ReusableActions {
 		Thread.sleep(300);
 		outsideClickScreenFour.click();
 		Thread.sleep(300);
+		JourneyScreenTwo.Savebtn.click();
 		Proceedbtn.click();
 
 	}
@@ -568,8 +642,8 @@ public class JourneyScreenFour extends ReusableActions {
 
 	public static void selectingFeetInchesWeightIndian() throws Exception {
 		Thread.sleep(200);
-		waitTillElementToBeClickable(feetDropDownIndian);
-		feetDropDownIndian.click();
+		waitTillElementToBeClickable(feetDropDown);
+		feetDropDown.click();
 		waitTillElementToBeClickable(feetDropDown1stOption);
 		feetDropDown1stOption.click();
 		Thread.sleep(500);
@@ -584,7 +658,26 @@ public class JourneyScreenFour extends ReusableActions {
 
 	}
 
+	public static void selectingFeetInchesWeightIndianWhenFemaleIsSelectedOnScreen() throws Exception {
+		Thread.sleep(1000);
+		waitTillElementToBeClickable(feetDropDown);
+		feetDropDown.click();
+		waitTillElementToBeClickable(feetDropDown1stOption);
+		feetDropDown1stOption.click();
+		Thread.sleep(500);
+		waitTillElementToBeClickable(inchesDropDown);
+		inchesDropDown.click();
+		waitTillElementToBeClickable(selectingInchesDropDownOptionSelectionIndian);
+		selectingInchesDropDownOptionSelectionIndian.click();
+		Thread.sleep(500);
+		setKgsForLifestyle(1, 1, 1);
+		Thread.sleep(500);
+		Proceedbtn.click();
+
+	}
+
 	public static void selectingNoOptionForAllMedicalQusetion() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenFour.class);
 		Thread.sleep(200);
 		waitTillElementToBeClickable(InsurerCriticalIllnessNoInsurersDetails);
 		InsurerCriticalIllnessNoInsurersDetails.click();
@@ -593,7 +686,6 @@ public class JourneyScreenFour extends ReusableActions {
 		waitTillElementToBeClickable(InsurerCriminalChargesNoInsurersDetails);
 		InsurerCriminalChargesNoInsurersDetails.click();
 		selectingFeetInchesWeight();
-
 	}
 
 	public static void selectingNoOptionForAllMedicalQusetionIndian() throws Exception {
@@ -605,7 +697,57 @@ public class JourneyScreenFour extends ReusableActions {
 		waitTillElementToBeClickable(hazardousActivitiesNo);
 		hazardousActivitiesNo.click();
 		JourneyScreenFour.selectCriminalChargesNo();
+		Thread.sleep(800);
 		selectingFeetInchesWeightIndian();
+
+	}
+
+	public static void selectingNoOptionForAllMedicalQusetionIndianFemale() throws Exception {
+		Thread.sleep(200);
+		waitTillElementToBeClickable(criticalIllnessNoOption);
+		criticalIllnessNoOption.click();
+		waitTillElementToBeClickable(hazardousActivitiesYes);
+		hazardousActivitiesYes.click();
+		waitTillElementToBeClickable(hazardousActivitiesNo);
+		hazardousActivitiesNo.click();
+		JourneyScreenFour.selectCriminalChargesNo();
+		selectingFeetInchesWeightIndianWhenFemaleIsSelectedOnScreen();
+
+	}
+
+	public static void getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenFour() throws Exception {
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//span[contains(text(),'Style')]")).click();
+		Thread.sleep(1000);
+		String xpathOfTexOnTheScreen = "//input[contains(@type,'text')]";
+		List<String> actualResultText = fetchingdataFromUI(xpathOfTexOnTheScreen);
+		System.out.println("actual result" + actualResultText);
+		List<String> expectedResult = fetchingdataFromExcelExpectedResult(2, 5);
+		expectedResult.removeAll(Arrays.asList("", null));
+		System.out.println("expected result" + expectedResult);
+		comparisonOfListForExpectedAndActualResult(expectedResult, actualResultText);
+
+		String feet = driver.findElement(By.id("feet")).getAttribute("value");
+		String inches = driver.findElement(By.id("inches")).getAttribute("value");
+
+		List<String> actualResultDropDownList = new ArrayList<String>();
+		actualResultDropDownList.add(feet);
+		actualResultDropDownList.add(inches);
+		System.out.println("actualResultDropDownList" + actualResultDropDownList);
+
+		List<String> expectedResultDropDownList = fetchingdataFromExcelExpectedResult(3, 3);
+		expectedResultDropDownList.removeAll(Arrays.asList("", null));
+		System.out.println("actualResultDropDownList" + expectedResultDropDownList);
+		comparisonOfListForExpectedAndActualResult(expectedResultDropDownList, actualResultDropDownList);
+
+		String xpathOfRadioOnTheScreen = "//input[@checked=\"\"]";
+		List<String> actualResultRadioButtonValue = fetchingdataFromUI(xpathOfRadioOnTheScreen);
+		List<String> expectedResultRadioButtonValue = fetchingdataFromExcelExpectedResult(4, 9);
+		System.out.println("Expected radio button" + actualResultRadioButtonValue);
+		System.out.println("Actual radio button" + expectedResultRadioButtonValue);
+		actualResultRadioButtonValue.removeAll(Arrays.asList("", null));
+		System.out.println("actualResultRadioButtonValue" + actualResultRadioButtonValue);
+		comparisonOfListForExpectedAndActualResult(expectedResultRadioButtonValue, actualResultRadioButtonValue);
 
 	}
 

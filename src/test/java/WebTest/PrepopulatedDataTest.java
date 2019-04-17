@@ -14,6 +14,7 @@ import org.testng.annotations.Test;
 import uielements.HomePage;
 import uielements.JourneyScreenFour;
 import uielements.JourneyScreenOne;
+import uielements.JourneyScreenSix;
 import uielements.JourneyScreenThree;
 import uielements.JourneyScreenTwo;
 import uielements.LoginPage;
@@ -76,6 +77,8 @@ public class PrepopulatedDataTest extends ReusableActions {
 	public void India() throws Exception {
 		try {
 
+
+
 			prop = ReusableActions.readProperties();
 			driver.get(prop.getProperty("SampleURL"));
 			LoginPage.verifyloginpage();
@@ -99,7 +102,7 @@ public class PrepopulatedDataTest extends ReusableActions {
 		}
 	}
 
-	public static void personalDetailsbankDetailsScreenThreeReachingFunction() throws Exception {
+	public static void fillingAllTheFeildsForSAPProduct() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
 			HomePage.clickDashboard();
@@ -131,11 +134,12 @@ public class PrepopulatedDataTest extends ReusableActions {
 
 	{
 		try {
-			personalDetailsbankDetailsScreenThreeReachingFunction();
+
+			Thread.sleep(1000);
 			JourneyScreenThreeTest.proposerPersonalDetailsSection();
 			JourneyScreenThreeTest.nomineeDetailsWithoutDependentSelection();
 			JourneyScreenThreeTest.bankDetailsSectionFillingData();
-			JourneyScreenThree.fillingAnnualIncomeTOProceed(0, 1, 3);
+			JourneyScreenThree.fillingAnnualIncomeTOProceed();
 
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
@@ -145,11 +149,12 @@ public class PrepopulatedDataTest extends ReusableActions {
 
 	}
 
-	@Test(priority = 28, enabled = true)
-	public void reachingScreenFourFillingAnnualIncomeform60RelatedDetailsFeilds() throws Exception
+	@Test(priority = 1, enabled = false)
+	public void prepopualatedForSAPProductForAllScreen() throws Exception
 
 	{
 		try {
+			fillingAllTheFeildsForSAPProduct();
 			reachingScreenFourFillingAnnualIncomeFunction();
 
 			JourneyScreenFour.form60RelatedDetailsFeildsIsPresent();
@@ -168,8 +173,269 @@ public class PrepopulatedDataTest extends ReusableActions {
 			JourneyScreenFour.selectingNoOptionForAllMedicalQusetionIndian();
 			JourneyScreenThree.agreePopupToProceedToSendPreIssuranceVerificationLinkToCustomer();
 			// JourneyScreenFour.arrowDownFunctionToScrollDownTillBottom();
-			JourneyScreenTwo.getAllTextBoxVaue();
 
+			JourneyScreenFour.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenFour();
+			JourneyScreenThree.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenThree();
+			JourneyScreenTwo.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenTwo();
+			JourneyScreenOne.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenOne();
+			JourneyScreenSix.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenSix();
+			JourneyScreenFour.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenFour();
+			JourneyScreenThree.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenThree();
+			JourneyScreenTwo.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenTwo();
+			JourneyScreenOne.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenOne();
+
+		} catch (Exception e) {
+			logger.error("Test case failed " + e.getMessage());
+			throw e;
+
+		}
+	}
+
+	public static void CheckproductConfigrationSTPGeneratingPdf() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenTwo.class);
+		try {
+			alwaysCloseAllChildTabs();
+			HomePage.clickDashboard();
+			HomePage.clickNewApp();
+			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
+			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
+			JourneyScreenTwo.traditional();
+			JourneyScreenTwo.selectByDropdownSTP();
+			JourneyScreenTwo.fillingAllTheRequiredFeildsForSTP();
+			JourneyScreenTwo.checkPOSVforSTPPremiumCommitment(3, 1, 11);
+
+		} catch (Exception e) {
+			logger.error("Test case failed " + e.getMessage());
+			throw e;
+
+		}
+	}
+
+
+
+	@Test(priority = 2, enabled = false)
+	public void prepopualatedForSTPProductForAllScreen() throws Exception
+
+	{
+		try {
+
+			CheckproductConfigrationSTPGeneratingPdf();
+			reachingScreenFourFillingAnnualIncomeFunction();
+			JourneyScreenFour.form60RelatedDetailsFeildsIsPresent();
+			JourneyScreenFour.form60RelatedDetailsIdentityProofNameDropDownValidation();
+			JourneyScreenFour.identityProofNumberValidation(0, 1, 6);
+			JourneyScreenFour.identityProofIssuingAuthority();
+			JourneyScreenFour.idontHavePANNumberAsIhaveAppliedForPANAcknowledgementSelectFeildsValidation();
+
+			// JourneyScreenFour.fillPanApplicationAcknowledgeNowWithoutValidation();
+			// JourneyScreenFour.setDateBirthdateOfApplication(1, 1, 9);
+			JourneyScreenFour.identityProofIssuingAuthorityOptionSelection();
+			JourneyScreenFour.fillPanApplicationAcknowledgeNowWithoutValidation();
+			JourneyScreenTwo.setDateBirthPersonalDetails();
+			JourneyScreenFour.arrowDownFunctionToScrollDownTillProceed();
+
+			JourneyScreenFour.selectingNoOptionForAllMedicalQusetionIndian();
+			JourneyScreenThree.agreePopupToProceedToSendPreIssuranceVerificationLinkToCustomer();
+			// JourneyScreenFour.arrowDownFunctionToScrollDownTillBottom();
+
+			JourneyScreenFour.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenFour();
+			JourneyScreenThree.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenThree();
+			JourneyScreenTwo.getAllDropDownValueSAPScreenTwo();
+			JourneyScreenOne.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenOne();
+			JourneyScreenSix.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenSix();
+			JourneyScreenFour.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenFour();
+			JourneyScreenThree.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenThree();
+			JourneyScreenTwo.getAllDropDownValueSAPScreenTwo();
+			JourneyScreenOne.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenOne();
+
+		} catch (Exception e) {
+			logger.error("Test case failed " + e.getMessage());
+			throw e;
+
+		}
+	}
+
+	public void CheckproductConfigrationMIAPGeneratingPdf() throws Exception {
+		try {
+			alwaysCloseAllChildTabs();
+			HomePage.clickDashboard();
+			HomePage.clickNewApp();
+			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
+			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
+			JourneyScreenTwo.traditional();
+			JourneyScreenTwo.selectByDropdownMIAP();
+			JourneyScreenTwo.fillingAllTheRequiredFeildsForMIAP();
+			JourneyScreenTwo.premiumCommitmentDesiredAnnualIncomeAnnualIncome(3, 1, 11);
+
+		} catch (Exception e) {
+			logger.error("Test case failed " + e.getMessage());
+			throw e;
+
+		}
+	}
+
+	@Test(priority = 3, enabled = false)
+	public void prepopualatedForMIAPProductForAllScreen() throws Exception
+
+	{
+		try {
+
+			CheckproductConfigrationMIAPGeneratingPdf();
+
+			reachingScreenFourFillingAnnualIncomeFunction();
+			JourneyScreenFour.form60RelatedDetailsFeildsIsPresent();
+			JourneyScreenFour.form60RelatedDetailsIdentityProofNameDropDownValidation();
+			JourneyScreenFour.identityProofNumberValidation(0, 1, 6);
+			JourneyScreenFour.identityProofIssuingAuthority();
+			JourneyScreenFour.idontHavePANNumberAsIhaveAppliedForPANAcknowledgementSelectFeildsValidation();
+
+			// JourneyScreenFour.fillPanApplicationAcknowledgeNowWithoutValidation();
+			// JourneyScreenFour.setDateBirthdateOfApplication(1, 1, 9);
+			JourneyScreenFour.identityProofIssuingAuthorityOptionSelection();
+			JourneyScreenFour.fillPanApplicationAcknowledgeNowWithoutValidation();
+			JourneyScreenTwo.setDateBirthPersonalDetails();
+			JourneyScreenFour.arrowDownFunctionToScrollDownTillProceed();
+
+			JourneyScreenFour.selectingNoOptionForAllMedicalQusetionIndian();
+			JourneyScreenThree.agreePopupToProceedToSendPreIssuranceVerificationLinkToCustomer();
+			// JourneyScreenFour.arrowDownFunctionToScrollDownTillBottom();
+
+			JourneyScreenFour.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenFour();
+			JourneyScreenThree.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenThree();
+			JourneyScreenTwo.getAllDropDownValueMIAPScreenTwo();
+			JourneyScreenOne.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenOne();
+			JourneyScreenSix.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenSix();
+			JourneyScreenFour.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenFour();
+			JourneyScreenThree.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenThree();
+			JourneyScreenTwo.getAllDropDownValueMIAPScreenTwo();
+			JourneyScreenOne.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenOne();
+
+		} catch (Exception e) {
+			logger.error("Test case failed " + e.getMessage());
+			throw e;
+		}
+	}
+
+	public void CheckproductConfigrationWLSGeneratingPdf() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenTwo.class);
+		try {
+			alwaysCloseAllChildTabs();
+			HomePage.clickDashboard();
+			HomePage.clickNewApp();
+			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
+			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
+			JourneyScreenTwo.traditional();
+			JourneyScreenTwo.selectByDropdownWLS();
+			JourneyScreenTwo.fillingAllTheRequiredFeildsForWLS();
+			JourneyScreenTwo.premiumCommitmentWLS(3, 1, 11);
+
+		} catch (Exception e) {
+			logger.error("Test case failed " + e.getMessage());
+			throw e;
+
+		}
+	}
+
+	@Test(priority = 4, enabled = false)
+	public void prepopualatedForWLSroductForAllScreen() throws Exception
+
+	{
+		try {
+
+			CheckproductConfigrationWLSGeneratingPdf();
+
+			reachingScreenFourFillingAnnualIncomeFunction();
+			JourneyScreenFour.form60RelatedDetailsFeildsIsPresent();
+			JourneyScreenFour.form60RelatedDetailsIdentityProofNameDropDownValidation();
+			JourneyScreenFour.identityProofNumberValidation(0, 1, 6);
+			JourneyScreenFour.identityProofIssuingAuthority();
+			JourneyScreenFour.idontHavePANNumberAsIhaveAppliedForPANAcknowledgementSelectFeildsValidation();
+
+			// JourneyScreenFour.fillPanApplicationAcknowledgeNowWithoutValidation();
+			// JourneyScreenFour.setDateBirthdateOfApplication(1, 1, 9);
+			JourneyScreenFour.identityProofIssuingAuthorityOptionSelection();
+			JourneyScreenFour.fillPanApplicationAcknowledgeNowWithoutValidation();
+			JourneyScreenTwo.setDateBirthPersonalDetails();
+			JourneyScreenFour.arrowDownFunctionToScrollDownTillProceed();
+
+			JourneyScreenFour.selectingNoOptionForAllMedicalQusetionIndian();
+			JourneyScreenThree.agreePopupToProceedToSendPreIssuranceVerificationLinkToCustomer();
+			// JourneyScreenFour.arrowDownFunctionToScrollDownTillBottom();
+
+			JourneyScreenFour.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenFour();
+			JourneyScreenThree.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenThree();
+			JourneyScreenTwo.getAllDropDownValueWLSScreenTwo();
+			JourneyScreenOne.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenOne();
+			JourneyScreenSix.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenSix();
+			JourneyScreenFour.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenFour();
+			JourneyScreenThree.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenThree();
+			JourneyScreenTwo.getAllDropDownValueWLSScreenTwo();
+			JourneyScreenOne.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenOne();
+
+		} catch (Exception e) {
+			logger.error("Test case failed " + e.getMessage());
+			throw e;
+
+		}
+	}
+
+	public void CheckproductConfigrationFTSPUlipGeneratingPdf() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenTwo.class);
+		try {
+			alwaysCloseAllChildTabs();
+			HomePage.clickDashboard();
+			HomePage.clickNewApp();
+			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
+			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
+			Thread.sleep(800);
+			JourneyScreenTwo.ulip();
+			JourneyScreenTwo.selectByDropdownFTSP();
+			JourneyScreenTwo.fillingAllTheRequiredFeildsForFTSP();
+			JourneyScreenTwo.fillingAllTheFeildForFTSP();
+			// JourneyScreenTwo.clickSubmitButton();
+
+		} catch (Exception e) {
+			logger.error("Test case failed " + e.getMessage());
+			throw e;
+
+		}
+	}
+
+	@Test(priority = 1, enabled = false)
+	public void prepopualatedForFTSProductForAllScreen() throws Exception
+
+	{
+		try {
+
+			CheckproductConfigrationFTSPUlipGeneratingPdf();
+
+			reachingScreenFourFillingAnnualIncomeFunction();
+			JourneyScreenFour.form60RelatedDetailsFeildsIsPresent();
+			JourneyScreenFour.form60RelatedDetailsIdentityProofNameDropDownValidation();
+			JourneyScreenFour.identityProofNumberValidation(0, 1, 6);
+			JourneyScreenFour.identityProofIssuingAuthority();
+			JourneyScreenFour.idontHavePANNumberAsIhaveAppliedForPANAcknowledgementSelectFeildsValidation();
+
+			// JourneyScreenFour.fillPanApplicationAcknowledgeNowWithoutValidation();
+			// JourneyScreenFour.setDateBirthdateOfApplication(1, 1, 9);
+			JourneyScreenFour.identityProofIssuingAuthorityOptionSelection();
+			JourneyScreenFour.fillPanApplicationAcknowledgeNowWithoutValidation();
+			JourneyScreenTwo.setDateBirthPersonalDetails();
+			JourneyScreenFour.arrowDownFunctionToScrollDownTillProceed();
+
+			JourneyScreenFour.selectingNoOptionForAllMedicalQusetionIndian();
+			JourneyScreenThree.agreePopupToProceedToSendPreIssuranceVerificationLinkToCustomer();
+			// JourneyScreenFour.arrowDownFunctionToScrollDownTillBottom();
+
+			JourneyScreenFour.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenFour();
+			JourneyScreenThree.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenThree();
+			JourneyScreenTwo.getAllDropDownValueFTSPcreenTwo();
+			JourneyScreenOne.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenOne();
+			JourneyScreenSix.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenSix();
+			JourneyScreenFour.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenFour();
+			JourneyScreenThree.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenThree();
+			JourneyScreenTwo.getAllDropDownValueFTSPcreenTwo();
+			JourneyScreenOne.getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenOne();
 
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
@@ -177,8 +443,9 @@ public class PrepopulatedDataTest extends ReusableActions {
 
 		}
 
-
-
-
 	}
+
+
+
+
 }

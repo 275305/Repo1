@@ -2,11 +2,14 @@ package uielements;
 
 import static org.testng.Assert.assertEquals;
 
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 
@@ -14,9 +17,11 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -40,6 +45,21 @@ public class JourneyScreenThree extends ReusableActions {
 	@FindBy(xpath = "//label[text()='No']")
 	public static WebElement payorDetailsNo;
 
+	@FindBy(xpath = "//input[@name='passportNumberOfInsurer']")
+	static WebElement passportNumberOfInsurer;
+
+	@FindBy(xpath = "//label[contains(text(),'Feet')]")
+	public static WebElement insurereFeetLabel;
+
+	@FindBy(xpath = "//input[@name='insurerHeightInCM']")
+	public static WebElement insurerHeightInCM;
+
+	@FindBy(xpath = "//div[@id='passportExpiryDateOfInsurer_id']")
+	static WebElement passportExpiryDateInsurer;
+
+	@FindBy(xpath = "//label[contains(text(),'Inches')]")
+	public static WebElement insurerInchesLabel;
+
 	@FindBy(xpath = "//h2[(text()='Proceed to send Pre Issuance Verification Link to customer?')]")
 	public static WebElement proceedToSendPreInsuranceVerificationLinkToCustomerLabel;
 
@@ -55,12 +75,30 @@ public class JourneyScreenThree extends ReusableActions {
 	@FindBy(xpath = "//input[@name='eiAccountNo']")
 	public static WebElement enterEIANo;
 
+	@FindBy(xpath = "//label[text()='Education']")
+	public static WebElement educationLabel;
+
+	@FindBy(xpath = "//label[text()='Marital Status']")
+	public static WebElement maritalStatusLabel;
 
 
 	@FindBy(xpath = "//span [(text()=\"Preferred Insurance repository that you would like to have EIA with\")]")
 	public static WebElement labelPreferredInsuranceRepositoryThatYouWouldLikeToHaveEIAWith;
-	// -----------------------------
 
+	@FindBy(xpath = "//*[@id='react-autowhatever-1--item-0']/div[1]")
+	static WebElement passportIssuingCountryOptionSelection;
+
+	@FindBy(xpath = "//div[@id='passportIssuingCountryOfInsurer']//input[@id='aml_id']")
+	static WebElement passportIssuingCountryOfInsurer;
+
+	@FindBy(xpath = "//div[@id='passportVisaTypeOfInsurer_id']")
+	static WebElement passportVisaTypeOfInsurer;
+
+	@FindBy(xpath = "//li[contains(text(),'Dependent')]")
+	static WebElement dependentTypeOfVisaInsurer;
+
+	@FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[3]")
+	static WebElement outsideClick;
 
 
 	@FindBy(xpath = "//input[@name='feet']")
@@ -83,6 +121,9 @@ public class JourneyScreenThree extends ReusableActions {
 
 	@FindBy(xpath = "//span[(text()=\"Don't Have PAN?\")]")
 	public static WebElement dontHavePANPayorDetails;
+
+	@FindBy(xpath = "//li[@id='react-autowhatever-1--item-0']")
+	static WebElement countryDropDown;
 
 	@FindBy(xpath = ".//*[@id='react-autowhatever-1']/ul/li[1]")
 	public static WebElement state1stOption;
@@ -114,7 +155,7 @@ public class JourneyScreenThree extends ReusableActions {
 	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[7]/div/div/div/div/div/div[@role=\"button\"]")
 	public static WebElement relationshipPayorWithProposer;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[2]/div[2]/div/div/div/div/div[@role=\"button\"]")
+	@FindBy(xpath = "//div[@id='relationshipWithNominee_id']")
 	public static WebElement relationshipWithNominee;
 
 	@FindBy(xpath = "//*[@id='menu-relationshipWithNominee']/div[2]/ul/li")
@@ -135,6 +176,9 @@ public class JourneyScreenThree extends ReusableActions {
 	@FindBy(xpath = "//input[@name='nominationReason']")
 	public static WebElement ReasonForNomination;
 
+	@FindBy(xpath = "//div[@id='visaExpiryDateOfInsurer_id']")
+	static WebElement visaExpiryDateOfInsurer;
+
 	@FindBy(xpath = "//input[@name='relationshipWithNomineeWhenOther']")
 	public static WebElement relationshipWithNomineeWhenOther;
 
@@ -150,13 +194,73 @@ public class JourneyScreenThree extends ReusableActions {
 	@FindBy(xpath = "//input[@name='bankAccountNo']")
 	public static WebElement bankAccountNo;
 
+	@FindBy(xpath = "//input[@name='insurerAnnualIncome']")
+	public static WebElement insurerAnnualIncome;
+
 	@FindBy(xpath = "//input[@name='bankAccountHolderName']")
 	public static WebElement AccHolderName;
+
+	@FindBy(xpath = "//input[@id='identifierId']")
+	public static WebElement username;
+
+	@FindBy(xpath = "//div[@id='identifierNext']")
+	public static WebElement nextButton;
+
+	@FindBy(xpath = "//div[@id='passwordNext']")
+	public static WebElement passwordNextButton;
+
+	@FindBy(xpath = "/html[1]/body[1]/div[7]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]")
+	public static WebElement checkBoxAll;
+
+	@FindBy(xpath = "/html[1]/body[1]/div[7]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]")
+	public static WebElement deleteButton;
+
+	@FindBy(xpath = "//input[@name='password']")
+	public static WebElement password;
+
+	@FindBy(xpath = "//div[@id='gbwa']")
+	public static WebElement gbwa;
+
+	@FindBy(xpath = "//div[@id='identifierNext']")
+	public static WebElement next;
+
+	@FindBy(xpath = "//span[contains(text(),'Gmail')]")
+	public static WebElement gmailIcon;
+
+	@FindBy(xpath = "//span[1][contains(text(),'Pre Issuance Verification Link')] ")
+	public static WebElement preInsuranceVerificationLinkMail;
+
+	@FindBy(xpath = "//a[contains(@href,'https://tinyurl.com')]")
+	public static WebElement preverificationLink;
+	
+	@FindBy(xpath = "//label[@for='radio-two']")
+	public static WebElement noOptionPosv;
+	
+	@FindBy(xpath = "//ul[@class='radio-one']//li[@id='no']")
+	public static WebElement noOptionHealthQusetionPosv;
+	
+	@FindBy(xpath = "//ul[@class='radio-three']//li[@id='no']")
+	public static WebElement noOption2ndHealthQusetionPosv;
+	
+	@FindBy(xpath = "//label[@for='radio-2']")
+	public static WebElement noOption3rdHealthQusetionPosv;
+	
+	@FindBy(xpath = "//label[@for='radio-10']")
+	public static WebElement noOption4thHealthQusetionPosv;
+	
+	@FindBy(xpath = "//button[(text()=\"Next\")]")
+	public static WebElement nextButtonPosv;
+
+	@FindBy(xpath = "//div[@id=':3h']")
+	public static WebElement threeDotForDelete;
+
+	@FindBy(xpath = "//div[@id=':60']")
+	public static WebElement deleteOptionFromRightClick;
 
 	@FindBy(xpath = "//span[(text()=\"Renewal Payment by\")]")
 	public static WebElement renewalPaymentBy;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[2]/div[4]/div/div/div/div/div/div[@role=\"button\"]")
+	@FindBy(xpath = "//div[@id='typeofAccount_id']")
 	public static WebElement typeOfAcc;
 
 	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[3]/div[4]/div/div/div/div/div/div[@role=\"button\"]")
@@ -276,13 +380,13 @@ public class JourneyScreenThree extends ReusableActions {
 	@FindBy(xpath = "//input[@name='insurerFatherName']")
 	static WebElement fathersNameInsurersDetails;
 
-	@FindBy(xpath = "//span[(text()=\"Do you have any life or Critical Illness insurance policy issued,pending approval from any other insurance companies or has your application for Life/Health/Critical Illness insurance or its reinstatement ever been offered at modified terms,rejected or postponed?\")]")
+	@FindBy(xpath = "//span[contains(text(),'Does the Life Insured have any Life or Critical Il')]")
 	static WebElement CritiaclIllnessInsurersDetails;
 
-	@FindBy(xpath = "//span[(text()=\"Do you participate or do you intend to participate in any hazardous activities as part of your Occupation/ Sports/ Hobby?\")]")
+	@FindBy(xpath = "//span[contains(text(),'Does the Life Insured participates or intends to p')]")
 	static WebElement hazardousInsurersDetails;
 
-	@FindBy(xpath = "//span[(text()=\"Have you ever been convicted or are you under investigation for any criminal charges ?\")]")
+	@FindBy(xpath = "//span[contains(text(),'Does the Life Insured participates or intends to p')]")
 	static WebElement criminalChargesInsurersDetails;
 
 	@FindBy(xpath = "//span[(text()=\"Height\")]")
@@ -292,10 +396,10 @@ public class JourneyScreenThree extends ReusableActions {
 	static WebElement weightInsurersDetails;
 
 
-	@FindBy(xpath = "//label[contains(@for, 'Insurer2') and text()='Indian']")
+	@FindBy(xpath = "//label[@for='in1']")
 	static WebElement nationalityIndianInsurersDetails;
 
-	@FindBy(xpath = "//label[contains(@for, 'Insurer3') and text()='NRI']")
+	@FindBy(xpath = "//label[@for='in2']")
 	static WebElement nationalityNRIInsurersDetails;
 
 	@FindBy(xpath = "//input[@name='insurerEducation']")
@@ -316,12 +420,32 @@ public class JourneyScreenThree extends ReusableActions {
 	@FindBy(xpath = "//label[contains(@for, 'InsurerCriminalChargesNo')]")
 	static WebElement nationalityInsurersDetails;
 
+	@FindBy(xpath = "//span[contains(text(),'Are you currently Pregnant ?')]")
+	static WebElement areYouCurrentlyPregnantLabelInsurer;
 
+	@FindBy(xpath = "//label[@for='InsurerPregnantYes']")
+	static WebElement pregnantYesInsurer;
 
+	@FindBy(xpath = "//label[@for='InsurerPregnantsNo']")
+	static WebElement pregnantNoInsurer;
 
+	@FindBy(xpath = "//label[@for='in3']")
+	static WebElement pioOciOptionButton;
+
+	@FindBy(xpath = "//label[@for='in4']")
+	static WebElement foreignNationalButton;
 
 	@FindBy(xpath = "//input[@name='insurerAnnualIncome']")
 	static WebElement insurerOtherDetailsAnnualIncome;
+
+	@FindBy(xpath = "//input[@name='income']")
+	static WebElement annualIncome;
+
+	@FindBy(xpath = "//div[@id='preferredLanguageOfCommunication_id']")
+	static WebElement preferredLanguageOfCommunication;
+
+	@FindBy(xpath = "//div[@id='menu-preferredLanguageOfCommunication']/div/ul/li[1]")
+	static WebElement preferredLanguageOfCommunication1stOption;
 
 	@FindBy(xpath = ".//*[@id='menu-insurerOccupation']/div[2]/ul/li[2]")
 	static WebElement insurerOccupation2ndOption;
@@ -338,58 +462,94 @@ public class JourneyScreenThree extends ReusableActions {
 	@FindBy(xpath = "//*[@id='menu-insurerOccupation']/div[2]/ul/li[2]")
 	static WebElement occupation2ndOptionInsurers;
 
-	@FindBy(xpath = ".//*[@id='menu-occupation']/div[2]/ul/li[1]")
+	@FindBy(xpath = "//div[@id='menu-occupation']/div/ul/li[1]")
 	static WebElement occupation2ndOption;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[4]/div[1]/div[2]/div/div/div/div/div[@role=\"button\"]")
+	@FindBy(xpath = "//div[@id='insurerOrganizationType_id']")
 	static WebElement organizationTypeInsurersDetails;
 
 	@FindBy(xpath = ".//*[@id='menu-insurerOrganizationType']/div[2]/ul/li[1]")
 	static WebElement insurerOrganizationType1stOption;
+	
+	@FindBy(xpath = "//div[@id='menu-natureOfInsurerRole']/div/ul/li[1]")
+	static WebElement natureOfInsurerRoleType1stOption;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[4]/div[2]/div[2]/div/div/div/div/div[@role=\"button\"]")
+	@FindBy(xpath = "//div[@id='menu-diveLocationOfInsurer']/div/ul/li[1]")
+	static WebElement diveLocationOfInsurer1stOption;
+
+	@FindBy(xpath = "//div[@id='menu-flyingRolesOfInsurer']/div/ul/li[1]")
+	static WebElement flyingRolesOfInsurer1stOption;
+
+	@FindBy(xpath = "//div[@id='insurerOccupation_id']")
 	static WebElement occupationInsurersDetails;
 
 	@FindBy(xpath = ".//*[@id='menu-insurerOccupation']/div[2]/ul/li[1]")
 	static WebElement insurerOccupation1stOption;
 
-	@FindBy(xpath = "//span[contains(text(),\"Are you currently posted in any sensitive/ border location ?\")]")
+	@FindBy(xpath = "//span[@id='currentlyInsurerPostedLocationLabel']")
 	static WebElement labledAreYouCurrentlyPostedInsurer;
 
-	@FindBy(xpath = "//label[text()='No']")
+	@FindBy(xpath = "//div[@id='currentlyInsurerPostedLocationNo']")
 	static WebElement noOptionForCurrentlyPostedInsurer;
 
-	@FindBy(xpath = "//label[text()='Yes']")
+	@FindBy(xpath = "//div[@id='insurerInvolvesInOffshoreYes']")
+	static WebElement insurerInvolvesInOffshoreYes;
+
+	@FindBy(xpath = "//div[@id='insurerInvolvesInOffshoreNo']")
+	static WebElement insurerInvolvesInOffshoreNo;
+
+	@FindBy(xpath = "//div[@id='currentlyInsurerPostedLocationYes']")
+	static WebElement currentlyInsurerPostedLocationYes;
+
+	@FindBy(xpath = "//div[@id='currentlyInsurerPostedLocationNo']")
+	static WebElement currentlyInsurerPostedLocationNo;
+
+	@FindBy(xpath = "//div[@id='insurerProfessionalDiverYes']")
+	static WebElement insurerProfessionalDiverYes;
+
+	@FindBy(xpath = "//div[@id='insurerProfessionalDiverNo']")
+	static WebElement insurerProfessionalDiverNo;
+
+	@FindBy(xpath = "//div[@id='currentlyInsurerPostedLocationYes']")
 	static WebElement yesOptionForCurrentlyPostedInsurer;
 
-	@FindBy(xpath = "//span[contains(text(),\"Are you a professional diver ?\")]")
+	@FindBy(xpath = "//div[@id='natureOfInsurerRole_id']")
+	static WebElement natureOfInsurerRole;
+
+	@FindBy(xpath = "//div[@id='diveLocationOfInsurer_id']")
+	static WebElement diveLocationOfInsurer;
+
+	@FindBy(xpath = "//div[@id='flyingRolesOfInsurer_id']")
+	static WebElement flyingRolesOfInsurer;
+
+	@FindBy(xpath = "//span[contains(text(),'Is Life Insured a Professional Diver ?')]")
 	static WebElement labledAreYouProfessionalDiverInsurer;
 
-	@FindBy(xpath = "//span[contains(text(),\"Are you based at offshore or your job involves travelling to offshore ?\")]")
+	@FindBy(xpath = "//span[@id='insurerInvolvesInOffshoreLabel']")
 	static WebElement labledAreYouBasedAtOffshoreOrTravOffshoreInsurer;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[4]/div[2]/div/div/div/div/div/div[@role=\"button\"]")
+	@FindBy(xpath = "//div[@id='vesselTypeOfInsurer_id']")
 	static WebElement typeOfVesselWhereWorkingInsurers;
 
 	@FindBy(xpath = ".//*[@id='menu-vesselTypeOfInsurer']/div[2]/ul/li[1]")
 	static WebElement typeOfVesselWhereWorking1stOptionInsurers;
 
-	@FindBy(xpath = "//span[contains(text(),\"Does your role involve going inside any kind of mine ?\")]")
+	@FindBy(xpath = ".//*[@id='doesInsurerRoleInvolvedLable']")
 	static WebElement doesOurRoleInvolveGoingInsideAnyKindOfMineInsurer;
 
-	@FindBy(xpath = "//label[@for='iri1']")
+	@FindBy(xpath = "//label[@for='doesInsurerRoleInvolvedYesOptionButton']")
 	static WebElement yesDoesYourRoleGoingInsideMineInsurer;
 
-	@FindBy(xpath = "//span[contains(text(),\"Have you ever had any illness related to your occupation ?\")]")
+	@FindBy(xpath = "//span[@id='insurerHadAnyIllnessLabel']")
 	static WebElement haveYouEverHadIllnessRelatedToYourOccupationInsurers;
 
-	@FindBy(xpath = "//label[@for='iri2']")
+	@FindBy(xpath = "//label[@for='doesInsurerRoleInvolvedNoOptionButton']")
 	static WebElement noDoesYourRoleGoingInsideMineInsurer;
 
-	@FindBy(xpath = "//label[@for='iai1']")
+	@FindBy(xpath = "//div[@id='insurerHadAnyIllnessYes']")
 	static WebElement yesHaveYouEverHadIllnessRelatedToYourOccuoationInsurer;
 
-	@FindBy(xpath = "//label[@for='iai2']")
+	@FindBy(xpath = "//div[@id='insurerHadAnyIllnessNo']")
 	static WebElement noHaveYouEverHadIllnessRelatedToYourOccuoationInsurer;
 
 	@FindBy(xpath = "//span[contains(text(),\"Exact Nature of duties\")]")
@@ -401,30 +561,31 @@ public class JourneyScreenThree extends ReusableActions {
 	@FindBy(xpath = "//label[contains(text(),\"Non-Flying role\")]")
 	static WebElement nonFlyingRoleInsurer;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[4]/div[1]/div[1]/div/div/div/div/div[@role=\"button\"]")
+	@FindBy(xpath = "//div[@id='insurerIndustryType_id']")
 	static WebElement insurersIndustryType;
 
 	@FindBy(xpath = ".//*[@id='menu-insurerIndustryType']/div[2]/ul/li[1]")
 	static WebElement InsurersIndustryType1stOption;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[2]/div[2]/div/div/div/div/div[@role=\"button\"]")
+	@FindBy(xpath = "//div[@id='insurerMaritalStatus_id']")
 	static WebElement maritalStatusInsurersDetails;
 
 	@FindBy(xpath = ".//*[@id='menu-insurerMaritalStatus']/div[2]/ul/li[1]")
 	static WebElement insurerMaritalStatus1stOption;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[2]/div[1]/div/div/div/div/div[@role=\"button\"]")
+	@FindBy(xpath = "//div[@id='insurerEducation_id']")
 	static WebElement eductionInsurersDetails;
+
 	@FindBy(xpath = "//*[@id='menu-insurerEducation']/div[2]/ul/li[1]")
 	static WebElement educationInsurers1stOption;
 
-	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[1]/div[2]/div/div/div/div/div[@role=\"button\"]")
+	@FindBy(xpath = "//div[@id='insurerProofType_id']")
 	static WebElement dOBProofInsurersDetails;
 
 	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]//input[@placeholder='DD/MM/YYYY']")
 	static WebElement dateOfBirthIssurer;
 
-	@FindBy(xpath = "//p[contains(text(), \"Insurer's Other Details\")]")
+	@FindBy(xpath = "//p[contains(text(),'Life Insured - Other Details')]")
 	static WebElement insurersOtherDetails;
 
 	@FindBy(xpath = "//input[@name='fatherName']")
@@ -433,28 +594,37 @@ public class JourneyScreenThree extends ReusableActions {
 	@FindBy(xpath = "//span[text()='Proceed']")
 	public static WebElement Proceedbtn;
 
+	@FindBy(xpath = "//div[@id='alert-dialog-title']")
+	public static WebElement updatePANNumber;
+
+	@FindBy(xpath = "//button[@id='submitButton']")
+	public static WebElement submitButton;
+
+	@FindBy(xpath = "//input[@name='panNumber']")
+	public static WebElement panNumberForm60;
+
 	@FindBy(xpath = "//input[@name='motherName']")
 	public static WebElement mothersName;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[1]/div[2]/div/div/div/div/div[2]/div[1]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='maritalStatus_id']")
 	public static WebElement maritalStatus;
 
 	@FindBy(xpath = "//*[@id='menu-maritalStatus']/div[2]/ul/li[1]")
 	public static WebElement maritalStatus1stOption;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[1]/div[2]/div/div/div/div/div[2]/div[2]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='education_id']")
 	public static WebElement education;
 
 	@FindBy(xpath = "//*[@id='menu-education']/div[2]/ul/li[1]")
 	public static WebElement education1stOption;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[1]/div[2]/div/div/div/div/div[4]/div[1]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='organisationType_id']")
 	public static WebElement organizationType;
 
 	@FindBy(xpath = ".//*[@id='menu-organisationType']/div[2]/ul/li[1]")
 	public static WebElement organizationType1stOption;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[1]/div[2]/div/div/div/div/div[4]/div[2]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='occupation_id']")
 	public static WebElement occupation;
 
 	@FindBy(xpath = "//input[@name='companyName']")
@@ -478,7 +648,7 @@ public class JourneyScreenThree extends ReusableActions {
 	@FindBy(xpath = "//span[contains(text(),\"Is the Proposer based at offshore location or does his job involves travelling to any offshores locations ?\")]")
 	public static WebElement labledAreYouBasedAtOffshoreOrTravOffshore;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[1]/div[2]/div/div/div/div/div[4]/div/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='vesselType_id']")
 	public static WebElement typeOfVesselWhereWorking;
 
 	@FindBy(xpath = ".//*[@id='menu-vesselType']/div[2]/ul/li[1]")
@@ -517,11 +687,114 @@ public class JourneyScreenThree extends ReusableActions {
 	@FindBy(xpath = "//input[@name='companyName']")
 	public static WebElement companyNameWhenSalariedFromOccupationSelected;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[1]/div[2]/div/div/div/div/div[3]/div[2]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='industryType_id']")
 	public static WebElement industryType;
 
 	@FindBy(xpath = ".//*[@id='menu-industryType']/div[2]/ul/li[@data-value='Others']")
 	public static WebElement industryTypeOthersOption;
+
+	@FindBy(xpath = "//p[@id='NRIDetailsid']")
+	public static WebElement NRIDetailLabel;
+
+	@FindBy(xpath = "//input[@id='applicationSource1']")
+	public static WebElement sourceOfApplicationIndia;
+
+	@FindBy(xpath = "//span[@id='sourceOfApplicationid']")
+	public static WebElement sourceOfApplicationLabel;
+
+	@FindBy(xpath = "//label[@for='in2']")
+	public static WebElement nriOtherInsurerDetails;
+
+	@FindBy(xpath = "//input[@id='applicationSource2']")
+	public static WebElement sourceOfApplicationOutsideIndia;
+
+	@FindBy(xpath = "//div[@id='countryCurrentlyResiding']//input[@id='aml_id']")
+	public static WebElement countryCurrentlyResiding;
+
+	@FindBy(xpath = "//div[@id='countryCurrentlyResidingOfInsurer']//input[@id='aml_id']")
+	public static WebElement countryCurrentlyResidingInsurer;
+
+	@FindBy(xpath = "//div[@id='entryDateToIndia_id']")
+	public static WebElement entryDateToIndia;
+
+	@FindBy(xpath = "//div[@id='entryDateToIndiaOfInsurer_id']")
+	public static WebElement entryDateToIndiaOfInsurer;
+
+	@FindBy(xpath = "//div[@id='countryVisitedFrequentlyid']")
+	public static WebElement countryVisitedFrequently;
+
+	@FindBy(xpath = "//div[@id='residenceCountryAsPerTaxLawsid']//input[@id='aml_id']")
+	public static WebElement residenceCountryAsPerTaxLaws;
+
+	@FindBy(xpath = "//div[@id='residenceCountryAsPerTaxLawsidOfInsurer']//input[@id='aml_id']")
+	public static WebElement residenceCountryAsPerTaxLawsidOfInsurer;
+
+	@FindBy(xpath = "//div[@id='FTINIssuingCountryid']//input[@id='aml_id']")
+	public static WebElement FTINIssuingCountry;
+
+
+	@FindBy(xpath = "//span[@id='doYouHaveFTINid']")
+	public static WebElement doYouHaveFTIN;
+
+	@FindBy(xpath = "//label[@id='FTINYesid']")
+	public static WebElement FTINYes;
+	
+	@FindBy(xpath = "//label[@id='FTINYesidOfInsurer']")
+	public static WebElement FTINYesidOfInsurer;
+
+	@FindBy(xpath = "//input[@name='ftinNumber']")
+	public static WebElement ftinNumber;
+	
+	@FindBy(xpath = "//input[@name='ftinNumberOfInsurer']")
+	public static WebElement ftinNumberOfInsurer;
+
+	@FindBy(xpath = "//div[@id='FTINIssuingCountryid']//input[@id='aml_id']")
+	public static WebElement FTINIssuingCountryLabel;
+
+	@FindBy(xpath = "//div[@id='FTINIssuingCountryidOfInsurer']//input[@id='aml_id']")
+	public static WebElement FTINIssuingCountryidOfInsurer;
+
+	@FindBy(xpath = "//div[@id='addNewFTINNumber']")
+	public static WebElement addNewFTINNumberLabel;
+
+	@FindBy(xpath = "//div[@id='addNewFTINNumberOfInsurer']")
+	public static WebElement addNewFTINNumberOfInsurer;
+
+	@FindBy(xpath = "//label[@id='FTINNoid']")
+	public static WebElement FTINNo;
+
+	@FindBy(xpath = "//label[@id='FTINNoidOfInsurer']")
+	public static WebElement FTINNoidOfInsurer;
+
+	@FindBy(xpath = "//div[@id='menu-foreignIdentification']/div/ul/li")
+	public static WebElement foreignIdentificationFirstOption;
+
+	@FindBy(xpath = "//div[@id='menu-foreignIdentificationOfInsurer']/div/ul/li[1]")
+	public static WebElement foreignIdentificationOfInsurerFirstOption;
+
+	@FindBy(xpath = "//div[@id='foreignIdentification_id']")
+	public static WebElement foreignIdentification;
+
+	@FindBy(xpath = "//div[@id='foreignIdentificationOfInsurer_id']")
+	public static WebElement foreignIdentificationOfInsurer;
+
+	@FindBy(xpath = "//input[@name='identificationNo']")
+	public static WebElement identificationNo;
+
+	@FindBy(xpath = "//input[@name='identificationNoOfInsurer']")
+	public static WebElement identificationNoOfInsurer;
+
+	@FindBy(xpath = "//div[@id='issuingCountryid']//input[@id='aml_id']")
+	public static WebElement issuingCountry;
+
+	@FindBy(xpath = "//div[@id='issuingCountryidOfInsurer']//input[@id='aml_id']")
+	public static WebElement issuingCountryidOfInsurer;
+
+	@FindBy(xpath = "//div[@id='birthCountryid']//div//input[@id='aml_id']")
+	public static WebElement birthCountry;
+
+	@FindBy(xpath = "//div[@id='birthCountryidOfInsurer']//div//input[@id='aml_id']")
+	public static WebElement birthCountryInsurer;
 
 	@FindBy(xpath = "//div[text()='Incorrect userId or Password !!']")
 	static WebElement LoginErrorMsg;
@@ -532,8 +805,27 @@ public class JourneyScreenThree extends ReusableActions {
 	@FindBy(xpath = "//label[contains(@for, 'InsurerCriticalIllnessYes')]")
 	static WebElement InsurerCriticalIllnessYesInsurersDetails;
 
+	@FindBy(xpath = "//span[contains(text(),'Issued or Pending')]")
+	static WebElement issuedOrPending;
+
+	@FindBy(xpath = "//span[contains(text(),'Offered at modified terms, rejected or postponed')]")
+	static WebElement offeredAtModifiedTermsRejectedOrPostponed;
+
 	@FindBy(xpath = "//label[contains(@for, 'InsurerCriticalIllnessNo')]")
 	static WebElement InsurerCriticalIllnessNoInsurersDetails;
+
+	@FindBy(xpath = "//span[contains(text(),'Extent of involvement')]")
+	static WebElement extentOfInvolvementLabel;
+
+	@FindBy(xpath = "//div[@id='insurerHazardousActivitiesExtent_id']")
+	static WebElement insurerHazardousActivitiesExtentDropDown;
+
+	@FindBy(xpath = "//div[@id='menu-insurerHazardousActivitiesExtent']/div/ul/li")
+	static WebElement insurerHazardousActivitiesExtentValue;
+
+	@FindBy(xpath = "//div[@id='menu-insurerHazardousActivitiesExtent']/div/ul/li[1]")
+	static WebElement insurerHazardousActivitiesExtent1stOption;
+
 
 	@FindBy(xpath = "//label[contains(@for, 'InsurerHazardousActivitiesYes')]")
 	static WebElement InsurerHazardousActivitiesYesInsurersDetails;
@@ -567,6 +859,12 @@ public class JourneyScreenThree extends ReusableActions {
 	public static void dontHavePANPayorDetails() throws Exception {
 
 		click(dontHavePANPayorDetails);
+
+	}
+
+	public static void Proceedbtn() throws Exception {
+
+		click(Proceedbtn);
 
 	}
 
@@ -735,6 +1033,13 @@ public class JourneyScreenThree extends ReusableActions {
 	}
 
 	public static void insureresOtherDetailsIsPresent() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenThree.class);
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("//p[contains(text(),'Proposer Personal Details')]")).click();
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//p[contains(text(),'Bank Details')]")).click();
+		Thread.sleep(800);
+
 		if (insurersOtherDetails.isDisplayed()) {
 			System.out.println("Test case pass:-As isureres other details section is present");
 		} else {
@@ -755,6 +1060,7 @@ public class JourneyScreenThree extends ReusableActions {
 	}
 
 	public static void maritalStatusOptionSelection() throws Exception {
+		Thread.sleep(400);
 		maritalStatus.click();
 		Thread.sleep(200);
 		maritalStatus1stOption.click();
@@ -789,6 +1095,31 @@ public class JourneyScreenThree extends ReusableActions {
 	}
 
 	public static void occupationOptionSelection() throws Exception {
+		Thread.sleep(200);
+		waitTillElementToBeClickable(occupation);
+		occupation.click();
+		Thread.sleep(200);
+		waitTillElementToBeClickable(occupation2ndOption);
+		occupation2ndOption.click();
+		Thread.sleep(700);
+	}
+
+	public static void annualIncomePersonal(int x, int y, int z) throws Exception {
+		Thread.sleep(200);
+		annualIncome.clear();
+		type(annualIncome, readingdataTestData(x, y, z));
+	}
+
+	public static void preferredLanguageOfCommunicationDropDown() throws Exception {
+		Thread.sleep(200);
+		preferredLanguageOfCommunication.click();
+		waitTillElementToBeClickable(preferredLanguageOfCommunication1stOption);
+		Thread.sleep(200);
+		preferredLanguageOfCommunication1stOption.click();
+		Thread.sleep(700);
+	}
+
+	public static void occupationOptionSelectionSelf() throws Exception {
 		Thread.sleep(200);
 		waitTillElementToBeClickable(occupation);
 		occupation.click();
@@ -963,6 +1294,55 @@ public class JourneyScreenThree extends ReusableActions {
 
 	}
 
+	public static void getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenThree() throws Exception {
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//span[contains(text(),'Personal')]")).click();
+		Thread.sleep(1000);
+		String xpathOfTexOnTheScreen = "//input[contains(@type,'text')]";
+		List<String> actualResultText = fetchingdataFromUI(xpathOfTexOnTheScreen);
+		System.out.println("actual result" + actualResultText);
+		List<String> expectedResult = fetchingdataFromExcelExpectedResult(6, 14);
+		expectedResult.removeAll(Arrays.asList("", null));
+		System.out.println("expected result" + expectedResult);
+		comparisonOfListForExpectedAndActualResult(expectedResult, actualResultText);
+
+		String maritalStatus = driver.findElement(By.id("maritalStatus")).getAttribute("value");
+		String education = driver.findElement(By.id("education")).getAttribute("value");
+		String industryType = driver.findElement(By.id("industryType")).getAttribute("value");
+		String organisationType = driver.findElement(By.id("organisationType")).getAttribute("value");
+		String occupation = driver.findElement(By.id("occupation")).getAttribute("value");
+		String preferredLanguageOfCommunication = driver.findElement(By.id("preferredLanguageOfCommunication"))
+				.getAttribute("value");
+		String relationshipWithNominee = driver.findElement(By.id("relationshipWithNominee")).getAttribute("value");
+		String typeofAccount = driver.findElement(By.id("typeofAccount")).getAttribute("value");
+
+		List<String> actualResultDropDownList = new ArrayList<String>();
+		actualResultDropDownList.add(maritalStatus);
+		actualResultDropDownList.add(education);
+		actualResultDropDownList.add(industryType);
+		actualResultDropDownList.add(organisationType);
+		actualResultDropDownList.add(occupation);
+		actualResultDropDownList.add(preferredLanguageOfCommunication);
+		actualResultDropDownList.add(relationshipWithNominee);
+		actualResultDropDownList.add(typeofAccount);
+		System.out.println("actualResultDropDownList" + actualResultDropDownList);
+
+		List<String> expectedResultDropDownList = fetchingdataFromExcelExpectedResult(7, 10);
+		expectedResultDropDownList.removeAll(Arrays.asList("", null));
+		System.out.println("actualResultDropDownList" + expectedResultDropDownList);
+		comparisonOfListForExpectedAndActualResult(expectedResultDropDownList, actualResultDropDownList);
+
+		String xpathOfRadioOnTheScreen = "//input[@checked=\"\"]";
+		List<String> actualResultRadioButtonValue = fetchingdataFromUI(xpathOfRadioOnTheScreen);
+		List<String> expectedResultRadioButtonValue = fetchingdataFromExcelExpectedResult(8, 5);
+		System.out.println("Expected radio button" + actualResultRadioButtonValue);
+		System.out.println("Actual radio button" + expectedResultRadioButtonValue);
+		actualResultRadioButtonValue.removeAll(Arrays.asList("", null));
+		System.out.println("actualResultRadioButtonValue" + actualResultRadioButtonValue);
+		comparisonOfListForExpectedAndActualResult(expectedResultRadioButtonValue, actualResultRadioButtonValue);
+
+	}
+
 	public static void organizationTypeDropDownListValidation() throws Exception {
 		waitTillElementToBeClickable(organizationType);
 		Thread.sleep(200);
@@ -1080,12 +1460,434 @@ public class JourneyScreenThree extends ReusableActions {
 		Thread.sleep(800);
 	}
 
+	public static void nriDetailsJourneyScreenThree() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenThree.class);
+		Thread.sleep(1000);
+		arrowDownFunctionToScrollDownTillDownScreenThreeNRI();
+		Thread.sleep(1000);
+
+		if (NRIDetailLabel.isDisplayed() && sourceOfApplicationLabel.isDisplayed()
+				&& countryCurrentlyResiding.isDisplayed()
+				&& entryDateToIndia.isDisplayed() && countryVisitedFrequently.isDisplayed()
+				&& birthCountry.isDisplayed() && residenceCountryAsPerTaxLaws.isDisplayed()
+				&& doYouHaveFTIN.isDisplayed() && FTINYes.isDisplayed()
+				&& FTINNo.isDisplayed())
+		// &&foreignIdentification.isDisplayed()&&identificationNo.isDisplayed()&&issuingCountry.isDisplayed()&&
+		// sourceOfApplicationOutsideIndia.isDisplayed()
+		{
+			System.out.println("Test case pass:As all the feilds are present as per the requirement");
+		}else 
+		{
+			Assert.fail("Test case fail:As all the feilds are not present");
+		}
+		
+		
+		
+		/*
+		 * NRIDetailLabel.isDisplayed(); sourceOfApplicationLabel.isDisplayed();
+		 * sourceOfApplicationIndia.isDisplayed();
+		 * sourceOfApplicationOutsideIndia.isDisplayed();
+		 * countryCurrentlyResiding.isDisplayed(); entryDateToIndia.click();
+		 * dateOfBirthSelctionFunction();
+		 * 
+		 * 
+		 * countryVisitedFrequently.isDisplayed(); birthCountry.isDisplayed();
+		 * residenceCountryAsPerTaxLaws.isDisplayed(); doYouHaveFTIN.isDisplayed();
+		 * FTINYes.isDisplayed(); FTINNo.isDisplayed();
+		 * foreignIdentification.isDisplayed(); identificationNo.isDisplayed();
+		 * issuingCountry.isDisplayed();
+		 */
+	}
+
+	public static void ftinNumber(int x, int y, int z) throws Exception {
+		ftinNumber.clear();
+		type(ftinNumber, readingdata(x, y, z));
+		String ftinNumberFromExcel = ftinNumber.getAttribute("value");
+		int size = ftinNumberFromExcel.length();
+		if ((size == 25)) {
+			logger.info("Test case pass:- As FTIN : Field Length 25, accepts Numeric");
+		} else {
+			Assert.fail("Test case fail:-As FTIN : either Field Length is not 25 or not accepting Numeric");
+		}
+
+	}
+
+	public static void ftinNumberInsurer(int x, int y, int z) throws Exception {
+		ftinNumberOfInsurer.clear();
+		type(ftinNumberOfInsurer, readingdata(x, y, z));
+		String ftinNumberFromExcel = ftinNumberOfInsurer.getAttribute("value");
+		int size = ftinNumberFromExcel.length();
+		if ((size == 25)) {
+			logger.info("Test case pass:- As FTIN : Field Length 25, accepts Numeric");
+		} else {
+			Assert.fail("Test case fail:-As FTIN : either Field Length is not 25 or not accepting Numeric");
+		}
+
+	}
+	public static void FTINIssuingCountry(int x, int y, int z) throws Exception {
+		FTINIssuingCountry.clear();
+		type(FTINIssuingCountry, readingdata(x, y, z));
+		String countryDataFromExcel = FTINIssuingCountry.getAttribute("value");// I
+		String dropDownValue = countryDropDown.getText();
+		System.out.println(dropDownValue);
+		if (dropDownValue.startsWith(countryDataFromExcel)) {
+			System.out.println("Test Case pass:-As smart search for country is working properly");
+		} else {
+			Assert.fail("Test case fail:-As smart search for country is not woring properly");
+		}
+		JourneyScreenTwo.countryIstOption();
+	}
+
+	public static void FTINIssuingCountryInsurer(int x, int y, int z) throws Exception {
+		FTINIssuingCountryidOfInsurer.clear();
+		type(FTINIssuingCountryidOfInsurer, readingdata(x, y, z));
+		String countryDataFromExcel = FTINIssuingCountryidOfInsurer.getAttribute("value");// I
+		String dropDownValue = countryDropDown.getText();
+		System.out.println(dropDownValue);
+		if (dropDownValue.startsWith(countryDataFromExcel)) {
+			System.out.println("Test Case pass:-As smart search for country is working properly");
+		} else {
+			Assert.fail("Test case fail:-As smart search for country is not woring properly");
+		}
+		JourneyScreenTwo.countryIstOption();
+	}
+
+	public static void identificationNo(int x, int y, int z) throws Exception {
+		identificationNo.clear();
+		type(identificationNo, readingdata(x, y, z));
+		String ftinNumberFromExcel = identificationNo.getAttribute("value");
+		int size = ftinNumberFromExcel.length();
+		if ((size == 25)) {
+			logger.info("Test case pass:- As FTIN : Field Length 25, accepts Numeric");
+		} else {
+			Assert.fail("Test case fail:-As FTIN : either Field Length is not 25 or not accepting Numeric");
+		}
+
+	}
+
+	public static void identificationNoOfInsurer(int x, int y, int z) throws Exception {
+		identificationNoOfInsurer.clear();
+		type(identificationNoOfInsurer, readingdata(x, y, z));
+		String ftinNumberFromExcel = identificationNoOfInsurer.getAttribute("value");
+		int size = ftinNumberFromExcel.length();
+		if ((size == 25)) {
+			logger.info("Test case pass:- As FTIN : Field Length 25, accepts Numeric");
+		} else {
+			Assert.fail("Test case fail:-As FTIN : either Field Length is not 25 or not accepting Numeric");
+		}
+
+	}
+
+	public static void issuingCountry(int x, int y, int z) throws Exception {
+		issuingCountry.clear();
+		type(issuingCountry, readingdata(x, y, z));
+		String countryDataFromExcel = issuingCountry.getAttribute("value");// I
+		String dropDownValue = countryDropDown.getText();
+		System.out.println(dropDownValue);
+		if (dropDownValue.startsWith(countryDataFromExcel)) {
+			System.out.println("Test Case pass:-As smart search for country is working properly");
+		} else {
+			Assert.fail("Test case fail:-As smart search for country is not woring properly");
+		}
+		JourneyScreenTwo.countryIstOption();
+	}
+
+	public static void issuingCountryidOfInsurer(int x, int y, int z) throws Exception {
+		issuingCountryidOfInsurer.clear();
+		type(issuingCountryidOfInsurer, readingdata(x, y, z));
+		String countryDataFromExcel = issuingCountryidOfInsurer.getAttribute("value");// I
+		String dropDownValue = countryDropDown.getText();
+		System.out.println(dropDownValue);
+		if (dropDownValue.startsWith(countryDataFromExcel)) {
+			System.out.println("Test Case pass:-As smart search for country is working properly");
+		} else {
+			Assert.fail("Test case fail:-As smart search for country is not woring properly");
+		}
+		JourneyScreenTwo.countryIstOption();
+	}
+
+	public static void doYouHaveFTINYesNoFeildsValidation() throws Exception {
+		Thread.sleep(1000);
+		FTINYes.click();
+		if (ftinNumber.isDisplayed() && FTINIssuingCountryLabel.isDisplayed() && addNewFTINNumberLabel.isDisplayed()) {
+			System.out.println("Test case pass:As all the feilds are displayed as per FTIN yes option");
+			Thread.sleep(800);
+			ftinNumber(4, 1, 13);
+			Thread.sleep(800);
+			FTINIssuingCountry(3, 1, 6);
+		
+		}else {
+			
+			Assert.fail("Test case fail:As all the feilds are not present as per FTIN yes option");
+		}
+		Thread.sleep(800);
+		FTINNo.click();
+		if (foreignIdentification.isDisplayed() && identificationNo.isDisplayed() && issuingCountry.isDisplayed()) {
+			System.out.println("Test case pass:As all the feilds are displayed as per FTIN no option");
+			foreignIdentification.click();
+			String xpathOfTexOnTheScreen = "//div[@id='menu-foreignIdentification']/div/ul/li";
+			List<String> actualResultText = fetchingdataFromUI(xpathOfTexOnTheScreen);
+			List<String> expectedResult = fetchingdataFromExcelExpectedResultSheet(0, 7, 4);
+			System.out.println(expectedResult);
+			comparisonOfListForExpectedAndActualResult(expectedResult, actualResultText);
+			foreignIdentificationFirstOption.click();
+			Thread.sleep(800);
+			identificationNo(4, 1, 13);
+			Thread.sleep(800);
+			issuingCountry(3, 1, 6);
+		} else {
+			Assert.fail("Test case fail:As all the feilds are not displayed as per FTIN no option");
+		}
+		
+
+	}
+	
+	
+	public static void doYouHaveFTINYesNoFeildsValidationInsurer() throws Exception {
+		Thread.sleep(1000);
+		FTINYesidOfInsurer.click();
+		if (ftinNumberOfInsurer.isDisplayed() && FTINIssuingCountryidOfInsurer.isDisplayed()
+				&& addNewFTINNumberOfInsurer.isDisplayed()) {
+			System.out.println("Test case pass:As all the feilds are displayed as per FTIN yes option");
+			Thread.sleep(800);
+			ftinNumberInsurer(4, 1, 13);
+			Thread.sleep(800);
+			FTINIssuingCountryInsurer(3, 1, 6);
+		
+		}else {
+			
+			Assert.fail("Test case fail:As all the feilds are not present as per FTIN yes option");
+		}
+		Thread.sleep(800);
+		FTINNoidOfInsurer.click();
+
+		if (foreignIdentificationOfInsurer.isDisplayed() && identificationNoOfInsurer.isDisplayed()
+				&& issuingCountryidOfInsurer.isDisplayed()) {
+			System.out.println("Test case pass:As all the feilds are displayed as per FTIN no option");
+			foreignIdentificationOfInsurer.click();
+			String xpathOfTexOnTheScreen = "//div[@id='menu-foreignIdentification']/div/ul/li";
+			List<String> actualResultText = fetchingdataFromUI(xpathOfTexOnTheScreen);
+			List<String> expectedResult = fetchingdataFromExcelExpectedResultSheet(0, 7, 4);
+			System.out.println(expectedResult);
+			comparisonOfListForExpectedAndActualResult(expectedResult, actualResultText);
+			Thread.sleep(500);
+			foreignIdentificationOfInsurerFirstOption.click();
+			Thread.sleep(800);
+			identificationNoOfInsurer(4, 1, 13);
+			Thread.sleep(800);
+			issuingCountryidOfInsurer(3, 1, 6);
+		} else {
+			Assert.fail("Test case fail:As all the feilds are not displayed as per FTIN no option");
+		}
+		
+
+	}
+
+	public static void countryCurrentlyResidingSmartSearch(int x, int y, int z) throws Exception {
+		Thread.sleep(800);
+		countryCurrentlyResiding.clear();
+		type(countryCurrentlyResiding, readingdata(x, y, z));
+		String countryDataFromExcel = countryCurrentlyResiding.getAttribute("value");// I
+		String dropDownValue = countryDropDown.getText();
+		System.out.println(dropDownValue);
+		if (dropDownValue.startsWith(countryDataFromExcel)) {
+			System.out.println("Test Case pass:-As smart search for country is working properly");
+		} else {
+			Assert.fail("Test case fail:-As smart search for country is not woring properly");
+		}
+		JourneyScreenTwo.countryIstOption();
+	}
+
+	public static void countryCurrentlyResidingSmartSearchInsurer(int x, int y, int z) throws Exception {
+		countryCurrentlyResidingInsurer.clear();
+		type(countryCurrentlyResidingInsurer, readingdata(x, y, z));
+		String countryDataFromExcel = countryCurrentlyResidingInsurer.getAttribute("value");// I
+		String dropDownValue = countryDropDown.getText();
+		System.out.println(dropDownValue);
+		if (dropDownValue.startsWith(countryDataFromExcel)) {
+			System.out.println("Test Case pass:-As smart search for country is working properly");
+		} else {
+			Assert.fail("Test case fail:-As smart search for country is not woring properly");
+		}
+		JourneyScreenTwo.countryIstOption();
+	}
+
+	public static void birthCountryScreenThreeNri(int x, int y, int z) throws Exception {
+		birthCountry.clear();
+		type(birthCountry, readingdata(x, y, z));
+		String countryDataFromExcel = birthCountry.getAttribute("value");// I
+		String dropDownValue = countryDropDown.getText();
+		System.out.println(dropDownValue);
+		if (dropDownValue.startsWith(countryDataFromExcel)) {
+			System.out.println("Test Case pass:-As smart search for country is working properly");
+		} else {
+			Assert.fail("Test case fail:-As smart search for country is not woring properly");
+		}
+		JourneyScreenTwo.countryIstOption();
+	}
+
+	public static void birthCountryScreenThreeNriInsurer(int x, int y, int z) throws Exception {
+		birthCountryInsurer.clear();
+		type(birthCountryInsurer, readingdata(x, y, z));
+		String countryDataFromExcel = birthCountryInsurer.getAttribute("value");// I
+		String dropDownValue = countryDropDown.getText();
+		System.out.println(dropDownValue);
+		if (dropDownValue.startsWith(countryDataFromExcel)) {
+			System.out.println("Test Case pass:-As smart search for country is working properly");
+		} else {
+			Assert.fail("Test case fail:-As smart search for country is not woring properly");
+		}
+		JourneyScreenTwo.countryIstOption();
+	}
+
+	public static void residenceCountryAsPerTaxLaws(int x, int y, int z) throws Exception {
+		residenceCountryAsPerTaxLaws.clear();
+		type(residenceCountryAsPerTaxLaws, readingdata(x, y, z));
+		String countryDataFromExcel = residenceCountryAsPerTaxLaws.getAttribute("value");// I
+		String dropDownValue = countryDropDown.getText();
+		System.out.println(dropDownValue);
+		if (dropDownValue.startsWith(countryDataFromExcel)) {
+			System.out.println("Test Case pass:-As smart search for country is working properly");
+		} else {
+			Assert.fail("Test case fail:-As smart search for country is not woring properly");
+		}
+		JourneyScreenTwo.countryIstOption();
+	}
+
+	public static void residenceCountryAsPerTaxLawsInsurer(int x, int y, int z) throws Exception {
+		residenceCountryAsPerTaxLawsidOfInsurer.clear();
+		type(residenceCountryAsPerTaxLawsidOfInsurer, readingdata(x, y, z));
+		String countryDataFromExcel = residenceCountryAsPerTaxLawsidOfInsurer.getAttribute("value");// I
+		String dropDownValue = countryDropDown.getText();
+		System.out.println(dropDownValue);
+		if (dropDownValue.startsWith(countryDataFromExcel)) {
+			System.out.println("Test Case pass:-As smart search for country is working properly");
+		} else {
+			Assert.fail("Test case fail:-As smart search for country is not woring properly");
+		}
+		JourneyScreenTwo.countryIstOption();
+	}
+
+
+	public static void visaValidTillSingleDataInsurer() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenOne.class);
+		Thread.sleep(200);
+		visaExpiryDateOfInsurer.click();
+		JourneyScreenOne.visaValidAndExpiryDateDateSelection();
+	}
+
+	public static void nriDetailsWithLifeInsuredOtherDetailsJourneyScreenThree() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenThree.class);
+		Thread.sleep(500);
+		nriOtherInsurerDetails.click();
+		Thread.sleep(500);
+
+
+		setPassportNumberInsurer(1, 1, 5);
+		isAllTheTypeOfVisaListIsPresentInsurer();
+		visaValidTillSingleDataInsurer();
+		passportIssuingCountryOfInsurer(1, 1, 6);
+		passportExpiryDateForSingleDataInsurer();
+		
+		
+
+		if (sourceOfApplicationLabel.isDisplayed()
+				&& countryCurrentlyResiding.isDisplayed()
+				&& entryDateToIndia.isDisplayed() && countryVisitedFrequently.isDisplayed()
+				&& birthCountry.isDisplayed() && residenceCountryAsPerTaxLaws.isDisplayed()
+				&& doYouHaveFTIN.isDisplayed() && FTINYes.isDisplayed()
+				&& FTINNo.isDisplayed())
+		// &&foreignIdentification.isDisplayed()&&identificationNo.isDisplayed()&&issuingCountry.isDisplayed()&&
+		// sourceOfApplicationOutsideIndia.isDisplayed()
+		{
+			System.out.println("Test case pass:As all the feilds are present as per the requirement");
+		}else 
+		{
+			Assert.fail("Test case fail:As all the feilds are not present");
+		}
+	}
+
+	public static void dateOfLatestEntryToIndia() throws Exception {
+
+		Thread.sleep(800);
+		waitTillElementToBeClickable(entryDateToIndia);
+		entryDateToIndia.click();
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.ARROW_DOWN).build().perform();
+		JourneyScreenThree.dateOfBirthSelctionFunction();
+
+	}
+
+	public static void dateOfLatestEntryToIndiaInsurer() throws Exception {
+
+		Thread.sleep(800);
+		waitTillElementToBeClickable(entryDateToIndiaOfInsurer);
+		entryDateToIndiaOfInsurer.click();
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.ARROW_DOWN).build().perform();
+		JourneyScreenThree.dateOfBirthSelctionFunction();
+
+	}
+
+	public static void nriDetailsJourneyScreenThreeFeildsValidation() throws Exception {
+		Thread.sleep(1000);
+
+		JourneyScreenTwo.setCountry(3, 1, 6);
+
+		if (NRIDetailLabel.isDisplayed() && sourceOfApplicationLabel.isDisplayed()
+				&& countryCurrentlyResiding.isDisplayed()
+				&& entryDateToIndia.isDisplayed() && countryVisitedFrequently.isDisplayed()
+				&& birthCountry.isDisplayed() && residenceCountryAsPerTaxLaws.isDisplayed()
+				&& doYouHaveFTIN.isDisplayed() && FTINYes.isDisplayed()
+				&& FTINNo.isDisplayed())
+		// &&foreignIdentification.isDisplayed()&&identificationNo.isDisplayed()&&issuingCountry.isDisplayed()&&
+		// sourceOfApplicationOutsideIndia.isDisplayed()
+		{
+			System.out.println("Test case pass:As all the feilds are present as per the requirement");
+		}else 
+		{
+			Assert.fail("Test case fail:As all the feilds are not present");
+		}
+	}
 	public static void checkPDFIsOpenedOrNotCheckMsg() throws Exception {
 		Thread.sleep(14000);
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 		if (tabs.size() == 2) {
 			System.out.println("Test case pass:As PDF illustration is working");
 			JourneyScreenTwo.ifConditionForTabSizeTwoPDFIllustration();
+
+		} else {
+			try {
+				WebElement ele = driver
+						.findElement(By.xpath("//h4[(text()=\"Illustration could not be generated.\")]"));
+				if (isElementDisplayed(ele)) {
+					List<WebElement> listOfErrors = driver
+							.findElements(By.xpath("html/body/div[2]/div[2]/div/div/div/div/ol/li"));
+					int i = listOfErrors.size();
+					for (int j = 1; j <= i; j++) {
+						String errorMsg = driver
+								.findElement(By.xpath("html/body/div[2]/div[2]/div/div/div/div/ol/li[" + j + "]"))
+								.getText();
+						System.out.println(errorMsg);
+					}
+					escapeFunction();
+				}
+			} catch (Exception e) {
+				System.out.println(e);
+				Assert.fail("Either PDF is not generating or loading time is too much");
+				escapeFunction();
+
+			}
+		}
+
+	}
+
+	public static void checkPDFIsOpenedOrNotCheckMsgNRI() throws Exception {
+		Thread.sleep(14000);
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		if (tabs.size() == 2) {
+			System.out.println("Test case pass:As PDF illustration is working");
+			JourneyScreenTwo.ifConditionForTabSizeTwoPDFIllustrationProceedingScreenAhead();
 
 		} else {
 			try {
@@ -1148,7 +1950,7 @@ public class JourneyScreenThree extends ReusableActions {
 	}
 
 	public static void checkDateFormat() throws Exception {
-		PageFactory.initElements(driver, JourneyScreenOne.class);
+		PageFactory.initElements(driver, JourneyScreenThree.class);
 		String dateOfBirthFormat = visaValidTill.getAttribute("placeholder");
 		System.out.println("is hidden label is " + dateOfBirthFormat);
 		System.out.println(dateOfBirthFormat.equalsIgnoreCase("DD/MM/YYYY"));
@@ -1330,6 +2132,185 @@ public class JourneyScreenThree extends ReusableActions {
 		type(bankAccountNo, readingdata(x, y, z));
 	}
 
+	public static void setUsername(int x, int y, int z) throws Exception {
+		PageFactory.initElements(driver, JourneyScreenThree.class);
+		username.clear();
+		type(username, readingdata(x, y, z));
+
+	}
+
+	public static void setPassword(int x, int y, int z) throws Exception {
+		waitTillElementToBeClickable(password);
+		Thread.sleep(500);
+		password.clear();
+		type(password, readingdata(x, y, z));
+
+	}
+	public static void gmailFunctionality() throws Exception {
+
+
+		((JavascriptExecutor) driver).executeScript("window.open()");
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		driver.switchTo().window(tabs.get(1));
+		driver.get("https://mail.google.com");
+		setUsername(1, 10, 3);
+		nextButton.click();
+		Thread.sleep(800);
+		setPassword(1, 11, 3);
+		Thread.sleep(800);
+		passwordNextButton.click();
+		Thread.sleep(800);
+
+		waitTillElementToBeClickableLongWait(preInsuranceVerificationLinkMail);
+		Thread.sleep(700);
+		preInsuranceVerificationLinkMail.click();
+		System.out.println("clicked");
+
+		// Actions actionObject = new Actions(driver);
+		// actionObject.keyDown(Keys.CONTROL).sendKeys(Keys.F5).keyUp(Keys.CONTROL).perform();
+
+		waitTillElementToBeClickableLongWait(preverificationLink);
+		Thread.sleep(700);
+
+		String link = preverificationLink.getText();
+
+		WebDriver driver = new ChromeDriver();
+		driver.get(link);
+		driver.manage().window().maximize();
+
+		Thread.sleep(700);
+
+		String str = driver.getCurrentUrl();
+		System.out.println(str);
+
+		for (int i = 1; i < 10; i++) {
+			System.out.print("entered in 1st for loop");
+			Thread.sleep(1000);
+			driver.findElement(By.id("no")).click();
+			Thread.sleep(1000);
+			Robot robot = new Robot();
+			robot.keyPress(KeyEvent.VK_TAB);
+			robot.keyRelease(KeyEvent.VK_TAB);
+			Thread.sleep(1000);
+			robot.keyPress(KeyEvent.VK_TAB);
+			robot.keyRelease(KeyEvent.VK_TAB);
+			Thread.sleep(1000);
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+			Thread.sleep(1800);
+
+		}
+
+		for (int i = 1; i < 6; i++) {
+			Thread.sleep(1000);
+			driver.findElement(By.id("no")).click();
+			Thread.sleep(1000);
+			System.out.println("m before u");
+			Robot robot = new Robot();
+			robot.keyPress(KeyEvent.VK_TAB);
+			robot.keyRelease(KeyEvent.VK_TAB);
+			Thread.sleep(1000);
+			robot.keyPress(KeyEvent.VK_RIGHT);
+			robot.keyRelease(KeyEvent.VK_RIGHT);
+			Thread.sleep(1000);
+			robot.keyPress(KeyEvent.VK_TAB);
+			robot.keyRelease(KeyEvent.VK_TAB);
+			Thread.sleep(1000);
+			robot.keyPress(KeyEvent.VK_TAB);
+			robot.keyRelease(KeyEvent.VK_TAB);
+			Thread.sleep(1000);
+
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+			Thread.sleep(1000);
+		}
+
+		Thread.sleep(1800);
+		driver.findElement(By.id("no")).click();
+		Thread.sleep(1000);
+
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_TAB);
+		robot.keyRelease(KeyEvent.VK_TAB);
+		Thread.sleep(1000);
+		robot.keyPress(KeyEvent.VK_RIGHT);
+		robot.keyRelease(KeyEvent.VK_RIGHT);
+		Thread.sleep(1000);
+		robot.keyPress(KeyEvent.VK_TAB);
+		robot.keyRelease(KeyEvent.VK_TAB);
+		Thread.sleep(1000);
+		robot.keyPress(KeyEvent.VK_RIGHT);
+		robot.keyRelease(KeyEvent.VK_RIGHT);
+		Thread.sleep(1000);
+		robot.keyPress(KeyEvent.VK_TAB);
+		robot.keyRelease(KeyEvent.VK_TAB);
+		Thread.sleep(1000);
+		robot.keyPress(KeyEvent.VK_RIGHT);
+		robot.keyRelease(KeyEvent.VK_RIGHT);
+
+		Thread.sleep(1000);
+
+		robot.keyPress(KeyEvent.VK_TAB);
+		robot.keyRelease(KeyEvent.VK_TAB);
+		Thread.sleep(1000);
+		robot.keyPress(KeyEvent.VK_TAB);
+		robot.keyRelease(KeyEvent.VK_TAB);
+		Thread.sleep(1000);;
+
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);
+		Thread.sleep(1000);
+
+		Thread.sleep(1000);
+
+		driver.findElement(By.xpath("//input[@id='codeBox1']")).sendKeys("1");
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//input[@id='codeBox2']")).sendKeys("2");
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//input[@id='codeBox3']")).sendKeys("3");
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//input[@id='codeBox4']")).sendKeys("4");
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//label[@class='cstm-check-label']")).click();
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//button[@id='submitbutton']")).click();
+		Thread.sleep(1800);
+		/*
+		 * robot.keyPress(KeyEvent.VK_ALT); robot.keyPress(KeyEvent.VK_TAB);
+		 * robot.keyRelease(KeyEvent.VK_TAB); robot.keyRelease(KeyEvent.VK_ALT);
+		 * 
+		 * Thread.sleep(500);
+		 * 
+		 * robot.keyPress(KeyEvent.VK_CONTROL); robot.keyPress(KeyEvent.VK_TAB);
+		 * robot.keyRelease(KeyEvent.VK_TAB); robot.keyRelease(KeyEvent.VK_CONTROL);
+		 */
+
+		driver.close();
+	}
+
+
+	public static void deletingAllInboxMail() throws Exception {
+		((JavascriptExecutor) driver).executeScript("window.open()");
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		driver.switchTo().window(tabs.get(1));
+		driver.get("https://mail.google.com");
+		/*
+		 * setUsername(1, 10, 3); nextButton.click(); Thread.sleep(800); setPassword(1,
+		 * 11, 3); Thread.sleep(800); passwordNextButton.click();
+		 */
+		Thread.sleep(1800);
+		waitTillElementToBeClickableLongWait(checkBoxAll);
+		checkBoxAll.click();
+		waitTillElementToBeClickable(deleteButton);
+		Thread.sleep(1800);
+		deleteButton.click();
+		Thread.sleep(1800);
+		driver.close();
+	}
+
+
+
+
 	public static void accountHoldersNamePositiveNegativeValidation(int x, int y, int z) throws Exception {
 		AccHolderName.clear();
 		type(AccHolderName, readingdata(x, y, z));
@@ -1388,7 +2369,40 @@ public class JourneyScreenThree extends ReusableActions {
 
 	}
 
+	public static void deletPOSVLinkFromGmaiL() throws Exception {
 
+
+		((JavascriptExecutor) driver).executeScript("window.open()");
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		driver.switchTo().window(tabs.get(1));
+		driver.get("https://mail.google.com");
+		setUsername(1, 10, 3);
+		nextButton.click();
+		Thread.sleep(800);
+		setPassword(1, 11, 3);
+		Thread.sleep(800);
+		passwordNextButton.click();
+		Thread.sleep(800);
+
+		waitTillElementToBeClickableLongWait(preInsuranceVerificationLinkMail);
+		Thread.sleep(700);
+		preInsuranceVerificationLinkMail.click();
+		System.out.println("clicked");
+
+		// Actions actionObject = new Actions(driver);
+		// actionObject.keyDown(Keys.CONTROL).sendKeys(Keys.F5).keyUp(Keys.CONTROL).perform();
+
+		waitTillElementToBeClickableLongWait(preverificationLink);
+		Thread.sleep(700);
+
+		String link = preverificationLink.getText();
+
+		WebDriver driver = new ChromeDriver();
+		driver.get(link);
+		driver.manage().window().maximize();
+
+		Thread.sleep(700);
+	}
 
 	public static void arrowUpFunctionToScrollUp() throws Exception {
 		Thread.sleep(400);
@@ -1399,15 +2413,73 @@ public class JourneyScreenThree extends ReusableActions {
 		Thread.sleep(400);
 	}
 
+	public static void arrowDownFunctionToScrollDownTillDownScreenThreeNRI() throws Exception {
+		Thread.sleep(400);
+		for (int i = 1; i < 37; i++) {
+			Actions action = new Actions(driver);
+			action.sendKeys(Keys.ARROW_DOWN).build().perform();
+		}
+		Thread.sleep(400);
+	}
 
-
-	public static void fillingAnnualIncomeTOProceed(int x, int y, int z) throws Exception {
-		waitTillElementVisible(annualIncomePersonalDetailsDependent);
-		Thread.sleep(200);
+	public static void annualIncomePersonalDetailsDependent(int x, int y, int z) throws Exception {
+		PageFactory.initElements(driver, JourneyScreenThree.class);
 		annualIncomePersonalDetailsDependent.clear();
 		type(annualIncomePersonalDetailsDependent, readingdataTestData(x, y, z));
+
+	}
+
+	public static void annualIncomePersonalDetails(int x, int y, int z) throws Exception {
+		PageFactory.initElements(driver, JourneyScreenThree.class);
+		annualIncomePersonalDetailsDependent.clear();
+		type(annualIncomePersonalDetailsDependent, readingdata(x, y, z));
+	}
+
+	public static void fillingAnnualIncomeTOProceed() throws Exception {
+
+		waitTillElementVisible(annualIncomePersonalDetailsDependent);
+		Thread.sleep(200);
+
+		annualIncomePersonalDetails(0, 1, 3);
+
+		JourneyScreenTwo.Savebtn.click();
 		Proceedbtn.click();
 		Thread.sleep(200);
+
+
+	}
+
+	public static void fillingAnnualIncomeTOProceedForm60() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenThree.class);
+		waitTillElementVisible(annualIncomePersonalDetailsDependent);
+		Thread.sleep(300);
+		annualIncomePersonalDetails(3, 2, 11);
+
+		JourneyScreenTwo.Savebtn.click();
+		Proceedbtn.click();
+		Thread.sleep(200);
+
+	}
+
+	public static void panNumberForm60(int x, int y, int z) throws Exception {
+		PageFactory.initElements(driver, JourneyScreenThree.class);
+		panNumberForm60.clear();
+		type(panNumberForm60, readingdata(x, y, z));
+
+	}
+
+	public static void checkUpdatePANNumberPopup() throws Exception {
+
+		if (isElementDisplayed(updatePANNumber)) {
+			Thread.sleep(500);
+			panNumberForm60(1, 1, 1);
+
+			Thread.sleep(1000);
+			submitButton.click();
+
+		} else {
+			Assert.fail("Test case fail as update PAN number popup is not displaying when annual income is high");
+		}
 
 	}
 
@@ -1520,7 +2592,7 @@ public class JourneyScreenThree extends ReusableActions {
 		waitTillElementVisible(payorRelationship1stOption);
 		payorRelationship1stOption.click();
 		Thread.sleep(200);
-		driver.findElement(By.xpath(".//*[@id='root']/main/div[2]/form/div/div/div[3]")).click();
+		outsideClick.click();
 
 	}
 
@@ -1710,15 +2782,17 @@ public class JourneyScreenThree extends ReusableActions {
 		type(fathersNameInsurersDetails, readingdata(x, y, z));
 		String firstNamePassedFromExcel = fathersNameInsurersDetails.getAttribute("value");
 		int size = firstNamePassedFromExcel.length();
-		if ((size == 25 && !firstNamePassedFromExcel.contains("@") && !firstNamePassedFromExcel.contains("1"))) {
-			logger.info("Test case pass:- As father Name InsurersDetails is 25 and accepting only alphabets");
+		if ((size == 50 && !firstNamePassedFromExcel.contains("@") && !firstNamePassedFromExcel.contains("1"))) {
+			logger.info("Test case pass:- As father Name InsurersDetails is 50 and accepting only alphabets");
 		} else {
 			Assert.fail(
-					"Test case fail:- As either father Name InsurersDetails is not 25 or not accepting only alphabets");
+					"Test case fail:- As either father Name InsurersDetails is not 50 or not accepting only alphabets");
 		}
 	}
 
 	public static void setfatherNameInsurersDetails(int x, int y, int z) throws Exception {
+		Thread.sleep(800);
+		System.out.println("After sleep entered in fathers wala");
 		fathersNameInsurersDetails.clear();
 		type(fathersNameInsurersDetails, readingdata(x, y, z));
 	}
@@ -1770,6 +2844,10 @@ public class JourneyScreenThree extends ReusableActions {
 		String xpathForedOBProofInsurersDetailsDropDown = "//*[@id='menu-insurerMaritalStatus']/div[2]/ul/li";
 		comparingExcelDataWithUI(xpathForedOBProofInsurersDetailsDropDown, 5, 0);
 		insurerMaritalStatus1stOption();
+		Thread.sleep(500);
+		insurersOtherDetails.click();
+		Thread.sleep(500);
+		insurersOtherDetails.click();
 	}
 
 	public static void InsurersIndustryType1stOption() throws Exception {
@@ -1787,6 +2865,7 @@ public class JourneyScreenThree extends ReusableActions {
 		InsurersIndustryType1stOption();
 	}
 
+	// _____________________________________________________________________________________________________________
 	public static void industryDropDownListOptionSelectionValidationInsurer() throws Exception {
 		Thread.sleep(500);
 		for (int i = 1; i <= 7; i++) {
@@ -1800,22 +2879,63 @@ public class JourneyScreenThree extends ReusableActions {
 			switch (i) {
 			case 1:
 				if (labledAreYouCurrentlyPostedInsurer.isDisplayed() && noOptionForCurrentlyPostedInsurer.isDisplayed()
-						&& yesOptionForCurrentlyPostedInsurer.isDisplayed()) {
+						&& yesOptionForCurrentlyPostedInsurer.isDisplayed()
+						&& organizationTypeInsurersDetails.isDisplayed()) {
 
 					System.out.println(
 							"All the feilds are present as per drop down option i.e DEFENCE(Screen Three Insureres details)");
+
+					organizationTypeInsurersDetailsDropDown();
+					Thread.sleep(800);
+					 yesOptionForCurrentlyPostedInsurer.click();
+					Thread.sleep(1000);
+					 natureOfInsurerRole.click();
+					waitTillElementVisible(natureOfInsurerRoleType1stOption);
+					Thread.sleep(800);
+					List<String> expectedResult = fetchingdataFromExcelExpectedResult(3, 4);
+					String xpathNatureOfInsurerRole = "//div[@id='menu-natureOfInsurerRole']/div/ul[@role='listbox']/li";
+					List<String> actualResultText = fetchingdataFromUI(xpathNatureOfInsurerRole);
+					System.out.println(expectedResult);
+					System.out.println(actualResultText);
+					comparisonOfListForExpectedAndActualResult(expectedResult, actualResultText);
+					Thread.sleep(800);
+					natureOfJobRole1stOption();
+					 
+					
+					
+					
 				} else {
 					Assert.fail(
 							"All the feilds are not present as per  drop down option i.e DEFENCE(Screen Three Insureres details)");
 				}
+
 				break;
 			case 2:
 				if (labledAreYouProfessionalDiverInsurer.isDisplayed()
-						&& noOptionForCurrentlyPostedInsurer.isDisplayed()
-						&& yesOptionForCurrentlyPostedInsurer.isDisplayed()) {
+						&& insurerProfessionalDiverNo.isDisplayed() && insurerProfessionalDiverYes.isDisplayed()
+						&& organizationTypeInsurersDetails.isDisplayed()) {
 
 					System.out.println(
 							"All the feilds are present as per drop down option i.e DIVING(Screen Three Insureres details) ");
+					organizationTypeInsurersDetailsDropDown();
+					Thread.sleep(800);
+					insurerProfessionalDiverYes.click();
+					Thread.sleep(1000);
+					diveLocationOfInsurer.click();
+					waitTillElementVisible(diveLocationOfInsurer1stOption);
+					Thread.sleep(800);
+					List<String> expectedResult = fetchingdataFromExcelExpectedResultSheet(1, 5, 4);
+					String xpathNatureOfInsurerRole = "//div[@id='menu-diveLocationOfInsurer']/div/ul/li";
+					List<String> actualResultText = fetchingdataFromUI(xpathNatureOfInsurerRole);
+
+					System.out.println(expectedResult);
+					System.out.println(actualResultText);
+					comparisonOfListForExpectedAndActualResult(expectedResult, actualResultText);
+					Thread.sleep(800);
+					diveLocationOfInsurer1stOption.click();
+					
+					
+					
 				} else {
 					Assert.fail(
 							"All the feilds are not present as per drop down option i.e DIVING(Screen Three Insureres details)");
@@ -1824,18 +2944,23 @@ public class JourneyScreenThree extends ReusableActions {
 				break;
 			case 3:
 				if (labledAreYouBasedAtOffshoreOrTravOffshoreInsurer.isDisplayed()
-						&& noOptionForCurrentlyPostedInsurer.isDisplayed()
-						&& yesOptionForCurrentlyPostedInsurer.isDisplayed()) {
+						&& insurerInvolvesInOffshoreNo.isDisplayed() && insurerInvolvesInOffshoreYes.isDisplayed()
+						&& organizationTypeInsurersDetails.isDisplayed()) {
 
 					System.out.println(
 							"All the feilds are present as per drop down option i.e OIL & NATURAL GAS(Screen Three Insureres details)");
+					
+					
+					
+					
+					
 				} else {
 					Assert.fail(
 							"All the feilds are not present as per drop down option i.e OIL & NATURAL GAS(Screen Three Insureres details)");
 				}
 				break;
 			case 4:
-				if (typeOfVesselWhereWorkingInsurers.isDisplayed()) {
+				if (typeOfVesselWhereWorkingInsurers.isDisplayed() && organizationTypeInsurersDetails.isDisplayed()) {
 					Thread.sleep(200);
 					typeOfVesselWhereWorkingInsurers.click();
 					Thread.sleep(200);
@@ -1851,7 +2976,8 @@ public class JourneyScreenThree extends ReusableActions {
 						&& yesDoesYourRoleGoingInsideMineInsurer.isDisplayed()
 						&& noDoesYourRoleGoingInsideMineInsurer.isDisplayed()
 						&& yesHaveYouEverHadIllnessRelatedToYourOccuoationInsurer.isDisplayed()
-						&& noHaveYouEverHadIllnessRelatedToYourOccuoationInsurer.isDisplayed()) {
+						&& noHaveYouEverHadIllnessRelatedToYourOccuoationInsurer.isDisplayed()
+						&& organizationTypeInsurersDetails.isDisplayed()) {
 
 					System.out.println("All the feilds are present as per drop down industry type mining");
 				} else {
@@ -1861,8 +2987,27 @@ public class JourneyScreenThree extends ReusableActions {
 
 			case 6:
 				if (exactNatureOfDutiesInsurer.isDisplayed() && flyingRoleInsurer.isDisplayed()
-						&& nonFlyingRoleInsurer.isDisplayed()) {
+						&& nonFlyingRoleInsurer.isDisplayed() && organizationTypeInsurersDetails.isDisplayed()) {
 					System.out.println("All the feilds are present as per drop down industry type Aviation/AirForce");
+					
+					organizationTypeInsurersDetailsDropDown();
+					Thread.sleep(800);
+					flyingRoleInsurer.click();
+					Thread.sleep(1000);
+					flyingRolesOfInsurer.click();
+					waitTillElementVisible(flyingRolesOfInsurer1stOption);
+					Thread.sleep(800);
+					List<String> expectedResult = fetchingdataFromExcelExpectedResult(5, 4);
+					String xpathNatureOfInsurerRole = "//div[@id='menu-flyingRolesOfInsurer']/div/ul/li";
+					List<String> actualResultText = fetchingdataFromUI(xpathNatureOfInsurerRole);
+					System.out.println(expectedResult);
+					System.out.println(actualResultText);
+					comparisonOfListForExpectedAndActualResult(expectedResult, actualResultText);
+					Thread.sleep(800);
+					flyingRolesOfInsurer1stOption.click();
+					
+					
+					
 				} else {
 					Assert.fail("All the feilds are not present as per drop down industry type Aviation/AirForce");
 				}
@@ -1881,6 +3026,10 @@ public class JourneyScreenThree extends ReusableActions {
 	public static void insurerOrganizationType1stOption() throws Exception {
 		Thread.sleep(1000);
 		click(insurerOrganizationType1stOption);
+	}
+	public static void natureOfJobRole1stOption() throws Exception {
+		Thread.sleep(1000);
+		click(natureOfInsurerRoleType1stOption);
 	}
 
 	public static void organizationTypeInsurersDetailsDropDown() throws Exception {
@@ -1943,18 +3092,43 @@ public class JourneyScreenThree extends ReusableActions {
 	public static void checkAllTheIsurersDetailsFeildsIsPresentForScreenThree() throws Exception {
 		System.out.println("i ma checking");
 		if (dobProofInsurersDetails.isEnabled() && fathersNameInsurersDetails.isDisplayed()
-				&& CritiaclIllnessInsurersDetails.isDisplayed() && hazardousInsurersDetails.isDisplayed()
-				&& criminalChargesInsurersDetails.isDisplayed() && heightInsurersDetails.isDisplayed()
-				&& weightInsurersDetails.isDisplayed() && InsurerCriticalIllnessYesInsurersDetails.isDisplayed()
-				&& InsurerCriticalIllnessNoInsurersDetails.isDisplayed()
-				&& InsurerHazardousActivitiesYesInsurersDetails.isDisplayed()
-				&& InsurerHazardousActivitiesNoInsurersDetails.isDisplayed()
-				&& InsurerCriminalChargesYesInsurersDetails.isDisplayed()
-				&& InsurerCriminalChargesNoInsurersDetails.isDisplayed() && nationalityInsurersDetails.isDisplayed()
-				&& nationalityIndianInsurersDetails.isDisplayed() && nationalityNRIInsurersDetails.isDisplayed()
 				&& insurerEducationIInsurersDetails.isEnabled() && insurerMaritalStatusIInsurersDetails.isEnabled()
+		) {
+			System.out.println("Test case pass:As all the feilds are present as per the expectation");
+		} else {
+			Assert.fail("Test case fail:As all the feilds are not present as per the expectation");
+		}
+
+		JourneyScreenTwo.arrowDownFunctionToScrollDown();
+
+		if (areYouCurrentlyPregnantLabelInsurer.isDisplayed() && pregnantYesInsurer.isDisplayed()
+				&& pregnantNoInsurer.isDisplayed() && nationalityInsurersDetails.isDisplayed()
+				&& nationalityIndianInsurersDetails.isDisplayed() && nationalityNRIInsurersDetails.isDisplayed()
+				&& pioOciOptionButton.isDisplayed() && foreignNationalButton.isDisplayed()
 				&& insurerIndustryTypeInsurersDetails.isEnabled() && insurerOrganizationTypeInsurersDetails.isEnabled()
-				&& insurerOccupationInsurersDetails.isEnabled()) {
+				&& insurerOccupationInsurersDetails.isEnabled() && insurerAnnualIncome.isDisplayed()
+		) {
+			System.out.println("Test case pass:As all the feilds are present as per the expectation");
+
+		} else {
+			Assert.fail("Test case fail:As all the feilds are not present as per the expectation");
+		}
+		JourneyScreenTwo.arrowDownFunctionToScrollDown();
+				
+		if (CritiaclIllnessInsurersDetails.isDisplayed()
+				&& InsurerCriticalIllnessYesInsurersDetails.isDisplayed()
+				&& InsurerCriticalIllnessNoInsurersDetails.isDisplayed()
+				&& hazardousInsurersDetails.isDisplayed() && InsurerHazardousActivitiesYesInsurersDetails.isDisplayed()
+				&& InsurerHazardousActivitiesNoInsurersDetails.isDisplayed()
+				&& criminalChargesInsurersDetails.isDisplayed()
+				&& InsurerCriminalChargesYesInsurersDetails.isDisplayed()
+				&& InsurerCriminalChargesNoInsurersDetails.isDisplayed() && heightInsurersDetails.isDisplayed()
+				&& weightInsurersDetails.isDisplayed() && insurereFeetLabel.isDisplayed()
+				&& insurerHeightInCM.isDisplayed() && insurerInchesLabel.isDisplayed()
+				&& weightPersonalDetailsDependent.isDisplayed())
+
+		{
+
 			System.out.println(
 					"Test case pass:-As all the required feilds for insurers details for screen three is present");
 		} else {
@@ -1962,7 +3136,26 @@ public class JourneyScreenThree extends ReusableActions {
 					"Test case fail:-As all the required feilds for insurers details for screen three is not present");
 		}
 	}
+
+	public static void fathersNameInsurerScreenFour(int x, int y, int z) throws Exception {
+		Thread.sleep(200);
+		fathersNameInsurersDetails.clear();
+		type(fathersNameInsurersDetails, readingdataTestData(x, y, z));
+		String fathersNameInsurersDetailsFromUI = fathersNameInsurersDetails.getAttribute("value");
+		int size = fathersNameInsurersDetailsFromUI.length();
+		if (size == 50) {
+			logger.info("Test case pass:-As fathers name is of 50 length");
+		} else {
+			Assert.fail("Test case fail:-As fathers name is  of 50 length");
+		}
+
+	}
+
+
 	public static void isurersDetailsFeildsDropDownForScreenThree() throws Exception {
+		Thread.sleep(800);
+		outsideClick.click();
+		JourneyScreenTwo.arrowDownFunctionToScrollDown();
 		setfatherNameInsurersDetails(3, 1, 0);
 		dOBProofInsurersDetailsOption();
 		educationInsurersDetailsOptionSelection();
@@ -1974,6 +3167,7 @@ public class JourneyScreenThree extends ReusableActions {
 		weightPersonalDetailsDependent(0, 1, 0);
 		insurerOtherDetailsAnnualIncome(0, 1, 1);
 	}
+
 
 	public static void occupationInsurersDetailsDropDownOptionSelection() throws Exception {
 		Thread.sleep(500);
@@ -2004,9 +3198,9 @@ public class JourneyScreenThree extends ReusableActions {
 		Thread.sleep(200);
 		occupationInsurersDetails.click();
 		Thread.sleep(200);
-		waitTillElementToBeClickable(occupation2ndOption);
+		waitTillElementToBeClickable(occupation2ndOptionInsurers);
 		Thread.sleep(200);
-		occupation2ndOption.click();
+		occupation2ndOptionInsurers.click();
 		Thread.sleep(200);
 	}
 
@@ -2023,14 +3217,121 @@ public class JourneyScreenThree extends ReusableActions {
 	}
 
 	public static void checkAllTheIsurersDetailsFeildsDropDownListIsPresentForScreenThree() throws Exception {
+		Thread.sleep(800);
 		fatherNameInsurersDetails(3, 1, 0);
 		dOBProofInsurersDetails();
 		educationInsurersDetails();
 		maritalStatusDropDownInsurersDetails();
+		JourneyScreenTwo.arrowDownFunctionToScrollDown();
 		InsurersIndustryType();
 		industryDropDownListOptionSelectionValidationInsurer();
 		organizationTypeInsurersDetailsDropDown();
 		occupationInsurersDetailsDropDown();
+
+	}
+
+	public static void passportExpiryDateForSingleDataInsurer() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenOne.class);
+		Thread.sleep(200);
+		passportExpiryDateInsurer.click();
+		JourneyScreenOne.visaValidAndExpiryDateDateSelection();
+	}
+	// ______________________________________________________________________
+	public static void nriDetailsSectionOfLifeInsuredOtherDetails() throws Exception {
+		setPassportNumberInsurer(1, 1, 5);
+		isAllTheTypeOfVisaListIsPresentInsurer();
+		visaValidTillSingleDataInsurer();
+		passportIssuingCountryOfInsurer(1, 1, 6);
+		passportExpiryDateForSingleDataInsurer();
+	}
+
+
+
+	public static void setPassportNumberInsurer(int x, int y, int z) throws Exception {
+		// type(MobNumtxtfld, strMobNumber);
+		passportNumberOfInsurer.clear();
+		type(passportNumberOfInsurer, readingdata(x, y, z));
+		String passportNumberPassedFromExcel = passportNumberOfInsurer.getAttribute("value");
+		int size = passportNumberPassedFromExcel.length();
+		if (size == 9) {
+			logger.info("Test case pass:- As Passport number for insurer feild length is 9");
+		} else {
+			Assert.fail("Test case fail:-Test case pass:- As Passport number for insurer feild length is not of 9");
+		}
+
+	}
+
+	public static void passportIssuingCountryOfInsurer(int x, int y, int z) throws Exception {
+		// type(MobNumtxtfld, strMobNumber);
+		Thread.sleep(500);
+		System.out.println(passportIssuingCountryOfInsurer.isDisplayed());
+		passportIssuingCountryOfInsurer.clear();
+		type(passportIssuingCountryOfInsurer, readingdata(x, y, z));
+		passportIssuingCountryOptionSelection();
+		String passportIssuingCountryFromUI = passportIssuingCountryOfInsurer.getAttribute("value");
+		if (passportIssuingCountryFromUI.contains("India")) {
+			logger.info("Test case pass:- As Smart search is working");
+		} else {
+			Assert.fail("Test case fail:-As Smart search is not working");
+		}
+
+	}
+
+	public static void passportIssuingCountryOptionSelection() throws Exception {
+		Thread.sleep(200);
+		click(passportIssuingCountryOptionSelection);
+
+	}
+
+
+
+	public static void passportVisaTypeOfInsurer() throws Exception {
+
+		click(passportVisaTypeOfInsurer);
+
+	}
+
+	public static void dependentTypeOfVisaInsurer() throws Exception {
+		click(dependentTypeOfVisaInsurer);
+	}
+
+	public static void isAllTheTypeOfVisaListIsPresentInsurer() throws Exception {
+		passportVisaTypeOfInsurer();
+		String xtypeOfVisa = "//div[@id='menu-passportVisaTypeOfInsurer']/div/ul/li";
+		String sheetPath = AppConstant.TEST_DATA_EXCELL;
+		comparingExcelDataWithUIBySheetPath(xtypeOfVisa, 1, 2, sheetPath);
+		dependentTypeOfVisaInsurer();
+
+	}
+	public static void checkReflexiveQuestionsOfAllQuestionScreenThree() throws Exception {
+		Thread.sleep(800);
+		InsurerCriticalIllnessYesInsurersDetails.click();
+		Thread.sleep(800);
+		if (offeredAtModifiedTermsRejectedOrPostponed.isDisplayed() && issuedOrPending.isDisplayed()) {
+			System.out.println("Test case pass:As all the feilds are present as per critical illness yes option");
+		} else {
+			Assert.fail("Test case fail:As all the feilds are not present as per critical illness yes option");
+		}
+		Thread.sleep(800);
+		InsurerCriticalIllnessNoInsurersDetails.click();
+		Thread.sleep(800);
+		InsurerHazardousActivitiesYesInsurersDetails.click();
+		Thread.sleep(800);
+		if (extentOfInvolvementLabel.isDisplayed() && insurerHazardousActivitiesExtentDropDown.isDisplayed()) {
+			System.out.println("Test Case pass:As All the feilds are present as per hazardous yes option");
+			Thread.sleep(800);
+			insurerHazardousActivitiesExtentDropDown.click();
+			List<String> expectedResult = fetchingdataFromExcelExpectedResult(6, 4);
+			String insurerHazardousActivitiesExtentValue = "//div[@id='menu-insurerHazardousActivitiesExtent']/div/ul/li";
+			List<String> actualResultText = fetchingdataFromUI(insurerHazardousActivitiesExtentValue);
+			comparisonOfListForExpectedAndActualResult(expectedResult, actualResultText);
+			Thread.sleep(800);
+			insurerHazardousActivitiesExtent1stOption.click();
+
+		} else {
+			Assert.fail("Test Case fail:As All the feilds are not present as per hazardous yes option");
+		}
+
 
 	}
 

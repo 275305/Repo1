@@ -53,8 +53,8 @@ public class POSVFlowForSAPMIAP extends ReusableActions{
     @FindBy(xpath="//input[@value='dependent']")
     static WebElement Dependentbtn;
     
-    @FindBy(xpath="//label[@for='premiumCommitment']")
-    static WebElement premiumCommitmentMIAPYesOptionSelection;
+	@FindBy(xpath = "//label[@for='desiredAnnualIncomeYes']")
+	static WebElement desiredAnnualIncomeYes;
     
     
     // Locating Company Policy For radio Button
@@ -600,7 +600,7 @@ public class POSVFlowForSAPMIAP extends ReusableActions{
 		JourneyScreenTwo.proposerPersonalDetailsIncome(9,1,10);
 		JourneyScreenThreeTest.nomineeDetailsWithoutDependentSelection();
 		JourneyScreenThreeTest.bankDetailsSectionFillingData();
-		JourneyScreenThree.fillingAnnualIncomeTOProceed(0, 1, 3);
+		JourneyScreenThree.fillingAnnualIncomeTOProceed();
 		Thread.sleep(1000);
 		JourneyScreenFour.form60RelatedDetailsIdentityProofNameOptionSelection();
 		JourneyScreenFour.setIdentityProofNumberValidation(0, 1, 6);
@@ -675,7 +675,7 @@ public class POSVFlowForSAPMIAP extends ReusableActions{
 		JourneyScreenTwo.proposerPersonalDetailsIncome(9, 1, 10);
 		JourneyScreenThreeTest.nomineeDetailsWithoutDependentSelection();
 		JourneyScreenThreeTest.bankDetailsSectionFillingData();
-		JourneyScreenThree.fillingAnnualIncomeTOProceed(0, 1, 3);
+		JourneyScreenThree.fillingAnnualIncomeTOProceed();
 		Thread.sleep(1000);
 		JourneyScreenFour.form60RelatedDetailsIdentityProofNameOptionSelection();
 		JourneyScreenFour.setIdentityProofNumberValidation(0, 1, 6);
@@ -706,7 +706,7 @@ public class POSVFlowForSAPMIAP extends ReusableActions{
 		JourneyScreenTwo.selectByDropdownMIAP();
 		JourneyScreenTwo.fillingAllTheRequiredFeildsForMIAP();
 		Thread.sleep(300);
-		premiumCommitmentMIAPYesOptionSelection.click();
+		desiredAnnualIncomeYes.click();
 
 		JourneyScreenTwo.checkPOSVforMIAPAnnualIncome(3, 1, 12);
 
@@ -714,7 +714,7 @@ public class POSVFlowForSAPMIAP extends ReusableActions{
 		JourneyScreenTwo.proposerPersonalDetailsIncome(9, 1, 10);
 		JourneyScreenThreeTest.nomineeDetailsWithoutDependentSelection();
 		JourneyScreenThreeTest.bankDetailsSectionFillingData();
-		JourneyScreenThree.fillingAnnualIncomeTOProceed(0, 1, 3);
+		JourneyScreenThree.fillingAnnualIncomeTOProceed();
 		Thread.sleep(1000);
 		JourneyScreenFour.form60RelatedDetailsIdentityProofNameOptionSelection();
 		JourneyScreenFour.setIdentityProofNumberValidation(0, 1, 6);

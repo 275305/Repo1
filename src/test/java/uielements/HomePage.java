@@ -2,11 +2,9 @@ package uielements;
 
 
 	import org.openqa.selenium.WebDriver;
-	import org.openqa.selenium.WebElement;
-	import org.openqa.selenium.support.FindBy;
-	import org.openqa.selenium.support.PageFactory;
-
-	import uielements.ReusableActions;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 	public class HomePage extends ReusableActions{
 		
@@ -16,7 +14,7 @@ package uielements;
 	    
 	    
 		// Locating New Application Button
-	    @FindBy(xpath="//*[@id='root']/header/div[2]/div[1]/ul/li[1]/a[text()='New Application']")
+	@FindBy(xpath = "//a[@href='/journey/MQ==']/span")
 	    public static WebElement NewAppbtn; 
 	    
 	    

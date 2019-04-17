@@ -41,14 +41,35 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//input[@name='income']")
 	public static WebElement annualIncomePersonalDetailsDependent;
 
+	@FindBy(xpath = "//input[@name='insurerName']")
+	static WebElement insurersName;
+
+	@FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[3]")
+	static WebElement outsideClick;
+
+	@FindBy(xpath = "//label[contains(@for, 'InsurerGenderMale')]")
+	static WebElement insurersGenderMale;
+
+	@FindBy(xpath = "//*[@id='menu-relationshipWithProposer']/div[2]/ul/li[contains(text(),\"Parent\")]")
+	static WebElement relationshipWithProposerParentOption;
+
+	@FindBy(xpath = "//div[@id='relationshipWithProposer_id']")
+	static WebElement relationshipWithProposer;
+
+	@FindBy(xpath = "//label[contains(@for, 'InsurerGenderFemale')]")
+	static WebElement insurersGenderFemale;
+
+	@FindBy(xpath = "//label[@for='female']")
+	static WebElement genderFemale;
+
 	@FindBy(xpath = "//input[@name='premiumCommitment']")
 	public static WebElement premiumCommitmentDependent;
 
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[1]/div[2]/div/div/div/div/div[4]/div[1]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='occupation_id']")
 	public static WebElement occupationCancerProductSelected;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[1]/div[2]/div/div/div/div/div[4]/div[4]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='preferredLanguageOfCommunication_id']")
 	public static WebElement preferedLanguageOfCommunication;
 
 	@FindBy(xpath = ".//*[@id='menu-preferredLanguageOfCommunication']/div[2]/ul/li[1]")
@@ -60,8 +81,8 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//input[@value='indian']")
 	static WebElement Indianbtn;
 
-	@FindBy(xpath = "//label[@for='premiumCommitment']")
-	static WebElement premiumCommitmentMIAPYesOptionSelection;
+	@FindBy(xpath = "//label[@for='desiredAnnualIncomeYes']")
+	static WebElement desiredAnnualIncomeYes;
 
 	@FindBy(xpath = "//input[@name='bankAccountIFSC']")
 	public static WebElement IFSC;
@@ -121,6 +142,24 @@ public class JourneyScreenTwo extends ReusableActions {
 	// Locating Don't Have PAN? link
 	@FindBy(xpath = "//a[contains(text(),'t Have PAN?')]")
 	static WebElement DontHavePanlink;
+
+	@FindBy(xpath = "//span[@id='errorMsgOutsideIndiaAdd']")
+	static WebElement errorMsgOutsideIndiaAdd;
+
+	@FindBy(xpath = "//div[@id='permanentReflexiveNoOption']")
+	static WebElement permanentReflexiveNoOption;
+
+	@FindBy(xpath = "//div[@id='communicationAddressid']//h2")
+	static WebElement communicationAddressid;
+
+	@FindBy(xpath = "//div[@id='permanent_address']/h2[contains(text(),'Proposer Permanent Address')]")
+	static WebElement proposerPermanentAddress;
+
+	@FindBy(xpath = "//div[@id='communicationAddressid']/h2[contains(text(),'Proposer Communication Address')]")
+	static WebElement proposerCommunicationAddress;
+
+	@FindBy(xpath = "//div[@id='permanentReflexiveYesOption']")
+	static WebElement permanentReflexiveYesOption;
 
 	// Locating Mobile Number text field
 	@FindBy(xpath = "//input[@name='MobileNumber']")
@@ -284,6 +323,12 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	@FindBy(xpath = "//*[@name='firstName']")
 	static WebElement firtsName;
+	
+	@FindBy(xpath = "//div[@id='communicationProofType_id']")
+	static WebElement communicationProofTypeDropDown;
+	
+	@FindBy(xpath = "//div[@id='menu-communicationProofType']/div/ul/li[5]")
+	static WebElement communicationProofType1stOption;
 
 	@FindBy(xpath = "//*[@id='menu-relationshipWithProposer']/div[2]/ul/li[contains(text(),'Spouse/Husband/Wife')] ")
 	static WebElement relationshipWithProposerSpouseOption;
@@ -303,23 +348,47 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//*[@name='permanentHouseNo']")
 	static WebElement houseNo;
 
+	@FindBy(xpath = "//input[@name='communicationHouseNo']")
+	static WebElement houseNoProposerCommunication;
+
 	@FindBy(xpath = "//*[@name='permanentRoadNo']")
 	static WebElement roadNo;
+
+	@FindBy(xpath = "//input[@name='communicationRoadNo']")
+	static WebElement communicationRoadNo;
 
 	@FindBy(xpath = "//*[@name='permanentVillageTown']")
 	static WebElement villageTown;
 
+	@FindBy(xpath = "//input[@name='communicationVillageTown']")
+	static WebElement communicationVillageTown;
+
 	@FindBy(xpath = "//input[@placeholder='Search a country']")
 	static WebElement country;
+
+	@FindBy(xpath = "//div[@id='Countryid']//input[@id='Country_idd']")
+	static WebElement countryCommunication;
+
+	@FindBy(xpath = "//span[contains(text(),'Either Permanent or Communication address should b')]")
+	static WebElement errorMsgWhenSameCountryIsSelectedForPermanentAndCommunication;
 
 	@FindBy(xpath = "//input[@placeholder='Search a state']")
 	static WebElement searchState;
 
+	@FindBy(xpath = "//div[@id='communicationStateid']//input[@id='State_idd']")
+	static WebElement communicationStateCommunication;
+
 	@FindBy(xpath = "//input[@placeholder='Search a city']")
 	static WebElement searchCity;
 
+	@FindBy(xpath = "//div[@id='Cityid']//input[@id='City_idd']")
+	static WebElement searchCityComunication;
+
 	@FindBy(xpath = "//input[@name=\"permanentPinCode\"]")
 	static WebElement pinCode;
+
+	@FindBy(xpath = "//input[@name='communicationPinCode']")
+	static WebElement communicationPinCode;
 
 	@FindBy(xpath = "//input[@name=\"alternateMobileNo\"]")
 	static WebElement alternateMobileNo;
@@ -327,8 +396,14 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//*[@id='permanent_address']/div[1]/div/div/div/div/div/div[@role='button']")
 	static WebElement proofTypeDropDown;
 
+	@FindBy(xpath = "//div[@id='communicationProofType_id']/div/div")
+	static WebElement proofTypeDropDownPropserCommunication;
+
 	@FindBy(xpath = "//*[@id='menu-permanentProofType']/div[2]/ul/li[6]")
 	static WebElement proofTypeDropDownValue;
+
+	@FindBy(xpath = "//li[@id='liId_Utility bill not more than 2 months (electricity, telephone, post-paid mobile, piped gas, water bill)']")
+	static WebElement proofTypeDropDownValueProposerCommunication;
 
 	@FindBy(xpath = "//label[contains(text(),\"Traditional\")]")
 	static WebElement traditional;
@@ -339,13 +414,12 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//p[(text()=\"Total Percentage Should Be 100\")]")
 	static WebElement totalPercentage;
 
-	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[3]/div[2]/div/div/div/div/div[@role='button']")
-	static WebElement productName;
 
-	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[3]/div[2]/div/div/div/div/div[@role='button']")
+
+	@FindBy(xpath = "//div[@id='productName_id']")
 	static WebElement productNm;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[3]/div[2]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='productName_id']")
 	static WebElement productNmDependent;
 
 	@FindBy(xpath = ".//*[@id='menu-productName']/div[2]/ul/li[text()='Max Life Super Term Plan']")
@@ -387,23 +461,21 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//label[contains(text(),'Fund Option')]")
 	static WebElement fundOptionLabel;
 
-	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[1]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='premiumPaymentTerm_id']")
 	static WebElement premiumPayementTermSTP;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[4]/div/div[1]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='premiumPaymentTerm_id']")
 	static WebElement premiumPayementTermSTPDependent;
 
 	@FindBy(xpath = "//label[contains(text(),'Premium Type')]")
 	static WebElement premiumTypeSAP;
 
-	@FindBy(xpath = "//*[@id='root']/main[1]/div[2]/form[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1][@role='button']")
+	@FindBy(xpath = "//div[@id='premiumType_id']")
 	static WebElement premiumTypeSAPDropDown;
 
 	@FindBy(xpath = "//label[contains(text(),'Dividend Option')]")
-	static WebElement dividentOptionMIAP;
+	static WebElement dividentOption;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[4]/div/div[7]/div/div/div/div/div[@role='button']")
-	static WebElement dividentOptionSAPDependent;
 
 	@FindBy(xpath = "//label[text()='Premium Payment Term']")
 	static WebElement premiumPaymentTerm;
@@ -420,14 +492,11 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//span[text()='Systematic Transfer Plan']")
 	static WebElement systematicTransferPlan;
 
-	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[2]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='premiumPaymentTerm_id']")
 	static WebElement premiumPaymentTermSAP;
 
-	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[1]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='premiumPaymentTerm_id']")
 	static WebElement premiumPaymentTermFTSP;
-
-	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[7]/div/div/div/div/div[@role='button']")
-	static WebElement dividentOption;
 
 	@FindBy(xpath = "//label[text()='Dividend Adjustment']")
 	static WebElement dividendAdjustment;
@@ -465,29 +534,23 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//input[@name='income']")
 	static WebElement proposerPersonalDetailsAnnualIncome;
 
-	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[1]/div[1]/div/div/div/div/div[@role='button']")
+
+	@FindBy(xpath = "//div[@id='needOfInsurance_id']")
 	static WebElement needOfInsurance;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[1]/div[1]/div/div/div/div/div[@role='button']")
-	static WebElement needOfInsur;
-
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[1]/div[1]/div/div/div/div/div[@role='button']")
-	static WebElement needOfInsurDependent;
-
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[1]/div[1]/div/div/div/div/div[@role='button']")
-	static WebElement needOfInsurInsurersDetails;
+	// @FindBy(xpath = "//div[@id='needOfInsurance_id']")
+	// static WebElement needOfInsurDependent;
 
 	@FindBy(xpath = "//*[@id='menu-needOfInsurance']/div[2]/ul/li[1]")
 	static WebElement needOfInsurance1stOption;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[1]/div[2]/div/div/div/div/div[@role='button']")
-	static WebElement lifeStage;
+	// @FindBy(xpath =
+	// ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[1]/div[2]/div/div/div/div/div[@role='button']")
+	// static WebElement lifeStage;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[1]/div[2]/div/div/div/div/div[@role='button']")
-	static WebElement lifeStge;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[1]/div[2]/div/div/div/div/div[@role='button']")
-	static WebElement lifeStgeInsuresrDetails;
+	@FindBy(xpath = "//div[@id='lifeStage_id']")
+	static WebElement lifeStageDropDown;
 
 	@FindBy(xpath = ".//*[@id='menu-lifeStage']/div[2]/ul/li[1]")
 	static WebElement lifeStage1stOption;
@@ -519,13 +582,13 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = ".//*[@id='menu-policyTerm']/div[2]/ul/li[1]")
 	static WebElement policyTerm1stOptionSAP;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[4]/div/div[1]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='modeOfPayment_id']")
 	static WebElement dropDownModeOfPayment;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[1]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='modeOfPayment_id']")
 	static WebElement dropDwnModeOfPayment;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[4]/div/div[1]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='modeOfPayment_id']")
 	static WebElement dropDwnModeOfPaymentInsurersDetail;
 
 	@FindBy(xpath = "//*[@id='menu-modeOfPayment']/div[2]/ul/li[1]")
@@ -537,55 +600,52 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = ".//*[@id='menu-dividendOption']/div[2]/ul/li[1]")
 	static WebElement divident1stOption;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[7]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='modeOfPayment_id']")
 	static WebElement modeOfPaymentSTP;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[3]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='modeOfPayment_id']")
 	static WebElement modeOfPaymentMIAP;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[4]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='modeOfPayment_id']")
 	static WebElement modeOfPaymentSAPDropDown;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[4]/div/div[7]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='modeOfPayment_id']")
 	static WebElement modeOfPaymentSTPDependent;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[3]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='modeOfPayment_id']")
 	static WebElement modeOfPaymentFTSP;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[4]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='modeOfPayment_id']")
 	static WebElement modeOfPaymentWLS;
 
-	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[6]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='dividendAdjustment_id']")
 	static WebElement dividentAdjustment;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[3]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='dividendAdjustment_id']")
 	static WebElement dividentAdjustmentWLS;
 
-	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[2]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='policyTerm_id']")
 	static WebElement policyTermSTP;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[4]/div/div[2]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='policyTerm_id']")
 	static WebElement policyTermSTPDependent;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[4]/div/div[3]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='sumAssuredOption_id']")
 	static WebElement sumAssuredOptionDependent;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[3]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='policyTerm_id']")
 	static WebElement policyTermDropDownSAP;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[2]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='policyTerm_id']")
 	static WebElement policyTermDropDownFTSP;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[3]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='sumAssuredOption_id']")
 	static WebElement sumAssuredOptionSTP;
 
-	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[4]/div/div[2]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='maturityAge_id']")
 	static WebElement dropDownMaturityAge;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[2]/div/div/div/div/div[@role='button']")
-	static WebElement dropDwnMaturityAge;
-
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[4]/div/div[2]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='maturityAge_id']")
 	static WebElement dropDwnMaturityAgeIsurersDetails;
 
 	@FindBy(xpath = "//*[@id='menu-maturityAge']/div[2]/ul/li[(text()=65)]")
@@ -618,8 +678,17 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//input[@name='secureFund']")
 	static WebElement secureFund;
 
-	@FindBy(xpath = ".//*[@id='react-autowhatever-1--item-0']/div/div/span[1]")
+	@FindBy(xpath = "//li[@id='react-autowhatever-permanentCountry--item-0']")
 	static WebElement countryIstOption;
+
+	@FindBy(xpath = "//li[@id='react-autowhatever-communicationCountry--item-0']")
+	static WebElement communicationCountry1stOption;
+
+	@FindBy(xpath = "//li[@id='react-autowhatever-communicationCountry--item-1']")
+	static WebElement communicationCountry2ndOption;
+
+	@FindBy(xpath = "//li[@id='react-autowhatever-permanentCountry--item-1']")
+	static WebElement country2ndOption;
 
 	@FindBy(xpath = "//input[@name='conservativeFund']")
 	static WebElement conservativeFund;
@@ -634,12 +703,10 @@ public class JourneyScreenTwo extends ReusableActions {
 	static WebElement growthFund;
 
 	@FindBy(xpath = "//label[contains(text(),'Sum Assured Available')]")
-	static WebElement dropDownSumAssuredAvailable;
+	static WebElement dropDownSumAssuredAvailableLabel;
 
-	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[4]/div/div[3]/div/div/div/div/div[@role='button']")
-	static WebElement drpDownSumAssuredAvailable;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[4]/div/div[3]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='sumAssuredAvailable_id']")
 	static WebElement drpDownSumAssuredAvailableInsurersDetails;
 
 	@FindBy(xpath = ".//*[@id='menu-sumAssuredAvailable']/div[2]/ul/li[(text()=2500000)]")
@@ -654,13 +721,13 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//label[contains(text(),'Dividend Option')]")
 	static WebElement dividendOptionWLS;
 
-	@FindBy(xpath = "//*[@id='root']/main[1]/div[2]/form[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[7]/div[1]/div[1]/div[1]/div[1]/div[1][@role='button']")
+	@FindBy(xpath = "//div[@id='dividendOption_id']")
 	static WebElement dividendOptionWLSDropDown;
 
-	@FindBy(xpath = "//label[contains(text(),'Sum Assured Option')]")
+	@FindBy(xpath = "//div[@id='sumAssuredOption_id']")
 	static WebElement sumAssuredOption;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[4]/div/div[6]/div/div/div/div/div[@role='button']")
+	@FindBy(xpath = "//div[@id='dividendAdjustment_id']")
 	static WebElement dividentAdjustmentDependent;
 
 	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[4]/div/div[4]/div/div/input[@name='sumAssured']")
@@ -672,22 +739,25 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = ".//*[@id='menu-dividendAdjustment']/div[2]/ul/li[1]")
 	static WebElement dividentAdjustmentDependent1stOption;
 
-	@FindBy(xpath = "//*[@id='react-autowhatever-1--item-0']/div/div/span[contains(@style,'font-weight: 500;')]")
+	@FindBy(xpath = "//li[@id='react-autowhatever-permanentCountry--item-0']")
 	static WebElement countryDropDown;
 
-	@FindBy(xpath = "//*[@id='react-autowhatever-1']/ul/li[1]")
+	@FindBy(xpath = "//li[@id='react-autowhatever-permanentState--item-0']")
 	static WebElement state1stOption;
 
-	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[1]//input[@placeholder='DD/MM/YYYY']")
+	@FindBy(xpath = "//div[@id='dateOfBirth_id']/div")
 	static WebElement dateOfBirthPersonalDetails;
+
+	@FindBy(xpath = "//div[@id='panApplicationDate_id']")
+	static WebElement panApplicationDate;
 
 	@FindBy(xpath = "//input[@placeholder='DD/MM/YYYY']")
 	static WebElement dateOfBirthNomineeDetails;
 
-	@FindBy(xpath = "//*[@id='react-autowhatever-1--item-0']/div/div/span[1]")
+	@FindBy(xpath = "//li[@id='react-autowhatever-permanentCity--item-0']")
 	static WebElement city1stOption;
 
-	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]//input[@placeholder='DD/MM/YYYY']")
+	@FindBy(xpath = "//div[@id='insurerDateOfBirth_id']")
 	static WebElement dateOfBirthIssurer;
 
 	public static void selectByDropdown() throws Exception {
@@ -701,10 +771,31 @@ public class JourneyScreenTwo extends ReusableActions {
 		Thread.sleep(3000);
 	}
 
-	public static void traditional() throws Exception {
+	public static void selectByDropdownProposerCommunication() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenTwo.class);
+		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		waitTillElementToBeClickable(proofTypeDropDownPropserCommunication);
+		proofTypeDropDownPropserCommunication.click();
+		WebElement element = driver.findElement(By.xpath(
+				"//li[@id='liId_Utility bill not more than 2 months (electricity, telephone, post-paid mobile, piped gas, water bill)']"));
+		new Actions(driver).moveToElement(element).click().perform();
+		proofTypeDropDownValueProposerCommunication.click();
+		Thread.sleep(3000);
+		outsideClick.click();
+		arrowDownFunctionToScrollDown();
 
+	}
+
+	public static void selectFemale() throws Exception {
+		genderFemale.click();
+	}
+
+	public static void traditional() throws Exception {
+		Thread.sleep(800);
+		outsideClick.click();
 		click(traditional);
 	}
+
 
 	public static void city1stOption() throws Exception {
 
@@ -713,12 +804,20 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	public static void ulip() throws Exception {
 
+		Thread.sleep(800);
+		outsideClick.click();
 		click(ulipProductType);
 	}
 
 	public static void countryIstOption() throws Exception {
 
 		click(countryIstOption);
+
+	}
+
+	public static void communicationCountry1stOption() throws Exception {
+
+		click(communicationCountry1stOption);
 
 	}
 
@@ -886,7 +985,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		waitTillElementToBeClickable(policyTermFTSPOption);
 		policyTermFTSPOption.click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath(".//*[@id='root']/main/div[2]/form/div/div/div[3]")).click();
+		outsideClick.click();
 		Thread.sleep(300);
 	}
 
@@ -905,8 +1004,8 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	public static void selectByDropdownProductName() throws Exception {
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		waitTillElementToBeClickable(productName);
-		productName.click();
+		waitTillElementToBeClickable(productNm);
+		productNm.click();
 		waitTillElementToBeClickable(maxLifeSuperTermPlan);
 		maxLifeSuperTermPlan.click();
 
@@ -914,8 +1013,8 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	public static void selectByDropdownCancerInsurancePlan() throws Exception {
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		waitTillElementToBeClickable(productName);
-		productName.click();
+		waitTillElementToBeClickable(productNm);
+		productNm.click();
 		waitTillElementToBeClickable(maxLifeCancerInsurancePlan);
 		maxLifeCancerInsurancePlan.click();
 
@@ -1023,7 +1122,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		System.out.println(actualResult);
 		driver.findElement(By.xpath("//*[@id='menu-productName']/div[2]/ul/li[1]")).click();
 
-		for (int i = 0; i <= actualListDOBProfInsureresDetails.size(); i++) {
+		for (int i = 0; i < actualListDOBProfInsureresDetails.size(); i++) {
 			waitTillElementToBeClickable(productNm);
 			Thread.sleep(700);
 			productNm.click();
@@ -1051,7 +1150,7 @@ public class JourneyScreenTwo extends ReusableActions {
 			case "Max Life Monthly Income Advantage Plan":
 				System.out.println("Max Life Monthly Income Advantage Plan");
 				arrowDownFunctionToScrollDown();
-				if (policyTerm.isDisplayed() && dividentOptionMIAP.isDisplayed() && desiredAnnualIncome.isDisplayed()
+				if (policyTerm.isDisplayed() && dividentOption.isDisplayed() && desiredAnnualIncome.isDisplayed()
 						&& premiumPaymentTerm.isDisplayed() && termPlusRider.isDisplayed()
 						&& modeOfPayment.isDisplayed()
 						&& effectiveDateOfCoverage.isDisplayed()
@@ -1068,7 +1167,7 @@ public class JourneyScreenTwo extends ReusableActions {
 				System.out.println("Max Life Cancer Insurance Plan");
 				arrowDownFunctionToScrollDown();
 				if (isElementDisplayed(modeOfPayment) && isElementDisplayed(maturityAge)
-						&& isElementDisplayed(dropDownSumAssuredAvailable)) {
+						&& isElementDisplayed(dropDownSumAssuredAvailableLabel)) {
 
 					System.out.println("All the feilds are present as per the product MAX LIFE CANCER INSURANCE PLAN");
 				} else {
@@ -1099,7 +1198,7 @@ public class JourneyScreenTwo extends ReusableActions {
 				if (isElementDisplayed(premiumPaymentTerm) && isElementDisplayed(policyTerm)
 						&& isElementDisplayed(modeOfPayment) && effectiveDateOfCoverage.isDisplayed()
 						&& premiumCommitment.isDisplayed() && WOPPlusRider.isDisplayed() && termPlusRider.isDisplayed()
-						&& accidentalDeathAndDismembermentRider.isDisplayed() && dividentOptionMIAP.isDisplayed()&&
+						&& accidentalDeathAndDismembermentRider.isDisplayed() && dividentOption.isDisplayed() &&
 						dividendAdjustment.isDisplayed()) {
 
 					System.out.println("All the feilds are present as per the product Max Life Future Genius Education Plan");
@@ -1115,7 +1214,7 @@ public class JourneyScreenTwo extends ReusableActions {
 				if (isElementDisplayed(premiumPaymentTerm) && isElementDisplayed(policyTerm)
 						&& isElementDisplayed(modeOfPayment) && effectiveDateOfCoverage.isDisplayed()
 						&& premiumCommitment.isDisplayed() && WOPPlusRider.isDisplayed() && termPlusRider.isDisplayed()
-						&& accidentalDeathAndDismembermentRider.isDisplayed() && dividentOptionMIAP.isDisplayed()) {
+						&& accidentalDeathAndDismembermentRider.isDisplayed() && dividentOption.isDisplayed()) {
 
 					System.out.println("All the feilds are present as per the product Life Life Perfect Partner Super");
 				} else {
@@ -1179,8 +1278,8 @@ public class JourneyScreenTwo extends ReusableActions {
 	public static void selectByDropdownULIPAllProduct() throws Exception {
 		waitTillElementToBeClickable(productNm);
 		productNm.click();
-		waitTillElementToBeClickable(driver.findElement(By.xpath("//*[@id='menu-productName']/div[2]/ul/li[1]")));
-		driver.findElement(By.xpath("//*[@id='menu-productName']/div[2]/ul/li[1]")).click();
+		waitTillElementToBeClickable(driver.findElement(By.xpath("//li[@id='liId_Max Life Fast Track Super Plan']")));
+		driver.findElement(By.xpath("//li[@id='liId_Max Life Fast Track Super Plan']")).click();
 		Thread.sleep(1000);
 		chooseYourFundYes();
 		if (premiumPaymentTerm.isDisplayed() && policyTerm.isDisplayed() && premiumCommitment.isDisplayed()
@@ -1216,14 +1315,14 @@ public class JourneyScreenTwo extends ReusableActions {
 		System.out.println(actualResult);
 		driver.findElement(By.xpath("//*[@id='menu-productName']/div[2]/ul/li[1]")).click();
 		System.out.println(actualListDOBProfInsureresDetails.size());
-		for (int i = 0; i <= actualListDOBProfInsureresDetails.size(); i++) {
+		for (int i = 0; i < actualListDOBProfInsureresDetails.size(); i++) {
 			waitTillElementToBeClickable(productNm);
 			Thread.sleep(700);
 			productNm.click();
 			String strn = actualResult.get(i);
 			driver.findElement(By.xpath("//*[@id='menu-productName']/div[2]/ul/li[text()= '" + strn + "']")).click();
 			Thread.sleep(1500);
-			driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[2]/form[1]/div[1]/div[1]/div[3]")).click();
+			outsideClick.click();
 			Thread.sleep(800);
 			switch (strn) {
 			case "Forever Young Pension Plan":
@@ -1297,9 +1396,9 @@ public class JourneyScreenTwo extends ReusableActions {
 	}
 
 	public static void selectByDropdownNeedOfInsur() throws Exception {
-		waitTillElementToBeClickable(needOfInsur);
+		waitTillElementToBeClickable(needOfInsurance);
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		needOfInsur.click();
+		needOfInsurance.click();
 		waitTillElementToBeClickable(needOfInsurance1stOption);
 		needOfInsurance1stOption.click();
 		Thread.sleep(2000);
@@ -1308,9 +1407,9 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	public static void selectByDropdownNeedOfInsurDependet() throws Exception {
 		Thread.sleep(500);
-		waitTillElementToBeClickable(needOfInsurDependent);
+		waitTillElementToBeClickable(needOfInsurance);
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		needOfInsurDependent.click();
+		needOfInsurance.click();
 		Thread.sleep(500);
 		waitTillElementToBeClickable(needOfInsurance1stOption);
 		needOfInsurance1stOption.click();
@@ -1319,9 +1418,9 @@ public class JourneyScreenTwo extends ReusableActions {
 	}
 
 	public static void selectByDropdownNeedOfInsurInsurersDetails() throws Exception {
-		waitTillElementToBeClickable(needOfInsurInsurersDetails);
+		waitTillElementToBeClickable(needOfInsurance);
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		needOfInsurInsurersDetails.click();
+		needOfInsurance.click();
 		waitTillElementToBeClickable(needOfInsurance1stOption);
 		needOfInsurance1stOption.click();
 		Thread.sleep(2000);
@@ -1330,9 +1429,9 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	public static void selectByDropdownLifeStage() throws Exception {
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		waitTillElementToBeClickable(lifeStage);
+		waitTillElementToBeClickable(lifeStageDropDown);
 
-		lifeStage.click();
+		lifeStageDropDown.click();
 		waitTillElementToBeClickable(lifeStage1stOption);
 		lifeStage1stOption.click();
 
@@ -1340,8 +1439,8 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	public static void selectByDropdownLifeStge() throws Exception {
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		waitTillElementToBeClickable(lifeStge);
-		lifeStge.click();
+		waitTillElementToBeClickable(lifeStageDropDown);
+		lifeStageDropDown.click();
 		waitTillElementToBeClickable(lifeStage1stOption);
 		lifeStage1stOption.click();
 		Thread.sleep(2000);
@@ -1351,8 +1450,8 @@ public class JourneyScreenTwo extends ReusableActions {
 	public static void selectByDropdownLifeStgeDependent() throws Exception {
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		Thread.sleep(500);
-		waitTillElementToBeClickable(lifeStgeInsuresrDetails);
-		lifeStgeInsuresrDetails.click();
+		waitTillElementToBeClickable(lifeStageDropDown);
+		lifeStageDropDown.click();
 		Thread.sleep(500);
 		waitTillElementToBeClickable(lifeStage1stOption);
 		lifeStage1stOption.click();
@@ -1447,8 +1546,8 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	public static void dividentOptionSAPDependent() throws Exception {
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		waitTillElementToBeClickable(dividentOptionSAPDependent);
-		dividentOptionSAPDependent.click();
+		waitTillElementToBeClickable(dividentOption);
+		dividentOption.click();
 		waitTillElementToBeClickable(divident1stOption);
 		divident1stOption.click();
 		Thread.sleep(2000);
@@ -1507,8 +1606,8 @@ public class JourneyScreenTwo extends ReusableActions {
 	public static void selectByDrpdownMaturityAge() throws Exception {
 
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		waitTillElementToBeClickable(dropDwnMaturityAge);
-		dropDwnMaturityAge.click();
+		waitTillElementToBeClickable(dropDownMaturityAge);
+		dropDownMaturityAge.click();
 		waitTillElementToBeClickable(maturityAgeOption);
 		maturityAgeOption.click();
 		Thread.sleep(2000);
@@ -1528,8 +1627,8 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	public static void selectByDropdownSumAssuredAvailable() throws Exception {
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		waitTillElementToBeClickable(dropDownSumAssuredAvailable);
-		dropDownSumAssuredAvailable.click();
+		waitTillElementToBeClickable(drpDownSumAssuredAvailableInsurersDetails);
+		drpDownSumAssuredAvailableInsurersDetails.click();
 		waitTillElementToBeClickable(sumAssuredAvailableOption);
 		sumAssuredAvailableOption.click();
 
@@ -1537,8 +1636,8 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	public static void selectByDrpdownSumAssuredAvailable() throws Exception {
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		waitTillElementToBeClickable(drpDownSumAssuredAvailable);
-		drpDownSumAssuredAvailable.click();
+		waitTillElementToBeClickable(drpDownSumAssuredAvailableInsurersDetails);
+		drpDownSumAssuredAvailableInsurersDetails.click();
 		waitTillElementToBeClickable(sumAssuredAvailableOption);
 		sumAssuredAvailableOption.click();
 		Thread.sleep(2000);
@@ -1574,6 +1673,18 @@ public class JourneyScreenTwo extends ReusableActions {
 		}
 
 	}
+	
+	public static void proofType() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenTwo.class);
+		Thread.sleep(800);
+		communicationProofTypeDropDown.click();
+		Thread.sleep(800);
+		String xpathOfTexOnTheScreen = "//div[@id='menu-communicationProofType']/div/ul/li";
+		List<String> expectedResult = fetchingdataFromExcelExpectedResult(8, 11);
+		List<String> actualResultText = fetchingdataFromUI(xpathOfTexOnTheScreen);
+		comparisonOfListForExpectedAndActualResult(expectedResult, actualResultText);
+		communicationProofType1stOption.click();
+	}
 
 	// -------------------------------------------------------------------------------------------------------
 	public static void setDateBirthPersonalDetails() throws Exception {
@@ -1582,42 +1693,262 @@ public class JourneyScreenTwo extends ReusableActions {
 		 * dateOfBirthPersonalDetails.clear(); type(dateOfBirthPersonalDetails,
 		 * readingdata(x, y, z));
 		 */
+
+		Thread.sleep(800);
 		waitTillElementToBeClickable(dateOfBirthPersonalDetails);
 		dateOfBirthPersonalDetails.click();
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.ARROW_DOWN).build().perform();
+
 		JourneyScreenThree.dateOfBirthSelctionFunction();
 
 	}
 
-	public static void getAllTextBoxVaue() throws Exception {
+	public static void setDateBirthPersonalDetailsScreenFour() throws Exception {
+		Thread.sleep(800);
+		waitTillElementToBeClickable(panApplicationDate);
+		panApplicationDate.click();
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.ARROW_DOWN).build().perform();
+
+		JourneyScreenThree.dateOfBirthSelctionFunction();
+	}
+
+	public static void femaleClick() throws Exception {
+
+		genderFemale.click();
+	}
+
+
+
+	public static void getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenTwo() throws Exception {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//span[contains(text(),'Product   Details')]")).click();
 		Thread.sleep(1000);
-		String str = null;
-	driver.findElements(By.xpath("//input[contains(@type,'text')]"));
-	List<String> actualResult = new ArrayList<String>();
-	List<WebElement> actualListDOBProfInsureresDetails=driver.findElements(By.xpath("//input[contains(@type,'text')]"));
-	for(int i=0;i<actualListDOBProfInsureresDetails.size();i++) {
-			str = actualListDOBProfInsureresDetails.get(i).getAttribute("value");
-	    actualResult.add(str);
+		String xpathOfTexOnTheScreen = "//input[contains(@type,'text')]";
+		List<String> actualResultText = fetchingdataFromUI(xpathOfTexOnTheScreen);
+		System.out.println("actual result" + actualResultText);
+		List<String> expectedResult = fetchingdataFromExcelExpectedResult(0, 14);
+		comparisonOfListForExpectedAndActualResult(expectedResult, actualResultText);
+
+		String permanentProofType = driver.findElement(By.id("permanentProofType")).getAttribute("value");
+		String needOfInsurance = driver.findElement(By.id("needOfInsurance")).getAttribute("value");
+		String lifeStage = driver.findElement(By.id("lifeStage")).getAttribute("value");
+		String productName = driver.findElement(By.id("productName")).getAttribute("value");
+		String premiumType = driver.findElement(By.id("premiumType")).getAttribute("value");
+		String premiumPaymentTerm = driver.findElement(By.id("premiumPaymentTerm")).getAttribute("value");
+		String policyTerm = driver.findElement(By.id("policyTerm")).getAttribute("value");
+		String modeOfPayment = driver.findElement(By.id("modeOfPayment")).getAttribute("value");
+		String dividendOption = driver.findElement(By.id("dividendOption")).getAttribute("value");
+		
+		List<String> actualResultDropDownList = new ArrayList<String>();
+		actualResultDropDownList.add(permanentProofType);
+		actualResultDropDownList.add(needOfInsurance);
+		actualResultDropDownList.add(lifeStage);
+		actualResultDropDownList.add(productName);
+		actualResultDropDownList.add(premiumType);
+		actualResultDropDownList.add(premiumPaymentTerm);
+		actualResultDropDownList.add(policyTerm);
+		actualResultDropDownList.add(modeOfPayment);
+		actualResultDropDownList.add(dividendOption);
+		System.out.println("expected result" + actualResultDropDownList);
+		fetchingdataFromExcelExpectedResult(1, 10);
+		comparisonOfListForExpectedAndActualResult(expectedResult, actualResultText);
+
+		String xpathOfRadioOnTheScreen = "//input[@checked=\"\"]";
+		List<String> actualResultRadioButtonValue = fetchingdataFromUI(xpathOfRadioOnTheScreen);
+		List<String> expectedResultRadioButtonValue = fetchingdataFromExcelExpectedResult(5, 6);
+		System.out.println("Expected radio button" + actualResultRadioButtonValue);
+		System.out.println("Actual radio button" + expectedResultRadioButtonValue);
+		actualResultRadioButtonValue.removeAll(Arrays.asList("", null));
+		System.out.println("actualResultRadioButtonValue" + actualResultRadioButtonValue);
+		comparisonOfListForExpectedAndActualResult(expectedResultRadioButtonValue, actualResultRadioButtonValue);
+
 	}
-	 System.out.println(actualResult.size());
-	 System.out.println(actualResult);
-		driver.findElements(By.xpath("//div[contains(@aria-haspopup,'true')]"));
-		List<String> actualResult2 = new ArrayList<String>();
-		List<WebElement> actualListDOBProfInsureresDetails2 = driver
-				.findElements(By.xpath("//input[contains(@type,'text')]"));
-		for (int i = 0; i < actualListDOBProfInsureresDetails2.size(); i++) {
-			str = actualListDOBProfInsureresDetails.get(i).getAttribute("value");
-			actualResult2.add(str);
-		}
-		System.out.println(actualResult2.size());
-		System.out.println(actualResult2);
+
+	public static void getAllDropDownValueSAPScreenTwo() throws Exception {
+		
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//span[contains(text(),'Product   Details')]")).click();
+		Thread.sleep(1000);
+		String xpathOfTexOnTheScreen = "//input[contains(@type,'text')]";
+		List<String> actualResultText = fetchingdataFromUI(xpathOfTexOnTheScreen);
+		System.out.println("actual result" + actualResultText);
+		List<String> expectedResult = fetchingdataFromExcelExpectedResult(0, 14);
+		comparisonOfListForExpectedAndActualResult(expectedResult, actualResultText);
+		String permanentProofType = driver.findElement(By.id("permanentProofType")).getAttribute("value");
+		String needOfInsurance = driver.findElement(By.id("needOfInsurance")).getAttribute("value");
+		String lifeStage = driver.findElement(By.id("lifeStage")).getAttribute("value");
+		String productName = driver.findElement(By.id("productName")).getAttribute("value");
+		String premiumPaymentTerm = driver.findElement(By.id("premiumPaymentTerm")).getAttribute("value");
+		String policyTerm = driver.findElement(By.id("policyTerm")).getAttribute("value");
+		String sumAssuredOption = driver.findElement(By.id("sumAssuredOption")).getAttribute("value");
+		String dividendAdjustment = driver.findElement(By.id("dividendAdjustment")).getAttribute("value");
+		String modeOfPayment = driver.findElement(By.id("modeOfPayment")).getAttribute("value");
+
+		List<String> actualResultDropDownList = new ArrayList<String>();
+		actualResultDropDownList.add(permanentProofType);
+		actualResultDropDownList.add(needOfInsurance);
+		actualResultDropDownList.add(lifeStage);
+		actualResultDropDownList.add(productName);
+		actualResultDropDownList.add(premiumPaymentTerm);
+		actualResultDropDownList.add(policyTerm);
+		actualResultDropDownList.add(modeOfPayment);
+		actualResultDropDownList.add(sumAssuredOption);
+		actualResultDropDownList.add(dividendAdjustment);
+		System.out.println("expected result" + actualResultDropDownList);
+		fetchingdataFromExcelExpectedResult(1, 10);
+		comparisonOfListForExpectedAndActualResult(expectedResult, actualResultText);
+
+		String xpathOfRadioOnTheScreen = "//input[@checked=\"\"]";
+		List<String> actualResultRadioButtonValue = fetchingdataFromUI(xpathOfRadioOnTheScreen);
+		List<String> expectedResultRadioButtonValue = fetchingdataFromExcelExpectedResult(11, 8);
+		System.out.println("Expected radio button" + actualResultRadioButtonValue);
+		System.out.println("Actual radio button" + expectedResultRadioButtonValue);
+		actualResultRadioButtonValue.removeAll(Arrays.asList("", null));
+		System.out.println("actualResultRadioButtonValue" + actualResultRadioButtonValue);
+		comparisonOfListForExpectedAndActualResult(expectedResultRadioButtonValue, actualResultRadioButtonValue);
+
+	}
+
+	public static void getAllDropDownValueMIAPScreenTwo() throws Exception {
+
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//span[contains(text(),'Product   Details')]")).click();
+		Thread.sleep(1000);
+		String xpathOfTexOnTheScreen = "//input[contains(@type,'text')]";
+		List<String> actualResultText = fetchingdataFromUI(xpathOfTexOnTheScreen);
+		System.out.println("actual result" + actualResultText);
+		List<String> expectedResult = fetchingdataFromExcelExpectedResult(0, 14);
+		comparisonOfListForExpectedAndActualResult(expectedResult, actualResultText);
+
+		String permanentProofType = driver.findElement(By.id("permanentProofType")).getAttribute("value");
+		String needOfInsurance = driver.findElement(By.id("needOfInsurance")).getAttribute("value");
+		String lifeStage = driver.findElement(By.id("lifeStage")).getAttribute("value");
+		String productName = driver.findElement(By.id("productName")).getAttribute("value");
+		String premiumPaymentTerm = driver.findElement(By.id("premiumPaymentTerm")).getAttribute("value");
+		String policyTerm = driver.findElement(By.id("policyTerm")).getAttribute("value");
+		String modeOfPayment = driver.findElement(By.id("modeOfPayment")).getAttribute("value");
+		String dividendOption = driver.findElement(By.id("dividendOption")).getAttribute("value");
+
+		List<String> actualResultDropDownList = new ArrayList<String>();
+		actualResultDropDownList.add(permanentProofType);
+		actualResultDropDownList.add(needOfInsurance);
+		actualResultDropDownList.add(lifeStage);
+		actualResultDropDownList.add(productName);
+		actualResultDropDownList.add(premiumPaymentTerm);
+		actualResultDropDownList.add(policyTerm);
+		actualResultDropDownList.add(modeOfPayment);
+		actualResultDropDownList.add(dividendOption);
+
+		System.out.println("actual result" + actualResultDropDownList);
+		List<String> expectedResultDropDowFromExcel = fetchingdataFromExcelExpectedResult(12, 10);
+		comparisonOfListForExpectedAndActualResult(expectedResultDropDowFromExcel, actualResultDropDownList);
+
+		String xpathOfRadioOnTheScreen = "//input[@checked=\"\"]";
+		List<String> actualResultRadioButtonValue = fetchingdataFromUI(xpathOfRadioOnTheScreen);
+		List<String> expectedResultRadioButtonValue = fetchingdataFromExcelExpectedResult(13, 7);
+		System.out.println("Expected radio button" + expectedResultRadioButtonValue);
+		actualResultRadioButtonValue.removeAll(Arrays.asList("", null));
+		System.out.println("actualResultRadioButtonValue" + actualResultRadioButtonValue);
+		comparisonOfListForExpectedAndActualResult(expectedResultRadioButtonValue, actualResultRadioButtonValue);
+
+	}
+
+	public static void getAllDropDownValueWLSScreenTwo() throws Exception {
+
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//span[contains(text(),'Product   Details')]")).click();
+		Thread.sleep(1000);
+		String xpathOfTexOnTheScreen = "//input[contains(@type,'text')]";
+		List<String> actualResultText = fetchingdataFromUI(xpathOfTexOnTheScreen);
+		System.out.println("actual result" + actualResultText);
+		List<String> expectedResult = fetchingdataFromExcelExpectedResult(0, 14);
+		comparisonOfListForExpectedAndActualResult(expectedResult, actualResultText);
+
+		String permanentProofType = driver.findElement(By.id("permanentProofType")).getAttribute("value");
+		String needOfInsurance = driver.findElement(By.id("needOfInsurance")).getAttribute("value");
+		String lifeStage = driver.findElement(By.id("lifeStage")).getAttribute("value");
+		String productName = driver.findElement(By.id("productName")).getAttribute("value");
+		String premiumPaymentTerm = driver.findElement(By.id("premiumPaymentTerm")).getAttribute("value");
+		String policyTerm = driver.findElement(By.id("policyTerm")).getAttribute("value");
+		String modeOfPayment = driver.findElement(By.id("modeOfPayment")).getAttribute("value");
+		String dividendOption = driver.findElement(By.id("dividendOption")).getAttribute("value");
+		String dividendAdjustment = driver.findElement(By.id("dividendAdjustment")).getAttribute("value");
+
+		List<String> actualResultDropDownList = new ArrayList<String>();
+		actualResultDropDownList.add(permanentProofType);
+		actualResultDropDownList.add(needOfInsurance);
+		actualResultDropDownList.add(lifeStage);
+		actualResultDropDownList.add(productName);
+		actualResultDropDownList.add(premiumPaymentTerm);
+		actualResultDropDownList.add(policyTerm);
+		actualResultDropDownList.add(modeOfPayment);
+		actualResultDropDownList.add(dividendOption);
+		actualResultDropDownList.add(dividendAdjustment);
+
+
+		System.out.println("actual result" + actualResultDropDownList);
+		List<String> expectedResultDropDowFromExcel = fetchingdataFromExcelExpectedResult(14, 11);
+		comparisonOfListForExpectedAndActualResult(expectedResultDropDowFromExcel, actualResultDropDownList);
+
+		String xpathOfRadioOnTheScreen = "//input[@checked=\"\"]";
+		List<String> actualResultRadioButtonValue = fetchingdataFromUI(xpathOfRadioOnTheScreen);
+		List<String> expectedResultRadioButtonValue = fetchingdataFromExcelExpectedResult(15, 8);
+		actualResultRadioButtonValue.removeAll(Arrays.asList("", null));
+		System.out.println("Expected radio button" + expectedResultRadioButtonValue);
+		System.out.println("actualResultRadioButtonValue" + actualResultRadioButtonValue);
+		comparisonOfListForExpectedAndActualResult(expectedResultRadioButtonValue, actualResultRadioButtonValue);
+
+	}
+
+	public static void getAllDropDownValueFTSPcreenTwo() throws Exception {
+
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//span[contains(text(),'Product   Details')]")).click();
+		Thread.sleep(1000);
+		String xpathOfTexOnTheScreen = "//input[contains(@type,'text')]";
+		List<String> actualResultText = fetchingdataFromUI(xpathOfTexOnTheScreen);
+		System.out.println("actual result" + actualResultText);
+		List<String> expectedResult = fetchingdataFromExcelExpectedResult(16, 19);
+		System.out.println("================" + expectedResult);
+		comparisonOfListForExpectedAndActualResult(expectedResult, actualResultText);
+
+		String permanentProofType = driver.findElement(By.id("permanentProofType")).getAttribute("value");
+		String needOfInsurance = driver.findElement(By.id("needOfInsurance")).getAttribute("value");
+		String lifeStage = driver.findElement(By.id("lifeStage")).getAttribute("value");
+		String productName = driver.findElement(By.id("productName")).getAttribute("value");
+		String premiumPaymentTerm = driver.findElement(By.id("premiumPaymentTerm")).getAttribute("value");
+		String policyTerm = driver.findElement(By.id("policyTerm")).getAttribute("value");
+		String modeOfPayment = driver.findElement(By.id("modeOfPayment")).getAttribute("value");
+
+		List<String> actualResultDropDownList = new ArrayList<String>();
+		actualResultDropDownList.add(permanentProofType);
+		actualResultDropDownList.add(needOfInsurance);
+		actualResultDropDownList.add(lifeStage);
+		actualResultDropDownList.add(productName);
+		actualResultDropDownList.add(premiumPaymentTerm);
+		actualResultDropDownList.add(policyTerm);
+		actualResultDropDownList.add(modeOfPayment);
+
+		System.out.println("actual result" + actualResultDropDownList);
+		List<String> expectedResultDropDowFromExcel = fetchingdataFromExcelExpectedResult(17, 8);
+		System.out.println("+++++++++++++++++++++" + expectedResultDropDowFromExcel);
+		comparisonOfListForExpectedAndActualResult(expectedResultDropDowFromExcel, actualResultDropDownList);
+
+		String xpathOfRadioOnTheScreen = "//input[@checked=\"\"]";
+		List<String> actualResultRadioButtonValue = fetchingdataFromUI(xpathOfRadioOnTheScreen);
+		List<String> expectedResultRadioButtonValue = fetchingdataFromExcelExpectedResult(18, 5);
+		actualResultRadioButtonValue.removeAll(Arrays.asList("", null, "yes", "no"));
+		System.out.println("Expected radio button" + expectedResultRadioButtonValue);
+		System.out.println("actualResultRadioButtonValue" + actualResultRadioButtonValue);
+		comparisonOfListForExpectedAndActualResult(expectedResultRadioButtonValue, actualResultRadioButtonValue);
 
 	}
 
 	public static void setDateBirthNomineeDetails() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
-		driver.findElement(By.xpath(".//*[@id='root']/main/div[2]/form/div/div/div[3]")).click();
+		outsideClick.click();
 		Thread.sleep(200);
 		Actions action = new Actions(driver);
 		action.sendKeys(Keys.ARROW_DOWN).build().perform();
@@ -1681,11 +2012,42 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	}
 
+	public static void houseNoProposerCommunication(int x, int y, int z) throws Exception {
+		houseNoProposerCommunication.clear();
+		type(houseNoProposerCommunication, readingdata(x, y, z));
+		String houseNoDataFromExcel = houseNoProposerCommunication.getAttribute("value");
+		int size = houseNoDataFromExcel.length();
+		System.out.println(size);
+		if ((size == 60 && houseNoDataFromExcel.contains("1") && houseNoDataFromExcel.contains("!"))) {
+			logger.info(
+					"Test case pass:- As house number feild length is 60 and accepting alphanumeric and special character ");
+		} else {
+			Assert.fail(
+					"Test case fail:- As either house number feild length is not of 60 or not accepting alphanumeric or special character ");
+		}
+
+	}
+
 	// Enter Road number
 	public static void setRoadNo(int x, int y, int z) throws Exception {
 		roadNo.clear();
 		type(roadNo, readingdata(x, y, z));
 		String houseNoDataFromExcel = roadNo.getAttribute("value");
+		int size = houseNoDataFromExcel.length();
+		if ((size == 60 && houseNoDataFromExcel.contains("1") && !houseNoDataFromExcel.contains("!"))) {
+			logger.info(
+					"Test case pass:- As Road number feild length is 60 and accepting alphanumeric and special character ");
+		} else {
+			Assert.fail(
+					"Test case fail:- As either Road number feild length is not of 60 or not accepting alphanumeric or special character ");
+		}
+
+	}
+
+	public static void communicationRoadNo(int x, int y, int z) throws Exception {
+		communicationRoadNo.clear();
+		type(communicationRoadNo, readingdata(x, y, z));
+		String houseNoDataFromExcel = communicationRoadNo.getAttribute("value");
 		int size = houseNoDataFromExcel.length();
 		if ((size == 60 && houseNoDataFromExcel.contains("1") && !houseNoDataFromExcel.contains("!"))) {
 			logger.info(
@@ -1714,7 +2076,73 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	}
 
+	public static void communicationVillageTown(int x, int y, int z) throws Exception {
+
+		communicationVillageTown.clear();
+		type(communicationVillageTown, readingdata(x, y, z));
+		String houseNoDataFromExcel = communicationVillageTown.getAttribute("value");
+		int size = houseNoDataFromExcel.length();
+		if ((size == 60 && houseNoDataFromExcel.contains("1") && !houseNoDataFromExcel.contains("!"))) {
+			logger.info(
+					"Test case pass:- As village town feild length is 60 and accepting alphanumeric and special character ");
+		} else {
+			Assert.fail(
+					"Test case fail:- As either village town feild length is not of 60 or not accepting alphanumeric or special character ");
+		}
+
+	}
+
 	// Enter Country
+	public static void countryCommunication(int x, int y, int z) throws Exception {
+		Thread.sleep(400);
+		System.out.println("111111111111111111111111");
+		System.out.println(countryCommunication.isDisplayed());
+		countryCommunication.clear();
+		type(countryCommunication, readingdata(x, y, z));
+		String countryDataFromExcel = countryCommunication.getAttribute("value");// I
+		String dropDownValue = communicationCountry1stOption.getText();
+		System.out.println(dropDownValue);
+		if (dropDownValue.startsWith(countryDataFromExcel)) {
+			System.out.println("Test Case pass:-As smart search for country is working properly");
+		} else {
+			Assert.fail("Test case fail:-As smart search for country is not woring properly");
+		}
+		communicationCountry1stOption();
+		Thread.sleep(500);
+		if (errorMsgWhenSameCountryIsSelectedForPermanentAndCommunication.isDisplayed()) {
+			System.out.println(
+					"Test case pass:As error message is displaying when same country is selected for permanent and communication");
+		} else {
+			Assert.fail(
+					"Test case fail:As error message is not displaying when same country is selected for permanent and communication");
+		}
+
+	}
+
+	public static void countryCommunicationIndonasia(int x, int y, int z) throws Exception {
+		countryCommunication.clear();
+		type(countryCommunication, readingdata(x, y, z));
+		String countryDataFromExcel = countryCommunication.getAttribute("value");// I
+		String dropDownValue = communicationCountry2ndOption.getText();
+		System.out.println(dropDownValue);
+		if (dropDownValue.startsWith(countryDataFromExcel)) {
+			System.out.println("Test Case pass:-As smart search for country is working properly");
+		} else {
+			Assert.fail("Test case fail:-As smart search for country is not woring properly");
+		}
+		communicationCountry2ndOption.click();
+		Thread.sleep(500);
+		if (isElementDisplayed(errorMsgWhenSameCountryIsSelectedForPermanentAndCommunication)) {
+			Assert.fail(
+					"Test case fail:As error message is not displaying when same country is selected for permanent and communication");
+
+		} else {
+			System.out.println(
+					"Test case pass:As error message is displaying when same country is selected for permanent and communication");
+		}
+
+	}
+
 	public static void setCountry(int x, int y, int z) throws Exception {
 		country.clear();
 		type(country, readingdata(x, y, z));
@@ -1729,8 +2157,53 @@ public class JourneyScreenTwo extends ReusableActions {
 		countryIstOption();
 	}
 
+
+	public static void setCountryAndSelecting2ndOption(int x, int y, int z) throws Exception {
+		country.clear();
+		type(country, readingdata(x, y, z));
+		country2ndOption.click();
+		if (isElementDisplayed(errorMsgOutsideIndiaAdd)) {
+			Assert.fail("Test case fail:As the error message is still displayed on the page after selecting no option");
+		} else {
+			System.out.println("Test case pass:As the error message is not visible after selecting no option");
+		}
+		permanentReflexiveNoOption.click();
+		JourneyScreenFour.arrowDownFunctionToScrollDown();
+		if(communicationAddressid.isDisplayed()) {
+			System.out.println("Test case pass:As Proposer communication Address is present");
+			
+		}else {
+			Assert.fail("Test case fail:As Proposer communication address is not present");
+			
+		}
+
+
+	}
+
+
+	public static void fillingAllTheFeildsAfterChangingCountry() throws Exception {
+		JourneyScreenFour.arrowUpFunctionToScrollUpTillTop();
+		JourneyScreenTwo.setCountry(3, 1, 6);
+		JourneyScreenTwo.setState(3, 1, 7);
+		JourneyScreenTwo.setCity(3, 1, 8);
+		JourneyScreenTwo.setPinCode(3, 1, 9);
+		JourneyScreenTwo.setAlternateMobileNo(3, 1, 10);
+		permanentReflexiveNoOption.click();
+		// JourneyScreenFour.arrowDownFunctionToScrollDown();
+		if (communicationAddressid.isDisplayed()) {
+			System.out.println("Test case pass:As Proposer communication Address is present");
+
+		} else {
+			Assert.fail("Test case fail:As Proposer communication address is not present");
+
+		}
+	}
+	
+	
+
 	// Enter State
 	public static void setState(int x, int y, int z) throws Exception {
+		Thread.sleep(500);
 		searchState.click();
 		searchState.clear();
 		searchState.sendKeys(readingdata(x, y, z));
@@ -1739,18 +2212,45 @@ public class JourneyScreenTwo extends ReusableActions {
 		// type(searchState, readingdata(x, y, z));
 		// driver.findElement(By.xpath(".//*[@id='root']/main/div[2]/form/div/div/div[1]")).click();
 		// searchState.click();
-		searchState.sendKeys(Keys.BACK_SPACE);
 
-		String countryDataFromExcel = searchState.getAttribute("value");// A
-		String dropDownValue = countryDropDown.getText();
+		searchState.sendKeys(Keys.BACK_SPACE);
+		String countryDataFromExcel = searchState.getAttribute("value");// T
+		String dropDownValue = state1stOption.getText();
 		System.out.println(dropDownValue);
 		if (dropDownValue.startsWith(countryDataFromExcel)) {
 			System.out.println("Test Case pass:-As smart search for state is working properly");
 		} else {
 			Assert.fail("Test case fail:-As smart search for state is not woring properly");
 		}
-		Thread.sleep(600);
+		Thread.sleep(1000);
 		state1stOption();
+	}
+
+	public static void communicationStateCommunication(int x, int y, int z) throws Exception {
+		Thread.sleep(500);
+		// communicationStateCommunication.click();
+		communicationStateCommunication.clear();
+		type(communicationStateCommunication, readingdata(x, y, z));
+
+
+		// communicationStateCommunication.sendKeys(readingdata(x, y, z));
+		// driver.findElement(By.xpath(".//*[@id='root']/main/div[2]/form/div/div/div[1]")).click();
+		// searchState.sendKeys(readingdata(x, y, z));
+		// type(searchState, readingdata(x, y, z));
+		// driver.findElement(By.xpath(".//*[@id='root']/main/div[2]/form/div/div/div[1]")).click();
+		// searchState.click();
+
+		/*
+		 * communicationStateCommunication.sendKeys(Keys.BACK_SPACE); String
+		 * countryDataFromExcel =
+		 * communicationStateCommunication.getAttribute("value");// T String
+		 * dropDownValue = state1stOption.getText(); System.out.println(dropDownValue);
+		 * if (dropDownValue.startsWith(countryDataFromExcel)) { System.out.
+		 * println("Test Case pass:-As smart search for state is working properly"); }
+		 * else { Assert.
+		 * fail("Test case fail:-As smart search for state is not woring properly"); }
+		 * Thread.sleep(1000); state1stOption();
+		 */
 	}
 
 	// Enter City
@@ -1758,13 +2258,27 @@ public class JourneyScreenTwo extends ReusableActions {
 		searchCity.clear();
 		type(searchCity, readingdata(x, y, z));
 		String countryDataFromExcel = searchCity.getAttribute("value");// A
-		String dropDownValue = countryDropDown.getText();
+		String dropDownValue = city1stOption.getText();
 		if (dropDownValue.startsWith(countryDataFromExcel)) {
 			System.out.println("Test Case pass:-As smart search for city is working properly");
 		} else {
 			Assert.fail("Test case fail:-As smart search for city is not woring properly");
 		}
 		city1stOption();
+	}
+
+	public static void searchCityComunication(int x, int y, int z) throws Exception {
+		searchCityComunication.clear();
+		type(searchCityComunication, readingdata(x, y, z));
+		/*
+		 * String countryDataFromExcel = searchCityComunication.getAttribute("value");//
+		 * A String dropDownValue = city1stOption.getText(); if
+		 * (dropDownValue.startsWith(countryDataFromExcel)) { System.out.
+		 * println("Test Case pass:-As smart search for city is working properly"); }
+		 * else {
+		 * Assert.fail("Test case fail:-As smart search for city is not woring properly"
+		 * ); } city1stOption();
+		 */
 	}
 
 	// Enter PinCode
@@ -1777,6 +2291,19 @@ public class JourneyScreenTwo extends ReusableActions {
 			logger.info("Test case pass:- As Pin code feild length is 6 and accepting numeric only");
 		} else {
 			Assert.fail("Test case fail:- As either Pin code feild length is not of 6 or not accepting numeric only");
+		}
+
+	}
+
+	public static void setPinCodecommunication(int x, int y, int z) throws Exception {
+		communicationPinCode.clear();
+		type(communicationPinCode, readingdata(x, y, z));
+		String pinCodeDataFromExcel = communicationPinCode.getAttribute("value");
+		int size = pinCodeDataFromExcel.length();
+		if ((size == 6 && !pinCodeDataFromExcel.contains("@") && !pinCodeDataFromExcel.contains("A"))) {
+			logger.info("Test case pass:- As Pin code feild length is 6 and accepting numeric only");
+		} else {
+			logger.info("Test case fail:- As either Pin code feild length is not of 6 or not accepting numeric only");
 		}
 
 	}
@@ -1795,6 +2322,35 @@ public class JourneyScreenTwo extends ReusableActions {
 					"Test case fail:- As alternate mobile number feild length either is not of 10 or not accepting numeric only");
 		}
 
+	}
+
+	public static void checkErrorMessageOfOutsideIndia() throws Exception {
+		if (isElementDisplayed(errorMsgOutsideIndiaAdd)) {
+			System.out.println("Test case pass:As error message is displaying");
+
+			Thread.sleep(800);
+			permanentReflexiveNoOption.click();
+			if (isElementDisplayed(errorMsgOutsideIndiaAdd)) {
+				Assert.fail(
+						"Test case fail:As the error message is still displayed on the page after selecting no option");
+			} else {
+				System.out.println("Test case pass:As the error message is not visible after selecting no option");
+				arrowDownFunctionToScrollDown();
+
+				if (proposerCommunicationAddress.isDisplayed()) {
+					System.out.println(
+							"Test case pass:As proposer permanent address is displaying as per the requirement");
+				} else {
+					Assert.fail(
+							"Test case pass:As proposer permanent address is not displaying as per the requirement");
+				}
+
+			}
+			
+		}else{
+			Assert.fail("Test case fail:As the error message is not displayed when India option is selected");
+		}
+		permanentReflexiveYesOption.click();
 	}
 
 	public static void waitForNumberOfWindowsToEqual(final int numberOfWindows) {
@@ -2090,6 +2646,23 @@ public class JourneyScreenTwo extends ReusableActions {
 		Thread.sleep(1000);
 	}
 
+	public static void ifConditionForTabSizeTwoPDFIllustrationProceedingScreenAhead() throws Exception {
+		System.out.println("Test case pass:As PDF illustration is working");
+		String parent = driver.getWindowHandle();
+		Set<String> s1 = driver.getWindowHandles();
+		Iterator<String> I1 = s1.iterator();
+		while (I1.hasNext()) {
+			String child_window = I1.next();
+			if (!parent.equals(child_window)) {
+				driver.switchTo().window(child_window);
+				System.out.println(driver.switchTo().window(child_window).getTitle());
+				driver.close();
+			}
+		}
+		driver.switchTo().window(parent);
+		Thread.sleep(10000);
+	}
+
 	public static void ifConditionForTabSizeTwoPDFIllustrationSelectingLifestyleScreen() throws Exception {
 		System.out.println("Test case pass:As PDF illustration is working");
 		String parent = driver.getWindowHandle();
@@ -2297,10 +2870,10 @@ public class JourneyScreenTwo extends ReusableActions {
 		return false;
 	}
 
-	@FindBy(xpath = "//label[contains(@for, 'InsurerGenderMale')]")
-	static WebElement insurersGenderMale;
+
 
 	public static void checkAllTheInsurersDetailsFeildsPresentOrNot() throws Exception {
+		Thread.sleep(500);
 		if (insurersName.isDisplayed() && insurersGenderMale.isDisplayed() && insurersGenderFemale.isDisplayed()
 				&& dateOfBirthIssurer.isDisplayed() && relationshipWithProposer.isDisplayed()) {
 			System.out.println("Test case pass:As all the feilds for Insurers details on screen two is present");
@@ -2322,7 +2895,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		type(insurersName, readingdata(x, y, z));
 		String insurersNamePassedFromExcel = insurersName.getAttribute("value");
 		int size = insurersNamePassedFromExcel.length();
-		if ((size == 25) && (!insurersNamePassedFromExcel.contains("@") && insurersNamePassedFromExcel.contains("."))) {
+		if ((size == 75) && (!insurersNamePassedFromExcel.contains("@") && insurersNamePassedFromExcel.contains("."))) {
 			logger.info(
 					"Test case pass:- As issurers name feild length is 25 and not accepting special character and numbers ");
 		} else {
@@ -2470,6 +3043,101 @@ public class JourneyScreenTwo extends ReusableActions {
 
 				}
 		}
+	}
+
+	public static void fillingAllTheFeildForFTSP() throws Exception
+	{
+		
+		File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
+		FileInputStream fileInputStream = new FileInputStream(file);
+		XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
+		XSSFSheet sheet = hssfWorkbook.getSheetAt(8);
+
+		String premiumCommitmentFromExcell = getColumnDataAsPerTheForLoopRow(sheet, 1, 6);
+
+		String growthSuperFundFromExcell = getColumnDataAsPerTheForLoopRow(sheet, 3, 0);
+
+		String secureFundFromExcell = getColumnDataAsPerTheForLoopRow(sheet, 3, 1);
+
+		String conservativeFundFromExcell = getColumnDataAsPerTheForLoopRow(sheet, 3, 2);
+
+		String highGrowthFundFromExcell = getColumnDataAsPerTheForLoopRow(sheet, 3, 3);
+
+		String balancedFundFromExcell = getColumnDataAsPerTheForLoopRow(sheet, 3, 4);
+
+		String growthFundFromExcell = getColumnDataAsPerTheForLoopRow(sheet, 3, 5);
+
+		premiumCommitment.clear();
+		premiumCommitment.sendKeys(premiumCommitmentFromExcell);
+		chooseYourFundYes();
+		GrowthSuperFund.clear();
+		GrowthSuperFund.sendKeys(growthSuperFundFromExcell);
+		secureFund.clear();
+		secureFund.sendKeys(secureFundFromExcell);
+		conservativeFund.clear();
+		conservativeFund.sendKeys(conservativeFundFromExcell);
+		HighGrowthFund.clear();
+		HighGrowthFund.sendKeys(highGrowthFundFromExcell);
+		BalancedFund.clear();
+		BalancedFund.sendKeys(balancedFundFromExcell);
+		growthFund.clear();
+		growthFund.sendKeys(growthFundFromExcell);
+
+		JourneyScreenTwo.clickSubmitButton();
+		Thread.sleep(14000);
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		System.out.println(tabs.size());
+
+		if (tabs.size() == 2) {
+			ifConditionForTabSizeTwoPDFIllustrationSelectingLifestyleScreen();
+		}
+
+		else {
+			Assert.fail("Either PDF is not generating or Loading time is too much for STP");
+
+		}
+	}
+
+	public static void premiumCommitmentDesiredAnnualIncomeAnnualIncome(int x, int y, int z) throws Exception {
+
+		annualIncome.clear();
+		type(annualIncome, readingdata(x, y, z));
+
+		JourneyScreenTwo.clickSubmitButton();
+		Thread.sleep(14000);
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		System.out.println(tabs.size());
+
+		if (tabs.size() == 2) {
+			ifConditionForTabSizeTwoPDFIllustrationSelectingLifestyleScreen();
+		}
+
+		else {
+			Assert.fail("Either PDF is not generating or Loading time is too much for STP");
+
+		}
+
+	}
+
+	public static void premiumCommitmentWLS(int x, int y, int z) throws Exception {
+
+		premiumCommitment.clear();
+		type(premiumCommitment, readingdata(x, y, z));
+
+		JourneyScreenTwo.clickSubmitButton();
+		Thread.sleep(14000);
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		System.out.println(tabs.size());
+
+		if (tabs.size() == 2) {
+			ifConditionForTabSizeTwoPDFIllustrationSelectingLifestyleScreen();
+		}
+
+		else {
+			Assert.fail("Either PDF is not generating or Loading time is too much for STP");
+
+		}
+
 	}
 
 	public static boolean premiumCommitmentDesiredAnnualIncomeAnnualIncome() throws Exception {
@@ -2648,6 +3316,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		premiumCommitment.clear();
 		type(premiumCommitment, readingdata(x, y, z));
 
+		Savebtn.click();
 		JourneyScreenTwo.clickSubmitButton();
 		Thread.sleep(14000);
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
@@ -2659,6 +3328,26 @@ public class JourneyScreenTwo extends ReusableActions {
 
 		else {
 			Assert.fail("Either PDF is not generating or Loading time is too much for SAP");
+
+		}
+
+	}
+
+	public static void checkPOSVforSTPPremiumCommitment(int x, int y, int z) throws Exception {
+		sumAssured.clear();
+		type(sumAssured, readingdata(x, y, z));
+
+		JourneyScreenTwo.clickSubmitButton();
+		Thread.sleep(14000);
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		System.out.println(tabs.size());
+
+		if (tabs.size() == 2) {
+			ifConditionForTabSizeTwoPDFIllustrationSelectingLifestyleScreen();
+		}
+
+		else {
+			Assert.fail("Either PDF is not generating or Loading time is too much for STP");
 
 		}
 
@@ -2781,6 +3470,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		proposerPersonalDetailsAnnualIncome.clear();
 		type(proposerPersonalDetailsAnnualIncome, readingdata(x, y, z));
 
+
 	}
 
 	public static void fillingAllTheRequiredFeildsToReachThirdScreen() throws Exception {
@@ -2824,7 +3514,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		dividentAdjustmentSTP();
 		modeOfPaymentSTP();
 		WOPPlusRiderCheckBox();
-		sumAssured();
+
 	}
 
 	public static void fillingAllTheRequiredFeildsForMIAP() throws Exception {
@@ -2836,7 +3526,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		dividentOptionMIAP();
 		Thread.sleep(500);
 		// waitTillElementToBeClickable(POSVFlowForSAPMIAP.premiumCommitmentMIAPYesOptionSelection);
-		premiumCommitmentMIAPYesOptionSelection.click();
+		desiredAnnualIncomeYes.click();
 		Thread.sleep(500);
 	}
 
@@ -2853,7 +3543,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		nonSmoker.click();
 		dividentAdjustmentSTPDependent();
 		modeOfPaymentSTPDependent();
-		WOPPlusRiderCheckBox();
+		// WOPPlusRiderCheckBox();
 		Thread.sleep(500);
 		// waitTillElementToBeClickable(POSVFlowForSAPMIAP.premiumCommitmentMIAPYesOptionSelection);
 	}
@@ -2866,15 +3556,15 @@ public class JourneyScreenTwo extends ReusableActions {
 		dividendAdjustmentWLS();
 		modeOfPaymentWLS();
 		dividentOptionWLS();
-		premiumCommitmentWLS();
+
 	}
 
 	public static void fillingAllTheRequiredFeildsForSAP() throws Exception {
 		selectByDropdownNeedOfInsur();
 		selectByDropdownLifeStge();
 
-		driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[2]/form[1]/div[1]/div[1]/div[3]")).click();
-		arrowDownFunctionToScrollDown();
+		// driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[2]/form[1]/div[1]/div[1]/div[3]")).click();
+		// arrowDownFunctionToScrollDown();
 
 		premiumTypeSAP();
 		premiumPayementTermSAP();
@@ -2890,8 +3580,8 @@ public class JourneyScreenTwo extends ReusableActions {
 		selectByDropdownNeedOfInsur();
 		selectByDropdownLifeStge();
 
-		driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[2]/form[1]/div[1]/div[1]/div[3]")).click();
-		arrowDownFunctionToScrollDown();
+		//driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[2]/form[1]/div[1]/div[1]/div[3]")).click();
+		// arrowDownFunctionToScrollDown();
 
 		premiumPayementTermFTSP();
 		policyTermFTSP();
@@ -2899,7 +3589,6 @@ public class JourneyScreenTwo extends ReusableActions {
 		modeOfPaymentFTSP();
 		dynamicFundAllocationNo();
 		systematicTransferPlanNo();
-		premiumCommitmentPremiumFundYes();
 
 		/*
 		 * premiumCommitment(3, 1, 15); chooseYourFundYes(); growthSuperFund(3, 1, 16);
@@ -2907,11 +3596,6 @@ public class JourneyScreenTwo extends ReusableActions {
 		 * BalancedFund(3, 5, 16); growthFund(3, 6, 16);
 		 */}
 
-	@FindBy(xpath = "//input[@name='insurerName']")
-	static WebElement insurersName;
-
-	@FindBy(xpath = "//label[contains(@for, 'InsurerGenderFemale')]")
-	static WebElement insurersGenderFemale;
 
 	public static void fllIssurersNameValidation(int x, int y, int z) throws Exception {
 		// type(MobNumtxtfld, strMobNumber);
@@ -2926,15 +3610,19 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	}
 
-	public static void fillDateBirthInsurersDetails(int x, int y, int z) throws Exception {
+	public static void fillDateBirthInsurersDetails() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenThree.class);
-		dateOfBirthIssurer.clear();
-		type(dateOfBirthIssurer, readingdata(x, y, z));
+		Thread.sleep(800);
+		waitTillElementToBeClickable(dateOfBirthIssurer);
+		dateOfBirthIssurer.click();
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.ARROW_DOWN).build().perform();
+
+		JourneyScreenThree.dateOfBirthSelctionFunction();
 
 	}
 
-	@FindBy(xpath = "//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[2]/div[2]/div/div/div/div/div[@role=\"button\"]")
-	static WebElement relationshipWithProposer;
+
 
 	public static void relationshipWithProposer() throws Exception {
 
@@ -2943,8 +3631,6 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	}
 
-	@FindBy(xpath = "//*[@id='menu-relationshipWithProposer']/div[2]/ul/li[contains(text(),\"Parent\")]")
-	static WebElement relationshipWithProposerParentOption;
 
 	public static void relationshipWithProposerParentOption() throws Exception {
 
@@ -2965,7 +3651,7 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	}
 
-	public static void checkDateOfBirthFormatFutureDateRestrictionSetDateBirthInsurersDetails(int x, int y, int z)
+	public static void checkDateOfBirthFormatFutureDateRestrictionSetDateBirthInsurersDetails()
 			throws Exception {
 		PageFactory.initElements(driver, JourneyScreenThree.class);
 		String dateFormat = dateOfBirthIssurer.getAttribute("placeholder");
@@ -2977,12 +3663,14 @@ public class JourneyScreenTwo extends ReusableActions {
 		dateOfBirthIssurer();
 		LocalDate datw = LocalDate.now().plusDays(1L);
 		int day = datw.getDayOfMonth();
-		String runtimeXpathForSelectingDate = "day-" + day + "";
+		String runtimeXpathForSelectingDate = "\"day-" + day + "\"";
 		System.out.println(day);
 		System.out.println(runtimeXpathForSelectingDate);
 		WebElement checkFutureDateIsEnabled = driver.findElement(By.xpath(
 				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))][@aria-label="
 						+ runtimeXpathForSelectingDate + "]"));
+
+
 		String classes = checkFutureDateIsEnabled.getAttribute("class");
 		boolean isDisabled = classes.contains("day--disabled");
 		if (isDisabled) {
@@ -2991,8 +3679,10 @@ public class JourneyScreenTwo extends ReusableActions {
 			Assert.fail("Test Case Fail:'SCREEN TWO'Future Date is enabled for insurers details ");
 		}
 
-		dateOfBirthIssurer.clear();
-		type(dateOfBirthIssurer, readingdata(x, y, z));
+		JourneyScreenThree.dateOfBirthSelctionFunction();
+
+		// dateOfBirthIssurer.clear();
+		// type(dateOfBirthIssurer, readingdata(x, y, z));
 
 	}
 
@@ -3008,14 +3698,9 @@ public class JourneyScreenTwo extends ReusableActions {
 	public static void selectAndCheckRelationshipWithProposerOption() throws Exception {
 		// type(MobNumtxtfld, strMobNumber);
 		relationshipWithProposer();
-		if (relationshipWithProposerSpouseOption.isDisplayed() && relationshipWithProposerParentOption.isDisplayed()
-				&& relationshipWithProposerGrandParentOption.isDisplayed()
-				&& relationshipWithProposerOtherOption.isDisplayed()) {
-			logger.info("Test case pass:-As all the option of relationship with proposer dropdown is present ");
-		} else {
-			Assert.fail("Test case fail:-As all the option of relationship with proposer dropdown is not present");
-		}
-
+		String xpathOFList = "//ul[@role='listbox']/li";
+		String sheetpath = "\\src\\test\\resources\\MasterData.xlsx";
+		comparingExcelDataWithUIBySheetPath(xpathOFList, 5, 6, sheetpath);
 		relationshipWithProposerParentOption();
 	}
 

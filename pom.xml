@@ -49,6 +49,14 @@
 			</exclusions>
 		</dependency>
 
+
+<dependency>
+	<groupId>org.fluttercode.datafactory</groupId>
+	<artifactId>datafactory</artifactId>
+	<version>0.8</version>
+	<type>jar</type>
+</dependency>
+
 		<!-- https://mvnrepository.com/artifact/ru.yandex.qatools.allure/allure-maven-plugin -->
 		<dependency>
 			<groupId>ru.yandex.qatools.allure</groupId>

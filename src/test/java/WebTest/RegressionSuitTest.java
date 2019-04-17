@@ -29,8 +29,8 @@ public class RegressionSuitTest extends ReusableActions {
 	public void setUp(String browser, String version, String platform, String testrun) throws Exception {
 		String testRun = testrun;
 		/* String testRun1=testrun1; */
-		// if (testRun.equals("run"))
-		if (testRun.equals("runbsw"))
+		if (testRun.equals("run"))
+		// if (testRun.equals("runbsw"))
 		{
 
 			try {
@@ -57,8 +57,8 @@ public class RegressionSuitTest extends ReusableActions {
 		}
 
 		else
-		// if (testRun.equals("runfa"))
-		if (testRun.equals("run"))
+		if (testRun.equals("runfa"))
+			// if (testRun.equals("run"))
 			// @BeforeClass
 			// public void launchBrowser() throws Exception{
 
@@ -76,7 +76,7 @@ public class RegressionSuitTest extends ReusableActions {
 
 	}
 
-	@Test(priority = 0, enabled = true)
+	@Test(priority = 0, enabled = false)
 	public void testLoginFunctionalityWithMultipeData() throws Exception {
 		try {
 			logger.info("Test Started");
@@ -249,7 +249,7 @@ public class RegressionSuitTest extends ReusableActions {
 			JourneyScreenTwo.checkAllTheInsurersDetailsFeildsPresentOrNot();
 			JourneyScreenTwo.checkAndFillIssurersNameValidation(1, 1, 8);
 			JourneyScreenTwo.insurersGenderFemale();
-			JourneyScreenTwo.checkDateOfBirthFormatFutureDateRestrictionSetDateBirthInsurersDetails(1, 1, 9);
+			JourneyScreenTwo.checkDateOfBirthFormatFutureDateRestrictionSetDateBirthInsurersDetails();
 			// Test case--> describing the dropDown list of relationship with proposer First
 			// screen--Select dependent and check on Insurers Details section
 			JourneyScreenTwo.selectAndCheckRelationshipWithProposerOption();
@@ -259,7 +259,7 @@ public class RegressionSuitTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 8, enabled = false)
+	@Test(priority = 8, enabled = true)
 	public void asNomineeIsMinorProvideGuardianNameDetails() throws Exception {
 		JourneyScreenThree.currentDatePicker();
 		JourneyScreenThree.asNomineeIsMinorProvideGuardianname();
@@ -293,7 +293,7 @@ public class RegressionSuitTest extends ReusableActions {
 	 * Test case:-To check PDF is generating or not for SUPER TERM PLAN
 	 */
 	@Test(priority = 11, enabled = true)
-	public void CheckproductConfigrationSTPGeneratingPdf() throws Exception {
+	public static void CheckproductConfigrationSTPGeneratingPdf() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
 			alwaysCloseAllChildTabs();
@@ -304,6 +304,7 @@ public class RegressionSuitTest extends ReusableActions {
 			JourneyScreenTwo.traditional();
 			JourneyScreenTwo.selectByDropdownSTP();
 			JourneyScreenTwo.fillingAllTheRequiredFeildsForSTP();
+			JourneyScreenTwo.checkPOSVforSTPPremiumCommitment(3, 4, 11);
 
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
@@ -349,6 +350,7 @@ public class RegressionSuitTest extends ReusableActions {
 			JourneyScreenTwo.traditional();
 			JourneyScreenTwo.selectByDropdownWLS();
 			JourneyScreenTwo.fillingAllTheRequiredFeildsForWLS();
+			JourneyScreenTwo.premiumCommitmentWLS();
 
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
@@ -390,6 +392,7 @@ public class RegressionSuitTest extends ReusableActions {
 			JourneyScreenTwo.ulip();
 			JourneyScreenTwo.selectByDropdownFTSP();
 			JourneyScreenTwo.fillingAllTheRequiredFeildsForFTSP();
+			JourneyScreenTwo.premiumCommitmentPremiumFundYes();
 			// JourneyScreenTwo.clickSubmitButton();
 
 		} catch (Exception e) {
@@ -406,7 +409,7 @@ public class RegressionSuitTest extends ReusableActions {
 	 * SAVINGS ADVANTAGES PLAN
 	 */
 
-	@Test(priority = 16, enabled = true)
+	@Test(priority = 2, enabled = true)
 	public void checkingAllTheFeildsForTraditionalProduct() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -460,7 +463,7 @@ public class RegressionSuitTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 18, enabled = false)
+	@Test(priority = 18, enabled = true)
 	public void isPayorDetailsNoOptionSelectedByDefault() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenThree.class);
 		try {
@@ -526,7 +529,7 @@ public class RegressionSuitTest extends ReusableActions {
 
 	}
 
-	@Test(priority = 21, enabled = false)
+	@Test(priority = 21, enabled = true)
 	public void personalDetailsSectionFeildsValidation() throws Exception
 
 	{
@@ -549,7 +552,7 @@ public class RegressionSuitTest extends ReusableActions {
 
 	}
 
-	@Test(priority = 22, enabled = false)
+	@Test(priority = 22, enabled = true)
 	public void reachingScreenFourAndMultipleDataValidationForAnnualIncome() throws Exception
 
 	{
@@ -568,7 +571,7 @@ public class RegressionSuitTest extends ReusableActions {
 
 	}
 
-	@Test(priority = 23, enabled = false)
+	@Test(priority = 23, enabled = true)
 	public void EIAScreeenFourValidation() throws Exception
 
 	{
@@ -587,7 +590,7 @@ public class RegressionSuitTest extends ReusableActions {
 
 	}
 
-	@Test(priority = 24, enabled = false)
+	@Test(priority = 24, enabled = true)
 	public void payorDetailsFeildsIsPresentAndValidation() throws Exception
 
 	{
@@ -614,7 +617,7 @@ public class RegressionSuitTest extends ReusableActions {
 
 	}
 
-	@Test(priority = 25, enabled = false)
+	@Test(priority = 25, enabled = true)
 	public void checkInsurersDetailsIsPresentAndFeildsValidationScreenThree() throws Exception {
 		try {
 			JourneyScreenTwoTest.fillingFeildsScreenTwoFunction();
@@ -641,14 +644,14 @@ public class RegressionSuitTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 26, enabled = false)
+	@Test(priority = 26, enabled = true)
 	public void insurerDetailsFillingAllTheFeildsToReachScreenFourSelectingDependent() throws Exception {
 		try {
 			JourneyScreenTwoTest.fillingFeildsScreenTwoFunction();
 			// JourneyScreenOne.feildSupressFuctionalityInsurersDetails();
 			JourneyScreenTwo.fllIssurersNameValidation(1, 1, 8);
 			JourneyScreenTwo.insurersGenderFemale();
-			JourneyScreenTwo.fillDateBirthInsurersDetails(1, 1, 9);
+			JourneyScreenTwo.fillDateBirthInsurersDetails();
 			JourneyScreenTwo.selectkRelationshipWithProposerOption();
 			JourneyScreenTwo.traditional();
 			JourneyScreenTwo.selectByDropdownCancerInsurancePlan();
@@ -656,10 +659,10 @@ public class RegressionSuitTest extends ReusableActions {
 			JourneyScreenTwo.fillingAllTheRequiredFeildsForCIPIsurersDetails();
 			JourneyScreenTwo.clickSubmitButton();
 			JourneyScreenTwo.generatingPDFToReachToScreenThree();
-			JourneyScreenThree.isurersDetailsFeildsDropDownForScreenThree();
+			JourneyScreenThreeTest.personalDetailsSectionCancerSpecified();
 			JourneyScreenThreeTest.bankDetailsSectionFillingData();
-			JourneyScreenThreeTest.personalDetailsSection();
-			JourneyScreenThree.annualIncomePersonalDetailsDependent();
+			JourneyScreenThree.isurersDetailsFeildsDropDownForScreenThree();
+
 
 		} catch (Exception e) {
 			logger.error("Test case failed: " + e.getMessage());
@@ -667,7 +670,7 @@ public class RegressionSuitTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 27, enabled = false)
+	@Test(priority = 27, enabled = true)
 	public static void lifeStyleScreeenFourValidation() throws Exception
 
 	{
@@ -693,7 +696,7 @@ public class RegressionSuitTest extends ReusableActions {
 
 	}
 
-	@Test(priority = 28, enabled = false)
+	@Test(priority = 28, enabled = true)
 	public void reachingScreenFourFillingAnnualIncomeform60RelatedDetailsFeilds() throws Exception
 
 	{
@@ -716,7 +719,7 @@ public class RegressionSuitTest extends ReusableActions {
 
 	}
 
-	@Test(priority = 29, enabled = false)
+	@Test(priority = 29, enabled = true)
 	public static void checkPOSVFlowForSAPWithMutipleFirstNameForSelf() throws Exception {
 		PageFactory.initElements(driver, POSVFlowForSAPMIAP.class);
 		try {
@@ -729,7 +732,90 @@ public class RegressionSuitTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 30, enabled = false)
+	public static void femaleGenderSelectionForValidity() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenTwo.class);
+		try {
+			alwaysCloseAllChildTabs();
+			HomePage.clickDashboard();
+			HomePage.clickNewApp();
+			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
+			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2AndSelectingFemale();
+			JourneyScreenTwo.traditional();
+			JourneyScreenTwo.selectByDropdownSTP();
+			JourneyScreenTwo.fillingAllTheRequiredFeildsForSTP();
+			JourneyScreenTwo.checkPOSVforSTPPremiumCommitment(3, 1, 11);
+
+		} catch (Exception e) {
+			logger.error("Test case failed " + e.getMessage());
+			throw e;
+
+		}
+	}
+
+	@Test(priority = 3, enabled = true)
+	public void checkingFemaleGenderFeildsValidationBySTPProduct() throws Exception
+
+	{
+		try {
+
+			femaleGenderSelectionForValidity();
+
+			PrepopulatedDataTest.reachingScreenFourFillingAnnualIncomeFunction();
+			JourneyScreenFour.form60RelatedDetailsFeildsIsPresent();
+			JourneyScreenFour.form60RelatedDetailsIdentityProofNameDropDownValidation();
+			JourneyScreenFour.identityProofNumberValidation(0, 1, 6);
+			JourneyScreenFour.identityProofIssuingAuthority();
+			JourneyScreenFour.idontHavePANNumberAsIhaveAppliedForPANAcknowledgementSelectFeildsValidation();
+
+			// JourneyScreenFour.fillPanApplicationAcknowledgeNowWithoutValidation();
+			// JourneyScreenFour.setDateBirthdateOfApplication(1, 1, 9);
+			JourneyScreenFour.identityProofIssuingAuthorityOptionSelection();
+			JourneyScreenFour.fillPanApplicationAcknowledgeNowWithoutValidation();
+			JourneyScreenTwo.setDateBirthPersonalDetailsScreenFour();
+			JourneyScreenFour.arrowDownFunctionToScrollDownTillProceed();
+
+			JourneyScreenFour.checkPregnancyDetailsSectionWhenFemaleIsSelected();
+			JourneyScreenFour.checkPregnancyDetailsSectionWhenYesOptrionIsSelected();
+
+		} catch (Exception e) {
+			logger.error("Test case failed " + e.getMessage());
+			throw e;
+
+		}
+	}
+
+	@Test(priority = 2, enabled = true)
+	public void checkGenderMaleIsNotGettingAdditionalFemaleFeildsForSTPProduct() throws Exception
+
+	{
+		try {
+
+			CheckproductConfigrationSTPGeneratingPdf();
+
+			PrepopulatedDataTest.reachingScreenFourFillingAnnualIncomeFunction();
+			JourneyScreenFour.form60RelatedDetailsFeildsIsPresent();
+			JourneyScreenFour.form60RelatedDetailsIdentityProofNameDropDownValidation();
+			JourneyScreenFour.identityProofNumberValidation(0, 1, 6);
+			JourneyScreenFour.identityProofIssuingAuthority();
+			JourneyScreenFour.idontHavePANNumberAsIhaveAppliedForPANAcknowledgementSelectFeildsValidation();
+
+			// JourneyScreenFour.fillPanApplicationAcknowledgeNowWithoutValidation();
+			// JourneyScreenFour.setDateBirthdateOfApplication(1, 1, 9);
+			JourneyScreenFour.identityProofIssuingAuthorityOptionSelection();
+			JourneyScreenFour.fillPanApplicationAcknowledgeNowWithoutValidation();
+			JourneyScreenTwo.setDateBirthPersonalDetailsScreenFour();
+			JourneyScreenFour.arrowDownFunctionToScrollDown();
+
+			JourneyScreenFour.checkPregnancyDetailsSectionWhenMaleIsSelected();
+
+		} catch (Exception e) {
+			logger.error("Test case failed " + e.getMessage());
+			throw e;
+
+		}
+	}
+
+	@Test(priority = 30, enabled = true)
 	public static void checkPOSVFlowForMIAPWithMutipleFirstNameForSelf() throws Exception {
 		PageFactory.initElements(driver, POSVFlowForSAPMIAP.class);
 		try {
@@ -742,7 +828,7 @@ public class RegressionSuitTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 31, enabled = false)
+	@Test(priority = 31, enabled = true)
 	public static void checkPOSVFlowForSAPWithMutipleFirstNameForDependent() throws Exception {
 		PageFactory.initElements(driver, POSVFlowForSAPMIAP.class);
 		try {
@@ -754,6 +840,7 @@ public class RegressionSuitTest extends ReusableActions {
 
 		}
 	}
+
 
 
 }

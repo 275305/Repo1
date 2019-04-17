@@ -27,8 +27,8 @@ public class JourneyScreenTwoTest extends ReusableActions {
 	public void setUp(String browser, String version, String platform, String testrun) throws Exception {
 		String testRun = testrun;
 		/* String testRun1=testrun1; */
-		// if (testRun.equals("run"))
-		if (testRun.equals("runbsw")) {
+		if (testRun.equals("run")) {
+			// if (testRun.equals("runbsw")) {
 
 			try {
 				DesiredCapabilities capability = new DesiredCapabilities();
@@ -51,8 +51,9 @@ public class JourneyScreenTwoTest extends ReusableActions {
 				throw e;
 			}
 			// break;
-		} else if (testRun.equals("run"))
-		// else if(testRun.equals("runfa"))
+		}
+		// else if (testRun.equals("run"))
+		else if (testRun.equals("runfa"))
 		{
 			// @BeforeClass
 			// public void launchBrowser() throws Exception{
@@ -101,7 +102,7 @@ public class JourneyScreenTwoTest extends ReusableActions {
 	}
 
 	// TC -02 Test case for positive value for saving the first screen data
-	@Test(priority = 1, enabled = true)
+	@Test(priority = 1, enabled = false)
 	public void ScreenOneTestIndian() throws Exception {
 		try {
 
@@ -137,10 +138,33 @@ public class JourneyScreenTwoTest extends ReusableActions {
 
 	public static void fillingFeildsScreenTwoFunction() throws Exception {
 		try {
+			HomePage.clickDashboard();
+			HomePage.clickNewApp();
 			JourneyScreenOneTest.fillingScreenOneFeildsFunctionForDependent();
 			JourneyScreenTwo.setFirstName(3, 1, 0);
 			JourneyScreenTwo.setLastName(3, 1, 1);
 			JourneyScreenTwo.setDateBirthPersonalDetails();
+			JourneyScreenTwo.selectByDropdown();
+			JourneyScreenTwo.setHouseNo(3, 1, 3);
+			JourneyScreenTwo.setRoadNo(3, 1, 4);
+			JourneyScreenTwo.setVillageTown(3, 1, 5);
+			JourneyScreenTwo.setCountry(3, 1, 6);
+			JourneyScreenTwo.setState(3, 1, 7);
+			JourneyScreenTwo.setCity(3, 1, 8);
+			JourneyScreenTwo.setPinCode(3, 1, 9);
+			JourneyScreenTwo.setAlternateMobileNo(3, 1, 10);
+		} catch (Exception e) {
+			logger.error("Test case failed: " + e.getMessage());
+			throw e;
+		}
+	}
+
+	public static void fillingFeildsScreenTwoFunctionSelfFemale() throws Exception {
+		try {
+			JourneyScreenTwo.setFirstName(3, 1, 0);
+			JourneyScreenTwo.setLastName(3, 1, 1);
+			JourneyScreenTwo.setDateBirthPersonalDetails();
+			JourneyScreenTwo.femaleClick();
 			JourneyScreenTwo.selectByDropdown();
 			JourneyScreenTwo.setHouseNo(3, 1, 3);
 			JourneyScreenTwo.setRoadNo(3, 1, 4);
@@ -170,14 +194,14 @@ public class JourneyScreenTwoTest extends ReusableActions {
 
 	// Test case---> describing Insurers details on screen two and three,Select
 	// dependent on first screen.
-	@Test(priority = 4, enabled = true)
+	@Test(priority = 1, enabled = false)
 	public void checkInsurersDetailsIsPresentAndFillingTheDetailsScreenTwo() throws Exception {
 		try {
 			fillingFeildsScreenTwoFunction();
 			JourneyScreenTwo.checkAllTheInsurersDetailsFeildsPresentOrNot();
 			JourneyScreenTwo.checkAndFillIssurersNameValidation(1, 1, 8);
 			JourneyScreenTwo.insurersGenderFemale();
-			JourneyScreenTwo.checkDateOfBirthFormatFutureDateRestrictionSetDateBirthInsurersDetails(1, 1, 9);
+			JourneyScreenTwo.checkDateOfBirthFormatFutureDateRestrictionSetDateBirthInsurersDetails();
 			// Test case--> describing the dropDown list of relationship with proposer First
 			// screen--Select dependent and check on Insurers Details section
 			JourneyScreenTwo.selectAndCheckRelationshipWithProposerOption();
@@ -256,6 +280,159 @@ public class JourneyScreenTwoTest extends ReusableActions {
 	public void asNomineeIsMinorProvideGuardianNameDetails() throws Exception {
 		JourneyScreenThree.currentDatePicker();
 		JourneyScreenThree.asNomineeIsMinorProvideGuardianname();
+
+	}
+
+	public static void ScreenOneTestNRIFunctionToReachScreenTwo() throws Exception {
+		try {
+			HomePage.clickDashboard();
+			HomePage.clickNewApp();
+			JourneyScreenOne.residentialsStatusNRI();
+			JourneyScreenOne.nriNationality();
+			JourneyScreenOne.setPassportNumber(1, 1, 5);
+			JourneyScreenOne.isAllTheTypeOfVisaListIsPresent();
+			JourneyScreenOne.visaValidTillSingleData();
+			JourneyScreenOne.passportIssuingCountry(1, 1, 6);
+			JourneyScreenOne.passportExpiryDateForSingleData();
+			JourneyScreenOne.setAadhar(1, 1, 0);
+			JourneyScreenOne.setMobNumber(1, 1, 2);
+			JourneyScreenOne.setEmailId(1, 1, 3);
+			JourneyScreenOne.setPreIssuanceNumber(1, 1, 4);
+			JourneyScreenOne.clickProceed();
+
+		} catch (Exception e) {
+			logger.error("Test case failed: " + e.getMessage());
+			throw e;
+		}
+	}
+
+	public static void fillingFeildsForScreenTwo() throws Exception {
+		try {
+			JourneyScreenTwo.setFirstName(3, 1, 0);
+			JourneyScreenTwo.setLastName(3, 1, 1);
+			JourneyScreenTwo.setDateBirthPersonalDetails();
+			JourneyScreenTwo.selectByDropdown();
+			JourneyScreenTwo.setHouseNo(3, 1, 3);
+			JourneyScreenTwo.setRoadNo(3, 1, 4);
+			JourneyScreenTwo.setVillageTown(3, 1, 5);
+			JourneyScreenTwo.setCountry(3, 1, 6);
+			JourneyScreenTwo.setState(3, 1, 7);
+			JourneyScreenTwo.setCity(3, 1, 8);
+			JourneyScreenTwo.setPinCode(3, 1, 9);
+			JourneyScreenTwo.setAlternateMobileNo(3, 1, 10);
+		} catch (Exception e) {
+			logger.error("Test case failed: " + e.getMessage());
+			throw e;
+		}
+	}
+
+	public static void fillingFeildsForScreenTwoProposerCommunicationAddress() throws Exception {
+		try {
+			JourneyScreenTwo.selectByDropdownProposerCommunication();
+
+			JourneyScreenTwo.houseNoProposerCommunication(3, 1, 3);
+			JourneyScreenTwo.communicationRoadNo(3, 1, 4);
+			JourneyScreenTwo.communicationVillageTown(3, 1, 5);
+			JourneyScreenTwo.countryCommunication(3, 1, 6);
+			JourneyScreenTwo.countryCommunicationIndonasia(3, 1, 6);
+
+			JourneyScreenTwo.communicationStateCommunication(3, 2, 7);
+			JourneyScreenTwo.searchCityComunication(3, 2, 8);
+			JourneyScreenTwo.setPinCodecommunication(3, 1, 9);
+
+			JourneyScreenTwo.traditional();
+			JourneyScreenTwo.selectByDropdownCIP();
+			Thread.sleep(1000);
+			JourneyScreenTwo.fillingAllTheRequiredFeildsForCIP();
+			JourneyScreenTwo.clickSubmitButton();
+			JourneyScreenThree.checkPDFIsOpenedOrNotCheckMsgNRI();
+
+			// JourneyScreenTwo.setPinCode(3, 1, 9);
+			// JourneyScreenTwo.setAlternateMobileNo(3, 1, 10);
+		} catch (Exception e) {
+			logger.error("Test case failed: " + e.getMessage());
+			throw e;
+		}
+	}
+
+	public static void fillingFeildsForScreenTwoProposerCommunicationAddressWithoutIllustration() throws Exception {
+		try {
+			JourneyScreenTwo.selectByDropdownProposerCommunication();
+
+			JourneyScreenTwo.houseNoProposerCommunication(3, 1, 3);
+			JourneyScreenTwo.communicationRoadNo(3, 1, 4);
+			JourneyScreenTwo.communicationVillageTown(3, 1, 5);
+			JourneyScreenTwo.countryCommunication(3, 1, 6);
+			JourneyScreenTwo.countryCommunicationIndonasia(3, 1, 6);
+			JourneyScreenTwo.communicationStateCommunication(3, 2, 7);
+			JourneyScreenTwo.searchCityComunication(3, 2, 8);
+			JourneyScreenTwo.setPinCodecommunication(3, 1, 9);
+
+		} catch (Exception e) {
+			logger.error("Test case failed: " + e.getMessage());
+			throw e;
+		}
+	}
+
+	@Test(priority = 1, enabled = false)
+	public void nriFeildsValidation() throws Exception {
+		ScreenOneTestNRIFunctionToReachScreenTwo();
+		fillingFeildsForScreenTwo();
+		JourneyScreenTwo.checkErrorMessageOfOutsideIndia();
+		JourneyScreenTwo.setCountryAndSelecting2ndOption(3, 1, 6);
+		JourneyScreenTwo.fillingAllTheFeildsAfterChangingCountry();
+		fillingFeildsForScreenTwoProposerCommunicationAddress();
+		JourneyScreenThree.nriDetailsJourneyScreenThree();
+		JourneyScreenThree.countryCurrentlyResidingSmartSearch(3, 1, 6);
+		JourneyScreenThree.dateOfLatestEntryToIndia();
+		JourneyScreenThree.birthCountryScreenThreeNri(3, 1, 6);
+		JourneyScreenThree.residenceCountryAsPerTaxLaws(3, 1, 6);
+		JourneyScreenThree.doYouHaveFTINYesNoFeildsValidation();
+
+	}
+
+	@Test(priority = 2, enabled = true)
+	public void nriFeildsValidationForDependentOption() throws Exception {
+		JourneyScreenOneTest.fillingScreenOneFeildsFunctionForNRIDependent();
+		fillingFeildsForScreenTwo();
+		JourneyScreenTwo.checkErrorMessageOfOutsideIndia();
+		JourneyScreenTwo.setCountryAndSelecting2ndOption(3, 1, 6);
+		JourneyScreenTwo.fillingAllTheFeildsAfterChangingCountry();
+
+		fillingFeildsForScreenTwoProposerCommunicationAddressWithoutIllustration();
+
+		JourneyScreenTwo.checkAllTheInsurersDetailsFeildsPresentOrNot();
+		JourneyScreenTwo.checkAndFillIssurersNameValidation(1, 1, 8);
+		JourneyScreenTwo.insurersGenderFemale();
+		JourneyScreenTwo.checkDateOfBirthFormatFutureDateRestrictionSetDateBirthInsurersDetails();
+		// Test case--> describing the dropDown list of relationship with proposer First
+		// screen--Select dependent and check on Insurers Details section
+		JourneyScreenTwo.selectAndCheckRelationshipWithProposerOption();
+
+		JourneyScreenTwo.traditional();
+		JourneyScreenTwo.selectByDropdownSTPDependent();
+
+		JourneyScreenTwo.fillingAllTheRequiredFeildsForSTPDependent();
+		Thread.sleep(300);
+		JourneyScreenThree.Proceedbtn();
+		// premiumCommitmentMIAPYesOptionSelection.click();
+		JourneyScreenThree.checkPDFIsOpenedOrNotCheckMsgNRI();
+
+		JourneyScreenThree.nriDetailsJourneyScreenThree();
+		JourneyScreenThree.countryCurrentlyResidingSmartSearch(3, 1, 6);
+		JourneyScreenThree.dateOfLatestEntryToIndia();
+		JourneyScreenThree.birthCountryScreenThreeNri(3, 1, 6);
+		JourneyScreenThree.residenceCountryAsPerTaxLaws(3, 1, 6);
+		JourneyScreenThree.doYouHaveFTINYesNoFeildsValidation();
+
+		JourneyScreenThree.checkAllTheIsurersDetailsFeildsDropDownListIsPresentForScreenThree();
+		JourneyScreenThree.nriDetailsWithLifeInsuredOtherDetailsJourneyScreenThree();
+
+		JourneyScreenThree.countryCurrentlyResidingSmartSearchInsurer(3, 1, 6);
+		JourneyScreenThree.dateOfLatestEntryToIndiaInsurer();
+		JourneyScreenThree.birthCountryScreenThreeNriInsurer(3, 1, 6);
+		JourneyScreenThree.residenceCountryAsPerTaxLawsInsurer(3, 1, 6);
+		JourneyScreenThree.doYouHaveFTINYesNoFeildsValidationInsurer();
 
 	}
 }

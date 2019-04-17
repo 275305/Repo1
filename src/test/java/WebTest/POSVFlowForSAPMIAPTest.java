@@ -173,7 +173,7 @@ public class POSVFlowForSAPMIAPTest extends ReusableActions {
 
 		}}*/
 	
-	@Test(priority = 8, enabled = false)
+	@Test(priority = 8, enabled = true)
 	public static void checkPOSVFlowForSAPWithMutipleFirstNameForSelf() throws Exception {
 		PageFactory.initElements(driver, POSVFlowForSAPMIAP.class);
 		try {

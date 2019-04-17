@@ -3,6 +3,8 @@ package uielements;
 import java.io.File;
 import java.io.FileInputStream;
 import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -95,6 +97,13 @@ public class JourneyScreenOne extends ReusableActions {
 	// Locating Mobile Number text field
 	@FindBy(xpath = "//input[@name='mobileNumber']")
 	static WebElement MobNumtxtfld;
+
+	// Locating Mobile Number text field
+	@FindBy(xpath = "//p[text()='Mobile Number Should Be Between 8 to 15 Digits']")
+	static WebElement mobileInternationalError;
+
+	@FindBy(xpath = "//p[text()='Invalid Mobile Number']")
+	static WebElement invalidMobileNumber;
 
 	// Locating Email Address text field
 	@FindBy(xpath = "//input[@name='email']")
@@ -241,13 +250,16 @@ public class JourneyScreenOne extends ReusableActions {
 	@FindBy(xpath = "//*[@id='root']/main/div/div[2]/form/div/div/div[2]/div[3]/div[2]/div/div[2]/label/span[1]/span[1]")
 	static WebElement dontHavePANCheckbox;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div/div[1]/div[2]/label[text()='NRI']")
+	@FindBy(xpath = "//div[@id='nri']")
 	static WebElement residentialsStatusNRI;
+
+	@FindBy(xpath = "//label[@for='nri']")
+	static WebElement nriNationality;
 
 	@FindBy(xpath = "//input[@name='passportNumber']")
 	static WebElement passportNumberNRI;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[2]/div/div[1]/div[2]/label[text()='NRI']")
+	@FindBy(xpath = "//div[@id='nationalityNRI']")
 	static WebElement nationalityNRI;
 
 	@FindBy(xpath = "//input[@placeholder='DD/MM/YYYY']")
@@ -292,11 +304,14 @@ public class JourneyScreenOne extends ReusableActions {
 	@FindBy(xpath = "//input[@name='preIssuanceVerificationNumber']")
 	static WebElement preIssuranceVerificationNRI;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[3]/div[1]/div[2]/div/div/div/div/div[@role=\"button\"]")
+	@FindBy(xpath = "//div[@id='passportVisaType_id']")
 	static WebElement typeOfVisa;
+
+
 
 	@FindBy(xpath = "//*[@id='menu-passportVisaType']/div[2]/ul/li[contains(text(),\"Dependent\")]")
 	static WebElement dependentTypeOfVisa;
+
 
 	@FindBy(xpath = "//*[@id='menu-passportVisaType']/div[2]/ul/li[contains(text(),\"Working\")]")
 	static WebElement workingTypeOfVisa;
@@ -310,22 +325,36 @@ public class JourneyScreenOne extends ReusableActions {
 	@FindBy(xpath = "//input[@name='passportNumber']")
 	static WebElement passportTextfld;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[3]/div[2]/div[1]/div/div/div/div/div/div/input[@placeholder='DD/MM/YYYY']")
+
+
+	@FindBy(xpath = "//div[@id='visaExpiryDate_id']")
 	static WebElement visaValidTill;
 
-	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[3]/div[3]/div/div/div/div/div/div/div/input[@placeholder='DD/MM/YYYY']")
+
+
+	@FindBy(xpath = "//div[@id='passportExpiryDate_id']")
 	static WebElement passportExpiryDate;
+
+
 
 	@FindBy(xpath = "//input[@placeholder='Search a country']")
 	static WebElement passportIssuingCountry;
 
-	@FindBy(xpath = "//*[@id='react-autowhatever-1--item-0']/div[1]")
+	@FindBy(xpath = "//div[@id='react-autowhatever-passportIssuingCountry']/ul/li[1]")
+	static WebElement passportIssuingCountry1stOption;
+
+	
+
+	@FindBy(xpath = "//label[@for='dependent']")
+	static WebElement dependentOptionButton;
+
+	@FindBy(xpath = "//li[@id='react-autowhatever-passportIssuingCountry--item-0']")
 	static WebElement passportIssuingCountryOptionSelection;
 
 	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[6]/div[1]/div/div[1]/div/div[1]/div/input[@placeholder='Country']")
 	static WebElement isdCode;
 
-	@FindBy(xpath = "//label[text()='Dependent']")
+	@FindBy(xpath = "//label[@for='dependent']")
 	static WebElement dependentOption;
 
 	@FindBy(xpath = "//span[contains(text(),\"Don't Have PAN?\")]")
@@ -348,6 +377,8 @@ public class JourneyScreenOne extends ReusableActions {
 	public static void dependentTypeOfVisa() throws Exception {
 		click(dependentTypeOfVisa);
 	}
+
+
 
 	public static void industryTypeInsurersDetails() throws Exception {
 		click(industryTypeInsurersDetails);
@@ -383,6 +414,11 @@ public class JourneyScreenOne extends ReusableActions {
 	public static void residentialsStatusNRI() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenOne.class);
 		click(residentialsStatusNRI);
+
+	}
+
+	public static void nriNationality() throws Exception {
+		click(nriNationality);
 
 	}
 
@@ -509,6 +545,28 @@ public class JourneyScreenOne extends ReusableActions {
 		return false;
 	}
 
+	public static void getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenOne() throws Exception {
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//span[contains(text(),'Custome')]")).click();
+		Thread.sleep(1000);
+		String xpathOfTexOnTheScreen = "//input[contains(@type,'text')]";
+		List<String> actualResultText = fetchingdataFromUI(xpathOfTexOnTheScreen);
+		actualResultText.removeAll(Arrays.asList("", null));
+		System.out.println("actual result after removing true fales" + actualResultText);
+		List<String> expectedResult = fetchingdataFromExcelExpectedResult(9, 6);
+		comparisonOfListForExpectedAndActualResult(expectedResult, actualResultText);
+
+		String xpathOfRadioOnTheScreen = "//input[@checked=\"\"]";
+		List<String> actualResultRadioButtonValue = fetchingdataFromUI(xpathOfRadioOnTheScreen);
+		List<String> expectedResultRadioButtonValue = fetchingdataFromExcelExpectedResult(10, 6);
+		System.out.println("Expected radio button" + actualResultRadioButtonValue);
+		System.out.println("Actual radio button" + expectedResultRadioButtonValue);
+		actualResultRadioButtonValue.removeAll(Arrays.asList("", null));
+		System.out.println("actualResultRadioButtonValue" + actualResultRadioButtonValue);
+		comparisonOfListForExpectedAndActualResult(expectedResultRadioButtonValue, actualResultRadioButtonValue);
+
+	}
+
 	public static void validatingErrorMsgForAdhaarNumberIndian(XSSFSheet sheet, int rowNum) throws Exception {
 
 		System.out.println("\n Going to pick run test cases for row number " + rowNum);
@@ -619,6 +677,7 @@ public class JourneyScreenOne extends ReusableActions {
 		PageFactory.initElements(driver, JourneyScreenOne.class);
 		AadharTxtfld.clear();
 		type(AadharTxtfld, readingdata(x, y, z));
+
 		String aAdharTxtfldPassedFromExcel = AadharTxtfld.getAttribute("value");
 		int size = aAdharTxtfldPassedFromExcel.length();
 		if ((size == 12)
@@ -642,6 +701,8 @@ public class JourneyScreenOne extends ReusableActions {
 		click(typeOfVisa);
 
 	}
+
+
 
 	// Click on Get OTP option
 	public static void clickGetOTP() throws Exception {
@@ -691,6 +752,8 @@ public class JourneyScreenOne extends ReusableActions {
 		hssfWorkbook.close();
 		return false;
 	}
+
+
 
 	public static void validatingErrorMsgForPANNRI(XSSFSheet sheet, int rowNum) throws Exception {
 
@@ -813,6 +876,119 @@ public class JourneyScreenOne extends ReusableActions {
 
 	}
 
+	public static void internationalMobileNumberMinErrorValidation(int x, int y, int z) throws Exception {
+		// type(MobNumtxtfld, strMobNumber);
+		MobNumtxtfld.clear();
+		type(MobNumtxtfld, readingdata(x, y, z));
+		String mobileNumberPassedFromExcel = MobNumtxtfld.getAttribute("value");
+		int size = mobileNumberPassedFromExcel.length();
+		if (size == 7) {
+			if (isElementDisplayed(mobileInternationalError)) {
+				
+				System.out.println("Test case pass:As error message is displayig for 7 digit");
+			} else {
+				Assert.fail("Test case fail:As error message is not displaying for 7 digit");
+			}
+			
+		}
+
+	}
+
+	public static void nationalMobileNumberMinErrorValidation(int x, int y, int z) throws Exception {
+		// type(MobNumtxtfld, strMobNumber);
+		MobNumtxtfld.clear();
+		type(MobNumtxtfld, readingdata(x, y, z));
+		String mobileNumberPassedFromExcel = MobNumtxtfld.getAttribute("value");
+		int size = mobileNumberPassedFromExcel.length();
+		if (size == 9) {
+			if (isElementDisplayed(invalidMobileNumber)) {
+
+				System.out.println("Test case pass:As error message is displayig for 9 digit");
+			} else {
+				Assert.fail("Test case fail:As error message is not displaying for 9 digit");
+			}
+
+		}
+
+	}
+
+	public static void internationalMobileNumberMaxErrorValidation(int x, int y, int z) throws Exception {
+		// type(MobNumtxtfld, strMobNumber);
+		MobNumtxtfld.clear();
+		type(MobNumtxtfld, readingdata(x, y, z));
+		String mobileNumberPassedFromExcel = MobNumtxtfld.getAttribute("value");
+		int size = mobileNumberPassedFromExcel.length();
+		if (size == 14) {
+			if (isElementDisplayed(mobileInternationalError)) {
+
+				System.out.println("Test case pass:As error message is displayig for 14 digit");
+			} else {
+				Assert.fail("Test case fail:As error message is not displaying for 14 digit");
+			}
+
+		}
+
+	}
+
+	public static void internationalMobileNumberMaxValidation(int x, int y, int z) throws Exception {
+		// type(MobNumtxtfld, strMobNumber);
+		MobNumtxtfld.clear();
+		type(MobNumtxtfld, readingdata(x, y, z));
+		String mobileNumberPassedFromExcel = MobNumtxtfld.getAttribute("value");
+		int size = mobileNumberPassedFromExcel.length();
+		if (size == 15) {
+			if (isElementDisplayed(mobileInternationalError)) {
+
+				Assert.fail("Test case fail:As error message is not displaying for 15 digit");
+
+			} else {
+
+				System.out.println("Test case pass:As error message is displayig for 15 digit");
+			}
+
+		}
+
+	}
+
+	public static void internationalMobileNumberMinValidation(int x, int y, int z) throws Exception {
+		// type(MobNumtxtfld, strMobNumber);
+		MobNumtxtfld.clear();
+		type(MobNumtxtfld, readingdata(x, y, z));
+		String mobileNumberPassedFromExcel = MobNumtxtfld.getAttribute("value");
+		int size = mobileNumberPassedFromExcel.length();
+		if (size == 8) {
+			if (isElementDisplayed(mobileInternationalError)) {
+
+				Assert.fail("Test case fail:As error message is not displaying for 8 digit");
+
+			} else {
+
+				System.out.println("Test case pass:As error message is displayig for 8 digit");
+			}
+
+		}
+
+	}
+
+	public static void nationalMobileNumberMinValidation(int x, int y, int z) throws Exception {
+		// type(MobNumtxtfld, strMobNumber);
+		MobNumtxtfld.clear();
+		type(MobNumtxtfld, readingdata(x, y, z));
+		String mobileNumberPassedFromExcel = MobNumtxtfld.getAttribute("value");
+		int size = mobileNumberPassedFromExcel.length();
+		if (size == 10) {
+			if (isElementDisplayed(mobileInternationalError)) {
+
+				Assert.fail("Test case fail:As error message is not displaying for 10 digit");
+
+			} else {
+
+				System.out.println("Test case pass:As error message is displayig for 10 digit");
+			}
+
+		}
+
+	}
 	public static void preFixOfMobileNumber(int x, int y, int z) throws Exception {
 
 		if (preFixOfMobileNumber.isDisplayed()) {
@@ -968,6 +1144,7 @@ public class JourneyScreenOne extends ReusableActions {
 		visaValidAndExpiryDateDateSelection();
 	}
 
+
 	public static void passportExpiryDateMultiple() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenOne.class);
 		Thread.sleep(200);
@@ -994,6 +1171,8 @@ public class JourneyScreenOne extends ReusableActions {
 		visaValidAndExpiryDateDateSelection();
 
 	}
+
+
 
 	public static boolean checkEmailErrorMsgWithMultipleDataIndian() throws Exception {
 		File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
@@ -1140,9 +1319,9 @@ public class JourneyScreenOne extends ReusableActions {
 	}
 
 	public static void clickProceed() throws Exception {
-
+		Thread.sleep(200);
+		Savebtn.click();
 		click(Proceedbtn);
-
 	}
 
 	public static void isIndianSelected() throws Exception {
@@ -1208,6 +1387,8 @@ public class JourneyScreenOne extends ReusableActions {
 
 	}
 
+
+
 	public static void setPassportNumber(int x, int y, int z) throws Exception {
 		// type(MobNumtxtfld, strMobNumber);
 		passportTextfld.clear();
@@ -1223,8 +1404,12 @@ public class JourneyScreenOne extends ReusableActions {
 
 	}
 
+
+
 	public static void passportIssuingCountry(int x, int y, int z) throws Exception {
 		// type(MobNumtxtfld, strMobNumber);
+		System.out.println("smart search");
+		Thread.sleep(400);
 		passportIssuingCountry.clear();
 		type(passportIssuingCountry, readingdata(x, y, z));
 		passportIssuingCountryOptionSelection();
@@ -1234,6 +1419,13 @@ public class JourneyScreenOne extends ReusableActions {
 		} else {
 			Assert.fail("Test case fail:-As Smart search is not working");
 		}
+
+	}
+
+	
+
+	public static void nriDependentOptionSElection() throws Exception {
+		dependentOptionButton.click();
 
 	}
 

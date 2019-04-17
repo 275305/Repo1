@@ -6,10 +6,10 @@
 		<parameter name="browser" value="safari" />
 		<parameter name="version" value="9.0" />
 		<parameter name="platform" value="MAC" />
-		<parameter name="testrun" value="runbsw" />
-		<classes>
+		<parameter name="testrun" value="runbsw" />	
+				<classes>
 
-			<class name="WebTest.JourneyScreenThreeTest" />
+			<class name="WebTest.JourneyScreenThreeTest" />																													
 
 		</classes>
 	</test> <!-- Test -->

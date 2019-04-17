@@ -100,14 +100,15 @@ public class JourneyScreenOneTest extends ReusableActions {
 
 	// TC -02 Test case for positive value for saving the first screen data
 	@Test(priority = 1, enabled = false)
-	public void ScreenOneTestIndianToScreenTwo() throws Exception {
+	public static void ScreenOneTestIndianToScreenTwo() throws Exception {
 		try {
 			System.out.println(
 					"-------------------ScreenOneTestIndianToScreenTwo Started----------------------------------------");
 			HomePage.clickDashboard();
 			HomePage.clickNewApp();
-			JourneyScreenOne.setAadhar(1, 1, 0);
-			JourneyScreenOne.setPanNumber(1, 1, 1);
+			JourneyScreenOne.dontHavePAN();
+			// JourneyScreenOne.setAadhar(1, 1, 0);
+			// JourneyScreenOne.setPanNumber(1, 1, 1);
 			JourneyScreenOne.setMobNumber(1, 1, 2);
 			JourneyScreenOne.setEmailId(1, 1, 3);
 			JourneyScreenOne.setPreIssuanceNumber(1, 1, 4);
@@ -171,19 +172,20 @@ public class JourneyScreenOneTest extends ReusableActions {
 		}
 	}
 
-	public void ScreenOneTestNRIFunctionToReachScreenTwo() throws Exception {
+	public static void ScreenOneTestNRIFunctionToReachScreenTwo() throws Exception {
 		try {
 			HomePage.clickDashboard();
 			HomePage.clickNewApp();
 			JourneyScreenOne.residentialsStatusNRI();
+			JourneyScreenOne.nriNationality();
 			JourneyScreenOne.setPassportNumber(1, 1, 5);
 			JourneyScreenOne.isAllTheTypeOfVisaListIsPresent();
 			JourneyScreenOne.visaValidTillSingleData();
 			JourneyScreenOne.passportIssuingCountry(1, 1, 6);
 			JourneyScreenOne.passportExpiryDateForSingleData();
-			JourneyScreenOne.setAadhar(1, 0, 1);
+			JourneyScreenOne.setAadhar(1, 1, 0);
 			JourneyScreenOne.setPanNumber(1, 1, 1);
-			JourneyScreenOne.isdCode(1, 1, 7);
+			// JourneyScreenOne.isdCode(1, 1, 7);
 			JourneyScreenOne.setMobNumber(1, 1, 2);
 			JourneyScreenOne.setEmailId(1, 1, 3);
 			JourneyScreenOne.setPreIssuanceNumber(1, 1, 4);
@@ -216,8 +218,8 @@ public class JourneyScreenOneTest extends ReusableActions {
 
 	public static void fillingScreenOneFeildsFunctionForDependent() throws Exception {
 		try {
-			HomePage.clickDashboard();
-			HomePage.clickNewApp();
+			// HomePage.clickDashboard();
+			// HomePage.clickNewApp();
 			JourneyScreenOne.dependentOption();
 			// JourneyScreenOne.clickDonthaveAadhar();
 			// JourneyScreenOne.neverApplied();
@@ -234,4 +236,64 @@ public class JourneyScreenOneTest extends ReusableActions {
 			throw e;
 		}
 	}
+
+	public static void fillingScreenOneFeildsFunctionForNRIDependent() throws Exception {
+		try {
+			HomePage.clickDashboard();
+			HomePage.clickNewApp();
+			JourneyScreenOne.residentialsStatusNRI();
+			JourneyScreenOne.nationalityNRI();
+			JourneyScreenOne.setPassportNumber(1, 1, 5);
+			JourneyScreenOne.isAllTheTypeOfVisaListIsPresent();
+			JourneyScreenOne.visaValidTillSingleData();
+			JourneyScreenOne.passportIssuingCountry(1, 1, 6);
+			JourneyScreenOne.passportExpiryDateForSingleData();
+			JourneyScreenOne.nriDependentOptionSElection();
+			// JourneyScreenOne.setAadhar(1, 1, 0);
+			// JourneyScreenOne.setPanNumber(1, 1, 1);
+			// JourneyScreenOne.isdCode(1, 1, 7);
+			JourneyScreenOne.setMobNumber(1, 1, 2);
+			JourneyScreenOne.setEmailId(1, 1, 3);
+			JourneyScreenOne.setPreIssuanceNumber(1, 1, 4);
+			JourneyScreenOne.clickProceed();
+
+		} catch (Exception e) {
+			logger.error("Test case failed: " + e.getMessage());
+			throw e;
+		}
+}
+
+	@Test(priority = 2, enabled = false)
+	public static void internationalMobileNumberValidation() throws Exception {
+		try {
+			HomePage.clickDashboard();
+			HomePage.clickNewApp();
+			JourneyScreenOne.residentialsStatusNRI();
+			JourneyScreenOne.internationalMobileNumberMinErrorValidation(9, 1, 11);
+			JourneyScreenOne.internationalMobileNumberMinValidation(9, 2, 11);
+			JourneyScreenOne.internationalMobileNumberMaxErrorValidation(9, 3, 11);
+			JourneyScreenOne.internationalMobileNumberMaxValidation(9, 4, 11);
+
+		} catch (Exception e) {
+			logger.error("Test case failed: " + e.getMessage());
+			throw e;
+		}
+	}
+
+	@Test(priority = 2, enabled = true)
+	public static void indianMobileNumberValidation() throws Exception {
+		try {
+			HomePage.clickDashboard();
+			HomePage.clickNewApp();
+			JourneyScreenOne.nationalMobileNumberMinErrorValidation(9, 5, 11);
+			JourneyScreenOne.nationalMobileNumberMinValidation(9, 6, 11);
+			JourneyScreenOne.internationalMobileNumberMaxErrorValidation(9, 3, 11);
+			JourneyScreenOne.internationalMobileNumberMaxValidation(9, 4, 11);
+
+		} catch (Exception e) {
+			logger.error("Test case failed: " + e.getMessage());
+			throw e;
+		}
+	}
+
 }
