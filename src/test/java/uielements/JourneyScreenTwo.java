@@ -1674,6 +1674,13 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	}
 	
+	public static void setFirstNamePAN(int x, int y, int z) throws Exception {
+		PageFactory.initElements(driver, JourneyScreenTwo.class);
+		firtsName.clear();
+		type(firtsName, readingdata(x, y, z));
+
+	}
+
 	public static void proofType() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		Thread.sleep(800);
@@ -1701,6 +1708,18 @@ public class JourneyScreenTwo extends ReusableActions {
 		action.sendKeys(Keys.ARROW_DOWN).build().perform();
 
 		JourneyScreenThree.dateOfBirthSelctionFunction();
+
+	}
+
+	public static void setDateBirthPANValidation() throws Exception {
+
+		Thread.sleep(800);
+		waitTillElementToBeClickable(dateOfBirthPersonalDetails);
+		dateOfBirthPersonalDetails.click();
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.ARROW_DOWN).build().perform();
+
+		JourneyScreenThree.dateOfBirthSelctionFunctionPAN();
 
 	}
 
@@ -1971,6 +1990,12 @@ public class JourneyScreenTwo extends ReusableActions {
 			Assert.fail(
 					"Test case fail:- As either last name feild length is not of 25 or not accepting only alphabets");
 		}
+
+	}
+
+	public static void setLastNamePAN(int x, int y, int z) throws Exception {
+		lastName.clear();
+		type(lastName, readingdata(x, y, z));
 
 	}
 
@@ -3607,6 +3632,13 @@ public class JourneyScreenTwo extends ReusableActions {
 	public static void insurersGenderFemale() throws Exception {
 
 		click(insurersGenderFemale);
+
+	}
+
+	public static void femaleSelection() throws Exception {
+		Thread.sleep(200);
+		click(genderFemale);
+		Thread.sleep(200);
 
 	}
 

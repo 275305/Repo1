@@ -237,6 +237,31 @@ public class JourneyScreenTwoTest extends ReusableActions {
 		}
 	}
 
+	public static void fillingAllTheRequiredFeildForScreen2ForPANValidation() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenTwo.class);
+		try {
+			JourneyScreenTwo.setFirstNamePAN(3, 2, 0);
+			JourneyScreenTwo.setLastNamePAN(3, 2, 1);
+			JourneyScreenTwo.setDateBirthPANValidation();
+			JourneyScreenTwo.femaleSelection();
+			JourneyScreenTwo.selectByDropdown();
+			Thread.sleep(1000);
+			JourneyScreenTwo.setHouseNo(3, 1, 3);
+			JourneyScreenTwo.setRoadNo(3, 1, 4);
+			JourneyScreenTwo.setVillageTown(3, 1, 5);
+			JourneyScreenTwo.setCountry(3, 1, 6);
+			JourneyScreenTwo.setState(3, 1, 7);
+			JourneyScreenTwo.setCity(3, 1, 8);
+
+			JourneyScreenTwo.setPinCode(3, 1, 9);
+			JourneyScreenTwo.setAlternateMobileNo(3, 1, 10);
+
+		} catch (Exception e) {
+			logger.error("Test case failed " + e.getMessage());
+			throw e;
+
+		}
+	}
 	@Test(priority = 3, enabled = false)
 	public void LE2ServiceIntegrationForTradProducts() throws Exception {
 		try {

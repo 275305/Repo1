@@ -722,6 +722,7 @@ public class JourneyScreenOne extends ReusableActions {
 	// Enter PAN Number
 	public static void setPanNumber(int x, int y, int z) throws Exception {
 		// type(PanNumbertxtfld, strPanNumber);
+		PageFactory.initElements(driver, JourneyScreenOne.class);
 		PanNumbertxtfld.clear();
 		type(PanNumbertxtfld, readingdata(x, y, z));
 		String panNumberCPassedFromExcel = PanNumbertxtfld.getAttribute("value");
@@ -1319,9 +1320,11 @@ public class JourneyScreenOne extends ReusableActions {
 	}
 
 	public static void clickProceed() throws Exception {
-		Thread.sleep(200);
+		Thread.sleep(500);
 		Savebtn.click();
+		Thread.sleep(500);
 		click(Proceedbtn);
+		Thread.sleep(500);
 	}
 
 	public static void isIndianSelected() throws Exception {

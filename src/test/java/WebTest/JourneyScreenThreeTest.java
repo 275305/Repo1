@@ -156,13 +156,14 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			JourneyScreenOne.setEmailId(1, 1, 3);
 			// JourneyScreenOne.setPreIssuanceNumber(1, 1, 4);
 
-			JourneyScreenOne.clickProceed();
+
 
 		} catch (Exception e) {
 			logger.error("Test case failed: " + e.getMessage());
 			throw e;
 		}
 	}
+
 
 	@Test(priority =3 , enabled = false)
 	public void screenTwoProceedButtonEnablility() throws Exception {
@@ -951,7 +952,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 1, enabled = true)
+	@Test(priority = 1, enabled = false)
 	public static void form60Scenarios() throws Exception {
 		PageFactory.initElements(driver, POSVFlowForSAPMIAP.class);
 		try {
@@ -1049,7 +1050,51 @@ public class JourneyScreenThreeTest extends ReusableActions {
 		}
 	}
 
-	
+	@Test(priority = 1, enabled = true)
+	public static void panDOBValidations() throws Exception {
+		PageFactory.initElements(driver, POSVFlowForSAPMIAP.class);
+		try {
+
+			// HomePage.clickDashboard();
+			// HomePage.clickNewApp();
+			JourneyScreenOne.setPanNumber(1, 1, 1);
+			JourneyScreenOne.setMobNumber(1, 1, 2);
+			JourneyScreenOne.setEmailId(1, 1, 3);
+			JourneyScreenOne.clickProceed();
+			Thread.sleep(500);
+			JourneyScreenTwoTest.fillingAllTheRequiredFeildForScreen2ForPANValidation();
+			JourneyScreenTwo.traditional();
+			JourneyScreenTwo.selectByDropdownSAP();
+			JourneyScreenTwo.fillingAllTheRequiredFeildsForSAP();
+			JourneyScreenTwo.checkPOSVforSAPPremiumCommitment(3, 1, 19);
+
+			JourneyScreenThreeTest.proposerPersonalDetailsSection(); //
+			// JourneyScreenTwo.proposerPersonalDetailsIncome();
+			JourneyScreenThreeTest.nomineeDetailsWithoutDependentSelection();
+			JourneyScreenThreeTest.bankDetailsSectionFillingData();
+			JourneyScreenThree.fillingAnnualIncomeTOProceed();
+			Thread.sleep(1000);
+
+			// JourneyScreenFour.form60RelatedDetailsIdentityProofNameOptionSelection();
+			// JourneyScreenFour.setIdentityProofNumberValidation(0, 1, 6);
+			// JourneyScreenFour.identityProofIssuingAuthority();
+			// JourneyScreenFour.iAmExemptFromTheRequirementOfPANUnderTheFollowingProvisionsOfTheITAct1961();
+
+			JourneyScreenFour.arrowDownFunction();
+			JourneyScreenFour.criticalIllnessNoOption();
+			JourneyScreenFour.hazardousActivitiesNo();
+			JourneyScreenFour.selectCriminalChargesNo();
+			JourneyScreenFour.feetInchesKgsSelectionToMoveToScreen5POSV();
+			JourneyScreenThree.agreePopupToProceedToSendPreIssuranceVerificationLinkToCustomer();
+
+		}
+
+		catch (Exception e) {
+			logger.error("Test case failed " + e.getMessage());
+			throw e;
+
+		}
+	}
 	
 	public static void usingPolicyNumberToFillScreenSixTPPPush() throws Exception {
 		PageFactory.initElements(driver, POSVFlowForSAPMIAP.class);

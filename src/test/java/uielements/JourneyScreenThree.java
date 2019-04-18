@@ -2435,12 +2435,13 @@ public class JourneyScreenThree extends ReusableActions {
 		type(annualIncomePersonalDetailsDependent, readingdata(x, y, z));
 	}
 
-	public static void fillingAnnualIncomeTOProceed() throws Exception {
+	public static void fillingAnnualIncomeTOProceed() throws Exception
+	{
 
 		waitTillElementVisible(annualIncomePersonalDetailsDependent);
 		Thread.sleep(200);
 
-		annualIncomePersonalDetails(0, 1, 3);
+		annualIncomePersonalDetails(3, 3, 14);
 
 		JourneyScreenTwo.Savebtn.click();
 		Proceedbtn.click();
@@ -2492,8 +2493,8 @@ public class JourneyScreenThree extends ReusableActions {
 		waitTillElementToBeClickable(agreePopup);
 		System.out.println(agreePopup.isDisplayed());
 		Thread.sleep(500);
-		agreePopup.click();
-		Thread.sleep(500);
+		// agreePopup.click();
+		// Thread.sleep(500);
 
 	}
 
@@ -2681,6 +2682,23 @@ public class JourneyScreenThree extends ReusableActions {
 		dateOfBirthPayorDetailsYesOptionSelected.click();
 
 		dateOfBirthSelctionFunction();
+
+	}
+
+	public static void dateOfBirthSelctionFunctionPAN() throws Exception {
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//select[@class='react-datepicker__month-select']")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//option[@value='1']")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//select[@class='react-datepicker__year-select']")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath(".//*[@class='react-datepicker__year-select']/option[@value='1991']")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath(
+				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\"day-8\"]"))
+				.click();
+		Thread.sleep(500);
 
 	}
 

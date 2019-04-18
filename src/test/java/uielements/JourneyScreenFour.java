@@ -83,7 +83,7 @@ public class JourneyScreenFour extends ReusableActions {
 	@FindBy(xpath = "//*[@id='menu-feet']/div[2]/ul/li[1]")
 	public static WebElement feetDropDown1stOption;
 
-	@FindBy(xpath = ".//*[@id='root']/main[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1][@role=\"button\"]")
+	@FindBy(xpath = "//div[@id='inches_id']")
 	public static WebElement inchesDropDown;
 
 	@FindBy(xpath = ".//*[@id='menu-inches']/div[2]/ul/li[1]")
@@ -134,7 +134,7 @@ public class JourneyScreenFour extends ReusableActions {
 	@FindBy(xpath = "//input[@name='pregnancyDetails']")
 	public static WebElement pregnancyDetails;
 
-	@FindBy(xpath = ".//*[@id='root']/main[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1][@role=\"button\"]")
+	@FindBy(xpath = "//div[@id='feet_id']")
 	public static WebElement feetDropDownSAPPOSV;
 
 
@@ -328,6 +328,14 @@ public class JourneyScreenFour extends ReusableActions {
 		Thread.sleep(400);
 	}
 
+	public static void arrowDownFunction() throws Exception {
+		Thread.sleep(400);
+		for (int i = 1; i < 20; i++) {
+			Actions action = new Actions(driver);
+			action.sendKeys(Keys.ARROW_DOWN).build().perform();
+		}
+		Thread.sleep(400);
+	}
 	public static void arrowUpFunctionToScrollUpTillTop() throws Exception {
 		Thread.sleep(400);
 		for (int i = 1; i < 11; i++) {
@@ -435,7 +443,8 @@ public class JourneyScreenFour extends ReusableActions {
 	}
 
 	public static void criticalIllnessNoOption() throws Exception {
-		Thread.sleep(200);
+		PageFactory.initElements(driver, JourneyScreenFour.class);
+		Thread.sleep(800);
 		criticalIllnessNoOption.click();
 		Thread.sleep(200);
 
