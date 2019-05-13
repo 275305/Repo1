@@ -41,11 +41,24 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//input[@name='income']")
 	public static WebElement annualIncomePersonalDetailsDependent;
 
+	// Locating Proceed button
+	@FindBy(xpath = "//span[contains(text(), 'Proceed')]")
+	static WebElement proceedBtn;
+
+	@FindBy(xpath = "//li[contains(text(),'Minimum LI Age at Entry is 18 years')]")
+	static WebElement errorMessageWhenAgeLessThan18;
+
+	@FindBy(xpath = "//h4[(text()=\"Illustration could not be generated.\")]")
+	static WebElement errorMessageWhenAgeMoreThan60;
+
 	@FindBy(xpath = "//input[@name='insurerName']")
 	static WebElement insurersName;
 
-	@FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[3]")
+	@FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[2]/form[1]/div[1]/div[1]/div[3]")
 	static WebElement outsideClick;
+
+	@FindBy(xpath = "//li[contains(text(),'Maximum LI Age at Entry for Pay Till 60 variant is')]")
+	static WebElement maximumAgeLimit44ErrorMessage;
 
 	@FindBy(xpath = "//label[contains(@for, 'InsurerGenderMale')]")
 	static WebElement insurersGenderMale;
@@ -431,6 +444,9 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//*[@id='menu-productName']/div[2]/ul/li[text()= 'Max Life Whole Life Super']")
 	static WebElement maxLifeWholeLifeSuper;
 
+	@FindBy(xpath = "//*[@id='menu-productName']/div[2]/ul/li[text()= 'Max Life Smart Term Plan']")
+	static WebElement maxLifeSmartTermPlan;
+
 	@FindBy(xpath = "//*[@id='menu-productName']/div[2]/ul/li[text()= 'Max Life Savings Advantage Plan']")
 	static WebElement maxLifeSavingsAdvantagePlan;
 
@@ -445,6 +461,21 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	@FindBy(xpath = "//input[@name=\"sumAssured\"]")
 	static WebElement sumAssured;
+
+	@FindBy(xpath = "//input[@name='annualIncome']")
+	static WebElement enterMonthlyIncome;
+
+	@FindBy(xpath = "//div[@id='incomePeriod_id']")
+	static WebElement incomePeriod;
+
+	@FindBy(xpath = "//div[@id='menu-incomePeriod']/div/ul/li[1]")
+	static WebElement incomePeriod1stOption;
+
+	@FindBy(xpath = "//div[@id='menu-incomePeriod']/div/ul/li[3]")
+	static WebElement incomePeriod3rdOption;
+
+	@FindBy(xpath = "//div[@id='menu-incomePeriod']/div/ul/li[2]")
+	static WebElement incomePeriod2ndOption;
 
 	@FindBy(xpath = "//*[contains(text(),\"Smoking Habit\")]")
 	static WebElement smokingHabit;
@@ -519,6 +550,24 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//span[contains(text(), 'Term Plus Rider')]")
 	static WebElement termPlusRider;
 
+	@FindBy(xpath = "//span[contains(text(),'Accident Cover Option Rider')]")
+	static WebElement accidentCoverOptionRider;
+
+	@FindBy(xpath = "//span[contains(text(),'Accelerated Critical Illness Option Rider')]")
+	static WebElement acceleratedCriticalIllnessOptionRider;
+
+	@FindBy(xpath = "//label[contains(@for, 'isAcceleratedCriticalIllnessOptionRiderLevel')]")
+	static WebElement isAcceleratedCriticalIllnessOptionRiderLevel;
+
+	@FindBy(xpath = "//label[contains(@for, 'isAcceleratedCriticalIllnessOptionRiderIncreasing')]")
+	static WebElement isAcceleratedCriticalIllnessOptionRiderIncreasing;
+
+	@FindBy(xpath = "//input[@name='acorAddAmount']")
+	static WebElement acorAddAmount;
+
+	@FindBy(xpath = "//input[@name='aciorAddAmount']")
+	static WebElement acceleratedCriticalAmount;
+
 	@FindBy(xpath = "//span[contains(text(), 'Accidental Death And Dismemberment Rider')]")
 	static WebElement accidentalDeathAndDismembermentRider;
 
@@ -561,6 +610,24 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = ".//*[@id='menu-premiumPaymentTerm']/div[2]/ul/li[1]")
 	static WebElement PremiumPaymentTermOption;
 
+	@FindBy(xpath = ".//*[@id='menu-premiumPaymentTerm']/div[2]/ul/li[2]")
+	static WebElement PremiumPaymentTermOption10;
+
+	@FindBy(xpath = ".//*[@id='menu-premiumPaymentTerm']/div[2]/ul/li[3]")
+	static WebElement PremiumPaymentTermOption12;
+
+	@FindBy(xpath = "//li[@id='liId_35']")
+	static WebElement PremiumPaymentTermOption35;
+
+	@FindBy(xpath = "//li[@id='liId_30']")
+	static WebElement PremiumPaymentTermOption30;
+
+	@FindBy(xpath = "//li[@id='liId_50']")
+	static WebElement PremiumPaymentTermOption50;
+
+	@FindBy(xpath = "//li[@id='liId_42']")
+	static WebElement PremiumPaymentTermOption42;
+
 	@FindBy(xpath = "//*[@id='menu-premiumPaymentTerm']/div[2]/ul/li[(text()=25)]")
 	static WebElement PremiumPaymentTermOptionSAP;
 
@@ -582,6 +649,27 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = ".//*[@id='menu-policyTerm']/div[2]/ul/li[1]")
 	static WebElement policyTerm1stOptionSAP;
 
+	@FindBy(xpath = "//li[@id='liId_10']")
+	static WebElement dropDown10;
+
+	@FindBy(xpath = "//li[@id='liId_20']")
+	static WebElement dropDown20;
+
+	@FindBy(xpath = "//li[@id='liId_15']")
+	static WebElement dropDown15;
+
+	@FindBy(xpath = "//div[@id='menu-deathBenefit']/div/ul/li[1]")
+	static WebElement deathBenifit1stOption;
+
+	@FindBy(xpath = "//div[@id='menu-deathBenefit']/div/ul/li[2]")
+	static WebElement deathBenifitIncomeProtectorDropDown;
+
+	@FindBy(xpath = "//div[@id='menu-deathBenefit']/div/ul/li[3]")
+	static WebElement deathBenifitIncomeInflationProtectorDropDown;
+
+	@FindBy(xpath = "//div[@id='menu-deathBenefit']/div/ul/li[6]")
+	static WebElement deathBenifitIncreasingCover;
+
 	@FindBy(xpath = "//div[@id='modeOfPayment_id']")
 	static WebElement dropDownModeOfPayment;
 
@@ -594,6 +682,12 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//*[@id='menu-modeOfPayment']/div[2]/ul/li[1]")
 	static WebElement modeOfPayment1stOption;
 
+	@FindBy(xpath = "//*[@id='menu-modeOfPayment']/div[2]/ul/li[2]")
+	static WebElement modeOfPaymentSemiAnnual;
+
+	@FindBy(xpath = "//*[@id='menu-modeOfPayment']/div[2]/ul/li[3]")
+	static WebElement modeOfPaymentQuaterly;
+
 	@FindBy(xpath = ".//*[@id='menu-dividendAdjustment']/div[2]/ul/li[1]")
 	static WebElement dividentOption1stOption;
 
@@ -602,6 +696,12 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	@FindBy(xpath = "//div[@id='modeOfPayment_id']")
 	static WebElement modeOfPaymentSTP;
+
+	@FindBy(xpath = "//label[contains(@for, 'lifeStageEventBenefitNo')]")
+	static WebElement lifeStageEventBenefitNo;
+
+	@FindBy(xpath = "//label[contains(@for, 'premiumBackOptiontNo')]")
+	static WebElement premiumBackOptiontNo;
 
 	@FindBy(xpath = "//div[@id='modeOfPayment_id']")
 	static WebElement modeOfPaymentMIAP;
@@ -626,6 +726,9 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	@FindBy(xpath = "//div[@id='policyTerm_id']")
 	static WebElement policyTermSTP;
+
+	@FindBy(xpath = "//div[@id='deathBenefit_id']")
+	static WebElement deathBenefit;
 
 	@FindBy(xpath = "//div[@id='policyTerm_id']")
 	static WebElement policyTermSTPDependent;
@@ -846,14 +949,133 @@ public class JourneyScreenTwo extends ReusableActions {
 		Thread.sleep(500);
 	}
 
-	public static void premiumPayementTermSTP() throws Exception {
+	public static void allPremiumPayementTermSTP() throws Exception {
+		Thread.sleep(500);
 		waitTillElementToBeClickable(premiumPayementTermSTP);
 		premiumPayementTermSTP.click();
 		waitTillElementToBeClickable(PremiumPaymentTermOption);
+
+		List<String> expectedResult = fetchingdataFromExcelExpectedResultSheet(2, 5, 4);
+		List<String> actualResultText = fetchingdataFromUI("//*[@id='menu-premiumPaymentTerm']/div[2]/ul/li");
+		comparisonOfListForExpectedAndActualResult(expectedResult, actualResultText);
+
+		Thread.sleep(700);
 		PremiumPaymentTermOption.click();
-		Thread.sleep(2000);
+
+		for (int i = 1; i <= 4; i++) {
+			Thread.sleep(1000);
+			premiumPayementTermSTP.click();
+			Thread.sleep(800);
+			driver.findElement(By.xpath("//*[@id='menu-premiumPaymentTerm']/div[2]/ul/li[" + i + "]")).click();
+			policyTermSTPDropDown();
+			deathBenifitOption();
+			nonSmoker();
+			sumAssured(3, 4, 11);
+			modeOfPaymentSTP();
+			lifeStageEventBenefitNo();
+			premiumBackOptiontNo();
+			WOPPlusRiderCheckBox();
+
+			ifElseConditionSmartTermPlan();
+
+		}
 
 	}
+
+	public static void allPremiumPayementTermSTPRegularPay() throws Exception
+	{
+		Thread.sleep(500);
+		waitTillElementToBeClickable(premiumPayementTermSTP);
+		premiumPayementTermSTP.click();
+		waitTillElementToBeClickable(PremiumPaymentTermOption);
+
+		List<String> expectedResult = fetchingdataFromExcelExpectedResultSheet(3, 42, 4);
+		List<String> actualResultText = fetchingdataFromUI("//*[@id='menu-premiumPaymentTerm']/div[2]/ul/li");
+		comparisonOfListForExpectedAndActualResult(expectedResult, actualResultText);
+
+		Thread.sleep(700);
+		PremiumPaymentTermOption.click();
+
+		for (int i = 1; i <= 42; i++) {
+			Thread.sleep(1000);
+			premiumPayementTermSTP.click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//*[@id='menu-premiumPaymentTerm']/div[2]/ul/li[" + i + "]")).click();
+			Thread.sleep(800);
+			policyTermSTPDropDown();
+			deathBenifitOption();
+			nonSmoker();
+			sumAssured(3, 4, 11);
+			modeOfPaymentSTP();
+			lifeStageEventBenefitNo();
+			premiumBackOptiontNo();
+			WOPPlusRiderCheckBox();
+
+			ifElseConditionSmartTermPlan();
+
+		}
+
+	}
+
+	public static void premiumPayementTermSTP() throws Exception {
+		Thread.sleep(500);
+		waitTillElementToBeClickable(premiumPayementTermSTP);
+		premiumPayementTermSTP.click();
+		Thread.sleep(500);
+		waitTillElementToBeClickable(PremiumPaymentTermOption);
+		PremiumPaymentTermOption.click();
+		Thread.sleep(500);
+	}
+
+	public static void premiumPayementTermSTP10() throws Exception {
+		Thread.sleep(500);
+		waitTillElementToBeClickable(premiumPayementTermSTP);
+		premiumPayementTermSTP.click();
+		Thread.sleep(500);
+		waitTillElementToBeClickable(PremiumPaymentTermOption10);
+		PremiumPaymentTermOption10.click();
+		Thread.sleep(500);
+	}
+
+	public static void premiumPayementTermSTP12() throws Exception {
+		Thread.sleep(500);
+		waitTillElementToBeClickable(premiumPayementTermSTP);
+		premiumPayementTermSTP.click();
+		Thread.sleep(500);
+		waitTillElementToBeClickable(PremiumPaymentTermOption12);
+		PremiumPaymentTermOption12.click();
+		Thread.sleep(500);
+	}
+
+	public static void premiumPayementTermSTP35() throws Exception {
+		Thread.sleep(500);
+		waitTillElementToBeClickable(premiumPayementTermSTP);
+		premiumPayementTermSTP.click();
+		Thread.sleep(500);
+		waitTillElementToBeClickable(PremiumPaymentTermOption35);
+		PremiumPaymentTermOption35.click();
+		Thread.sleep(500);
+	}
+	public static void premiumPayementTermSTP30() throws Exception {
+		Thread.sleep(500);
+		waitTillElementToBeClickable(premiumPayementTermSTP);
+		premiumPayementTermSTP.click();
+		Thread.sleep(500);
+		waitTillElementToBeClickable(PremiumPaymentTermOption30);
+		PremiumPaymentTermOption30.click();
+		Thread.sleep(500);
+	}
+
+	public static void premiumPayementTermSTP50() throws Exception {
+		Thread.sleep(500);
+		waitTillElementToBeClickable(premiumPayementTermSTP);
+		premiumPayementTermSTP.click();
+		Thread.sleep(500);
+		waitTillElementToBeClickable(PremiumPaymentTermOption50);
+		PremiumPaymentTermOption50.click();
+		Thread.sleep(500);
+	}
+
 
 	public static void premiumPayementTermSTPDependent() throws Exception {
 		Thread.sleep(500);
@@ -896,6 +1118,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		Thread.sleep(2000);
 	}
 
+
 	public static void policyTermSTP() throws Exception {
 		waitTillElementToBeClickable(policyTermSTP);
 		policyTermSTP.click();
@@ -910,6 +1133,225 @@ public class JourneyScreenTwo extends ReusableActions {
 		waitTillElementToBeClickable(policyTerm1stOptionSAP);
 		policyTerm1stOptionSAP.click();
 		Thread.sleep(2000);
+	}
+
+	public static void deathBenifitOption() throws Exception {
+		waitTillElementToBeClickable(deathBenefit);
+		deathBenefit.click();
+		waitTillElementToBeClickable(deathBenifit1stOption);
+		deathBenifit1stOption.click();
+		Thread.sleep(2000);
+	}
+
+
+	public static void deathBenifitIncomeProtector() throws Exception {
+		waitTillElementToBeClickable(deathBenefit);
+		deathBenefit.click();
+		waitTillElementToBeClickable(deathBenifitIncomeProtectorDropDown);
+		deathBenifitIncomeProtectorDropDown.click();
+		Thread.sleep(2000);
+	}
+
+	public static void deathBenifitIncomeInflationProtector() throws Exception {
+		waitTillElementToBeClickable(deathBenefit);
+		deathBenefit.click();
+		waitTillElementToBeClickable(deathBenifitIncomeInflationProtectorDropDown);
+		deathBenifitIncomeInflationProtectorDropDown.click();
+		Thread.sleep(2000);
+	}
+
+	public static void deathBenifitIncreasingCover() throws Exception {
+		waitTillElementToBeClickable(deathBenefit);
+		deathBenefit.click();
+		waitTillElementToBeClickable(deathBenifitIncreasingCover);
+		deathBenifitIncreasingCover.click();
+		Thread.sleep(2000);
+	}
+
+	public static void deathBenifitAllOptionForPayLimitedRegularAndTill60PremiumType() throws Exception {
+		premiumPayementTermSTP();
+		policyTermSTPDropDown();
+		for (int i = 1; i <= 7; i++) {
+			Thread.sleep(800);
+			waitTillElementToBeClickable(deathBenefit);
+			Thread.sleep(800);
+			deathBenefit.click();
+			waitTillElementToBeClickable(deathBenifit1stOption);
+			Thread.sleep(800);
+			driver.findElement(By.xpath("//div[@id='menu-deathBenefit']/div/ul/li[" + i + "]")).click();
+			Thread.sleep(1000);
+
+			switch (i) {
+			case 1:
+
+				sumAssured(3, 4, 11);
+				nonSmoker();
+				modeOfPaymentSTP();
+				lifeStageEventBenefitNo();
+				premiumBackOptiontNo();
+				WOPPlusRiderCheckBox();
+				ifElseConditionSmartTermPlan();
+				break;
+
+			case 2:
+				enterMonthlyIncome(3, 3, 11);
+				incomePeriod();
+				nonSmoker();
+				modeOfPaymentSTP();
+				lifeStageEventBenefitNo();
+				premiumBackOptiontNo();
+				WOPPlusRiderCheckBox();
+				ifElseConditionSmartTermPlan();
+				break;
+
+			case 3:
+				enterMonthlyIncome(3, 3, 11);
+				incomePeriod();
+				nonSmoker();
+				modeOfPaymentSTP();
+				lifeStageEventBenefitNo();
+				premiumBackOptiontNo();
+				WOPPlusRiderCheckBox();
+				ifElseConditionSmartTermPlan();
+				break;
+
+			case 4:
+				sumAssured(3, 4, 11);
+				incomePeriod();
+				nonSmoker();
+				modeOfPaymentSTP();
+				lifeStageEventBenefitNo();
+				premiumBackOptiontNo();
+				WOPPlusRiderCheckBox();
+				ifElseConditionSmartTermPlan();
+				break;
+
+			case 5:
+				sumAssured(3, 1, 11);
+				incomePeriod();
+				nonSmoker();
+				modeOfPaymentSTP();
+				lifeStageEventBenefitNo();
+				premiumBackOptiontNo();
+				WOPPlusRiderCheckBox();
+				ifElseConditionSmartTermPlan();
+				break;
+
+			case 6:
+				sumAssured(3, 1, 11);
+				nonSmoker();
+				modeOfPaymentSTP();
+				lifeStageEventBenefitNo();
+				premiumBackOptiontNo();
+				WOPPlusRiderCheckBox();
+				ifElseConditionSmartTermPlan();
+				break;
+
+			case 7:
+				sumAssured(3, 1, 11);
+				nonSmoker();
+				modeOfPaymentSTP();
+				lifeStageEventBenefitNo();
+				premiumBackOptiontNo();
+				WOPPlusRiderCheckBox();
+				ifElseConditionSmartTermPlan();
+				break;
+			}
+		}
+
+	}
+
+	public static void deathBenifitAllOptionForSinglePayPremiumType() throws Exception {
+		premiumPayementTermSTP();
+		policyTermSTPDropDown();
+		for (int i = 1; i <= 7; i++) {
+			Thread.sleep(800);
+			waitTillElementToBeClickable(deathBenefit);
+			Thread.sleep(800);
+			deathBenefit.click();
+			waitTillElementToBeClickable(deathBenifit1stOption);
+			Thread.sleep(800);
+			driver.findElement(By.xpath("//div[@id='menu-deathBenefit']/div/ul/li[" + i + "]")).click();
+			Thread.sleep(1000);
+
+			switch (i) {
+			case 1:
+
+				sumAssured(3, 4, 11);
+				nonSmoker();
+				modeOfPaymentSTP();
+				lifeStageEventBenefitNo();
+				premiumBackOptiontNo();
+				// WOPPlusRiderCheckBox();
+				ifElseConditionSmartTermPlan();
+				break;
+
+			case 2:
+				enterMonthlyIncome(3, 3, 11);
+				incomePeriod();
+				nonSmoker();
+				modeOfPaymentSTP();
+				lifeStageEventBenefitNo();
+				premiumBackOptiontNo();
+				// WOPPlusRiderCheckBox();
+				ifElseConditionSmartTermPlan();
+				break;
+
+			case 3:
+				enterMonthlyIncome(3, 3, 11);
+				incomePeriod();
+				nonSmoker();
+				modeOfPaymentSTP();
+				lifeStageEventBenefitNo();
+				premiumBackOptiontNo();
+				// WOPPlusRiderCheckBox();
+				ifElseConditionSmartTermPlan();
+				break;
+
+			case 4:
+				sumAssured(3, 4, 11);
+				incomePeriod();
+				nonSmoker();
+				modeOfPaymentSTP();
+				lifeStageEventBenefitNo();
+				premiumBackOptiontNo();
+				// WOPPlusRiderCheckBox();
+				ifElseConditionSmartTermPlan();
+				break;
+
+			case 5:
+				sumAssured(3, 1, 11);
+				incomePeriod();
+				nonSmoker();
+				modeOfPaymentSTP();
+				lifeStageEventBenefitNo();
+				premiumBackOptiontNo();
+				// WOPPlusRiderCheckBox();
+				ifElseConditionSmartTermPlan();
+				break;
+
+			case 6:
+				sumAssured(3, 1, 11);
+				nonSmoker();
+				modeOfPaymentSTP();
+				lifeStageEventBenefitNo();
+				premiumBackOptiontNo();
+				// WOPPlusRiderCheckBox();
+				ifElseConditionSmartTermPlan();
+				break;
+
+			case 7:
+				sumAssured(3, 1, 11);
+				nonSmoker();
+				modeOfPaymentSTP();
+				lifeStageEventBenefitNo();
+				premiumBackOptiontNo();
+				// WOPPlusRiderCheckBox();
+				ifElseConditionSmartTermPlan();
+				break;
+			}
+		}
+
 	}
 
 	public static void policyTermMIAP() throws Exception {
@@ -955,6 +1397,11 @@ public class JourneyScreenTwo extends ReusableActions {
 		type(sumAssured, readingdata(x, y, z));
 	}
 
+	public static void enterMonthlyIncome(int x, int y, int z) throws Exception {
+		enterMonthlyIncome.clear();
+		type(enterMonthlyIncome, readingdata(x, y, z));
+	}
+
 	public static void sumAssuredSTPDependent() throws Exception {
 		Thread.sleep(500);
 		waitTillElementToBeClickable(sumAssuredOption);
@@ -962,12 +1409,69 @@ public class JourneyScreenTwo extends ReusableActions {
 		Thread.sleep(500);
 	}
 
+	public static void incomePeriod() throws Exception {
+		Thread.sleep(500);
+		waitTillElementToBeClickable(incomePeriod);
+		incomePeriod.click();
+		Thread.sleep(500);
+		waitTillElementToBeClickable(incomePeriod1stOption);
+		incomePeriod1stOption.click();
+
+	}
+
+	public static void incomePeriod20() throws Exception {
+		Thread.sleep(500);
+		waitTillElementToBeClickable(incomePeriod);
+		incomePeriod.click();
+		Thread.sleep(500);
+		waitTillElementToBeClickable(incomePeriod3rdOption);
+		incomePeriod3rdOption.click();
+
+	}
+
+	public static void incomePeriod15() throws Exception {
+		Thread.sleep(500);
+		waitTillElementToBeClickable(incomePeriod);
+		incomePeriod.click();
+		Thread.sleep(500);
+		waitTillElementToBeClickable(incomePeriod2ndOption);
+		incomePeriod2ndOption.click();
+
+	}
 
 	public static void policyTermSTPDropDown() throws Exception {
 		waitTillElementToBeClickable(policyTermSTP);
 		policyTermSTP.click();
 		waitTillElementToBeClickable(policyTerm1stOptionSAP);
+		Thread.sleep(1000);
 		policyTerm1stOptionSAP.click();
+		Thread.sleep(2000);
+	}
+
+	public static void dropDown10PolicyTerm() throws Exception {
+		waitTillElementToBeClickable(policyTermSTP);
+		policyTermSTP.click();
+		waitTillElementToBeClickable(policyTerm1stOptionSAP);
+		Thread.sleep(1000);
+		dropDown10.click();
+		Thread.sleep(2000);
+	}
+
+	public static void dropDown20PolicyTerm() throws Exception {
+		waitTillElementToBeClickable(policyTermSTP);
+		policyTermSTP.click();
+		waitTillElementToBeClickable(policyTerm1stOptionSAP);
+		Thread.sleep(1000);
+		dropDown20.click();
+		Thread.sleep(2000);
+	}
+
+	public static void dropDown15PolicyTerm() throws Exception {
+		waitTillElementToBeClickable(policyTermSTP);
+		policyTermSTP.click();
+		waitTillElementToBeClickable(policyTerm1stOptionSAP);
+		Thread.sleep(1000);
+		dropDown15.click();
 		Thread.sleep(2000);
 	}
 
@@ -1070,6 +1574,17 @@ public class JourneyScreenTwo extends ReusableActions {
 		waitTillElementToBeClickable(maxLifeWholeLifeSuper);
 		Thread.sleep(1000);
 		maxLifeWholeLifeSuper.click();
+		Thread.sleep(1000);
+
+	}
+
+	public static void selectByDropdownSmartTermPlan() throws Exception {
+		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		waitTillElementToBeClickable(productNm);
+		productNm.click();
+		waitTillElementToBeClickable(maxLifeSmartTermPlan);
+		Thread.sleep(1000);
+		maxLifeSmartTermPlan.click();
 		Thread.sleep(1000);
 
 	}
@@ -1479,6 +1994,42 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	}
 
+	public static void modeOfPaymentSTPSemiAnnual() throws Exception {
+		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		waitTillElementToBeClickable(modeOfPaymentSTP);
+		modeOfPaymentSTP.click();
+		waitTillElementToBeClickable(modeOfPaymentSemiAnnual);
+		modeOfPaymentSemiAnnual.click();
+		Thread.sleep(2000);
+
+	}
+
+	public static void modeOfPaymentSTPQuaterly() throws Exception {
+		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		waitTillElementToBeClickable(modeOfPaymentSTP);
+		modeOfPaymentSTP.click();
+		waitTillElementToBeClickable(modeOfPaymentQuaterly);
+		modeOfPaymentQuaterly.click();
+		Thread.sleep(2000);
+
+	}
+
+	public static void lifeStageEventBenefitNo() throws Exception {
+		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		waitTillElementToBeClickable(lifeStageEventBenefitNo);
+		Thread.sleep(1000);
+		lifeStageEventBenefitNo.click();
+
+	}
+
+	public static void premiumBackOptiontNo() throws Exception {
+		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		waitTillElementToBeClickable(premiumBackOptiontNo);
+		Thread.sleep(1000);
+		premiumBackOptiontNo.click();
+
+	}
+
 	public static void modeOfPaymentMIAP() throws Exception {
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		waitTillElementToBeClickable(modeOfPaymentMIAP);
@@ -1654,9 +2205,7 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	}
 
-	// Locating Proceed button
-	@FindBy(xpath = "//span[contains(text(), 'Proceed')]")
-	static WebElement proceedBtn;
+
 
 	// Enter First Name
 	public static void setFirstName(int x, int y, int z) throws Exception {
@@ -3409,6 +3958,26 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	}
 
+	public static void checkPOSVforWLSAnnualIncome(int x, int y, int z) throws Exception {
+		Thread.sleep(300);
+		premiumCommitment.clear();
+		type(premiumCommitment, readingdata(x, y, z));
+		JourneyScreenTwo.clickSubmitButton();
+		Thread.sleep(14000);
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		System.out.println(tabs.size());
+
+		if (tabs.size() == 2) {
+			ifConditionForTabSizeTwoPDFIllustrationSelectingLifestyleScreen();
+		}
+
+		else {
+			Assert.fail("Either PDF is not generating or Loading time is too much for SAP");
+
+		}
+
+	}
+
 	public static void checkPOSVforSAPLoop() throws Exception {
 		JourneyScreenTwo.clickSubmitButton();
 		Thread.sleep(14000);
@@ -3582,6 +4151,1368 @@ public class JourneyScreenTwo extends ReusableActions {
 		modeOfPaymentWLS();
 		dividentOptionWLS();
 
+	}
+
+	public static void ifElseConditionSmartTermPlan() throws Exception {
+		JourneyScreenTwo.clickSubmitButton();
+		Thread.sleep(14000);
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		System.out.println(tabs.size());
+
+		if (tabs.size() == 2) {
+			ifConditionForTabSizeTwoPDFIllustrationSelectingLifestyleScreen();
+			waitTillElementToBeClickableLongWait(productDetails);
+			Thread.sleep(4000);
+
+			productDetails.click();
+			Thread.sleep(1000);
+
+		}
+
+		else {
+			Assert.fail("Either PDF is not generating or Loading time is too much for STP");
+
+		}
+
+	}
+
+	public static void arrowUpFunctionToScrollUpTillTop() throws Exception {
+		Thread.sleep(400);
+		for (int i = 1; i < 35; i++) {
+			Actions action = new Actions(driver);
+			action.sendKeys(Keys.ARROW_UP).build().perform();
+		}
+		Thread.sleep(400);
+	}
+
+	public static void checkErrorMessageForAgeMoreThan44SmartTermPlan() throws Exception {
+		JourneyScreenTwo.clickSubmitButton();
+		Thread.sleep(14000);
+		if (isElementDisplayed(errorMessageWhenAgeLessThan18)) {
+			System.out.println("Test case pass as error message is displaying when age is less than 18");
+
+			escapeFunction();
+			Thread.sleep(500);
+			outsideClick.click();
+			arrowUpFunctionToScrollUpTillTop();
+			Thread.sleep(500);
+			setDateBirthPayorDetailOf18Age();
+			Thread.sleep(500);
+			policyTermSTPDropDown();
+			JourneyScreenTwo.clickSubmitButton();
+			Thread.sleep(14000);
+			ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+			System.out.println(tabs.size());
+			if (tabs.size() == 2) {
+				ifConditionForTabSizeTwoPDFIllustrationSelectingLifestyleScreen();
+				Thread.sleep(1000);
+				productDetails.click();
+				Thread.sleep(1000);
+
+			}
+
+			else {
+				Assert.fail("Either PDF is not generating or Loading time is too much for STP");
+
+			}
+
+		} else {
+			Assert.fail("Test case fail as error message is not displaying when age is less than 18");
+
+		}
+
+	}
+
+	public static void checkErrorMessageForAgeLessThan18SmartTermPlan() throws Exception {
+		JourneyScreenTwo.clickSubmitButton();
+		Thread.sleep(14000);
+		if (isElementDisplayed(errorMessageWhenAgeLessThan18)) {
+			System.out.println("Test case pass as error message is displaying when age is less than 18");
+		
+			escapeFunction();
+			Thread.sleep(500);
+			outsideClick.click();
+			arrowUpFunctionToScrollUpTillTop();
+			Thread.sleep(500);
+			setDateBirthPayorDetailOf18Age();
+			Thread.sleep(500);
+			policyTermSTPDropDown();
+			JourneyScreenTwo.clickSubmitButton();
+			Thread.sleep(14000);
+			ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+			System.out.println(tabs.size());
+			if (tabs.size() == 2) {
+				ifConditionForTabSizeTwoPDFIllustrationSelectingLifestyleScreen();
+				Thread.sleep(1000);
+				productDetails.click();
+				Thread.sleep(1000);
+
+			}
+
+			else {
+				Assert.fail("Either PDF is not generating or Loading time is too much for STP");
+
+			}
+			
+			
+		} else {
+			Assert.fail("Test case fail as error message is not displaying when age is less than 18");
+
+		}
+
+	}
+
+	public static void checkErrorMessageForAgeMoreThan60YearsSmartTermPlan() throws Exception {
+		JourneyScreenTwo.clickSubmitButton();
+		Thread.sleep(4000);
+		System.out.print(errorMessageWhenAgeMoreThan60.isDisplayed());
+
+		if (isElementDisplayed(errorMessageWhenAgeMoreThan60)) {
+			System.out.println("Test case pass as error message is displaying when age is more than 60");
+
+			escapeFunction();
+			Thread.sleep(500);
+			outsideClick.click();
+			arrowUpFunctionToScrollUpTillTop();
+			Thread.sleep(500);
+			setDateBirthPayorDetailOf60Age();
+			Thread.sleep(500);
+			policyTermSTPDropDown();
+			JourneyScreenTwo.clickSubmitButton();
+			Thread.sleep(14000);
+			ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+			System.out.println(tabs.size());
+			if (tabs.size() == 2) {
+				ifConditionForTabSizeTwoPDFIllustrationSelectingLifestyleScreen();
+				Thread.sleep(1000);
+				productDetails.click();
+				Thread.sleep(1000);
+
+			}
+
+			else {
+				Assert.fail("Either PDF is not generating or Loading time is too much for STP");
+
+			}
+
+		} else {
+			Assert.fail("Test case fail as error message is not displaying when age is more than 60");
+
+		}
+
+	}
+
+	public static void checkErrorMessageForAgeMoreThan44YearsSmartTermPlan() throws Exception {
+		JourneyScreenTwo.clickSubmitButton();
+		Thread.sleep(14000);
+		if (isElementDisplayed(maximumAgeLimit44ErrorMessage)) {
+			System.out.println("Test case pass as error message is displaying when age is more than 44");
+
+			escapeFunction();
+			Thread.sleep(500);
+			outsideClick.click();
+			arrowUpFunctionToScrollUpTillTop();
+			Thread.sleep(500);
+			setDateBirthPayorDetailOf44Age();
+			Thread.sleep(500);
+			premiumPayementTermSTP();
+			Thread.sleep(500);
+			policyTermSTPDropDown();
+			JourneyScreenTwo.clickSubmitButton();
+			Thread.sleep(14000);
+			ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+			System.out.println(tabs.size());
+			if (tabs.size() == 2) {
+				ifConditionForTabSizeTwoPDFIllustrationSelectingLifestyleScreen();
+				Thread.sleep(1000);
+				productDetails.click();
+				Thread.sleep(1000);
+
+			}
+
+			else {
+				Assert.fail("Either PDF is not generating or Loading time is too much for STP");
+
+			}
+
+		} else {
+			Assert.fail("Test case fail as error message is not displaying when age is less than 18");
+
+		}
+
+	}
+
+	public static void smartTermPlanPremiumType() throws Exception {
+
+		for (int i = 1; i < 5; i++) {
+			Thread.sleep(700);
+			waitTillElementToBeClickable(premiumTypeSAPDropDown);
+			premiumTypeSAPDropDown.click();
+			waitTillElementToBeClickable(premiumType3rdOptionSAP);
+			driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[" + i + "]")).click();
+			Thread.sleep(1000);
+
+			premiumPayementTermSTP();
+			policyTermSTPDropDown();
+			deathBenifitOption();
+			sumAssured(3, 4, 11);
+			nonSmoker();
+			modeOfPaymentSTP();
+			lifeStageEventBenefitNo();
+			premiumBackOptiontNo();
+
+			switch (i) {
+			case 1:
+				// WOPPlusRiderCheckBox();
+				ifElseConditionSmartTermPlan();
+				break;
+
+			case 2:
+				WOPPlusRiderCheckBox();
+				ifElseConditionSmartTermPlan();
+				break;
+
+			case 3:
+				WOPPlusRiderCheckBox();
+				ifElseConditionSmartTermPlan();
+				break;
+
+			case 4:
+				WOPPlusRiderCheckBox();
+				ifElseConditionSmartTermPlan();
+				break;
+			}
+		}
+
+	}
+
+	public static void smartTermPlanPremiumTypePDF() throws Exception {
+
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[1]")).click();
+		Thread.sleep(1000);
+
+		premiumPayementTermSTP();
+		policyTermSTPDropDown();
+		deathBenifitOption();
+		sumAssured(3, 4, 11);
+		nonSmoker();
+		modeOfPaymentSTP();
+		lifeStageEventBenefitNo();
+		premiumBackOptiontNo();
+		proceedBtn.click();
+		Thread.sleep(40000);
+		// WOPPlusRiderCheckBox();
+		ifConditionForTabSizeTwoPDFIllustrationProceedingScreenAhead();
+
+	}
+
+	public static void singlePayLifeCoverForm1() throws Exception {
+
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[1]")).click();
+		Thread.sleep(1000);
+		premiumPayementTermSTP();
+		policyTermSTPDropDown();
+		deathBenifitOption();
+
+		sumAssured.sendKeys("5000000");
+		nonSmoker();
+		modeOfPaymentSTP();
+		lifeStageEventBenefitNo();
+		premiumBackOptiontNo();
+		proceedBtn.click();
+		Thread.sleep(40000);
+		// WOPPlusRiderCheckBox();
+		ifConditionForTabSizeTwoPDFIllustrationProceedingScreenAhead();
+
+	}
+
+	public static void singlePayIncomeInflationProtectorForm1() throws Exception {
+
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[1]")).click();
+		Thread.sleep(1000);
+		premiumPayementTermSTP();
+		dropDown15PolicyTerm();
+		deathBenifitIncomeInflationProtector();
+		enterMonthlyIncome(3, 3, 11);
+		incomePeriod15();
+		nonSmoker();
+		modeOfPaymentSTP();
+		lifeStageEventBenefitNo();
+		premiumBackOptiontNo();
+
+		proceedBtn.click();
+		Thread.sleep(40000);
+		// WOPPlusRiderCheckBox();
+		ifConditionForTabSizeTwoPDFIllustrationProceedingScreenAhead();
+
+	}
+
+	public static void singlePayIncreasingCoverProtectorForm1() throws Exception {
+
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[1]")).click();
+		Thread.sleep(1000);
+		premiumPayementTermSTP();
+		dropDown15PolicyTerm();
+		deathBenifitIncreasingCover();
+		
+		sumAssured(3, 1, 11);
+		nonSmoker();
+		modeOfPaymentSTP();
+		lifeStageEventBenefitNo();
+		premiumBackOptiontNo();
+
+		proceedBtn.click();
+		Thread.sleep(40000);
+		// WOPPlusRiderCheckBox();
+		ifConditionForTabSizeTwoPDFIllustrationProceedingScreenAhead();
+
+	}
+
+	public static void limitedPayLifeCoverForm1() throws Exception {
+
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[2]")).click();
+		Thread.sleep(1000);
+		premiumPayementTermSTP();
+		dropDown15PolicyTerm();
+		deathBenifitOption();
+
+		sumAssured(3, 1, 11);
+		nonSmoker();
+		modeOfPaymentSTP();
+		lifeStageEventBenefitNo();
+		premiumBackOptiontNo();
+
+		proceedBtn.click();
+		Thread.sleep(40000);
+		// WOPPlusRiderCheckBox();
+		ifConditionForTabSizeTwoPDFIllustrationProceedingScreenAhead();
+
+	}
+
+	public static void limitedPayIncomeInflationProtectorForm1() throws Exception {
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[2]")).click();
+		Thread.sleep(1000);
+		premiumPayementTermSTP();
+		dropDown15PolicyTerm();
+		deathBenifitIncomeInflationProtector();
+
+		enterMonthlyIncome(3, 3, 11);
+		incomePeriod15();
+		nonSmoker();
+		modeOfPaymentSTPSemiAnnual();
+		lifeStageEventBenefitNo();
+		premiumBackOptiontNo();
+		proceedBtn.click();
+		Thread.sleep(40000);
+		// WOPPlusRiderCheckBox();
+		ifConditionForTabSizeTwoPDFIllustrationProceedingScreenAhead();
+
+	}
+
+	public static void limitedPayIncreasingCoverForm1() throws Exception {
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[2]")).click();
+		Thread.sleep(1000);
+		premiumPayementTermSTP();
+		dropDown10PolicyTerm();
+		deathBenifitIncreasingCover();
+
+		sumAssured(3, 1, 11);
+		nonSmoker();
+		modeOfPaymentSTPSemiAnnual();
+		lifeStageEventBenefitNo();
+		premiumBackOptiontNo();
+		proceedBtn.click();
+		Thread.sleep(40000);
+		// WOPPlusRiderCheckBox();
+		ifConditionForTabSizeTwoPDFIllustrationProceedingScreenAhead();
+
+	}
+
+	public static void regularPayLifeCoverForm1() throws Exception {
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[3]")).click();
+		Thread.sleep(1000);
+		premiumPayementTermSTP();
+		dropDown10PolicyTerm();
+		deathBenifitOption();
+		sumAssured(3, 4, 11);
+		nonSmoker();
+		modeOfPaymentSTP();
+		lifeStageEventBenefitNo();
+		premiumBackOptiontNo();
+		proceedBtn.click();
+		Thread.sleep(40000);
+		// WOPPlusRiderCheckBox();
+		ifConditionForTabSizeTwoPDFIllustrationProceedingScreenAhead();
+
+	}
+
+	public static void regularPayIncomeInflationForm1() throws Exception {
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[3]")).click();
+		Thread.sleep(1000);
+		premiumPayementTermSTP30();
+		policyTermSTPDropDown();
+		deathBenifitIncomeInflationProtector();
+
+		enterMonthlyIncome(3, 3, 11);
+		incomePeriod15();
+		nonSmoker();
+		modeOfPaymentSTP();
+		lifeStageEventBenefitNo();
+		premiumBackOptiontNo();
+
+		nonSmoker();
+		modeOfPaymentSTPSemiAnnual();
+		lifeStageEventBenefitNo();
+		premiumBackOptiontNo();
+		proceedBtn.click();
+		Thread.sleep(40000);
+		// WOPPlusRiderCheckBox();
+		ifConditionForTabSizeTwoPDFIllustrationProceedingScreenAhead();
+
+	}
+
+	public static void regularPayIncreasingCoverForm1() throws Exception {
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[3]")).click();
+		Thread.sleep(1000);
+		premiumPayementTermSTP50();
+		policyTermSTPDropDown();
+		deathBenifitIncreasingCover();
+
+		sumAssured(3, 1, 11);
+		nonSmoker();
+		modeOfPaymentSTPSemiAnnual();
+		lifeStageEventBenefitNo();
+		premiumBackOptiontNo();
+
+		proceedBtn.click();
+		Thread.sleep(40000);
+		// WOPPlusRiderCheckBox();
+		ifConditionForTabSizeTwoPDFIllustrationProceedingScreenAhead();
+
+	}
+
+	public static void payTill60LifeCoverForm1() throws Exception {
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[4]")).click();
+		Thread.sleep(1000);
+		premiumPayementTermSTP();
+		policyTermSTPDropDown();
+		deathBenifitOption();
+
+		sumAssured(3, 4, 11);
+		nonSmoker();
+		modeOfPaymentSTP();
+		lifeStageEventBenefitNo();
+		premiumBackOptiontNo();
+
+		proceedBtn.click();
+		Thread.sleep(40000);
+		// WOPPlusRiderCheckBox();
+		ifConditionForTabSizeTwoPDFIllustrationProceedingScreenAhead();
+
+	}
+
+	
+	public static void payTill60IncomeInflationProtectorForm1() throws Exception {
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[4]")).click();
+		Thread.sleep(1000);
+		premiumPayementTermSTP();
+		policyTermSTPDropDown();
+		deathBenifitIncomeInflationProtector();
+		enterMonthlyIncome(3, 3, 11);
+		incomePeriod15();
+
+		nonSmoker();
+		modeOfPaymentSTPSemiAnnual();
+		lifeStageEventBenefitNo();
+		premiumBackOptiontNo();
+		proceedBtn.click();
+		Thread.sleep(40000);
+		// WOPPlusRiderCheckBox();
+		ifConditionForTabSizeTwoPDFIllustrationProceedingScreenAhead();
+
+	}
+
+	public static void payTill60IncreasingCoverForm1() throws Exception {
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[4]")).click();
+		Thread.sleep(1000);
+		premiumPayementTermSTP();
+		policyTermSTPDropDown();
+		deathBenifitIncreasingCover();
+
+		sumAssured(3, 1, 11);
+		nonSmoker();
+		modeOfPaymentSTPSemiAnnual();
+		lifeStageEventBenefitNo();
+		premiumBackOptiontNo();
+		proceedBtn.click();
+		Thread.sleep(40000);
+		// WOPPlusRiderCheckBox();
+		ifConditionForTabSizeTwoPDFIllustrationProceedingScreenAhead();
+
+	}
+
+	public static void singlePayIncomeProtectorForm2() throws Exception {
+
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[1]")).click();
+		Thread.sleep(1000);
+		premiumPayementTermSTP();
+		dropDown10PolicyTerm();
+		deathBenifitIncomeProtector();
+		enterMonthlyIncome(3, 3, 11);
+		incomePeriod();
+		nonSmoker();
+		modeOfPaymentSTP();
+		lifeStageEventBenefitNo();
+		premiumBackOptiontNo();
+		proceedBtn.click();
+		Thread.sleep(40000);
+		// WOPPlusRiderCheckBox();
+		ifConditionForTabSizeTwoPDFIllustrationProceedingScreenAhead();
+
+	}
+
+	public static void singlePayIncomeInflationProtectorForm2() throws Exception {
+
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[1]")).click();
+		Thread.sleep(1000);
+		premiumPayementTermSTP();
+
+		dropDown20PolicyTerm();
+
+		deathBenifitIncomeInflationProtector();
+		enterMonthlyIncome(3, 3, 11);
+		incomePeriod20();
+		nonSmoker();
+		modeOfPaymentSTP();
+		lifeStageEventBenefitNo();
+		premiumBackOptiontNo();
+		proceedBtn.click();
+		Thread.sleep(40000);
+		// WOPPlusRiderCheckBox();
+		ifConditionForTabSizeTwoPDFIllustrationProceedingScreenAhead();
+
+	}
+
+	public static void limitedPayIncomeProtectorForm2() throws Exception {
+
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[2]")).click();
+		Thread.sleep(1000);
+		premiumPayementTermSTP10();
+
+		dropDown20PolicyTerm();
+
+		deathBenifitIncomeProtector();
+		enterMonthlyIncome(3, 3, 11);
+		incomePeriod();
+		nonSmoker();
+
+		modeOfPaymentSTPSemiAnnual();
+		lifeStageEventBenefitNo();
+		premiumBackOptiontNo();
+		proceedBtn.click();
+		Thread.sleep(40000);
+		// WOPPlusRiderCheckBox();
+		ifConditionForTabSizeTwoPDFIllustrationProceedingScreenAhead();
+
+	}
+
+	public static void limitedPayIncomeInflationProtectorForm2() throws Exception {
+
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[2]")).click();
+		Thread.sleep(1000);
+		premiumPayementTermSTP12();
+
+		dropDown20PolicyTerm();
+
+		deathBenifitIncomeInflationProtector();
+		enterMonthlyIncome(3, 3, 11);
+		incomePeriod20();
+		nonSmoker();
+
+		modeOfPaymentSTPQuaterly();
+		lifeStageEventBenefitNo();
+		premiumBackOptiontNo();
+		proceedBtn.click();
+		Thread.sleep(40000);
+		// WOPPlusRiderCheckBox();
+		ifConditionForTabSizeTwoPDFIllustrationProceedingScreenAhead();
+
+	}
+
+	public static void regularPayIncomeProtectorForm2() throws Exception {
+
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[3]")).click();
+		Thread.sleep(1000);
+		premiumPayementTermSTP12();
+
+		policyTermSTPDropDown();
+
+		deathBenifitIncomeProtector();
+		enterMonthlyIncome(3, 3, 11);
+		incomePeriod20();
+		nonSmoker();
+
+		modeOfPaymentSTPSemiAnnual();
+		lifeStageEventBenefitNo();
+		premiumBackOptiontNo();
+		proceedBtn.click();
+		Thread.sleep(40000);
+		// WOPPlusRiderCheckBox();
+		ifConditionForTabSizeTwoPDFIllustrationProceedingScreenAhead();
+
+	}
+
+	public static void regularPayIncomeInflationProtectorForm2() throws Exception {
+
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[3]")).click();
+		Thread.sleep(1000);
+		premiumPayementTermSTP35();
+
+		policyTermSTPDropDown();
+
+		deathBenifitIncomeInflationProtector();
+		enterMonthlyIncome(3, 3, 11);
+		incomePeriod20();
+		nonSmoker();
+
+		modeOfPaymentSTPQuaterly();
+		lifeStageEventBenefitNo();
+		premiumBackOptiontNo();
+		proceedBtn.click();
+		Thread.sleep(40000);
+		// WOPPlusRiderCheckBox();
+		ifConditionForTabSizeTwoPDFIllustrationProceedingScreenAhead();
+
+	}
+
+	public static void payTill60IncomeProtectorForm2() throws Exception {
+
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[4]")).click();
+		Thread.sleep(1000);
+		
+		premiumPayementTermSTP();
+
+		policyTermSTPDropDown();
+
+		deathBenifitIncomeProtector();
+		
+		enterMonthlyIncome(3, 3, 11);
+		incomePeriod();
+		nonSmoker();
+
+		modeOfPaymentSTPSemiAnnual();
+		lifeStageEventBenefitNo();
+		premiumBackOptiontNo();
+		proceedBtn.click();
+		Thread.sleep(40000);
+		// WOPPlusRiderCheckBox();
+		ifConditionForTabSizeTwoPDFIllustrationProceedingScreenAhead();
+
+	}
+
+	public static void smartTermPlanPremiumTypeIllustration() throws Exception {
+
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[1]")).click();
+		Thread.sleep(1000);
+
+		premiumPayementTermSTP();
+		policyTermSTPDropDown();
+		deathBenifitOption();
+		sumAssured(3, 4, 11);
+		nonSmoker();
+		modeOfPaymentSTP();
+		lifeStageEventBenefitNo();
+		premiumBackOptiontNo();
+
+		// WOPPlusRiderCheckBox();
+
+
+	}
+
+
+	public static void smartTermPlanLimitedTypeIllustration() throws Exception {
+
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[2]")).click();
+		Thread.sleep(1000);
+
+		premiumPayementTermSTP();
+		policyTermSTPDropDown();
+		deathBenifitOption();
+		sumAssured(3, 4, 11);
+		nonSmoker();
+		modeOfPaymentSTP();
+		lifeStageEventBenefitNo();
+		premiumBackOptiontNo();
+
+		// WOPPlusRiderCheckBox();
+
+	}
+
+	public static void smartTermPlanRegularPayIllustration() throws Exception {
+
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[3]")).click();
+		Thread.sleep(1000);
+
+		premiumPayementTermSTP();
+		policyTermSTPDropDown();
+		deathBenifitOption();
+		sumAssured(3, 4, 11);
+		nonSmoker();
+		modeOfPaymentSTP();
+		lifeStageEventBenefitNo();
+		premiumBackOptiontNo();
+
+		// WOPPlusRiderCheckBox();
+
+	}
+
+	public static void smartTermPlanPremiumTypeIllustrationPayTiil60() throws Exception {
+
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[4]")).click();
+		Thread.sleep(1000);
+
+		premiumPayementTermSTP();
+		policyTermSTPDropDown();
+		deathBenifitOption();
+		sumAssured(3, 4, 11);
+		nonSmoker();
+		modeOfPaymentSTP();
+		lifeStageEventBenefitNo();
+		premiumBackOptiontNo();
+
+		// WOPPlusRiderCheckBox();
+
+	}
+
+	public static void regularPayAllRider() throws Exception {
+
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[3]")).click();
+		Thread.sleep(1000);
+
+		selctingAllRiderFunction();
+	}
+	
+	public static void payTill60AllRider() throws Exception {
+
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[4]")).click();
+		Thread.sleep(1000);
+
+		selctingAllRiderFunction();
+	}
+
+	public static void payTill60AllRiderDeathBenifit() throws Exception {
+
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[4]")).click();
+		Thread.sleep(1000);
+
+		deathBenifitAllOptionForPayLimitedRegularAndTill60PremiumType();
+	}
+
+	public static void singlePayAllRiderDeathBenifit() throws Exception
+	{
+
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[1]")).click();
+		Thread.sleep(1000);
+
+		deathBenifitAllOptionForSinglePayPremiumType();
+	}
+
+	public static void limitedPayAllRiderDeathBenifit() throws Exception {
+
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[2]")).click();
+		Thread.sleep(1000);
+
+		deathBenifitAllOptionForPayLimitedRegularAndTill60PremiumType();
+	}
+
+	public static void regularPayAllRiderDeathBenifit() throws Exception {
+
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[3]")).click();
+		Thread.sleep(1000);
+
+		deathBenifitAllOptionForPayLimitedRegularAndTill60PremiumType();
+	}
+
+	public static void selctingAllRiderFunction() throws Exception {
+		premiumPayementTermSTP();
+		policyTermSTPDropDown();
+		deathBenifitOption();
+		sumAssured(3, 4, 11);
+		nonSmoker();
+		modeOfPaymentSTP();
+		lifeStageEventBenefitNo();
+		premiumBackOptiontNo();
+		for (int i = 1; i <= 4; i++) {
+			switch (i) {
+			case 1:
+				WOPPlusRiderCheckBox();
+				ifElseConditionSmartTermPlan();
+				break;
+
+			case 2:
+				WOPPlusRiderCheckBox();
+				Thread.sleep(800);
+				accidentCoverOptionRider.click();
+				Thread.sleep(800);
+				acorAddAmount(3, 7, 11);
+				ifElseConditionSmartTermPlan();
+				break;
+
+			case 3:
+				accidentCoverOptionRider.click();
+				Thread.sleep(800);
+				acceleratedCriticalIllnessOptionRider.click();
+				Thread.sleep(800);
+				isAcceleratedCriticalIllnessOptionRiderLevel.click();
+				Thread.sleep(800);
+				// outsideClick.click();
+				JourneyScreenFour.arrowDownFunctionToScrollDown();
+				waitTillElementToBeClickable(acceleratedCriticalAmount);
+				Thread.sleep(800);
+				acceleratedCriticalAmount(3, 3, 11);
+				ifElseConditionSmartTermPlan();
+				break;
+
+			case 4:
+				isAcceleratedCriticalIllnessOptionRiderIncreasing.click();
+				ifElseConditionSmartTermPlan();
+				break;
+			}
+		}
+
+	}
+
+	public static void selctingAllRiderFunctionLimitedPay() throws Exception {
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[2]")).click();
+		Thread.sleep(1000);
+		premiumPayementTermSTP();
+		policyTermSTPDropDown();
+		deathBenifitOption();
+		sumAssured(3, 4, 11);
+		nonSmoker();
+		modeOfPaymentSTP();
+		lifeStageEventBenefitNo();
+		premiumBackOptiontNo();
+		for (int i = 1; i <= 2; i++) {
+			switch (i) {
+			case 1:
+				WOPPlusRiderCheckBox();
+				ifElseConditionSmartTermPlan();
+				break;
+
+			case 2:
+				WOPPlusRiderCheckBox();
+				Thread.sleep(800);
+				accidentCoverOptionRider.click();
+				Thread.sleep(800);
+				acorAddAmount(3, 7, 11);
+				ifElseConditionSmartTermPlan();
+				break;
+
+			}
+		}
+
+	}
+
+	public static void selctingAllPremiumPaymentTerm() throws Exception {
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[2]")).click();
+		Thread.sleep(1000);
+
+
+		allPremiumPayementTermSTP();
+
+	}
+
+	public static void selctingAllPremiumPaymentTermRegularPay() throws Exception
+	{
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[3]")).click();
+		Thread.sleep(1000);
+
+		allPremiumPayementTermSTPRegularPay();
+
+	}
+
+	public static void deathBenefitIllustration() throws Exception {
+
+		premiumPayementTermSTP();
+		policyTermSTPDropDown();
+
+		deathBenifitAllOptionForPayLimitedRegularAndTill60PremiumType();
+
+	}
+
+	public static void limitedPayAllRider() throws Exception {
+
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[2]")).click();
+		Thread.sleep(1000);
+
+		selctingAllRiderFunction();
+
+	}
+
+	public static void limitedPayAllPremiumPaymentTerm() throws Exception {
+
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[2]")).click();
+		Thread.sleep(1000);
+
+		selctingAllRiderFunction();
+
+	}
+
+	public static void acorAddAmount(int x, int y, int z) throws Exception {
+		acorAddAmount.clear();
+		type(acorAddAmount, readingdata(x, y, z));
+
+	}
+
+	public static void acceleratedCriticalAmount(int x, int y, int z) throws Exception {
+		acceleratedCriticalAmount.clear();
+		type(acceleratedCriticalAmount, readingdata(x, y, z));
+
+	}
+
+	public static void fillingAllTheRequiredFeildsForSmartTermPlan() throws Exception {
+		selectByDropdownNeedOfInsur();
+		selectByDropdownLifeStge();
+
+
+		smartTermPlanPremiumType();
+	}
+
+	public static void fillingRequiredFeildsForSmartTermPlan() throws Exception {
+		selectByDropdownNeedOfInsur();
+		selectByDropdownLifeStge();
+
+		smartTermPlanPremiumTypeIllustration();
+		checkErrorMessageForAgeLessThan18SmartTermPlan();
+	}
+
+	public static void fillingRequiredFeildsForSmartTermPlanMaxAge() throws Exception {
+		selectByDropdownNeedOfInsur();
+		selectByDropdownLifeStge();
+
+		smartTermPlanPremiumTypeIllustration();
+		checkErrorMessageForAgeMoreThan60YearsSmartTermPlan();
+	}
+
+	public static void fillingRequiredFeildsForSmartTermPlanMimitedPayMaxAge() throws Exception {
+		selectByDropdownNeedOfInsur();
+		selectByDropdownLifeStge();
+
+		smartTermPlanLimitedTypeIllustration();
+		checkErrorMessageForAgeMoreThan60YearsSmartTermPlan();
+	}
+
+	public static void fillingRequiredFeildsForSmartTermPlanRegularPayMaxAge() throws Exception {
+		selectByDropdownNeedOfInsur();
+		selectByDropdownLifeStge();
+
+		smartTermPlanRegularPayIllustration();
+		checkErrorMessageForAgeMoreThan60YearsSmartTermPlan();
+	}
+
+	public static void fillingRequiredFeildsPayTill60ForSmartTermPlanMaxAge() throws Exception {
+		selectByDropdownNeedOfInsur();
+		selectByDropdownLifeStge();
+
+		smartTermPlanPremiumTypeIllustrationPayTiil60();
+		checkErrorMessageForAgeMoreThan44YearsSmartTermPlan();
+	}
+
+	public static void fillingAllTheRequiredFeildsForSmartTermPlanLimitedPayAllRider() throws Exception {
+		selectByDropdownNeedOfInsur();
+		selectByDropdownLifeStge();
+		selctingAllRiderFunctionLimitedPay();
+	}
+
+	public static void fillingAllTheRequiredFeildsForAllPremiumPaymentTerm() throws Exception {
+		selectByDropdownNeedOfInsur();
+		selectByDropdownLifeStge();
+		selctingAllPremiumPaymentTerm();
+	}
+
+	public static void fillingAllTheRequiredFeildsForRegularPayAllPremiumPaymentTerm() throws Exception {
+		selectByDropdownNeedOfInsur();
+		selectByDropdownLifeStge();
+		selctingAllPremiumPaymentTermRegularPay();
+	}
+
+
+	public static void setDateBirthPayorDetailsLessThan1DayOf18() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenThree.class);
+
+		Thread.sleep(800);
+		waitTillElementToBeClickable(dateOfBirthPersonalDetails);
+		dateOfBirthPersonalDetails.click();
+		Thread.sleep(800);
+		LocalDate datw = LocalDate.now().minusYears(18);
+		System.out.println(datw);
+		LocalDate dayLessThan18 = datw.plusDays(1);
+		int month = dayLessThan18.getMonthValue() - 1;
+		int day = dayLessThan18.getDayOfMonth();
+		int year = dayLessThan18.getYear();
+		
+		Thread.sleep(800);
+		
+		driver.findElement(By.xpath("//select[@class='react-datepicker__month-select']")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//option[@value='"+month+"']")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//select[@class='react-datepicker__year-select']")).click();
+		Thread.sleep(200);
+		driver.findElement(By.xpath(".//*[@class='react-datepicker__year-select']/option[@value='"+year+"']")).click();
+		Thread.sleep(200);
+		driver.findElement(By.xpath(
+				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\"day-"+day+"\"]"))
+				.click();
+		Thread.sleep(200);
+
+		
+		
+	}
+
+	public static void setDateBirthPayorDetailsMoreThan1YearOf60Years() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenThree.class);
+
+		Thread.sleep(800);
+		waitTillElementToBeClickable(dateOfBirthPersonalDetails);
+		dateOfBirthPersonalDetails.click();
+		Thread.sleep(800);
+
+		LocalDate datw = LocalDate.now().minusYears(60);
+		System.out.println(datw);
+		LocalDate moreThan44 = datw.minusYears(1);
+		System.out.println(moreThan44);
+
+		int month = moreThan44.getMonthValue() - 1;
+		int day = moreThan44.getDayOfMonth();
+		int year = moreThan44.getYear();
+
+		Thread.sleep(800);
+
+		driver.findElement(By.xpath("//select[@class='react-datepicker__month-select']")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//option[@value='" + month + "']")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//select[@class='react-datepicker__year-select']")).click();
+		Thread.sleep(200);
+		driver.findElement(By.xpath(".//*[@class='react-datepicker__year-select']/option[@value='" + year + "']"))
+				.click();
+		Thread.sleep(200);
+		driver.findElement(By.xpath(
+				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\"day-"
+						+ day + "\"]"))
+				.click();
+		Thread.sleep(200);
+
+	}
+
+	public static void setDateBirthPayorDetailsMoreThan1YearOf44Years() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenThree.class);
+
+		Thread.sleep(800);
+		waitTillElementToBeClickable(dateOfBirthPersonalDetails);
+		dateOfBirthPersonalDetails.click();
+		Thread.sleep(800);
+
+		LocalDate datw = LocalDate.now().minusYears(44);
+		System.out.println(datw);
+		LocalDate moreThan44 = datw.minusYears(1);
+		System.out.println(moreThan44);
+
+		int month = moreThan44.getMonthValue() - 1;
+		int day = moreThan44.getDayOfMonth();
+		int year = moreThan44.getYear();
+
+		Thread.sleep(800);
+
+		driver.findElement(By.xpath("//select[@class='react-datepicker__month-select']")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//option[@value='" + month + "']")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//select[@class='react-datepicker__year-select']")).click();
+		Thread.sleep(200);
+		driver.findElement(By.xpath(".//*[@class='react-datepicker__year-select']/option[@value='" + year + "']"))
+				.click();
+		Thread.sleep(200);
+		driver.findElement(By.xpath(
+				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\"day-"
+						+ day + "\"]"))
+				.click();
+		Thread.sleep(200);
+
+	}
+
+	public static void setDateBirthPayorDetailOf18Age() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenThree.class);
+
+		Thread.sleep(800);
+		waitTillElementToBeClickable(dateOfBirthPersonalDetails);
+		dateOfBirthPersonalDetails.click();
+		Thread.sleep(800);
+		LocalDate datw = LocalDate.now().minusYears(18);
+		int month = datw.getMonthValue() - 1;
+		int day = datw.getDayOfMonth();
+		int year = datw.getYear();
+
+		Thread.sleep(800);
+
+		driver.findElement(By.xpath("//select[@class='react-datepicker__month-select']")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//option[@value='" + month + "']")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//select[@class='react-datepicker__year-select']")).click();
+		Thread.sleep(200);
+		driver.findElement(By.xpath(".//*[@class='react-datepicker__year-select']/option[@value='" + year + "']"))
+				.click();
+		Thread.sleep(200);
+		driver.findElement(By.xpath(
+				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\"day-"
+						+ day + "\"]"))
+				.click();
+		Thread.sleep(200);
+
+	}
+
+	public static void setDateBirthPayorDetailOf60Age() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenThree.class);
+
+		Thread.sleep(800);
+		waitTillElementToBeClickable(dateOfBirthPersonalDetails);
+		dateOfBirthPersonalDetails.click();
+		Thread.sleep(800);
+		LocalDate datw = LocalDate.now().minusYears(60);
+		int month = datw.getMonthValue() - 1;
+		int day = datw.getDayOfMonth();
+		int year = datw.getYear();
+
+		Thread.sleep(800);
+
+		driver.findElement(By.xpath("//select[@class='react-datepicker__month-select']")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//option[@value='" + month + "']")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//select[@class='react-datepicker__year-select']")).click();
+		Thread.sleep(200);
+		driver.findElement(By.xpath(".//*[@class='react-datepicker__year-select']/option[@value='" + year + "']"))
+				.click();
+		Thread.sleep(200);
+		driver.findElement(By.xpath(
+				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\"day-"
+						+ day + "\"]"))
+				.click();
+		Thread.sleep(200);
+
+	}
+
+	public static void setDateBirthPayorDetailOf44Age() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenThree.class);
+
+		Thread.sleep(800);
+		waitTillElementToBeClickable(dateOfBirthPersonalDetails);
+		dateOfBirthPersonalDetails.click();
+		Thread.sleep(800);
+		LocalDate datw = LocalDate.now().minusYears(44);
+		int month = datw.getMonthValue() - 1;
+		int day = datw.getDayOfMonth();
+		int year = datw.getYear();
+
+		Thread.sleep(800);
+
+		driver.findElement(By.xpath("//select[@class='react-datepicker__month-select']")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//option[@value='" + month + "']")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//select[@class='react-datepicker__year-select']")).click();
+		Thread.sleep(200);
+		driver.findElement(By.xpath(".//*[@class='react-datepicker__year-select']/option[@value='" + year + "']"))
+				.click();
+		Thread.sleep(200);
+		driver.findElement(By.xpath(
+				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\"day-"
+						+ day + "\"]"))
+				.click();
+		Thread.sleep(200);
+
+	}
+
+	public static void fillingAllTheRequiredFeildsForSmartTermPlanRegularPayAllRider() throws Exception {
+		selectByDropdownNeedOfInsur();
+		selectByDropdownLifeStge();
+		regularPayAllRider();
+	}
+
+	public static void fillingAllTheRequiredFeildsForSmartTermPlanRegularPayTill60() throws Exception
+	{
+		selectByDropdownNeedOfInsur();
+		selectByDropdownLifeStge();
+		payTill60AllRider();
+	}
+
+	public static void fillingAllTheFeildForDeathBenifitRegularPayTill60() throws Exception {
+		selectByDropdownNeedOfInsur();
+		selectByDropdownLifeStge();
+		payTill60AllRiderDeathBenifit();
+	}
+
+	public static void fillingAllTheFeildForDeathBenifitSinglePay() throws Exception
+	{
+		selectByDropdownNeedOfInsur();
+		selectByDropdownLifeStge();
+		singlePayAllRiderDeathBenifit();
+	}
+
+	public static void fillingAllTheFeildForDeathBenifitLimitedPay() throws Exception {
+		selectByDropdownNeedOfInsur();
+		selectByDropdownLifeStge();
+		limitedPayAllRiderDeathBenifit();
+	}
+
+	public static void fillingAllTheFeildForDeathBenifitRegularPay() throws Exception
+	{
+		selectByDropdownNeedOfInsur();
+		selectByDropdownLifeStge();
+		regularPayAllRiderDeathBenifit();
 	}
 
 	public static void fillingAllTheRequiredFeildsForSAP() throws Exception {

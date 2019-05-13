@@ -11,6 +11,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import uielements.HomePage;
 import uielements.JourneyScreenFour;
 import uielements.JourneyScreenOne;
 import uielements.JourneyScreenSix;
@@ -19,7 +20,7 @@ import uielements.JourneyScreenTwo;
 import uielements.LoginPage;
 import uielements.ReusableActions;
 
-public class MaxLifeSuperTermPlanTest extends ReusableActions {
+public class MaxLifeMonthlyIncomeAdvantagePlanTest extends ReusableActions {
 
 	@BeforeTest
 	@Parameters(value = { "browser", "version", "platform", "testrun" })
@@ -52,8 +53,7 @@ public class MaxLifeSuperTermPlanTest extends ReusableActions {
 			// break;
 		}
 
-		else
-		if (testRun.equals("runfa")) {
+		else if (testRun.equals("runfa")) {
 			// if (testRun.equals("run")) {
 			// @BeforeClass
 			// public void launchBrowser() throws Exception{
@@ -99,20 +99,20 @@ public class MaxLifeSuperTermPlanTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 1, enabled = false)
-	public static void CheckproductConfigrationSTPGeneratingPdf() throws Exception {
+
+	@Test(priority = 1, enabled = true)
+	public void CheckproductConfigrationMIAPGeneratingPdf() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
-			// alwaysCloseAllChildTabs();
+			alwaysCloseAllChildTabs();
 			// HomePage.clickDashboard();
-			// HomePage.clickNewApp();
+			HomePage.clickNewApp();
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
-			JourneyScreenOne.clickProceed();
 			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
 			JourneyScreenTwo.traditional();
-			JourneyScreenTwo.selectByDropdownSTP();
-			JourneyScreenTwo.fillingAllTheRequiredFeildsForSTP();
-			JourneyScreenTwo.checkPOSVforSTPPremiumCommitment(3, 4, 11);
+			JourneyScreenTwo.selectByDropdownMIAP();
+			JourneyScreenTwo.fillingAllTheRequiredFeildsForMIAP();
+			JourneyScreenTwo.premiumCommitmentDesiredAnnualIncomeAnnualIncome();
 
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
@@ -121,12 +121,35 @@ public class MaxLifeSuperTermPlanTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 1, enabled = true)
+	@Test(priority = 2, enabled = true)
+	public static void CheckproductConfigrationMIAPOneCaseGeneratingPdf() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenTwo.class);
+		try {
+			alwaysCloseAllChildTabs();
+			HomePage.clickDashboard();
+			HomePage.clickNewApp();
+			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
+			JourneyScreenOne.clickProceed();
+			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
+			JourneyScreenTwo.traditional();
+
+			JourneyScreenTwo.selectByDropdownMIAP();
+			JourneyScreenTwo.fillingAllTheRequiredFeildsForMIAP();
+			JourneyScreenTwo.checkPOSVforMIAPAnnualIncome(3, 4, 11);
+
+		} catch (Exception e) {
+			logger.error("Test case failed " + e.getMessage());
+			throw e;
+
+		}
+	}
+
+	@Test(priority = 2, enabled = true)
 	public static void CheckproductConfigrationSTPTppPush() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
 			alwaysCloseAllChildTabs();
-			CheckproductConfigrationSTPGeneratingPdf();
+			CheckproductConfigrationMIAPOneCaseGeneratingPdf();
 			JourneyScreenThreeTest.proposerPersonalDetailsSection(); //
 			// JourneyScreenTwo.proposerPersonalDetailsIncome();
 			JourneyScreenThreeTest.nomineeDetailsWithoutDependentSelection();

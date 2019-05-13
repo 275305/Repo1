@@ -189,7 +189,7 @@ public class JourneyScreenFour extends ReusableActions {
 	@FindBy(xpath = "//label[(text()=\"I am Exempt from the requirement of PAN under the following provisions of the IT Act 1961\")]")
 	public static WebElement iAmExemptFromTheRequirementOfPANUnderTheFollowingProvisionsOfTheITAct1961;
 
-	@FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[3]")
+	@FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[2]/form[1]/div[1]/div[1]/div[3]")
 	public static WebElement outsideClickScreenFour;
 
 	@FindBy(xpath = "//span[text()='Proceed']")
@@ -482,7 +482,7 @@ public class JourneyScreenFour extends ReusableActions {
 			action.sendKeys(Keys.ARROW_DOWN).build().perform();
 		}
 		Thread.sleep(400);
-		Proceedbtn.click();
+		// Proceedbtn.click();
 	}
 
 	public static void lifestyleFeildsValidation() throws Exception {

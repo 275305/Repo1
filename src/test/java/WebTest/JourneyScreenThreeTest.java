@@ -154,6 +154,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			JourneyScreenOne.dontHavePAN();
 			JourneyScreenOne.setMobNumber(1, 1, 2);
 			JourneyScreenOne.setEmailId(1, 1, 3);
+			JourneyScreenOne.clickProceed();
 			// JourneyScreenOne.setPreIssuanceNumber(1, 1, 4);
 
 
@@ -203,6 +204,35 @@ public class JourneyScreenThreeTest extends ReusableActions {
 
 		}}
 	
+	public static void fillingAllTheRequiredFeildForScreen2MinMaxAge() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenTwo.class);
+		try {
+
+			JourneyScreenTwo.setFirstName(3, 1, 0);
+			JourneyScreenTwo.setLastName(3, 1, 1);
+
+			JourneyScreenTwo.selectByDropdown();
+			Thread.sleep(1000);
+			JourneyScreenTwo.setHouseNo(3, 1, 3);
+			JourneyScreenTwo.setRoadNo(3, 1, 4);
+			JourneyScreenTwo.setVillageTown(3, 1, 5);
+			JourneyScreenTwo.setCountry(3, 1, 6);
+			JourneyScreenTwo.setState(3, 1, 7);
+			JourneyScreenTwo.setCity(3, 1, 8);
+			JourneyScreenTwo.setPinCode(3, 1, 9);
+			JourneyScreenTwo.setAlternateMobileNo(3, 1, 10);
+			// JourneyScreenOne.checkAndFillIssurersNameValidation(1, 1, 8);
+			// JourneyScreenOne.insurersGender();
+			// JourneyScreenThree.setDateBirthInsurersDetails(1, 1, 9);
+			// JourneyScreenOne.selectAndCheckRelationshipWithProposerOption();
+
+		} catch (Exception e) {
+			logger.error("Test case failed " + e.getMessage());
+			throw e;
+
+		}
+	}
+
 	public static void fillingAllTheRequiredFeildForScreen2AndSelectingFemale() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -1057,7 +1087,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 
 			// HomePage.clickDashboard();
 			// HomePage.clickNewApp();
-			JourneyScreenOne.setPanNumber(1, 1, 1);
+			JourneyScreenOne.setPanNumber(2, 9, 4);
 			JourneyScreenOne.setMobNumber(1, 1, 2);
 			JourneyScreenOne.setEmailId(1, 1, 3);
 			JourneyScreenOne.clickProceed();
@@ -1085,7 +1115,10 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			JourneyScreenFour.hazardousActivitiesNo();
 			JourneyScreenFour.selectCriminalChargesNo();
 			JourneyScreenFour.feetInchesKgsSelectionToMoveToScreen5POSV();
-			JourneyScreenThree.agreePopupToProceedToSendPreIssuranceVerificationLinkToCustomer();
+			JourneyScreenThree.fetchingTextFromToasterToValidatePANDOB();
+
+			// JourneyScreenThree.agreePopupToProceedToSendPreIssuranceVerificationLinkToCustomer();
+
 
 		}
 

@@ -98,7 +98,7 @@ public class RegressionSuitTest extends ReusableActions {
 	// TC -01 Verify the by default status of Nationality, Policy for and Proceed
 	// button on Journey Screen one
 
-	@Test(priority = 1, enabled = true)
+	@Test(priority = 1, enabled = false)
 	public void loginApplicationTest() throws Exception {
 		try {
 			PageFactory.initElements(driver, RegressionSuit.class);

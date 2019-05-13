@@ -240,10 +240,10 @@ public class JourneyScreenTwoTest extends ReusableActions {
 	public static void fillingAllTheRequiredFeildForScreen2ForPANValidation() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
-			JourneyScreenTwo.setFirstNamePAN(3, 2, 0);
-			JourneyScreenTwo.setLastNamePAN(3, 2, 1);
+			JourneyScreenTwo.setFirstNamePAN(2, 9, 3);
+			JourneyScreenTwo.setLastNamePAN(2, 10, 3);
 			JourneyScreenTwo.setDateBirthPANValidation();
-			JourneyScreenTwo.femaleSelection();
+			// JourneyScreenTwo.femaleSelection();
 			JourneyScreenTwo.selectByDropdown();
 			Thread.sleep(1000);
 			JourneyScreenTwo.setHouseNo(3, 1, 3);

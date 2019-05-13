@@ -14,7 +14,7 @@ import org.openqa.selenium.support.PageFactory;
 	    
 	    
 		// Locating New Application Button
-	@FindBy(xpath = "//a[@href='/journey/MQ==']/span")
+	@FindBy(xpath = "//a[@href='/journey/MQ==']")
 	    public static WebElement NewAppbtn; 
 	    
 	    

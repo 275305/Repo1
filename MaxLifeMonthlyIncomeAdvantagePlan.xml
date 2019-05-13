@@ -6,10 +6,10 @@
 		<parameter name="browser" value="safari" />
 		<parameter name="version" value="9.0" />
 		<parameter name="platform" value="MAC" />
-		<parameter name="testrun" value="runbsw" />	
-				<classes>
+		<parameter name="testrun" value="runbsw" />
+		<classes>
 
-			<class name="WebTest.SuperTermPlanTest" />																													
+			<class name="WebTest.MaxLifeMonthlyIncomeAdvantagePlanTest" />
 
 		</classes>
 	</test> <!-- Test -->
@@ -21,7 +21,7 @@
 		<parameter name="testrun" value="runbsw" />
 		<classes>
 
-			<class name="WebTest.SuperTermPlanTest" />
+			<class name="WebTest.MaxLifeMonthlyIncomeAdvantagePlanTest" />
 
 		</classes>
 	</test> <!-- Test -->
@@ -34,19 +34,20 @@
 		<parameter name="testrun" value="runfa" />
 		<classes>
 
-			<class name="WebTest.SuperTermPlanTest" />
+			<class name="WebTest.MaxLifeMonthlyIncomeAdvantagePlanTest" />
 
 		</classes>
 	</test> <!-- Test -->
 
 	<!-- <test name="Parallel Test on IE 10-Windows"> <parameter name="browser" 
 		value="IE"/> <parameter name="version" value="10.0"/> <parameter name="platform" 
-		value="WINDOWS"/> <classes> <class name="WebTest.JourneyScreenThreeTest"/> 
+		value="WINDOWS"/> <classes> <class name="WebTest.JourneyScreenOneTest"/> 
 		</classes> </test> Test -->
 
 	<!-- <test name="Parallel Test on safari 10-Mac"> <parameter name="browser" 
 		value="safari"/> <parameter name="version" value="10.0"/> <parameter name="platform" 
-		value="MAC"/> <classes> <class name="WebTest.JourneyScreenThreeTest"/> </classes> 
+		value="MAC"/> <classes> <class name="WebTest.JourneyScreenOneTest"/> </classes> 
 		</test> Test -->
+
 
 </suite> <!-- Suite -->

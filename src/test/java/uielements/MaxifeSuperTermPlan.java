@@ -1,5 +1,5 @@
 package uielements;
 
-public class SuperTermPlan extends ReusableActions {
+public class MaxifeSuperTermPlan extends ReusableActions {
 
 }

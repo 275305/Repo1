@@ -107,8 +107,11 @@ public class JourneyScreenThree extends ReusableActions {
 	@FindBy(xpath = "//input[@name='inches']")
 	public static WebElement labelInches;
 
-	@FindBy(xpath = "//button[2]/span[(text()='Proceed')]")
+	@FindBy(xpath = "//button[@id='popupProceed']")
 	public static WebElement agreePopup;
+
+	@FindBy(xpath = "//span[contains(text(),'Retry')]")
+	public static WebElement retryButton;
 
 	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[2]/div[2]/div/div/div/div/div[@role=\"button\"]")
 	public static WebElement selectPreferredInsuranceRepositoryThatYouWouldLikeToHaveEIAWith;
@@ -262,6 +265,9 @@ public class JourneyScreenThree extends ReusableActions {
 
 	@FindBy(xpath = "//div[@id='typeofAccount_id']")
 	public static WebElement typeOfAcc;
+
+	@FindBy(xpath = "//div[@id='ProceedLifestyle']")
+	public static WebElement proceedLifestyle;
 
 	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[3]/div[4]/div/div/div/div/div/div[@role=\"button\"]")
 	public static WebElement typeOfAccInsurer;
@@ -871,6 +877,11 @@ public class JourneyScreenThree extends ReusableActions {
 	public static void typeOfAcc() throws Exception {
 
 		click(typeOfAcc);
+	}
+
+	public static void proceedButtonLifestyle() throws Exception {
+
+		click(proceedLifestyle);
 	}
 
 	public static void typeOfAccOption() throws Exception {
@@ -2288,6 +2299,112 @@ public class JourneyScreenThree extends ReusableActions {
 		driver.close();
 	}
 
+	public static void gmailFunctionalitySmartTermPlan() throws Exception {
+
+		((JavascriptExecutor) driver).executeScript("window.open()");
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		driver.switchTo().window(tabs.get(1));
+		driver.get("https://mail.google.com");
+		setUsername(1, 10, 3);
+		nextButton.click();
+		Thread.sleep(800);
+		setPassword(1, 11, 3);
+		Thread.sleep(800);
+		passwordNextButton.click();
+		Thread.sleep(800);
+
+		waitTillElementToBeClickableLongWait(preInsuranceVerificationLinkMail);
+		Thread.sleep(700);
+		preInsuranceVerificationLinkMail.click();
+		System.out.println("clicked");
+
+		// Actions actionObject = new Actions(driver);
+		// actionObject.keyDown(Keys.CONTROL).sendKeys(Keys.F5).keyUp(Keys.CONTROL).perform();
+
+		waitTillElementToBeClickableLongWait(preverificationLink);
+		Thread.sleep(700);
+
+		String link = preverificationLink.getText();
+
+		WebDriver driver = new ChromeDriver();
+		driver.get(link);
+		driver.manage().window().maximize();
+
+		Thread.sleep(700);
+
+		String str = driver.getCurrentUrl();
+		System.out.println(str);
+
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-two\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-eight\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
+		Thread.sleep(500);
+
+		driver.findElement(By.xpath("//label[@for=\"radio-two\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-four\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
+		Thread.sleep(500);
+
+		driver.findElement(By.xpath("//label[@for=\"radio-two\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-four\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
+		Thread.sleep(500);
+
+		driver.findElement(By.xpath("//label[@for=\"radio-two\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-four\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-2\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-10\"]")).click();
+		Thread.sleep(500);
+
+		driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
+		Thread.sleep(500);
+
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//input[@id='codeBox1']")).sendKeys("1");
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//input[@id='codeBox2']")).sendKeys("2");
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//input[@id='codeBox3']")).sendKeys("3");
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//input[@id='codeBox4']")).sendKeys("4");
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//label[@class='cstm-check-label']")).click();
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//button[@id='submitbutton']")).click();
+		Thread.sleep(1800);
+		/*
+		 * robot.keyPress(KeyEvent.VK_ALT); robot.keyPress(KeyEvent.VK_TAB);
+		 * robot.keyRelease(KeyEvent.VK_TAB); robot.keyRelease(KeyEvent.VK_ALT);
+		 * 
+		 * Thread.sleep(500);
+		 * 
+		 * robot.keyPress(KeyEvent.VK_CONTROL); robot.keyPress(KeyEvent.VK_TAB);
+		 * robot.keyRelease(KeyEvent.VK_TAB); robot.keyRelease(KeyEvent.VK_CONTROL);
+		 */
+
+		driver.close();
+	}
+
+
+
 
 	public static void deletingAllInboxMail() throws Exception {
 		((JavascriptExecutor) driver).executeScript("window.open()");
@@ -2442,8 +2559,9 @@ public class JourneyScreenThree extends ReusableActions {
 		Thread.sleep(200);
 
 		annualIncomePersonalDetails(3, 3, 14);
-
+		Thread.sleep(500);
 		JourneyScreenTwo.Savebtn.click();
+		Thread.sleep(500);
 		Proceedbtn.click();
 		Thread.sleep(200);
 
@@ -2493,8 +2611,25 @@ public class JourneyScreenThree extends ReusableActions {
 		waitTillElementToBeClickable(agreePopup);
 		System.out.println(agreePopup.isDisplayed());
 		Thread.sleep(500);
-		// agreePopup.click();
-		// Thread.sleep(500);
+		agreePopup.click();
+		Thread.sleep(500);
+
+	}
+
+	public static void fetchingTextFromToasterToValidatePANDOB() throws Exception {
+		// driver.switchTo().defaultContent();
+		// driver.switchTo().alert();
+		System.out.println("Entered");
+		Thread.sleep(500);
+		// waitTillElementLocated(retryButton);
+		Thread.sleep(200);
+		List<WebElement> listOfToaster = driver.findElements(By.xpath("//span[@id='client-snackbar']/div/span[2]"));
+		for (int i = 0; i < listOfToaster.size(); i++) {
+			System.out.println(listOfToaster.get(i).getText());
+		}
+		
+		agreePopup.click();
+		Thread.sleep(500);
 
 	}
 
@@ -2693,10 +2828,10 @@ public class JourneyScreenThree extends ReusableActions {
 		Thread.sleep(500);
 		driver.findElement(By.xpath("//select[@class='react-datepicker__year-select']")).click();
 		Thread.sleep(500);
-		driver.findElement(By.xpath(".//*[@class='react-datepicker__year-select']/option[@value='1991']")).click();
+		driver.findElement(By.xpath(".//*[@class='react-datepicker__year-select']/option[@value='1992']")).click();
 		Thread.sleep(500);
 		driver.findElement(By.xpath(
-				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\"day-8\"]"))
+				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\"day-20\"]"))
 				.click();
 		Thread.sleep(500);
 

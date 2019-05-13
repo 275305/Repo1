@@ -11,23 +11,23 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import uielements.JourneyScreenFour;
-import uielements.JourneyScreenOne;
-import uielements.JourneyScreenSix;
-import uielements.JourneyScreenThree;
+import uielements.HomePage;
 import uielements.JourneyScreenTwo;
 import uielements.LoginPage;
+import uielements.RegressionSuit;
 import uielements.ReusableActions;
 
-public class MaxLifeSuperTermPlanTest extends ReusableActions {
+public class MaxLifeSavingsAdvantagePlanTest extends ReusableActions {
 
 	@BeforeTest
+
 	@Parameters(value = { "browser", "version", "platform", "testrun" })
 	public void setUp(String browser, String version, String platform, String testrun) throws Exception {
 		String testRun = testrun;
 		/* String testRun1=testrun1; */
-		if (testRun.equals("run")) {
-			// if (testRun.equals("runbsw")) {
+		if (testRun.equals("run"))
+		// if (testRun.equals("runbsw"))
+		{
 
 			try {
 				DesiredCapabilities capability = new DesiredCapabilities();
@@ -52,13 +52,13 @@ public class MaxLifeSuperTermPlanTest extends ReusableActions {
 			// break;
 		}
 
-		else
-		if (testRun.equals("runfa")) {
-			// if (testRun.equals("run")) {
+		else if (testRun.equals("runfa"))
+			// if (testRun.equals("run"))
 			// @BeforeClass
 			// public void launchBrowser() throws Exception{
 
 			try {
+
 				// System.setProperty("webdriver.chrome.driver",
 				// "D:\\chromedriver_win32\\chromedriver.exe");
 				System.setProperty("webdriver.chrome.driver",
@@ -69,86 +69,47 @@ public class MaxLifeSuperTermPlanTest extends ReusableActions {
 				throw e;
 			}
 
-		}
 	}
 
-	@Test(priority = 0, enabled = true)
-	public void India() throws Exception {
-		try {
 
+	// TC -01 Verify the by default status of Nationality, Policy for and Proceed
+	// button on Journey Screen one
+
+	@Test(priority = 0, enabled = true)
+	public void loginApplicationTest() throws Exception {
+		try {
+			PageFactory.initElements(driver, RegressionSuit.class);
 			prop = ReusableActions.readProperties();
 			driver.get(prop.getProperty("SampleURL"));
 			LoginPage.verifyloginpage();
-
 			// Maximizing the browser window
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 			logger.info("Fulfilment URL opened successfully");
-
 			LoginPage.logintest(prop.getProperty("username"), prop.getProperty("password"));
 			logger.info("User logged in successfully");
-			/*
-			 * HomePage.clickDashboard(); HomePage.clickNewApp();
-			 * JourneyScreenOne.isIndianSelected(); JourneyScreenOne.isSelfSelected();
-			 * JourneyScreenOne.isProceedEnabled();
-			 */
-
 		} catch (Exception e) {
+
 			logger.error("Test case failed: " + e.getMessage());
+
 			throw e;
 		}
 	}
 
-	@Test(priority = 1, enabled = false)
-	public static void CheckproductConfigrationSTPGeneratingPdf() throws Exception {
-		PageFactory.initElements(driver, JourneyScreenTwo.class);
-		try {
-			// alwaysCloseAllChildTabs();
-			// HomePage.clickDashboard();
-			// HomePage.clickNewApp();
-			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
-			JourneyScreenOne.clickProceed();
-			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
-			JourneyScreenTwo.traditional();
-			JourneyScreenTwo.selectByDropdownSTP();
-			JourneyScreenTwo.fillingAllTheRequiredFeildsForSTP();
-			JourneyScreenTwo.checkPOSVforSTPPremiumCommitment(3, 4, 11);
-
-		} catch (Exception e) {
-			logger.error("Test case failed " + e.getMessage());
-			throw e;
-
-		}
-	}
 
 	@Test(priority = 1, enabled = true)
-	public static void CheckproductConfigrationSTPTppPush() throws Exception {
+	public void CheckproductConfigrationSAPGeneratingPdf() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
 			alwaysCloseAllChildTabs();
-			CheckproductConfigrationSTPGeneratingPdf();
-			JourneyScreenThreeTest.proposerPersonalDetailsSection(); //
-			// JourneyScreenTwo.proposerPersonalDetailsIncome();
-			JourneyScreenThreeTest.nomineeDetailsWithoutDependentSelection();
-			JourneyScreenThreeTest.bankDetailsSectionFillingData();
-			JourneyScreenThree.fillingAnnualIncomeTOProceed();
-			Thread.sleep(1000);
-
-			JourneyScreenFour.form60RelatedDetailsIdentityProofNameOptionSelection();
-			JourneyScreenFour.setIdentityProofNumberValidation(0, 1, 6);
-			JourneyScreenFour.identityProofIssuingAuthority();
-			JourneyScreenFour.iAmExemptFromTheRequirementOfPANUnderTheFollowingProvisionsOfTheITAct1961();
-
-			JourneyScreenFour.arrowDownFunctionToScrollDownTillBottom();
-			JourneyScreenFour.criticalIllnessNoOption();
-			JourneyScreenFour.hazardousActivitiesNo();
-			JourneyScreenFour.selectCriminalChargesNo();
-			JourneyScreenFour.feetInchesKgsSelectionToMoveToScreen5POSV();
-			JourneyScreenThree.agreePopupToProceedToSendPreIssuranceVerificationLinkToCustomer();
-			JourneyScreenSix.fetchingProposalNumberFromUI();
-			JourneyScreenThree.gmailFunctionality();
-			JourneyScreenThreeTest.usingPolicyNumberToFillScreenSixTPPPush();
-			JourneyScreenThreeTest.DeletingALLInboxMailForTppPushClose();
+			// HomePage.clickDashboard();
+			HomePage.clickNewApp();
+			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
+			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
+			JourneyScreenTwo.traditional();
+			JourneyScreenTwo.selectByDropdownSAP();
+			JourneyScreenTwo.fillingAllTheRequiredFeildsForSAP();
+			JourneyScreenTwo.premiumCommitmentSAPCheckingMultipleDataForErrorMessage();
 
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
@@ -156,5 +117,6 @@ public class MaxLifeSuperTermPlanTest extends ReusableActions {
 
 		}
 	}
+
 
 }

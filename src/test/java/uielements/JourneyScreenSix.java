@@ -20,7 +20,10 @@ public class JourneyScreenSix extends ReusableActions {
 	@FindBy(xpath = "//span[contains(text(),'Payment')]")
 	static WebElement paymetPage;
 
-	@FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[3]")
+	@FindBy(xpath = "//input[@id='policyTranactionSearchBox']")
+	static WebElement policyTranactionSearchBox;
+
+	@FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[2]/form[1]/div[1]/div[1]/div[3]")
 	static WebElement outsideClick;
 
 	@FindBy(xpath = "//*[@id='termsNConditionClose']")
@@ -121,8 +124,8 @@ public class JourneyScreenSix extends ReusableActions {
 	@FindBy(xpath = "//div[@id='visitType_id']")
 	public static WebElement visitType;
 
-	@FindBy(xpath = "//div[@id='menu-visitType']/div/ul/li[1]")
-	public static WebElement visitType1stOPtion;
+	@FindBy(xpath = "//div[@id='menu-visitType']/div/ul/li[2]")
+	public static WebElement visitTypeLab;
 
 	public static int policyNumber;
 	public static String str2;
@@ -161,9 +164,11 @@ public class JourneyScreenSix extends ReusableActions {
 	}
 
 	public static void fetchingProposalNumberFromUI() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenSix.class);
+		System.out.println("Entered in desired location");
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//span[contains(text(),'Payment')]")).click();
-		Thread.sleep(4000);// Wiating for posv manualyyyyy
+		driver.findElement(By.xpath("//span[(text()=' Payment')]")).click();
+		// Thread.sleep(4000);// Wiating for posv manualyyyyy
 		String policyNumberFromUI = driver.findElement(By.xpath("//span[@id='proposalNumberId']")).getText();
 		System.out.println(policyNumberFromUI);
 
@@ -191,15 +196,17 @@ public class JourneyScreenSix extends ReusableActions {
 	}
 
 	public static void fetchingPolicyNumberAndCompletingTheJourneyForTPP() throws Exception {
-		Thread.sleep(1000);
-
-		HomePage.clickDashboard();
+		Thread.sleep(1800);
+		waitTillElementToBeClickable(policyTranactionSearchBox);
+		// HomePage.clickDashboard();
 		driver.findElement(
-				By.xpath("//input[@placeholder='Enter email id/ Mobile no / Proposal number /Transaction ID']"))
+				By.xpath("//input[@id='policyTranactionSearchBox']"))
 				.sendKeys(str2);
-
+		Thread.sleep(500);
 		driver.findElement(By.xpath("//label[@for='policyNumber']")).click();
+		Thread.sleep(500);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
+		Thread.sleep(500);
 		boolean policyIsDisplayed = driver.findElement(By.xpath("//th[(text()=" + policyNumber + ")]")).isDisplayed();
 		System.out.println(policyIsDisplayed);
 		driver.findElement(By.xpath("//th[(text()=" + policyNumber + ")]")).click();
@@ -352,7 +359,7 @@ public class JourneyScreenSix extends ReusableActions {
 		Thread.sleep(500);
 		visitType.click();
 		Thread.sleep(500);
-		visitType1stOPtion.click();
+		visitTypeLab.click();
 	}
 
 	/*
