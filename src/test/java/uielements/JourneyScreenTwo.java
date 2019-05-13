@@ -610,6 +610,9 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = ".//*[@id='menu-premiumPaymentTerm']/div[2]/ul/li[1]")
 	static WebElement PremiumPaymentTermOption;
 
+	@FindBy(xpath = "//li[@id='liId_40']")
+	static WebElement PremiumPaymentTermOption40;
+
 	@FindBy(xpath = ".//*[@id='menu-premiumPaymentTerm']/div[2]/ul/li[2]")
 	static WebElement PremiumPaymentTermOption10;
 
@@ -1024,6 +1027,16 @@ public class JourneyScreenTwo extends ReusableActions {
 		Thread.sleep(500);
 		waitTillElementToBeClickable(PremiumPaymentTermOption);
 		PremiumPaymentTermOption.click();
+		Thread.sleep(500);
+	}
+
+	public static void premiumPayementTermSTP40() throws Exception {
+		Thread.sleep(500);
+		waitTillElementToBeClickable(premiumPayementTermSTP);
+		premiumPayementTermSTP.click();
+		Thread.sleep(500);
+		waitTillElementToBeClickable(PremiumPaymentTermOption40);
+		PremiumPaymentTermOption40.click();
 		Thread.sleep(500);
 	}
 
@@ -4881,6 +4894,35 @@ public class JourneyScreenTwo extends ReusableActions {
 		nonSmoker();
 
 		modeOfPaymentSTPSemiAnnual();
+		lifeStageEventBenefitNo();
+		premiumBackOptiontNo();
+		proceedBtn.click();
+		Thread.sleep(40000);
+		// WOPPlusRiderCheckBox();
+		ifConditionForTabSizeTwoPDFIllustrationProceedingScreenAhead();
+
+	}
+
+	public static void payTill60IncomeInflationProtectorForm2() throws Exception {
+
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType3rdOptionSAP);
+		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[4]")).click();
+		Thread.sleep(1000);
+		
+		premiumPayementTermSTP();
+
+		policyTermSTPDropDown();
+
+		deathBenifitIncomeInflationProtector();
+		
+		enterMonthlyIncome(3, 3, 11);
+		incomePeriod20();
+		nonSmoker();
+
+		modeOfPaymentSTPQuaterly();
 		lifeStageEventBenefitNo();
 		premiumBackOptiontNo();
 		proceedBtn.click();

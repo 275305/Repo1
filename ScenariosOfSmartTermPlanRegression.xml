@@ -14,7 +14,7 @@
 		</classes>
 	</test> <!-- Test -->
 
-<!--	<test name="Parallel Test on IE 11 -Windows">
+	<test name="Parallel Test on IE 11 -Windows">
 		<parameter name="browser" value="IE" />
 		<parameter name="version" value="11.0" />
 		<parameter name="platform" value="WINDOWS" />
@@ -24,9 +24,9 @@
 			<class name="WebTest.ScenariosOfSmartTermPlanRegressionTest" />
 
 		</classes>
-	</test> Test -->
+	</test> <!-- Test -->
 
-<!--	<test name="Parallel Test on firefox 53 -Windows">
+	<test name="Parallel Test on firefox 53 -Windows">
 		<parameter name="browser" value="firefox" />
 		<parameter name="version" value="53.0" />
 		<parameter name="platform" value="WINDOWS" />
@@ -37,7 +37,7 @@
 			<class name="WebTest.ScenariosOfSmartTermPlanRegressionTest" />
 
 		</classes>
-	</test>  Test -->
+	</test> <!-- Test -->
 
 	<!-- <test name="Parallel Test on IE 10-Windows"> <parameter name="browser" 
 		value="IE"/> <parameter name="version" value="10.0"/> <parameter name="platform" 

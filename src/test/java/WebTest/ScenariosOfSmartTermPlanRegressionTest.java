@@ -103,7 +103,7 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 	}
 
 
-	@Test(priority = 1, enabled = true)
+	@Test(priority = 2, enabled = true)
 	public static void singlePayLifeCoverForm1PDFGenration() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -548,5 +548,28 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 		}
 	}
 
+	@Test(priority = 20, enabled = true)
+	public static void payTill60IncomeInflationProtectorForm2PDFGenration() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenTwo.class);
+		try {
+			alwaysCloseAllChildTabs();
+			//HomePage.clickDashboard();
+			HomePage.clickNewApp();
+			JourneyScreenTwoTest.fillingFeildsScreenTwoFunction();
+			JourneyScreenTwoTest.fillingInsurersDetailsScreenTwo();
+
+			JourneyScreenTwo.traditional();
+			JourneyScreenTwo.selectByDropdownSmartTermPlan();
+			JourneyScreenTwo.selectByDropdownNeedOfInsur();
+			JourneyScreenTwo.selectByDropdownLifeStge();
+
+			JourneyScreenTwo.payTill60IncomeInflationProtectorForm2();
+
+		} catch (Exception e) {
+			logger.error("Test case failed " + e.getMessage());
+			throw e;
+
+		}
+	}
 }
 
