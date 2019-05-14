@@ -1145,6 +1145,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			 JourneyScreenSix.switchingBackToMainWindowScreenSix();
 			 JourneyScreenSix.preferedDate();
 			 JourneyScreenSix.visitType();
+			JourneyScreenSix.medicalCentreSelection();
 			 JourneyScreenSix.termsAndCondition();
 		}
 

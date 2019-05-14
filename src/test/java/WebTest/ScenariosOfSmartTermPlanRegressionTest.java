@@ -103,7 +103,7 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 	}
 
 
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 1, enabled = true)
 	public static void singlePayLifeCoverForm1PDFGenration() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {

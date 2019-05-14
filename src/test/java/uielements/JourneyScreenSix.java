@@ -44,6 +44,9 @@ public class JourneyScreenSix extends ReusableActions {
 	@FindBy(xpath = "//div[@id='FF_PrproposerUploadLightBox']")
 	public static WebElement addButtonFactFinder;
 
+	@FindBy(xpath = "//div[@id='Ver_Dec_PrproposerUploadLightBox']")
+	public static WebElement addButtonVernacular;
+
 	@FindBy(xpath = "//a[@id='termsAndConditionId']")
 	public static WebElement termsAndConditionId;
 
@@ -96,6 +99,9 @@ public class JourneyScreenSix extends ReusableActions {
 
 	@FindBy(xpath = "//div[@id='proposer|StandardDoc|FF_Pr']")
 	public static WebElement factFinderUpload;
+
+	@FindBy(xpath = "//div[@id='proposer|StandardDoc|Ver_Dec_Pr']")
+	public static WebElement vernacularDeclarationUpload;
 
 	@FindBy(xpath = "//div[@id='BankS_PrproposerUploadLightBox']")
 	public static WebElement addButton;
@@ -290,6 +296,16 @@ public class JourneyScreenSix extends ReusableActions {
 
 	}
 
+	public static void vernacularUpload() throws Exception {
+		Thread.sleep(10000);
+		waitTillElementToBeClickable(vernacularDeclarationUpload);
+		Thread.sleep(3500);
+		vernacularDeclarationUpload.click();
+		Thread.sleep(500);
+		addButtonVernacular.click();
+
+	}
+
 	public static void ecsMandateFormUpload() throws Exception {
 		Thread.sleep(10000);
 		waitTillElementToBeClickable(ecsMandateFormUpload);
@@ -360,6 +376,14 @@ public class JourneyScreenSix extends ReusableActions {
 		visitType.click();
 		Thread.sleep(500);
 		visitTypeLab.click();
+	}
+
+	public static void medicalCentreSelection() throws Exception {
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//tr[1]//td[1]")).click();
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//button[@id='popupProceed']")).click();
+		Thread.sleep(800);
 	}
 
 	/*
@@ -491,6 +515,27 @@ public class JourneyScreenSix extends ReusableActions {
 
 	}
 
+	public static void vernacularDeclaration() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenSix.class);
+
+		vernacularUpload();
+
+		// desktopFileUpload();
+		Screen s = new Screen();
+		s.type("C");
+		s.type(Key.DOWN);
+		s.type(Key.ENTER);
+
+		s.type("\"BaadharCard.jpg\" \"AadharCard.jpg\" ");
+		s.type(Key.ENTER);
+
+		Thread.sleep(500);
+		// addButtonFactFinder.click();
+
+		submitButtonPopup.click();
+
+	}
+
 	public static void arrowDownFunctionToScrollDown() throws Exception {
 		Thread.sleep(400);
 		for (int i = 1; i < 38; i++) {
@@ -598,7 +643,8 @@ public class JourneyScreenSix extends ReusableActions {
 		factFinder();
 		Thread.sleep(800);
 
-
+		vernacularDeclaration();
+		Thread.sleep(800);
 	}
 
 	public static void closingTestTrial() throws Exception {
