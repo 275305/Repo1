@@ -21,18 +21,7 @@ import uielements.ReusableActions;
 
 public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 
-	//@BeforeTest
-	public void abc() throws Exception{
-	try{
-				System.setProperty("webdriver.chrome.driver",
-						"C:\\Matrix\\AutomationQA\\automationqa\\src\\test\\resources\\driver\\chromedriver.exe");
-				driver = new ChromeDriver();
-			} catch (Exception e) {
-				// logger.error("Test case failed: " + e.getMessage());
-				throw e;
-			}
 
-		}
 	
 	
 	

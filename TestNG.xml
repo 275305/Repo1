@@ -2,13 +2,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="MainTestSuite">
-	<suite-files>
-		<!--  <suite-file path="RegressionSuit.xml" />-->
-		<!--<suite-file path="JourneyScreenOne.xml" />
-		//<suite-file path="JourneyScreenTwo.xml" />
-		//<suite-file path="JourneyScreenThree.xml" />
-        //<suite-file path="POSVFlowForSAPMIAP.xml" />
-        //<suite-file path="JourneyScreenFour.xml" />-->
-         <suite-file path="ScenariosOfSmartTermPlanRegression.xml" />
-	</suite-files>
+	
+	<test name="testngTest">
+		<classes>
+			<class name="WebTest.ScenariosOfSmartTermPlanRegressionTest" />
+		</classes>
+	</test>
+
 </suite>
