@@ -13,7 +13,9 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-
+import ru.yandex.qatools.allure.annotations.Description;
+import ru.yandex.qatools.allure.annotations.Severity;
+import ru.yandex.qatools.allure.model.SeverityLevel;
 import uielements.HomePage;
 import uielements.JourneyScreenTwo;
 import uielements.LoginPage;
@@ -52,8 +54,8 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 
     }
 	
-	
-
+	@Severity(SeverityLevel.BLOCKER)
+    @Description("Verify SignIn functionality")
 	@Test(priority = 0, enabled = true)
 	public void India() throws Exception {
 		try {
