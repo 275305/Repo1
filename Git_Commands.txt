@@ -1,0 +1,51 @@
+
+Go to the folder from where need to push the files in GIT Repo
+
+
+1) 
+
+ --> Git init
+
+ls
+
+git remote add origin <path of the git repo> 
+
+
+--> git add .  [ which will add all the files from the current folder]
+ 
+git status
+
+--> git commit -m "Message to be readble for which activities going to be commited"
+
+--> git status
+
+--> git push origin master [This is to push the required code to git]
+
+git branch
+
+git pull origin master [This is to pull changed done anything in GIT HUB to the local master]
+
+
+
+
+	
+
+Just to add on to the other answers, before i knew my way around git, i was looking for some way to upload existing code to a new github (or other git) repo. Here's the brief that would save time for newbs:-
+
+Assuming you have your NEW empty github or other git repo ready:-
+
+cd "/your/repo/dir"
+git clone https://github.com/user_AKA_you/repoName # (creates /your/repo/dir/repoName)
+cp "/all/your/existing/code/*" "/your/repo/dir/repoName/"
+git add -A
+git commit -m "initial commit"
+git push origin master
+
+Alternatively if you have an existing local git repo
+
+cd "/your/repo/dir/repoName"
+#add your remote github or other git repo
+git remote set-url origin https://github.com/user_AKA_you/your_repoName
+git commit -m "new origin commit"
+git push origin master
+
