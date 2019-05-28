@@ -1,0 +1,134 @@
+
+1- how to pass parameter in cucumber script.
+
+2- Perform multiple set of data in Cucumber 
+   like Data Driven Approach
+
+3-How to Generate Reports in Cucumber
+
+     -> HTML Reports
+     ->JSON Reports
+     ->XML Reports
+
+
+4-How to run Cucumber Test as maven Test
+
+  -> add Maven compiler dependency
+  ->add Sure Fire Dependency
+
+
+5-How to integrate cucumber with Jenkins
+
+     ->do the jenkis setup  and run using java -jar jenkins.war command
+
+     ->http://localhost:8080/
+     ->do the Java setup in jenkins
+     ->do the Maven Setup in jenkins
+
+=============================================
+</dependencies>
+  <build>
+  <plugins>
+  <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.0</version>
+            <configuration>
+                <source>1.6</source>
+                <target>1.6</target>
+            </configuration>
+        </plugin>
+  <plugin>
+   <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.18.1</version>
+        <configuration>
+          <includes>
+          <exclude>**/*Runner.java</exclude>
+          </includes>
+        </configuration>
+  </plugin>
+  </plugins>
+  </build>
+  
+</project>
+====================================
+ Feature: Test Login scenario
+
+  Scenario Outline: Test Login with valid cridential
+ Given Open Firefox and start application 
+ When I enter valid "<username>" and valid "<password>"
+ Then User should be login sucessfully
+ 
+ Examples:
+ |username|password|
+ |opensourcecms|opensourcecms|
+ |opensourcecms|opensourcecms|
+ |opensourcecms|opensourcecms|
+===========================================================
+private WebDriver driver;
+
+@Given("^Open Firefox and start application$")
+public void open_Firefox_and_start_application() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+	System.setProperty("webdriver.chrome.driver","C:\\D-Drive\\Pradeep_Pracite_Purpose\\chromedriver.exe");
+	
+	driver=new ChromeDriver();
+	
+	 String baseUrl="https://s1.demo.opensourcecms.com/wordpress/wp-login.php";
+	 
+	 driver.get(baseUrl);
+	 //driver.manage().window().maximize();
+	 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	 
+    
+}
+
+@When("^I enter valid \"(.*?)\" and valid \"(.*?)\"$")
+public void i_enter_valid_and_valid(String uname, String pass) {
+    // Write code here that turns the phrase above into concrete actions
+	
+	driver.findElement(By.xpath("//input[@id='user_login']")).sendKeys(uname);
+	driver.findElement(By.xpath("//input[@id='user_pass']")).sendKeys(pass);
+    driver.findElement(By.xpath("//input[@id='wp-submit']")).click();
+}
+
+@Then("^User should be login sucessfully$")
+public void user_should_be_login_sucessfully() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+	
+	System.out.println("Login sucessfully");
+  
+}
+
+===================================================
+
+package com.bdd.cucumber;
+
+import org.junit.runner.RunWith;
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(features="src\\test\\java\\features\\login.feature",
+glue={"stepdefination"},
+plugin={"html:target/cucumber-html-report","json:target/cucumber.json",
+		"junit:target/cucumber-result.xml"})
+public class TestRunner {
+	
+	
+
+}
+================================================
+
+
+
+
+# Examples:
+# |username|password|
+# |opensourcecms|opensourcecms|
+# |opensourcecms|opensourcecms|
+# |opensourcecms|opensourcecms|
+
+,glue={"stepDefination"}

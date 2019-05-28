@@ -1,0 +1,24 @@
+
+
+Most Important 
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>3.4.0</version>
+</dependency>
+
+======================================================
+you can use FF version 53 and above with geckodriver V0.18.0 for Selenium 3.4.0 dependency
+E:\Pradeep_Pracite_Purpose2\Firefoxv18\geckodriver.exe
+================================================================
+
+
+
+
+
+
+
+
+
+
+
