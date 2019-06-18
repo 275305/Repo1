@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.FormulaEvaluator;
@@ -51,26 +52,39 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//h4[(text()=\"Illustration could not be generated.\")]")
 	static WebElement errorMessageWhenAgeMoreThan60;
 
+/*	@FindBy(xpath = "//input[@name='insurerName']")
+	static WebElement insurersName;*/
+	
+	/*Pradeep has changed*/
 	@FindBy(xpath = "//input[@name='insurerName']")
-	static WebElement insurersName;
+	static WebElement insurersNameLabel;
 
 	@FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[2]/form[1]/div[1]/div[1]/div[3]")
 	static WebElement outsideClick;
 
 	@FindBy(xpath = "//li[contains(text(),'Maximum LI Age at Entry for Pay Till 60 variant is')]")
 	static WebElement maximumAgeLimit44ErrorMessage;
-
+	
 	@FindBy(xpath = "//label[contains(@for, 'InsurerGenderMale')]")
 	static WebElement insurersGenderMale;
-
+			
+	/*Pradeep has changed
+	@FindBy(xpath = "//label[@for='InsurerGenderMale']")
+	static WebElement insurersGenderMale;*/
+	
 	@FindBy(xpath = "//*[@id='menu-relationshipWithProposer']/div[2]/ul/li[contains(text(),\"Parent\")]")
 	static WebElement relationshipWithProposerParentOption;
 
 	@FindBy(xpath = "//div[@id='relationshipWithProposer_id']")
 	static WebElement relationshipWithProposer;
-
+	
+	
 	@FindBy(xpath = "//label[contains(@for, 'InsurerGenderFemale')]")
 	static WebElement insurersGenderFemale;
+	
+	/*Pradeep has changed
+	@FindBy(xpath = "//label[@for='InsurerGenderFemale']")
+	static WebElement insurersGenderFemale;*/
 
 	@FindBy(xpath = "//label[@for='female']")
 	static WebElement genderFemale;
@@ -376,25 +390,40 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//input[@name='communicationVillageTown']")
 	static WebElement communicationVillageTown;
 
-	@FindBy(xpath = "//input[@placeholder='Search a country']")
+	/*@FindBy(xpath = "//input[@placeholder='Search a country']")
+	static WebElement country;*/
+
+	/*Pradeep has changed*/
+	@FindBy(xpath = "//input[@id='permanentCountry_idd']")
 	static WebElement country;
 
-	@FindBy(xpath = "//div[@id='Countryid']//input[@id='Country_idd']")
+	@FindBy(xpath = "//input[@name='communicationCountry']")
 	static WebElement countryCommunication;
 
+	
 	@FindBy(xpath = "//span[contains(text(),'Either Permanent or Communication address should b')]")
 	static WebElement errorMsgWhenSameCountryIsSelectedForPermanentAndCommunication;
 
 	@FindBy(xpath = "//input[@placeholder='Search a state']")
 	static WebElement searchState;
-
+	
+	/*
 	@FindBy(xpath = "//div[@id='communicationStateid']//input[@id='State_idd']")
+	static WebElement communicationStateCommunication;*/
+	
+	 /* Pradeep has changed*/
+	@FindBy(xpath = "//input[@id='communicationState_idd']")
 	static WebElement communicationStateCommunication;
+	
 
 	@FindBy(xpath = "//input[@placeholder='Search a city']")
 	static WebElement searchCity;
 
-	@FindBy(xpath = "//div[@id='Cityid']//input[@id='City_idd']")
+/*	@FindBy(xpath = "//div[@id='Cityid']//input[@id='City_idd']")
+	static WebElement searchCityComunication;*/
+	
+	/*Pradeep has changed*/
+	@FindBy(xpath = "//input[@id='communicationCity_idd']")
 	static WebElement searchCityComunication;
 
 	@FindBy(xpath = "//input[@name=\"permanentPinCode\"]")
@@ -863,9 +892,13 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//li[@id='react-autowhatever-permanentCity--item-0']")
 	static WebElement city1stOption;
 
-	@FindBy(xpath = "//div[@id='insurerDateOfBirth_id']")
+	/*@FindBy(xpath = "//div[@id='insurerDateOfBirth_id']")
+	static WebElement dateOfBirthIssurer;*/
+     /*Pradeep has changed*/
+	@FindBy(xpath = "//input[@name='insurerDateOfBirth']")
 	static WebElement dateOfBirthIssurer;
-
+	
+	
 	public static void selectByDropdown() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -879,17 +912,16 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	public static void selectByDropdownProposerCommunication() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
-		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		waitTillElementToBeClickable(proofTypeDropDownPropserCommunication);
 		proofTypeDropDownPropserCommunication.click();
 		WebElement element = driver.findElement(By.xpath(
 				"//li[@id='liId_Utility bill not more than 2 months (electricity, telephone, post-paid mobile, piped gas, water bill)']"));
 		new Actions(driver).moveToElement(element).click().perform();
 		proofTypeDropDownValueProposerCommunication.click();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		outsideClick.click();
-		arrowDownFunctionToScrollDown();
-
+		//arrowDownFunctionToScrollDown();
 	}
 
 	public static void selectFemale() throws Exception {
@@ -2601,6 +2633,8 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	public static void houseNoProposerCommunication(int x, int y, int z) throws Exception {
 		houseNoProposerCommunication.clear();
+		//arrowDownFunctionToScrollDown();
+		//Thread.sleep(3000);
 		type(houseNoProposerCommunication, readingdata(x, y, z));
 		String houseNoDataFromExcel = houseNoProposerCommunication.getAttribute("value");
 		int size = houseNoDataFromExcel.length();
@@ -2752,7 +2786,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		if (isElementDisplayed(errorMsgOutsideIndiaAdd)) {
 			Assert.fail("Test case fail:As the error message is still displayed on the page after selecting no option");
 		} else {
-			System.out.println("Test case pass:As the error message is not visible after selecting no option");
+			System.out.println("Test case pass:As the pass message is not visible after selecting no option");
 		}
 		permanentReflexiveNoOption.click();
 		JourneyScreenFour.arrowDownFunctionToScrollDown();
@@ -2801,7 +2835,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		// searchState.click();
 
 		searchState.sendKeys(Keys.BACK_SPACE);
-		String countryDataFromExcel = searchState.getAttribute("value");// T
+		String countryDataFromExcel = searchState.getAttribute("value");
 		String dropDownValue = state1stOption.getText();
 		System.out.println(dropDownValue);
 		if (dropDownValue.startsWith(countryDataFromExcel)) {
@@ -2892,7 +2926,6 @@ public class JourneyScreenTwo extends ReusableActions {
 		} else {
 			logger.info("Test case fail:- As either Pin code feild length is not of 6 or not accepting numeric only");
 		}
-
 	}
 
 	// Enter PinCode
@@ -2934,7 +2967,7 @@ public class JourneyScreenTwo extends ReusableActions {
 
 			}
 			
-		}else{
+		} else{
 			Assert.fail("Test case fail:As the error message is not displayed when India option is selected");
 		}
 		permanentReflexiveYesOption.click();
@@ -3461,7 +3494,7 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	public static void checkAllTheInsurersDetailsFeildsPresentOrNot() throws Exception {
 		Thread.sleep(500);
-		if (insurersName.isDisplayed() && insurersGenderMale.isDisplayed() && insurersGenderFemale.isDisplayed()
+		if (insurersNameLabel.isDisplayed() && insurersGenderMale.isDisplayed() && insurersGenderFemale.isDisplayed()
 				&& dateOfBirthIssurer.isDisplayed() && relationshipWithProposer.isDisplayed()) {
 			System.out.println("Test case pass:As all the feilds for Insurers details on screen two is present");
 			if (insurersGenderFemale.isSelected() && insurersGenderMale.isSelected()) {
@@ -3478,9 +3511,9 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	public static void checkAndFillIssurersNameValidation(int x, int y, int z) throws Exception {
 		// type(MobNumtxtfld, strMobNumber);
-		insurersName.clear();
-		type(insurersName, readingdata(x, y, z));
-		String insurersNamePassedFromExcel = insurersName.getAttribute("value");
+		insurersNameLabel.clear();
+		type(insurersNameLabel, readingdata(x, y, z));
+		String insurersNamePassedFromExcel = insurersNameLabel.getAttribute("value");
 		int size = insurersNamePassedFromExcel.length();
 		if ((size == 75) && (!insurersNamePassedFromExcel.contains("@") && insurersNamePassedFromExcel.contains("."))) {
 			logger.info(
@@ -3494,8 +3527,8 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	public static void fillingIssurersName(int x, int y, int z) throws Exception {
 		// type(MobNumtxtfld, strMobNumber);
-		insurersName.clear();
-		type(insurersName, readingdata(x, y, z));
+		insurersNameLabel.clear();
+		type(insurersNameLabel, readingdata(x, y, z));
 	}
 
 	public static void validatingErrorMsgForMIAP(XSSFSheet sheet, int rowNum) throws Exception {
@@ -5597,8 +5630,8 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	public static void fllIssurersNameValidation(int x, int y, int z) throws Exception {
 		// type(MobNumtxtfld, strMobNumber);
-		insurersName.clear();
-		type(insurersName, readingdata(x, y, z));
+		insurersNameLabel.clear();
+		type(insurersNameLabel, readingdata(x, y, z));
 
 	}
 
@@ -5626,13 +5659,19 @@ public class JourneyScreenTwo extends ReusableActions {
 		JourneyScreenThree.dateOfBirthSelctionFunction();
 
 	}
-
+	public static void clickProceedPageTwo() throws Exception {
+		Thread.sleep(1000);
+		Savebtn.click();
+		Thread.sleep(1000);
+		click(Proceedbtn);
+		Thread.sleep(1000);
+	}
 
 
 	public static void relationshipWithProposer() throws Exception {
 
 		click(relationshipWithProposer);
-		Thread.sleep(200);
+		Thread.sleep(3000);
 
 	}
 
@@ -5640,7 +5679,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	public static void relationshipWithProposerParentOption() throws Exception {
 
 		click(relationshipWithProposerParentOption);
-		Thread.sleep(200);
+		Thread.sleep(2000);
 
 	}
 
@@ -5658,7 +5697,7 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	public static void checkDateOfBirthFormatFutureDateRestrictionSetDateBirthInsurersDetails()
 			throws Exception {
-		PageFactory.initElements(driver, JourneyScreenThree.class);
+		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		String dateFormat = dateOfBirthIssurer.getAttribute("placeholder");
 		if (dateFormat.equalsIgnoreCase("DD/MM/YYYY")) {
 			System.out.println("Test case pass:As DD/MM/YYYY is the format and displaying in date text box");
@@ -5703,11 +5742,17 @@ public class JourneyScreenTwo extends ReusableActions {
 	public static void selectAndCheckRelationshipWithProposerOption() throws Exception {
 		// type(MobNumtxtfld, strMobNumber);
 		relationshipWithProposer();
-		String xpathOFList = "//ul[@role='listbox']/li";
+		
+		driver.findElement(By.xpath("//li[contains(text(),'Spouse')]")).click();
+		/*String xpathOFList = "//ul[@role='listbox']/li";
 		String sheetpath = "\\src\\test\\resources\\MasterData.xlsx";
 		comparingExcelDataWithUIBySheetPath(xpathOFList, 5, 6, sheetpath);
-		relationshipWithProposerParentOption();
+		relationshipWithProposerParentOption();*/
 	}
+	
+	
+	
+	
 
 	public static void selectRelationshipWithProposerOption() throws Exception {
 		// type(MobNumtxtfld, strMobNumber);

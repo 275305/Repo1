@@ -22,62 +22,13 @@ import uielements.ReusableActions;
 
 public class JourneyScreenTwoTest extends ReusableActions {
 
-	@BeforeTest
-	@Parameters(value = { "browser", "version", "platform", "testrun" })
-	public void setUp(String browser, String version, String platform, String testrun) throws Exception {
-		String testRun = testrun;
-		/* String testRun1=testrun1; */
-		if (testRun.equals("run")) {
-			// if (testRun.equals("runbsw")) {
-
-			try {
-				DesiredCapabilities capability = new DesiredCapabilities();
-				capability.setCapability("platform", platform);
-				capability.setCapability("browserName", browser);
-				capability.setCapability("browserVersion", version);
-				// capability.setCapability("browserstack.local", "true");
-				capability.setCapability("browserstack.debug", "true");
-				capability.setCapability("project", "MaxlifeInsurance");
-				capability.setCapability("build", "BrowserStack_WebSeries1");
-				driver = new RemoteWebDriver(
-						new URL("https://kanchangupta2:xWbVkws9u8oEYR1Nsqx6@hub-cloud.browserstack.com/wd/hub"),
-						capability);
-				driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-				ReusableActions.logStep("=========Execution Started on Browsers=========");
-				System.out.println("Execution Started on : " + browser + " " + version + " " + platform);
-				ReusableActions.attachScreen(driver);
-			} catch (Exception e) {
-				// System.out.println("Test case failed: " + e.getMessage());
-				throw e;
-			}
-			// break;
-		}
-		// else if (testRun.equals("run"))
-		else if (testRun.equals("runfa"))
-		{
-			// @BeforeClass
-			// public void launchBrowser() throws Exception{
-
-			try {
-				System.setProperty("webdriver.chrome.driver",
-						"C:\\Matrix\\AutomationQA\\automationqa\\src\\test\\resources\\driver\\chromedriver.exe");
-				// System.setProperty("webdriver.chrome.driver",
-				// "D:\\chromedriver_win32\\chromedriver.exe");
-				driver = new ChromeDriver();
-			} catch (Exception e) {
-				// logger.error("Test case failed: " + e.getMessage());
-				throw e;
-			}
-
-		}
-	}
-
-	// TC -01 Verify the by default status of Nationality, Policy for and Proceed
-	// button on Journey Screen one
 	@Test(priority = 0, enabled = true)
 	public void Indian() throws Exception {
 
 		try {
+			String path = System.getProperty("user.dir");
+			System.setProperty("webdriver.chrome.driver", path + "\\lib\\Drivers\\chromedriver.exe");
+			driver = new ChromeDriver();
 			prop = ReusableActions.readProperties();
 
 			driver.get(prop.getProperty("SampleURL"));
@@ -93,7 +44,7 @@ public class JourneyScreenTwoTest extends ReusableActions {
 			HomePage.clickNewApp();
 			JourneyScreenOne.isIndianSelected();
 			JourneyScreenOne.isSelfSelected();
-			JourneyScreenOne.isProceedEnabled();
+			// JourneyScreenOne.isProceedEnabled();
 
 		} catch (Exception e) {
 			logger.error("Test case failed: " + e.getMessage());
@@ -134,13 +85,11 @@ public class JourneyScreenTwoTest extends ReusableActions {
 		}
 	}
 
-
-
 	public static void fillingFeildsScreenTwoFunction() throws Exception {
 		try {
 			HomePage.clickDashboard();
 			HomePage.clickNewApp();
-			JourneyScreenOneTest.fillingScreenOneFeildsFunctionForDependent();
+			// JourneyScreenOneTest.fillingScreenOneFeildsFunctionForDependent();
 			JourneyScreenTwo.setFirstName(3, 1, 0);
 			JourneyScreenTwo.setLastName(3, 1, 1);
 			JourneyScreenTwo.setDateBirthPersonalDetails();
@@ -202,7 +151,8 @@ public class JourneyScreenTwoTest extends ReusableActions {
 			JourneyScreenTwo.checkAndFillIssurersNameValidation(1, 1, 8);
 			JourneyScreenTwo.insurersGenderFemale();
 			JourneyScreenTwo.checkDateOfBirthFormatFutureDateRestrictionSetDateBirthInsurersDetails();
-			// Test case--> describing the dropDown list of relationship with proposer First
+			// Test case--> describing the dropDown list of relationship with
+			// proposer First
 			// screen--Select dependent and check on Insurers Details section
 			JourneyScreenTwo.selectAndCheckRelationshipWithProposerOption();
 		} catch (Exception e) {
@@ -262,6 +212,7 @@ public class JourneyScreenTwoTest extends ReusableActions {
 
 		}
 	}
+
 	@Test(priority = 3, enabled = false)
 	public void LE2ServiceIntegrationForTradProducts() throws Exception {
 		try {
@@ -313,7 +264,7 @@ public class JourneyScreenTwoTest extends ReusableActions {
 			HomePage.clickDashboard();
 			HomePage.clickNewApp();
 			JourneyScreenOne.residentialsStatusNRI();
-			JourneyScreenOne.nriNationality();
+			JourneyScreenOne.nationalityNRI();
 			JourneyScreenOne.setPassportNumber(1, 1, 5);
 			JourneyScreenOne.isAllTheTypeOfVisaListIsPresent();
 			JourneyScreenOne.visaValidTillSingleData();
@@ -383,7 +334,6 @@ public class JourneyScreenTwoTest extends ReusableActions {
 	public static void fillingFeildsForScreenTwoProposerCommunicationAddressWithoutIllustration() throws Exception {
 		try {
 			JourneyScreenTwo.selectByDropdownProposerCommunication();
-
 			JourneyScreenTwo.houseNoProposerCommunication(3, 1, 3);
 			JourneyScreenTwo.communicationRoadNo(3, 1, 4);
 			JourneyScreenTwo.communicationVillageTown(3, 1, 5);
@@ -416,33 +366,44 @@ public class JourneyScreenTwoTest extends ReusableActions {
 
 	}
 
-	@Test(priority = 2, enabled = true)
-	public void nriFeildsValidationForDependentOption() throws Exception {
-		JourneyScreenOneTest.fillingScreenOneFeildsFunctionForNRIDependent();
+	@Test(priority = 2, enabled = false)
+	public void checkCommunicationAndPermanentAddress() throws Exception {
+		// JourneyScreenOneTest.fillingScreenOneFeildsFunctionForNRIDependent();
+		ScreenOneTestNRIFunctionToReachScreenTwo();
 		fillingFeildsForScreenTwo();
 		JourneyScreenTwo.checkErrorMessageOfOutsideIndia();
 		JourneyScreenTwo.setCountryAndSelecting2ndOption(3, 1, 6);
 		JourneyScreenTwo.fillingAllTheFeildsAfterChangingCountry();
-
 		fillingFeildsForScreenTwoProposerCommunicationAddressWithoutIllustration();
-
+	}
+	
+		
+	@Test(priority = 2, enabled = true)
+	public void nriFeildsValidationForDependentOption() throws Exception {
+		JourneyScreenOneTest.fillingScreenOneFeildsFunctionForDependent();
+		//ScreenOneTestNRIFunctionToReachScreenTwo();
+		fillingFeildsForScreenTwo();
+		//proposer communication code require
 		JourneyScreenTwo.checkAllTheInsurersDetailsFeildsPresentOrNot();
 		JourneyScreenTwo.checkAndFillIssurersNameValidation(1, 1, 8);
 		JourneyScreenTwo.insurersGenderFemale();
 		JourneyScreenTwo.checkDateOfBirthFormatFutureDateRestrictionSetDateBirthInsurersDetails();
-		// Test case--> describing the dropDown list of relationship with proposer First
+		// Test case--> describing the dropDown list of relationship with
+		// proposer First
 		// screen--Select dependent and check on Insurers Details section
 		JourneyScreenTwo.selectAndCheckRelationshipWithProposerOption();
-
+          
 		JourneyScreenTwo.traditional();
 		JourneyScreenTwo.selectByDropdownSTPDependent();
 
 		JourneyScreenTwo.fillingAllTheRequiredFeildsForSTPDependent();
 		Thread.sleep(300);
-		JourneyScreenThree.Proceedbtn();
+		JourneyScreenTwo.clickProceedPageTwo();
 		// premiumCommitmentMIAPYesOptionSelection.click();
+	}
+		@Test(priority=5, enabled=false)
+		public void leftScript() throws Exception{
 		JourneyScreenThree.checkPDFIsOpenedOrNotCheckMsgNRI();
-
 		JourneyScreenThree.nriDetailsJourneyScreenThree();
 		JourneyScreenThree.countryCurrentlyResidingSmartSearch(3, 1, 6);
 		JourneyScreenThree.dateOfLatestEntryToIndia();
@@ -458,6 +419,8 @@ public class JourneyScreenTwoTest extends ReusableActions {
 		JourneyScreenThree.birthCountryScreenThreeNriInsurer(3, 1, 6);
 		JourneyScreenThree.residenceCountryAsPerTaxLawsInsurer(3, 1, 6);
 		JourneyScreenThree.doYouHaveFTINYesNoFeildsValidationInsurer();
+		}
 
-	}
+
+	
 }
