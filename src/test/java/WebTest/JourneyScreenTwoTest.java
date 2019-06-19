@@ -2,17 +2,16 @@ package WebTest;
 
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
-import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import ru.yandex.qatools.allure.annotations.Description;
+import ru.yandex.qatools.allure.annotations.Severity;
+import ru.yandex.qatools.allure.annotations.Step;
+import ru.yandex.qatools.allure.model.SeverityLevel;
 import uielements.HomePage;
 import uielements.JourneyScreenOne;
 import uielements.JourneyScreenThree;
@@ -21,7 +20,8 @@ import uielements.LoginPage;
 import uielements.ReusableActions;
 
 public class JourneyScreenTwoTest extends ReusableActions {
-
+	@Severity(SeverityLevel.NORMAL)
+	@Description("Verify the URL of The Application")
 	@Test(priority = 0, enabled = true)
 	public void Indian() throws Exception {
 
@@ -282,6 +282,7 @@ public class JourneyScreenTwoTest extends ReusableActions {
 		}
 	}
 
+	@Step("Getting the information from ScreenTwo")
 	public static void fillingFeildsForScreenTwo() throws Exception {
 		try {
 			JourneyScreenTwo.setFirstName(3, 1, 0);
@@ -376,14 +377,15 @@ public class JourneyScreenTwoTest extends ReusableActions {
 		JourneyScreenTwo.fillingAllTheFeildsAfterChangingCountry();
 		fillingFeildsForScreenTwoProposerCommunicationAddressWithoutIllustration();
 	}
-	
-		
+
+	@Severity(SeverityLevel.CRITICAL)
+	@Description("Navigating to the JourneyScreenOne")
 	@Test(priority = 2, enabled = true)
 	public void nriFeildsValidationForDependentOption() throws Exception {
 		JourneyScreenOneTest.fillingScreenOneFeildsFunctionForDependent();
-		//ScreenOneTestNRIFunctionToReachScreenTwo();
+		// ScreenOneTestNRIFunctionToReachScreenTwo();
 		fillingFeildsForScreenTwo();
-		//proposer communication code require
+		// proposer communication code require
 		JourneyScreenTwo.checkAllTheInsurersDetailsFeildsPresentOrNot();
 		JourneyScreenTwo.checkAndFillIssurersNameValidation(1, 1, 8);
 		JourneyScreenTwo.insurersGenderFemale();
@@ -392,7 +394,7 @@ public class JourneyScreenTwoTest extends ReusableActions {
 		// proposer First
 		// screen--Select dependent and check on Insurers Details section
 		JourneyScreenTwo.selectAndCheckRelationshipWithProposerOption();
-          
+
 		JourneyScreenTwo.traditional();
 		JourneyScreenTwo.selectByDropdownSTPDependent();
 
@@ -401,8 +403,9 @@ public class JourneyScreenTwoTest extends ReusableActions {
 		JourneyScreenTwo.clickProceedPageTwo();
 		// premiumCommitmentMIAPYesOptionSelection.click();
 	}
-		@Test(priority=5, enabled=false)
-		public void leftScript() throws Exception{
+
+	@Test(priority = 5, enabled = false)
+	public void leftScript() throws Exception {
 		JourneyScreenThree.checkPDFIsOpenedOrNotCheckMsgNRI();
 		JourneyScreenThree.nriDetailsJourneyScreenThree();
 		JourneyScreenThree.countryCurrentlyResidingSmartSearch(3, 1, 6);
@@ -419,8 +422,6 @@ public class JourneyScreenTwoTest extends ReusableActions {
 		JourneyScreenThree.birthCountryScreenThreeNriInsurer(3, 1, 6);
 		JourneyScreenThree.residenceCountryAsPerTaxLawsInsurer(3, 1, 6);
 		JourneyScreenThree.doYouHaveFTINYesNoFeildsValidationInsurer();
-		}
+	}
 
-
-	
 }

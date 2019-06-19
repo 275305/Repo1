@@ -28,6 +28,8 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import ru.yandex.qatools.allure.annotations.Description;
+import ru.yandex.qatools.allure.annotations.Step;
 import util.AppConstant;
 
 public class JourneyScreenTwo extends ReusableActions {
@@ -67,7 +69,9 @@ public class JourneyScreenTwo extends ReusableActions {
 	
 	@FindBy(xpath = "//label[contains(@for, 'InsurerGenderMale')]")
 	static WebElement insurersGenderMale;
-			
+	
+	
+	
 	/*Pradeep has changed
 	@FindBy(xpath = "//label[@for='InsurerGenderMale']")
 	static WebElement insurersGenderMale;*/
@@ -2253,6 +2257,7 @@ public class JourneyScreenTwo extends ReusableActions {
 
 
 	// Enter First Name
+	@Step("Getting First Name")
 	public static void setFirstName(int x, int y, int z) throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		firtsName.clear();
@@ -2288,6 +2293,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	}
 
 	// -------------------------------------------------------------------------------------------------------
+	@Step("Getting Date of Birth")
 	public static void setDateBirthPersonalDetails() throws Exception {
 		/*
 		 * PageFactory.initElements(driver, JourneyScreenTwo.class);
@@ -2573,6 +2579,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	}
 
 	// Enter Last Name
+	@Step("Getting Last Name")
 	public static void setLastName(int x, int y, int z) throws Exception {
 		lastName.clear();
 		type(lastName, readingdata(x, y, z));
@@ -2616,6 +2623,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	}
 
 	// Enter House number
+	@Step("Getting house Number")
 	public static void setHouseNo(int x, int y, int z) throws Exception {
 		houseNo.clear();
 		type(houseNo, readingdata(x, y, z));
@@ -2650,6 +2658,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	}
 
 	// Enter Road number
+	@Step("Getting Road Number")
 	public static void setRoadNo(int x, int y, int z) throws Exception {
 		roadNo.clear();
 		type(roadNo, readingdata(x, y, z));
@@ -2681,6 +2690,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	}
 
 	// Enter Village Town
+	@Step("Getting Vilage Town")
 	public static void setVillageTown(int x, int y, int z) throws Exception {
 
 		villageTown.clear();
@@ -2763,7 +2773,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		}
 
 	}
-
+	@Step("Getting country Name")
 	public static void setCountry(int x, int y, int z) throws Exception {
 		country.clear();
 		type(country, readingdata(x, y, z));
@@ -2823,6 +2833,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	
 
 	// Enter State
+	@Step("Getting the state")
 	public static void setState(int x, int y, int z) throws Exception {
 		Thread.sleep(500);
 		searchState.click();
@@ -2875,6 +2886,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	}
 
 	// Enter City
+	@Step("Getting the city")
 	public static void setCity(int x, int y, int z) throws Exception {
 		searchCity.clear();
 		type(searchCity, readingdata(x, y, z));
@@ -2903,6 +2915,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	}
 
 	// Enter PinCode
+	@Step("Getting the pincode")
 	public static void setPinCode(int x, int y, int z) throws Exception {
 		pinCode.clear();
 		type(pinCode, readingdata(x, y, z));
@@ -2929,6 +2942,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	}
 
 	// Enter PinCode
+	@Step("Getting the alternate mobile number")
 	public static void setAlternateMobileNo(int x, int y, int z) throws Exception {
 		alternateMobileNo.clear();
 		type(alternateMobileNo, readingdata(x, y, z));
@@ -3491,7 +3505,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	}
 
 
-
+    @Description("Verify the Insuresr MALE/FEMALE is selected by default")
 	public static void checkAllTheInsurersDetailsFeildsPresentOrNot() throws Exception {
 		Thread.sleep(500);
 		if (insurersNameLabel.isDisplayed() && insurersGenderMale.isDisplayed() && insurersGenderFemale.isDisplayed()
@@ -3508,7 +3522,8 @@ public class JourneyScreenTwo extends ReusableActions {
 		}
 
 	}
-
+    
+    @Description("Verify the issurers name feild length ")
 	public static void checkAndFillIssurersNameValidation(int x, int y, int z) throws Exception {
 		// type(MobNumtxtfld, strMobNumber);
 		insurersNameLabel.clear();
@@ -5694,7 +5709,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		click(dateOfBirthIssurer);
 
 	}
-
+     @Description("Verify the Future Date is disabled for insurers details")
 	public static void checkDateOfBirthFormatFutureDateRestrictionSetDateBirthInsurersDetails()
 			throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);

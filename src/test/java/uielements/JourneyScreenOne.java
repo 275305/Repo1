@@ -18,6 +18,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
+import ru.yandex.qatools.allure.annotations.Step;
 import util.AppConstant;
 
 public class JourneyScreenOne extends ReusableActions {
@@ -357,7 +358,7 @@ public class JourneyScreenOne extends ReusableActions {
 	@FindBy(xpath = "//label[@for='dependent']")
 	static WebElement dependentOption;
 
-	@FindBy(xpath = "//span[contains(text(),\"Don't Have PAN?\")]")
+	@FindBy(xpath = "//input[@name='isPANExist']")
 	static WebElement dontHavePAN;
 
 	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[1]/div[2]/span[1]")
@@ -411,6 +412,7 @@ public class JourneyScreenOne extends ReusableActions {
 
 	}
 
+	@Step("Getting residental NRI status")
 	public static void residentialsStatusNRI() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenOne.class);
 		click(residentialsStatusNRI);
@@ -421,7 +423,7 @@ public class JourneyScreenOne extends ReusableActions {
 		click(nriNationality);
 
 	}
-
+	@Step("Getting nationality_NRI status")
 	public static void nationalityNRI() throws Exception {
 
 		click(nationalityNRI);
@@ -673,8 +675,9 @@ public class JourneyScreenOne extends ReusableActions {
 	}
 
 	// Enter Aadhaar Number
+	@Step("Getting Aadhar Number")
 	public static void setAadhar(int x, int y, int z) throws Exception {
-		PageFactory.initElements(driver, JourneyScreenOne.class);
+		PageFactory.initElements(driver,JourneyScreenOne.class);
 		AadharTxtfld.clear();
 		type(AadharTxtfld, readingdata(x, y, z));
 
@@ -860,6 +863,7 @@ public class JourneyScreenOne extends ReusableActions {
 	}
 
 	// Enter Mobile Number
+	@Step("Getting mobile Number")
 	public static void setMobNumber(int x, int y, int z) throws Exception {
 		// type(MobNumtxtfld, strMobNumber);
 		MobNumtxtfld.clear();
@@ -1001,6 +1005,7 @@ public class JourneyScreenOne extends ReusableActions {
 	}
 
 	// Enter Email id
+	@Step("Getting email_ID")
 	public static void setEmailId(int x, int y, int z) throws Exception {
 		// type(Emailtxtfld, strEmailId);
 		Emailtxtfld.clear();
@@ -1129,10 +1134,10 @@ public class JourneyScreenOne extends ReusableActions {
 		checkVisaValidAndExpiryDateFutureDateEnability();
 
 	}
-
+	@Step("Getting VISA validity")
 	public static void visaValidTillSingleData() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenOne.class);
-		Thread.sleep(200);
+		Thread.sleep(700);
 		visaValidTill.click();
 		/*
 		 * Calendar calendar = Calendar.getInstance(); int currentDay =
@@ -1156,7 +1161,7 @@ public class JourneyScreenOne extends ReusableActions {
 		checkVisaValidAndExpiryDateFutureDateEnability();
 
 	}
-
+	@Step("Getting possport expiry date")
 	public static void passportExpiryDateForSingleData() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenOne.class);
 		Thread.sleep(200);
@@ -1270,6 +1275,7 @@ public class JourneyScreenOne extends ReusableActions {
 	}
 
 	// Enter PreIssuance Verification Number
+	@Step("Getting pre-Inssurance Number")
 	public static void setPreIssuanceNumber(int x, int y, int z) throws Exception {
 
 		// type(PreIssuancetxtfld, strPreIssuance);
@@ -1344,7 +1350,6 @@ public class JourneyScreenOne extends ReusableActions {
 		} else {
 			logger.info("Self is not selected");
 		}
-
 	}
 
 	public static void isDontHaveAadharEnabled() throws Exception {
@@ -1379,7 +1384,7 @@ public class JourneyScreenOne extends ReusableActions {
 		}
 
 	}
-
+	@Step("Select the VISA")
 	public static void isAllTheTypeOfVisaListIsPresent() throws Exception {
 		typeOfVisa();
 		String xtypeOfVisa = ".//*[@id='menu-passportVisaType']/div[2]/ul/li";
@@ -1391,7 +1396,7 @@ public class JourneyScreenOne extends ReusableActions {
 	}
 
 
-
+	@Step("Getting possport Number")
 	public static void setPassportNumber(int x, int y, int z) throws Exception {
 		// type(MobNumtxtfld, strMobNumber);
 		passportTextfld.clear();
@@ -1408,7 +1413,7 @@ public class JourneyScreenOne extends ReusableActions {
 	}
 
 
-
+	@Step("Getting possport issuing country Name")
 	public static void passportIssuingCountry(int x, int y, int z) throws Exception {
 		// type(MobNumtxtfld, strMobNumber);
 		System.out.println("smart search");
