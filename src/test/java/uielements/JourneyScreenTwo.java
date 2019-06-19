@@ -5776,6 +5776,11 @@ public class JourneyScreenTwo extends ReusableActions {
 		relationshipWithProposerParentOption();
 	}
 
+	
+	public  static void tearDown(){
+		driver.quit();
+	}
+	
 	public static void ifConditionForTabSizeTwoPDFIllustratioForScreenThree() throws InterruptedException {
 		String parent = driver.getWindowHandle();
 		Set<String> s1 = driver.getWindowHandles();

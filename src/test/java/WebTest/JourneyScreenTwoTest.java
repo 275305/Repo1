@@ -4,6 +4,8 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.util.concurrent.TimeUnit;
 
+import javax.print.attribute.standard.JobOriginatingUserName;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
@@ -399,7 +401,8 @@ public class JourneyScreenTwoTest extends ReusableActions {
 		JourneyScreenTwo.selectByDropdownSTPDependent();
 
 		JourneyScreenTwo.fillingAllTheRequiredFeildsForSTPDependent();
-		Thread.sleep(300);
+		//JobOriginatingUserName
+		JourneyScreenTwo.tearDown();
 		JourneyScreenTwo.clickProceedPageTwo();
 		// premiumCommitmentMIAPYesOptionSelection.click();
 	}
