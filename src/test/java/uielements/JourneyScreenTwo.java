@@ -3294,7 +3294,7 @@ public class JourneyScreenTwo extends ReusableActions {
 			}
 		}
 		driver.switchTo().window(parent);
-		Thread.sleep(10000);
+		Thread.sleep(2000);
 	}
 
 	public static void ifConditionForTabSizeTwoPDFIllustrationSelectingLifestyleScreen() throws Exception {
@@ -4489,7 +4489,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		lifeStageEventBenefitNo();
 		premiumBackOptiontNo();
 		proceedBtn.click();
-		Thread.sleep(40000);
+		Thread.sleep(4000);
 		// WOPPlusRiderCheckBox();
 		ifConditionForTabSizeTwoPDFIllustrationProceedingScreenAhead();
 
@@ -5777,9 +5777,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	}
 
 	
-	public  static void tearDown(){
-		driver.quit();
-	}
+	
 	
 	public static void ifConditionForTabSizeTwoPDFIllustratioForScreenThree() throws InterruptedException {
 		String parent = driver.getWindowHandle();
@@ -5807,7 +5805,6 @@ public class JourneyScreenTwo extends ReusableActions {
 		} else {
 			Assert.fail("Test case fail:-As Isurers Details section is not present");
 		}
-
 	}
 
 	public static void generatingPDFToReachToScreenThree() throws Exception {

@@ -136,7 +136,7 @@ import util.AppConstant;
 		
 		
 		public static void type(WebElement textbox, String inputdata) throws Exception {
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 			for (int i = 0; i <= 15; i++) {
 				try {
 					textbox.clear();

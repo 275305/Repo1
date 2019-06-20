@@ -22,8 +22,7 @@ import org.openqa.selenium.support.PageFactory;
 	    @FindBy(xpath="//a[@href='/dashboard']")
 	    public static WebElement Dashboardbtn;
 	    
-	  
-	    
+	  	    
 	 // Initializing the Objects
 	 	public HomePage(WebDriver driver)
 	 	{

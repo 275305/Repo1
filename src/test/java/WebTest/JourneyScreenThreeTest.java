@@ -11,6 +11,8 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import ru.yandex.qatools.allure.annotations.Description;
+import ru.yandex.qatools.allure.annotations.Step;
 import uielements.HomePage;
 import uielements.JourneyScreenFour;
 import uielements.JourneyScreenOne;
@@ -141,7 +143,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 		}
 	}
 	
-
+   @Step("Getting information for screen one")
 	public static void ScreenOneTestIndianFuntn() throws Exception {
 		try {
 
@@ -150,8 +152,8 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			//JourneyScreenOne.neverApplied();
 			//JourneyScreenOne.jammuKashmir();
 			//JourneyScreenOne.popupProceedButton();
-			//JourneyScreenOne.setPanNumber(1, 1, 1);
-			JourneyScreenOne.dontHavePAN();
+			JourneyScreenOne.setPanNumber(1, 1, 1);
+			//JourneyScreenOne.dontHavePAN();
 			JourneyScreenOne.setMobNumber(1, 1, 2);
 			JourneyScreenOne.setEmailId(1, 1, 3);
 			JourneyScreenOne.clickProceed();
@@ -175,11 +177,10 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			throw e;
 		}
 	}
-
+	@Description("Navigating to the JourneyScreenTwo")
 	public static void fillingAllTheRequiredFeildForScreen2() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
-
 			JourneyScreenTwo.setFirstName(3, 1, 0);
 			JourneyScreenTwo.setLastName(3, 1, 1);
 			JourneyScreenTwo.setDateBirthPersonalDetails();

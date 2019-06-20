@@ -4,13 +4,12 @@
 <suite name="MainTestSuite">
 
 	<test name="testngTest">
-		<!-- <classes> <class name="WebTest.ScenariosOfSmartTermPlanRegressionTest" 
-			/> </classes> -->
+		<classes> <class name="WebTest.ScenariosOfSmartTermPlanRegressionTest" 
+			/> </classes>
 
-     <!-- Pradeep has Changed -->
-		<classes>
-			<class name="WebTest.JourneyScreenTwoTest" />
-		</classes>
+		<!-- Pradeep has Changed -->
+		<!-- <classes> <class name="WebTest.JourneyScreenTwoTest" /> 
+		</classes> -->
 	</test>
 
 </suite>

@@ -6,8 +6,10 @@ import java.util.concurrent.TimeUnit;
 
 import javax.print.attribute.standard.JobOriginatingUserName;
 
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 import ru.yandex.qatools.allure.annotations.Description;
@@ -27,7 +29,7 @@ public class JourneyScreenTwoTest extends ReusableActions {
 	@Test(priority = 0, enabled = true)
 	public void Indian() throws Exception {
 
-		try {
+		try { 
 			String path = System.getProperty("user.dir");
 			System.setProperty("webdriver.chrome.driver", path + "\\lib\\Drivers\\chromedriver.exe");
 			driver = new ChromeDriver();
@@ -402,8 +404,9 @@ public class JourneyScreenTwoTest extends ReusableActions {
 
 		JourneyScreenTwo.fillingAllTheRequiredFeildsForSTPDependent();
 		//JobOriginatingUserName
-		JourneyScreenTwo.tearDown();
+		
 		JourneyScreenTwo.clickProceedPageTwo();
+		
 		// premiumCommitmentMIAPYesOptionSelection.click();
 	}
 
@@ -426,5 +429,10 @@ public class JourneyScreenTwoTest extends ReusableActions {
 		JourneyScreenThree.residenceCountryAsPerTaxLawsInsurer(3, 1, 6);
 		JourneyScreenThree.doYouHaveFTINYesNoFeildsValidationInsurer();
 	}
+	
+	/*@AfterClass
+	public void tearDown(){
+		driver.quit();
+	}*/
 
 }

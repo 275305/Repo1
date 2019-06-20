@@ -25,73 +25,55 @@ import uielements.ReusableActions;
 
 public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 
-
-	
-	
-	
-	@BeforeClass	
-    public void launchBrowser() throws Exception{
-	 try {
-    System.setProperty("webdriver.chrome.driver", ".\\lib\\Drivers\\chromedriver.exe");
-    driver = new ChromeDriver();
-    
-    logger.info("Test Started");
-	prop = ReusableActions.readProperties();
-
- 	driver.get(prop.getProperty("SampleURL"));
- 	LoginPage.verifyloginpage();
- 			
- 	// Maximizing the browser window
- 	driver.manage().window().maximize();
- 	driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
- 	logger.info("Fulfilment URL opened successfully");
- 	
- 	LoginPage.logintest(prop.getProperty("username"), prop.getProperty("password"));
- 	logger.info("User logged in successfully");
-	 }
-	 catch (Exception e) {
- 			logger.error("Test case failed: " + e.getMessage());
- 			throw e;
- 		} 
-
-    }
-	
-	
-	@Test(priority = 0, enabled = true)
-	public void India() throws Exception {
+	@Severity(SeverityLevel.NORMAL)
+	@Description("Verify the URL of The Application")
+	@BeforeClass
+	public void launchBrowser() throws Exception {
 		try {
-
-			LocalDate datw = LocalDate.now().minusYears(44);
-			System.out.println(datw);
-			LocalDate moreThan44 = datw.minusDays(1);
-			System.out.println(moreThan44);
-
+			String path = System.getProperty("user.dir");
+			System.setProperty("webdriver.chrome.driver", path + "\\lib\\Drivers\\chromedriver.exe");
+			driver = new ChromeDriver();
+			logger.info("Test Started");
 			prop = ReusableActions.readProperties();
+
 			driver.get(prop.getProperty("SampleURL"));
 			LoginPage.verifyloginpage();
 
-			// Maximizing the browser window
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 			logger.info("Fulfilment URL opened successfully");
 
 			LoginPage.logintest(prop.getProperty("username"), prop.getProperty("password"));
-			logger.info("User logged in successfully");
-			/*
-			 * HomePage.clickDashboard(); HomePage.clickNewApp();
-			 * JourneyScreenOne.isIndianSelected(); JourneyScreenOne.isSelfSelected();
-			 * JourneyScreenOne.isProceedEnabled();
-			 */
-
+			logger.info("User logged in successfully at Login Page.");
 		} catch (Exception e) {
 			logger.error("Test case failed: " + e.getMessage());
 			throw e;
 		}
+
 	}
 
-
-	@Test(priority = 1, enabled = true)
+	@Test(priority = 0, enabled = true)
 	public static void singlePayLifeCoverForm1PDFGenration() throws Exception {
+
+		try {
+			// alwaysCloseAllChildTabs();
+			HomePage.clickNewApp();
+			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
+			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
+			JourneyScreenTwo.traditional();
+			JourneyScreenTwo.selectByDropdownSmartTermPlan();
+			JourneyScreenTwo.selectByDropdownNeedOfInsur();
+			JourneyScreenTwo.selectByDropdownLifeStge();
+			JourneyScreenTwo.singlePayLifeCoverForm1();
+
+		} catch (Exception e) {
+			logger.error("Test case fail " + e.getMessage());
+
+		}
+	}
+
+	@Test(priority = 1, enabled = false)
+	public static void singlePayLifeCoverForm1PDFGenration1() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
 			alwaysCloseAllChildTabs();
@@ -113,8 +95,7 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 		}
 	}
 
-
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 2, enabled = false)
 	public static void singlePayIncomeProtectorForm2PDFGenration() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -138,7 +119,7 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 3, enabled = true)
+	@Test(priority = 3, enabled = false)
 	public static void singlePayIncomeInflationProtectorForm1PDFGenration() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -161,7 +142,7 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 4, enabled = true)
+	@Test(priority = 4, enabled = false)
 	public static void singlePayIncreasingCoverForm1PDFGenration() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -184,7 +165,7 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 5, enabled = true)
+	@Test(priority = 5, enabled = false)
 	public static void limitedPayLifeCoverForm1PDFGenration() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -207,7 +188,7 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 6, enabled = true)
+	@Test(priority = 6, enabled = false)
 	public static void limitedPayIncomeInflationProtectorForm1PDFGenration() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -230,7 +211,7 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 7, enabled = true)
+	@Test(priority = 7, enabled = false)
 	public static void limitedPayIncreasingCoverForm1PDFGenration() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -253,7 +234,7 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 8, enabled = true)
+	@Test(priority = 8, enabled = false)
 	public static void regularPayLifeCoverForm1PDFGenration() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -276,7 +257,7 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 9, enabled = true)
+	@Test(priority = 9, enabled = false)
 	public static void regularPayIncomeInflationrForm1PDFGenration() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -299,7 +280,7 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 10, enabled = true)
+	@Test(priority = 10, enabled = false)
 	public static void regularPayIncreasingCoverForm1PDFGenration() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -322,7 +303,7 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 11, enabled = true)
+	@Test(priority = 11, enabled = false)
 	public static void payTill60LifeCoverForm1PDFGenration() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -368,7 +349,7 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 13, enabled = true)
+	@Test(priority = 13, enabled = false)
 	public static void payTill60IncreasingCoverForm1PDFGenration() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -391,7 +372,7 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 14, enabled = true)
+	@Test(priority = 14, enabled = false)
 	public static void singlePayIncomeInflationProtectorForm2PDFGenration() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -415,7 +396,7 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 15, enabled = true)
+	@Test(priority = 15, enabled = false)
 	public static void limitedPayIncomeProtectorForm2PDFGenration() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -439,7 +420,7 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 16, enabled = true)
+	@Test(priority = 16, enabled = false)
 	public static void limitedPayIncomeInflationProtectorForm2PDFGenration() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -463,7 +444,7 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 17, enabled = true)
+	@Test(priority = 17, enabled = false)
 	public static void regularPayIncomeProtectorForm2PDFGenration() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -487,7 +468,7 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 18, enabled = true)
+	@Test(priority = 18, enabled = false)
 	public static void regularPayIncomeInflationProtectorForm2PDFGenration() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -511,7 +492,7 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 19, enabled = true)
+	@Test(priority = 19, enabled = false)
 	public static void payTill60IncomeProtectorForm2PDFGenration() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -535,7 +516,7 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 20, enabled = true)
+	@Test(priority = 20, enabled = false)
 	public static void payTill60IncomeInflationProtectorForm2PDFGenration() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -559,4 +540,3 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 		}
 	}
 }
-
