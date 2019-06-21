@@ -2564,8 +2564,8 @@ public class JourneyScreenThree extends ReusableActions {
 		Thread.sleep(500);
 		Proceedbtn.click();
 		Thread.sleep(200);
-
-
+       
+         
 	}
 
 	public static void fillingAnnualIncomeTOProceedForm60() throws Exception {

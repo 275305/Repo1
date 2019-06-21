@@ -723,6 +723,7 @@ public class JourneyScreenOne extends ReusableActions {
 	}
 
 	// Enter PAN Number
+	@Step("Getting the pan number")
 	public static void setPanNumber(int x, int y, int z) throws Exception {
 		// type(PanNumbertxtfld, strPanNumber);
 		PageFactory.initElements(driver, JourneyScreenOne.class);
@@ -1326,11 +1327,10 @@ public class JourneyScreenOne extends ReusableActions {
 	}
 
 	public static void clickProceed() throws Exception {
-		Thread.sleep(500);
 		Savebtn.click();
-		Thread.sleep(500);
 		click(Proceedbtn);
-		Thread.sleep(500);
+		ReusableActions.waitTillElementLocated(Proceedbtn);
+	
 	}
 
 	public static void isIndianSelected() throws Exception {

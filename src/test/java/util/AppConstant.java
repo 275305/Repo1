@@ -12,4 +12,7 @@ public class AppConstant {
 	
 	public static final String INPUT_PROPERTIES_EXCELL = "/src/test/resources/Input.properties";
 
+	public static final String 	INPUT_WEB_DRIVER="\\lib\\Drivers\\chromedriver.exe"; 
+	
+	public static final String INPUT_CHROME_DRIVER="webdriver.chrome.driver";
 }

@@ -51,7 +51,8 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 		}
 
 	}
-
+	@Severity(SeverityLevel.CRITICAL)
+	@Description("Verify the URL of The Application")
 	@Test(priority = 0, enabled = true)
 	public static void singlePayLifeCoverForm1PDFGenration() throws Exception {
 
@@ -85,7 +86,6 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 			JourneyScreenTwo.selectByDropdownSmartTermPlan();
 			JourneyScreenTwo.selectByDropdownNeedOfInsur();
 			JourneyScreenTwo.selectByDropdownLifeStge();
-
 			JourneyScreenTwo.singlePayLifeCoverForm1();
 
 		} catch (Exception e) {
@@ -102,8 +102,8 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 			alwaysCloseAllChildTabs();
 			HomePage.clickDashboard();
 			HomePage.clickNewApp();
-			JourneyScreenTwoTest.fillingFeildsScreenTwoFunction();
-			JourneyScreenTwoTest.fillingInsurersDetailsScreenTwo();
+			JourneyScreenTwo.fillingFeildsScreenTwoFunction();
+			JourneyScreenTwo.fillingInsurersDetailsScreenTwo();
 
 			JourneyScreenTwo.traditional();
 			JourneyScreenTwo.selectByDropdownSmartTermPlan();
@@ -379,8 +379,8 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 			alwaysCloseAllChildTabs();
 			HomePage.clickDashboard();
 			HomePage.clickNewApp();
-			JourneyScreenTwoTest.fillingFeildsScreenTwoFunction();
-			JourneyScreenTwoTest.fillingInsurersDetailsScreenTwo();
+			JourneyScreenTwo.fillingFeildsScreenTwoFunction();
+			JourneyScreenTwo.fillingInsurersDetailsScreenTwo();
 
 			JourneyScreenTwo.traditional();
 			JourneyScreenTwo.selectByDropdownSmartTermPlan();
@@ -403,8 +403,8 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 			alwaysCloseAllChildTabs();
 			HomePage.clickDashboard();
 			HomePage.clickNewApp();
-			JourneyScreenTwoTest.fillingFeildsScreenTwoFunction();
-			JourneyScreenTwoTest.fillingInsurersDetailsScreenTwo();
+			JourneyScreenTwo.fillingFeildsScreenTwoFunction();
+			JourneyScreenTwo.fillingInsurersDetailsScreenTwo();
 
 			JourneyScreenTwo.traditional();
 			JourneyScreenTwo.selectByDropdownSmartTermPlan();
@@ -427,8 +427,8 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 			alwaysCloseAllChildTabs();
 			HomePage.clickDashboard();
 			HomePage.clickNewApp();
-			JourneyScreenTwoTest.fillingFeildsScreenTwoFunction();
-			JourneyScreenTwoTest.fillingInsurersDetailsScreenTwo();
+			JourneyScreenTwo.fillingFeildsScreenTwoFunction();
+			JourneyScreenTwo.fillingInsurersDetailsScreenTwo();
 
 			JourneyScreenTwo.traditional();
 			JourneyScreenTwo.selectByDropdownSmartTermPlan();
@@ -451,8 +451,8 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 			alwaysCloseAllChildTabs();
 			HomePage.clickDashboard();
 			HomePage.clickNewApp();
-			JourneyScreenTwoTest.fillingFeildsScreenTwoFunction();
-			JourneyScreenTwoTest.fillingInsurersDetailsScreenTwo();
+			JourneyScreenTwo.fillingFeildsScreenTwoFunction();
+			JourneyScreenTwo.fillingInsurersDetailsScreenTwo();
 
 			JourneyScreenTwo.traditional();
 			JourneyScreenTwo.selectByDropdownSmartTermPlan();
@@ -475,8 +475,8 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 			alwaysCloseAllChildTabs();
 			HomePage.clickDashboard();
 			HomePage.clickNewApp();
-			JourneyScreenTwoTest.fillingFeildsScreenTwoFunction();
-			JourneyScreenTwoTest.fillingInsurersDetailsScreenTwo();
+			JourneyScreenTwo.fillingFeildsScreenTwoFunction();
+			JourneyScreenTwo.fillingInsurersDetailsScreenTwo();
 
 			JourneyScreenTwo.traditional();
 			JourneyScreenTwo.selectByDropdownSmartTermPlan();
@@ -499,8 +499,8 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 			alwaysCloseAllChildTabs();
 			HomePage.clickDashboard();
 			HomePage.clickNewApp();
-			JourneyScreenTwoTest.fillingFeildsScreenTwoFunction();
-			JourneyScreenTwoTest.fillingInsurersDetailsScreenTwo();
+			JourneyScreenTwo.fillingFeildsScreenTwoFunction();
+			JourneyScreenTwo.fillingInsurersDetailsScreenTwo();
 
 			JourneyScreenTwo.traditional();
 			JourneyScreenTwo.selectByDropdownSmartTermPlan();
@@ -523,8 +523,8 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 			alwaysCloseAllChildTabs();
 			HomePage.clickDashboard();
 			HomePage.clickNewApp();
-			JourneyScreenTwoTest.fillingFeildsScreenTwoFunction();
-			JourneyScreenTwoTest.fillingInsurersDetailsScreenTwo();
+			JourneyScreenTwo.fillingFeildsScreenTwoFunction();
+			JourneyScreenTwo.fillingInsurersDetailsScreenTwo();
 
 			JourneyScreenTwo.traditional();
 			JourneyScreenTwo.selectByDropdownSmartTermPlan();

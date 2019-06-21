@@ -7,7 +7,7 @@
 		<classes> <class name="WebTest.ScenariosOfSmartTermPlanRegressionTest" 
 			/> </classes>
 
-		<!-- Pradeep has Changed -->
+		
 		<!-- <classes> <class name="WebTest.JourneyScreenTwoTest" /> 
 		</classes> -->
 	</test>

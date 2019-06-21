@@ -590,7 +590,7 @@ public class POSVFlowForSAPMIAP extends ReusableActions{
 		String firstNameFromExcel = cellRep.getStringCellValue();
 		firtsName.clear();
  		firtsName.sendKeys(firstNameFromExcel);
-		JourneyScreenTwoTest.fillingAllTheRequiredFeildForScreen2WithoutFirstName();
+		JourneyScreenTwo.fillingAllTheRequiredFeildForScreen2WithoutFirstName();
  		JourneyScreenTwo.traditional();
 		JourneyScreenTwo.selectByDropdownSAP();
 		JourneyScreenTwo.fillingAllTheRequiredFeildsForSAP();
@@ -659,8 +659,8 @@ public class POSVFlowForSAPMIAP extends ReusableActions{
 		String firstNameFromExcel = cellRep.getStringCellValue();
 		firtsName.clear();
 		firtsName.sendKeys(firstNameFromExcel);
-		JourneyScreenTwoTest.fillingAllTheRequiredFeildForScreen2WithoutFirstName();
-		JourneyScreenTwoTest.fillingInsurersDetailsScreenTwo();
+		JourneyScreenTwo.fillingAllTheRequiredFeildForScreen2WithoutFirstName();
+		JourneyScreenTwo.fillingInsurersDetailsScreenTwo();
 		JourneyScreenTwo.traditional();
 		JourneyScreenTwo.selectByDropdownSTPDependent();
 
@@ -700,7 +700,7 @@ public class POSVFlowForSAPMIAP extends ReusableActions{
 		String firstNameFromExcel = cellRep.getStringCellValue();
 		firtsName.clear();
 		firtsName.sendKeys(firstNameFromExcel);
-		JourneyScreenTwoTest.fillingAllTheRequiredFeildForScreen2WithoutFirstName();
+		JourneyScreenTwo.fillingAllTheRequiredFeildForScreen2WithoutFirstName();
 		JourneyScreenTwo.traditional();
 
 		JourneyScreenTwo.selectByDropdownMIAP();

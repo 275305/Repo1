@@ -46,7 +46,6 @@ import util.AppConstant;
 		//WebDriver driver;
 	public static WebDriver driver;
 		
-
 		public static Logger logger = LoggerFactory.getLogger(LoginPage.class);
 		public static Logger JourneyScreenOnelogger = LoggerFactory.getLogger(JourneyScreenOneTest.class);
 		public static Logger JourneyScreenTwologger = LoggerFactory.getLogger(JourneyScreenTwoTest.class);
@@ -100,10 +99,7 @@ import util.AppConstant;
 				return prop;
 				}
 
-				
-				
-				
-				
+							
 		public static WebElement waitTillElementLocated(WebElement element) {
 			WebDriverWait wait = new WebDriverWait(driver, 60);
 			WebElement elementloaded = wait.until(ExpectedConditions.elementToBeClickable(element));

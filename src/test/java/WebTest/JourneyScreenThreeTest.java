@@ -22,69 +22,19 @@ import uielements.JourneyScreenTwo;
 import uielements.LoginPage;
 import uielements.POSVFlowForSAPMIAP;
 import uielements.ReusableActions;
+import util.AppConstant;
 public class JourneyScreenThreeTest extends ReusableActions {
 
-	@BeforeTest
-	@Parameters(value = { "browser", "version", "platform","testrun"})
-	public void setUp(String browser, String version, String platform,String testrun) throws Exception {
-		String testRun= testrun;
-		/*String testRun1=testrun1;*/
-		if (testRun.equals("run"))
-		// if (testRun.equals("runbsw"))
-			{
-			
-			try {
-				DesiredCapabilities capability = new DesiredCapabilities();
-				capability.setCapability("platform", platform);
-				capability.setCapability("browserName", browser);
-				capability.setCapability("browserVersion", version);
-				// capability.setCapability("browserstack.local", "true");
-				capability.setCapability("browserstack.debug", "true");
-				capability.setCapability("project", "MaxlifeInsurance");
-				capability.setCapability("build", "BrowserStack_WebSeries1");
-				driver = new RemoteWebDriver(
-						new URL("https://kanchangupta2:xWbVkws9u8oEYR1Nsqx6@hub-cloud.browserstack.com/wd/hub"),
-						capability);
-				driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-				ReusableActions.logStep("=========Execution Started on Browsers=========");
-				System.out.println("Execution Started on : " + browser + " " + version + " " + platform);
-				ReusableActions.attachScreen(driver);
-			} catch (Exception e) {
-				//System.out.println("Test case failed: " + e.getMessage());
-				throw e;
-			}
-			//break;
-		}
-			
-		else 
-		if (testRun.equals("runfa"))
-		// if (testRun.equals("run"))
-		{
-			// @BeforeClass
-			//public void launchBrowser() throws Exception{
-
-			try {
-				//System.setProperty("webdriver.chrome.driver", "D:\\chromedriver_win32\\chromedriver.exe");
-				System.setProperty("webdriver.chrome.driver", "C:\\Matrix\\AutomationQA\\automationqa\\src\\test\\resources\\driver\\chromedriver.exe");
-				driver = new ChromeDriver();
-			} catch (Exception e) {
-				//logger.error("Test case failed: " + e.getMessage());
-				throw e;
-			}
-
-		}
-	}
-	
 	@Test(priority = 0, enabled=true)
 	public static void India() throws Exception {
 		try{
-			
-			
+			final String PATH = System.getProperty("user.dir");
+			System.setProperty(AppConstant.INPUT_CHROME_DRIVER, PATH + AppConstant.INPUT_WEB_DRIVER);
+			driver = new ChromeDriver();			
 			prop = ReusableActions.readProperties();
 		 	driver.get(prop.getProperty("SampleURL"));
 		 	LoginPage.verifyloginpage();
 		 			
-		 	// Maximizing the browser window
 		 	driver.manage().window().maximize();
 		 	driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 		 	logger.info("Fulfilment URL opened successfully");
@@ -177,7 +127,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			throw e;
 		}
 	}
-	@Description("Navigating to the JourneyScreenTwo")
+	@Description("Getting the JourneyScreenTwo")
 	public static void fillingAllTheRequiredFeildForScreen2() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -237,7 +187,6 @@ public class JourneyScreenThreeTest extends ReusableActions {
 	public static void fillingAllTheRequiredFeildForScreen2AndSelectingFemale() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
-
 			JourneyScreenTwo.setFirstName(3, 1, 0);
 			JourneyScreenTwo.setLastName(3, 1, 1);
 			JourneyScreenTwo.selectFemale();
@@ -766,11 +715,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 	
 	}
 	
-	
-
-	
-	
-	
+		
 	/*
 	 * Check all the feilds are present on the screen four as per dependent
 	 * selection
@@ -779,7 +724,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 	@Test(priority = 1, enabled = false)
 	public void checkInsurersDetailsIsPresentAndFeildsValidationScreenThree() throws Exception {
 		try {
-			JourneyScreenTwoTest.fillingFeildsScreenTwoFunction();
+			JourneyScreenTwo.fillingFeildsScreenTwoFunction();
 			// JourneyScreenTwo.checkAllTheInsurersDetailsFeildsPresentOrNot();
 			JourneyScreenTwo.checkAndFillIssurersNameValidation(1, 1, 8);
 			JourneyScreenTwo.insurersGenderFemale();
@@ -808,7 +753,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 	@Test(priority = 1, enabled = false)
 	public void checkInsurersDetailsDropDownReflexiveScreenThree() throws Exception {
 		try {
-			JourneyScreenTwoTest.fillingFeildsScreenTwoFunction();
+			JourneyScreenTwo.fillingFeildsScreenTwoFunction();
 			// JourneyScreenTwo.checkAllTheInsurersDetailsFeildsPresentOrNot();
 			JourneyScreenTwo.checkAndFillIssurersNameValidation(1, 1, 8);
 			JourneyScreenTwo.insurersGenderFemale();
@@ -884,7 +829,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 	@Test(priority = 3, enabled = false)
 	public void insurerDetailsFillingAllTheFeildsToReachScreenFourSelectingDependent() throws Exception {
 		try {
-			JourneyScreenTwoTest.fillingFeildsScreenTwoFunction();
+			JourneyScreenTwo.fillingFeildsScreenTwoFunction();
 			// JourneyScreenOne.feildSupressFuctionalityInsurersDetails();
 			JourneyScreenTwo.fllIssurersNameValidation(1, 1, 8);
 			JourneyScreenTwo.insurersGenderFemale();
@@ -913,7 +858,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 		try {
 
 			JourneyScreenOneTest.ScreenOneTestIndianToScreenTwo();
-			JourneyScreenTwoTest.fillingFeildsScreenTwoFunctionSelfFemale();
+			JourneyScreenTwo.fillingFeildsScreenTwoFunctionSelfFemale();
 			JourneyScreenTwo.traditional();
 			JourneyScreenTwo.selectByDropdownSTP();
 			JourneyScreenTwo.fillingAllTheRequiredFeildsForSTP();
@@ -937,8 +882,8 @@ public class JourneyScreenThreeTest extends ReusableActions {
 		try {
 
 			JourneyScreenOneTest.fillingScreenOneFeildsFunctionForDependent();
-			JourneyScreenTwoTest.fillingFeildsScreenTwoFunctionSelfFemale();
-			JourneyScreenTwoTest.fillingInsurersDetailsScreenTwo();
+			JourneyScreenTwo.fillingFeildsScreenTwoFunctionSelfFemale();
+			JourneyScreenTwo.fillingInsurersDetailsScreenTwo();
 
 			JourneyScreenTwo.traditional();
 			JourneyScreenTwo.selectByDropdownSTP();
@@ -964,8 +909,8 @@ public class JourneyScreenThreeTest extends ReusableActions {
 	public void checkingMaleOptionForScreenThreeDependet() throws Exception {
 		try {
 
-			JourneyScreenTwoTest.fillingFeildsScreenTwoFunction();
-			JourneyScreenTwoTest.fillingInsurersDetailsScreenTwo();
+			JourneyScreenTwo.fillingFeildsScreenTwoFunction();
+			JourneyScreenTwo.fillingInsurersDetailsScreenTwo();
 
 			JourneyScreenTwo.traditional();
 			JourneyScreenTwo.selectByDropdownSTP();
@@ -992,7 +937,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
 			Thread.sleep(500);
 			JourneyScreenTwo.setFirstName(3, 1, 0);
-			JourneyScreenTwoTest.fillingAllTheRequiredFeildForScreen2WithoutFirstName();
+			JourneyScreenTwo.fillingAllTheRequiredFeildForScreen2WithoutFirstName();
 			JourneyScreenTwo.traditional();
 			JourneyScreenTwo.selectByDropdownSAP();
 			JourneyScreenTwo.fillingAllTheRequiredFeildsForSAP();
@@ -1038,7 +983,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			// HomePage.clickNewApp();
 			  JourneyScreenThreeTest.ScreenOneTestIndianFuntn(); Thread.sleep(500);
 			  JourneyScreenTwo.setFirstName(3, 1, 0);
-			  JourneyScreenTwoTest.fillingAllTheRequiredFeildForScreen2WithoutFirstName();
+			  JourneyScreenTwo.fillingAllTheRequiredFeildForScreen2WithoutFirstName();
 			  JourneyScreenTwo.traditional(); JourneyScreenTwo.selectByDropdownSAP();
 			  JourneyScreenTwo.fillingAllTheRequiredFeildsForSAP();
 			  JourneyScreenTwo.checkPOSVforSAPPremiumCommitment(3, 1, 19);
@@ -1093,7 +1038,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			JourneyScreenOne.setEmailId(1, 1, 3);
 			JourneyScreenOne.clickProceed();
 			Thread.sleep(500);
-			JourneyScreenTwoTest.fillingAllTheRequiredFeildForScreen2ForPANValidation();
+			JourneyScreenTwo.fillingAllTheRequiredFeildForScreen2ForPANValidation();
 			JourneyScreenTwo.traditional();
 			JourneyScreenTwo.selectByDropdownSAP();
 			JourneyScreenTwo.fillingAllTheRequiredFeildsForSAP();

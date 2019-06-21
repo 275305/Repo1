@@ -1,16 +1,10 @@
 package WebTest;
 
-import java.net.URL;
+
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
 import uielements.HomePage;
 import uielements.JourneyScreenFour;
 import uielements.JourneyScreenOne;
@@ -20,88 +14,18 @@ import uielements.LoginPage;
 import uielements.POSVFlowForSAPMIAP;
 import uielements.RegressionSuit;
 import uielements.ReusableActions;
+import util.AppConstant;
 
 public class RegressionSuitTest extends ReusableActions {
 
-	@BeforeTest
-
-	@Parameters(value = { "browser", "version", "platform", "testrun" })
-	public void setUp(String browser, String version, String platform, String testrun) throws Exception {
-		String testRun = testrun;
-		/* String testRun1=testrun1; */
-		if (testRun.equals("run"))
-		// if (testRun.equals("runbsw"))
-		{
-
-			try {
-				DesiredCapabilities capability = new DesiredCapabilities();
-				capability.setCapability("platform", platform);
-				capability.setCapability("browserName", browser);
-				capability.setCapability("browserVersion", version);
-				// capability.setCapability("browserstack.local", "true");
-				capability.setCapability("browserstack.debug", "true");
-				capability.setCapability("project", "MaxlifeInsurance");
-				capability.setCapability("build", "BrowserStack_WebSeries1");
-				driver = new RemoteWebDriver(
-						new URL("https://kanchangupta2:xWbVkws9u8oEYR1Nsqx6@hub-cloud.browserstack.com/wd/hub"),
-						capability);
-				driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-				ReusableActions.logStep("=========Execution Started on Browsers=========");
-				System.out.println("Execution Started on : " + browser + " " + version + " " + platform);
-				ReusableActions.attachScreen(driver);
-			} catch (Exception e) {
-				// System.out.println("Test case failed: " + e.getMessage());
-				throw e;
-			}
-			// break;
-		}
-
-		else
-		if (testRun.equals("runfa"))
-			// if (testRun.equals("run"))
-			// @BeforeClass
-			// public void launchBrowser() throws Exception{
-
-			try {
-
-				// System.setProperty("webdriver.chrome.driver",
-				// "D:\\chromedriver_win32\\chromedriver.exe");
-				System.setProperty("webdriver.chrome.driver",
-						"C:\\Matrix\\AutomationQA\\automationqa\\src\\test\\resources\\driver\\chromedriver.exe");
-				driver = new ChromeDriver();
-			} catch (Exception e) {
-				// logger.error("Test case failed: " + e.getMessage());
-				throw e;
-			}
-
-	}
-
-	@Test(priority = 0, enabled = false)
-	public void testLoginFunctionalityWithMultipeData() throws Exception {
-		try {
-			logger.info("Test Started");
-			prop = ReusableActions.readProperties();
-			driver.get(prop.getProperty("SampleURL"));
-			LoginPage.verifyloginpage();
-			// Maximizing the browser window
-			driver.manage().window().maximize();
-			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-			logger.info("Fulfilment URL opened successfully");
-			LoginPage.Login_Neg();
-
-		} catch (Exception e) {
-			logger.error("Test case failed: " + e.getMessage());
-			throw e;
-		}
-	}
-
-	// TC -01 Verify the by default status of Nationality, Policy for and Proceed
-	// button on Journey Screen one
-
-	@Test(priority = 1, enabled = false)
+	
+	@Test(priority = 1, enabled = true)
 	public void loginApplicationTest() throws Exception {
 		try {
-			PageFactory.initElements(driver, RegressionSuit.class);
+			//PageFactory.initElements(driver, RegressionSuit.class);
+			final String PATH = System.getProperty("user.dir");
+			System.setProperty(AppConstant.INPUT_CHROME_DRIVER, PATH + AppConstant.INPUT_WEB_DRIVER);
+			driver = new ChromeDriver();
 			prop = ReusableActions.readProperties();
 			driver.get(prop.getProperty("SampleURL"));
 			LoginPage.verifyloginpage();
@@ -223,7 +147,8 @@ public class RegressionSuitTest extends ReusableActions {
 		}
 	}
 
-	// Test case---> describing all the fields are present on the screen first when
+	// Test case---> describing all the fields are present on the screen first
+	// when
 	// NRI is selected.
 
 	@Test(priority = 6, enabled = true)
@@ -233,7 +158,8 @@ public class RegressionSuitTest extends ReusableActions {
 			HomePage.clickNewApp();
 			JourneyScreenOne.isAllTheFeildsOfNRIDisplayed();
 
-			// Test case---> drop down list for visa when NRI is selected on first screen.
+			// Test case---> drop down list for visa when NRI is selected on
+			// first screen.
 
 			JourneyScreenOne.isAllTheTypeOfVisaListIsPresent();
 		} catch (Exception e) {
@@ -245,12 +171,13 @@ public class RegressionSuitTest extends ReusableActions {
 	@Test(priority = 7, enabled = true)
 	public void checkInsurersDetailsIsPresentAndFillingTheDetailsScreenTwo() throws Exception {
 		try {
-			JourneyScreenTwoTest.fillingFeildsScreenTwoFunction();
+			JourneyScreenTwo.fillingFeildsScreenTwoFunction();
 			JourneyScreenTwo.checkAllTheInsurersDetailsFeildsPresentOrNot();
 			JourneyScreenTwo.checkAndFillIssurersNameValidation(1, 1, 8);
 			JourneyScreenTwo.insurersGenderFemale();
 			JourneyScreenTwo.checkDateOfBirthFormatFutureDateRestrictionSetDateBirthInsurersDetails();
-			// Test case--> describing the dropDown list of relationship with proposer First
+			// Test case--> describing the dropDown list of relationship with
+			// proposer First
 			// screen--Select dependent and check on Insurers Details section
 			JourneyScreenTwo.selectAndCheckRelationshipWithProposerOption();
 		} catch (Exception e) {
@@ -403,10 +330,10 @@ public class RegressionSuitTest extends ReusableActions {
 	}
 
 	/*
-	 * Test case:-To check whether all the fields for all the traditional product is
-	 * present or not MAX LIFE SUPER TERM PLAN MAX LIFE MONTHLY INCOME ADVANTAGE
-	 * PLAN MAX LIFE CANCER INSURANCE PLAN MAX LIFE WHOLE LIFE INSURANCE MAX LIFE
-	 * SAVINGS ADVANTAGES PLAN
+	 * Test case:-To check whether all the fields for all the traditional
+	 * product is present or not MAX LIFE SUPER TERM PLAN MAX LIFE MONTHLY
+	 * INCOME ADVANTAGE PLAN MAX LIFE CANCER INSURANCE PLAN MAX LIFE WHOLE LIFE
+	 * INSURANCE MAX LIFE SAVINGS ADVANTAGES PLAN
 	 */
 
 	@Test(priority = 2, enabled = true)
@@ -419,19 +346,22 @@ public class RegressionSuitTest extends ReusableActions {
 			JourneyScreenTwo.traditional();
 			JourneyScreenTwo.selectByDropdownTradAllProduct();
 			/*
-			 * JourneyScreenTwo.setFirstName(3, 1, 0); JourneyScreenTwo.setLastName(3, 1,
-			 * 1); JourneyScreenTwo.setDateBirthPersonalDetails(1, 1, 9);
+			 * JourneyScreenTwo.setFirstName(3, 1, 0);
+			 * JourneyScreenTwo.setLastName(3, 1, 1);
+			 * JourneyScreenTwo.setDateBirthPersonalDetails(1, 1, 9);
 			 * JourneyScreenTwo.selectByDropdown(); Thread.sleep(1000);
-			 * JourneyScreenTwo.setHouseNo(3, 1, 3); JourneyScreenTwo.setRoadNo(3, 1, 4);
-			 * JourneyScreenTwo.setVillageTown(3, 1, 5); JourneyScreenTwo.setCountry(3, 1,
-			 * 6); JourneyScreenTwo.setState(3, 1, 7); JourneyScreenTwo.setCity(3, 1, 8);
-			 * JourneyScreenTwo.setPinCode(3, 1, 9);
+			 * JourneyScreenTwo.setHouseNo(3, 1, 3);
+			 * JourneyScreenTwo.setRoadNo(3, 1, 4);
+			 * JourneyScreenTwo.setVillageTown(3, 1, 5);
+			 * JourneyScreenTwo.setCountry(3, 1, 6);
+			 * JourneyScreenTwo.setState(3, 1, 7); JourneyScreenTwo.setCity(3,
+			 * 1, 8); JourneyScreenTwo.setPinCode(3, 1, 9);
 			 * JourneyScreenTwo.setAlternateMobileNo(3, 1, 10);
 			 * //JourneyScreenOne.checkAndFillIssurersNameValidation(1, 1, 8);
 			 * //JourneyScreenOne.insurersGender();
 			 * //JourneyScreenThree.setDateBirthInsurersDetails(1, 1, 9);
-			 * //JourneyScreenOne.selectAndCheckRelationshipWithProposerOption();
-			 * JourneyScreenTwo.traditional();
+			 * //JourneyScreenOne.selectAndCheckRelationshipWithProposerOption()
+			 * ; JourneyScreenTwo.traditional();
 			 */
 			// fillingAllTheRequiredFeildForScreen3();
 
@@ -620,12 +550,13 @@ public class RegressionSuitTest extends ReusableActions {
 	@Test(priority = 25, enabled = true)
 	public void checkInsurersDetailsIsPresentAndFeildsValidationScreenThree() throws Exception {
 		try {
-			JourneyScreenTwoTest.fillingFeildsScreenTwoFunction();
+			JourneyScreenTwo.fillingFeildsScreenTwoFunction();
 			// JourneyScreenTwo.checkAllTheInsurersDetailsFeildsPresentOrNot();
 			JourneyScreenTwo.checkAndFillIssurersNameValidation(1, 1, 8);
 			JourneyScreenTwo.insurersGenderFemale();
 			JourneyScreenTwo.setDateBirthInsurersDetails(1, 1, 9);
-			// Test case--> describing the dropDown list of relationship with proposer First
+			// Test case--> describing the dropDown list of relationship with
+			// proposer First
 			// screen--Select dependent and check on Insurers Details section
 			JourneyScreenTwo.selectAndCheckRelationshipWithProposerOption();
 			JourneyScreenTwo.traditional();
@@ -647,7 +578,7 @@ public class RegressionSuitTest extends ReusableActions {
 	@Test(priority = 26, enabled = true)
 	public void insurerDetailsFillingAllTheFeildsToReachScreenFourSelectingDependent() throws Exception {
 		try {
-			JourneyScreenTwoTest.fillingFeildsScreenTwoFunction();
+			JourneyScreenTwo.fillingFeildsScreenTwoFunction();
 			// JourneyScreenOne.feildSupressFuctionalityInsurersDetails();
 			JourneyScreenTwo.fllIssurersNameValidation(1, 1, 8);
 			JourneyScreenTwo.insurersGenderFemale();
@@ -662,7 +593,6 @@ public class RegressionSuitTest extends ReusableActions {
 			JourneyScreenThreeTest.personalDetailsSectionCancerSpecified();
 			JourneyScreenThreeTest.bankDetailsSectionFillingData();
 			JourneyScreenThree.isurersDetailsFeildsDropDownForScreenThree();
-
 
 		} catch (Exception e) {
 			logger.error("Test case failed: " + e.getMessage());
@@ -840,7 +770,5 @@ public class RegressionSuitTest extends ReusableActions {
 
 		}
 	}
-
-
 
 }

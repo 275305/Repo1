@@ -57,7 +57,7 @@ public class JourneyScreenTwo extends ReusableActions {
 /*	@FindBy(xpath = "//input[@name='insurerName']")
 	static WebElement insurersName;*/
 	
-	/*Pradeep has changed*/
+	
 	@FindBy(xpath = "//input[@name='insurerName']")
 	static WebElement insurersNameLabel;
 
@@ -70,12 +70,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//label[contains(@for, 'InsurerGenderMale')]")
 	static WebElement insurersGenderMale;
 	
-	
-	
-	/*Pradeep has changed
-	@FindBy(xpath = "//label[@for='InsurerGenderMale']")
-	static WebElement insurersGenderMale;*/
-	
+		
 	@FindBy(xpath = "//*[@id='menu-relationshipWithProposer']/div[2]/ul/li[contains(text(),\"Parent\")]")
 	static WebElement relationshipWithProposerParentOption;
 
@@ -86,9 +81,6 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//label[contains(@for, 'InsurerGenderFemale')]")
 	static WebElement insurersGenderFemale;
 	
-	/*Pradeep has changed
-	@FindBy(xpath = "//label[@for='InsurerGenderFemale']")
-	static WebElement insurersGenderFemale;*/
 
 	@FindBy(xpath = "//label[@for='female']")
 	static WebElement genderFemale;
@@ -397,7 +389,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	/*@FindBy(xpath = "//input[@placeholder='Search a country']")
 	static WebElement country;*/
 
-	/*Pradeep has changed*/
+
 	@FindBy(xpath = "//input[@id='permanentCountry_idd']")
 	static WebElement country;
 
@@ -415,7 +407,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//div[@id='communicationStateid']//input[@id='State_idd']")
 	static WebElement communicationStateCommunication;*/
 	
-	 /* Pradeep has changed*/
+	
 	@FindBy(xpath = "//input[@id='communicationState_idd']")
 	static WebElement communicationStateCommunication;
 	
@@ -426,7 +418,7 @@ public class JourneyScreenTwo extends ReusableActions {
 /*	@FindBy(xpath = "//div[@id='Cityid']//input[@id='City_idd']")
 	static WebElement searchCityComunication;*/
 	
-	/*Pradeep has changed*/
+	
 	@FindBy(xpath = "//input[@id='communicationCity_idd']")
 	static WebElement searchCityComunication;
 
@@ -898,7 +890,7 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	/*@FindBy(xpath = "//div[@id='insurerDateOfBirth_id']")
 	static WebElement dateOfBirthIssurer;*/
-     /*Pradeep has changed*/
+  
 	@FindBy(xpath = "//input[@name='insurerDateOfBirth']")
 	static WebElement dateOfBirthIssurer;
 	
@@ -1626,12 +1618,12 @@ public class JourneyScreenTwo extends ReusableActions {
 		Thread.sleep(1000);
 
 	}
-
+      @Step("Getting the plan")
 	public static void selectByDropdownSmartTermPlan() throws Exception {
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		waitTillElementToBeClickable(productNm);
 		productNm.click();
-		waitTillElementToBeClickable(maxLifeSmartTermPlan);
+		waitTillElementToBeClickable(maxLifeSuperTermPlan);
 		Thread.sleep(1000);
 		maxLifeSmartTermPlan.click();
 		Thread.sleep(1000);
@@ -1958,7 +1950,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		needOfInsurance1stOption.click();
 
 	}
-
+    @Step("Getting the insurance option")
 	public static void selectByDropdownNeedOfInsur() throws Exception {
 		waitTillElementToBeClickable(needOfInsurance);
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -2261,6 +2253,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	public static void setFirstName(int x, int y, int z) throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		firtsName.clear();
+	   ReusableActions.waitTillElementLocated(firtsName);
 		type(firtsName, readingdata(x, y, z));
 		String firstNamePassedFromExcel = firtsName.getAttribute("value");
 		int size = firstNamePassedFromExcel.length();
@@ -3294,7 +3287,7 @@ public class JourneyScreenTwo extends ReusableActions {
 			}
 		}
 		driver.switchTo().window(parent);
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 	}
 
 	public static void ifConditionForTabSizeTwoPDFIllustrationSelectingLifestyleScreen() throws Exception {
@@ -3311,7 +3304,7 @@ public class JourneyScreenTwo extends ReusableActions {
 			}
 		}
 		driver.switchTo().window(parent);
-		Thread.sleep(7000);
+		Thread.sleep(3000);
 	}
 
 	/**
@@ -3520,7 +3513,6 @@ public class JourneyScreenTwo extends ReusableActions {
 		} else {
 			Assert.fail("Test case pass:'SCREEN TWO 'As all the feilds for Insurers details is not present");
 		}
-
 	}
     
     @Description("Verify the issurers name feild length ")
@@ -3912,7 +3904,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		premiumCommitment.clear();
 		premiumCommitment.sendKeys(duplicate);
 		JourneyScreenTwo.clickSubmitButton();
-		Thread.sleep(14000);
+		Thread.sleep(4000);
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 		System.out.println(tabs.size());
 
@@ -3953,7 +3945,7 @@ public class JourneyScreenTwo extends ReusableActions {
 
 		Savebtn.click();
 		JourneyScreenTwo.clickSubmitButton();
-		Thread.sleep(14000);
+		Thread.sleep(4000);
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 		System.out.println(tabs.size());
 
@@ -4473,7 +4465,7 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	public static void singlePayLifeCoverForm1() throws Exception {
 
-		Thread.sleep(700);
+		Thread.sleep(1000);
 		waitTillElementToBeClickable(premiumTypeSAPDropDown);
 		premiumTypeSAPDropDown.click();
 		waitTillElementToBeClickable(premiumType3rdOptionSAP);
@@ -4489,10 +4481,10 @@ public class JourneyScreenTwo extends ReusableActions {
 		lifeStageEventBenefitNo();
 		premiumBackOptiontNo();
 		proceedBtn.click();
-		Thread.sleep(4000);
+		Thread.sleep(2000);
 		// WOPPlusRiderCheckBox();
 		ifConditionForTabSizeTwoPDFIllustrationProceedingScreenAhead();
-
+         Thread.sleep(4000);
 	}
 
 	public static void singlePayIncomeInflationProtectorForm1() throws Exception {
@@ -5839,5 +5831,209 @@ public class JourneyScreenTwo extends ReusableActions {
 		}
 
 	}
+	
+	 /*Filling the information from Screen two */
+	public static void fillingFeildsScreenTwoFunction() throws Exception {
+		try {
+			//HomePage.clickDashboard();
+			//HomePage.clickNewApp();
+			// JourneyScreenOneTest.fillingScreenOneFeildsFunctionForDependent();
+			JourneyScreenTwo.setFirstName(3, 1, 0);
+			JourneyScreenTwo.setLastName(3, 1, 1);
+			JourneyScreenTwo.setDateBirthPersonalDetails();
+			JourneyScreenTwo.selectByDropdown();
+			JourneyScreenTwo.setHouseNo(3, 1, 3);
+			JourneyScreenTwo.setRoadNo(3, 1, 4);
+			JourneyScreenTwo.setVillageTown(3, 1, 5);
+			JourneyScreenTwo.setCountry(3, 1, 6);
+			JourneyScreenTwo.setState(3, 1, 7);
+			JourneyScreenTwo.setCity(3, 1, 8);
+			JourneyScreenTwo.setPinCode(3, 1, 9);
+			JourneyScreenTwo.setAlternateMobileNo(3, 1, 10);
+		} catch (Exception e) {
+			logger.error("Test case failed: " + e.getMessage());
+			throw e;
+		}
+	}
+	
+	/*Filling the information from Screen two */
+	public static void fillingAllTheRequiredFeildForScreen2WithoutFirstName() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenTwo.class);
+		try {
 
+			// JourneyScreenTwo.setFirstName(3, 1, 0);
+			JourneyScreenTwo.setLastName(3, 1, 1);
+			JourneyScreenTwo.setDateBirthPersonalDetails();
+			JourneyScreenTwo.selectByDropdown();
+			Thread.sleep(1000);
+			JourneyScreenTwo.setHouseNo(3, 1, 3);
+			JourneyScreenTwo.setRoadNo(3, 1, 4);
+			JourneyScreenTwo.setVillageTown(3, 1, 5);
+			JourneyScreenTwo.setCountry(3, 1, 6);
+			JourneyScreenTwo.setState(3, 1, 7);
+			JourneyScreenTwo.setCity(3, 1, 8);
+
+			JourneyScreenTwo.setPinCode(3, 1, 9);
+			JourneyScreenTwo.setAlternateMobileNo(3, 1, 10);
+
+		} catch (Exception e) {
+			logger.error("Test case failed " + e.getMessage());
+			throw e;
+
+		}
+	}
+	
+	 /* Filling Information for Proposer communication without illustration*/
+	public static void fillingFeildsForScreenTwoProposerCommunicationAddressWithoutIllustration() throws Exception {
+		try {
+			JourneyScreenTwo.selectByDropdownProposerCommunication();
+			JourneyScreenTwo.houseNoProposerCommunication(3, 1, 3);
+			JourneyScreenTwo.communicationRoadNo(3, 1, 4);
+			JourneyScreenTwo.communicationVillageTown(3, 1, 5);
+			JourneyScreenTwo.countryCommunication(3, 1, 6);
+			JourneyScreenTwo.countryCommunicationIndonasia(3, 1, 6);
+			JourneyScreenTwo.communicationStateCommunication(3, 2, 7);
+			JourneyScreenTwo.searchCityComunication(3, 2, 8);
+			JourneyScreenTwo.setPinCodecommunication(3, 1, 9);
+
+		} catch (Exception e) {
+			logger.error("Test case failed: " + e.getMessage());
+			throw e;
+		}
+	}
+	
+	/* Filling Information for Proposer communication */
+	public static void fillingFeildsForScreenTwoProposerCommunicationAddress() throws Exception {
+		try {
+			JourneyScreenTwo.selectByDropdownProposerCommunication();
+
+			JourneyScreenTwo.houseNoProposerCommunication(3, 1, 3);
+			JourneyScreenTwo.communicationRoadNo(3, 1, 4);
+			JourneyScreenTwo.communicationVillageTown(3, 1, 5);
+			JourneyScreenTwo.countryCommunication(3, 1, 6);
+			JourneyScreenTwo.countryCommunicationIndonasia(3, 1, 6);
+
+			JourneyScreenTwo.communicationStateCommunication(3, 2, 7);
+			JourneyScreenTwo.searchCityComunication(3, 2, 8);
+			JourneyScreenTwo.setPinCodecommunication(3, 1, 9);
+
+			JourneyScreenTwo.traditional();
+			JourneyScreenTwo.selectByDropdownCIP();
+			Thread.sleep(1000);
+			JourneyScreenTwo.fillingAllTheRequiredFeildsForCIP();
+			JourneyScreenTwo.clickSubmitButton();
+			JourneyScreenThree.checkPDFIsOpenedOrNotCheckMsgNRI();
+
+			// JourneyScreenTwo.setPinCode(3, 1, 9);
+			// JourneyScreenTwo.setAlternateMobileNo(3, 1, 10);
+		} catch (Exception e) {
+			logger.error("Test case failed: " + e.getMessage());
+			throw e;
+		}
+	}
+  /*Filling information for self female*/
+	public static void fillingFeildsScreenTwoFunctionSelfFemale() throws Exception {
+		try {
+			JourneyScreenTwo.setFirstName(3, 1, 0);
+			JourneyScreenTwo.setLastName(3, 1, 1);
+			JourneyScreenTwo.setDateBirthPersonalDetails();
+			JourneyScreenTwo.femaleClick();
+			JourneyScreenTwo.selectByDropdown();
+			JourneyScreenTwo.setHouseNo(3, 1, 3);
+			JourneyScreenTwo.setRoadNo(3, 1, 4);
+			JourneyScreenTwo.setVillageTown(3, 1, 5);
+			JourneyScreenTwo.setCountry(3, 1, 6);
+			JourneyScreenTwo.setState(3, 1, 7);
+			JourneyScreenTwo.setCity(3, 1, 8);
+			JourneyScreenTwo.setPinCode(3, 1, 9);
+			JourneyScreenTwo.setAlternateMobileNo(3, 1, 10);
+		} catch (Exception e) {
+			logger.error("Test case failed: " + e.getMessage());
+			throw e;
+		}
+	}
+	/*filling Insurers Details at Screen two*/
+	public static void fillingInsurersDetailsScreenTwo() throws Exception {
+		try {
+			JourneyScreenTwo.fillingIssurersName(1, 1, 8);
+			JourneyScreenTwo.insurersGenderFemale();
+			JourneyScreenTwo.setDateBirthInsurersDetails(1, 1, 9);
+			JourneyScreenTwo.selectRelationshipWithProposerOption();
+		} catch (Exception e) {
+			logger.error("Test case failed: " + e.getMessage());
+			throw e;
+		}
+	}
+	/*Filling The Required Information for Screen two For PAN Validation*/
+	public static void fillingAllTheRequiredFeildForScreen2ForPANValidation() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenTwo.class);
+		try {
+			JourneyScreenTwo.setFirstNamePAN(2, 9, 3);
+			JourneyScreenTwo.setLastNamePAN(2, 10, 3);
+			JourneyScreenTwo.setDateBirthPANValidation();
+			// JourneyScreenTwo.femaleSelection();
+			JourneyScreenTwo.selectByDropdown();
+			Thread.sleep(1000);
+			JourneyScreenTwo.setHouseNo(3, 1, 3);
+			JourneyScreenTwo.setRoadNo(3, 1, 4);
+			JourneyScreenTwo.setVillageTown(3, 1, 5);
+			JourneyScreenTwo.setCountry(3, 1, 6);
+			JourneyScreenTwo.setState(3, 1, 7);
+			JourneyScreenTwo.setCity(3, 1, 8);
+
+			JourneyScreenTwo.setPinCode(3, 1, 9);
+			JourneyScreenTwo.setAlternateMobileNo(3, 1, 10);
+
+		} catch (Exception e) {
+			logger.error("Test case failed " + e.getMessage());
+			throw e;
+
+		}
+	}
+	/*Screen One Test NRIFunction To Reach Screen Two*/
+	public static void ScreenOneTestNRIFunctionToReachScreenTwo() throws Exception {
+		try {
+			HomePage.clickDashboard();
+			HomePage.clickNewApp();
+			JourneyScreenOne.residentialsStatusNRI();
+			JourneyScreenOne.nationalityNRI();
+			JourneyScreenOne.setPassportNumber(1, 1, 5);
+			JourneyScreenOne.isAllTheTypeOfVisaListIsPresent();
+			JourneyScreenOne.visaValidTillSingleData();
+			JourneyScreenOne.passportIssuingCountry(1, 1, 6);
+			JourneyScreenOne.passportExpiryDateForSingleData();
+			JourneyScreenOne.setAadhar(1, 1, 0);
+			JourneyScreenOne.setMobNumber(1, 1, 2);
+			JourneyScreenOne.setEmailId(1, 1, 3);
+			JourneyScreenOne.setPreIssuanceNumber(1, 1, 4);
+			JourneyScreenOne.clickProceed();
+
+		} catch (Exception e) {
+			logger.error("Test case failed: " + e.getMessage());
+			throw e;
+		}
+	}
+	
+	@Step("Getting the information from ScreenTwo")
+	public static void fillingFeildsForScreenTwo() throws Exception {
+		try {
+			JourneyScreenTwo.setFirstName(3, 1, 0);
+			JourneyScreenTwo.setLastName(3, 1, 1);
+			JourneyScreenTwo.setDateBirthPersonalDetails();
+			JourneyScreenTwo.selectByDropdown();
+			JourneyScreenTwo.setHouseNo(3, 1, 3);
+			JourneyScreenTwo.setRoadNo(3, 1, 4);
+			JourneyScreenTwo.setVillageTown(3, 1, 5);
+			JourneyScreenTwo.setCountry(3, 1, 6);
+			JourneyScreenTwo.setState(3, 1, 7);
+			JourneyScreenTwo.setCity(3, 1, 8);
+			JourneyScreenTwo.setPinCode(3, 1, 9);
+			JourneyScreenTwo.setAlternateMobileNo(3, 1, 10);
+		} catch (Exception e) {
+			logger.error("Test case failed: " + e.getMessage());
+			throw e;
+		}
+	}
+
+	
 }
