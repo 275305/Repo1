@@ -1,14 +1,9 @@
 package WebTest;
 
-import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import ru.yandex.qatools.allure.annotations.Description;
@@ -30,15 +25,15 @@ public class JourneyScreenThreeTest extends ReusableActions {
 		try{
 			final String PATH = System.getProperty("user.dir");
 			System.setProperty(AppConstant.INPUT_CHROME_DRIVER, PATH + AppConstant.INPUT_WEB_DRIVER);
-			driver = new ChromeDriver();			
+			driver = new ChromeDriver();
 			prop = ReusableActions.readProperties();
 		 	driver.get(prop.getProperty("SampleURL"));
 		 	LoginPage.verifyloginpage();
-		 			
+
 		 	driver.manage().window().maximize();
 		 	driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 		 	logger.info("Fulfilment URL opened successfully");
-		 	
+
 		 	LoginPage.logintest(prop.getProperty("username"), prop.getProperty("password"));
 		 	logger.info("User logged in successfully");
 			// HomePage.clickDashboard();
@@ -46,13 +41,13 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			// JourneyScreenOne.isIndianSelected();
 			// JourneyScreenOne.isSelfSelected();
 			// JourneyScreenOne.isProceedEnabled();
-			
+
 			}
 		catch (Exception e) {
 			logger.error("Test case failed: " + e.getMessage());
 			throw e;
 	 		}
-        }	
+        }
 
 	// TC -01 Verify the by default status of Nationality, Policy for and Proceed
 	// button on Journey Screen one
@@ -92,7 +87,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			throw e;
 		}
 	}
-	
+
    @Step("Getting information for screen one")
 	public static void ScreenOneTestIndianFuntn() throws Exception {
 		try {
@@ -148,13 +143,13 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			//JourneyScreenOne.insurersGender();
 			//JourneyScreenThree.setDateBirthInsurersDetails(1, 1, 9);
 			//JourneyScreenOne.selectAndCheckRelationshipWithProposerOption();
-			
+
 		}catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
 			throw e;
 
 		}}
-	
+
 	public static void fillingAllTheRequiredFeildForScreen2MinMaxAge() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -212,9 +207,9 @@ public class JourneyScreenThreeTest extends ReusableActions {
 
 		}
 	}
-	
-	
-	
+
+
+
 
 	/*Test case:-To check PDF is generating or not for CANCER INSURANCE PLAN
 	*/
@@ -233,16 +228,16 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			JourneyScreenTwo.fillingAllTheRequiredFeildsForCIP();
 			JourneyScreenTwo.clickSubmitButton();
 			JourneyScreenThree.checkPDFIsOpenedOrNotCheckMsg();
-			
-			
-			   	   
+
+
+
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
 			throw e;
 
 		}
 	}
-	
+
 	/*Test case:-To check PDF is generating or not for SUPER TERM PLAN
 	*/
 	@Test(priority = 3, enabled = false)
@@ -258,13 +253,13 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			JourneyScreenTwo.selectByDropdownSTP();
 			JourneyScreenTwo.fillingAllTheRequiredFeildsForSTP();
 			JourneyScreenTwo.sumAssured();
-			
+
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
 			throw e;
 
 		}}
-	
+
 	/*Test case:-To check PDF is generating or not for MAX LIFE MONTHLY INCOME ADVANTAGE PLAN
 	*/
 	@Test(priority = 2, enabled = false)
@@ -280,15 +275,15 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			JourneyScreenTwo.selectByDropdownMIAP();
 			JourneyScreenTwo.fillingAllTheRequiredFeildsForMIAP();
 			JourneyScreenTwo.premiumCommitmentDesiredAnnualIncomeAnnualIncome();
-			
-			
-			  	   
+
+
+
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
 			throw e;
 
 		}}
-	
+
 	@Test(priority = 5, enabled = false)
 	public void CheckproductConfigrationWLSGeneratingPdf() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
@@ -301,13 +296,13 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			JourneyScreenTwo.traditional();
 			JourneyScreenTwo.selectByDropdownWLS();
 			JourneyScreenTwo.fillingAllTheRequiredFeildsForWLS();
-			
+
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
 			throw e;
 
 		}}
-	
+
 	@Test(priority = 6, enabled = false)
 	public void CheckproductConfigrationSAPGeneratingPdf() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
@@ -321,14 +316,14 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			JourneyScreenTwo.selectByDropdownSAP();
 			JourneyScreenTwo.fillingAllTheRequiredFeildsForSAP();
 			JourneyScreenTwo.premiumCommitmentSAPCheckingMultipleDataForErrorMessage();
-			
-			   	   
+
+
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
 			throw e;
 
 		}}
-	
+
 	@Test(priority = 2, enabled = false)
 	public void CheckproductConfigrationFTSPUlipGeneratingPdf() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
@@ -342,18 +337,18 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			JourneyScreenTwo.selectByDropdownFTSP();
 			JourneyScreenTwo.fillingAllTheRequiredFeildsForFTSP();
 			//JourneyScreenTwo.clickSubmitButton();
-			   
+
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
 			throw e;
 
 		}}
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	/*Test case:-To check whether all the fields for all the traditional product is present or not
 	*MAX LIFE SUPER TERM PLAN
 	*MAX LIFE MONTHLY INCOME ADVANTAGE PLAN
@@ -361,7 +356,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 	*MAX LIFE WHOLE LIFE INSURANCE
 	*MAX LIFE SAVINGS ADVANTAGES PLAN
 	*/
-	
+
 	@Test(priority = 3, enabled = false)
 	public void checkingAllTheFeildsForTraditionalProduct() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
@@ -390,17 +385,17 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			//JourneyScreenOne.selectAndCheckRelationshipWithProposerOption();
 			JourneyScreenTwo.traditional();*/
 			//fillingAllTheRequiredFeildForScreen3();
-			
+
 			//JourneyScreenTwo.selectByDropdownCIP();
 			//Thread.sleep(1000);
 			//JourneyScreenTwo.fillingAllTheRequiredFeildsForScreenThree();
-			   	   
+
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
 			throw e;
 
 		}}
-	
+
 	@Test(priority = 3, enabled = false)
 	public void checkingAllTheFeildsForULIPProduct() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
@@ -410,15 +405,15 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			ScreenOneTestIndianFuntn();
 			JourneyScreenTwo.ulip();
 			JourneyScreenTwo.selectByDropdownUlipAllProduct();
-			   	   
+
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
 			throw e;
 
 		}}
-	
-	
-	
+
+
+
 
 	@Test(priority = 2, enabled = false)
 	public void isPayorDetailsNoOptionSelectedByDefault() throws Exception {
@@ -451,7 +446,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			JourneyScreenThree.otherIsSelectedThen2MoreTextFieldsWillOen();
 			JourneyScreenThree.relationshipWithNomineeWhenOther(4, 1, 1);
 			JourneyScreenThree.ReasonForNomination(4,4,1);
-			
+
 
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
@@ -461,8 +456,8 @@ public class JourneyScreenThreeTest extends ReusableActions {
 
 	}
 
-	
-	
+
+
 	public static void personalDetailsbankDetailsScreenThreeReachingFunction() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -479,7 +474,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			 * JourneyScreenTwo.selectByDropdownCIP(); Thread.sleep(1000);
 			 * JourneyScreenTwo.fillingAllTheRequiredFeildsForCIP();
 			 * JourneyScreenTwo.clickSubmitButton();
-			 * 
+			 *
 			 * Robot robot = new Robot(); robot.keyPress(KeyEvent.VK_CONTROL);
 			 * robot.keyPress(KeyEvent.VK_W); Thread.sleep(1000); //
 			 * JourneyScreenThree.generatingPDFToReachToScreenThree(); //
@@ -509,7 +504,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			JourneyScreenThree.accountHoldersNamePositiveNegativeValidation(4, 1, 6);
 			JourneyScreenThree.typeOfAccountOptionSelectionValidation();
 			JourneyScreenTwo.bankDetailsFeildsValidation();
-			
+
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
 			throw e;
@@ -517,9 +512,9 @@ public class JourneyScreenThreeTest extends ReusableActions {
 		}
 
 	}
-	
-	
-	
+
+
+
 	public static void bankDetailsSectionFillingData() throws Exception
 
 	{
@@ -531,7 +526,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			JourneyScreenThree.setBankAccountNumber(4, 1, 5);
 			JourneyScreenThree.setAccountHoldersName(4, 1, 6);
 			JourneyScreenThree.typeOfAccountOptionSelection();
-			
+
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
 			throw e;
@@ -539,8 +534,8 @@ public class JourneyScreenThreeTest extends ReusableActions {
 		}
 
 	}
-	
-	
+
+
 
 	public static void proposerPersonalDetailsSection() throws Exception
 
@@ -552,14 +547,14 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			JourneyScreenThree.mothersName(9, 1, 1);
 			JourneyScreenThree.maritalStatusOptionSelection();
 			JourneyScreenThree.educationDropDownOptionList();
-			
+
 			JourneyScreenThree.industryDropDownOptionSelection();
 			JourneyScreenThree.organizationTypeOptionSelection();
 			JourneyScreenThree.occupationOptionSelectionSelf();
 			JourneyScreenThree.setCompanyNameProposerPersonalDetails(9, 1, 0);
 			//JourneyScreenTwo.occupationOptionSelectionWithCancerProduct();
 			JourneyScreenTwo.preferredLanguageOfCommunicationOptionSelectionWithSAPProduct();
-			
+
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
 			throw e;
@@ -567,17 +562,17 @@ public class JourneyScreenThreeTest extends ReusableActions {
 		}
 
 	}
-	
-	
-	
+
+
+
 	public static void nomineeDetailsWithoutDependentSelection() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenThree.class);
 		try {
-			
+
 			JourneyScreenThree.fillingNomineeName(4, 1, 6);
 			JourneyScreenTwo.setDateBirthNomineeDetails();
 			JourneyScreenThree.selectNomineeGender();
-			JourneyScreenThree.relationshipWithNomineeOptionSelection();			
+			JourneyScreenThree.relationshipWithNomineeOptionSelection();
 
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
@@ -585,10 +580,10 @@ public class JourneyScreenThreeTest extends ReusableActions {
 
 		}
 	}
-	
-	
-	
-	
+
+
+
+
 	@Test(priority = 5, enabled = false)
 	public void personalDetailsSectionFeildsValidation() throws Exception
 
@@ -611,9 +606,9 @@ public class JourneyScreenThreeTest extends ReusableActions {
 		}
 
 	}
-	
-	
-	
+
+
+
 	@Test(priority = 6, enabled = false)
 	public void reachingScreenFourAndMultipleDataValidationForAnnualIncome() throws Exception
 
@@ -624,7 +619,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			nomineeDetailsWithoutDependentSelection();
 			bankDetailsSectionFillingData();
 			JourneyScreenThree.annualIncomePersonalDetailsDependent();
-			
+
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
 			throw e;
@@ -632,8 +627,8 @@ public class JourneyScreenThreeTest extends ReusableActions {
 		}
 
 	}
-	
-	
+
+
 	public static void reachingScreenFourFillingAnnualIncomeFunction() throws Exception
 
 	{
@@ -643,7 +638,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			nomineeDetailsWithoutDependentSelection();
 			bankDetailsSectionFillingData();
 			JourneyScreenThree.fillingAnnualIncomeTOProceed();
-			
+
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
 			throw e;
@@ -651,7 +646,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 		}
 
 	}
-	
+
 	@Test(priority = 19, enabled = false)
 	public void EIAScreeenFourValidation() throws Exception
 
@@ -685,7 +680,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			throw e;
 
 		}
-	
+
 	}
 
 	@Test(priority = 7, enabled = false)
@@ -712,15 +707,15 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			throw e;
 
 		}
-	
+
 	}
-	
-		
+
+
 	/*
 	 * Check all the feilds are present on the screen four as per dependent
 	 * selection
 	 */
-	
+
 	@Test(priority = 1, enabled = false)
 	public void checkInsurersDetailsIsPresentAndFeildsValidationScreenThree() throws Exception {
 		try {
@@ -799,7 +794,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 		}
 
 	}
-	
+
 	public static void personalDetailsSectionCancerSpecified() throws Exception
 
 	{
@@ -955,7 +950,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			 * JourneyScreenFour.setIdentityProofNumberValidation(0, 1, 6);
 			 * JourneyScreenFour.identityProofIssuingAuthority(); JourneyScreenFour.
 			 * iAmExemptFromTheRequirementOfPANUnderTheFollowingProvisionsOfTheITAct1961();
-			 * 
+			 *
 			 * JourneyScreenFour.arrowDownFunctionToScrollDownTillBottom();
 			 * JourneyScreenFour.criticalIllnessNoOption();
 			 * JourneyScreenFour.hazardousActivitiesNo();
@@ -987,18 +982,18 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			  JourneyScreenTwo.traditional(); JourneyScreenTwo.selectByDropdownSAP();
 			  JourneyScreenTwo.fillingAllTheRequiredFeildsForSAP();
 			  JourneyScreenTwo.checkPOSVforSAPPremiumCommitment(3, 1, 19);
-			  
+
 			  JourneyScreenThreeTest.proposerPersonalDetailsSection(); //
 			 // JourneyScreenTwo.proposerPersonalDetailsIncome();
 			  JourneyScreenThreeTest.nomineeDetailsWithoutDependentSelection();
 			  JourneyScreenThreeTest.bankDetailsSectionFillingData();
 			  JourneyScreenThree.fillingAnnualIncomeTOProceed(); Thread.sleep(1000);
-			  
+
 			  JourneyScreenFour.form60RelatedDetailsIdentityProofNameOptionSelection();
 			  JourneyScreenFour.setIdentityProofNumberValidation(0, 1, 6);
 			  JourneyScreenFour.identityProofIssuingAuthority(); JourneyScreenFour.
 			  iAmExemptFromTheRequirementOfPANUnderTheFollowingProvisionsOfTheITAct1961();
-			  
+
 			  JourneyScreenFour.arrowDownFunctionToScrollDownTillBottom();
 			  JourneyScreenFour.criticalIllnessNoOption();
 			  JourneyScreenFour.hazardousActivitiesNo();
@@ -1074,7 +1069,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 
 		}
 	}
-	
+
 	public static void usingPolicyNumberToFillScreenSixTPPPush() throws Exception {
 		PageFactory.initElements(driver, POSVFlowForSAPMIAP.class);
 		try {

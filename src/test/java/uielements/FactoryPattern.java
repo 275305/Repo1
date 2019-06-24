@@ -4,12 +4,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import uielements.FactoryPattern.GetPlanFactory;
 
 public class FactoryPattern {
 
 	public class GetPlanFactory {
-		
+
 		// use getPlan method to get object of type Plan
 		public Plan getPlan(String planType) {
 			if (planType == null) {
@@ -25,7 +24,7 @@ public class FactoryPattern {
 			return null;
 		}
 	}
-	
+
 }
 
 
@@ -57,7 +56,7 @@ class CommercialPlan extends Plan {
 
 class InstitutionalPlan extends Plan {
 
-	
+
 	@Override
 	public void getRate() {
 		rate = 5.50;

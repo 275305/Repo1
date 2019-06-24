@@ -2,9 +2,11 @@ package WebTest;
 
 
 import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
+
 import uielements.HomePage;
 import uielements.JourneyScreenFour;
 import uielements.JourneyScreenOne;
@@ -12,13 +14,12 @@ import uielements.JourneyScreenThree;
 import uielements.JourneyScreenTwo;
 import uielements.LoginPage;
 import uielements.POSVFlowForSAPMIAP;
-import uielements.RegressionSuit;
 import uielements.ReusableActions;
 import util.AppConstant;
 
 public class RegressionSuitTest extends ReusableActions {
 
-	
+
 	@Test(priority = 1, enabled = true)
 	public void loginApplicationTest() throws Exception {
 		try {

@@ -1,0 +1,305 @@
+[33mcommit 4b80bf35e35d5dce9c0ff975758727b283ada09e[m[33m ([m[1;36mHEAD -> [m[1;32mDisable_BrowserStack[m[33m, [m[1;31morigin/Disable_BrowserStack[m[33m)[m
+Author: pradeep Kumar <kpradeep@monocept.com>
+Date:   Fri Jun 21 20:13:12 2019 +0530
+
+    Refactor ScreenTwoTest,updated AppConstant class
+
+[33mcommit 3767e870b67d4d6fdb859607544ca84478bfcdd7[m
+Author: pradeep Kumar <kpradeep@monocept.com>
+Date:   Thu Jun 20 13:43:21 2019 +0530
+
+    Code commit for Allure Report
+
+[33mcommit 9d60878af6f0ae4f8aba08eb88de0c6e0bf83762[m
+Author: pradeep Kumar <kpradeep@monocept.com>
+Date:   Wed Jun 19 19:37:16 2019 +0530
+
+    TearDown method added in screen two
+
+[33mcommit bd850606ce6f5f6f02002e76b84b3cb4b0d26e4b[m
+Author: pradeep Kumar <kpradeep@monocept.com>
+Date:   Wed Jun 19 17:43:22 2019 +0530
+
+    Replace the ReportTestng.xml through Testng.xml
+
+[33mcommit 2bcc289d2560bf768fe3b47495e6af8ab1d0a09a[m
+Author: pradeep Kumar <kpradeep@monocept.com>
+Date:   Wed Jun 19 13:36:07 2019 +0530
+
+    Disable the browser stack code from screen four and generate the Allure Report
+
+[33mcommit baa6835fae926d18b9035f574fc1fb4a397d4c47[m
+Author: pradeep Kumar <kpradeep@monocept.com>
+Date:   Tue Jun 18 16:19:32 2019 +0530
+
+    Disable the Browser Stack from JourneyScreenTwoTest.java
+
+[33mcommit 0a8c92f884b65d64004f5e2146c9543631f43776[m[33m ([m[1;31morigin/FunctionalTest[m[33m, [m[1;32mFunctionalTest[m[33m)[m
+Author: AzureAD\NavneetKumar <navneet@monnocept.com>
+Date:   Thu May 23 10:42:05 2019 +0530
+
+    making all methods true
+
+[33mcommit c775c15926b84bc7db028d5f9c3d6795345bb8f0[m
+Author: AzureAD\NavneetKumar <navneet@monnocept.com>
+Date:   Wed May 22 16:34:34 2019 +0530
+
+    updating pom.xml file
+
+[33mcommit 3217899e7c2193707bb73ec975caf27fe01473cc[m
+Author: AzureAD\NavneetKumar <navneet@monnocept.com>
+Date:   Wed May 22 16:16:28 2019 +0530
+
+    changing Allure report setting
+
+[33mcommit 3b589ab5b1a8e889ef7b57520b2d5703496fde07[m
+Author: AzureAD\NavneetKumar <navneet@monnocept.com>
+Date:   Wed May 22 15:45:09 2019 +0530
+
+    allure report enable changes
+
+[33mcommit 17bf7e6d8e83d5c75ca5d432f5cb88a95e850f35[m
+Author: AzureAD\NavneetKumar <navneet@monnocept.com>
+Date:   Wed May 22 12:49:51 2019 +0530
+
+    runninig one test case only
+
+[33mcommit 13fd98ae144bc617e19b34f4ba0ff0565e54249f[m
+Author: AzureAD\NavneetKumar <navneet@monnocept.com>
+Date:   Tue May 14 16:35:50 2019 +0530
+
+    changing Testng file
+
+[33mcommit 02f498ac90908ba8e592956b4deedee6987ae2a4[m
+Author: AzureAD\NavneetKumar <navneet@monnocept.com>
+Date:   Tue May 14 16:20:41 2019 +0530
+
+    functional test
+
+[33mcommit 3662d962d0a8badcbf0d70b29917b171c99f0d38[m
+Author: Suniti Pandey <suniti@monocept.com>
+Date:   Tue May 14 13:17:08 2019 +0530
+
+    disabling browserstack
+
+[33mcommit 68d94fbdb386d3a115509f0f616649b978c3fa0c[m
+Author: Suniti Pandey <suniti@monocept.com>
+Date:   Tue May 14 12:43:57 2019 +0530
+
+    Updated
+
+[33mcommit fdd46403aa8495b6f22fb59e09648124736bca8e[m
+Author: Suniti Pandey <suniti@monocept.com>
+Date:   Mon May 13 17:17:02 2019 +0530
+
+    Updating testng
+
+[33mcommit f5120e59bec76719e821f2606c437703687bcf1d[m
+Author: Suniti Pandey <suniti@monocept.com>
+Date:   Mon May 13 16:29:07 2019 +0530
+
+    enabling browserstack code
+
+[33mcommit 11464715b5b3e2f7a50bbfc5bc9c82910e14a6ac[m
+Author: Suniti Pandey <suniti@monocept.com>
+Date:   Mon May 13 16:07:50 2019 +0530
+
+    SMART TERM PLAN
+
+[33mcommit a25ba17c66ecc42510bbf6a395e520d2a4fa82fb[m
+Author: Suniti Pandey <suniti@monocept.com>
+Date:   Fri May 3 15:54:34 2019 +0530
+
+    SMART TERM PLAN
+
+[33mcommit e56a9a4536fd9b0c6290bde3ee0f3a8c4cc6fb66[m
+Author: Suniti Pandey <suniti@monocept.com>
+Date:   Thu Apr 18 15:57:41 2019 +0530
+
+    Changing the environment
+
+[33mcommit 25a35aeab54ad9bbccf0003f0c4a1edd152392c3[m
+Author: Suniti Pandey <suniti@monocept.com>
+Date:   Wed Apr 17 12:58:17 2019 +0530
+
+    TPP push
+
+[33mcommit e1c18d50ff7d1bf029a8708cd86c0a715f2b9b8d[m
+Author: Suniti Pandey <suniti@monocept.com>
+Date:   Fri Feb 15 17:54:48 2019 +0530
+
+    Enabling BrowserStack
+
+[33mcommit 2ff7345c51518316a1ac9db5bb0287eb55d26321[m
+Author: Suniti Pandey <suniti@monocept.com>
+Date:   Fri Feb 15 17:38:57 2019 +0530
+
+    fixing null pointer
+
+[33mcommit e2fc50891cd11ab7a3e6f1729a7e8c1bd1c8d76a[m
+Author: Suniti Pandey <suniti@monocept.com>
+Date:   Fri Feb 15 16:27:13 2019 +0530
+
+    pom changes
+
+[33mcommit 4f0954a8b2059a15f002f406e72b03acf355ead7[m
+Merge: fe684b9 be4beab
+Author: Suniti Pandey <suniti@monocept.com>
+Date:   Thu Feb 14 17:12:28 2019 +0530
+
+    Merge branch 'BrowserStackEnable' of https://bitbucket.org/MaxLife_mPro/mpro-automation into BrowserStackEnable
+    
+    # Conflicts:
+    #       src/test/java/WebTest/RegressionSuitTest.java
+    #       src/test/java/uielements/FactoryPattern.java
+
+[33mcommit fe684b994b78ecbccf24a1083666f7a5d6266eec[m
+Author: Suniti Pandey <suniti@monocept.com>
+Date:   Thu Feb 14 16:38:06 2019 +0530
+
+    Regression suit up and running
+
+[33mcommit be4beab07e92ddeaae21c660606391f8ae7e1de7[m
+Author: AzureAD\NavneetKumar <navneet@monnocept.com>
+Date:   Thu Feb 7 15:49:12 2019 +0530
+
+    Modified code for Regression Suite
+
+[33mcommit de6daa0e12d5c92eef463fc6c0c1c189cf14cc3b[m
+Author: Suniti Pandey <suniti@monocept.com>
+Date:   Tue Feb 5 12:47:03 2019 +0530
+
+    including regression suit
+
+[33mcommit 817bf6b29a320b1a23febc9479c24558db35286e[m
+Author: Suniti Pandey <suniti@monocept.com>
+Date:   Fri Dec 21 13:58:51 2018 +0530
+
+    Adding and updating Screen four test
+
+[33mcommit 04960f922bc7ce52c0d4ec40087fc50e87184e1f[m
+Author: Suniti Pandey <suniti@monocept.com>
+Date:   Fri Dec 21 11:00:14 2018 +0530
+
+    BrowserStackEnabled code modification as per the journey class name
+
+[33mcommit dbbf73d2d5d50df7011cc2f37b8bca10dfaf5f41[m
+Author: Suniti Pandey <suniti@monocept.com>
+Date:   Mon Dec 17 16:47:44 2018 +0530
+
+    adding path as per jenkins
+
+[33mcommit 6b0861a2d179b8b4c550e465a9be86175f9828a9[m
+Author: Suniti Pandey <suniti@monocept.com>
+Date:   Mon Dec 17 15:52:15 2018 +0530
+
+    path changes
+
+[33mcommit 34b7ee159815086a0039f65141c0f25b3366926e[m
+Author: Suniti Pandey <suniti@monocept.com>
+Date:   Mon Dec 17 15:27:21 2018 +0530
+
+    TestNG xml name changes
+
+[33mcommit 7614b71e9f205d68c4d9031f5aaf5fccafc57d10[m
+Author: Suniti Pandey <suniti@monocept.com>
+Date:   Mon Dec 17 15:10:59 2018 +0530
+
+    POM updated
+
+[33mcommit f2588a14cebf8cbf9f90a7852bc021b54cd929ea[m
+Author: Suniti Pandey <suniti@monocept.com>
+Date:   Fri Dec 14 18:17:10 2018 +0530
+
+    Latest updated of enabled code
+
+[33mcommit de75134e6b466f5378e9ad3030b3ca032fc7f99b[m
+Author: MAXLIFE\sp104 <suniti@monocept.com>
+Date:   Thu Nov 29 12:30:24 2018 +0530
+
+    Updating latest requirement change
+
+[33mcommit a3724a0b1ec4db2635871626425ab1d107d5418d[m
+Author: MAXLIFE\sp104 <suniti@monocept.com>
+Date:   Tue Nov 27 12:12:18 2018 +0530
+
+    first stable commit for browser stack
+
+[33mcommit b27877db08d0e6482c9d2c38a527b4ed84f9aac9[m
+Author: MAXLIFE\sp104 <suniti@monocept.com>
+Date:   Thu Oct 4 15:47:28 2018 +0530
+
+    OCR test case update
+
+[33mcommit 2ae6476f3c6c7a1bb9b46c66874212fbf66765b3[m
+Author: MAXLIFE\sp104 <suniti@monocept.com>
+Date:   Thu Oct 4 15:37:08 2018 +0530
+
+    OCR prepopulation test case update
+
+[33mcommit 2f6465ab06c6ac1c9995d3756ab0ff8f7b4302c1[m
+Author: AzureAD\NavneetKumar <navneet@monnocept.com>
+Date:   Mon Oct 1 15:48:32 2018 +0530
+
+    navneet latest update
+
+[33mcommit e7358a40ea52d3475bd9eb7ec5209d2ee8daa48c[m
+Author: MAXLIFE\sp104 <suniti@monocept.com>
+Date:   Fri Sep 28 15:33:17 2018 +0530
+
+    prof type list
+
+[33mcommit ef9e664c37a580b828db26be99a970f63936753e[m
+Author: MAXLIFE\sp104 <suniti@monocept.com>
+Date:   Fri Sep 28 14:52:48 2018 +0530
+
+    checking drop down value
+
+[33mcommit c11ec7e0586ff48438ceb31018d93f5298e30914[m
+Merge: 63cdf14 ce43f7c
+Author: MAXLIFE\sp104 <suniti@monocept.com>
+Date:   Thu Sep 27 17:30:10 2018 +0530
+
+    initial commit
+
+[33mcommit 63cdf14fa184815fee1491135d7d4f19a0626356[m
+Author: MAXLIFE\sp104 <suniti@monocept.com>
+Date:   Fri Sep 21 16:34:28 2018 +0530
+
+    added gitignore
+
+[33mcommit ce43f7c267880665f987f17db3f4d5d76edd2576[m
+Author: MAXLIFE\sp104 <suniti@monocept.com>
+Date:   Fri Sep 21 16:20:27 2018 +0530
+
+    suniti code
+
+[33mcommit ce1044121954e11072db61c920d3d4ce2ccd7631[m
+Author: AzureAD\NavneetKumar <navneet@monnocept.com>
+Date:   Fri Sep 21 14:44:31 2018 +0530
+
+    sprint 6 test cases
+
+[33mcommit e023ca66a7dc605e6492827985963d7ce5b4a311[m
+Author: AzureAD\NavneetKumar <navneet@monnocept.com>
+Date:   Tue Aug 28 12:29:06 2018 +0530
+
+    Changes for screen one has been implemented
+
+[33mcommit c2b9df2ce8cab08310729dc85b22d39e24dbcea4[m
+Author: AzureAD\NavneetKumar <navneet@monnocept.com>
+Date:   Fri Aug 3 14:38:29 2018 +0530
+
+    Adding test cases for journey screen 1
+
+[33mcommit ef20ceee33fa3655d87d4e0b71250b32e3b5078b[m
+Author: AzureAD\NavneetKumar <navneet@monnocept.com>
+Date:   Thu Jul 12 14:27:47 2018 +0530
+
+    Sprint 1 bug fixes
+
+[33mcommit eb189e2bb898d27d89a93f14470ba2f5087253d2[m
+Author: AzureAD\NavneetKumar <navneet@monnocept.com>
+Date:   Tue Jun 12 11:44:29 2018 +0530
+
+    first commit

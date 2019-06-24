@@ -344,7 +344,7 @@ public class JourneyScreenOne extends ReusableActions {
 	@FindBy(xpath = "//div[@id='react-autowhatever-passportIssuingCountry']/ul/li[1]")
 	static WebElement passportIssuingCountry1stOption;
 
-	
+
 
 	@FindBy(xpath = "//label[@for='dependent']")
 	static WebElement dependentOptionButton;
@@ -683,8 +683,7 @@ public class JourneyScreenOne extends ReusableActions {
 
 		String aAdharTxtfldPassedFromExcel = AadharTxtfld.getAttribute("value");
 		int size = aAdharTxtfldPassedFromExcel.length();
-		if ((size == 12)
-				&& (!aAdharTxtfldPassedFromExcel.contains("A") && !aAdharTxtfldPassedFromExcel.contains("*"))) {
+		if ((size == 12) && (!aAdharTxtfldPassedFromExcel.contains("A") && !aAdharTxtfldPassedFromExcel.contains("*"))) {
 			logger.info("Test case pass:- As aadhar feild length is 12 and accepting only numbers");
 		} else {
 			Assert.fail("Test case fail:-As either aadhar feild length is not 12 or not accepting only numbers");
@@ -890,12 +889,12 @@ public class JourneyScreenOne extends ReusableActions {
 		int size = mobileNumberPassedFromExcel.length();
 		if (size == 7) {
 			if (isElementDisplayed(mobileInternationalError)) {
-				
+
 				System.out.println("Test case pass:As error message is displayig for 7 digit");
 			} else {
 				Assert.fail("Test case fail:As error message is not displaying for 7 digit");
 			}
-			
+
 		}
 
 	}
@@ -1330,7 +1329,7 @@ public class JourneyScreenOne extends ReusableActions {
 		Savebtn.click();
 		click(Proceedbtn);
 		ReusableActions.waitTillElementLocated(Proceedbtn);
-	
+
 	}
 
 	public static void isIndianSelected() throws Exception {
@@ -1430,7 +1429,7 @@ public class JourneyScreenOne extends ReusableActions {
 
 	}
 
-	
+
 
 	public static void nriDependentOptionSElection() throws Exception {
 		dependentOptionButton.click();

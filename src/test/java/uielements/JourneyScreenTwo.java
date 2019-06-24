@@ -54,10 +54,11 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//h4[(text()=\"Illustration could not be generated.\")]")
 	static WebElement errorMessageWhenAgeMoreThan60;
 
-/*	@FindBy(xpath = "//input[@name='insurerName']")
-	static WebElement insurersName;*/
-	
-	
+	/*
+	 * @FindBy(xpath = "//input[@name='insurerName']") static WebElement
+	 * insurersName;
+	 */
+
 	@FindBy(xpath = "//input[@name='insurerName']")
 	static WebElement insurersNameLabel;
 
@@ -66,28 +67,24 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	@FindBy(xpath = "//li[contains(text(),'Maximum LI Age at Entry for Pay Till 60 variant is')]")
 	static WebElement maximumAgeLimit44ErrorMessage;
-	
+
 	@FindBy(xpath = "//label[contains(@for, 'InsurerGenderMale')]")
 	static WebElement insurersGenderMale;
-	
-		
+
 	@FindBy(xpath = "//*[@id='menu-relationshipWithProposer']/div[2]/ul/li[contains(text(),\"Parent\")]")
 	static WebElement relationshipWithProposerParentOption;
 
 	@FindBy(xpath = "//div[@id='relationshipWithProposer_id']")
 	static WebElement relationshipWithProposer;
-	
-	
+
 	@FindBy(xpath = "//label[contains(@for, 'InsurerGenderFemale')]")
 	static WebElement insurersGenderFemale;
-	
 
 	@FindBy(xpath = "//label[@for='female']")
 	static WebElement genderFemale;
 
 	@FindBy(xpath = "//input[@name='premiumCommitment']")
 	public static WebElement premiumCommitmentDependent;
-
 
 	@FindBy(xpath = "//div[@id='occupation_id']")
 	public static WebElement occupationCancerProductSelected;
@@ -227,7 +224,8 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//h2[contains(text(),'t have Aadhaar Number?')]")
 	static WebElement DonthaveAadhaarlbl;
 
-	// Locating Forgot my aadhaar number radio button on Don't have Aadhaar Number?
+	// Locating Forgot my aadhaar number radio button on Don't have Aadhaar
+	// Number?
 	// Popup
 	@FindBy(xpath = "//label[text()='Forgot my aadhaar number']")
 	static WebElement Frgtmyadhrnumbtn;
@@ -273,7 +271,8 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//span[text()='Proceed']")
 	static WebElement Proceedbtn2;
 
-	// Locating Please enter the OTP sent to your registered mobile number text on
+	// Locating Please enter the OTP sent to your registered mobile number text
+	// on
 	// verify aadhar number Popup
 	@FindBy(xpath = "//p[text()='Please enter the OTP sent to your registered mobile number.']")
 	static WebElement Otpverifylbl;
@@ -346,10 +345,10 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	@FindBy(xpath = "//*[@name='firstName']")
 	static WebElement firtsName;
-	
+
 	@FindBy(xpath = "//div[@id='communicationProofType_id']")
 	static WebElement communicationProofTypeDropDown;
-	
+
 	@FindBy(xpath = "//div[@id='menu-communicationProofType']/div/ul/li[5]")
 	static WebElement communicationProofType1stOption;
 
@@ -386,9 +385,10 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//input[@name='communicationVillageTown']")
 	static WebElement communicationVillageTown;
 
-	/*@FindBy(xpath = "//input[@placeholder='Search a country']")
-	static WebElement country;*/
-
+	/*
+	 * @FindBy(xpath = "//input[@placeholder='Search a country']") static
+	 * WebElement country;
+	 */
 
 	@FindBy(xpath = "//input[@id='permanentCountry_idd']")
 	static WebElement country;
@@ -396,29 +396,29 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//input[@name='communicationCountry']")
 	static WebElement countryCommunication;
 
-	
 	@FindBy(xpath = "//span[contains(text(),'Either Permanent or Communication address should b')]")
 	static WebElement errorMsgWhenSameCountryIsSelectedForPermanentAndCommunication;
 
 	@FindBy(xpath = "//input[@placeholder='Search a state']")
 	static WebElement searchState;
-	
+
 	/*
-	@FindBy(xpath = "//div[@id='communicationStateid']//input[@id='State_idd']")
-	static WebElement communicationStateCommunication;*/
-	
-	
+	 * @FindBy(xpath =
+	 * "//div[@id='communicationStateid']//input[@id='State_idd']") static
+	 * WebElement communicationStateCommunication;
+	 */
+
 	@FindBy(xpath = "//input[@id='communicationState_idd']")
 	static WebElement communicationStateCommunication;
-	
 
 	@FindBy(xpath = "//input[@placeholder='Search a city']")
 	static WebElement searchCity;
 
-/*	@FindBy(xpath = "//div[@id='Cityid']//input[@id='City_idd']")
-	static WebElement searchCityComunication;*/
-	
-	
+	/*
+	 * @FindBy(xpath = "//div[@id='Cityid']//input[@id='City_idd']") static
+	 * WebElement searchCityComunication;
+	 */
+
 	@FindBy(xpath = "//input[@id='communicationCity_idd']")
 	static WebElement searchCityComunication;
 
@@ -451,8 +451,6 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	@FindBy(xpath = "//p[(text()=\"Total Percentage Should Be 100\")]")
 	static WebElement totalPercentage;
-
-
 
 	@FindBy(xpath = "//div[@id='productName_id']")
 	static WebElement productNm;
@@ -532,7 +530,6 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//label[contains(text(),'Dividend Option')]")
 	static WebElement dividentOption;
 
-
 	@FindBy(xpath = "//label[text()='Premium Payment Term']")
 	static WebElement premiumPaymentTerm;
 
@@ -608,7 +605,6 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//input[@name='income']")
 	static WebElement proposerPersonalDetailsAnnualIncome;
 
-
 	@FindBy(xpath = "//div[@id='needOfInsurance_id']")
 	static WebElement needOfInsurance;
 
@@ -621,7 +617,6 @@ public class JourneyScreenTwo extends ReusableActions {
 	// @FindBy(xpath =
 	// ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[3]/div[2]/div/div/div/div/div[1]/div[2]/div/div/div/div/div[@role='button']")
 	// static WebElement lifeStage;
-
 
 	@FindBy(xpath = "//div[@id='lifeStage_id']")
 	static WebElement lifeStageDropDown;
@@ -836,7 +831,6 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//label[contains(text(),'Sum Assured Available')]")
 	static WebElement dropDownSumAssuredAvailableLabel;
 
-
 	@FindBy(xpath = "//div[@id='sumAssuredAvailable_id']")
 	static WebElement drpDownSumAssuredAvailableInsurersDetails;
 
@@ -888,13 +882,14 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//li[@id='react-autowhatever-permanentCity--item-0']")
 	static WebElement city1stOption;
 
-	/*@FindBy(xpath = "//div[@id='insurerDateOfBirth_id']")
-	static WebElement dateOfBirthIssurer;*/
-  
+	/*
+	 * @FindBy(xpath = "//div[@id='insurerDateOfBirth_id']") static WebElement
+	 * dateOfBirthIssurer;
+	 */
+
 	@FindBy(xpath = "//input[@name='insurerDateOfBirth']")
 	static WebElement dateOfBirthIssurer;
-	
-	
+
 	public static void selectByDropdown() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -908,7 +903,7 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	public static void selectByDropdownProposerCommunication() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
-		 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		waitTillElementToBeClickable(proofTypeDropDownPropserCommunication);
 		proofTypeDropDownPropserCommunication.click();
 		WebElement element = driver.findElement(By.xpath(
@@ -917,7 +912,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		proofTypeDropDownValueProposerCommunication.click();
 		Thread.sleep(5000);
 		outsideClick.click();
-		//arrowDownFunctionToScrollDown();
+		// arrowDownFunctionToScrollDown();
 	}
 
 	public static void selectFemale() throws Exception {
@@ -929,7 +924,6 @@ public class JourneyScreenTwo extends ReusableActions {
 		outsideClick.click();
 		click(traditional);
 	}
-
 
 	public static void city1stOption() throws Exception {
 
@@ -1006,15 +1000,13 @@ public class JourneyScreenTwo extends ReusableActions {
 			lifeStageEventBenefitNo();
 			premiumBackOptiontNo();
 			WOPPlusRiderCheckBox();
-
 			ifElseConditionSmartTermPlan();
 
 		}
 
 	}
 
-	public static void allPremiumPayementTermSTPRegularPay() throws Exception
-	{
+	public static void allPremiumPayementTermSTPRegularPay() throws Exception {
 		Thread.sleep(500);
 		waitTillElementToBeClickable(premiumPayementTermSTP);
 		premiumPayementTermSTP.click();
@@ -1023,7 +1015,6 @@ public class JourneyScreenTwo extends ReusableActions {
 		List<String> expectedResult = fetchingdataFromExcelExpectedResultSheet(3, 42, 4);
 		List<String> actualResultText = fetchingdataFromUI("//*[@id='menu-premiumPaymentTerm']/div[2]/ul/li");
 		comparisonOfListForExpectedAndActualResult(expectedResult, actualResultText);
-
 		Thread.sleep(700);
 		PremiumPaymentTermOption.click();
 
@@ -1097,6 +1088,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		PremiumPaymentTermOption35.click();
 		Thread.sleep(500);
 	}
+
 	public static void premiumPayementTermSTP30() throws Exception {
 		Thread.sleep(500);
 		waitTillElementToBeClickable(premiumPayementTermSTP);
@@ -1116,7 +1108,6 @@ public class JourneyScreenTwo extends ReusableActions {
 		PremiumPaymentTermOption50.click();
 		Thread.sleep(500);
 	}
-
 
 	public static void premiumPayementTermSTPDependent() throws Exception {
 		Thread.sleep(500);
@@ -1159,7 +1150,6 @@ public class JourneyScreenTwo extends ReusableActions {
 		Thread.sleep(2000);
 	}
 
-
 	public static void policyTermSTP() throws Exception {
 		waitTillElementToBeClickable(policyTermSTP);
 		policyTermSTP.click();
@@ -1183,7 +1173,6 @@ public class JourneyScreenTwo extends ReusableActions {
 		deathBenifit1stOption.click();
 		Thread.sleep(2000);
 	}
-
 
 	public static void deathBenifitIncomeProtector() throws Exception {
 		waitTillElementToBeClickable(deathBenefit);
@@ -1596,8 +1585,7 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	}
 
-	public static void selectByDropdownSTPDependent() throws Exception
-	{
+	public static void selectByDropdownSTPDependent() throws Exception {
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		waitTillElementToBeClickable(productNmDependent);
 		productNmDependent.click();
@@ -1618,13 +1606,15 @@ public class JourneyScreenTwo extends ReusableActions {
 		Thread.sleep(1000);
 
 	}
-      @Step("Getting the plan")
+
+	@Step("Getting the plan")
 	public static void selectByDropdownSmartTermPlan() throws Exception {
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		waitTillElementToBeClickable(productNm);
 		productNm.click();
 		waitTillElementToBeClickable(maxLifeSuperTermPlan);
 		Thread.sleep(1000);
+		JourneyScreenTwo.arrowDownFunctionToScrollDown();
 		maxLifeSmartTermPlan.click();
 		Thread.sleep(1000);
 
@@ -1708,8 +1698,7 @@ public class JourneyScreenTwo extends ReusableActions {
 				arrowDownFunctionToScrollDown();
 				if (policyTerm.isDisplayed() && dividentOption.isDisplayed() && desiredAnnualIncome.isDisplayed()
 						&& premiumPaymentTerm.isDisplayed() && termPlusRider.isDisplayed()
-						&& modeOfPayment.isDisplayed()
-						&& effectiveDateOfCoverage.isDisplayed()
+						&& modeOfPayment.isDisplayed() && effectiveDateOfCoverage.isDisplayed()
 						&& accidentalDeathAndDismembermentRider.isDisplayed() && modeOfPayment.isDisplayed()) {
 
 					System.out.println(
@@ -1727,8 +1716,7 @@ public class JourneyScreenTwo extends ReusableActions {
 
 					System.out.println("All the feilds are present as per the product MAX LIFE CANCER INSURANCE PLAN");
 				} else {
-					Assert.fail(
-							"All the feilds are not present as per the product MAX LIFE CANCER INSURANCE PLAN");
+					Assert.fail("All the feilds are not present as per the product MAX LIFE CANCER INSURANCE PLAN");
 				}
 				break;
 
@@ -1736,15 +1724,13 @@ public class JourneyScreenTwo extends ReusableActions {
 				System.out.println("Max Life Assured Wealth Plan");
 				arrowDownFunctionToScrollDown();
 				if (isElementDisplayed(premiumPaymentTerm) && isElementDisplayed(policyTerm)
-						&& isElementDisplayed(modeOfPayment)
-						&& isElementDisplayed(premiumCommitment) && effectiveDateOfCoverage.isDisplayed()
-						&& accidentalDeathAndDismembermentRider.isDisplayed() && WOPPlusRider.isDisplayed()
-						&& termPlusRider.isDisplayed()) {
+						&& isElementDisplayed(modeOfPayment) && isElementDisplayed(premiumCommitment)
+						&& effectiveDateOfCoverage.isDisplayed() && accidentalDeathAndDismembermentRider.isDisplayed()
+						&& WOPPlusRider.isDisplayed() && termPlusRider.isDisplayed()) {
 
 					System.out.println("All the feilds are present as per the product Max Life Assured Wealth Plan");
 				} else {
-					Assert.fail(
-							"All the feilds are not present as per the product Max Life Assured Wealth Plan");
+					Assert.fail("All the feilds are not present as per the product Max Life Assured Wealth Plan");
 				}
 				break;
 
@@ -1754,10 +1740,11 @@ public class JourneyScreenTwo extends ReusableActions {
 				if (isElementDisplayed(premiumPaymentTerm) && isElementDisplayed(policyTerm)
 						&& isElementDisplayed(modeOfPayment) && effectiveDateOfCoverage.isDisplayed()
 						&& premiumCommitment.isDisplayed() && WOPPlusRider.isDisplayed() && termPlusRider.isDisplayed()
-						&& accidentalDeathAndDismembermentRider.isDisplayed() && dividentOption.isDisplayed() &&
-						dividendAdjustment.isDisplayed()) {
+						&& accidentalDeathAndDismembermentRider.isDisplayed() && dividentOption.isDisplayed()
+						&& dividendAdjustment.isDisplayed()) {
 
-					System.out.println("All the feilds are present as per the product Max Life Future Genius Education Plan");
+					System.out.println(
+							"All the feilds are present as per the product Max Life Future Genius Education Plan");
 				} else {
 					Assert.fail(
 							"All the feilds are not present as per the product Max Life Future Genius Education Plan");
@@ -1774,45 +1761,37 @@ public class JourneyScreenTwo extends ReusableActions {
 
 					System.out.println("All the feilds are present as per the product Life Life Perfect Partner Super");
 				} else {
-					Assert.fail(
-							"All the feilds are not present as per the product Life Life Perfect Partner Super");
+					Assert.fail("All the feilds are not present as per the product Life Life Perfect Partner Super");
 				}
 				break;
 
-				
 			case "Max Life Whole Life Super":
 				System.out.println("Max Life Whole Life Super");
 				arrowDownFunctionToScrollDown();
 				if (policyTerm.isDisplayed() && premiumCommitment.isDisplayed() && termPlusRider.isDisplayed()
 						&& premiumPaymentTerm.isDisplayed() && dividendAdjustment.isDisplayed()
 						&& dividendOptionWLS.isDisplayed() && modeOfPayment.isDisplayed()
-						&& effectiveDateOfCoverage.isDisplayed()
-						&& accidentalDeathAndDismembermentRider.isDisplayed() && WOPPlusRider.isDisplayed()) {
+						&& effectiveDateOfCoverage.isDisplayed() && accidentalDeathAndDismembermentRider.isDisplayed()
+						&& WOPPlusRider.isDisplayed()) {
 
 					System.out.println("All the feilds are present as per the product MAX LIFE WHOLE LIFE SUPER");
 				} else {
 					Assert.fail("All the feilds are not present as per the product MAX LIFE WHOLE LIFE SUPER");
 				}
 				break;
-				
+
 			case "Max Life Guaranteed Income Plan":
 				System.out.println("Max Life Guaranteed Income Plan");
 				JourneyScreenTwo.arrowDownFunctionToScrollDown();
-				if ( premiumCommitment.isDisplayed() 
-						&& premiumPaymentTerm.isDisplayed()
-						 && modeOfPayment.isDisplayed()
-						&& effectiveDateOfCoverage.isDisplayed()
-						) {
+				if (premiumCommitment.isDisplayed() && premiumPaymentTerm.isDisplayed() && modeOfPayment.isDisplayed()
+						&& effectiveDateOfCoverage.isDisplayed()) {
 
 					System.out.println("All the feilds are present as per the product Max Life Guaranteed Income Plan");
 				} else {
 					Assert.fail("All the feilds are not present as per the product Max Life Guaranteed Income Plan");
 				}
 				break;
-				
-				
-				
-				
+
 			case "Max Life Savings Advantage Plan":
 				System.out.println("Max Life Savings Advantage Plan");
 				arrowDownFunctionToScrollDown();
@@ -1824,8 +1803,7 @@ public class JourneyScreenTwo extends ReusableActions {
 
 					System.out.println("All the feilds are present as per the product MAX LIFE SAVING ADVANTAGE PLAN");
 				} else {
-					Assert.fail(
-							"All the feilds are not present as per the product MAX LIFE SAVING ADVANTAGE PLAN");
+					Assert.fail("All the feilds are not present as per the product MAX LIFE SAVING ADVANTAGE PLAN");
 				}
 			}
 		}
@@ -1920,8 +1898,7 @@ public class JourneyScreenTwo extends ReusableActions {
 
 					System.out.println("All the feilds are present as per the product Max Life Fast Track Super Plan");
 				} else {
-					Assert.fail(
-							"All the feilds are not present as per the product Max Life Fast Track Super Plan");
+					Assert.fail("All the feilds are not present as per the product Max Life Fast Track Super Plan");
 				}
 				break;
 
@@ -1937,7 +1914,7 @@ public class JourneyScreenTwo extends ReusableActions {
 				} else {
 					Assert.fail("All the feilds are not present as per the product Max Life Siksha Plus Super");
 				}
-			
+
 			}
 		}
 	}
@@ -1950,7 +1927,8 @@ public class JourneyScreenTwo extends ReusableActions {
 		needOfInsurance1stOption.click();
 
 	}
-    @Step("Getting the insurance option")
+
+	@Step("Getting the insurance option")
 	public static void selectByDropdownNeedOfInsur() throws Exception {
 		waitTillElementToBeClickable(needOfInsurance);
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -2246,14 +2224,12 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	}
 
-
-
 	// Enter First Name
 	@Step("Getting First Name")
 	public static void setFirstName(int x, int y, int z) throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		firtsName.clear();
-	   ReusableActions.waitTillElementLocated(firtsName);
+		ReusableActions.waitTillElementLocated(firtsName);
 		type(firtsName, readingdata(x, y, z));
 		String firstNamePassedFromExcel = firtsName.getAttribute("value");
 		int size = firstNamePassedFromExcel.length();
@@ -2265,7 +2241,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		}
 
 	}
-	
+
 	public static void setFirstNamePAN(int x, int y, int z) throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		firtsName.clear();
@@ -2331,8 +2307,6 @@ public class JourneyScreenTwo extends ReusableActions {
 		genderFemale.click();
 	}
 
-
-
 	public static void getAllTextBoxVaueAndDropDownAndComparingWithExpectedScreenTwo() throws Exception {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//span[contains(text(),'Product   Details')]")).click();
@@ -2352,7 +2326,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		String policyTerm = driver.findElement(By.id("policyTerm")).getAttribute("value");
 		String modeOfPayment = driver.findElement(By.id("modeOfPayment")).getAttribute("value");
 		String dividendOption = driver.findElement(By.id("dividendOption")).getAttribute("value");
-		
+
 		List<String> actualResultDropDownList = new ArrayList<String>();
 		actualResultDropDownList.add(permanentProofType);
 		actualResultDropDownList.add(needOfInsurance);
@@ -2379,7 +2353,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	}
 
 	public static void getAllDropDownValueSAPScreenTwo() throws Exception {
-		
+
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//span[contains(text(),'Product   Details')]")).click();
 		Thread.sleep(1000);
@@ -2498,7 +2472,6 @@ public class JourneyScreenTwo extends ReusableActions {
 		actualResultDropDownList.add(modeOfPayment);
 		actualResultDropDownList.add(dividendOption);
 		actualResultDropDownList.add(dividendAdjustment);
-
 
 		System.out.println("actual result" + actualResultDropDownList);
 		List<String> expectedResultDropDowFromExcel = fetchingdataFromExcelExpectedResult(14, 11);
@@ -2634,8 +2607,8 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	public static void houseNoProposerCommunication(int x, int y, int z) throws Exception {
 		houseNoProposerCommunication.clear();
-		//arrowDownFunctionToScrollDown();
-		//Thread.sleep(3000);
+		// arrowDownFunctionToScrollDown();
+		// Thread.sleep(3000);
 		type(houseNoProposerCommunication, readingdata(x, y, z));
 		String houseNoDataFromExcel = houseNoProposerCommunication.getAttribute("value");
 		int size = houseNoDataFromExcel.length();
@@ -2766,6 +2739,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		}
 
 	}
+
 	@Step("Getting country Name")
 	public static void setCountry(int x, int y, int z) throws Exception {
 		country.clear();
@@ -2781,7 +2755,6 @@ public class JourneyScreenTwo extends ReusableActions {
 		countryIstOption();
 	}
 
-
 	public static void setCountryAndSelecting2ndOption(int x, int y, int z) throws Exception {
 		country.clear();
 		type(country, readingdata(x, y, z));
@@ -2793,17 +2766,15 @@ public class JourneyScreenTwo extends ReusableActions {
 		}
 		permanentReflexiveNoOption.click();
 		JourneyScreenFour.arrowDownFunctionToScrollDown();
-		if(communicationAddressid.isDisplayed()) {
+		if (communicationAddressid.isDisplayed()) {
 			System.out.println("Test case pass:As Proposer communication Address is present");
-			
-		}else {
+
+		} else {
 			Assert.fail("Test case fail:As Proposer communication address is not present");
-			
+
 		}
 
-
 	}
-
 
 	public static void fillingAllTheFeildsAfterChangingCountry() throws Exception {
 		JourneyScreenFour.arrowUpFunctionToScrollUpTillTop();
@@ -2822,8 +2793,6 @@ public class JourneyScreenTwo extends ReusableActions {
 
 		}
 	}
-	
-	
 
 	// Enter State
 	@Step("Getting the state")
@@ -2857,7 +2826,6 @@ public class JourneyScreenTwo extends ReusableActions {
 		communicationStateCommunication.clear();
 		type(communicationStateCommunication, readingdata(x, y, z));
 
-
 		// communicationStateCommunication.sendKeys(readingdata(x, y, z));
 		// driver.findElement(By.xpath(".//*[@id='root']/main/div[2]/form/div/div/div[1]")).click();
 		// searchState.sendKeys(readingdata(x, y, z));
@@ -2869,12 +2837,14 @@ public class JourneyScreenTwo extends ReusableActions {
 		 * communicationStateCommunication.sendKeys(Keys.BACK_SPACE); String
 		 * countryDataFromExcel =
 		 * communicationStateCommunication.getAttribute("value");// T String
-		 * dropDownValue = state1stOption.getText(); System.out.println(dropDownValue);
-		 * if (dropDownValue.startsWith(countryDataFromExcel)) { System.out.
-		 * println("Test Case pass:-As smart search for state is working properly"); }
-		 * else { Assert.
-		 * fail("Test case fail:-As smart search for state is not woring properly"); }
-		 * Thread.sleep(1000); state1stOption();
+		 * dropDownValue = state1stOption.getText();
+		 * System.out.println(dropDownValue); if
+		 * (dropDownValue.startsWith(countryDataFromExcel)) { System.out.
+		 * println(
+		 * "Test Case pass:-As smart search for state is working properly"); }
+		 * else { Assert. fail(
+		 * "Test case fail:-As smart search for state is not woring properly");
+		 * } Thread.sleep(1000); state1stOption();
 		 */
 	}
 
@@ -2897,13 +2867,15 @@ public class JourneyScreenTwo extends ReusableActions {
 		searchCityComunication.clear();
 		type(searchCityComunication, readingdata(x, y, z));
 		/*
-		 * String countryDataFromExcel = searchCityComunication.getAttribute("value");//
-		 * A String dropDownValue = city1stOption.getText(); if
+		 * String countryDataFromExcel =
+		 * searchCityComunication.getAttribute("value");// A String
+		 * dropDownValue = city1stOption.getText(); if
 		 * (dropDownValue.startsWith(countryDataFromExcel)) { System.out.
-		 * println("Test Case pass:-As smart search for city is working properly"); }
-		 * else {
-		 * Assert.fail("Test case fail:-As smart search for city is not woring properly"
-		 * ); } city1stOption();
+		 * println(
+		 * "Test Case pass:-As smart search for city is working properly"); }
+		 * else { Assert.fail(
+		 * "Test case fail:-As smart search for city is not woring properly" );
+		 * } city1stOption();
 		 */
 	}
 
@@ -2973,8 +2945,8 @@ public class JourneyScreenTwo extends ReusableActions {
 				}
 
 			}
-			
-		} else{
+
+		} else {
 			Assert.fail("Test case fail:As the error message is not displayed when India option is selected");
 		}
 		permanentReflexiveYesOption.click();
@@ -3243,12 +3215,13 @@ public class JourneyScreenTwo extends ReusableActions {
 	/*
 	 * public static String Actualtext() throws Exception { List<WebElement>
 	 * listOfErrors = driver .findElements(By.xpath(
-	 * "//*[@id='alert-dialog-description']/div/div/div/div/div/ul/li")); int i =
-	 * listOfErrors.size(); System.out.println(i); for (int j = 1; j <= i; j++) {
-	 * String errorMsg = driver .findElement(By.xpath(
-	 * "//*[@id='alert-dialog-description']/div/div/div/div/div/ul/li[" + j + "]"))
-	 * .getText(); System.out.println(errorMsg); return errorMsg; } return null;
-	 * 
+	 * "//*[@id='alert-dialog-description']/div/div/div/div/div/ul/li")); int i
+	 * = listOfErrors.size(); System.out.println(i); for (int j = 1; j <= i;
+	 * j++) { String errorMsg = driver .findElement(By.xpath(
+	 * "//*[@id='alert-dialog-description']/div/div/div/div/div/ul/li[" + j +
+	 * "]")) .getText(); System.out.println(errorMsg); return errorMsg; } return
+	 * null;
+	 *
 	 * }
 	 */
 
@@ -3308,7 +3281,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param sheet
 	 * @param rowNum
 	 * @throws Exception
@@ -3332,7 +3305,8 @@ public class JourneyScreenTwo extends ReusableActions {
 				WebElement ele = driver
 						.findElement(By.xpath("//h4[(text()=\"Illustration could not be generated.\")]"));
 				if (isElementDisplayed(ele)) {
-					// if(driver.findElement(By.xpath("//p[(text()=\"Illustration could not be
+					// if(driver.findElement(By.xpath("//p[(text()=\"Illustration
+					// could not be
 					// generated. Reason :\")]")).isDisplayed()){
 					String xpathForErrorMsg = "html/body/div[2]/div[2]/div/div/div/div/ol/li";
 					comparingExcelDataWithUI(xpathForErrorMsg, 6, 0);
@@ -3350,29 +3324,31 @@ public class JourneyScreenTwo extends ReusableActions {
 	}
 
 	/*
-	 * public static void excelReader() { String data; try { InputStream is = new
-	 * FileInputStream(
+	 * public static void excelReader() { String data; try { InputStream is =
+	 * new FileInputStream(
 	 * "C:\\Users\\sp104\\Desktop\\browserstack_max\\browserstack_max\\src\\test\\resources\\MasterData.xlsx"
 	 * ); Workbook wb = (Workbook) WorkbookFactory.create(is); Sheet sheet =
-	 * wb.getSheet(0); Iterator rowIter = ((XSSFSheet) sheet).rowIterator(); Row r =
-	 * (Row)rowIter.next(); short lastCellNum = r.getLastCellNum(); int[] dataCount
-	 * = new int[lastCellNum]; int col = 0; rowIter = ((XSSFSheet)
+	 * wb.getSheet(0); Iterator rowIter = ((XSSFSheet) sheet).rowIterator(); Row
+	 * r = (Row)rowIter.next(); short lastCellNum = r.getLastCellNum(); int[]
+	 * dataCount = new int[lastCellNum]; int col = 0; rowIter = ((XSSFSheet)
 	 * sheet).rowIterator(); while(rowIter.hasNext()) { Iterator cellIter =
-	 * ((Row)rowIter.next()).cellIterator(); while(cellIter.hasNext()) { Cell cell =
-	 * (Cell)cellIter.next(); col = cell.getColumnIndex(); dataCount[col] += 1;
-	 * DataFormatter df = new DataFormatter(); data = df.formatCellValue(cell);
-	 * System.out.println("Data: " + data); } } is.close(); for(int x = 0; x <
-	 * dataCount.length; x++) { System.out.println("col " + x + ": " +
-	 * dataCount[x]); } } catch(Exception e) { e.printStackTrace(); return; } }
-	 * 
+	 * ((Row)rowIter.next()).cellIterator(); while(cellIter.hasNext()) { Cell
+	 * cell = (Cell)cellIter.next(); col = cell.getColumnIndex(); dataCount[col]
+	 * += 1; DataFormatter df = new DataFormatter(); data =
+	 * df.formatCellValue(cell); System.out.println("Data: " + data); } }
+	 * is.close(); for(int x = 0; x < dataCount.length; x++) {
+	 * System.out.println("col " + x + ": " + dataCount[x]); } } catch(Exception
+	 * e) { e.printStackTrace(); return; } }
+	 *
 	 */
 
 	public static ExpectedCondition<Boolean> waitForAjaCalls() {
 		return new ExpectedCondition<Boolean>() {
 			@Override
 			public Boolean apply(WebDriver driver) {
-				return Boolean.valueOf(((JavascriptExecutor) driver).executeScript(
-						"return (window.angular !== undefined) && (angular.element(document).injector() !== undefined) && (angular.element(document).injector().get('$http').pendingRequests.length === 0)")
+				return Boolean.valueOf(((JavascriptExecutor) driver)
+						.executeScript(
+								"return (window.angular !== undefined) && (angular.element(document).injector() !== undefined) && (angular.element(document).injector().get('$http').pendingRequests.length === 0)")
 						.toString());
 			}
 		};
@@ -3461,7 +3437,8 @@ public class JourneyScreenTwo extends ReusableActions {
 				WebElement ele = driver
 						.findElement(By.xpath("//h4[(text()=\"Illustration could not be generated.\")]"));
 				if (isElementDisplayed(ele)) {
-					// if(driver.findElement(By.xpath("//p[(text()=\"Illustration could not be
+					// if(driver.findElement(By.xpath("//p[(text()=\"Illustration
+					// could not be
 					// generated. Reason :\")]")).isDisplayed()){
 					System.out.println("M in else if");
 					int column = rowNum + 1;
@@ -3497,8 +3474,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		return false;
 	}
 
-
-    @Description("Verify the Insuresr MALE/FEMALE is selected by default")
+	@Description("Verify the Insuresr MALE/FEMALE is selected by default")
 	public static void checkAllTheInsurersDetailsFeildsPresentOrNot() throws Exception {
 		Thread.sleep(500);
 		if (insurersNameLabel.isDisplayed() && insurersGenderMale.isDisplayed() && insurersGenderFemale.isDisplayed()
@@ -3514,8 +3490,8 @@ public class JourneyScreenTwo extends ReusableActions {
 			Assert.fail("Test case pass:'SCREEN TWO 'As all the feilds for Insurers details is not present");
 		}
 	}
-    
-    @Description("Verify the issurers name feild length ")
+
+	@Description("Verify the issurers name feild length ")
 	public static void checkAndFillIssurersNameValidation(int x, int y, int z) throws Exception {
 		// type(MobNumtxtfld, strMobNumber);
 		insurersNameLabel.clear();
@@ -3545,15 +3521,17 @@ public class JourneyScreenTwo extends ReusableActions {
 		String annualIncomelFromExcell = cellAnnualIncome.getStringCellValue();
 
 		/*
-		 * XSSFCell cellpremiumCommitment = sheet.getRow(rowNum).getCell(12); String
-		 * premiumCommitmentFromExcell = cellpremiumCommitment.getStringCellValue();
-		 * 
-		 * XSSFCell celldesiredAnnualIncome = sheet.getRow(rowNum).getCell(13); String
-		 * desiredAnnualIncomeFromExcell = celldesiredAnnualIncome.getStringCellValue();
-		 * 
+		 * XSSFCell cellpremiumCommitment = sheet.getRow(rowNum).getCell(12);
+		 * String premiumCommitmentFromExcell =
+		 * cellpremiumCommitment.getStringCellValue();
+		 *
+		 * XSSFCell celldesiredAnnualIncome = sheet.getRow(rowNum).getCell(13);
+		 * String desiredAnnualIncomeFromExcell =
+		 * celldesiredAnnualIncome.getStringCellValue();
+		 *
 		 * premiumCommitment.clear();
 		 * premiumCommitment.sendKeys(premiumCommitmentFromExcell);
-		 * 
+		 *
 		 * desiredAnnualIncome.clear();
 		 * desiredAnnualIncome.sendKeys(desiredAnnualIncomeFromExcell);
 		 */
@@ -3672,9 +3650,8 @@ public class JourneyScreenTwo extends ReusableActions {
 		}
 	}
 
-	public static void fillingAllTheFeildForFTSP() throws Exception
-	{
-		
+	public static void fillingAllTheFeildForFTSP() throws Exception {
+
 		File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
 		FileInputStream fileInputStream = new FileInputStream(file);
 		XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
@@ -4048,8 +4025,6 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	}
 
-	// ------------------------------------------------------------------------------------------------------------
-
 	public static void premiumCommitment(int x, int y, int z) throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		premiumCommitment.clear();
@@ -4117,7 +4092,6 @@ public class JourneyScreenTwo extends ReusableActions {
 		proposerPersonalDetailsAnnualIncome.clear();
 		type(proposerPersonalDetailsAnnualIncome, readingdata(x, y, z));
 
-
 	}
 
 	public static void fillingAllTheRequiredFeildsToReachThirdScreen() throws Exception {
@@ -4177,8 +4151,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		Thread.sleep(500);
 	}
 
-	public static void fillingAllTheRequiredFeildsForSTPDependent() throws Exception
-	{
+	public static void fillingAllTheRequiredFeildsForSTPDependent() throws Exception {
 		selectByDropdownNeedOfInsurDependet();
 		selectByDropdownLifeStgeDependent();
 
@@ -4281,7 +4254,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		Thread.sleep(14000);
 		if (isElementDisplayed(errorMessageWhenAgeLessThan18)) {
 			System.out.println("Test case pass as error message is displaying when age is less than 18");
-		
+
 			escapeFunction();
 			Thread.sleep(500);
 			outsideClick.click();
@@ -4306,8 +4279,7 @@ public class JourneyScreenTwo extends ReusableActions {
 				Assert.fail("Either PDF is not generating or Loading time is too much for STP");
 
 			}
-			
-			
+
 		} else {
 			Assert.fail("Test case fail as error message is not displaying when age is less than 18");
 
@@ -4484,7 +4456,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		Thread.sleep(2000);
 		// WOPPlusRiderCheckBox();
 		ifConditionForTabSizeTwoPDFIllustrationProceedingScreenAhead();
-         Thread.sleep(4000);
+		Thread.sleep(4000);
 	}
 
 	public static void singlePayIncomeInflationProtectorForm1() throws Exception {
@@ -4523,7 +4495,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		premiumPayementTermSTP();
 		dropDown15PolicyTerm();
 		deathBenifitIncreasingCover();
-		
+
 		sumAssured(3, 1, 11);
 		nonSmoker();
 		modeOfPaymentSTP();
@@ -4708,7 +4680,6 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	}
 
-	
 	public static void payTill60IncomeInflationProtectorForm1() throws Exception {
 		Thread.sleep(700);
 		waitTillElementToBeClickable(premiumTypeSAPDropDown);
@@ -4922,13 +4893,13 @@ public class JourneyScreenTwo extends ReusableActions {
 		waitTillElementToBeClickable(premiumType3rdOptionSAP);
 		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[4]")).click();
 		Thread.sleep(1000);
-		
+
 		premiumPayementTermSTP();
 
 		policyTermSTPDropDown();
 
 		deathBenifitIncomeProtector();
-		
+
 		enterMonthlyIncome(3, 3, 11);
 		incomePeriod();
 		nonSmoker();
@@ -4951,13 +4922,13 @@ public class JourneyScreenTwo extends ReusableActions {
 		waitTillElementToBeClickable(premiumType3rdOptionSAP);
 		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[4]")).click();
 		Thread.sleep(1000);
-		
+
 		premiumPayementTermSTP();
 
 		policyTermSTPDropDown();
 
 		deathBenifitIncomeInflationProtector();
-		
+
 		enterMonthlyIncome(3, 3, 11);
 		incomePeriod20();
 		nonSmoker();
@@ -4992,9 +4963,7 @@ public class JourneyScreenTwo extends ReusableActions {
 
 		// WOPPlusRiderCheckBox();
 
-
 	}
-
 
 	public static void smartTermPlanLimitedTypeIllustration() throws Exception {
 
@@ -5073,7 +5042,7 @@ public class JourneyScreenTwo extends ReusableActions {
 
 		selctingAllRiderFunction();
 	}
-	
+
 	public static void payTill60AllRider() throws Exception {
 
 		Thread.sleep(700);
@@ -5098,8 +5067,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		deathBenifitAllOptionForPayLimitedRegularAndTill60PremiumType();
 	}
 
-	public static void singlePayAllRiderDeathBenifit() throws Exception
-	{
+	public static void singlePayAllRiderDeathBenifit() throws Exception {
 
 		Thread.sleep(700);
 		waitTillElementToBeClickable(premiumTypeSAPDropDown);
@@ -5228,13 +5196,11 @@ public class JourneyScreenTwo extends ReusableActions {
 		driver.findElement(By.xpath("//*[@id='menu-premiumType']/div[2]/ul/li[2]")).click();
 		Thread.sleep(1000);
 
-
 		allPremiumPayementTermSTP();
 
 	}
 
-	public static void selctingAllPremiumPaymentTermRegularPay() throws Exception
-	{
+	public static void selctingAllPremiumPaymentTermRegularPay() throws Exception {
 		Thread.sleep(700);
 		waitTillElementToBeClickable(premiumTypeSAPDropDown);
 		premiumTypeSAPDropDown.click();
@@ -5297,7 +5263,6 @@ public class JourneyScreenTwo extends ReusableActions {
 		selectByDropdownNeedOfInsur();
 		selectByDropdownLifeStge();
 
-
 		smartTermPlanPremiumType();
 	}
 
@@ -5359,7 +5324,6 @@ public class JourneyScreenTwo extends ReusableActions {
 		selctingAllPremiumPaymentTermRegularPay();
 	}
 
-
 	public static void setDateBirthPayorDetailsLessThan1DayOf18() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenThree.class);
 
@@ -5373,24 +5337,24 @@ public class JourneyScreenTwo extends ReusableActions {
 		int month = dayLessThan18.getMonthValue() - 1;
 		int day = dayLessThan18.getDayOfMonth();
 		int year = dayLessThan18.getYear();
-		
+
 		Thread.sleep(800);
-		
+
 		driver.findElement(By.xpath("//select[@class='react-datepicker__month-select']")).click();
 		Thread.sleep(500);
-		driver.findElement(By.xpath("//option[@value='"+month+"']")).click();
+		driver.findElement(By.xpath("//option[@value='" + month + "']")).click();
 		Thread.sleep(500);
 		driver.findElement(By.xpath("//select[@class='react-datepicker__year-select']")).click();
 		Thread.sleep(200);
-		driver.findElement(By.xpath(".//*[@class='react-datepicker__year-select']/option[@value='"+year+"']")).click();
+		driver.findElement(By.xpath(".//*[@class='react-datepicker__year-select']/option[@value='" + year + "']"))
+				.click();
 		Thread.sleep(200);
-		driver.findElement(By.xpath(
-				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\"day-"+day+"\"]"))
+		driver.findElement(By
+				.xpath("//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\"day-"
+						+ day + "\"]"))
 				.click();
 		Thread.sleep(200);
 
-		
-		
 	}
 
 	public static void setDateBirthPayorDetailsMoreThan1YearOf60Years() throws Exception {
@@ -5421,8 +5385,8 @@ public class JourneyScreenTwo extends ReusableActions {
 		driver.findElement(By.xpath(".//*[@class='react-datepicker__year-select']/option[@value='" + year + "']"))
 				.click();
 		Thread.sleep(200);
-		driver.findElement(By.xpath(
-				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\"day-"
+		driver.findElement(By
+				.xpath("//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\"day-"
 						+ day + "\"]"))
 				.click();
 		Thread.sleep(200);
@@ -5457,8 +5421,8 @@ public class JourneyScreenTwo extends ReusableActions {
 		driver.findElement(By.xpath(".//*[@class='react-datepicker__year-select']/option[@value='" + year + "']"))
 				.click();
 		Thread.sleep(200);
-		driver.findElement(By.xpath(
-				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\"day-"
+		driver.findElement(By
+				.xpath("//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\"day-"
 						+ day + "\"]"))
 				.click();
 		Thread.sleep(200);
@@ -5488,8 +5452,8 @@ public class JourneyScreenTwo extends ReusableActions {
 		driver.findElement(By.xpath(".//*[@class='react-datepicker__year-select']/option[@value='" + year + "']"))
 				.click();
 		Thread.sleep(200);
-		driver.findElement(By.xpath(
-				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\"day-"
+		driver.findElement(By
+				.xpath("//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\"day-"
 						+ day + "\"]"))
 				.click();
 		Thread.sleep(200);
@@ -5519,8 +5483,8 @@ public class JourneyScreenTwo extends ReusableActions {
 		driver.findElement(By.xpath(".//*[@class='react-datepicker__year-select']/option[@value='" + year + "']"))
 				.click();
 		Thread.sleep(200);
-		driver.findElement(By.xpath(
-				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\"day-"
+		driver.findElement(By
+				.xpath("//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\"day-"
 						+ day + "\"]"))
 				.click();
 		Thread.sleep(200);
@@ -5550,8 +5514,8 @@ public class JourneyScreenTwo extends ReusableActions {
 		driver.findElement(By.xpath(".//*[@class='react-datepicker__year-select']/option[@value='" + year + "']"))
 				.click();
 		Thread.sleep(200);
-		driver.findElement(By.xpath(
-				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\"day-"
+		driver.findElement(By
+				.xpath("//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\"day-"
 						+ day + "\"]"))
 				.click();
 		Thread.sleep(200);
@@ -5564,8 +5528,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		regularPayAllRider();
 	}
 
-	public static void fillingAllTheRequiredFeildsForSmartTermPlanRegularPayTill60() throws Exception
-	{
+	public static void fillingAllTheRequiredFeildsForSmartTermPlanRegularPayTill60() throws Exception {
 		selectByDropdownNeedOfInsur();
 		selectByDropdownLifeStge();
 		payTill60AllRider();
@@ -5577,8 +5540,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		payTill60AllRiderDeathBenifit();
 	}
 
-	public static void fillingAllTheFeildForDeathBenifitSinglePay() throws Exception
-	{
+	public static void fillingAllTheFeildForDeathBenifitSinglePay() throws Exception {
 		selectByDropdownNeedOfInsur();
 		selectByDropdownLifeStge();
 		singlePayAllRiderDeathBenifit();
@@ -5590,8 +5552,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		limitedPayAllRiderDeathBenifit();
 	}
 
-	public static void fillingAllTheFeildForDeathBenifitRegularPay() throws Exception
-	{
+	public static void fillingAllTheFeildForDeathBenifitRegularPay() throws Exception {
 		selectByDropdownNeedOfInsur();
 		selectByDropdownLifeStge();
 		regularPayAllRiderDeathBenifit();
@@ -5618,7 +5579,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		selectByDropdownNeedOfInsur();
 		selectByDropdownLifeStge();
 
-		//driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[2]/form[1]/div[1]/div[1]/div[3]")).click();
+		// driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[2]/form[1]/div[1]/div[1]/div[3]")).click();
 		// arrowDownFunctionToScrollDown();
 
 		premiumPayementTermFTSP();
@@ -5629,11 +5590,11 @@ public class JourneyScreenTwo extends ReusableActions {
 		systematicTransferPlanNo();
 
 		/*
-		 * premiumCommitment(3, 1, 15); chooseYourFundYes(); growthSuperFund(3, 1, 16);
-		 * secureFund(3, 2, 16); conservativeFund(3, 3, 16); highGrowthFund(3, 4, 16);
-		 * BalancedFund(3, 5, 16); growthFund(3, 6, 16);
+		 * premiumCommitment(3, 1, 15); chooseYourFundYes(); growthSuperFund(3,
+		 * 1, 16); secureFund(3, 2, 16); conservativeFund(3, 3, 16);
+		 * highGrowthFund(3, 4, 16); BalancedFund(3, 5, 16); growthFund(3, 6,
+		 * 16);
 		 */}
-
 
 	public static void fllIssurersNameValidation(int x, int y, int z) throws Exception {
 		// type(MobNumtxtfld, strMobNumber);
@@ -5666,6 +5627,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		JourneyScreenThree.dateOfBirthSelctionFunction();
 
 	}
+
 	public static void clickProceedPageTwo() throws Exception {
 		Thread.sleep(1000);
 		Savebtn.click();
@@ -5674,14 +5636,12 @@ public class JourneyScreenTwo extends ReusableActions {
 		Thread.sleep(1000);
 	}
 
-
 	public static void relationshipWithProposer() throws Exception {
 
 		click(relationshipWithProposer);
 		Thread.sleep(3000);
 
 	}
-
 
 	public static void relationshipWithProposerParentOption() throws Exception {
 
@@ -5701,9 +5661,9 @@ public class JourneyScreenTwo extends ReusableActions {
 		click(dateOfBirthIssurer);
 
 	}
-     @Description("Verify the Future Date is disabled for insurers details")
-	public static void checkDateOfBirthFormatFutureDateRestrictionSetDateBirthInsurersDetails()
-			throws Exception {
+
+	@Description("Verify the Future Date is disabled for insurers details")
+	public static void checkDateOfBirthFormatFutureDateRestrictionSetDateBirthInsurersDetails() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		String dateFormat = dateOfBirthIssurer.getAttribute("placeholder");
 		if (dateFormat.equalsIgnoreCase("DD/MM/YYYY")) {
@@ -5717,10 +5677,9 @@ public class JourneyScreenTwo extends ReusableActions {
 		String runtimeXpathForSelectingDate = "\"day-" + day + "\"";
 		System.out.println(day);
 		System.out.println(runtimeXpathForSelectingDate);
-		WebElement checkFutureDateIsEnabled = driver.findElement(By.xpath(
-				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))][@aria-label="
+		WebElement checkFutureDateIsEnabled = driver.findElement(By
+				.xpath("//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))][@aria-label="
 						+ runtimeXpathForSelectingDate + "]"));
-
 
 		String classes = checkFutureDateIsEnabled.getAttribute("class");
 		boolean isDisabled = classes.contains("day--disabled");
@@ -5745,21 +5704,18 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	}
 
-
 	public static void selectAndCheckRelationshipWithProposerOption() throws Exception {
 		// type(MobNumtxtfld, strMobNumber);
 		relationshipWithProposer();
-		
+
 		driver.findElement(By.xpath("//li[contains(text(),'Spouse')]")).click();
-		/*String xpathOFList = "//ul[@role='listbox']/li";
-		String sheetpath = "\\src\\test\\resources\\MasterData.xlsx";
-		comparingExcelDataWithUIBySheetPath(xpathOFList, 5, 6, sheetpath);
-		relationshipWithProposerParentOption();*/
+		/*
+		 * String xpathOFList = "//ul[@role='listbox']/li"; String sheetpath =
+		 * "\\src\\test\\resources\\MasterData.xlsx";
+		 * comparingExcelDataWithUIBySheetPath(xpathOFList, 5, 6, sheetpath);
+		 * relationshipWithProposerParentOption();
+		 */
 	}
-	
-	
-	
-	
 
 	public static void selectRelationshipWithProposerOption() throws Exception {
 		// type(MobNumtxtfld, strMobNumber);
@@ -5768,9 +5724,6 @@ public class JourneyScreenTwo extends ReusableActions {
 		relationshipWithProposerParentOption();
 	}
 
-	
-	
-	
 	public static void ifConditionForTabSizeTwoPDFIllustratioForScreenThree() throws InterruptedException {
 		String parent = driver.getWindowHandle();
 		Set<String> s1 = driver.getWindowHandles();
@@ -5831,12 +5784,12 @@ public class JourneyScreenTwo extends ReusableActions {
 		}
 
 	}
-	
-	 /*Filling the information from Screen two */
+
+	/* Filling the information from Screen two */
 	public static void fillingFeildsScreenTwoFunction() throws Exception {
 		try {
-			//HomePage.clickDashboard();
-			//HomePage.clickNewApp();
+			// HomePage.clickDashboard();
+			// HomePage.clickNewApp();
 			// JourneyScreenOneTest.fillingScreenOneFeildsFunctionForDependent();
 			JourneyScreenTwo.setFirstName(3, 1, 0);
 			JourneyScreenTwo.setLastName(3, 1, 1);
@@ -5855,8 +5808,8 @@ public class JourneyScreenTwo extends ReusableActions {
 			throw e;
 		}
 	}
-	
-	/*Filling the information from Screen two */
+
+	/* Filling the information from Screen two */
 	public static void fillingAllTheRequiredFeildForScreen2WithoutFirstName() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -5882,8 +5835,8 @@ public class JourneyScreenTwo extends ReusableActions {
 
 		}
 	}
-	
-	 /* Filling Information for Proposer communication without illustration*/
+
+	/* Filling Information for Proposer communication without illustration */
 	public static void fillingFeildsForScreenTwoProposerCommunicationAddressWithoutIllustration() throws Exception {
 		try {
 			JourneyScreenTwo.selectByDropdownProposerCommunication();
@@ -5901,7 +5854,7 @@ public class JourneyScreenTwo extends ReusableActions {
 			throw e;
 		}
 	}
-	
+
 	/* Filling Information for Proposer communication */
 	public static void fillingFeildsForScreenTwoProposerCommunicationAddress() throws Exception {
 		try {
@@ -5931,7 +5884,8 @@ public class JourneyScreenTwo extends ReusableActions {
 			throw e;
 		}
 	}
-  /*Filling information for self female*/
+
+	/* Filling information for self female */
 	public static void fillingFeildsScreenTwoFunctionSelfFemale() throws Exception {
 		try {
 			JourneyScreenTwo.setFirstName(3, 1, 0);
@@ -5952,7 +5906,8 @@ public class JourneyScreenTwo extends ReusableActions {
 			throw e;
 		}
 	}
-	/*filling Insurers Details at Screen two*/
+
+	/* filling Insurers Details at Screen two */
 	public static void fillingInsurersDetailsScreenTwo() throws Exception {
 		try {
 			JourneyScreenTwo.fillingIssurersName(1, 1, 8);
@@ -5964,7 +5919,8 @@ public class JourneyScreenTwo extends ReusableActions {
 			throw e;
 		}
 	}
-	/*Filling The Required Information for Screen two For PAN Validation*/
+
+	/* Filling The Required Information for Screen two For PAN Validation */
 	public static void fillingAllTheRequiredFeildForScreen2ForPANValidation() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -5980,7 +5936,6 @@ public class JourneyScreenTwo extends ReusableActions {
 			JourneyScreenTwo.setCountry(3, 1, 6);
 			JourneyScreenTwo.setState(3, 1, 7);
 			JourneyScreenTwo.setCity(3, 1, 8);
-
 			JourneyScreenTwo.setPinCode(3, 1, 9);
 			JourneyScreenTwo.setAlternateMobileNo(3, 1, 10);
 
@@ -5990,7 +5945,8 @@ public class JourneyScreenTwo extends ReusableActions {
 
 		}
 	}
-	/*Screen One Test NRIFunction To Reach Screen Two*/
+
+	/* Screen One Test NRIFunction To Reach Screen Two */
 	public static void ScreenOneTestNRIFunctionToReachScreenTwo() throws Exception {
 		try {
 			HomePage.clickDashboard();
@@ -6013,7 +5969,7 @@ public class JourneyScreenTwo extends ReusableActions {
 			throw e;
 		}
 	}
-	
+
 	@Step("Getting the information from ScreenTwo")
 	public static void fillingFeildsForScreenTwo() throws Exception {
 		try {
@@ -6035,5 +5991,4 @@ public class JourneyScreenTwo extends ReusableActions {
 		}
 	}
 
-	
 }
