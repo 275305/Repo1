@@ -2233,7 +2233,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		type(firtsName, readingdata(x, y, z));
 		String firstNamePassedFromExcel = firtsName.getAttribute("value");
 		int size = firstNamePassedFromExcel.length();
-		if ((size == 50 && !firstNamePassedFromExcel.contains("@") && !firstNamePassedFromExcel.contains("1"))) {
+		if (size == 50 && !firstNamePassedFromExcel.contains("@") && !firstNamePassedFromExcel.contains("1")) {
 			logger.info("Test case pass:- As first name feild length is 50 and accepting only alphabets");
 		} else {
 			Assert.fail(
@@ -2551,7 +2551,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		type(lastName, readingdata(x, y, z));
 		String lastNamePassedFromExcel = lastName.getAttribute("value");
 		int size = lastNamePassedFromExcel.length();
-		if ((size == 25 && !lastNamePassedFromExcel.contains("@") && !lastNamePassedFromExcel.contains("1"))) {
+		if (size == 25 && !lastNamePassedFromExcel.contains("@") && !lastNamePassedFromExcel.contains("1")) {
 			logger.info("Test case pass:- As last name feild length is 25 and accepting only alphabets");
 		} else {
 			Assert.fail(
@@ -2595,7 +2595,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		type(houseNo, readingdata(x, y, z));
 		String houseNoDataFromExcel = houseNo.getAttribute("value");
 		int size = houseNoDataFromExcel.length();
-		if ((size == 60 && houseNoDataFromExcel.contains("1") && !houseNoDataFromExcel.contains("!"))) {
+		if (size == 60 && houseNoDataFromExcel.contains("1") && !houseNoDataFromExcel.contains("!")) {
 			logger.info(
 					"Test case pass:- As house number feild length is 60 and accepting alphanumeric and special character ");
 		} else {
@@ -2613,7 +2613,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		String houseNoDataFromExcel = houseNoProposerCommunication.getAttribute("value");
 		int size = houseNoDataFromExcel.length();
 		System.out.println(size);
-		if ((size == 60 && houseNoDataFromExcel.contains("1") && houseNoDataFromExcel.contains("!"))) {
+		if (size == 60 && houseNoDataFromExcel.contains("1") && houseNoDataFromExcel.contains("!")) {
 			logger.info(
 					"Test case pass:- As house number feild length is 60 and accepting alphanumeric and special character ");
 		} else {
@@ -2630,7 +2630,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		type(roadNo, readingdata(x, y, z));
 		String houseNoDataFromExcel = roadNo.getAttribute("value");
 		int size = houseNoDataFromExcel.length();
-		if ((size == 60 && houseNoDataFromExcel.contains("1") && !houseNoDataFromExcel.contains("!"))) {
+		if (size == 60 && houseNoDataFromExcel.contains("1") && !houseNoDataFromExcel.contains("!")) {
 			logger.info(
 					"Test case pass:- As Road number feild length is 60 and accepting alphanumeric and special character ");
 		} else {
@@ -2645,7 +2645,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		type(communicationRoadNo, readingdata(x, y, z));
 		String houseNoDataFromExcel = communicationRoadNo.getAttribute("value");
 		int size = houseNoDataFromExcel.length();
-		if ((size == 60 && houseNoDataFromExcel.contains("1") && !houseNoDataFromExcel.contains("!"))) {
+		if (size == 60 && houseNoDataFromExcel.contains("1") && !houseNoDataFromExcel.contains("!")) {
 			logger.info(
 					"Test case pass:- As Road number feild length is 60 and accepting alphanumeric and special character ");
 		} else {
@@ -2663,7 +2663,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		type(villageTown, readingdata(x, y, z));
 		String houseNoDataFromExcel = villageTown.getAttribute("value");
 		int size = houseNoDataFromExcel.length();
-		if ((size == 60 && houseNoDataFromExcel.contains("1") && !houseNoDataFromExcel.contains("!"))) {
+		if (size == 60 && houseNoDataFromExcel.contains("1") && !houseNoDataFromExcel.contains("!")) {
 			logger.info(
 					"Test case pass:- As village town feild length is 60 and accepting alphanumeric and special character ");
 		} else {
@@ -2679,7 +2679,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		type(communicationVillageTown, readingdata(x, y, z));
 		String houseNoDataFromExcel = communicationVillageTown.getAttribute("value");
 		int size = houseNoDataFromExcel.length();
-		if ((size == 60 && houseNoDataFromExcel.contains("1") && !houseNoDataFromExcel.contains("!"))) {
+		if (size == 60 && houseNoDataFromExcel.contains("1") && !houseNoDataFromExcel.contains("!")) {
 			logger.info(
 					"Test case pass:- As village town feild length is 60 and accepting alphanumeric and special character ");
 		} else {
@@ -2899,7 +2899,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		type(communicationPinCode, readingdata(x, y, z));
 		String pinCodeDataFromExcel = communicationPinCode.getAttribute("value");
 		int size = pinCodeDataFromExcel.length();
-		if ((size == 6 && !pinCodeDataFromExcel.contains("@") && !pinCodeDataFromExcel.contains("A"))) {
+		if (size == 6 && !pinCodeDataFromExcel.contains("@") && !pinCodeDataFromExcel.contains("A")) {
 			logger.info("Test case pass:- As Pin code feild length is 6 and accepting numeric only");
 		} else {
 			logger.info("Test case fail:- As either Pin code feild length is not of 6 or not accepting numeric only");
@@ -2913,8 +2913,8 @@ public class JourneyScreenTwo extends ReusableActions {
 		type(alternateMobileNo, readingdata(x, y, z));
 		String alternateMobileDataFromExcel = alternateMobileNo.getAttribute("value");
 		int size = alternateMobileDataFromExcel.length();
-		if ((size == 10 && !alternateMobileDataFromExcel.contains("@")
-				&& !alternateMobileDataFromExcel.contains("A"))) {
+		if (size == 10 && !alternateMobileDataFromExcel.contains("@")
+				&& !alternateMobileDataFromExcel.contains("A")) {
 			logger.info("Test case pass:- As alternate mobile number feild length is 10 and accepting numeric only");
 		} else {
 			Assert.fail(
@@ -3498,7 +3498,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		type(insurersNameLabel, readingdata(x, y, z));
 		String insurersNamePassedFromExcel = insurersNameLabel.getAttribute("value");
 		int size = insurersNamePassedFromExcel.length();
-		if ((size == 75) && (!insurersNamePassedFromExcel.contains("@") && insurersNamePassedFromExcel.contains("."))) {
+		if (size == 75 && !insurersNamePassedFromExcel.contains("@") && insurersNamePassedFromExcel.contains(".")) {
 			logger.info(
 					"Test case pass:- As issurers name feild length is 25 and not accepting special character and numbers ");
 		} else {
@@ -3540,7 +3540,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		annualIncome.sendKeys(annualIncomelFromExcell);
 
 		JourneyScreenTwo.clickSubmitButton();
-		Thread.sleep(14000);
+		Thread.sleep(4000);
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 		if (tabs.size() == 2) {
 			ifConditionForTabSizeTwoPDFIllustration();

@@ -81,7 +81,6 @@ public class JourneyScreenThree extends ReusableActions {
 	@FindBy(xpath = "//label[text()='Marital Status']")
 	public static WebElement maritalStatusLabel;
 
-
 	@FindBy(xpath = "//span [(text()=\"Preferred Insurance repository that you would like to have EIA with\")]")
 	public static WebElement labelPreferredInsuranceRepositoryThatYouWouldLikeToHaveEIAWith;
 
@@ -99,7 +98,6 @@ public class JourneyScreenThree extends ReusableActions {
 
 	@FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[3]")
 	static WebElement outsideClick;
-
 
 	@FindBy(xpath = "//input[@name='feet']")
 	public static WebElement labelFeet;
@@ -235,22 +233,22 @@ public class JourneyScreenThree extends ReusableActions {
 
 	@FindBy(xpath = "//a[contains(@href,'https://tinyurl.com')]")
 	public static WebElement preverificationLink;
-	
+
 	@FindBy(xpath = "//label[@for='radio-two']")
 	public static WebElement noOptionPosv;
-	
+
 	@FindBy(xpath = "//ul[@class='radio-one']//li[@id='no']")
 	public static WebElement noOptionHealthQusetionPosv;
-	
+
 	@FindBy(xpath = "//ul[@class='radio-three']//li[@id='no']")
 	public static WebElement noOption2ndHealthQusetionPosv;
-	
+
 	@FindBy(xpath = "//label[@for='radio-2']")
 	public static WebElement noOption3rdHealthQusetionPosv;
-	
+
 	@FindBy(xpath = "//label[@for='radio-10']")
 	public static WebElement noOption4thHealthQusetionPosv;
-	
+
 	@FindBy(xpath = "//button[(text()=\"Next\")]")
 	public static WebElement nextButtonPosv;
 
@@ -401,7 +399,6 @@ public class JourneyScreenThree extends ReusableActions {
 	@FindBy(xpath = "//span[(text()=\"Weight\")]")
 	static WebElement weightInsurersDetails;
 
-
 	@FindBy(xpath = "//label[@for='in1']")
 	static WebElement nationalityIndianInsurersDetails;
 
@@ -476,7 +473,7 @@ public class JourneyScreenThree extends ReusableActions {
 
 	@FindBy(xpath = ".//*[@id='menu-insurerOrganizationType']/div[2]/ul/li[1]")
 	static WebElement insurerOrganizationType1stOption;
-	
+
 	@FindBy(xpath = "//div[@id='menu-natureOfInsurerRole']/div/ul/li[1]")
 	static WebElement natureOfInsurerRoleType1stOption;
 
@@ -738,19 +735,18 @@ public class JourneyScreenThree extends ReusableActions {
 	@FindBy(xpath = "//div[@id='FTINIssuingCountryid']//input[@id='aml_id']")
 	public static WebElement FTINIssuingCountry;
 
-
 	@FindBy(xpath = "//span[@id='doYouHaveFTINid']")
 	public static WebElement doYouHaveFTIN;
 
 	@FindBy(xpath = "//label[@id='FTINYesid']")
 	public static WebElement FTINYes;
-	
+
 	@FindBy(xpath = "//label[@id='FTINYesidOfInsurer']")
 	public static WebElement FTINYesidOfInsurer;
 
 	@FindBy(xpath = "//input[@name='ftinNumber']")
 	public static WebElement ftinNumber;
-	
+
 	@FindBy(xpath = "//input[@name='ftinNumberOfInsurer']")
 	public static WebElement ftinNumberOfInsurer;
 
@@ -831,7 +827,6 @@ public class JourneyScreenThree extends ReusableActions {
 
 	@FindBy(xpath = "//div[@id='menu-insurerHazardousActivitiesExtent']/div/ul/li[1]")
 	static WebElement insurerHazardousActivitiesExtent1stOption;
-
 
 	@FindBy(xpath = "//label[contains(@for, 'InsurerHazardousActivitiesYes')]")
 	static WebElement InsurerHazardousActivitiesYesInsurersDetails;
@@ -938,8 +933,6 @@ public class JourneyScreenThree extends ReusableActions {
 
 	}
 
-	
-
 	public static void checkTheDateOfBirthFormatAndFutureDateRestrictionsNomineeDetails() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenThree.class);
 		String dateOfBirthFormat = dateOfBirthNomineeDetails.getAttribute("placeholder");
@@ -951,7 +944,6 @@ public class JourneyScreenThree extends ReusableActions {
 		futureDateEnabilityNomineeDetails();
 	}
 
-	
 	public static void futureDateEnability() throws Exception {
 		dateOfBirth();
 
@@ -961,8 +953,8 @@ public class JourneyScreenThree extends ReusableActions {
 		System.out.println(day);
 		System.out.println(runtimeXpathForSelectingDate);
 
-		boolean checkFutureDateIsEnabled = driver.findElement(By.xpath(
-				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\""
+		boolean checkFutureDateIsEnabled = driver.findElement(By
+				.xpath("//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\""
 						+ runtimeXpathForSelectingDate + "\"]"))
 				.isEnabled();
 		if (checkFutureDateIsEnabled) {
@@ -979,8 +971,8 @@ public class JourneyScreenThree extends ReusableActions {
 		int currentDay = calendar.get(Calendar.DAY_OF_MONTH);
 		int futuredate = currentDay + 1;
 		String runtimeXpathForSelectingDate = "day-" + futuredate + "";
-		boolean checkFutureDateIsEnabled = driver.findElement(By.xpath(
-				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\""
+		boolean checkFutureDateIsEnabled = driver.findElement(By
+				.xpath("//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\""
 						+ runtimeXpathForSelectingDate + "\"]"))
 				.isSelected();
 		if (checkFutureDateIsEnabled) {
@@ -1025,14 +1017,13 @@ public class JourneyScreenThree extends ReusableActions {
 		String runtimeXpathForSelectingDate = "day-" + day + "";
 
 		driver.switchTo().defaultContent();
-		driver.findElement(By.xpath(
-				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'disabled'))] [@aria-label="
+		driver.findElement(By
+				.xpath("//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'disabled'))] [@aria-label="
 						+ runtimeXpathForSelectingDate + "]"))
 				.click();
 
 	}
 
-	
 	public static void waitForNumberOfWindowsToEqual(final int numberOfWindows) {
 		new WebDriverWait(driver, 20) {
 		}.until(new ExpectedCondition<Boolean>() {
@@ -1152,7 +1143,7 @@ public class JourneyScreenThree extends ReusableActions {
 		type(fathersName, readingdata(x, y, z));
 		String fathersNamePassedFromExcel = fathersName.getAttribute("value");
 		int size = fathersNamePassedFromExcel.length();
-		if ((size == 50 && !fathersNamePassedFromExcel.contains("@") && fathersNamePassedFromExcel.contains("."))) {
+		if (size == 50 && !fathersNamePassedFromExcel.contains("@") && fathersNamePassedFromExcel.contains(".")) {
 			logger.info("Test case pass:- As fathers name feild length is 50 and accepting only alphabets");
 		} else {
 			Assert.fail(
@@ -1167,7 +1158,7 @@ public class JourneyScreenThree extends ReusableActions {
 		type(mothersName, readingdata(x, y, z));
 		String fathersNamePassedFromExcel = mothersName.getAttribute("value");
 		int size = fathersNamePassedFromExcel.length();
-		if ((size == 50 && !fathersNamePassedFromExcel.contains("@") && fathersNamePassedFromExcel.contains("."))) {
+		if (size == 50 && !fathersNamePassedFromExcel.contains("@") && fathersNamePassedFromExcel.contains(".")) {
 			logger.info("Test case pass:- As mothers name feild length is 50 and accepting only alphabets");
 		} else {
 			Assert.fail(
@@ -1414,10 +1405,10 @@ public class JourneyScreenThree extends ReusableActions {
 		/*
 		 * WebDriverWait wait = new WebDriverWait(driver, 70);
 		 * wait.until(ExpectedConditions.or(
-		 * ExpectedConditions.visibilityOfElementLocated(By.
-		 * xpath("//*[@id='alert-dialog-title']/h2[(text()=\"Update PAN Number\")]")),
-		 * ExpectedConditions.visibilityOfElementLocated(By.
-		 * xpath("//p[(text()=\"FORM 60 Related Details\")]") )));
+		 * ExpectedConditions.visibilityOfElementLocated(By. xpath(
+		 * "//*[@id='alert-dialog-title']/h2[(text()=\"Update PAN Number\")]")),
+		 * ExpectedConditions.visibilityOfElementLocated(By. xpath(
+		 * "//p[(text()=\"FORM 60 Related Details\")]") )));
 		 */
 		int convertingannualIncomeStringToInt = Integer.parseInt(annualIncomePersonalDetailsData);
 		try {
@@ -1478,35 +1469,31 @@ public class JourneyScreenThree extends ReusableActions {
 		Thread.sleep(1000);
 
 		if (NRIDetailLabel.isDisplayed() && sourceOfApplicationLabel.isDisplayed()
-				&& countryCurrentlyResiding.isDisplayed()
-				&& entryDateToIndia.isDisplayed() && countryVisitedFrequently.isDisplayed()
-				&& birthCountry.isDisplayed() && residenceCountryAsPerTaxLaws.isDisplayed()
-				&& doYouHaveFTIN.isDisplayed() && FTINYes.isDisplayed()
+				&& countryCurrentlyResiding.isDisplayed() && entryDateToIndia.isDisplayed()
+				&& countryVisitedFrequently.isDisplayed() && birthCountry.isDisplayed()
+				&& residenceCountryAsPerTaxLaws.isDisplayed() && doYouHaveFTIN.isDisplayed() && FTINYes.isDisplayed()
 				&& FTINNo.isDisplayed())
 		// &&foreignIdentification.isDisplayed()&&identificationNo.isDisplayed()&&issuingCountry.isDisplayed()&&
 		// sourceOfApplicationOutsideIndia.isDisplayed()
 		{
 			System.out.println("Test case pass:As all the feilds are present as per the requirement");
-		}else 
-		{
+		} else {
 			Assert.fail("Test case fail:As all the feilds are not present");
 		}
-		
-		
-		
+
 		/*
 		 * NRIDetailLabel.isDisplayed(); sourceOfApplicationLabel.isDisplayed();
 		 * sourceOfApplicationIndia.isDisplayed();
 		 * sourceOfApplicationOutsideIndia.isDisplayed();
 		 * countryCurrentlyResiding.isDisplayed(); entryDateToIndia.click();
 		 * dateOfBirthSelctionFunction();
-		 * 
-		 * 
+		 *
+		 *
 		 * countryVisitedFrequently.isDisplayed(); birthCountry.isDisplayed();
-		 * residenceCountryAsPerTaxLaws.isDisplayed(); doYouHaveFTIN.isDisplayed();
-		 * FTINYes.isDisplayed(); FTINNo.isDisplayed();
-		 * foreignIdentification.isDisplayed(); identificationNo.isDisplayed();
-		 * issuingCountry.isDisplayed();
+		 * residenceCountryAsPerTaxLaws.isDisplayed();
+		 * doYouHaveFTIN.isDisplayed(); FTINYes.isDisplayed();
+		 * FTINNo.isDisplayed(); foreignIdentification.isDisplayed();
+		 * identificationNo.isDisplayed(); issuingCountry.isDisplayed();
 		 */
 	}
 
@@ -1515,7 +1502,7 @@ public class JourneyScreenThree extends ReusableActions {
 		type(ftinNumber, readingdata(x, y, z));
 		String ftinNumberFromExcel = ftinNumber.getAttribute("value");
 		int size = ftinNumberFromExcel.length();
-		if ((size == 25)) {
+		if (size == 25) {
 			logger.info("Test case pass:- As FTIN : Field Length 25, accepts Numeric");
 		} else {
 			Assert.fail("Test case fail:-As FTIN : either Field Length is not 25 or not accepting Numeric");
@@ -1528,13 +1515,14 @@ public class JourneyScreenThree extends ReusableActions {
 		type(ftinNumberOfInsurer, readingdata(x, y, z));
 		String ftinNumberFromExcel = ftinNumberOfInsurer.getAttribute("value");
 		int size = ftinNumberFromExcel.length();
-		if ((size == 25)) {
+		if (size == 25) {
 			logger.info("Test case pass:- As FTIN : Field Length 25, accepts Numeric");
 		} else {
 			Assert.fail("Test case fail:-As FTIN : either Field Length is not 25 or not accepting Numeric");
 		}
 
 	}
+
 	public static void FTINIssuingCountry(int x, int y, int z) throws Exception {
 		FTINIssuingCountry.clear();
 		type(FTINIssuingCountry, readingdata(x, y, z));
@@ -1568,7 +1556,7 @@ public class JourneyScreenThree extends ReusableActions {
 		type(identificationNo, readingdata(x, y, z));
 		String ftinNumberFromExcel = identificationNo.getAttribute("value");
 		int size = ftinNumberFromExcel.length();
-		if ((size == 25)) {
+		if (size == 25) {
 			logger.info("Test case pass:- As FTIN : Field Length 25, accepts Numeric");
 		} else {
 			Assert.fail("Test case fail:-As FTIN : either Field Length is not 25 or not accepting Numeric");
@@ -1581,7 +1569,7 @@ public class JourneyScreenThree extends ReusableActions {
 		type(identificationNoOfInsurer, readingdata(x, y, z));
 		String ftinNumberFromExcel = identificationNoOfInsurer.getAttribute("value");
 		int size = ftinNumberFromExcel.length();
-		if ((size == 25)) {
+		if (size == 25) {
 			logger.info("Test case pass:- As FTIN : Field Length 25, accepts Numeric");
 		} else {
 			Assert.fail("Test case fail:-As FTIN : either Field Length is not 25 or not accepting Numeric");
@@ -1626,9 +1614,9 @@ public class JourneyScreenThree extends ReusableActions {
 			ftinNumber(4, 1, 13);
 			Thread.sleep(800);
 			FTINIssuingCountry(3, 1, 6);
-		
-		}else {
-			
+
+		} else {
+
 			Assert.fail("Test case fail:As all the feilds are not present as per FTIN yes option");
 		}
 		Thread.sleep(800);
@@ -1649,11 +1637,9 @@ public class JourneyScreenThree extends ReusableActions {
 		} else {
 			Assert.fail("Test case fail:As all the feilds are not displayed as per FTIN no option");
 		}
-		
 
 	}
-	
-	
+
 	public static void doYouHaveFTINYesNoFeildsValidationInsurer() throws Exception {
 		Thread.sleep(1000);
 		FTINYesidOfInsurer.click();
@@ -1664,9 +1650,9 @@ public class JourneyScreenThree extends ReusableActions {
 			ftinNumberInsurer(4, 1, 13);
 			Thread.sleep(800);
 			FTINIssuingCountryInsurer(3, 1, 6);
-		
-		}else {
-			
+
+		} else {
+
 			Assert.fail("Test case fail:As all the feilds are not present as per FTIN yes option");
 		}
 		Thread.sleep(800);
@@ -1690,7 +1676,6 @@ public class JourneyScreenThree extends ReusableActions {
 		} else {
 			Assert.fail("Test case fail:As all the feilds are not displayed as per FTIN no option");
 		}
-		
 
 	}
 
@@ -1779,7 +1764,6 @@ public class JourneyScreenThree extends ReusableActions {
 		JourneyScreenTwo.countryIstOption();
 	}
 
-
 	public static void visaValidTillSingleDataInsurer() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenOne.class);
 		Thread.sleep(200);
@@ -1793,27 +1777,21 @@ public class JourneyScreenThree extends ReusableActions {
 		nriOtherInsurerDetails.click();
 		Thread.sleep(500);
 
-
 		setPassportNumberInsurer(1, 1, 5);
 		isAllTheTypeOfVisaListIsPresentInsurer();
 		visaValidTillSingleDataInsurer();
 		passportIssuingCountryOfInsurer(1, 1, 6);
 		passportExpiryDateForSingleDataInsurer();
-		
-		
 
-		if (sourceOfApplicationLabel.isDisplayed()
-				&& countryCurrentlyResiding.isDisplayed()
+		if (sourceOfApplicationLabel.isDisplayed() && countryCurrentlyResiding.isDisplayed()
 				&& entryDateToIndia.isDisplayed() && countryVisitedFrequently.isDisplayed()
 				&& birthCountry.isDisplayed() && residenceCountryAsPerTaxLaws.isDisplayed()
-				&& doYouHaveFTIN.isDisplayed() && FTINYes.isDisplayed()
-				&& FTINNo.isDisplayed())
+				&& doYouHaveFTIN.isDisplayed() && FTINYes.isDisplayed() && FTINNo.isDisplayed())
 		// &&foreignIdentification.isDisplayed()&&identificationNo.isDisplayed()&&issuingCountry.isDisplayed()&&
 		// sourceOfApplicationOutsideIndia.isDisplayed()
 		{
 			System.out.println("Test case pass:As all the feilds are present as per the requirement");
-		}else 
-		{
+		} else {
 			Assert.fail("Test case fail:As all the feilds are not present");
 		}
 	}
@@ -1846,20 +1824,19 @@ public class JourneyScreenThree extends ReusableActions {
 		JourneyScreenTwo.setCountry(3, 1, 6);
 
 		if (NRIDetailLabel.isDisplayed() && sourceOfApplicationLabel.isDisplayed()
-				&& countryCurrentlyResiding.isDisplayed()
-				&& entryDateToIndia.isDisplayed() && countryVisitedFrequently.isDisplayed()
-				&& birthCountry.isDisplayed() && residenceCountryAsPerTaxLaws.isDisplayed()
-				&& doYouHaveFTIN.isDisplayed() && FTINYes.isDisplayed()
+				&& countryCurrentlyResiding.isDisplayed() && entryDateToIndia.isDisplayed()
+				&& countryVisitedFrequently.isDisplayed() && birthCountry.isDisplayed()
+				&& residenceCountryAsPerTaxLaws.isDisplayed() && doYouHaveFTIN.isDisplayed() && FTINYes.isDisplayed()
 				&& FTINNo.isDisplayed())
 		// &&foreignIdentification.isDisplayed()&&identificationNo.isDisplayed()&&issuingCountry.isDisplayed()&&
 		// sourceOfApplicationOutsideIndia.isDisplayed()
 		{
 			System.out.println("Test case pass:As all the feilds are present as per the requirement");
-		}else 
-		{
+		} else {
 			Assert.fail("Test case fail:As all the feilds are not present");
 		}
 	}
+
 	public static void checkPDFIsOpenedOrNotCheckMsg() throws Exception {
 		Thread.sleep(14000);
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
@@ -1932,8 +1909,8 @@ public class JourneyScreenThree extends ReusableActions {
 		int currentDay = calendar.get(Calendar.DAY_OF_MONTH);
 		int futuredate = currentDay + 1;
 		String runtimeXpathForSelectingDate = "day-" + futuredate + "";
-		boolean checkFutureDateIsEnabled = driver.findElement(By.xpath(
-				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\""
+		boolean checkFutureDateIsEnabled = driver.findElement(By
+				.xpath("//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\""
 						+ runtimeXpathForSelectingDate + "\"]"))
 				.isSelected();
 		if (checkFutureDateIsEnabled) {
@@ -1980,8 +1957,8 @@ public class JourneyScreenThree extends ReusableActions {
 		// System.out.println(currentDay);
 		String runtimeXpathForSelectingDate = "day-" + currentDay + "";
 		driver.switchTo().defaultContent();
-		driver.findElement(By.xpath(
-				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'disabled'))] [@aria-label=\""
+		driver.findElement(By
+				.xpath("//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'disabled'))] [@aria-label=\""
 						+ runtimeXpathForSelectingDate + "\"]"))
 				.click();
 	}
@@ -2071,7 +2048,7 @@ public class JourneyScreenThree extends ReusableActions {
 		type(IFSC, readingdata(x, y, z));
 		String sIFCPassedFromExcel = IFSC.getAttribute("value");
 		int size = sIFCPassedFromExcel.length();
-		if ((size == 11) && (sIFCPassedFromExcel.equalsIgnoreCase("ANDB0001899"))
+		if (size == 11 && sIFCPassedFromExcel.equalsIgnoreCase("ANDB0001899")
 				&& !sIFCPassedFromExcel.contains("@")) {
 			logger.info("Test case pass:- As IFSC : Field Length 11, accepts alphaNumeric");
 		} else {
@@ -2091,7 +2068,7 @@ public class JourneyScreenThree extends ReusableActions {
 		type(MICR, readingdata(x, y, z));
 		String sMICRPassedFromExcel = MICR.getAttribute("value");
 		int size = sMICRPassedFromExcel.length();
-		if ((size == 9) && (sMICRPassedFromExcel.equalsIgnoreCase("781011005"))
+		if (size == 9 && sMICRPassedFromExcel.equalsIgnoreCase("781011005")
 				&& !sMICRPassedFromExcel.contains("@")) {
 			logger.info("Test case pass:- As MICR : Field Length 9, accepts Numeric");
 		} else {
@@ -2131,7 +2108,7 @@ public class JourneyScreenThree extends ReusableActions {
 		type(bankAccountNo, readingdata(x, y, z));
 		String sBankAccountNoFromExcel = bankAccountNo.getAttribute("value");
 		int size = sBankAccountNoFromExcel.length();
-		if ((size == 18) && (!sBankAccountNoFromExcel.contains("E"))) {
+		if (size == 18 && !sBankAccountNoFromExcel.contains("E")) {
 			logger.info("Test case pass:-As Bank Account No : Field Length is 18 and accepts only numbers");
 		} else {
 			Assert.fail("Test case fail:-As either Bank Account No : Field Length is not 18 or accepting alphabets");
@@ -2157,8 +2134,8 @@ public class JourneyScreenThree extends ReusableActions {
 		type(password, readingdata(x, y, z));
 
 	}
-	public static void gmailFunctionality() throws Exception {
 
+	public static void gmailFunctionality() throws Exception {
 
 		((JavascriptExecutor) driver).executeScript("window.open()");
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
@@ -2266,37 +2243,14 @@ public class JourneyScreenThree extends ReusableActions {
 		Thread.sleep(1000);
 		robot.keyPress(KeyEvent.VK_TAB);
 		robot.keyRelease(KeyEvent.VK_TAB);
-		Thread.sleep(1000);;
+		Thread.sleep(1000);
+		;
 
 		robot.keyPress(KeyEvent.VK_ENTER);
 		robot.keyRelease(KeyEvent.VK_ENTER);
 		Thread.sleep(1000);
 
-		Thread.sleep(1000);
 
-		driver.findElement(By.xpath("//input[@id='codeBox1']")).sendKeys("1");
-		Thread.sleep(800);
-		driver.findElement(By.xpath("//input[@id='codeBox2']")).sendKeys("2");
-		Thread.sleep(800);
-		driver.findElement(By.xpath("//input[@id='codeBox3']")).sendKeys("3");
-		Thread.sleep(800);
-		driver.findElement(By.xpath("//input[@id='codeBox4']")).sendKeys("4");
-		Thread.sleep(800);
-		driver.findElement(By.xpath("//label[@class='cstm-check-label']")).click();
-		Thread.sleep(800);
-		driver.findElement(By.xpath("//button[@id='submitbutton']")).click();
-		Thread.sleep(1800);
-		/*
-		 * robot.keyPress(KeyEvent.VK_ALT); robot.keyPress(KeyEvent.VK_TAB);
-		 * robot.keyRelease(KeyEvent.VK_TAB); robot.keyRelease(KeyEvent.VK_ALT);
-		 * 
-		 * Thread.sleep(500);
-		 * 
-		 * robot.keyPress(KeyEvent.VK_CONTROL); robot.keyPress(KeyEvent.VK_TAB);
-		 * robot.keyRelease(KeyEvent.VK_TAB); robot.keyRelease(KeyEvent.VK_CONTROL);
-		 */
-
-		driver.close();
 	}
 
 	public static void gmailFunctionalitySmartTermPlan() throws Exception {
@@ -2393,18 +2347,16 @@ public class JourneyScreenThree extends ReusableActions {
 		/*
 		 * robot.keyPress(KeyEvent.VK_ALT); robot.keyPress(KeyEvent.VK_TAB);
 		 * robot.keyRelease(KeyEvent.VK_TAB); robot.keyRelease(KeyEvent.VK_ALT);
-		 * 
+		 *
 		 * Thread.sleep(500);
-		 * 
+		 *
 		 * robot.keyPress(KeyEvent.VK_CONTROL); robot.keyPress(KeyEvent.VK_TAB);
-		 * robot.keyRelease(KeyEvent.VK_TAB); robot.keyRelease(KeyEvent.VK_CONTROL);
+		 * robot.keyRelease(KeyEvent.VK_TAB);
+		 * robot.keyRelease(KeyEvent.VK_CONTROL);
 		 */
 
 		driver.close();
 	}
-
-
-
 
 	public static void deletingAllInboxMail() throws Exception {
 		((JavascriptExecutor) driver).executeScript("window.open()");
@@ -2412,8 +2364,8 @@ public class JourneyScreenThree extends ReusableActions {
 		driver.switchTo().window(tabs.get(1));
 		driver.get("https://mail.google.com");
 		/*
-		 * setUsername(1, 10, 3); nextButton.click(); Thread.sleep(800); setPassword(1,
-		 * 11, 3); Thread.sleep(800); passwordNextButton.click();
+		 * setUsername(1, 10, 3); nextButton.click(); Thread.sleep(800);
+		 * setPassword(1, 11, 3); Thread.sleep(800); passwordNextButton.click();
 		 */
 		Thread.sleep(1800);
 		waitTillElementToBeClickableLongWait(checkBoxAll);
@@ -2425,15 +2377,12 @@ public class JourneyScreenThree extends ReusableActions {
 		driver.close();
 	}
 
-
-
-
 	public static void accountHoldersNamePositiveNegativeValidation(int x, int y, int z) throws Exception {
 		AccHolderName.clear();
 		type(AccHolderName, readingdata(x, y, z));
 		String sAccHolderNameFromExcel = AccHolderName.getAttribute("value");
 		int size = sAccHolderNameFromExcel.length();
-		if ((size == 30) && (!sAccHolderNameFromExcel.contains("@") && (sAccHolderNameFromExcel.contains(".")))) {
+		if (size == 30 && !sAccHolderNameFromExcel.contains("@") && sAccHolderNameFromExcel.contains(".")) {
 			logger.info(
 					"Test case pass:-As Account Holders Name : Field Length 30, accepts Alpha & (.) special character");
 		} else {
@@ -2487,7 +2436,6 @@ public class JourneyScreenThree extends ReusableActions {
 	}
 
 	public static void deletPOSVLinkFromGmaiL() throws Exception {
-
 
 		((JavascriptExecutor) driver).executeScript("window.open()");
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
@@ -2552,8 +2500,7 @@ public class JourneyScreenThree extends ReusableActions {
 		type(annualIncomePersonalDetailsDependent, readingdata(x, y, z));
 	}
 
-	public static void fillingAnnualIncomeTOProceed() throws Exception
-	{
+	public static void fillingAnnualIncomeTOProceed() throws Exception {
 
 		waitTillElementVisible(annualIncomePersonalDetailsDependent);
 		Thread.sleep(200);
@@ -2564,8 +2511,7 @@ public class JourneyScreenThree extends ReusableActions {
 		Thread.sleep(500);
 		Proceedbtn.click();
 		Thread.sleep(200);
-       
-         
+
 	}
 
 	public static void fillingAnnualIncomeTOProceedForm60() throws Exception {
@@ -2627,7 +2573,7 @@ public class JourneyScreenThree extends ReusableActions {
 		for (int i = 0; i < listOfToaster.size(); i++) {
 			System.out.println(listOfToaster.get(i).getText());
 		}
-		
+
 		agreePopup.click();
 		Thread.sleep(500);
 
@@ -2800,8 +2746,8 @@ public class JourneyScreenThree extends ReusableActions {
 		LocalDate datw = LocalDate.now().plusDays(1L);
 		int day = datw.getDayOfMonth();
 		String runtimeXpathForSelectingDate = "day-" + day + "";
-		WebElement checkFutureDateIsEnabled = driver.findElement(By.xpath(
-				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\""
+		WebElement checkFutureDateIsEnabled = driver.findElement(By
+				.xpath("//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\""
 						+ runtimeXpathForSelectingDate + "\"]"));
 		String classes = checkFutureDateIsEnabled.getAttribute("class");
 		boolean isDisabled = classes.contains("day--disabled");
@@ -2830,8 +2776,8 @@ public class JourneyScreenThree extends ReusableActions {
 		Thread.sleep(500);
 		driver.findElement(By.xpath(".//*[@class='react-datepicker__year-select']/option[@value='1992']")).click();
 		Thread.sleep(500);
-		driver.findElement(By.xpath(
-				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\"day-20\"]"))
+		driver.findElement(By
+				.xpath("//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\"day-20\"]"))
 				.click();
 		Thread.sleep(500);
 
@@ -2843,8 +2789,8 @@ public class JourneyScreenThree extends ReusableActions {
 		Thread.sleep(200);
 		driver.findElement(By.xpath(".//*[@class='react-datepicker__year-select']/option[@value='1991']")).click();
 		Thread.sleep(200);
-		driver.findElement(By.xpath(
-				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\"day-22\"]"))
+		driver.findElement(By
+				.xpath("//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\"day-22\"]"))
 				.click();
 		Thread.sleep(200);
 
@@ -2856,8 +2802,8 @@ public class JourneyScreenThree extends ReusableActions {
 		Thread.sleep(200);
 		driver.findElement(By.xpath(".//*[@class='react-datepicker__year-select']/option[@value='2021']")).click();
 		Thread.sleep(200);
-		driver.findElement(By.xpath(
-				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\"day-22\"]"))
+		driver.findElement(By
+				.xpath("//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\"day-22\"]"))
 				.click();
 		Thread.sleep(200);
 
@@ -2920,22 +2866,14 @@ public class JourneyScreenThree extends ReusableActions {
 		identityProofExpiryDateOfBirth();
 	}
 
-
-
 	// from screen one------------------------------------
-
-
-
-
-
-
 
 	public static void fatherNameInsurersDetails(int x, int y, int z) throws Exception {
 		fathersNameInsurersDetails.clear();
 		type(fathersNameInsurersDetails, readingdata(x, y, z));
 		String firstNamePassedFromExcel = fathersNameInsurersDetails.getAttribute("value");
 		int size = firstNamePassedFromExcel.length();
-		if ((size == 50 && !firstNamePassedFromExcel.contains("@") && !firstNamePassedFromExcel.contains("1"))) {
+		if (size == 50 && !firstNamePassedFromExcel.contains("@") && !firstNamePassedFromExcel.contains("1")) {
 			logger.info("Test case pass:- As father Name InsurersDetails is 50 and accepting only alphabets");
 		} else {
 			Assert.fail(
@@ -3040,9 +2978,9 @@ public class JourneyScreenThree extends ReusableActions {
 
 					organizationTypeInsurersDetailsDropDown();
 					Thread.sleep(800);
-					 yesOptionForCurrentlyPostedInsurer.click();
+					yesOptionForCurrentlyPostedInsurer.click();
 					Thread.sleep(1000);
-					 natureOfInsurerRole.click();
+					natureOfInsurerRole.click();
 					waitTillElementVisible(natureOfInsurerRoleType1stOption);
 					Thread.sleep(800);
 					List<String> expectedResult = fetchingdataFromExcelExpectedResult(3, 4);
@@ -3053,10 +2991,7 @@ public class JourneyScreenThree extends ReusableActions {
 					comparisonOfListForExpectedAndActualResult(expectedResult, actualResultText);
 					Thread.sleep(800);
 					natureOfJobRole1stOption();
-					 
-					
-					
-					
+
 				} else {
 					Assert.fail(
 							"All the feilds are not present as per  drop down option i.e DEFENCE(Screen Three Insureres details)");
@@ -3064,9 +2999,8 @@ public class JourneyScreenThree extends ReusableActions {
 
 				break;
 			case 2:
-				if (labledAreYouProfessionalDiverInsurer.isDisplayed()
-						&& insurerProfessionalDiverNo.isDisplayed() && insurerProfessionalDiverYes.isDisplayed()
-						&& organizationTypeInsurersDetails.isDisplayed()) {
+				if (labledAreYouProfessionalDiverInsurer.isDisplayed() && insurerProfessionalDiverNo.isDisplayed()
+						&& insurerProfessionalDiverYes.isDisplayed() && organizationTypeInsurersDetails.isDisplayed()) {
 
 					System.out.println(
 							"All the feilds are present as per drop down option i.e DIVING(Screen Three Insureres details) ");
@@ -3086,9 +3020,7 @@ public class JourneyScreenThree extends ReusableActions {
 					comparisonOfListForExpectedAndActualResult(expectedResult, actualResultText);
 					Thread.sleep(800);
 					diveLocationOfInsurer1stOption.click();
-					
-					
-					
+
 				} else {
 					Assert.fail(
 							"All the feilds are not present as per drop down option i.e DIVING(Screen Three Insureres details)");
@@ -3102,11 +3034,7 @@ public class JourneyScreenThree extends ReusableActions {
 
 					System.out.println(
 							"All the feilds are present as per drop down option i.e OIL & NATURAL GAS(Screen Three Insureres details)");
-					
-					
-					
-					
-					
+
 				} else {
 					Assert.fail(
 							"All the feilds are not present as per drop down option i.e OIL & NATURAL GAS(Screen Three Insureres details)");
@@ -3142,7 +3070,7 @@ public class JourneyScreenThree extends ReusableActions {
 				if (exactNatureOfDutiesInsurer.isDisplayed() && flyingRoleInsurer.isDisplayed()
 						&& nonFlyingRoleInsurer.isDisplayed() && organizationTypeInsurersDetails.isDisplayed()) {
 					System.out.println("All the feilds are present as per drop down industry type Aviation/AirForce");
-					
+
 					organizationTypeInsurersDetailsDropDown();
 					Thread.sleep(800);
 					flyingRoleInsurer.click();
@@ -3158,9 +3086,7 @@ public class JourneyScreenThree extends ReusableActions {
 					comparisonOfListForExpectedAndActualResult(expectedResult, actualResultText);
 					Thread.sleep(800);
 					flyingRolesOfInsurer1stOption.click();
-					
-					
-					
+
 				} else {
 					Assert.fail("All the feilds are not present as per drop down industry type Aviation/AirForce");
 				}
@@ -3180,6 +3106,7 @@ public class JourneyScreenThree extends ReusableActions {
 		Thread.sleep(1000);
 		click(insurerOrganizationType1stOption);
 	}
+
 	public static void natureOfJobRole1stOption() throws Exception {
 		Thread.sleep(1000);
 		click(natureOfInsurerRoleType1stOption);
@@ -3245,8 +3172,7 @@ public class JourneyScreenThree extends ReusableActions {
 	public static void checkAllTheIsurersDetailsFeildsIsPresentForScreenThree() throws Exception {
 		System.out.println("i ma checking");
 		if (dobProofInsurersDetails.isEnabled() && fathersNameInsurersDetails.isDisplayed()
-				&& insurerEducationIInsurersDetails.isEnabled() && insurerMaritalStatusIInsurersDetails.isEnabled()
-		) {
+				&& insurerEducationIInsurersDetails.isEnabled() && insurerMaritalStatusIInsurersDetails.isEnabled()) {
 			System.out.println("Test case pass:As all the feilds are present as per the expectation");
 		} else {
 			Assert.fail("Test case fail:As all the feilds are not present as per the expectation");
@@ -3259,19 +3185,17 @@ public class JourneyScreenThree extends ReusableActions {
 				&& nationalityIndianInsurersDetails.isDisplayed() && nationalityNRIInsurersDetails.isDisplayed()
 				&& pioOciOptionButton.isDisplayed() && foreignNationalButton.isDisplayed()
 				&& insurerIndustryTypeInsurersDetails.isEnabled() && insurerOrganizationTypeInsurersDetails.isEnabled()
-				&& insurerOccupationInsurersDetails.isEnabled() && insurerAnnualIncome.isDisplayed()
-		) {
+				&& insurerOccupationInsurersDetails.isEnabled() && insurerAnnualIncome.isDisplayed()) {
 			System.out.println("Test case pass:As all the feilds are present as per the expectation");
 
 		} else {
 			Assert.fail("Test case fail:As all the feilds are not present as per the expectation");
 		}
 		JourneyScreenTwo.arrowDownFunctionToScrollDown();
-				
-		if (CritiaclIllnessInsurersDetails.isDisplayed()
-				&& InsurerCriticalIllnessYesInsurersDetails.isDisplayed()
-				&& InsurerCriticalIllnessNoInsurersDetails.isDisplayed()
-				&& hazardousInsurersDetails.isDisplayed() && InsurerHazardousActivitiesYesInsurersDetails.isDisplayed()
+
+		if (CritiaclIllnessInsurersDetails.isDisplayed() && InsurerCriticalIllnessYesInsurersDetails.isDisplayed()
+				&& InsurerCriticalIllnessNoInsurersDetails.isDisplayed() && hazardousInsurersDetails.isDisplayed()
+				&& InsurerHazardousActivitiesYesInsurersDetails.isDisplayed()
 				&& InsurerHazardousActivitiesNoInsurersDetails.isDisplayed()
 				&& criminalChargesInsurersDetails.isDisplayed()
 				&& InsurerCriminalChargesYesInsurersDetails.isDisplayed()
@@ -3304,7 +3228,6 @@ public class JourneyScreenThree extends ReusableActions {
 
 	}
 
-
 	public static void isurersDetailsFeildsDropDownForScreenThree() throws Exception {
 		Thread.sleep(800);
 		outsideClick.click();
@@ -3320,7 +3243,6 @@ public class JourneyScreenThree extends ReusableActions {
 		weightPersonalDetailsDependent(0, 1, 0);
 		insurerOtherDetailsAnnualIncome(0, 1, 1);
 	}
-
 
 	public static void occupationInsurersDetailsDropDownOptionSelection() throws Exception {
 		Thread.sleep(500);
@@ -3389,6 +3311,7 @@ public class JourneyScreenThree extends ReusableActions {
 		passportExpiryDateInsurer.click();
 		JourneyScreenOne.visaValidAndExpiryDateDateSelection();
 	}
+
 	// ______________________________________________________________________
 	public static void nriDetailsSectionOfLifeInsuredOtherDetails() throws Exception {
 		setPassportNumberInsurer(1, 1, 5);
@@ -3397,8 +3320,6 @@ public class JourneyScreenThree extends ReusableActions {
 		passportIssuingCountryOfInsurer(1, 1, 6);
 		passportExpiryDateForSingleDataInsurer();
 	}
-
-
 
 	public static void setPassportNumberInsurer(int x, int y, int z) throws Exception {
 		// type(MobNumtxtfld, strMobNumber);
@@ -3436,8 +3357,6 @@ public class JourneyScreenThree extends ReusableActions {
 
 	}
 
-
-
 	public static void passportVisaTypeOfInsurer() throws Exception {
 
 		click(passportVisaTypeOfInsurer);
@@ -3456,6 +3375,7 @@ public class JourneyScreenThree extends ReusableActions {
 		dependentTypeOfVisaInsurer();
 
 	}
+
 	public static void checkReflexiveQuestionsOfAllQuestionScreenThree() throws Exception {
 		Thread.sleep(800);
 		InsurerCriticalIllnessYesInsurersDetails.click();
@@ -3485,7 +3405,6 @@ public class JourneyScreenThree extends ReusableActions {
 			Assert.fail("Test Case fail:As All the feilds are not present as per hazardous yes option");
 		}
 
-
 	}
 
 	// ********************************** Calculate age from date of birth in
@@ -3493,8 +3412,8 @@ public class JourneyScreenThree extends ReusableActions {
 	public static void main(String[] args) throws Exception {
 		System.out.print("Please enter date of birth in YYYY-MM-DD: ");
 		/*
-		 * Scanner scanner = new Scanner(System.in); String input = scanner.nextLine();
-		 * scanner.close();
+		 * Scanner scanner = new Scanner(System.in); String input =
+		 * scanner.nextLine(); scanner.close();
 		 */
 		String input = driver.findElement(By.xpath("")).getText();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");

@@ -142,7 +142,8 @@ public class JourneyScreenOne extends ReusableActions {
 	@FindBy(xpath = "//h2[contains(text(),'t have Aadhaar Number?')]")
 	static WebElement DonthaveAadhaarlbl;
 
-	// Locating Forgot my aadhaar number radio button on Don't have Aadhaar Number?
+	// Locating Forgot my aadhaar number radio button on Don't have Aadhaar
+	// Number?
 	// Popup
 	@FindBy(xpath = "//label[text()='Forgot my aadhaar number']")
 	static WebElement Frgtmyadhrnumbtn;
@@ -188,7 +189,8 @@ public class JourneyScreenOne extends ReusableActions {
 	@FindBy(xpath = "//span[text()='Proceed']")
 	static WebElement Proceedbtn2;
 
-	// Locating Please enter the OTP sent to your registered mobile number text on
+	// Locating Please enter the OTP sent to your registered mobile number text
+	// on
 	// verify aadhar number Popup
 	@FindBy(xpath = "//p[text()='Please enter the OTP sent to your registered mobile number.']")
 	static WebElement Otpverifylbl;
@@ -308,11 +310,8 @@ public class JourneyScreenOne extends ReusableActions {
 	@FindBy(xpath = "//div[@id='passportVisaType_id']")
 	static WebElement typeOfVisa;
 
-
-
 	@FindBy(xpath = "//*[@id='menu-passportVisaType']/div[2]/ul/li[contains(text(),\"Dependent\")]")
 	static WebElement dependentTypeOfVisa;
-
 
 	@FindBy(xpath = "//*[@id='menu-passportVisaType']/div[2]/ul/li[contains(text(),\"Working\")]")
 	static WebElement workingTypeOfVisa;
@@ -326,25 +325,17 @@ public class JourneyScreenOne extends ReusableActions {
 	@FindBy(xpath = "//input[@name='passportNumber']")
 	static WebElement passportTextfld;
 
-
-
 	@FindBy(xpath = "//div[@id='visaExpiryDate_id']")
 	static WebElement visaValidTill;
 
-
-
 	@FindBy(xpath = "//div[@id='passportExpiryDate_id']")
 	static WebElement passportExpiryDate;
-
-
 
 	@FindBy(xpath = "//input[@placeholder='Search a country']")
 	static WebElement passportIssuingCountry;
 
 	@FindBy(xpath = "//div[@id='react-autowhatever-passportIssuingCountry']/ul/li[1]")
 	static WebElement passportIssuingCountry1stOption;
-
-
 
 	@FindBy(xpath = "//label[@for='dependent']")
 	static WebElement dependentOptionButton;
@@ -378,8 +369,6 @@ public class JourneyScreenOne extends ReusableActions {
 	public static void dependentTypeOfVisa() throws Exception {
 		click(dependentTypeOfVisa);
 	}
-
-
 
 	public static void industryTypeInsurersDetails() throws Exception {
 		click(industryTypeInsurersDetails);
@@ -423,13 +412,13 @@ public class JourneyScreenOne extends ReusableActions {
 		click(nriNationality);
 
 	}
+
 	@Step("Getting nationality_NRI status")
 	public static void nationalityNRI() throws Exception {
 
 		click(nationalityNRI);
 
 	}
-
 
 	public static void neverApplied() throws Exception {
 
@@ -469,10 +458,10 @@ public class JourneyScreenOne extends ReusableActions {
 		System.out.println("just after landed no press"
 				+ driver.findElement(By.xpath("//input[@name='insurerAnnualIncome']")).isEnabled());
 		/*
-		 * if(insurersOtherDetailsSection.isDisplayed()) { Assert.
-		 * fail("Test case Fail:-'SCREEN THREE'As feilds supress fuctionality for insurers details is not working"
-		 * ); }else { System.out.
-		 * println("Test case pass:-'SCREEN THREE'As feilds supress fuctionality for insurers details working"
+		 * if(insurersOtherDetailsSection.isDisplayed()) { Assert. fail(
+		 * "Test case Fail:-'SCREEN THREE'As feilds supress fuctionality for insurers details is not working"
+		 * ); }else { System.out. println(
+		 * "Test case pass:-'SCREEN THREE'As feilds supress fuctionality for insurers details working"
 		 * ); } Thread.sleep(1000);
 		 */
 		Thread.sleep(10000);
@@ -677,25 +666,22 @@ public class JourneyScreenOne extends ReusableActions {
 	// Enter Aadhaar Number
 	@Step("Getting Aadhar Number")
 	public static void setAadhar(int x, int y, int z) throws Exception {
-		PageFactory.initElements(driver,JourneyScreenOne.class);
+		PageFactory.initElements(driver, JourneyScreenOne.class);
 		AadharTxtfld.clear();
 		type(AadharTxtfld, readingdata(x, y, z));
 
 		String aAdharTxtfldPassedFromExcel = AadharTxtfld.getAttribute("value");
 		int size = aAdharTxtfldPassedFromExcel.length();
-		if ((size == 12) && (!aAdharTxtfldPassedFromExcel.contains("A") && !aAdharTxtfldPassedFromExcel.contains("*"))) {
+		if (size == 12 && !aAdharTxtfldPassedFromExcel.contains("A") && !aAdharTxtfldPassedFromExcel.contains("*")) {
 			logger.info("Test case pass:- As aadhar feild length is 12 and accepting only numbers");
 		} else {
 			Assert.fail("Test case fail:-As either aadhar feild length is not 12 or not accepting only numbers");
 		}
-
 	}
 
 	// Click on Don't have aadhar link
 	public static void clickDonthaveAadhar() throws Exception {
-
 		click(DonthaveAadharLink);
-
 	}
 
 	public static void typeOfVisa() throws Exception {
@@ -703,8 +689,6 @@ public class JourneyScreenOne extends ReusableActions {
 		click(typeOfVisa);
 
 	}
-
-
 
 	// Click on Get OTP option
 	public static void clickGetOTP() throws Exception {
@@ -730,8 +714,8 @@ public class JourneyScreenOne extends ReusableActions {
 		type(PanNumbertxtfld, readingdata(x, y, z));
 		String panNumberCPassedFromExcel = PanNumbertxtfld.getAttribute("value");
 		int size = panNumberCPassedFromExcel.length();
-		if ((size == 10) && (panNumberCPassedFromExcel.contains("C") && panNumberCPassedFromExcel.contains("4")
-				&& !panNumberCPassedFromExcel.contains("#"))) {
+		if (size == 10 && panNumberCPassedFromExcel.contains("C") && panNumberCPassedFromExcel.contains("4")
+				&& !panNumberCPassedFromExcel.contains("#")) {
 			logger.info(
 					"Test case pass:- As PAN feild length is 10 and accepting only alphabnumeric value and not accepting special character");
 		} else {
@@ -756,8 +740,6 @@ public class JourneyScreenOne extends ReusableActions {
 		hssfWorkbook.close();
 		return false;
 	}
-
-
 
 	public static void validatingErrorMsgForPANNRI(XSSFSheet sheet, int rowNum) throws Exception {
 
@@ -870,8 +852,8 @@ public class JourneyScreenOne extends ReusableActions {
 		type(MobNumtxtfld, readingdata(x, y, z));
 		String mobileNumberPassedFromExcel = MobNumtxtfld.getAttribute("value");
 		int size = mobileNumberPassedFromExcel.length();
-		if ((size == 10) && (!mobileNumberPassedFromExcel.contains("A") && mobileNumberPassedFromExcel.contains("9")
-				&& !mobileNumberPassedFromExcel.contains("@"))) {
+		if (size == 10 && !mobileNumberPassedFromExcel.contains("A") && mobileNumberPassedFromExcel.contains("9")
+				&& !mobileNumberPassedFromExcel.contains("@")) {
 			logger.info(
 					"Test case pass:- As Mobile number feild length is 10 and accepting only numeric value,not accepting special character and alphabets ");
 		} else {
@@ -994,12 +976,11 @@ public class JourneyScreenOne extends ReusableActions {
 		}
 
 	}
+
 	public static void preFixOfMobileNumber(int x, int y, int z) throws Exception {
 
 		if (preFixOfMobileNumber.isDisplayed()) {
-
-		} else {
-
+			System.out.println("mobile number verified");
 		}
 
 	}
@@ -1013,10 +994,11 @@ public class JourneyScreenOne extends ReusableActions {
 		String emailPassedFromExcel = Emailtxtfld.getAttribute("value");
 		/*
 		 * int size = emailPassedFromExcel.length();
-		 * if(emailPassedFromExcel.endsWith("@gmail.com")||emailPassedFromExcel.endsWith
-		 * ("@monocept.com") ) {
-		 * logger.info("Test case pass:-As entered email format is correct "); }else {
-		 * Assert.fail("Test case fail:-As entered email format is not correct"); }
+		 * if(emailPassedFromExcel.endsWith("@gmail.com")||emailPassedFromExcel.
+		 * endsWith ("@monocept.com") ) { logger.info(
+		 * "Test case pass:-As entered email format is correct "); }else {
+		 * Assert.fail("Test case fail:-As entered email format is not correct"
+		 * ); }
 		 */
 
 		if (isValid(emailPassedFromExcel)) {
@@ -1057,8 +1039,8 @@ public class JourneyScreenOne extends ReusableActions {
 		String runtimeXpathForSelectingDate = "day-" + day + "";
 		System.out.println(day);
 		System.out.println(runtimeXpathForSelectingDate);
-		boolean checkFutureDateIsEnabled = driver.findElement(By.xpath(
-				"///div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))][@aria-label="
+		boolean checkFutureDateIsEnabled = driver.findElement(By
+				.xpath("///div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))][@aria-label="
 						+ runtimeXpathForSelectingDate + "]"))
 				.isEnabled();
 
@@ -1076,8 +1058,8 @@ public class JourneyScreenOne extends ReusableActions {
 		String runtimeXpathForSelectingDate = "day-" + day + "";
 		System.out.println(day);
 		System.out.println(runtimeXpathForSelectingDate);
-		boolean checkFutureDateIsEnabled = driver.findElement(By.xpath(
-				"///div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))][@aria-label="
+		boolean checkFutureDateIsEnabled = driver.findElement(By
+				.xpath("///div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))][@aria-label="
 						+ runtimeXpathForSelectingDate + "]"))
 				.isEnabled();
 
@@ -1093,8 +1075,8 @@ public class JourneyScreenOne extends ReusableActions {
 		System.out.println(datw);
 		int day = datw.getDayOfMonth();
 		String runtimeXpathForSelectingDate = "day-" + day + "";
-		WebElement checkFutureDateIsEnabled = driver.findElement(By.xpath(
-				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\""
+		WebElement checkFutureDateIsEnabled = driver.findElement(By
+				.xpath("//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\""
 						+ runtimeXpathForSelectingDate + "\"]"));
 		String classes = checkFutureDateIsEnabled.getAttribute("class");
 		boolean isDisabled = classes.contains("day--disabled");
@@ -1108,8 +1090,8 @@ public class JourneyScreenOne extends ReusableActions {
 		}
 
 		driver.switchTo().defaultContent();
-		driver.findElement(By.xpath(
-				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'disabled'))] [@aria-label=\""
+		driver.findElement(By
+				.xpath("//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'disabled'))] [@aria-label=\""
 						+ runtimeXpathForSelectingDate + "\"]"))
 				.click();
 	}
@@ -1118,8 +1100,8 @@ public class JourneyScreenOne extends ReusableActions {
 		LocalDate datw = LocalDate.now().plusDays(1L);
 		int day = datw.getDayOfMonth();
 		String runtimeXpathForSelectingDate = "day-" + day + "";
-		driver.findElement(By.xpath(
-				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'disabled'))] [@aria-label=\""
+		driver.findElement(By
+				.xpath("//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'disabled'))] [@aria-label=\""
 						+ runtimeXpathForSelectingDate + "\"]"))
 				.click();
 	}
@@ -1134,6 +1116,7 @@ public class JourneyScreenOne extends ReusableActions {
 		checkVisaValidAndExpiryDateFutureDateEnability();
 
 	}
+
 	@Step("Getting VISA validity")
 	public static void visaValidTillSingleData() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenOne.class);
@@ -1141,15 +1124,14 @@ public class JourneyScreenOne extends ReusableActions {
 		visaValidTill.click();
 		/*
 		 * Calendar calendar = Calendar.getInstance(); int currentDay =
-		 * calendar.get(Calendar.DAY_OF_MONTH); String runtimeXpathForSelectingDate =
-		 * "day-" + currentDay + ""; driver.switchTo().defaultContent();
-		 * driver.findElement(By.xpath(
+		 * calendar.get(Calendar.DAY_OF_MONTH); String
+		 * runtimeXpathForSelectingDate = "day-" + currentDay + "";
+		 * driver.switchTo().defaultContent(); driver.findElement(By.xpath(
 		 * "//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'disabled'))] [@aria-label=\""
 		 * + runtimeXpathForSelectingDate + "\"]")) .click();
 		 */
 		visaValidAndExpiryDateDateSelection();
 	}
-
 
 	public static void passportExpiryDateMultiple() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenOne.class);
@@ -1161,6 +1143,7 @@ public class JourneyScreenOne extends ReusableActions {
 		checkVisaValidAndExpiryDateFutureDateEnability();
 
 	}
+
 	@Step("Getting possport expiry date")
 	public static void passportExpiryDateForSingleData() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenOne.class);
@@ -1168,17 +1151,15 @@ public class JourneyScreenOne extends ReusableActions {
 		passportExpiryDate.click();
 		/*
 		 * Calendar calendar = Calendar.getInstance(); int currentDay =
-		 * calendar.get(Calendar.DAY_OF_MONTH); String runtimeXpathForSelectingDate =
-		 * "day-" + currentDay + ""; driver.switchTo().defaultContent();
-		 * driver.findElement(By.xpath(
+		 * calendar.get(Calendar.DAY_OF_MONTH); String
+		 * runtimeXpathForSelectingDate = "day-" + currentDay + "";
+		 * driver.switchTo().defaultContent(); driver.findElement(By.xpath(
 		 * "//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'disabled'))] [@aria-label=\""
 		 * + runtimeXpathForSelectingDate + "\"]")) .click();
 		 */
 		visaValidAndExpiryDateDateSelection();
 
 	}
-
-
 
 	public static boolean checkEmailErrorMsgWithMultipleDataIndian() throws Exception {
 		File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
@@ -1371,18 +1352,17 @@ public class JourneyScreenOne extends ReusableActions {
 	public static void isAllTheFeildsOfNRIDisplayed() throws Exception {
 		residentialsStatusNRI();
 		if (passportNumberNRI.isDisplayed() && visaValidTillLabelHeading.isDisplayed()
-				&& passportExipryDate.isDisplayed()
-				&& pasportIssuingCountryNRI.isDisplayed()
+				&& passportExipryDate.isDisplayed() && pasportIssuingCountryNRI.isDisplayed()
 				&& policyForNRI.isDisplayed() && selfNRI.isDisplayed() && dependentNRI.isDisplayed()
-				&& AadhaarNRI.isDisplayed() && PanNumberNRI.isDisplayed()
-				&& mobileNumberNRI.isDisplayed() && emailAddressNRI.isDisplayed()
-				&& preIssuranceVerificationNRI.isDisplayed()) {
+				&& AadhaarNRI.isDisplayed() && PanNumberNRI.isDisplayed() && mobileNumberNRI.isDisplayed()
+				&& emailAddressNRI.isDisplayed() && preIssuranceVerificationNRI.isDisplayed()) {
 			logger.info("Test Case Pass as all the feilds of NRI is displayed");
 		} else {
 			Assert.fail("Test Case fail as all the feilds of NRI is not displayed");
 		}
 
 	}
+
 	@Step("Select the VISA")
 	public static void isAllTheTypeOfVisaListIsPresent() throws Exception {
 		typeOfVisa();
@@ -1394,7 +1374,6 @@ public class JourneyScreenOne extends ReusableActions {
 
 	}
 
-
 	@Step("Getting possport Number")
 	public static void setPassportNumber(int x, int y, int z) throws Exception {
 		// type(MobNumtxtfld, strMobNumber);
@@ -1405,12 +1384,10 @@ public class JourneyScreenOne extends ReusableActions {
 		if (size == 9) {
 			logger.info("Test case pass:- As Passport number feild length is 9");
 		} else {
-			Assert.fail(
-					"Test case fail:-Test case pass:- As Passport number feild length is not of 9");
+			Assert.fail("Test case fail:-Test case pass:- As Passport number feild length is not of 9");
 		}
 
 	}
-
 
 	@Step("Getting possport issuing country Name")
 	public static void passportIssuingCountry(int x, int y, int z) throws Exception {
@@ -1428,8 +1405,6 @@ public class JourneyScreenOne extends ReusableActions {
 		}
 
 	}
-
-
 
 	public static void nriDependentOptionSElection() throws Exception {
 		dependentOptionButton.click();
