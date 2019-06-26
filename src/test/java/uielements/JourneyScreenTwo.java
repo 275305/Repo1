@@ -34,7 +34,10 @@ import util.AppConstant;
 
 public class JourneyScreenTwo extends ReusableActions {
 
-	// private static final String Webelement = null;
+	private static File file;
+	private static FileInputStream fileInputStream;
+	private static XSSFWorkbook hssfWorkbook;
+	private static XSSFSheet sheet;
 
 	public static int i = 1;
 	public static int k;
@@ -53,11 +56,6 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	@FindBy(xpath = "//h4[(text()=\"Illustration could not be generated.\")]")
 	static WebElement errorMessageWhenAgeMoreThan60;
-
-	/*
-	 * @FindBy(xpath = "//input[@name='insurerName']") static WebElement
-	 * insurersName;
-	 */
 
 	@FindBy(xpath = "//input[@name='insurerName']")
 	static WebElement insurersNameLabel;
@@ -882,6 +880,8 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//li[@id='react-autowhatever-permanentCity--item-0']")
 	static WebElement city1stOption;
 
+	@FindBy(xpath="//li[contains(text(),'Spouse')]")
+	static WebElement proposerDropdown;
 	/*
 	 * @FindBy(xpath = "//div[@id='insurerDateOfBirth_id']") static WebElement
 	 * dateOfBirthIssurer;
@@ -1643,12 +1643,12 @@ public class JourneyScreenTwo extends ReusableActions {
 	}
 
 	public static void arrowDownFunctionToScrollDown() throws Exception {
-		Thread.sleep(400);
-		for (int i = 1; i < 12; i++) {
+
+		/*for (int i = 1; i < 12; i++) {*/
 			Actions action = new Actions(driver);
 			action.sendKeys(Keys.ARROW_DOWN).build().perform();
-		}
-		Thread.sleep(400);
+		//}
+		Thread.sleep(3000);
 	}
 
 	public static void selectByDropdownTradAllProduct() throws Exception {
@@ -2399,7 +2399,6 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	public static void getAllDropDownValueMIAPScreenTwo() throws Exception {
 
-		Thread.sleep(1000);
 		driver.findElement(By.xpath("//span[contains(text(),'Product   Details')]")).click();
 		Thread.sleep(1000);
 		String xpathOfTexOnTheScreen = "//input[contains(@type,'text')]";
@@ -2443,7 +2442,6 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	public static void getAllDropDownValueWLSScreenTwo() throws Exception {
 
-		Thread.sleep(1000);
 		driver.findElement(By.xpath("//span[contains(text(),'Product   Details')]")).click();
 		Thread.sleep(1000);
 		String xpathOfTexOnTheScreen = "//input[contains(@type,'text')]";
@@ -2886,7 +2884,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		type(pinCode, readingdata(x, y, z));
 		String pinCodeDataFromExcel = pinCode.getAttribute("value");
 		int size = pinCodeDataFromExcel.length();
-		if ((size == 6 && !pinCodeDataFromExcel.contains("@") && !pinCodeDataFromExcel.contains("A"))) {
+		if (size == 6 && !pinCodeDataFromExcel.contains("@") && !pinCodeDataFromExcel.contains("A")) {
 			logger.info("Test case pass:- As Pin code feild length is 6 and accepting numeric only");
 		} else {
 			Assert.fail("Test case fail:- As either Pin code feild length is not of 6 or not accepting numeric only");
@@ -3257,10 +3255,12 @@ public class JourneyScreenTwo extends ReusableActions {
 				driver.switchTo().window(child_window);
 				System.out.println(driver.switchTo().window(child_window).getTitle());
 				driver.close();
+
 			}
+
 		}
 		driver.switchTo().window(parent);
-		Thread.sleep(4000);
+		Thread.sleep(2000);
 	}
 
 	public static void ifConditionForTabSizeTwoPDFIllustrationSelectingLifestyleScreen() throws Exception {
@@ -3273,7 +3273,7 @@ public class JourneyScreenTwo extends ReusableActions {
 			if (!parent.equals(child_window)) {
 				driver.switchTo().window(child_window);
 				System.out.println(driver.switchTo().window(child_window).getTitle());
-				driver.close();
+				//driver.close();
 			}
 		}
 		driver.switchTo().window(parent);
@@ -3377,10 +3377,10 @@ public class JourneyScreenTwo extends ReusableActions {
 		removeNulls(actualResult);
 		System.out.println("Size of list of UI error msg   " + actualResult.size());
 		System.out.println("List of UI error msg   " + actualResult);
-		File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
-		FileInputStream fileInputStream = new FileInputStream(file);
-		XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
-		XSSFSheet sheet = hssfWorkbook.getSheetAt(sheetNo);
+		 file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
+		 fileInputStream = new FileInputStream(file);
+		 hssfWorkbook = new XSSFWorkbook(fileInputStream);
+	 sheet = hssfWorkbook.getSheetAt(sheetNo);
 		int lastRow = sheet.getLastRowNum();
 		while (lastRow >= 0 && sheet.getRow(lastRow).getCell(columnNo) == null) {
 			lastRow--;
@@ -3942,7 +3942,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		type(sumAssured, readingdata(x, y, z));
 
 		JourneyScreenTwo.clickSubmitButton();
-		Thread.sleep(14000);
+		Thread.sleep(4000);
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 		System.out.println(tabs.size());
 
@@ -4194,7 +4194,6 @@ public class JourneyScreenTwo extends ReusableActions {
 			Thread.sleep(1000);
 
 		}
-
 		else {
 			Assert.fail("Either PDF is not generating or Loading time is too much for STP");
 
@@ -4223,7 +4222,7 @@ public class JourneyScreenTwo extends ReusableActions {
 			arrowUpFunctionToScrollUpTillTop();
 			Thread.sleep(500);
 			setDateBirthPayorDetailOf18Age();
-			Thread.sleep(500);
+
 			policyTermSTPDropDown();
 			JourneyScreenTwo.clickSubmitButton();
 			Thread.sleep(14000);
@@ -4261,7 +4260,7 @@ public class JourneyScreenTwo extends ReusableActions {
 			arrowUpFunctionToScrollUpTillTop();
 			Thread.sleep(500);
 			setDateBirthPayorDetailOf18Age();
-			Thread.sleep(500);
+
 			policyTermSTPDropDown();
 			JourneyScreenTwo.clickSubmitButton();
 			Thread.sleep(14000);
@@ -4304,7 +4303,7 @@ public class JourneyScreenTwo extends ReusableActions {
 			Thread.sleep(500);
 			policyTermSTPDropDown();
 			JourneyScreenTwo.clickSubmitButton();
-			Thread.sleep(14000);
+			Thread.sleep(4000);
 			ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 			System.out.println(tabs.size());
 			if (tabs.size() == 2) {
@@ -4329,7 +4328,7 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	public static void checkErrorMessageForAgeMoreThan44YearsSmartTermPlan() throws Exception {
 		JourneyScreenTwo.clickSubmitButton();
-		Thread.sleep(14000);
+		Thread.sleep(4000);
 		if (isElementDisplayed(maximumAgeLimit44ErrorMessage)) {
 			System.out.println("Test case pass as error message is displaying when age is more than 44");
 
@@ -4453,10 +4452,10 @@ public class JourneyScreenTwo extends ReusableActions {
 		lifeStageEventBenefitNo();
 		premiumBackOptiontNo();
 		proceedBtn.click();
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		// WOPPlusRiderCheckBox();
 		ifConditionForTabSizeTwoPDFIllustrationProceedingScreenAhead();
-		Thread.sleep(4000);
+
 	}
 
 	public static void singlePayIncomeInflationProtectorForm1() throws Exception {
@@ -5368,13 +5367,13 @@ public class JourneyScreenTwo extends ReusableActions {
 		LocalDate datw = LocalDate.now().minusYears(60);
 		System.out.println(datw);
 		LocalDate moreThan44 = datw.minusYears(1);
-		System.out.println(moreThan44);
+
 
 		int month = moreThan44.getMonthValue() - 1;
 		int day = moreThan44.getDayOfMonth();
 		int year = moreThan44.getYear();
 
-		Thread.sleep(800);
+
 
 		driver.findElement(By.xpath("//select[@class='react-datepicker__month-select']")).click();
 		Thread.sleep(500);
@@ -5396,7 +5395,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	public static void setDateBirthPayorDetailsMoreThan1YearOf44Years() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenThree.class);
 
-		Thread.sleep(800);
+
 		waitTillElementToBeClickable(dateOfBirthPersonalDetails);
 		dateOfBirthPersonalDetails.click();
 		Thread.sleep(800);
@@ -5404,13 +5403,13 @@ public class JourneyScreenTwo extends ReusableActions {
 		LocalDate datw = LocalDate.now().minusYears(44);
 		System.out.println(datw);
 		LocalDate moreThan44 = datw.minusYears(1);
-		System.out.println(moreThan44);
+
 
 		int month = moreThan44.getMonthValue() - 1;
 		int day = moreThan44.getDayOfMonth();
 		int year = moreThan44.getYear();
 
-		Thread.sleep(800);
+
 
 		driver.findElement(By.xpath("//select[@class='react-datepicker__month-select']")).click();
 		Thread.sleep(500);
@@ -5432,7 +5431,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	public static void setDateBirthPayorDetailOf18Age() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenThree.class);
 
-		Thread.sleep(800);
+
 		waitTillElementToBeClickable(dateOfBirthPersonalDetails);
 		dateOfBirthPersonalDetails.click();
 		Thread.sleep(800);
@@ -5463,7 +5462,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	public static void setDateBirthPayorDetailOf60Age() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenThree.class);
 
-		Thread.sleep(800);
+
 		waitTillElementToBeClickable(dateOfBirthPersonalDetails);
 		dateOfBirthPersonalDetails.click();
 		Thread.sleep(800);
@@ -5494,7 +5493,6 @@ public class JourneyScreenTwo extends ReusableActions {
 	public static void setDateBirthPayorDetailOf44Age() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenThree.class);
 
-		Thread.sleep(800);
 		waitTillElementToBeClickable(dateOfBirthPersonalDetails);
 		dateOfBirthPersonalDetails.click();
 		Thread.sleep(800);
@@ -5629,7 +5627,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	}
 
 	public static void clickProceedPageTwo() throws Exception {
-		Thread.sleep(1000);
+
 		Savebtn.click();
 		Thread.sleep(1000);
 		click(Proceedbtn);
@@ -5639,8 +5637,13 @@ public class JourneyScreenTwo extends ReusableActions {
 	public static void relationshipWithProposer() throws Exception {
 
 		click(relationshipWithProposer);
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 
+	}
+
+	public static void relationShipProposer() throws Exception{
+        click(proposerDropdown);
+        Thread.sleep(1000);
 	}
 
 	public static void relationshipWithProposerParentOption() throws Exception {
@@ -5707,8 +5710,8 @@ public class JourneyScreenTwo extends ReusableActions {
 	public static void selectAndCheckRelationshipWithProposerOption() throws Exception {
 		// type(MobNumtxtfld, strMobNumber);
 		relationshipWithProposer();
+		relationShipProposer();
 
-		driver.findElement(By.xpath("//li[contains(text(),'Spouse')]")).click();
 		/*
 		 * String xpathOFList = "//ul[@role='listbox']/li"; String sheetpath =
 		 * "\\src\\test\\resources\\MasterData.xlsx";

@@ -519,13 +519,14 @@ public class JourneyScreenThreeTest extends ReusableActions {
 
 	{
 		try {
-			Thread.sleep(500);
+
 			PageFactory.initElements(driver, JourneyScreenThree.class);
-			JourneyScreenThree.setIFCPositive(4, 1, 2);
-			JourneyScreenThree.setMICR(4, 1, 3);
 			JourneyScreenThree.setBankAccountNumber(4, 1, 5);
 			JourneyScreenThree.setAccountHoldersName(4, 1, 6);
+			JourneyScreenThree.setIFCPositive(4, 1, 2);
+			JourneyScreenThree.setMICR(4, 1, 3);
 			JourneyScreenThree.typeOfAccountOptionSelection();
+
 
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
@@ -539,11 +540,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 
 	public static void proposerPersonalDetailsSection() throws Exception
 
-	{
-		try {
-			Thread.sleep(700);
-
-			JourneyScreenThree.fathersName(9, 1, 0);
+	{   	JourneyScreenThree.fathersName(9, 1, 0);
 			JourneyScreenThree.mothersName(9, 1, 1);
 			JourneyScreenThree.maritalStatusOptionSelection();
 			JourneyScreenThree.educationDropDownOptionList();
@@ -554,12 +551,6 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			JourneyScreenThree.setCompanyNameProposerPersonalDetails(9, 1, 0);
 			//JourneyScreenTwo.occupationOptionSelectionWithCancerProduct();
 			JourneyScreenTwo.preferredLanguageOfCommunicationOptionSelectionWithSAPProduct();
-
-		} catch (Exception e) {
-			logger.error("Test case failed " + e.getMessage());
-			throw e;
-
-		}
 
 	}
 

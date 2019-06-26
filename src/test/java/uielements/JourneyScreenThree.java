@@ -270,9 +270,13 @@ public class JourneyScreenThree extends ReusableActions {
 	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[3]/div[4]/div/div/div/div/div/div[@role=\"button\"]")
 	public static WebElement typeOfAccInsurer;
 
-	@FindBy(xpath = ".//*[@id='menu-typeofAccount']/div[2]/ul/li[1]")
+/*	@FindBy(xpath = ".//*[@id='menu-typeofAccount']/div[2]/ul/li[1]")
+	public static WebElement typeOfAccOption;*/
+
+	@FindBy(xpath = "//li[contains(text(),'Savings Account')]")
 	public static WebElement typeOfAccOption;
 
+	//li[contains(text(),'Savings Account')]
 	@FindBy(xpath = "//input[@name='bankAccountIFSC']")
 	public static WebElement IFSC;
 
@@ -995,8 +999,9 @@ public class JourneyScreenThree extends ReusableActions {
 
 	public static void typeOfAccountOptionSelection() throws Exception {
 		typeOfAcc();
-		Thread.sleep(700);
+		Thread.sleep(1000);
 		typeOfAccOption();
+		Thread.sleep(1000);
 
 	}
 
@@ -1072,9 +1077,9 @@ public class JourneyScreenThree extends ReusableActions {
 	public static void educationDropDownOptionList() throws Exception {
 		waitTillElementToBeClickable(education);
 		education.click();
-		Thread.sleep(200);
+		Thread.sleep(2000);
 		education1stOption.click();
-		Thread.sleep(200);
+		Thread.sleep(2000);
 	}
 
 	public static void organizationTypeOptionSelection() throws Exception {

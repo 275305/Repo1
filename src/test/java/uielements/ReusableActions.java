@@ -43,9 +43,16 @@ import util.AppConstant;
 
 public class ReusableActions {
 
-	// WebDriver driver;
-	public static WebDriver driver;
+	private static File file;
+	private static FileInputStream fileInputStream;
+	private static XSSFWorkbook hssfWorkbook;
+	private static XSSFSheet sheet;
+	private static int lastRow;
+	private static XSSFCell cell;
+	private static String data;
+	private static DataFormatter df;
 
+	public static WebDriver driver;
 	public static Logger logger = LoggerFactory.getLogger(LoginPage.class);
 	public static Logger JourneyScreenOnelogger = LoggerFactory.getLogger(JourneyScreenOneTest.class);
 	public static Logger JourneyScreenTwologger = LoggerFactory.getLogger(JourneyScreenTwoTest.class);
@@ -70,7 +77,7 @@ public class ReusableActions {
 	}
 
 	// Function for Read the data from Properties File
-	public static File file = null;
+
 	public static FileInputStream fileInput = null;
 	// public String filepath="D:\\Max_Life Resolved
 	// Issues\\MAX_QA_FunctionalTest\\File Paths\\geckodriver.exe";
@@ -178,26 +185,26 @@ public class ReusableActions {
 	}
 
 	public static String readingdata(int sheetno, int rownum, int colnum) throws Exception {
-		File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
-		FileInputStream fileInputStream = new FileInputStream(file);
-		XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
-		XSSFSheet sheet = hssfWorkbook.getSheetAt(sheetno);
-		XSSFCell cell = sheet.getRow(rownum).getCell(colnum);
-		DataFormatter df = new DataFormatter();
-		String data = df.formatCellValue(cell);
+		file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
+		fileInputStream = new FileInputStream(file);
+		hssfWorkbook = new XSSFWorkbook(fileInputStream);
+		sheet = hssfWorkbook.getSheetAt(sheetno);
+		cell = sheet.getRow(rownum).getCell(colnum);
+		df = new DataFormatter();
+		data = df.formatCellValue(cell);
 		hssfWorkbook.close();
 		return data;
 
 	}
 
 	public static String readingdataTestData(int sheetno, int rownum, int colnum) throws Exception {
-		File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.TEST_DATA_EXCELL);
-		FileInputStream fileInputStream = new FileInputStream(file);
-		XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
-		XSSFSheet sheet = hssfWorkbook.getSheetAt(sheetno);
-		XSSFCell cell = sheet.getRow(rownum).getCell(colnum);
-		DataFormatter df = new DataFormatter();
-		String data = df.formatCellValue(cell);
+		file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.TEST_DATA_EXCELL);
+		fileInputStream = new FileInputStream(file);
+		hssfWorkbook = new XSSFWorkbook(fileInputStream);
+		sheet = hssfWorkbook.getSheetAt(sheetno);
+		cell = sheet.getRow(rownum).getCell(colnum);
+		df = new DataFormatter();
+		data = df.formatCellValue(cell);
 		hssfWorkbook.close();
 		return data;
 
@@ -213,8 +220,8 @@ public class ReusableActions {
 		Wait<WebDriver> wait = new WebDriverWait(driver, 30);
 		try {
 			wait.until(expectation);
-		} catch (Throwable error) {
-
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
 		}
 	}
 
@@ -269,11 +276,11 @@ public class ReusableActions {
 		}
 		System.out.println(actualResult.size());
 		System.out.println(actualResult);
-		File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
-		FileInputStream fileInputStream = new FileInputStream(file);
-		XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
-		XSSFSheet sheet = hssfWorkbook.getSheetAt(sheetNo);
-		int lastRow = sheet.getLastRowNum();
+		file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
+		fileInputStream = new FileInputStream(file);
+		hssfWorkbook = new XSSFWorkbook(fileInputStream);
+		sheet = hssfWorkbook.getSheetAt(sheetNo);
+		lastRow = sheet.getLastRowNum();
 		while (lastRow >= 0 && sheet.getRow(lastRow).getCell(columnNo) == null) {
 			lastRow--;
 		}
@@ -509,6 +516,7 @@ public class ReusableActions {
 			return name;
 		}
 		return null;
+
 	}
 
 }

@@ -133,14 +133,6 @@ public class POSVFlowForSAPMIAP extends ReusableActions {
 	@FindBy(xpath = "//label[text()='Applied, and have enrollment number']")
 	static WebElement Appliedbtn;
 
-	// Locating Never applied radio button on Don't have Aadhaar Number? Popup
-	@FindBy(xpath = "//label[text()='Never applied']")
-	static WebElement Neverappliedbtn;
-
-	// Locating Jammu & Kashmir radio button on Don't have Aadhaar Number? Popup
-	@FindBy(xpath = "//label[text()='Jammu & Kashmir']")
-	static WebElement Jamkasbtn;
-
 	// Locating Meghalya radio button on Don't have Aadhaar Number? Popup
 	@FindBy(xpath = "//label[text()=' Meghalya']")
 	static WebElement Meghalyabtn;
@@ -414,12 +406,6 @@ public class POSVFlowForSAPMIAP extends ReusableActions {
 	// Enter Mobile Number
 	public static void setMobNumber(int x, int y, int z) throws Exception {
 		waitTillElementLocated(ocrPrePopulatedPAN);
-		MobNumtxtfld.clear();
-		type(MobNumtxtfld, readingdata(x, y, z));
-
-	}
-
-	public static void setMobNumberOCR(int x, int y, int z) throws Exception {
 		MobNumtxtfld.clear();
 		type(MobNumtxtfld, readingdata(x, y, z));
 
