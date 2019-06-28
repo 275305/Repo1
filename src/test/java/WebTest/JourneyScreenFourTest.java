@@ -1,6 +1,7 @@
 package WebTest;
 
 import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
@@ -11,12 +12,13 @@ import ru.yandex.qatools.allure.model.SeverityLevel;
 import uielements.HomePage;
 import uielements.JourneyScreenFour;
 import uielements.JourneyScreenOne;
+import uielements.JourneyScreenThree;
 import uielements.LoginPage;
 import uielements.ReusableActions;
 import util.AppConstant;
 
 public class JourneyScreenFourTest extends ReusableActions {
-	
+
 	@Step("URL and Login userName and password")
 	@Severity(SeverityLevel.NORMAL)
 	@Description("Verify the First Page")
@@ -71,6 +73,47 @@ public class JourneyScreenFourTest extends ReusableActions {
 		}
 	}
 
+	@Description("Verify the Second and Thired Page")
+	@Severity(SeverityLevel.CRITICAL)
+	@Test(priority = 2, enabled = true)
+	public void reachingScreenFourFillingAnnualIncomeform60RelatedDetailsFeilds() throws Exception
+	{
+		JourneyScreenThreeTest.reachingScreenFourFillingAnnualIncomeFunction();
+		JourneyScreenFour.arrowDownFunctionToScrollDown();
+		// JourneyScreenThree.lifestyleFeildsValidation();
+		// JourneyScreenThree.lifestyleFeildsValidationForYes();
+		// JourneyScreenThree.FeildsValidationHazardousForYes();
+		JourneyScreenThree.scrollDownPage();
+		JourneyScreenFour.selectingNoOptionForAllMedicalQusetion();
+		JourneyScreenFour.feetInchesKgsSelectionToMoveToScreen5();
+		JourneyScreenFour.agreePopupToProceedToSendPreIssuranceVerificationLinkToCustomer();
+
+
+		/*
+		 * JourneyScreenFour.arrowUpFunctionToScrollUpTillTop();
+		 * JourneyScreenFour.
+		 * idontHavePANNumberAsIhaveAppliedForPANAcknowledgementSelectOption();
+		 * JourneyScreenFour.fillPanApplicationAcknowledgeNowWithoutValidation()
+		 * ; JourneyScreenFour.setDateBirthdateOfApplicationWithoutValidation();
+		 * JourneyScreenFour.arrowDownFunctionToScrollDownTillBottom();
+		 */
+		// JourneyScreenFour.form60RelatedDetailsFeildsIsPresent();
+
+		/*
+		 * JourneyScreenFour.
+		 * form60RelatedDetailsIdentityProofNameDropDownValidation();
+		 * JourneyScreenFour.identityProofNumberValidation(0, 1, 6);
+		 * JourneyScreenFour.identityProofIssuingAuthority(); JourneyScreenFour.
+		 * idontHavePANNumberAsIhaveAppliedForPANAcknowledgementSelectFeildsValidation
+		 * (); JourneyScreenFour.fillPanApplicationAcknowledgeNo();
+		 * JourneyScreenFour.setDateBirthdateOfApplication(1, 1, 9);
+		 * JourneyScreenFour.
+		 * iAmExemptFromRequirementOfPANUnderFollowingProvisionsSelectFeildsValidation
+		 * ();
+		 */
+
+	}
+
 	@Test(priority = 3, enabled = false)
 	public void lifeStyleScreeenFourValidation() throws Exception
 
@@ -96,25 +139,7 @@ public class JourneyScreenFourTest extends ReusableActions {
 		}
 
 	}
-	@Description("Verify the Second and Thired Page")
-	@Severity(SeverityLevel.CRITICAL)
-	@Test(priority = 2, enabled = true)
-	public void reachingScreenFourFillingAnnualIncomeform60RelatedDetailsFeilds() throws Exception
 
-	{  
-		
-			JourneyScreenThreeTest.reachingScreenFourFillingAnnualIncomeFunction();
-			JourneyScreenFour.form60RelatedDetailsFeildsIsPresent();
-			JourneyScreenFour.form60RelatedDetailsIdentityProofNameDropDownValidation();
-			JourneyScreenFour.identityProofNumberValidation(0, 1, 6);
-			JourneyScreenFour.identityProofIssuingAuthority();
-			JourneyScreenFour.idontHavePANNumberAsIhaveAppliedForPANAcknowledgementSelectFeildsValidation();
-			JourneyScreenFour.fillPanApplicationAcknowledgeNo();
-			JourneyScreenFour.setDateBirthdateOfApplication(1, 1, 9);
-			JourneyScreenFour.iAmExemptFromRequirementOfPANUnderFollowingProvisionsSelectFeildsValidation();
 
-		
-
-	}
 
 }

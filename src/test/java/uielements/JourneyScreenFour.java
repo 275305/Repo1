@@ -19,22 +19,41 @@ public class JourneyScreenFour extends ReusableActions {
 	@FindBy(xpath = "//div[@id='identityProof_id']")
 	static WebElement identityProofName;
 
-	@FindBy(xpath = "//div[@id='insurerHeightFeet_id']")
+	@FindBy(xpath = "//div[@id='feet_id']")
 	static WebElement feetPersonalDetailsDependent;
 
-	@FindBy(xpath = ".//*[@id='menu-insurerHeightFeet']/div[2]/ul/li[5]")
+	@FindBy(xpath = "//span[contains(text(),'Cancel')]")
+	public static WebElement cancelButton;
+
+	@FindBy(xpath = "//h2[(text()='Proceed to send Pre Issuance Verification Link to customer?')]")
+	public static WebElement proceedToSendPreInsuranceVerificationLinkToCustomerLabel;
+
+	@FindBy(xpath = "//button[@id='popupProceed']")
+	public static WebElement agreePopup;
+	/*
+	 * @FindBy(xpath = ".//*[@id='menu-insurerHeightFeet']/div[2]/ul/li[5]")
+	 * static WebElement selectingFeetDropDownOptionSelection;
+	 */
+
+	@FindBy(xpath = "//li[contains(text(),'4')]")
 	static WebElement selectingFeetDropDownOptionSelection;
 
 	@FindBy(xpath = ".//*[@id='menu-feet']/div[2]/ul/li[5]")
 	static WebElement selectingFeetDropDownOptionSelectionIndian;
 
-	@FindBy(xpath = "//div[@id='insurerHeightInches_id']")
+	/*@FindBy(xpath = "//label[contains(text(),'Inches')]")
+	static WebElement inchPersonalDetailsDependent;*/
+
+	@FindBy(xpath = "//div[@id='inches_id']")
 	static WebElement inchPersonalDetailsDependent;
 
 	@FindBy(xpath = "//*[@id='root']/main[1]/div[2]/form[1]/div[1]/div[1]/div[2]/div[1]/div[4]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1][@role=\"button\"]")
 	static WebElement inchPersonalDetailsIndian;
 
-	@FindBy(xpath = ".//*[@id='menu-insurerHeightInches']/div[2]/ul/li[5]")
+	/*@FindBy(xpath = ".//*[@id='menu-insurerHeightInches']/div[2]/ul/li[5]")
+	static WebElement selectingInchesDropDownOptionSelection;*/
+
+	@FindBy(xpath = "//li[contains(text(),'3')]")
 	static WebElement selectingInchesDropDownOptionSelection;
 
 	@FindBy(xpath = ".//*[@id='menu-inches']/div[2]/ul/li[5]")
@@ -70,13 +89,15 @@ public class JourneyScreenFour extends ReusableActions {
 	@FindBy(xpath = ".//*[@id='menu-identityProofIssuingAuthority']/div[2]/ul/li[1]")
 	static WebElement uniqueIdentificationAuthorityOfIndia;
 
-	@FindBy(xpath = "//label[contains(@for, 'CriminalChargesNo')]")
+	/*
+	 * @FindBy(xpath = "//label[contains(@for, 'CriminalChargesNo')]") public
+	 * static WebElement criminalChargesNo;
+	 */
+
+	@FindBy(xpath = "//input[@id='CriminalChargesNo']")
 	public static WebElement criminalChargesNo;
 
-
-
-
-
+	// input[@id='CriminalChargesNo']
 	@FindBy(xpath = "//div[@id='feet_id']")
 	public static WebElement feetDropDown;
 
@@ -137,7 +158,6 @@ public class JourneyScreenFour extends ReusableActions {
 	@FindBy(xpath = "//div[@id='feet_id']")
 	public static WebElement feetDropDownSAPPOSV;
 
-
 	@FindBy(xpath = "//span [(text()=\"Do you have any life or Critical Illness insurance policy issued, pending approval from any other insurance companies or has your application for Life/Health/Critical Illness insurance or its reinstatement ever been offered at modified terms, rejected or postponed?\")]")
 	public static WebElement labelCriticallIllness;
 
@@ -150,8 +170,17 @@ public class JourneyScreenFour extends ReusableActions {
 	@FindBy(xpath = "//label[contains(@for, 'CriticalIllnessNo')]")
 	public static WebElement criticalIllnessNoOption;
 
+	/*
+	 * @FindBy(xpath="//input[@id='CriticalIllnessNo']") static WebElement
+	 * criticalIllnessNoOption;
+	 */
+
 	@FindBy(xpath = "//label[contains(@for, 'HazardousActivitiesYes')]")
 	public static WebElement hazardousActivitiesYes;
+	/*
+	 * @FindBy(xpath = "//input[@id='HazardousActivitiesYes']") public static
+	 * WebElement hazardousActivitiesYes;
+	 */
 
 	@FindBy(xpath = "//label[contains(@for, 'HazardousActivitiesNo')]")
 	public static WebElement hazardousActivitiesNo;
@@ -198,17 +227,32 @@ public class JourneyScreenFour extends ReusableActions {
 	@FindBy(xpath = "//label[contains(@for, 'InsurerCriticalIllnessYes')]")
 	static WebElement InsurerCriticalIllnessYesInsurersDetails;
 
-	@FindBy(xpath = "//label[contains(@for, 'InsurerCriticalIllnessNo')]")
+	@FindBy(xpath = "//label[contains(@for, 'CriticalIllnessNo')]")
 	static WebElement InsurerCriticalIllnessNoInsurersDetails;
+
+	/*
+	 * @FindBy(xpath = "//input[@name='criticalIllnessPolicy' and @value='no']")
+	 * static WebElement InsurerCriticalIllnessNoInsurersDetails;
+	 */
 
 	@FindBy(xpath = "//label[contains(@for, 'InsurerHazardousActivitiesYes')]")
 	static WebElement InsurerHazardousActivitiesYesInsurersDetails;
 
-	@FindBy(xpath = "//label[contains(@for, 'InsurerHazardousActivitiesNo')]")
+	@FindBy(xpath = "//label[contains(@for, 'HazardousActivitiesNo')]")
 	static WebElement InsurerHazardousActivitiesNoInsurersDetails;
 
-	@FindBy(xpath = "//label[contains(@for, 'InsurerCriminalChargesNo')]")
+	/*
+	 * @FindBy(xpath = "//input[@name='hazardousActivities' and @value='no']")
+	 * static WebElement InsurerHazardousActivitiesNoInsurersDetails;
+	 */
+
+	@FindBy(xpath = "//label[contains(@for, 'CriminalChargesNo')]")
 	static WebElement InsurerCriminalChargesNoInsurersDetails;
+
+	/*
+	 * @FindBy(xpath = "//input[@name='criminalCharges' and @value='no']")
+	 * static WebElement InsurerCriminalChargesNoInsurersDetails;
+	 */
 
 	@FindBy(xpath = "//label[contains(@for, 'InsurerCriminalChargesYes')]")
 	static WebElement InsurerCriminalChargesYesInsurersDetails;
@@ -274,9 +318,9 @@ public class JourneyScreenFour extends ReusableActions {
 	}
 
 	public static void selectCriminalChargesNo() throws Exception {
-		Thread.sleep(200);
+
 		criminalChargesNo.click();
-		Thread.sleep(200);
+		Thread.sleep(1000);
 	}
 
 	public static void setKgsForLifestyle(int x, int y, int z) throws Exception {
@@ -284,8 +328,6 @@ public class JourneyScreenFour extends ReusableActions {
 		type(kgsTextBox, readingdataTestData(x, y, z));
 
 	}
-
-
 
 	public static void feetInchesKgsSelectionToMoveToScreen5() throws Exception {
 		Thread.sleep(300);
@@ -309,6 +351,22 @@ public class JourneyScreenFour extends ReusableActions {
 
 	}
 
+	public static void agreePopupToProceedToSendPreIssuranceVerificationLinkToCustomer() throws Exception {
+		// driver.switchTo().defaultContent();
+		// driver.switchTo().alert();
+		Thread.sleep(500);
+		waitTillElementToBeClickableLongWait(cancelButton);
+		Thread.sleep(500);
+		cancelButton.click();
+		waitTillElementToBeClickable(proceedToSendPreInsuranceVerificationLinkToCustomerLabel);
+		proceedToSendPreInsuranceVerificationLinkToCustomerLabel.isDisplayed();
+		waitTillElementToBeClickable(agreePopup);
+		System.out.println(agreePopup.isDisplayed());
+		Thread.sleep(500);
+		agreePopup.click();
+		Thread.sleep(500);
+
+		}
 
 	public static void arrowDownFunctionToScrollDown() throws Exception {
 		Thread.sleep(400);
@@ -336,6 +394,7 @@ public class JourneyScreenFour extends ReusableActions {
 		}
 		Thread.sleep(400);
 	}
+
 	public static void arrowUpFunctionToScrollUpTillTop() throws Exception {
 		Thread.sleep(400);
 		for (int i = 1; i < 11; i++) {
@@ -344,6 +403,7 @@ public class JourneyScreenFour extends ReusableActions {
 		}
 		Thread.sleep(400);
 	}
+
 	public static void iAmExemptFromTheRequirementOfPANUnderTheFollowingProvisionsOfTheITAct1961() throws Exception {
 		Thread.sleep(200);
 		iAmExemptFromTheRequirementOfPANUnderTheFollowingProvisionsOfTheITAct1961.click();
@@ -546,8 +606,8 @@ public class JourneyScreenFour extends ReusableActions {
 		LocalDate datw = LocalDate.now().plusDays(1L);
 		int day = datw.getDayOfMonth();
 		String runtimeXpathForSelectingDate = "day-" + day + "";
-		WebElement checkFutureDateIsEnabled = driver.findElement(By.xpath(
-				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\""
+		WebElement checkFutureDateIsEnabled = driver.findElement(By
+				.xpath("//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'outside-month'))] [@aria-label=\""
 						+ runtimeXpathForSelectingDate + "\"]"));
 		String classes = checkFutureDateIsEnabled.getAttribute("class");
 		boolean isDisabled = classes.contains("day--disabled");
@@ -633,7 +693,6 @@ public class JourneyScreenFour extends ReusableActions {
 
 	}
 
-
 	public static void selectingFeetInchesWeight() throws Exception {
 		Thread.sleep(200);
 		waitTillElementToBeClickable(feetPersonalDetailsDependent);
@@ -641,10 +700,12 @@ public class JourneyScreenFour extends ReusableActions {
 		waitTillElementToBeClickable(selectingFeetDropDownOptionSelection);
 		selectingFeetDropDownOptionSelection.click();
 		Thread.sleep(500);
-		waitTillElementToBeClickable(inchPersonalDetailsDependent);
+		/* Inches personal Life Style */
 		inchPersonalDetailsDependent.click();
-		waitTillElementToBeClickable(selectingInchesDropDownOptionSelection);
+		waitTillElementToBeClickable(inchPersonalDetailsDependent);
+
 		selectingInchesDropDownOptionSelection.click();
+		waitTillElementToBeClickable(selectingInchesDropDownOptionSelection);
 		Thread.sleep(500);
 
 	}
@@ -687,14 +748,14 @@ public class JourneyScreenFour extends ReusableActions {
 
 	public static void selectingNoOptionForAllMedicalQusetion() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenFour.class);
-		Thread.sleep(200);
-		waitTillElementToBeClickable(InsurerCriticalIllnessNoInsurersDetails);
 		InsurerCriticalIllnessNoInsurersDetails.click();
-		waitTillElementToBeClickable(InsurerHazardousActivitiesNoInsurersDetails);
+		waitTillElementToBeClickable(InsurerCriticalIllnessNoInsurersDetails);
 		InsurerHazardousActivitiesNoInsurersDetails.click();
-		waitTillElementToBeClickable(InsurerCriminalChargesNoInsurersDetails);
+		waitTillElementToBeClickable(InsurerHazardousActivitiesNoInsurersDetails);
 		InsurerCriminalChargesNoInsurersDetails.click();
-		selectingFeetInchesWeight();
+		waitTillElementToBeClickable(InsurerCriminalChargesNoInsurersDetails);
+
+		//selectingFeetInchesWeight();
 	}
 
 	public static void selectingNoOptionForAllMedicalQusetionIndian() throws Exception {

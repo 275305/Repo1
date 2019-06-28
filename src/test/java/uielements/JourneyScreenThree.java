@@ -359,7 +359,7 @@ public class JourneyScreenThree extends ReusableActions {
 	@FindBy(xpath = "//input[@placeholder='Search a state']")
 	static WebElement statePayorNameSelectedYes;
 
-	@FindBy(xpath = "//input[@name='payorAnnualIncome']")
+	@FindBy(xpath = "//input[@name='income']")
 	static WebElement annualIncomePayorSelectedYes;
 
 	@FindBy(xpath = "//input[@name='income']")
@@ -999,9 +999,9 @@ public class JourneyScreenThree extends ReusableActions {
 
 	public static void typeOfAccountOptionSelection() throws Exception {
 		typeOfAcc();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		typeOfAccOption();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 
 	}
 
@@ -1076,9 +1076,13 @@ public class JourneyScreenThree extends ReusableActions {
 
 	public static void educationDropDownOptionList() throws Exception {
 		waitTillElementToBeClickable(education);
-		education.click();
+
+		Actions actions = new Actions(driver);
+		actions.moveToElement(education).click().perform();
+		//education.click();
 		Thread.sleep(2000);
-		education1stOption.click();
+		actions.moveToElement(education1stOption).click().perform();
+		//education1stOption.click();
 		Thread.sleep(2000);
 	}
 
@@ -3461,6 +3465,10 @@ public class JourneyScreenThree extends ReusableActions {
 		}
 		return age;
 
+	}
+
+	public static void scrollDownPage(){
+		((JavascriptExecutor) driver).executeScript("window.scrollBy(0,750)", "");
 	}
 
 }
