@@ -94,7 +94,7 @@ public class JourneyScreenFour extends ReusableActions {
 	 * static WebElement criminalChargesNo;
 	 */
 
-	@FindBy(xpath = "//input[@id='CriminalChargesNo']")
+	@FindBy(xpath = "//label[contains(@for,'CriminalChargesNo')]")
 	public static WebElement criminalChargesNo;
 
 	// input[@id='CriminalChargesNo']
@@ -819,6 +819,16 @@ public class JourneyScreenFour extends ReusableActions {
 		System.out.println("actualResultRadioButtonValue" + actualResultRadioButtonValue);
 		comparisonOfListForExpectedAndActualResult(expectedResultRadioButtonValue, actualResultRadioButtonValue);
 
+	}
+
+	public static void arrowDownFunctionToScrollDownTillBottomFastTrack() throws Exception {
+		Thread.sleep(400);
+		for (int i = 1; i < 20; i++) {
+			Actions action = new Actions(driver);
+			action.sendKeys(Keys.ARROW_DOWN).build().perform();
+		}
+		Thread.sleep(400);
+		// Proceedbtn.click();
 	}
 
 }

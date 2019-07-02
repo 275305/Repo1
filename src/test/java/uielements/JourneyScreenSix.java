@@ -140,10 +140,7 @@ public class JourneyScreenSix extends ReusableActions {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//span[contains(text(),'Payment')]")).click();
 		Thread.sleep(4000);// Wiating for posv manualyyyyy
-		String policyNumberFromUI = driver
-				.findElement(
-						By.xpath("//span[@id='proposalNumberId']"))
-				.getText();
+		String policyNumberFromUI = driver.findElement(By.xpath("//span[@id='proposalNumberId']")).getText();
 		System.out.println(policyNumberFromUI);
 
 		String[] policyNumberFromUISplitting = policyNumberFromUI.split(" ");
@@ -187,16 +184,18 @@ public class JourneyScreenSix extends ReusableActions {
 		System.out.println("After converting it ti int" + policyNumber);
 
 		/*
-		 * HomePage.clickDashboard(); driver.findElement( By.
-		 * xpath("//input[@placeholder='Enter email id/ Mobile no / Proposal number /Transaction ID']"
+		 * HomePage.clickDashboard(); driver.findElement( By. xpath(
+		 * "//input[@placeholder='Enter email id/ Mobile no / Proposal number /Transaction ID']"
 		 * )) .sendKeys(policyNumberFromUISplitting[2]);
-		 * 
+		 *
 		 * driver.findElement(By.xpath("//label[@for='policyNumber']")).click();
-		 * driver.findElement(By.xpath("//button[@type='submit']")).click(); boolean
-		 * policyIsDisplayed = driver.findElement(By.xpath("//th[(text()=" +
-		 * policyNumber + ")]")).isDisplayed(); System.out.println(policyIsDisplayed);
-		 * driver.findElement(By.xpath("//th[(text()=" + policyNumber + ")]")).click();
-		 * // waitTillElementToBeClickable(paymetPage); Thread.sleep(1500);
+		 * driver.findElement(By.xpath("//button[@type='submit']")).click();
+		 * boolean policyIsDisplayed =
+		 * driver.findElement(By.xpath("//th[(text()=" + policyNumber +
+		 * ")]")).isDisplayed(); System.out.println(policyIsDisplayed);
+		 * driver.findElement(By.xpath("//th[(text()=" + policyNumber +
+		 * ")]")).click(); // waitTillElementToBeClickable(paymetPage);
+		 * Thread.sleep(1500);
 		 */
 
 	}
@@ -205,9 +204,7 @@ public class JourneyScreenSix extends ReusableActions {
 		Thread.sleep(1800);
 		waitTillElementToBeClickable(policyTranactionSearchBox);
 		// HomePage.clickDashboard();
-		driver.findElement(
-				By.xpath("//input[@id='policyTranactionSearchBox']"))
-				.sendKeys(str2);
+		driver.findElement(By.xpath("//input[@id='policyTranactionSearchBox']")).sendKeys(str2);
 		Thread.sleep(500);
 		driver.findElement(By.xpath("//label[@for='policyNumber']")).click();
 		Thread.sleep(500);
@@ -229,8 +226,8 @@ public class JourneyScreenSix extends ReusableActions {
 		Calendar calendar = Calendar.getInstance();
 		int currentDay = calendar.get(Calendar.DAY_OF_MONTH);
 		String runtimeXpathForSelectingDate = "day-" + currentDay + "";
-		driver.findElement(By.xpath(
-				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'disabled'))] [@aria-label=\""
+		driver.findElement(By
+				.xpath("//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'disabled'))] [@aria-label=\""
 						+ runtimeXpathForSelectingDate + "\"]"))
 				.click();
 
@@ -292,7 +289,6 @@ public class JourneyScreenSix extends ReusableActions {
 		factFinderUpload.click();
 		Thread.sleep(500);
 		addButtonFactFinder.click();
-		
 
 	}
 
@@ -360,8 +356,8 @@ public class JourneyScreenSix extends ReusableActions {
 		Calendar calendar = Calendar.getInstance();
 		int currentDay = calendar.get(Calendar.DAY_OF_MONTH);
 		String runtimeXpathForSelectingDate = "day-" + currentDay + "";
-		driver.findElement(By.xpath(
-				"//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'disabled'))] [@aria-label=\""
+		driver.findElement(By
+				.xpath("//div[contains(@class, 'react-datepicker__month-container')]/div[contains(@class, 'react-datepicker__month')]/div/div[not(contains(@class,'disabled'))] [@aria-label=\""
 						+ runtimeXpathForSelectingDate + "\"]"))
 				.click();
 
@@ -388,27 +384,29 @@ public class JourneyScreenSix extends ReusableActions {
 
 	/*
 	 * public static void prePopulationOCRAadhar() throws Exception {
-	 * PageFactory.initElements(driver, JourneyScreenOnePANOCR.class); Screen s =
-	 * new Screen(); String
+	 * PageFactory.initElements(driver, JourneyScreenOnePANOCR.class); Screen s
+	 * = new Screen(); String
 	 * filepath="C:\\Matrix\\qa\\src\\test\\resources\\SkuliImages\\"; String
-	 * inputFilePath ="C:\\Matrix\\qa\\src\\test\\resources\\SkuliImages\\"; Pattern
-	 * openButton = new Pattern(filepath + "Open.PNG"); Pattern fileName = new
-	 * Pattern(filepath + "ToBeEnterThePath.PNG"); aadhaarOCR(); Thread.sleep(500);
-	 * frontUpload(); s.wait(fileName, 80); s.type(fileName, inputFilePath +
-	 * "AadharCard.jpg"); s.click(openButton); Thread.sleep(8000); Actions action =
-	 * new Actions(driver); action.sendKeys(Keys.ESCAPE).build().perform();
-	 * Thread.sleep(2000); }
+	 * inputFilePath ="C:\\Matrix\\qa\\src\\test\\resources\\SkuliImages\\";
+	 * Pattern openButton = new Pattern(filepath + "Open.PNG"); Pattern fileName
+	 * = new Pattern(filepath + "ToBeEnterThePath.PNG"); aadhaarOCR();
+	 * Thread.sleep(500); frontUpload(); s.wait(fileName, 80); s.type(fileName,
+	 * inputFilePath + "AadharCard.jpg"); s.click(openButton);
+	 * Thread.sleep(8000); Actions action = new Actions(driver);
+	 * action.sendKeys(Keys.ESCAPE).build().perform(); Thread.sleep(2000); }
 	 */
 
 	public static void prePopulationDocumentVault() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenSix.class);
 		Screen s = new Screen();
-		String filepath = "C:\\Matrix\\mpro-automation\\src\\test\\resources\\SkuliImages\\";
-		String inputFilePath = "C:\\Matrix\\mpro-automation\\src\\test\\resources\\SkuliImages\\";
-		
-		Pattern openButton = new Pattern(filepath + "Open.PNG");
-		Pattern fileName = new Pattern(filepath + "ToBeEnterThePath.PNG");
-
+		String filepath = System.getProperty("user.dir");
+		// String filepath =
+		// "C:\\Matrix\\mpro-automation\\src\\test\\resources\\SkuliImages\\";
+		// String inputFilePath =
+		// "C:\\Matrix\\mpro-automation\\src\\test\\resources\\SkuliImages\\";
+		String inputFilePath = System.getProperty("user.dir");
+		Pattern openButton = new Pattern(filepath + "SkuliImages\\Open.PNG");
+		Pattern fileName = new Pattern(filepath + "SkuliImages\\ToBeEnterThePath.PNG");
 		proposerDocument();
 
 		s.wait(fileName, 80);
@@ -462,7 +460,6 @@ public class JourneyScreenSix extends ReusableActions {
 	public static void photographOfProposerUpload() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenSix.class);
 
-
 		photographOfProposer();
 
 		desktopFileUpload();
@@ -510,7 +507,6 @@ public class JourneyScreenSix extends ReusableActions {
 		Thread.sleep(500);
 		// addButtonFactFinder.click();
 
-
 		submitButtonPopup.click();
 
 	}
@@ -544,6 +540,7 @@ public class JourneyScreenSix extends ReusableActions {
 		}
 		Thread.sleep(400);
 	}
+
 	public static void termsAndCondition() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenSix.class);
 		waitTillElementToBeClickable(outsideClick);
@@ -570,11 +567,8 @@ public class JourneyScreenSix extends ReusableActions {
 
 	}
 
-	
 	public static void takingBackVALUE() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenSix.class);
-
-		
 
 	}
 
@@ -591,7 +585,7 @@ public class JourneyScreenSix extends ReusableActions {
 		robot.keyRelease(KeyEvent.VK_CONTROL);
 
 		Thread.sleep(1000);
-		
+
 		robot.keyPress(KeyEvent.VK_F5);
 		robot.keyRelease(KeyEvent.VK_F5);
 
@@ -618,7 +612,6 @@ public class JourneyScreenSix extends ReusableActions {
 
 		paymentChequeNumber(1, 1, 4);
 
-
 		paymentChequeDate();
 
 		paymentChequePayableAt();
@@ -637,7 +630,7 @@ public class JourneyScreenSix extends ReusableActions {
 		Thread.sleep(800);
 		cancelledChequeWithNameRequired();
 		Thread.sleep(800);
-		
+
 		ecsMandateForm();
 		Thread.sleep(800);
 		factFinder();
@@ -653,18 +646,20 @@ public class JourneyScreenSix extends ReusableActions {
 
 		/*
 		 * Thread.sleep(1000);
-		 * driver.findElement(By.xpath("//span[contains(text(),'Payment')]")).click();
-		 * Thread.sleep(4000);// Wiating for posv manualyyyyy String policyNumberFromUI
-		 * = driver.findElement(By.xpath("//span[@id='proposalNumberId']")).getText();
-		 * System.out.println(policyNumberFromUI);
-		 * 
+		 * driver.findElement(By.xpath("//span[contains(text(),'Payment')]")).
+		 * click(); Thread.sleep(4000);// Wiating for posv manualyyyyy String
+		 * policyNumberFromUI =
+		 * driver.findElement(By.xpath("//span[@id='proposalNumberId']")).
+		 * getText(); System.out.println(policyNumberFromUI);
+		 *
 		 * String[] policyNumberFromUISplitting = policyNumberFromUI.split(" ");
-		 * System.out.println("str2" + Arrays.toString(policyNumberFromUISplitting));
+		 * System.out.println("str2" +
+		 * Arrays.toString(policyNumberFromUISplitting));
 		 * System.out.println("str2" + policyNumberFromUISplitting[2]); str2 =
 		 * policyNumberFromUISplitting[2];
-		 * 
-		 * policyNumber = Integer.parseInt(str2);
-		 * System.out.println("After converting it ti int" + policyNumber);
+		 *
+		 * policyNumber = Integer.parseInt(str2); System.out.println(
+		 * "After converting it ti int" + policyNumber);
 		 */
 
 		HomePage.clickDashboard();
@@ -683,4 +678,146 @@ public class JourneyScreenSix extends ReusableActions {
 		Thread.sleep(1500);
 
 	}
+
+	public static void desktopFileUploading() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenSix.class);
+		Thread.sleep(2800);
+		Screen s = new Screen();
+
+		s.type("A");
+		s.type(Key.DOWN);
+		Thread.sleep(5000);
+		s.type(Key.ENTER);
+	}
+
+	public static void communicationAddressProofFTSP() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenSix.class);
+		Screen s = new Screen();
+
+		// String filepath =// "C:\\Matrix\\mpro-automation\\src\\test\\resources\\SkuliImages\\";
+
+		String FilePath = System.getProperty("user.dir");
+		// String inputFilePath =// "C:\\Matrix\\mpro-automation\\src\\test\\resources\\SkuliImages\\";
+		Pattern openButton = new Pattern(FilePath + "\\src\\test\\resources\\SkuliImages\\Open.PNG");
+		Pattern fileName = new Pattern(FilePath + "\\src\\test\\resources\\SkuliImages\\ToBeEnterThePath.PNG");
+		String filepath = "C:\\Matrix\\mpro-automation\\src\\test\\resources\\SkuliImages\\";
+		String inputFilePath = "C:\\Matrix\\mpro-automation\\src\\test\\resources\\SkuliImages\\";
+		//Pattern openButton = new Pattern(filepath + "Open.PNG");
+		//Pattern fileName = new Pattern(filepath + "ToBeEnterThePath.PNG");
+
+		communicationAddressProf();
+
+		s.wait(fileName, 2000);
+		s.type(fileName, inputFilePath);
+		s.type(Key.ENTER);
+
+		// s.click(openButton);
+
+		desktopFileUploading();
+
+		Thread.sleep(500);
+		submitButtonPopup.click();
+
+	}
+
+	public static void copyOfPAN() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenSix.class);
+
+		// copyOfPANCard();
+
+		// desktopFileUpload();
+		Screen s = new Screen();
+
+		String filepath = "C:\\Matrix\\mpro-automation\\src\\test\\resources\\SkuliImages\\";
+		Pattern filename = new Pattern(filepath + "Open.PNG");
+		s.wait(filename, 230);
+
+		s.type("check"); // s.wait(230); s.type(Key.DOWN); s.wait();
+
+		s.type(Key.ENTER);
+
+		s.wait(filename, 230);
+
+		s.type("\"BaadharCard.jpg\" \"AadharCard.jpg\" ");
+		s.type(Key.ENTER);
+
+		Thread.sleep(500); // addButtonFactFinder.click();
+
+		submitButtonPopup.click();
+
+	}
+
+	/* Switching back to main window screen six FTSP */
+	public static void switchingBackToMainWindowScreenSixFTSP() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenSix.class);
+		Thread.sleep(1000);
+
+		System.out.println(policyNumber);
+		Robot robot = new Robot();
+
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_F5);
+		robot.keyRelease(KeyEvent.VK_F5);
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+
+		Thread.sleep(1000);
+
+		robot.keyPress(KeyEvent.VK_F5);
+		robot.keyRelease(KeyEvent.VK_F5);
+
+		Thread.sleep(4000);
+
+		System.out.println(policyNumber);
+		fetchingPolicyNumberAndCompletingTheJourneyForTPP();
+
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_F5);
+		robot.keyRelease(KeyEvent.VK_F5);
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+
+		Thread.sleep(1000);
+
+		robot.keyPress(KeyEvent.VK_F5);
+		robot.keyRelease(KeyEvent.VK_F5);
+
+		Thread.sleep(4000);
+
+		// paymentScreen.click();
+		Thread.sleep(800);
+		ChequeOptionButton.click();
+
+		paymentChequeNumber(1, 1, 4);
+
+		paymentChequeDate();
+
+		paymentChequePayableAt();
+
+		paymentChequeBankName(1, 1, 4);
+		paymentChequeMicr(1, 1, 4);
+
+		Thread.sleep(800);
+		// prePopulationDocumentVault();
+		// Thread.sleep(800);
+
+		communicationAddressProofFTSP();
+		Thread.sleep(800);
+		identityProofOrDOB();
+		Thread.sleep(800);
+		photographOfProposerUpload();
+		Thread.sleep(800);
+		copyOfPAN();
+		Thread.sleep(800);
+		cancelledChequeWithNameRequired();
+		Thread.sleep(800);
+		ecsMandateForm();
+		Thread.sleep(800);
+		// investorRiskProfile();
+		Thread.sleep(800);
+		factFinder();
+		Thread.sleep(800);
+
+		// vernacularDeclaration();
+		// Thread.sleep(800);
+	}
+
 }

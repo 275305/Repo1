@@ -227,7 +227,9 @@ public class ReusableActions {
 
 	public static String getColumnDataAsPerTheForLoopRow(XSSFSheet sheet, int rowNum, int column) {
 		XSSFCell cellpremiumCommitment = sheet.getRow(rowNum).getCell(column);
-		String premiumCommitmentFromExcell = cellpremiumCommitment.getStringCellValue();
+		//String premiumCommitmentFromExcell = cellpremiumCommitment.getStringCellValue();
+		DataFormatter formatter = new DataFormatter();
+		String premiumCommitmentFromExcell = formatter.formatCellValue(sheet.getRow(rowNum).getCell(column));
 		return premiumCommitmentFromExcell;
 	}
 

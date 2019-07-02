@@ -525,6 +525,26 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//div[@id='premiumType_id']")
 	static WebElement premiumTypeSAPDropDown;
 
+	// XPATH for singlepayPremiumtype
+	@FindBy(xpath = "//li[@id='liId_Single Pay']")
+	static WebElement premiumType1stOptionSAP;
+
+	// XPATH for limitedpayPremiumtype
+	@FindBy(xpath = "//li[@id='liId_Limited Pay']")
+	static WebElement premiumType2ndOptionSAP;
+
+	// XPATH for Single premiumPaymenttype
+	@FindBy(xpath = "//li[@id='liId_1']")
+	static WebElement premiumpaymentterm1stoption;
+
+	// XPATH for Limited premiumPaymenttype
+	@FindBy(xpath = "//li[@id='liId_5']")
+	static WebElement premiumpaymentterm1stoptionforlimited;
+
+	// XPATH for policyTerm for SinglePay Premium
+	@FindBy(xpath = "//li[@id='liId_10']")
+	static WebElement policyterm1stOption;
+
 	@FindBy(xpath = "//label[contains(text(),'Dividend Option')]")
 	static WebElement dividentOption;
 
@@ -548,6 +568,14 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	@FindBy(xpath = "//div[@id='premiumPaymentTerm_id']")
 	static WebElement premiumPaymentTermFTSP;
+
+	// XPATH for PremiumPaymentTermFTSP 20
+	@FindBy(xpath = "//li[@id='liId_20']")
+	static WebElement premiumPaymentTermFTSP20;
+
+	// XPATH for PremiumPaymentTermFTSP 5
+	@FindBy(xpath = "//li[@id='liId_5']")
+	static WebElement premiumPaymentTermFTSP5;
 
 	@FindBy(xpath = "//label[text()='Dividend Adjustment']")
 	static WebElement dividendAdjustment;
@@ -730,11 +758,23 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//div[@id='modeOfPayment_id']")
 	static WebElement modeOfPaymentSAPDropDown;
 
+	// XPATH for Monthly Mode of payment
+	@FindBy(xpath = "//li[@id='liId_Monthly']")
+	static WebElement modeOfPaymentMonthly;
+
 	@FindBy(xpath = "//div[@id='modeOfPayment_id']")
 	static WebElement modeOfPaymentSTPDependent;
 
 	@FindBy(xpath = "//div[@id='modeOfPayment_id']")
 	static WebElement modeOfPaymentFTSP;
+
+	// XPATH for Quaterly Mode of payment
+	@FindBy(xpath = "//li[@id='liId_Quarterly']")
+	static WebElement modeOfPaymentquaterly;
+
+	// XPATH for SemiAnnual Mode of payment
+	@FindBy(xpath = "//li[@id='liId_Semi-Annual']")
+	static WebElement modeOfPaymentSemiannual;
 
 	@FindBy(xpath = "//div[@id='modeOfPayment_id']")
 	static WebElement modeOfPaymentWLS;
@@ -880,8 +920,9 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//li[@id='react-autowhatever-permanentCity--item-0']")
 	static WebElement city1stOption;
 
-	@FindBy(xpath="//li[contains(text(),'Spouse')]")
+	@FindBy(xpath = "//li[contains(text(),'Spouse')]")
 	static WebElement proposerDropdown;
+
 	/*
 	 * @FindBy(xpath = "//div[@id='insurerDateOfBirth_id']") static WebElement
 	 * dateOfBirthIssurer;
@@ -889,6 +930,26 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	@FindBy(xpath = "//input[@name='insurerDateOfBirth']")
 	static WebElement dateOfBirthIssurer;
+
+	// XPATH for AccidentalDeathAndDismembermentRider detail
+	@FindBy(xpath = "//input[@name='isAccidentalDeathAndDismembermentRider']")
+	static WebElement ADDRidercheckbox;
+
+	// XPATH for AccidentalDeathAndDismembermentRider amount
+	@FindBy(xpath = "//input[@name='accidentalDeathAddAmount']")
+	static WebElement ADDRideramount;
+
+	// XPATH for TermPlusRider Amt
+	@FindBy(xpath = "//input[@name='termPlusAddAmount']")
+	static WebElement termPlusAmount;
+
+	// XPATH for Rider Term
+	@FindBy(xpath = "//div[@id='riderTerm_id']")
+	static WebElement riderterm;
+
+	// for dropdown25
+	@FindBy(xpath = "//li[@id='liId_25']")
+	static WebElement dropDown25;
 
 	public static void selectByDropdown() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
@@ -1644,10 +1705,10 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	public static void arrowDownFunctionToScrollDown() throws Exception {
 
-		/*for (int i = 1; i < 12; i++) {*/
-			Actions action = new Actions(driver);
-			action.sendKeys(Keys.ARROW_DOWN).build().perform();
-		//}
+		/* for (int i = 1; i < 12; i++) { */
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.ARROW_DOWN).build().perform();
+		// }
 		Thread.sleep(3000);
 	}
 
@@ -2911,8 +2972,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		type(alternateMobileNo, readingdata(x, y, z));
 		String alternateMobileDataFromExcel = alternateMobileNo.getAttribute("value");
 		int size = alternateMobileDataFromExcel.length();
-		if (size == 10 && !alternateMobileDataFromExcel.contains("@")
-				&& !alternateMobileDataFromExcel.contains("A")) {
+		if (size == 10 && !alternateMobileDataFromExcel.contains("@") && !alternateMobileDataFromExcel.contains("A")) {
 			logger.info("Test case pass:- As alternate mobile number feild length is 10 and accepting numeric only");
 		} else {
 			Assert.fail(
@@ -3254,7 +3314,7 @@ public class JourneyScreenTwo extends ReusableActions {
 			if (!parent.equals(child_window)) {
 				driver.switchTo().window(child_window);
 				System.out.println(driver.switchTo().window(child_window).getTitle());
-				//driver.close();
+				// driver.close();
 
 			}
 
@@ -3273,7 +3333,7 @@ public class JourneyScreenTwo extends ReusableActions {
 			if (!parent.equals(child_window)) {
 				driver.switchTo().window(child_window);
 				System.out.println(driver.switchTo().window(child_window).getTitle());
-				//driver.close();
+				// driver.close();
 			}
 		}
 		driver.switchTo().window(parent);
@@ -3377,10 +3437,10 @@ public class JourneyScreenTwo extends ReusableActions {
 		removeNulls(actualResult);
 		System.out.println("Size of list of UI error msg   " + actualResult.size());
 		System.out.println("List of UI error msg   " + actualResult);
-		 file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
-		 fileInputStream = new FileInputStream(file);
-		 hssfWorkbook = new XSSFWorkbook(fileInputStream);
-	 sheet = hssfWorkbook.getSheetAt(sheetNo);
+		file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
+		fileInputStream = new FileInputStream(file);
+		hssfWorkbook = new XSSFWorkbook(fileInputStream);
+		sheet = hssfWorkbook.getSheetAt(sheetNo);
 		int lastRow = sheet.getLastRowNum();
 		while (lastRow >= 0 && sheet.getRow(lastRow).getCell(columnNo) == null) {
 			lastRow--;
@@ -3657,8 +3717,9 @@ public class JourneyScreenTwo extends ReusableActions {
 		XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
 		XSSFSheet sheet = hssfWorkbook.getSheetAt(8);
 
-		String premiumCommitmentFromExcell = getColumnDataAsPerTheForLoopRow(sheet, 1, 6);
-
+		// String premiumCommitmentFromExcell =
+		// getColumnDataAsPerTheForLoopRow(sheet, 1, 6);
+		String premiumCommitmentFromExcell = getColumnDataAsPerTheForLoopRow(sheet, 1, 7);
 		String growthSuperFundFromExcell = getColumnDataAsPerTheForLoopRow(sheet, 3, 0);
 
 		String secureFundFromExcell = getColumnDataAsPerTheForLoopRow(sheet, 3, 1);
@@ -3688,7 +3749,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		growthFund.sendKeys(growthFundFromExcell);
 
 		JourneyScreenTwo.clickSubmitButton();
-		Thread.sleep(14000);
+		Thread.sleep(4000);
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 		System.out.println(tabs.size());
 
@@ -3852,7 +3913,8 @@ public class JourneyScreenTwo extends ReusableActions {
 		int totalNumOfRows = sheet.getLastRowNum();
 		System.out.println("\n Total num of rows found " + totalNumOfRows);
 
-		for (int rowNum = 1; rowNum < totalNumOfRows; rowNum++) {
+		/*for (int rowNum = 1; rowNum < totalNumOfRows; rowNum++) {*/
+		for (int rowNum = 1; rowNum < 2; rowNum++) {
 			validatingErrorMsgForSAP(sheet, rowNum);
 		}
 		hssfWorkbook.close();
@@ -4193,8 +4255,7 @@ public class JourneyScreenTwo extends ReusableActions {
 			productDetails.click();
 			Thread.sleep(1000);
 
-		}
-		else {
+		} else {
 			Assert.fail("Either PDF is not generating or Loading time is too much for STP");
 
 		}
@@ -5368,12 +5429,9 @@ public class JourneyScreenTwo extends ReusableActions {
 		System.out.println(datw);
 		LocalDate moreThan44 = datw.minusYears(1);
 
-
 		int month = moreThan44.getMonthValue() - 1;
 		int day = moreThan44.getDayOfMonth();
 		int year = moreThan44.getYear();
-
-
 
 		driver.findElement(By.xpath("//select[@class='react-datepicker__month-select']")).click();
 		Thread.sleep(500);
@@ -5395,7 +5453,6 @@ public class JourneyScreenTwo extends ReusableActions {
 	public static void setDateBirthPayorDetailsMoreThan1YearOf44Years() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenThree.class);
 
-
 		waitTillElementToBeClickable(dateOfBirthPersonalDetails);
 		dateOfBirthPersonalDetails.click();
 		Thread.sleep(800);
@@ -5404,12 +5461,9 @@ public class JourneyScreenTwo extends ReusableActions {
 		System.out.println(datw);
 		LocalDate moreThan44 = datw.minusYears(1);
 
-
 		int month = moreThan44.getMonthValue() - 1;
 		int day = moreThan44.getDayOfMonth();
 		int year = moreThan44.getYear();
-
-
 
 		driver.findElement(By.xpath("//select[@class='react-datepicker__month-select']")).click();
 		Thread.sleep(500);
@@ -5430,7 +5484,6 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	public static void setDateBirthPayorDetailOf18Age() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenThree.class);
-
 
 		waitTillElementToBeClickable(dateOfBirthPersonalDetails);
 		dateOfBirthPersonalDetails.click();
@@ -5461,7 +5514,6 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	public static void setDateBirthPayorDetailOf60Age() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenThree.class);
-
 
 		waitTillElementToBeClickable(dateOfBirthPersonalDetails);
 		dateOfBirthPersonalDetails.click();
@@ -5641,9 +5693,9 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	}
 
-	public static void relationShipProposer() throws Exception{
-        click(proposerDropdown);
-        Thread.sleep(1000);
+	public static void relationShipProposer() throws Exception {
+		click(proposerDropdown);
+		Thread.sleep(1000);
 	}
 
 	public static void relationshipWithProposerParentOption() throws Exception {
@@ -5994,4 +6046,317 @@ public class JourneyScreenTwo extends ReusableActions {
 		}
 	}
 
+	// Function for FTS PremiumPaymentTerm 5
+	public static void premiumPayementTermFTSPoption5() throws Exception {
+		waitTillElementToBeClickable(premiumPaymentTermFTSP);
+		premiumPaymentTermFTSP.click();
+		premiumPaymentTermFTSP5.click();
+		// waitTillElementToBeClickable(PremiumPaymentTermFTSP);
+		// PremiumPaymentTermFTSP.click();
+		Thread.sleep(2000);
+
+	}
+
+	// Function for FTSP premiumPaymentTerm option 5
+	public static void fillingAllTheRequiredFeildsForFTSPoption5() throws Exception {
+		selectByDropdownNeedOfInsur();
+		selectByDropdownLifeStge();
+
+		// driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[2]/form[1]/div[1]/div[1]/div[3]")).click();
+		// arrowDownFunctionToScrollDown();
+
+		premiumPayementTermFTSPoption5();
+		policyTermFTSP();
+		JourneyScreenFour.arrowDownFunctionToScrollDown();
+		modeOfPaymentFTSP();
+		dynamicFundAllocationNo();
+		systematicTransferPlanNo();
+
+		/*
+		 * premiumCommitment(3, 1, 15); chooseYourFundYes(); growthSuperFund(3,
+		 * 1, 16); secureFund(3, 2, 16); conservativeFund(3, 3, 16);
+		 * highGrowthFund(3, 4, 16); BalancedFund(3, 5, 16); growthFund(3, 6,
+		 * 16);
+		 */}
+
+	public static void modeOfPaymentFTSPSemiannual() throws Exception {
+		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Thread.sleep(400);
+		waitTillElementToBeClickable(modeOfPaymentFTSP);
+		modeOfPaymentFTSP.click();
+		waitTillElementToBeClickable(modeOfPaymentSemiannual);
+		modeOfPaymentSemiannual.click();
+		Thread.sleep(2000);
+	}
+
+	// Function for FTSP premiumPaymentTerm option 5 for SemiAnnualModeOfPayment
+	public static void fillingAllTheRequiredFeildsForFTSPoption5forSemiAnnual() throws Exception {
+		selectByDropdownNeedOfInsur();
+		selectByDropdownLifeStge();
+
+		// driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[2]/form[1]/div[1]/div[1]/div[3]")).click();
+		// arrowDownFunctionToScrollDown();
+
+		premiumPayementTermFTSPoption5();
+		policyTermFTSP();
+		JourneyScreenFour.arrowDownFunctionToScrollDown();
+		modeOfPaymentFTSPSemiannual();
+		dynamicFundAllocationNo();
+		systematicTransferPlanNo();
+
+		/*
+		 * premiumCommitment(3, 1, 15); chooseYourFundYes(); growthSuperFund(3,
+		 * 1, 16); secureFund(3, 2, 16); conservativeFund(3, 3, 16);
+		 * highGrowthFund(3, 4, 16); BalancedFund(3, 5, 16); growthFund(3, 6,
+		 * 16);
+		 */}
+
+	// Function for FTS PremiumPaymentTerm 20
+	public static void premiumPayementTermFTSPoption20() throws Exception {
+		waitTillElementToBeClickable(premiumPaymentTermFTSP);
+		premiumPaymentTermFTSP.click();
+		premiumPaymentTermFTSP20.click();
+		// waitTillElementToBeClickable(PremiumPaymentTermFTSP);
+		// PremiumPaymentTermFTSP.click();
+		Thread.sleep(2000);
+
+	}
+
+	public static void modeOfPaymentQuaterly() throws Exception {
+		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Thread.sleep(400);
+		waitTillElementToBeClickable(modeOfPaymentFTSP);
+		modeOfPaymentFTSP.click();
+		waitTillElementToBeClickable(modeOfPaymentquaterly);
+		modeOfPaymentquaterly.click();
+		Thread.sleep(2000);
+	}
+
+	// Function for FTSP premiumPaymentTerm option 20 for QuaterlyModeOfPayment
+	public static void fillingAllTheRequiredFeildsForFTSPoption20forQuaterly() throws Exception {
+		selectByDropdownNeedOfInsur();
+		selectByDropdownLifeStge();
+
+		// driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[2]/form[1]/div[1]/div[1]/div[3]")).click();
+		// arrowDownFunctionToScrollDown();
+
+		premiumPayementTermFTSPoption20();
+		policyTermFTSP();
+		JourneyScreenFour.arrowDownFunctionToScrollDown();
+		modeOfPaymentQuaterly();
+		dynamicFundAllocationNo();
+		systematicTransferPlanNo();
+
+		/*
+		 * premiumCommitment(3, 1, 15); chooseYourFundYes(); growthSuperFund(3,
+		 * 1, 16); secureFund(3, 2, 16); conservativeFund(3, 3, 16);
+		 * highGrowthFund(3, 4, 16); BalancedFund(3, 5, 16); growthFund(3, 6,
+		 * 16);
+		 */}
+
+	// function for SinglePayPremium type
+	public static void fillingAllTheRequiredFeildsForSAPsinglePremiumType() throws Exception {
+		selectByDropdownNeedOfInsur();
+		selectByDropdownLifeStge();
+		premiumTypeSAPoption1();
+		SinglePaypremiumPayementTermSAP();
+		policyTermSAPoption1();
+		modeOfPaymentSAP();
+		dividentOptionWLS();
+
+	}
+
+	// function for LimitedPayPremium type for ADDRider
+	public static void fillingAllTheRequiredFeildsForSAPlimitedPremiumType() throws Exception {
+		selectByDropdownNeedOfInsur();
+		selectByDropdownLifeStge();
+		premiumTypeSAPoption2();
+		LimitedPaypremiumPayementTermSAP();
+		policyTermSAPoption1();
+		modeOfPaymentSAP();
+		dividentOptionWLS();
+		AccidentalDeathAndDismembermentRider();
+
+	}
+
+	// function for LimitedPayPremium type for termplus Rider
+	public static void fillingAllTheRequiredFeildsForSAPlimitedPremiumTypeforrider2() throws Exception {
+		selectByDropdownNeedOfInsur();
+		selectByDropdownLifeStge();
+		premiumTypeSAPoption2();
+		LimitedPaypremiumPayementTermSAP();
+		policyTermSAPoption1();
+		SemiAnnualmodeOfPaymentSAP();
+		dividentOptionWLS();
+		TermPlusRider();
+	}
+
+	// function for LimitedPayPremium type for WOP Rider
+	public static void fillingAllTheRequiredFeildsForSAPlimitedPremiumTypeforrider3() throws Exception {
+		selectByDropdownNeedOfInsur();
+		selectByDropdownLifeStge();
+		premiumTypeSAPoption2();
+		LimitedPaypremiumPayementTermSAP();
+		policyTermSAPoption1();
+		SemiAnnualmodeOfPaymentSAP();
+		dividentOptionWLS();
+		WOPPlusRiderCheckBox();
+	}
+
+	// function for LimitedPayPremium type for AllRider
+	public static void fillingAllTheRequiredFeildsForSAPlimitedPremiumTypeforAllrider() throws Exception {
+		selectByDropdownNeedOfInsur();
+		selectByDropdownLifeStge();
+		premiumTypeSAPoption2();
+		LimitedPaypremiumPayementTermSAP();
+		policyTermSAPoption1();
+		QuaterlymodeOfPaymentSAP();
+		dividentOptionWLS();
+		AccidentalDeathAndDismembermentRider();
+		TermPlusRider();
+		WOPPlusRiderCheckBox();
+
+	}
+
+	// funtion for singlePay PremiumType
+	public static void premiumTypeSAPoption1() throws Exception {
+		System.out.println("111111111111");
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType1stOptionSAP);
+		premiumType1stOptionSAP.click();
+		Thread.sleep(2000);
+	}
+
+	// funtion for limitedPay PremiumType
+	public static void premiumTypeSAPoption2() throws Exception {
+		System.out.println("111111111111");
+		Thread.sleep(700);
+		waitTillElementToBeClickable(premiumTypeSAPDropDown);
+		premiumTypeSAPDropDown.click();
+		waitTillElementToBeClickable(premiumType1stOptionSAP);
+		premiumType2ndOptionSAP.click();
+		Thread.sleep(2000);
+	}
+
+	// funtion for singlePay PremiumPaymentTerm
+	public static void SinglePaypremiumPayementTermSAP() throws Exception {
+		Thread.sleep(500);
+		waitTillElementToBeClickable(premiumPaymentTermSAP);
+		premiumPaymentTermSAP.click();
+		Thread.sleep(500);
+		waitTillElementToBeClickable(premiumpaymentterm1stoption);
+		premiumpaymentterm1stoption.click();
+		Thread.sleep(2000);
+
+	}
+
+	// funtion for Limitedpay PremiumPaymentTerm
+	public static void LimitedPaypremiumPayementTermSAP() throws Exception {
+		Thread.sleep(500);
+		waitTillElementToBeClickable(premiumPaymentTermSAP);
+		premiumPaymentTermSAP.click();
+		Thread.sleep(500);
+		waitTillElementToBeClickable(premiumpaymentterm1stoptionforlimited);
+		premiumpaymentterm1stoptionforlimited.click();
+		Thread.sleep(2000);
+
+	}
+
+	// function for Policy term for SinglePay premium
+	public static void policyTermSAPoption1() throws Exception {
+		waitTillElementToBeClickable(policyTermDropDownSAP);
+		policyTermDropDownSAP.click();
+		waitTillElementToBeClickable(policyterm1stOption);
+		policyterm1stOption.click();
+		Thread.sleep(2000);
+	}
+
+	// function to check the checkbox for AccidentalDeathAndDismembermentRider--
+	public static void AccidentalDeathAndDismembermentRider() throws Exception {
+		click(ADDRidercheckbox);
+		ADDRideramount.sendKeys("400000");
+
+	}
+
+	// function to check the checkbox for TermPlusRider--
+	public static void TermPlusRider() throws Exception {
+		click(termPlusRider);
+		termPlusAmount.sendKeys("100000");
+		click(riderterm);
+		Thread.sleep(3000);
+		click(premiumpaymentterm1stoptionforlimited);
+
+	}
+
+	// function to check the checkbox for TermPlusRider--
+	public static void TermPlusRiderdropdown25() throws Exception {
+		click(termPlusRider);
+		termPlusAmount.sendKeys("100000");
+		click(riderterm);
+		Thread.sleep(3000);
+		click(dropDown25);
+
+	}
+
+	// Quaterly Mode of Payment
+	public static void QuaterlymodeOfPaymentSAP() throws Exception {
+		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		waitTillElementToBeClickable(modeOfPaymentSAPDropDown);
+		modeOfPaymentSAPDropDown.click();
+		waitTillElementToBeClickable(modeOfPaymentquaterly);
+		modeOfPaymentquaterly.click();
+		Thread.sleep(2000);
+	}
+
+	// Semi-Annual Mode of Payment
+	public static void SemiAnnualmodeOfPaymentSAP() throws Exception {
+		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		waitTillElementToBeClickable(modeOfPaymentSAPDropDown);
+		modeOfPaymentSAPDropDown.click();
+		waitTillElementToBeClickable(modeOfPaymentSemiannual);
+		modeOfPaymentSemiannual.click();
+		Thread.sleep(2000);
+	}
+
+	/* Adding changes 20-06-19 */
+	public static void premiumCommitmentSAP(int x, int y, int z) throws Exception {
+		// type(MobNumtxtfld, strMobNumber);
+		premiumCommitment.clear();
+		type(premiumCommitment, readingdata(x, y, z));
+		proceedBtn.click();
+		Thread.sleep(4000);
+		// WOPPlusRiderCheckBox();
+		ifConditionForTabSizeTwoPDFIllustrationProceedingScreenAhead();
+	}
+
+	// function for RegularPremiumpay (monthly payment mode) for all Riders
+	public static void fillingAllTheRequiredFeildsForSAPforRegularmode() throws Exception {
+		selectByDropdownNeedOfInsur();
+		selectByDropdownLifeStge();
+
+		// driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[2]/form[1]/div[1]/div[1]/div[3]")).click();
+		// arrowDownFunctionToScrollDown();
+
+		premiumTypeSAP();
+		premiumPayementTermSAP();
+		policyTermSAP();
+		MonthlymodeOfPaymentSAP();
+		dividentOptionWLS();
+		AccidentalDeathAndDismembermentRider();
+		TermPlusRiderdropdown25();
+		WOPPlusRiderCheckBox();
+
+	}
+
+	// Monthly Mode of Payment
+	public static void MonthlymodeOfPaymentSAP() throws Exception {
+		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		waitTillElementToBeClickable(modeOfPaymentSAPDropDown);
+		modeOfPaymentSAPDropDown.click();
+		waitTillElementToBeClickable(modeOfPaymentMonthly);
+		modeOfPaymentMonthly.click();
+		Thread.sleep(5000);
+	}
 }

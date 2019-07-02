@@ -139,7 +139,109 @@ public class JourneyScreenFourTest extends ReusableActions {
 		}
 
 	}
+	/*public static void gmailFunctionalitySmartTermPlan() throws Exception {
+
+		((JavascriptExecutor) driver).executeScript("window.open()");
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		driver.switchTo().window(tabs.get(1));
+		driver.get("https://mail.google.com");
+		setUsername(1, 10, 3);
+		nextButton.click();
+		Thread.sleep(800);
+		setPassword(1, 11, 3);
+		Thread.sleep(800);
+		passwordNextButton.click();
+		Thread.sleep(800);
+
+		waitTillElementToBeClickableLongWait(preInsuranceVerificationLinkMail);
+		Thread.sleep(700);
+		preInsuranceVerificationLinkMail.click();
+		System.out.println("clicked");
+
+		// Actions actionObject = new Actions(driver);
+		// actionObject.keyDown(Keys.CONTROL).sendKeys(Keys.F5).keyUp(Keys.CONTROL).perform();
+
+		waitTillElementToBeClickableLongWait(preverificationLink);
+		Thread.sleep(700);
+
+		String link = preverificationLink.getText();
+
+		WebDriver driver = new ChromeDriver();
+		driver.get(link);
+		driver.manage().window().maximize();
+
+		Thread.sleep(700);
+
+		String str = driver.getCurrentUrl();
+		System.out.println(str);
+
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-two\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-eight\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
+		Thread.sleep(500);
+
+		driver.findElement(By.xpath("//label[@for=\"radio-two\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-four\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
+		Thread.sleep(500);
+
+		driver.findElement(By.xpath("//label[@for=\"radio-two\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-four\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
+		Thread.sleep(500);
+
+		driver.findElement(By.xpath("//label[@for=\"radio-two\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-four\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-2\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-10\"]")).click();
+		Thread.sleep(500);
+
+		driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
+		Thread.sleep(500);
+
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//input[@id='codeBox1']")).sendKeys("1");
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//input[@id='codeBox2']")).sendKeys("2");
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//input[@id='codeBox3']")).sendKeys("3");
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//input[@id='codeBox4']")).sendKeys("4");
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//label[@class='cstm-check-label']")).click();
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//button[@id='submitbutton']")).click();
+		Thread.sleep(1800);
+
+		 * robot.keyPress(KeyEvent.VK_ALT); robot.keyPress(KeyEvent.VK_TAB);
+		 * robot.keyRelease(KeyEvent.VK_TAB); robot.keyRelease(KeyEvent.VK_ALT);
+		 *
+		 * Thread.sleep(500);
+		 *
+		 * robot.keyPress(KeyEvent.VK_CONTROL); robot.keyPress(KeyEvent.VK_TAB);
+		 * robot.keyRelease(KeyEvent.VK_TAB); robot.keyRelease(KeyEvent.VK_CONTROL);
 
 
+		driver.close();
+	}
+*/
 
 }

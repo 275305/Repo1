@@ -2,8 +2,11 @@ package WebTest;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import ru.yandex.qatools.allure.annotations.Description;
@@ -98,8 +101,8 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			// JourneyScreenOne.neverApplied();
 			// JourneyScreenOne.jammuKashmir();
 			// JourneyScreenOne.popupProceedButton();
-			JourneyScreenOne.setPanNumber(1, 1, 1);
-			// JourneyScreenOne.dontHavePAN();
+			//JourneyScreenOne.setPanNumber(1, 1, 1);
+			 JourneyScreenOne.dontHavePAN();
 			JourneyScreenOne.setMobNumber(1, 1, 2);
 			JourneyScreenOne.setEmailId(1, 1, 3);
 			JourneyScreenOne.clickProceed();
@@ -1095,4 +1098,87 @@ public class JourneyScreenThreeTest extends ReusableActions {
 
 		}
 	}
+	public static void checkAlert() {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, 10);
+			wait.until(ExpectedConditions.alertIsPresent());
+			Alert alert = driver.switchTo().alert();
+			alert.accept();
+		} catch (Exception e) {
+			// exception handling
+			System.out.println("Alert not present");
+		}
+	}
+
+
+
+
+
+
+	public static void usingPolicyNumberToFillScreenSixTPPPushFTSP() throws Exception {
+		PageFactory.initElements(driver, POSVFlowForSAPMIAP.class);
+		try {
+
+			checkAlert();
+			// driver.close();
+			prop = ReusableActions.readProperties();
+			driver.get(prop.getProperty("SampleURL"));
+			LoginPage.verifyloginpage();
+
+			// Maximizing the browser window
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+			logger.info("Fulfilment URL opened successfully");
+
+			JourneyScreenSix.switchingBackToMainWindowScreenSixFTSP();
+			// JourneyScreenSix.preferedDate();
+			// JourneyScreenSix.visitType();
+			// JourneyScreenSix.medicalCentreSelection();
+			JourneyScreenSix.termsAndCondition();
+			Thread.sleep(1000);
+			driver.close();
+			// JourneyScreenThree.capture_window_ids();
+
+		} // driver.findElement(By.xpath("//a[contains(text(),'Logout')]")).click();
+
+		catch (Exception e) {
+			logger.error("Test case failed " + e.getMessage());
+			throw e;
+
+		}
+	}
+
+	public static void usingPolicyNumberToFillScreenSixTPPPushSuperTermPlan() throws Exception {
+		PageFactory.initElements(driver, POSVFlowForSAPMIAP.class);
+		try {
+
+			checkAlert();
+			// driver.close();
+			prop = ReusableActions.readProperties();
+			driver.get(prop.getProperty("SampleURL"));
+			LoginPage.verifyloginpage();
+
+			// Maximizing the browser window
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+			logger.info("Fulfilment URL opened successfully");
+
+			JourneyScreenSix.switchingBackToMainWindowScreenSix();
+			// JourneyScreenSix.preferedDate();
+			// JourneyScreenSix.visitType();
+			// JourneyScreenSix.medicalCentreSelection();
+			JourneyScreenSix.termsAndCondition();
+			Thread.sleep(1000);
+			driver.close();
+			// JourneyScreenThree.capture_window_ids();
+
+		} // driver.findElement(By.xpath("//a[contains(text(),'Logout')]")).click();
+
+		catch (Exception e) {
+			logger.error("Test case failed " + e.getMessage());
+			throw e;
+		}
+
+		}
+
 }
