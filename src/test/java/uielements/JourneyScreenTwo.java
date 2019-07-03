@@ -3298,10 +3298,10 @@ public class JourneyScreenTwo extends ReusableActions {
 		}
 		driver.switchTo().window(parent);
 		Thread.sleep(10000);
-		waitTillElementToBeClickable(productDetails);
+		/*waitTillElementToBeClickable(productDetails);
 		System.out.println(driver.findElement(By.xpath("//span[contains(text(),'Product   Details')]")).isEnabled());
 		driver.findElement(By.xpath("//span[contains(text(),'Product   Details')]")).click();
-		Thread.sleep(1000);
+		Thread.sleep(1000);*/
 	}
 
 	public static void ifConditionForTabSizeTwoPDFIllustrationProceedingScreenAhead() throws Exception {
@@ -3943,7 +3943,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		premiumCommitment.clear();
 		premiumCommitment.sendKeys(duplicate);
 		JourneyScreenTwo.clickSubmitButton();
-		Thread.sleep(4000);
+		Thread.sleep(14000);
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 		System.out.println(tabs.size());
 

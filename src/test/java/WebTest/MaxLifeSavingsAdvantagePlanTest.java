@@ -43,12 +43,12 @@ public class MaxLifeSavingsAdvantagePlanTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 1, enabled = false)
+	@Test(priority = 1, enabled = true)
 	public void CheckproductConfigrationSAPGeneratingPdf() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
 			alwaysCloseAllChildTabs();
-			// HomePage.clickDashboard();
+			//HomePage.clickDashboard();
 			HomePage.clickNewApp();
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
 			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
@@ -56,6 +56,9 @@ public class MaxLifeSavingsAdvantagePlanTest extends ReusableActions {
 			JourneyScreenTwo.selectByDropdownSAP();
 			JourneyScreenTwo.fillingAllTheRequiredFeildsForSAP();
 			JourneyScreenTwo.premiumCommitmentSAPCheckingMultipleDataForErrorMessage();
+			screenJourneyFromThreeTillEnd();
+			screenJourneyFromFourTillEnd();
+			//posvBackFlowTillTPPPush();
 
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
@@ -66,12 +69,12 @@ public class MaxLifeSavingsAdvantagePlanTest extends ReusableActions {
 		/*Sap Code Missing*/
 
 	// Illustration for WOP rider of limited pay
-		@Test(priority = 2, enabled = false)
+		@Test(priority = 2, enabled = true)
 		public static void WOPRiderLimitedPayPremiumType() throws Exception {
 			PageFactory.initElements(driver, JourneyScreenTwo.class);
 			try {
 				alwaysCloseAllChildTabs();
-				// HomePage.clickDashboard();
+				HomePage.clickDashboard();
 				HomePage.clickNewApp();
 				JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
 				JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
@@ -80,6 +83,8 @@ public class MaxLifeSavingsAdvantagePlanTest extends ReusableActions {
 				JourneyScreenTwo.fillingAllTheRequiredFeildsForSAPlimitedPremiumTypeforrider3();
 				JourneyScreenTwo.premiumCommitmentSAPCheckingMultipleDataForErrorMessage();
 				screenJourneyFromThreeTillEnd();
+				screenJourneyFromFourTillEnd();
+				//posvBackFlowTillTPPPush();
 
 			} catch (Exception e) {
 				logger.error("Test case failed " + e.getMessage());
@@ -88,36 +93,14 @@ public class MaxLifeSavingsAdvantagePlanTest extends ReusableActions {
 			}
 		}
 
-	// TC- for SinglePay premium
-		@Test(priority = 8, enabled = true)
-		public void CheckproductConfigrationSAPGeneratingPdfforSinglePremium() throws Exception {
-			PageFactory.initElements(driver, JourneyScreenTwo.class);
-			try {
-				alwaysCloseAllChildTabs();
-				// HomePage.clickDashboard();
-				HomePage.clickNewApp();
-				JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
-				JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
-				JourneyScreenTwo.traditional();
-				JourneyScreenTwo.selectByDropdownSAP();
-				JourneyScreenTwo.fillingAllTheRequiredFeildsForSAPsinglePremiumType();
-				JourneyScreenTwo.premiumCommitmentSAPCheckingMultipleDataForErrorMessage();
-				screenJourneyFromThreeTillEnd();
-
-			} catch (Exception e) {
-				logger.error("Test case failed " + e.getMessage());
-				throw e;
-
-			}
-		}
-
+	
 		// TC- for LimitedPay premium (ADDRider)
-		@Test(priority = 3, enabled = false)
+		@Test(priority = 3, enabled = true)
 		public void CheckproductConfigrationSAPGeneratingPdfforLimitedPremium() throws Exception {
 			PageFactory.initElements(driver, JourneyScreenTwo.class);
 			try {
 				alwaysCloseAllChildTabs();
-				// HomePage.clickDashboard();
+				HomePage.clickDashboard();
 				HomePage.clickNewApp();
 				JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
 				JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
@@ -125,6 +108,9 @@ public class MaxLifeSavingsAdvantagePlanTest extends ReusableActions {
 				JourneyScreenTwo.selectByDropdownSAP();
 				JourneyScreenTwo.fillingAllTheRequiredFeildsForSAPlimitedPremiumType();
 				JourneyScreenTwo.premiumCommitmentSAPCheckingMultipleDataForErrorMessage();
+				screenJourneyFromThreeTillEnd();
+				screenJourneyFromFourTillEnd();
+				//posvBackFlowTillTPPPush();
 
 			} catch (Exception e) {
 				logger.error("Test case failed " + e.getMessage());
@@ -134,12 +120,12 @@ public class MaxLifeSavingsAdvantagePlanTest extends ReusableActions {
 		}
 
 		// Illustration for TermPlus rider of limited pay
-		@Test(priority = 4, enabled = false)
+		@Test(priority = 4, enabled = true)
 		public static void TermPlusRiderLimitedPayPremiumType() throws Exception {
 			PageFactory.initElements(driver, JourneyScreenTwo.class);
 			try {
 				alwaysCloseAllChildTabs();
-				// HomePage.clickDashboard();
+				HomePage.clickDashboard();
 				HomePage.clickNewApp();
 				JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
 				JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
@@ -147,6 +133,9 @@ public class MaxLifeSavingsAdvantagePlanTest extends ReusableActions {
 				JourneyScreenTwo.selectByDropdownSAP();
 				JourneyScreenTwo.fillingAllTheRequiredFeildsForSAPlimitedPremiumTypeforrider2();
 				JourneyScreenTwo.premiumCommitmentSAPCheckingMultipleDataForErrorMessage();
+				screenJourneyFromThreeTillEnd();
+				screenJourneyFromFourTillEnd();
+				//posvBackFlowTillTPPPush();
 
 			} catch (Exception e) {
 				logger.error("Test case failed " + e.getMessage());
@@ -178,12 +167,12 @@ public class MaxLifeSavingsAdvantagePlanTest extends ReusableActions {
 		}*/
 
 		// Illustration for all rider of limited pay --5
-		@Test(priority = 5, enabled = false)
+		@Test(priority = 5, enabled = true)
 		public static void AllRiderLimitedPayPremiumType() throws Exception {
 			PageFactory.initElements(driver, JourneyScreenTwo.class);
 			try {
 				alwaysCloseAllChildTabs();
-				// HomePage.clickDashboard();
+				HomePage.clickDashboard();
 				HomePage.clickNewApp();
 				JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
 				JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
@@ -192,6 +181,8 @@ public class MaxLifeSavingsAdvantagePlanTest extends ReusableActions {
 				JourneyScreenTwo.fillingAllTheRequiredFeildsForSAPlimitedPremiumTypeforAllrider();
 				JourneyScreenTwo.premiumCommitmentSAPCheckingMultipleDataForErrorMessage();
 				screenJourneyFromThreeTillEnd();
+				screenJourneyFromFourTillEnd();
+				//posvBackFlowTillTPPPush();
 
 
 			} catch (Exception e) {
@@ -202,12 +193,12 @@ public class MaxLifeSavingsAdvantagePlanTest extends ReusableActions {
 		}
 
 		// TC-for Regular PremiumPay for Monthly mode of payment
-		@Test(priority = 6, enabled = false)
+		@Test(priority = 6, enabled = true)
 		public static void AllRiderRegularPayPremiumType() throws Exception {
 			PageFactory.initElements(driver, JourneyScreenTwo.class);
 			try {
 				alwaysCloseAllChildTabs();
-				// HomePage.clickDashboard();
+				HomePage.clickDashboard();
 				HomePage.clickNewApp();
 				JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
 				JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
@@ -216,6 +207,8 @@ public class MaxLifeSavingsAdvantagePlanTest extends ReusableActions {
 				JourneyScreenTwo.fillingAllTheRequiredFeildsForSAPforRegularmode();
 				JourneyScreenTwo.premiumCommitmentSAPCheckingMultipleDataForErrorMessage();
 				screenJourneyFromThreeTillEnd();
+				screenJourneyFromFourTillEnd();
+				//posvBackFlowTillTPPPush();
 
 			} catch (Exception e) {
 				logger.error("Test case failed " + e.getMessage());
@@ -236,6 +229,18 @@ public class MaxLifeSavingsAdvantagePlanTest extends ReusableActions {
 				JourneyScreenThree.fillingAnnualIncomeTOProceed();
 				Thread.sleep(1000);
 
+			} catch (Exception e) {
+				logger.error("Test case failed " + e.getMessage());
+				throw e;
+
+			}
+		}
+
+		
+		public static void screenJourneyFromFourTillEnd() throws Exception {
+			PageFactory.initElements(driver, JourneyScreenTwo.class);
+			try {
+
 				JourneyScreenFour.form60RelatedDetailsIdentityProofNameOptionSelection();
 				JourneyScreenFour.setIdentityProofNumberValidation(0, 1, 6);
 				JourneyScreenFour.identityProofIssuingAuthority();
@@ -247,11 +252,24 @@ public class MaxLifeSavingsAdvantagePlanTest extends ReusableActions {
 				JourneyScreenFour.selectCriminalChargesNo();
 				JourneyScreenFour.feetInchesKgsSelectionToMoveToScreen5POSV();
 				JourneyScreenThree.agreePopupToProceedToSendPreIssuranceVerificationLinkToCustomer();
-				JourneyScreenSix.fetchingProposalNumberFromUI();
+				
+			} catch (Exception e) {
+				logger.error("Test case failed " + e.getMessage());
+				throw e;
 
+			}
+		}
+	
+	
+		
+		public static void posvBackFlowTillTPPPush() throws Exception {
+			PageFactory.initElements(driver, JourneyScreenTwo.class);
+			try {
+
+				JourneyScreenSix.fetchingProposalNumberFromUI();
 				// JourneyScreenThree.gmailFunctionalitySmartTermPlan();
 				JourneyScreenThree.handle_windowSAP();
-				JourneyScreenThreeTest.usingPolicyNumberToFillScreenSixTPPPush();
+				//JourneyScreenThreeTest.usingPolicyNumberToFillScreenSixTPPPush();
 
 			} catch (Exception e) {
 				logger.error("Test case failed " + e.getMessage());
@@ -259,13 +277,13 @@ public class MaxLifeSavingsAdvantagePlanTest extends ReusableActions {
 
 			}
 		}
-
+		
 		@Test(priority = 7, enabled = false)
 		public void generatingPdf() throws Exception {
 			PageFactory.initElements(driver, JourneyScreenTwo.class);
 			try {
 				alwaysCloseAllChildTabs();
-				// HomePage.clickDashboard();
+				HomePage.clickDashboard();
 				HomePage.clickNewApp();
 				JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
 				JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
@@ -274,6 +292,8 @@ public class MaxLifeSavingsAdvantagePlanTest extends ReusableActions {
 				JourneyScreenTwo.fillingAllTheRequiredFeildsForSAP();
 				JourneyScreenTwo.premiumCommitmentSAP(3, 8, 11);
 				screenJourneyFromThreeTillEnd();
+				screenJourneyFromFourTillEnd();
+				//posvBackFlowTillTPPPush();
 
 			} catch (Exception e) {
 				logger.error("Test case failed " + e.getMessage());
@@ -282,6 +302,31 @@ public class MaxLifeSavingsAdvantagePlanTest extends ReusableActions {
 			}
 		}
 
+
+		// TC- for SinglePay premium
+				@Test(priority = 8, enabled = true)
+				public void CheckproductConfigrationSAPGeneratingPdfforSinglePremium() throws Exception {
+					PageFactory.initElements(driver, JourneyScreenTwo.class);
+					try {
+						alwaysCloseAllChildTabs();
+						HomePage.clickDashboard();
+						HomePage.clickNewApp();
+						JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
+						JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
+						JourneyScreenTwo.traditional();
+						JourneyScreenTwo.selectByDropdownSAP();
+						JourneyScreenTwo.fillingAllTheRequiredFeildsForSAPsinglePremiumType();
+						JourneyScreenTwo.premiumCommitmentSAPCheckingMultipleDataForErrorMessage();
+						screenJourneyFromThreeTillEnd();
+						screenJourneyFromFourTillEnd();
+						//posvBackFlowTillTPPPush();
+
+					} catch (Exception e) {
+						logger.error("Test case failed " + e.getMessage());
+						throw e;
+
+					}
+				}
 
 
 

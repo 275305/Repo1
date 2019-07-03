@@ -5,7 +5,7 @@
 
 	<test name="testngTest">
 		<classes>
-			<class name="WebTest.JourneyScreenFourTest"></class>
+			<class name="WebTest.MaxLifeSavingsAdvantagePlanTest"></class>
 
 		</classes>
 
