@@ -160,6 +160,10 @@ public class JourneyScreenThree extends ReusableActions {
 	@FindBy(xpath = "//div[@id='relationshipWithNominee_id']")
 	public static WebElement relationshipWithNominee;
 
+	/*Xpath for child nominee Name*/
+	@FindBy(xpath = "//input[@name='nomineeChildName']")
+	public static WebElement childNameWithNominee;
+
 	@FindBy(xpath = "//*[@id='menu-relationshipWithNominee']/div[2]/ul/li")
 	static List<WebElement> relationshipWithNomineeDropDownOption;
 
@@ -271,13 +275,15 @@ public class JourneyScreenThree extends ReusableActions {
 	@FindBy(xpath = ".//*[@id='root']/main/div[2]/form/div/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[3]/div[4]/div/div/div/div/div/div[@role=\"button\"]")
 	public static WebElement typeOfAccInsurer;
 
-/*	@FindBy(xpath = ".//*[@id='menu-typeofAccount']/div[2]/ul/li[1]")
-	public static WebElement typeOfAccOption;*/
+	/*
+	 * @FindBy(xpath = ".//*[@id='menu-typeofAccount']/div[2]/ul/li[1]") public
+	 * static WebElement typeOfAccOption;
+	 */
 
 	@FindBy(xpath = "//li[contains(text(),'Savings Account')]")
 	public static WebElement typeOfAccOption;
 
-	//li[contains(text(),'Savings Account')]
+	// li[contains(text(),'Savings Account')]
 	@FindBy(xpath = "//input[@name='bankAccountIFSC']")
 	public static WebElement IFSC;
 
@@ -845,8 +851,8 @@ public class JourneyScreenThree extends ReusableActions {
 	@FindBy(xpath = "//label[contains(@for, 'InsurerCriminalChargesYes')]")
 	static WebElement InsurerCriminalChargesYesInsurersDetails;
 
-	public static void nomineeGender() throws Exception {
 
+	public static void nomineeGender() throws Exception {
 		click(nomineeGender);
 	}
 
@@ -1080,10 +1086,10 @@ public class JourneyScreenThree extends ReusableActions {
 
 		Actions actions = new Actions(driver);
 		actions.moveToElement(education).click().perform();
-		//education.click();
+		// education.click();
 		Thread.sleep(2000);
 		actions.moveToElement(education1stOption).click().perform();
-		//education1stOption.click();
+		// education1stOption.click();
 		Thread.sleep(2000);
 	}
 
@@ -1991,6 +1997,12 @@ public class JourneyScreenThree extends ReusableActions {
 		type(nomineeName, readingdata(x, y, z));
 
 	}
+	/* Method for child Nominee name*/
+	public static void childNameWithNominee(int sheetNo, int Row, int column) throws Exception {
+         childNameWithNominee.clear();
+         type(childNameWithNominee, readingdata(sheetNo,Row,column));
+		}
+
 
 	public static void checkGenderMaleFemaleOption() throws Exception {
 		if (genderMale.isDisplayed() && genderFemale.isDisplayed()) {
@@ -2058,8 +2070,7 @@ public class JourneyScreenThree extends ReusableActions {
 		type(IFSC, readingdata(x, y, z));
 		String sIFCPassedFromExcel = IFSC.getAttribute("value");
 		int size = sIFCPassedFromExcel.length();
-		if (size == 11 && sIFCPassedFromExcel.equalsIgnoreCase("ANDB0001899")
-				&& !sIFCPassedFromExcel.contains("@")) {
+		if (size == 11 && sIFCPassedFromExcel.equalsIgnoreCase("ANDB0001899") && !sIFCPassedFromExcel.contains("@")) {
 			logger.info("Test case pass:- As IFSC : Field Length 11, accepts alphaNumeric");
 		} else {
 			Assert.fail("Test case fail:-As IFSC : Field not as per the expectation (Length 11, accepts alphaNumeric)");
@@ -2078,8 +2089,7 @@ public class JourneyScreenThree extends ReusableActions {
 		type(MICR, readingdata(x, y, z));
 		String sMICRPassedFromExcel = MICR.getAttribute("value");
 		int size = sMICRPassedFromExcel.length();
-		if (size == 9 && sMICRPassedFromExcel.equalsIgnoreCase("781011005")
-				&& !sMICRPassedFromExcel.contains("@")) {
+		if (size == 9 && sMICRPassedFromExcel.equalsIgnoreCase("781011005") && !sMICRPassedFromExcel.contains("@")) {
 			logger.info("Test case pass:- As MICR : Field Length 9, accepts Numeric");
 		} else {
 			Assert.fail("Test case fail:-As MICR : either Field Length is not 9 or not accepting Numeric");
@@ -2260,9 +2270,7 @@ public class JourneyScreenThree extends ReusableActions {
 		robot.keyRelease(KeyEvent.VK_ENTER);
 		Thread.sleep(1000);
 
-
 	}
-
 
 	public static void gmailFunctionalitySmartTermPlan() throws Exception {
 
@@ -3469,13 +3477,15 @@ public class JourneyScreenThree extends ReusableActions {
 
 	}
 
-	public static void scrollDownPage(){
+	public static void scrollDownPage() {
 		((JavascriptExecutor) driver).executeScript("window.scrollBy(0,750)", "");
 	}
-	/*gmail functionality at screen three*/
+
+	/* gmail functionality at screen three */
 	public static void gmailFunctionalityFTSP() throws Exception {
 		// ((JavascriptExecutor) driver).executeScript("window.open()");
-		// ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		// ArrayList<String> tabs = new
+		// ArrayList<String>(driver.getWindowHandles());
 		// driver.switchTo().window(tabs.get(1));
 		driver.get("https://mail.google.com");
 		setUsername(1, 10, 3);
@@ -3575,145 +3585,160 @@ public class JourneyScreenThree extends ReusableActions {
 		driver.findElement(By.xpath("//button[@id='submitbutton']")).click();
 		Thread.sleep(1800);
 		/*
-		* robot.keyPress(KeyEvent.VK_ALT); robot.keyPress(KeyEvent.VK_TAB);
-		* robot.keyRelease(KeyEvent.VK_TAB); robot.keyRelease(KeyEvent.VK_ALT);
-		*
-		* Thread.sleep(500);
-		*
-		* robot.keyPress(KeyEvent.VK_CONTROL); robot.keyPress(KeyEvent.VK_TAB);
-		* robot.keyRelease(KeyEvent.VK_TAB); robot.keyRelease(KeyEvent.VK_CONTROL);
-		*/
+		 * robot.keyPress(KeyEvent.VK_ALT); robot.keyPress(KeyEvent.VK_TAB);
+		 * robot.keyRelease(KeyEvent.VK_TAB); robot.keyRelease(KeyEvent.VK_ALT);
+		 *
+		 * Thread.sleep(500);
+		 *
+		 * robot.keyPress(KeyEvent.VK_CONTROL); robot.keyPress(KeyEvent.VK_TAB);
+		 * robot.keyRelease(KeyEvent.VK_TAB);
+		 * robot.keyRelease(KeyEvent.VK_CONTROL);
+		 */
 
 		driver.close();
 
-		}
-	/*======================================================*/
-	//Added Changes on 20-06-2019 --------------------------------------------------------
-		public static void gmailFunctionalitySAP() throws Exception {
-			// ((JavascriptExecutor) driver).executeScript("window.open()");
-			// ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-			// driver.switchTo().window(tabs.get(1));
-			driver.get("https://mail.google.com");
+	}
 
-			setUsername(1, 10, 3);
-			nextButton.click();
-			Thread.sleep(800);
-			setPassword(1, 11, 3);
-			Thread.sleep(800);
-			passwordNextButton.click();
-			Thread.sleep(800);
+	/* ====================================================== */
+	// Added Changes on 20-06-2019
+	// --------------------------------------------------------
+	public static void gmailFunctionalitySAP() throws Exception {
+		// ((JavascriptExecutor) driver).executeScript("window.open()");
+		// ArrayList<String> tabs = new
+		// ArrayList<String>(driver.getWindowHandles());
+		// driver.switchTo().window(tabs.get(1));
+		driver.get("https://mail.google.com");
 
-			waitTillElementToBeClickableLongWait(checkBoxAll);
-			checkBoxAll.click();
+		setUsername(1, 10, 3);
+		nextButton.click();
+		Thread.sleep(800);
+		setPassword(1, 11, 3);
+		Thread.sleep(800);
+		passwordNextButton.click();
+		Thread.sleep(800);
 
-			waitTillElementToBeClickableLongWait(deleteButton);
-			Thread.sleep(1800);
-			deleteButton.click();
-			Thread.sleep(1800);
+		waitTillElementToBeClickableLongWait(checkBoxAll);
+		checkBoxAll.click();
 
-			waitTillElementToBeClickableLongWait(preInsuranceVerificationLinkMail);
-			Thread.sleep(700);
+		waitTillElementToBeClickableLongWait(deleteButton);
+		Thread.sleep(1800);
+		deleteButton.click();
+		Thread.sleep(1800);
 
-			preInsuranceVerificationLinkMail.click();
-			System.out.println("clicked");
+		waitTillElementToBeClickableLongWait(preInsuranceVerificationLinkMail);
+		Thread.sleep(700);
 
-			// Actions actionObject = new Actions(driver);
-			// actionObject.keyDown(Keys.CONTROL).sendKeys(Keys.F5).keyUp(Keys.CONTROL).perform();
+		preInsuranceVerificationLinkMail.click();
+		System.out.println("clicked");
 
-			waitTillElementToBeClickableLongWait(preverificationLink);
-			Thread.sleep(700);
+		// Actions actionObject = new Actions(driver);
+		// actionObject.keyDown(Keys.CONTROL).sendKeys(Keys.F5).keyUp(Keys.CONTROL).perform();
 
-			String link = preverificationLink.getText();
-			// driver.close();
+		waitTillElementToBeClickableLongWait(preverificationLink);
+		Thread.sleep(700);
 
-			driver.findElement(By.xpath("//span[@class='gb_xa gbii']")).click(); // To click the flyout menu
-			Thread.sleep(800);
-			driver.findElement(By.xpath("//a[@id='gb_71']")).click(); // To click the sign out button
+		String link = preverificationLink.getText();
+		// driver.close();
 
-			Thread.sleep(800);
+		driver.findElement(By.xpath("//span[@class='gb_xa gbii']")).click(); // To
+																				// click
+																				// the
+																				// flyout
+																				// menu
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//a[@id='gb_71']")).click(); // To click
+																	// the sign
+																	// out
+																	// button
 
-			WebDriver driver = new ChromeDriver();
-			driver.get(link);
-			driver.manage().window().maximize();
+		Thread.sleep(800);
 
-			Thread.sleep(700);
+		WebDriver driver = new ChromeDriver();
+		driver.get(link);
+		driver.manage().window().maximize();
 
-			String str = driver.getCurrentUrl();
-			System.out.println(str);
+		Thread.sleep(700);
 
-			Thread.sleep(500);
-			driver.findElement(By.xpath("//label[@for=\"radio-two\"]")).click();
-			Thread.sleep(500);
-			driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
-			Thread.sleep(500);
-			driver.findElement(By.xpath("//label[@for=\"radio-eight\"]")).click();
-			Thread.sleep(500);
-			driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
-			Thread.sleep(500);
+		String str = driver.getCurrentUrl();
+		System.out.println(str);
 
-			driver.findElement(By.xpath("//label[@for=\"radio-two\"]")).click();
-			Thread.sleep(500);
-			driver.findElement(By.xpath("//label[@for=\"radio-four\"]")).click();
-			Thread.sleep(500);
-			driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
-			Thread.sleep(500);
-			driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
-			Thread.sleep(500);
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-two\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-eight\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
+		Thread.sleep(500);
 
-			driver.findElement(By.xpath("//label[@for=\"radio-two\"]")).click();
-			Thread.sleep(500);
-			driver.findElement(By.xpath("//label[@for=\"radio-four\"]")).click();
-			Thread.sleep(500);
-			driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
-			Thread.sleep(500);
-			driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
-			Thread.sleep(1000);
+		driver.findElement(By.xpath("//label[@for=\"radio-two\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-four\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
+		Thread.sleep(500);
 
-			driver.findElement(By.xpath("//label[@for=\"radio-two\"]")).click();
-			Thread.sleep(1000);
-			driver.findElement(By.xpath("//label[@for=\"radio-four\"]")).click();
-			Thread.sleep(1000);
-			driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
-			Thread.sleep(1000);
-			driver.findElement(By.xpath("//label[@for=\"radio-2\"]")).click();
-			Thread.sleep(1000);
-			driver.findElement(By.xpath("//label[@for=\"radio-10\"]")).click();
-			Thread.sleep(1000);
+		driver.findElement(By.xpath("//label[@for=\"radio-two\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-four\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
+		Thread.sleep(1000);
 
-			driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
-			Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-two\"]")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//label[@for=\"radio-four\"]")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//label[@for=\"radio-2\"]")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//label[@for=\"radio-10\"]")).click();
+		Thread.sleep(1000);
 
-			Thread.sleep(2000);
-			//adding for OTP generation button
-			driver.findElement(By.xpath("//button[@id='generateOTP_btn']")).click();
-			Thread.sleep(6000);
-			driver.findElement(By.xpath("//input[@id='codeBox1']")).sendKeys("1");
-			Thread.sleep(800);
-			driver.findElement(By.xpath("//input[@id='codeBox2']")).sendKeys("2");
-			Thread.sleep(800);
-			driver.findElement(By.xpath("//input[@id='codeBox3']")).sendKeys("3");
-			Thread.sleep(800);
-			driver.findElement(By.xpath("//input[@id='codeBox4']")).sendKeys("4");
-			Thread.sleep(800);
-			driver.findElement(By.xpath("//label[@class='cstm-check-label']")).click();
-			Thread.sleep(800);
-			driver.findElement(By.xpath("//button[@id='submitbutton']")).click();
-			Thread.sleep(1800);
-			/*
-			 * robot.keyPress(KeyEvent.VK_ALT); robot.keyPress(KeyEvent.VK_TAB);
-			 * robot.keyRelease(KeyEvent.VK_TAB); robot.keyRelease(KeyEvent.VK_ALT);
-			 *
-			 * Thread.sleep(500);
-			 *
-			 * robot.keyPress(KeyEvent.VK_CONTROL); robot.keyPress(KeyEvent.VK_TAB);
-			 * robot.keyRelease(KeyEvent.VK_TAB); robot.keyRelease(KeyEvent.VK_CONTROL);
-			 */
+		driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
+		Thread.sleep(500);
 
-			driver.close();
+		Thread.sleep(2000);
+		// adding for OTP generation button
+		driver.findElement(By.xpath("//button[@id='generateOTP_btn']")).click();
+		Thread.sleep(6000);
+		driver.findElement(By.xpath("//input[@id='codeBox1']")).sendKeys("1");
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//input[@id='codeBox2']")).sendKeys("2");
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//input[@id='codeBox3']")).sendKeys("3");
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//input[@id='codeBox4']")).sendKeys("4");
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//label[@class='cstm-check-label']")).click();
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//button[@id='submitbutton']")).click();
+		Thread.sleep(1800);
+		/*
+		 * robot.keyPress(KeyEvent.VK_ALT); robot.keyPress(KeyEvent.VK_TAB);
+		 * robot.keyRelease(KeyEvent.VK_TAB); robot.keyRelease(KeyEvent.VK_ALT);
+		 *
+		 * Thread.sleep(500);
+		 *
+		 * robot.keyPress(KeyEvent.VK_CONTROL); robot.keyPress(KeyEvent.VK_TAB);
+		 * robot.keyRelease(KeyEvent.VK_TAB);
+		 * robot.keyRelease(KeyEvent.VK_CONTROL);
+		 */
 
-		}
+		driver.close();
 
-/*==========================================================================*/
+	}
+
+	/*
+	 * =========================================================================
+	 * =
+	 */
 
 	public static void handle_windowFTSP() throws Exception {
 		((JavascriptExecutor) driver).executeScript("window.open()");
@@ -3725,19 +3750,20 @@ public class JourneyScreenThree extends ReusableActions {
 		driver.switchTo().window(current_window);
 		JourneyScreenThreeTest.usingPolicyNumberToFillScreenSixTPPPushFTSP();
 		driver.close();
-		}
-	//Added Changes on 20-06-2019
-		public static void handle_windowSAP() throws Exception {
-			((JavascriptExecutor) driver).executeScript("window.open()");
-			String current_window = driver.getWindowHandle();
-			ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-			driver.switchTo().window(tabs.get(1));
-			gmailFunctionalitySAP();
+	}
 
-			driver.close();
-			driver.switchTo().window(current_window);
-			JourneyScreenThreeTest.usingPolicyNumberToFillScreenSixTPPPushSuperTermPlan();
-			driver.close();
-		}
+	// Added Changes on 20-06-2019
+	public static void handle_windowSAP() throws Exception {
+		((JavascriptExecutor) driver).executeScript("window.open()");
+		String current_window = driver.getWindowHandle();
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		driver.switchTo().window(tabs.get(1));
+		gmailFunctionalitySAP();
+
+		driver.close();
+		driver.switchTo().window(current_window);
+		JourneyScreenThreeTest.usingPolicyNumberToFillScreenSixTPPPushSuperTermPlan();
+		driver.close();
+	}
 
 }

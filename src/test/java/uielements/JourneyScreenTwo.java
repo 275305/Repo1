@@ -28,6 +28,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import WebTest.JourneyScreenThreeTest;
 import ru.yandex.qatools.allure.annotations.Description;
 import ru.yandex.qatools.allure.annotations.Step;
 import util.AppConstant;
@@ -474,6 +475,10 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//*[@id='menu-productName']/div[2]/ul/li[text()='Max Life Fast Track Super Plan']")
 	static WebElement maxLifeFastTrackSuperPlan;
 
+	/* XPath for Shiksha Plus Super Plan */
+	@FindBy(xpath = "//li[@id='liId_Max Life Shiksha Plus Super']")
+	static WebElement maxLifeShikshaPlusSuperPlan;
+
 	@FindBy(xpath = "//*[@id='menu-productName']/div[2]/ul/li[text()= 'Max Life Cancer Insurance Plan']")
 	static WebElement maxLifeCancerInsurancePlan;
 
@@ -569,6 +574,18 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//div[@id='premiumPaymentTerm_id']")
 	static WebElement premiumPaymentTermFTSP;
 
+	@FindBy(xpath = "//div[@id='premiumPaymentTerm_id']")
+	static WebElement premiumPaymentTermSPSP;
+
+	@FindBy(xpath = "//li[@id='liId_5']")
+	static WebElement valueAtpremiumPaymentTermSPSP;
+
+	// Xpath for premium Payment Term dropdown
+	/*
+	 * @FindBy(xpath = "//label[contains(text(),'Premium Payment Term')]")
+	 * static WebElement premiumPaymentTermSPSP;
+	 */
+
 	// XPATH for PremiumPaymentTermFTSP 20
 	@FindBy(xpath = "//li[@id='liId_20']")
 	static WebElement premiumPaymentTermFTSP20;
@@ -649,6 +666,8 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	@FindBy(xpath = ".//*[@id='menu-lifeStage']/div[2]/ul/li[1]")
 	static WebElement lifeStage1stOption;
+	@FindBy(xpath = "//li[@id='liId_Young & Single']")
+	static WebElement lifeStage1sttOption;
 
 	@FindBy(xpath = "//*[@id='menu-dividendAdjustment']/div[2]/ul/li[1]")
 	static WebElement dividentAdjustment1stOption;
@@ -951,6 +970,26 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//li[@id='liId_25']")
 	static WebElement dropDown25;
 
+	@FindBy(xpath = "//div[@id='childDob_id']")
+	static WebElement chieldDateBirthProductDetails;
+
+	@FindBy(xpath = "//select[@class='react-datepicker__month-select']/option[1]")
+	static WebElement selectMonthDateBirthProductDetails;
+
+	@FindBy(xpath = "//div[@class='react-datepicker__month']/div[2]/div[contains(text(),'8')]")
+	static WebElement selectDateDateBirthProductDetails;
+
+	@FindBy(xpath = "//input[@name='premiumCommitment']")
+	static WebElement premiumCommitmentSPSP;
+
+	public static void chieldDateBirthProductDetails() {
+		chieldDateBirthProductDetails.click();
+		waitTillElementToBeClickable(chieldDateBirthProductDetails);
+		selectMonthDateBirthProductDetails.click();
+		waitTillElementToBeClickable(selectMonthDateBirthProductDetails);
+		selectDateDateBirthProductDetails.click();
+	}
+
 	public static void selectByDropdown() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -1015,6 +1054,11 @@ public class JourneyScreenTwo extends ReusableActions {
 		click(chooseYourFundYes);
 	}
 
+	public static void chooseYourFundNo() throws Exception {
+
+		click(chooseYourFundNo);
+	}
+
 	public static void dynamicFundAllocationNo() throws Exception {
 
 		click(dynamicFundNo);
@@ -1023,6 +1067,11 @@ public class JourneyScreenTwo extends ReusableActions {
 	public static void systematicTransferPlanNo() throws Exception {
 
 		click(systematicNo);
+	}
+
+	public static void systematicTransferPlanYes() throws Exception {
+
+		click(systematicYes);
 	}
 
 	public static void WOPPlusRiderCheckBox() throws Exception {
@@ -1199,6 +1248,14 @@ public class JourneyScreenTwo extends ReusableActions {
 		PremiumPaymentTermFTSP.click();
 		Thread.sleep(2000);
 
+	}
+
+	public static void premiumPayementTermSPSP() throws Exception {
+		waitTillElementToBeClickable(premiumPaymentTermSPSP);
+		premiumPaymentTermSPSP.click();
+		waitTillElementToBeClickable(valueAtpremiumPaymentTermSPSP);
+		valueAtpremiumPaymentTermSPSP.click();
+		Thread.sleep(2000);
 	}
 
 	public static void premiumTypeSAP() throws Exception {
@@ -1584,6 +1641,16 @@ public class JourneyScreenTwo extends ReusableActions {
 		Thread.sleep(300);
 	}
 
+	public static void policyTermSPSP() throws Exception {
+		waitTillElementToBeClickable(policyTermDropDownFTSP);
+		policyTermDropDownFTSP.click();
+		waitTillElementToBeClickable(policyTermFTSPOption);
+		policyTermFTSPOption.click();
+		Thread.sleep(2000);
+		outsideClick.click();
+		Thread.sleep(300);
+	}
+
 	public static void sumAssuredOptionSTP() throws Exception {
 		waitTillElementToBeClickable(sumAssuredOptionSTP);
 		sumAssuredOptionSTP.click();
@@ -1700,6 +1767,14 @@ public class JourneyScreenTwo extends ReusableActions {
 		Thread.sleep(1000);
 		maxLifeFastTrackSuperPlan.click();
 		Thread.sleep(1000);
+	}
+
+	/* Shiksha Plus Super Drop Down */
+	public static void selectByDropdownSPSP() throws InterruptedException {
+		productNm.click();
+		Thread.sleep(1000);
+		 maxLifeShikshaPlusSuperPlan.click();
+		Thread.sleep(2000);
 
 	}
 
@@ -1710,6 +1785,13 @@ public class JourneyScreenTwo extends ReusableActions {
 		action.sendKeys(Keys.ARROW_DOWN).build().perform();
 		// }
 		Thread.sleep(3000);
+	}
+
+	public static void arrowScrollDownFunctionToScrollDown() throws Exception {
+
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,750)", "");
+
 	}
 
 	public static void selectByDropdownTradAllProduct() throws Exception {
@@ -2028,16 +2110,16 @@ public class JourneyScreenTwo extends ReusableActions {
 
 		lifeStageDropDown.click();
 		waitTillElementToBeClickable(lifeStage1stOption);
-		lifeStage1stOption.click();
+		lifeStage1sttOption.click();
 
 	}
 
 	public static void selectByDropdownLifeStge() throws Exception {
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		waitTillElementToBeClickable(lifeStageDropDown);
+		// waitTillElementToBeClickable(lifeStageDropDown);
 		lifeStageDropDown.click();
-		waitTillElementToBeClickable(lifeStage1stOption);
-		lifeStage1stOption.click();
+		// waitTillElementToBeClickable(lifeStage1stOption);
+		lifeStage1sttOption.click();
 		Thread.sleep(2000);
 
 	}
@@ -2147,6 +2229,16 @@ public class JourneyScreenTwo extends ReusableActions {
 	}
 
 	public static void modeOfPaymentFTSP() throws Exception {
+		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Thread.sleep(400);
+		waitTillElementToBeClickable(modeOfPaymentFTSP);
+		modeOfPaymentFTSP.click();
+		waitTillElementToBeClickable(modeOfPayment1stOption);
+		modeOfPayment1stOption.click();
+		Thread.sleep(2000);
+	}
+
+	public static void modeOfPaymentSPSP() throws Exception {
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		Thread.sleep(400);
 		waitTillElementToBeClickable(modeOfPaymentFTSP);
@@ -3024,7 +3116,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	public static void clickSubmitButton() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		click(proceedBtn);
-		Thread.sleep(14000);
+		Thread.sleep(4000);
 	}
 
 	// Select Indian as an nationality
@@ -3297,11 +3389,15 @@ public class JourneyScreenTwo extends ReusableActions {
 			}
 		}
 		driver.switchTo().window(parent);
-		Thread.sleep(10000);
-		/*waitTillElementToBeClickable(productDetails);
-		System.out.println(driver.findElement(By.xpath("//span[contains(text(),'Product   Details')]")).isEnabled());
-		driver.findElement(By.xpath("//span[contains(text(),'Product   Details')]")).click();
-		Thread.sleep(1000);*/
+		Thread.sleep(5000);
+		/*
+		 * waitTillElementToBeClickable(productDetails);
+		 * System.out.println(driver.findElement(By.xpath(
+		 * "//span[contains(text(),'Product   Details')]")).isEnabled());
+		 * driver.findElement(By.xpath(
+		 * "//span[contains(text(),'Product   Details')]")).click();
+		 * Thread.sleep(1000);
+		 */
 	}
 
 	public static void ifConditionForTabSizeTwoPDFIllustrationProceedingScreenAhead() throws Exception {
@@ -3320,7 +3416,7 @@ public class JourneyScreenTwo extends ReusableActions {
 
 		}
 		driver.switchTo().window(parent);
-		Thread.sleep(2000);
+		Thread.sleep(12000);
 	}
 
 	public static void ifConditionForTabSizeTwoPDFIllustrationSelectingLifestyleScreen() throws Exception {
@@ -3337,7 +3433,7 @@ public class JourneyScreenTwo extends ReusableActions {
 			}
 		}
 		driver.switchTo().window(parent);
-		Thread.sleep(3000);
+		Thread.sleep(14000);
 	}
 
 	/**
@@ -3763,6 +3859,33 @@ public class JourneyScreenTwo extends ReusableActions {
 		}
 	}
 
+	public static void fillingAllTheFeildForSPSP() throws Exception {
+		File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
+		FileInputStream fileInputStream = new FileInputStream(file);
+		XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
+		XSSFSheet sheet = hssfWorkbook.getSheetAt(8);
+		String premiumCommitmentSPSPFromExcell = getColumnDataAsPerTheForLoopRow(sheet, 1, 7);
+		premiumCommitmentSPSP.clear();
+		premiumCommitmentSPSP.sendKeys(premiumCommitmentSPSPFromExcell);
+		waitTillElementToBeClickable(premiumCommitmentSPSP);
+		chooseYourFundNo();
+		dynamicFundAllocationNo();
+		systematicTransferPlanYes();
+		JourneyScreenTwo.clickSubmitButton();
+		Thread.sleep(4000);
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		System.out.println(tabs.size());
+
+		if (tabs.size() == 2) {
+			ifConditionForTabSizeTwoPDFIllustrationSelectingLifestyleScreen();
+		}
+
+		else {
+			Assert.fail("Either PDF is not generating or Loading time is too much for SPSP");
+
+		}
+	}
+
 	public static void premiumCommitmentDesiredAnnualIncomeAnnualIncome(int x, int y, int z) throws Exception {
 
 		annualIncome.clear();
@@ -3913,10 +4036,11 @@ public class JourneyScreenTwo extends ReusableActions {
 		int totalNumOfRows = sheet.getLastRowNum();
 		System.out.println("\n Total num of rows found " + totalNumOfRows);
 
-		/*for (int rowNum = 1; rowNum < totalNumOfRows; rowNum++) {*/
-		for (int rowNum = 1; rowNum < 2; rowNum++) {
-			validatingErrorMsgForSAP(sheet, rowNum);
-		}
+		/* for (int rowNum = 1; rowNum < totalNumOfRows; rowNum++) { */
+		/*
+		 * for (int rowNum = 1; rowNum < 2; rowNum++) {
+		 * validatingErrorMsgForSAP(sheet, rowNum); }
+		 */
 		hssfWorkbook.close();
 		return false;
 	}
@@ -3943,7 +4067,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		premiumCommitment.clear();
 		premiumCommitment.sendKeys(duplicate);
 		JourneyScreenTwo.clickSubmitButton();
-		Thread.sleep(14000);
+		Thread.sleep(4000);
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 		System.out.println(tabs.size());
 
@@ -5625,6 +5749,17 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	}
 
+	public static void fillingAllTheRequiredFeildsForSPSP() throws Exception {
+		selectByDropdownNeedOfInsur();
+		selectByDropdownLifeStge();
+		// arrowScrollDownFunctionToScrollDown();
+		premiumPayementTermSPSP();
+		policyTermSPSP();
+		JourneyScreenFour.arrowDownFunctionToScrollDown();
+		modeOfPaymentSPSP();
+		chieldDateBirthProductDetails();
+     	}
+
 	public static void fillingAllTheRequiredFeildsForFTSP() throws Exception {
 		selectByDropdownNeedOfInsur();
 		selectByDropdownLifeStge();
@@ -6358,5 +6493,39 @@ public class JourneyScreenTwo extends ReusableActions {
 		waitTillElementToBeClickable(modeOfPaymentMonthly);
 		modeOfPaymentMonthly.click();
 		Thread.sleep(5000);
+	}
+	public static void screenJourneyFromThreeTillEnd() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenTwo.class);
+		try {
+			JourneyScreenThreeTest.proposerPersonalDetailsSection();
+			// JourneyScreenTwo.proposerPersonalDetailsIncome();
+			JourneyScreenThreeTest.nomineeDetailsWithoutDependentSelection();
+			JourneyScreenThreeTest.bankDetailsSectionFillingData();
+			JourneyScreenThree.fillingAnnualIncomeTOProceed();
+			Thread.sleep(1000);
+
+			JourneyScreenFour.form60RelatedDetailsIdentityProofNameOptionSelection();
+			JourneyScreenFour.setIdentityProofNumberValidation(0, 1, 6);
+			JourneyScreenFour.identityProofIssuingAuthority();
+			JourneyScreenFour.iAmExemptFromTheRequirementOfPANUnderTheFollowingProvisionsOfTheITAct1961();
+
+			JourneyScreenFour.arrowDownFunctionToScrollDownTillBottomFastTrack();
+			JourneyScreenFour.criticalIllnessNoOption();
+			JourneyScreenFour.hazardousActivitiesNo();
+			JourneyScreenTwo.arrowDownFunctionToScrollDown();
+			JourneyScreenFour.selectCriminalChargesNo();
+			JourneyScreenFour.feetInchesKgsSelectionToMoveToScreen5POSV();
+			JourneyScreenThree.agreePopupToProceedToSendPreIssuranceVerificationLinkToCustomer();
+			JourneyScreenSix.fetchingProposalNumberFromUI();
+
+			// JourneyScreenThree.gmailFunctionalitySmartTermPlan();
+			JourneyScreenThree.handle_windowFTSP();
+			// JourneyScreenThreeTest.usingPolicyNumberToFillScreenSixTPPPush();
+
+		} catch (Exception e) {
+			logger.error("Test case failed " + e.getMessage());
+			throw e;
+
+		}
 	}
 }

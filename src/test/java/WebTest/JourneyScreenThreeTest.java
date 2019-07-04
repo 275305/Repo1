@@ -531,10 +531,6 @@ public class JourneyScreenThreeTest extends ReusableActions {
 	public static void proposerPersonalDetailsSection() throws Exception
 
 	{
-		try{
-			
-			Thread.sleep(1000);
-		
 		JourneyScreenThree.fathersName(9, 1, 0);
 		JourneyScreenThree.mothersName(9, 1, 1);
 		JourneyScreenThree.maritalStatusOptionSelection();
@@ -546,11 +542,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 		JourneyScreenThree.setCompanyNameProposerPersonalDetails(9, 1, 0);
 		// JourneyScreenTwo.occupationOptionSelectionWithCancerProduct();
 		JourneyScreenTwo.preferredLanguageOfCommunicationOptionSelectionWithSAPProduct();
-		} catch (Exception e){
-			logger.error("Test case Failed" + e.getMessage());
-		}
-		
-		
+
 	}
 
 	public static void nomineeDetailsWithoutDependentSelection() throws Exception {
@@ -561,7 +553,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			JourneyScreenTwo.setDateBirthNomineeDetails();
 			JourneyScreenThree.selectNomineeGender();
 			JourneyScreenThree.relationshipWithNomineeOptionSelection();
-
+			JourneyScreenThree.childNameWithNominee(4,1,15);
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
 			throw e;
