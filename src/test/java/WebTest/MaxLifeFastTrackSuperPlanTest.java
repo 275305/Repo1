@@ -70,7 +70,6 @@ public class MaxLifeFastTrackSuperPlanTest extends ReusableActions {
 		public static void screenJourneyFromThreeTillEnd() throws Exception {
 			PageFactory.initElements(driver, JourneyScreenTwo.class);
 			try {
-
 				JourneyScreenThreeTest.proposerPersonalDetailsSection(); //
 				// JourneyScreenTwo.proposerPersonalDetailsIncome();
 				JourneyScreenThreeTest.nomineeDetailsWithoutDependentSelection();
@@ -104,7 +103,7 @@ public class MaxLifeFastTrackSuperPlanTest extends ReusableActions {
 		}
 
 		// For Premium Payment term 5 for AnnualModeOfPayment
-		@Test(priority = 1, enabled = false)
+		@Test(priority = 2, enabled = false)
 		public void pdfConfigrationFTSPUlipGeneratingPdfoption5() throws Exception {
 			PageFactory.initElements(driver, JourneyScreenTwo.class);
 			try {
@@ -131,7 +130,7 @@ public class MaxLifeFastTrackSuperPlanTest extends ReusableActions {
 
 		// For Premium Payment term 5 for SemiAnnualModeOfPayment
 
-		@Test(priority = 1, enabled = false)
+		@Test(priority = 3, enabled = false)
 		public void pdfConfigrationFTSPUlipGeneratingPdfoption5SemiAnnual() throws Exception {
 			PageFactory.initElements(driver, JourneyScreenTwo.class);
 			try {
@@ -152,11 +151,10 @@ public class MaxLifeFastTrackSuperPlanTest extends ReusableActions {
 			} catch (Exception e) {
 				logger.error("Test case failed " + e.getMessage());
 				throw e;
-
 			}
 		}
 		// For Premium Payment term 20 for QuaterlyModeOfPayment
-		@Test(priority = 1, enabled = false)
+		@Test(priority = 4, enabled = false)
 		public void pdfConfigrationFTSPUlipGeneratingPdfoption20Quaterly() throws Exception {
 			PageFactory.initElements(driver, JourneyScreenTwo.class);
 			try {
@@ -173,13 +171,9 @@ public class MaxLifeFastTrackSuperPlanTest extends ReusableActions {
 				// JourneyScreenTwo.clickSubmitButton();
 				screenJourneyFromThreeTillEnd();
 				// HomePage.clickDashboard();
-
 			} catch (Exception e) {
 				logger.error("Test case failed " + e.getMessage());
 				throw e;
-
 			}
 		}
-
-
 }

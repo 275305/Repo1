@@ -46,9 +46,9 @@ public class MaxLifeShikshaPlusSuperTest extends ReusableActions {
 	}
 
 	// For Premium Payment term 5 for AnnualModeOfPayment
-	/*Systematic Transfer Plan*/
-	@Test(priority = 1, enabled = true)
-	public void pdfConfigrationFTSPUlipGeneratingPdfoption5() throws Exception {
+	/* Systematic Transfer Plan */
+	@Test(priority = 1, enabled = false)
+	public void pdfConfigrationSPSPUlipGeneratingPdfoption5() throws Exception {
 
 		try {
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
@@ -59,7 +59,7 @@ public class MaxLifeShikshaPlusSuperTest extends ReusableActions {
 			JourneyScreenTwo.fillingAllTheFeildForSPSP();
 			screenJourneyFromThreeTillEnd();
 			screenJourneyFromFourTillEnd();
-			//posvBackFlowTillTPPPush();
+			// posvBackFlowTillTPPPush();
 
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
@@ -68,6 +68,70 @@ public class MaxLifeShikshaPlusSuperTest extends ReusableActions {
 		}
 	}
 
+	// For Premium Payment term 5 for AnnualModeOfPayment
+	/* dynamic Fund Allocation Yes */
+	@Test(priority = 2, enabled = false)
+	public void pdfConfigrationSPSPUlipGeneratingPdfDFA() throws Exception {
+
+		try {
+			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
+			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
+			JourneyScreenTwo.ulip();
+			JourneyScreenTwo.selectByDropdownSPSP();
+			JourneyScreenTwo.fillingAllTheRequiredFeildsForSPSP();
+			JourneyScreenTwo.fillingAllTheFeildForSPSPDynamicFund();
+			screenJourneyFromThreeTillEnd();
+			screenJourneyFromFourTillEnd();
+			// posvBackFlowTillTPPPush();
+
+		} catch (Exception e) {
+			logger.error("Test case failed " + e.getMessage());
+			throw e;
+		}
+	}
+	// For Premium Payment term 5 for AnnualModeOfPayment
+	/*choose Your Fund*/
+	@Test(priority = 3, enabled = false)
+	public void pdfConfigrationSPSPUlipGeneratingPdfCYF() throws Exception {
+
+		try {
+			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
+			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
+			JourneyScreenTwo.ulip();
+			JourneyScreenTwo.selectByDropdownSPSP();
+			JourneyScreenTwo.fillingAllTheRequiredFeildsForSPSP();
+			JourneyScreenTwo.fillingAllTheFeildForSPSPChooseYourFundYes();
+			screenJourneyFromThreeTillEnd();
+			screenJourneyFromFourTillEnd();
+			// posvBackFlowTillTPPPush();
+
+		} catch (Exception e) {
+			logger.error("Test case failed " + e.getMessage());
+			throw e;
+		}
+	}
+
+	// For Premium Payment term 5 for Semi-AnnualModeOfPayment
+		/*choose Your Fund*/
+		@Test(priority = 4, enabled = true)
+		public void pdfConfigrationSPSPUlipGeneratingPdfCYFSemiAnnual() throws Exception {
+
+			try {
+				JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
+				JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
+				JourneyScreenTwo.ulip();
+				JourneyScreenTwo.selectByDropdownSPSP();
+				JourneyScreenTwo.fillingAllTheRequiredFeildsForSPSPSemiAnnual();
+				JourneyScreenTwo.fillingAllTheFeildForSPSPChooseYourFundYes();
+				screenJourneyFromThreeTillEnd();
+				screenJourneyFromFourTillEnd();
+				// posvBackFlowTillTPPPush();
+
+			} catch (Exception e) {
+				logger.error("Test case failed " + e.getMessage());
+				throw e;
+			}
+		}
 	/* / Added Changes on 20-06-19 / */
 	public static void screenJourneyFromThreeTillEnd() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
@@ -84,11 +148,12 @@ public class MaxLifeShikshaPlusSuperTest extends ReusableActions {
 		}
 	}
 
+
+
 	/* / Added Changes on 20-06-19 / */
 	public static void screenJourneyFromFourTillEnd() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
-
 			JourneyScreenFour.form60RelatedDetailsIdentityProofNameOptionSelection();
 			JourneyScreenFour.setIdentityProofNumberValidation(0, 1, 6);
 			JourneyScreenFour.identityProofIssuingAuthority();
@@ -124,7 +189,4 @@ public class MaxLifeShikshaPlusSuperTest extends ReusableActions {
 		}
 	}
 
-
-
 }
-

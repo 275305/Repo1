@@ -798,6 +798,14 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//div[@id='modeOfPayment_id']")
 	static WebElement modeOfPaymentWLS;
 
+	// XPATH for SemiAnnual Mode of payment in SPSP
+	@FindBy(xpath = "//div[@id='modeOfPayment_id']")
+	static WebElement modeOfPaymentSemiannualSPSP;
+
+	// XPATH for Value SemiAnnual in SPSP
+	@FindBy(xpath = "//li[@id='liId_Semi-Annual']")
+	static WebElement valueSemiannualSPSP;
+
 	@FindBy(xpath = "//div[@id='dividendAdjustment_id']")
 	static WebElement dividentAdjustment;
 
@@ -1010,6 +1018,7 @@ public class JourneyScreenTwo extends ReusableActions {
 				"//li[@id='liId_Utility bill not more than 2 months (electricity, telephone, post-paid mobile, piped gas, water bill)']"));
 		new Actions(driver).moveToElement(element).click().perform();
 		proofTypeDropDownValueProposerCommunication.click();
+		waitTillElementToBeClickableRefreshed(proofTypeDropDownValueProposerCommunication);
 		Thread.sleep(5000);
 		outsideClick.click();
 		// arrowDownFunctionToScrollDown();
@@ -1062,6 +1071,11 @@ public class JourneyScreenTwo extends ReusableActions {
 	public static void dynamicFundAllocationNo() throws Exception {
 
 		click(dynamicFundNo);
+	}
+
+	public static void dynamicFundAllocationYes() throws Exception {
+
+		click(dynamicFundYes);
 	}
 
 	public static void systematicTransferPlanNo() throws Exception {
@@ -1773,7 +1787,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	public static void selectByDropdownSPSP() throws InterruptedException {
 		productNm.click();
 		Thread.sleep(1000);
-		 maxLifeShikshaPlusSuperPlan.click();
+		maxLifeShikshaPlusSuperPlan.click();
 		Thread.sleep(2000);
 
 	}
@@ -2245,6 +2259,16 @@ public class JourneyScreenTwo extends ReusableActions {
 		modeOfPaymentFTSP.click();
 		waitTillElementToBeClickable(modeOfPayment1stOption);
 		modeOfPayment1stOption.click();
+		Thread.sleep(2000);
+	}
+
+	public static void modeOfPaymentSPSPSemiAnnual() throws Exception {
+		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Thread.sleep(400);
+		waitTillElementToBeClickable(modeOfPaymentSemiannualSPSP);
+		modeOfPaymentSemiannualSPSP.click();
+		waitTillElementToBeClickable( valueSemiannualSPSP);
+		 valueSemiannualSPSP.click();
 		Thread.sleep(2000);
 	}
 
@@ -3859,6 +3883,33 @@ public class JourneyScreenTwo extends ReusableActions {
 		}
 	}
 
+	/* Method for Dynamic fund */
+	public static void fillingAllTheFeildForSPSPDynamicFund() throws Exception {
+		File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
+		FileInputStream fileInputStream = new FileInputStream(file);
+		XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
+		XSSFSheet sheet = hssfWorkbook.getSheetAt(8);
+		String premiumCommitmentSPSPFromExcell = getColumnDataAsPerTheForLoopRow(sheet, 1, 7);
+		premiumCommitmentSPSP.clear();
+		premiumCommitmentSPSP.sendKeys(premiumCommitmentSPSPFromExcell);
+		waitTillElementToBeClickable(premiumCommitmentSPSP);
+		dynamicFundAllocationYes();
+		JourneyScreenTwo.clickSubmitButton();
+		Thread.sleep(4000);
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		System.out.println(tabs.size());
+
+		if (tabs.size() == 2) {
+			ifConditionForTabSizeTwoPDFIllustrationSelectingLifestyleScreen();
+		}
+
+		else {
+			Assert.fail("Either PDF is not generating or Loading time is too much for SPSP");
+
+		}
+	}
+
+	/* systematic Transfer Plan Yes */
 	public static void fillingAllTheFeildForSPSP() throws Exception {
 		File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
 		FileInputStream fileInputStream = new FileInputStream(file);
@@ -3868,8 +3919,6 @@ public class JourneyScreenTwo extends ReusableActions {
 		premiumCommitmentSPSP.clear();
 		premiumCommitmentSPSP.sendKeys(premiumCommitmentSPSPFromExcell);
 		waitTillElementToBeClickable(premiumCommitmentSPSP);
-		chooseYourFundNo();
-		dynamicFundAllocationNo();
 		systematicTransferPlanYes();
 		JourneyScreenTwo.clickSubmitButton();
 		Thread.sleep(4000);
@@ -3882,6 +3931,60 @@ public class JourneyScreenTwo extends ReusableActions {
 
 		else {
 			Assert.fail("Either PDF is not generating or Loading time is too much for SPSP");
+
+		}
+	}
+
+	/* choose Your Fund Yes */
+	public static void fillingAllTheFeildForSPSPChooseYourFundYes() throws Exception {
+
+		File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
+		FileInputStream fileInputStream = new FileInputStream(file);
+		XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
+		XSSFSheet sheet = hssfWorkbook.getSheetAt(8);
+
+		// String premiumCommitmentFromExcell =
+		// getColumnDataAsPerTheForLoopRow(sheet, 1, 6);
+		String premiumCommitmentFromExcell = getColumnDataAsPerTheForLoopRow(sheet, 1, 7);
+		String growthSuperFundFromExcell = getColumnDataAsPerTheForLoopRow(sheet, 3, 0);
+
+		String secureFundFromExcell = getColumnDataAsPerTheForLoopRow(sheet, 3, 1);
+
+		String conservativeFundFromExcell = getColumnDataAsPerTheForLoopRow(sheet, 3, 2);
+
+		String highGrowthFundFromExcell = getColumnDataAsPerTheForLoopRow(sheet, 3, 3);
+
+		String balancedFundFromExcell = getColumnDataAsPerTheForLoopRow(sheet, 3, 4);
+
+		String growthFundFromExcell = getColumnDataAsPerTheForLoopRow(sheet, 3, 5);
+
+		premiumCommitment.clear();
+		premiumCommitment.sendKeys(premiumCommitmentFromExcell);
+		chooseYourFundYes();
+		GrowthSuperFund.clear();
+		GrowthSuperFund.sendKeys(growthSuperFundFromExcell);
+		secureFund.clear();
+		secureFund.sendKeys(secureFundFromExcell);
+		conservativeFund.clear();
+		conservativeFund.sendKeys(conservativeFundFromExcell);
+		HighGrowthFund.clear();
+		HighGrowthFund.sendKeys(highGrowthFundFromExcell);
+		BalancedFund.clear();
+		BalancedFund.sendKeys(balancedFundFromExcell);
+		growthFund.clear();
+		growthFund.sendKeys(growthFundFromExcell);
+
+		JourneyScreenTwo.clickSubmitButton();
+		Thread.sleep(4000);
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		System.out.println(tabs.size());
+
+		if (tabs.size() == 2) {
+			ifConditionForTabSizeTwoPDFIllustrationSelectingLifestyleScreen();
+		}
+
+		else {
+			Assert.fail("Either PDF is not generating or Loading time is too much for STP");
 
 		}
 	}
@@ -5758,7 +5861,18 @@ public class JourneyScreenTwo extends ReusableActions {
 		JourneyScreenFour.arrowDownFunctionToScrollDown();
 		modeOfPaymentSPSP();
 		chieldDateBirthProductDetails();
-     	}
+	}
+
+	public static void fillingAllTheRequiredFeildsForSPSPSemiAnnual() throws Exception {
+		selectByDropdownNeedOfInsur();
+		selectByDropdownLifeStge();
+		// arrowScrollDownFunctionToScrollDown();
+		premiumPayementTermSPSP();
+		policyTermSPSP();
+		JourneyScreenFour.arrowDownFunctionToScrollDown();
+		modeOfPaymentSPSPSemiAnnual();
+		chieldDateBirthProductDetails();
+	}
 
 	public static void fillingAllTheRequiredFeildsForFTSP() throws Exception {
 		selectByDropdownNeedOfInsur();
@@ -6494,6 +6608,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		modeOfPaymentMonthly.click();
 		Thread.sleep(5000);
 	}
+
 	public static void screenJourneyFromThreeTillEnd() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {

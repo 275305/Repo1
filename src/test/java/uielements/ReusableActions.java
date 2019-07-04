@@ -120,6 +120,11 @@ public class ReusableActions {
 		return elementloaded;
 	}
 
+	public static WebElement waitTillElementToBeClickableRefreshed(WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, 260);
+		WebElement elementloaded = wait.until(ExpectedConditions.refreshed(ExpectedConditions.elementToBeClickable(element)));
+		return elementloaded;
+	}
 	public static WebElement waitTillElementToBeClickableLongWait(WebElement element) {
 		WebDriverWait wait = new WebDriverWait(driver, 660);
 		WebElement elementloaded = wait.until(ExpectedConditions.elementToBeClickable(element));
