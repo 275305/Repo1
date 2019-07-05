@@ -501,9 +501,7 @@ public class ReusableActions {
 	public static void alwaysCloseAllChildTabs() throws Exception {
 
 		String originalHandle = driver.getWindowHandle();
-
 		// Do something to open new tabs
-
 		for (String handle : driver.getWindowHandles()) {
 			if (!handle.equals(originalHandle)) {
 				driver.switchTo().window(handle);
@@ -519,7 +517,6 @@ public class ReusableActions {
 		for (int i = 0; i < 200; i++) {
 			String name = df.getFirstName() + " " + df.getLastName();
 			System.out.println(name);
-
 			return name;
 		}
 		return null;

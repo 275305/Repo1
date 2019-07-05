@@ -800,11 +800,19 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	// XPATH for SemiAnnual Mode of payment in SPSP
 	@FindBy(xpath = "//div[@id='modeOfPayment_id']")
-	static WebElement modeOfPaymentSemiannualSPSP;
+	static WebElement modeOfPaymentSPSP;
 
 	// XPATH for Value SemiAnnual in SPSP
 	@FindBy(xpath = "//li[@id='liId_Semi-Annual']")
 	static WebElement valueSemiannualSPSP;
+
+	// XPATH for Value Quarterly in SPSP
+	@FindBy(xpath = "//li[@id='liId_Quarterly']")
+	static WebElement valueQuartlySPSP;
+
+	// XPATH for Value Quarterly in SPSP
+	@FindBy(xpath = "//li[@id='liId_Monthly']")
+	static WebElement valueMonthlySPSP;
 
 	@FindBy(xpath = "//div[@id='dividendAdjustment_id']")
 	static WebElement dividentAdjustment;
@@ -2265,10 +2273,32 @@ public class JourneyScreenTwo extends ReusableActions {
 	public static void modeOfPaymentSPSPSemiAnnual() throws Exception {
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		Thread.sleep(400);
-		waitTillElementToBeClickable(modeOfPaymentSemiannualSPSP);
-		modeOfPaymentSemiannualSPSP.click();
-		waitTillElementToBeClickable( valueSemiannualSPSP);
-		 valueSemiannualSPSP.click();
+		waitTillElementToBeClickable(modeOfPaymentSPSP);
+		modeOfPaymentSPSP.click();
+		waitTillElementToBeClickable(valueSemiannualSPSP);
+		valueSemiannualSPSP.click();
+		Thread.sleep(2000);
+	}
+
+	public static void modeOfPaymentSPSPQuarterly() throws Exception {
+		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Thread.sleep(400);
+		waitTillElementToBeClickable(modeOfPaymentSPSP);
+		modeOfPaymentSPSP.click();
+		waitTillElementToBeClickable(valueQuartlySPSP);
+		valueQuartlySPSP.click();
+		Thread.sleep(2000);
+	}
+
+	public static void modeOfPaymentSPSPMonthly() throws Exception {
+		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Thread.sleep(400);
+		waitTillElementToBeClickable(modeOfPaymentSPSP);
+		modeOfPaymentSPSP.click();
+		waitTillElementToBeClickable(valueMonthlySPSP);
+		valueMonthlySPSP.click();
+		Thread.sleep(700);
+		escapeFunction();
 		Thread.sleep(2000);
 	}
 
@@ -5874,13 +5904,33 @@ public class JourneyScreenTwo extends ReusableActions {
 		chieldDateBirthProductDetails();
 	}
 
+	public static void fillingAllTheRequiredFeildsForSPSPQuarterly() throws Exception {
+		selectByDropdownNeedOfInsur();
+		selectByDropdownLifeStge();
+		// arrowScrollDownFunctionToScrollDown();
+		premiumPayementTermSPSP();
+		policyTermSPSP();
+		JourneyScreenFour.arrowDownFunctionToScrollDown();
+		modeOfPaymentSPSPQuarterly();
+		chieldDateBirthProductDetails();
+	}
+
+	public static void fillingAllTheRequiredFeildsForSPSPMonthly() throws Exception {
+		selectByDropdownNeedOfInsur();
+		selectByDropdownLifeStge();
+		// arrowScrollDownFunctionToScrollDown();
+		premiumPayementTermSPSP();
+		policyTermSPSP();
+		JourneyScreenFour.arrowDownFunctionToScrollDown();
+		modeOfPaymentSPSPMonthly();
+		chieldDateBirthProductDetails();
+	}
+
 	public static void fillingAllTheRequiredFeildsForFTSP() throws Exception {
 		selectByDropdownNeedOfInsur();
 		selectByDropdownLifeStge();
-
 		// driver.findElement(By.xpath("/html[1]/body[1]/div[1]/main[1]/div[2]/form[1]/div[1]/div[1]/div[3]")).click();
 		// arrowDownFunctionToScrollDown();
-
 		premiumPayementTermFTSP();
 		policyTermFTSP();
 		JourneyScreenFour.arrowDownFunctionToScrollDown();

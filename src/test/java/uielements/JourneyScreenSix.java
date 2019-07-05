@@ -289,7 +289,6 @@ public class JourneyScreenSix extends ReusableActions {
 		factFinderUpload.click();
 		Thread.sleep(500);
 		addButtonFactFinder.click();
-
 	}
 
 	public static void vernacularUpload() throws Exception {
