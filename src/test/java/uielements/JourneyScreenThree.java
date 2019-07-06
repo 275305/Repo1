@@ -3645,48 +3645,48 @@ public class JourneyScreenThree extends ReusableActions {
 																				// the
 																				// flyout
 																				// menu
-		Thread.sleep(800);
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//a[@id='gb_71']")).click(); // To click
 																	// the sign
 																	// out
 																	// button
 
-		Thread.sleep(800);
+		Thread.sleep(1000);
 
 		WebDriver driver = new ChromeDriver();
 		driver.get(link);
 		driver.manage().window().maximize();
 
-		Thread.sleep(700);
+		Thread.sleep(1000);
 
 		String str = driver.getCurrentUrl();
 		System.out.println(str);
 
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//label[@for=\"radio-two\"]")).click();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//label[@for=\"radio-eight\"]")).click();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 
 		driver.findElement(By.xpath("//label[@for=\"radio-two\"]")).click();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//label[@for=\"radio-four\"]")).click();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 
 		driver.findElement(By.xpath("//label[@for=\"radio-two\"]")).click();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//label[@for=\"radio-four\"]")).click();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
 		Thread.sleep(1000);
 
@@ -3719,7 +3719,7 @@ public class JourneyScreenThree extends ReusableActions {
 		driver.findElement(By.xpath("//label[@class='cstm-check-label']")).click();
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//button[@id='submitbutton']")).click();
-		Thread.sleep(1800);
+		Thread.sleep(3000);
 		/*
 		 * robot.keyPress(KeyEvent.VK_ALT); robot.keyPress(KeyEvent.VK_TAB);
 		 * robot.keyRelease(KeyEvent.VK_TAB); robot.keyRelease(KeyEvent.VK_ALT);
@@ -3730,7 +3730,7 @@ public class JourneyScreenThree extends ReusableActions {
 		 * robot.keyRelease(KeyEvent.VK_TAB);
 		 * robot.keyRelease(KeyEvent.VK_CONTROL);
 		 */
-
+        escapeFunction();
 		driver.close();
 
 	}

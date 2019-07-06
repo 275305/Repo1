@@ -169,14 +169,12 @@ public class MaxLifeShikshaPlusSuperTest extends ReusableActions {
 				JourneyScreenTwo.fillingAllTheFeildForSPSPChooseYourFundYes();
 				screenJourneyFromThreeTillEnd();
 				screenJourneyFromFourTillEnd();
-				posvBackFlowTillTPPPush();
+				//posvBackFlowTillTPPPush();
 			} catch (Exception e) {
 				logger.error("Test case failed " + e.getMessage());
 				throw e;
 			}
 		}
-
-
 	/* / Added Changes on 20-06-19 / */
 	public static void screenJourneyFromThreeTillEnd() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
