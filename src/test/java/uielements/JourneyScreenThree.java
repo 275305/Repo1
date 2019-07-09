@@ -3603,10 +3603,10 @@ public class JourneyScreenThree extends ReusableActions {
 	// Added Changes on 20-06-2019
 	// --------------------------------------------------------
 	public static void gmailFunctionalitySAP() throws Exception {
-		// ((JavascriptExecutor) driver).executeScript("window.open()");
-		// ArrayList<String> tabs = new
-		// ArrayList<String>(driver.getWindowHandles());
-		// driver.switchTo().window(tabs.get(1));
+		/* ((JavascriptExecutor) driver).executeScript("window.open()");
+		 ArrayList<String> tabs = new
+		 ArrayList<String>(driver.getWindowHandles());
+		 driver.switchTo().window(tabs.get(1));*/
 		driver.get("https://mail.google.com");
 
 		setUsername(1, 10, 3);
@@ -3634,28 +3634,30 @@ public class JourneyScreenThree extends ReusableActions {
 		// Actions actionObject = new Actions(driver);
 		// actionObject.keyDown(Keys.CONTROL).sendKeys(Keys.F5).keyUp(Keys.CONTROL).perform();
 
-		waitTillElementToBeClickableLongWait(preverificationLink);
-		Thread.sleep(700);
+		try {
+			waitTillElementToBeClickableLongWait(preverificationLink);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("unable to click on verification link");
+		}
+		Thread.sleep(3000);
 
 		String link = preverificationLink.getText();
+
 		// driver.close();
-
-		driver.findElement(By.xpath("//span[@class='gb_xa gbii']")).click(); // To
-																				// click
-																				// the
-																				// flyout
-																				// menu
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//a[@id='gb_71']")).click(); // To click
-																	// the sign
-																	// out
-																	// button
-
-		Thread.sleep(1000);
 
 		WebDriver driver = new ChromeDriver();
 		driver.get(link);
 		driver.manage().window().maximize();
+
+		/*driver.findElement(By.xpath("//span[@class='gb_xa gbii']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//a[@id='gb_71']")).click();
+		Thread.sleep(1000);
+		WebDriver driver = new ChromeDriver();
+		driver.get(link);
+		driver.manage().window().maximize();*/
 
 		Thread.sleep(1000);
 
@@ -3666,7 +3668,7 @@ public class JourneyScreenThree extends ReusableActions {
 		driver.findElement(By.xpath("//label[@for=\"radio-two\"]")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//label[@for=\"radio-eight\"]")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
@@ -3693,9 +3695,10 @@ public class JourneyScreenThree extends ReusableActions {
 		driver.findElement(By.xpath("//label[@for=\"radio-two\"]")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//label[@for=\"radio-four\"]")).click();
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
-		Thread.sleep(1000);
+
 		driver.findElement(By.xpath("//label[@for=\"radio-2\"]")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//label[@for=\"radio-10\"]")).click();
@@ -3730,9 +3733,9 @@ public class JourneyScreenThree extends ReusableActions {
 		 * robot.keyRelease(KeyEvent.VK_TAB);
 		 * robot.keyRelease(KeyEvent.VK_CONTROL);
 		 */
-        escapeFunction();
+       // escapeFunction();
+        Thread.sleep(1000);
 		driver.close();
-
 	}
 
 	/*
@@ -3741,13 +3744,13 @@ public class JourneyScreenThree extends ReusableActions {
 	 */
 
 	public static void handle_windowFTSP() throws Exception {
-		((JavascriptExecutor) driver).executeScript("window.open()");
-		String current_window = driver.getWindowHandle();
-		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-		driver.switchTo().window(tabs.get(1));
+		//((JavascriptExecutor) driver).executeScript("window.open()");
+		//String current_window = driver.getWindowHandle();
+		//ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		//driver.switchTo().window(tabs.get(1));
 		gmailFunctionalityFTSP();
 		driver.close();
-		driver.switchTo().window(current_window);
+		//driver.switchTo().window(current_window);
 		JourneyScreenThreeTest.usingPolicyNumberToFillScreenSixTPPPushFTSP();
 		driver.close();
 	}
@@ -3760,9 +3763,21 @@ public class JourneyScreenThree extends ReusableActions {
 		driver.switchTo().window(tabs.get(1));
 		gmailFunctionalitySAP();
 
+	    driver.close();
+		driver.switchTo().window(current_window);
+
+		JourneyScreenThreeTest.usingPolicyNumberToFillScreenSixTPPPushSuperTermPlan();
+		driver.close();
+	}
+	public static void handle_windowWLS() throws Exception {
+		((JavascriptExecutor) driver).executeScript("window.open()");
+		String current_window = driver.getWindowHandle();
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		driver.switchTo().window(tabs.get(1));
+		gmailFunctionalityFTSP();
 		driver.close();
 		driver.switchTo().window(current_window);
-		JourneyScreenThreeTest.usingPolicyNumberToFillScreenSixTPPPushSuperTermPlan();
+		JourneyScreenThreeTest.usingPolicyNumberToFillScreenSixTPPPushWLS();
 		driver.close();
 	}
 

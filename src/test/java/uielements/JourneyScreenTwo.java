@@ -479,6 +479,26 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//li[@id='liId_Max Life Shiksha Plus Super']")
 	static WebElement maxLifeShikshaPlusSuperPlan;
 
+	/* XPath for Platinum Wealth Plan */
+	@FindBy(xpath = "//li[@id='liId_Max Life Platinum Wealth Plan']")
+	static WebElement maxLifePlatinumWealthPlan;
+
+	/* XPath for Premium Type dropdown */
+	@FindBy(xpath = "//div[@id='premiumType_id']")
+	static WebElement premiumTypeDropdown;
+
+	/* XPath for Premium Type value */
+	@FindBy(xpath = "//li[@id='liId_Single Pay']")
+	static WebElement premiumTypeDropdownValue;
+
+	/* XPath for Premium Payment Term dropdown */
+	@FindBy(xpath = "//div[@id='premiumPaymentTerm_id']")
+	static WebElement premiumPaymentTermDropDown;
+
+	/* XPath for Premium Payment Term dropdown value */
+	@FindBy(xpath = "//li[@id='liId_1']")
+	static WebElement premiumPaymentTermDropDownValue;
+
 	@FindBy(xpath = "//*[@id='menu-productName']/div[2]/ul/li[text()= 'Max Life Cancer Insurance Plan']")
 	static WebElement maxLifeCancerInsurancePlan;
 
@@ -1797,6 +1817,22 @@ public class JourneyScreenTwo extends ReusableActions {
 		Thread.sleep(1000);
 		maxLifeShikshaPlusSuperPlan.click();
 		Thread.sleep(2000);
+
+	}
+	/* Platinum wealth plan Drop Down */
+	public static void selectByDropdownPWP() throws InterruptedException {
+		productNm.click();
+		Thread.sleep(1000);
+		maxLifePlatinumWealthPlan.click();
+		Thread.sleep(1000);
+		premiumTypeDropdown.click();
+		Thread.sleep(1000);
+		premiumTypeDropdownValue.click();
+        Thread.sleep(1000);
+        premiumPaymentTermDropDown.click();
+        Thread.sleep(1000);
+        premiumPaymentTermDropDownValue.click();
+        Thread.sleep(1000);
 
 	}
 
@@ -3483,7 +3519,7 @@ public class JourneyScreenTwo extends ReusableActions {
 			if (!parent.equals(child_window)) {
 				driver.switchTo().window(child_window);
 				System.out.println(driver.switchTo().window(child_window).getTitle());
-				// driver.close();
+				driver.close();
 			}
 		}
 		driver.switchTo().window(parent);
@@ -4005,7 +4041,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		growthFund.sendKeys(growthFundFromExcell);
 
 		JourneyScreenTwo.clickSubmitButton();
-		Thread.sleep(4000);
+		Thread.sleep(5000);
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 		System.out.println(tabs.size());
 
@@ -5886,8 +5922,8 @@ public class JourneyScreenTwo extends ReusableActions {
 		selectByDropdownNeedOfInsur();
 		selectByDropdownLifeStge();
 		// arrowScrollDownFunctionToScrollDown();
-		premiumPayementTermSPSP();
-		policyTermSPSP();
+		//premiumPayementTermSPSP();
+		//policyTermSPSP();
 		JourneyScreenFour.arrowDownFunctionToScrollDown();
 		modeOfPaymentSPSP();
 		chieldDateBirthProductDetails();

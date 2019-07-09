@@ -18,7 +18,7 @@ import util.AppConstant;
 
 public class MaxLifeShikshaPlusSuperTest extends ReusableActions {
 
-	/* Initialize the webDriver and Login the application */
+	/* Initialize the webDriver and Login to the application */
 	@Test(priority = 0, enabled = true)
 	public void Indian() throws Exception {
 		try {
@@ -169,7 +169,7 @@ public class MaxLifeShikshaPlusSuperTest extends ReusableActions {
 				JourneyScreenTwo.fillingAllTheFeildForSPSPChooseYourFundYes();
 				screenJourneyFromThreeTillEnd();
 				screenJourneyFromFourTillEnd();
-				//posvBackFlowTillTPPPush();
+				posvBackFlowTillTPPPush();
 			} catch (Exception e) {
 				logger.error("Test case failed " + e.getMessage());
 				throw e;
@@ -205,6 +205,8 @@ public class MaxLifeShikshaPlusSuperTest extends ReusableActions {
 			JourneyScreenFour.selectCriminalChargesNo();
 			JourneyScreenFour.feetInchesKgsSelectionToMoveToScreen5POSV();
 			JourneyScreenThree.agreePopupToProceedToSendPreIssuranceVerificationLinkToCustomer();
+		    JourneyScreenSix.fetchingProposalNumberFromUI();
+
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
 			throw e;
@@ -215,12 +217,10 @@ public class MaxLifeShikshaPlusSuperTest extends ReusableActions {
 	public static void posvBackFlowTillTPPPush() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
-
-			JourneyScreenSix.fetchingProposalNumberFromUI();
-
 			// JourneyScreenThree.gmailFunctionalitySmartTermPlan();
 			JourneyScreenThree.handle_windowSAP();
 			// JourneyScreenThreeTest.usingPolicyNumberToFillScreenSixTPPPush();
+			//JourneyScreenThree.handle_windowWLS();
 
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());

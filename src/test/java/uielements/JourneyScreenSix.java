@@ -201,9 +201,9 @@ public class JourneyScreenSix extends ReusableActions {
 	}
 
 	public static void fetchingPolicyNumberAndCompletingTheJourneyForTPP() throws Exception {
-		Thread.sleep(1800);
+		Thread.sleep(2800);
+		HomePage.clickDashboard();
 		waitTillElementToBeClickable(policyTranactionSearchBox);
-		// HomePage.clickDashboard();
 		driver.findElement(By.xpath("//input[@id='policyTranactionSearchBox']")).sendKeys(str2);
 		Thread.sleep(500);
 		driver.findElement(By.xpath("//label[@for='policyNumber']")).click();
@@ -634,9 +634,9 @@ public class JourneyScreenSix extends ReusableActions {
 		Thread.sleep(800);
 		factFinder();
 		Thread.sleep(800);
-
-		vernacularDeclaration();
-		Thread.sleep(800);
+		//investorRiskProfile();
+	//	vernacularDeclaration();
+	//	Thread.sleep(800);
 	}
 
 	public static void closingTestTrial() throws Exception {
@@ -818,5 +818,77 @@ public class JourneyScreenSix extends ReusableActions {
 		// vernacularDeclaration();
 		// Thread.sleep(800);
 	}
+	//For WLS
+		public static void switchingBackToMainWindowScreenSixWLS() throws Exception {
+			PageFactory.initElements(driver, JourneyScreenSix.class);
+			Thread.sleep(1000);
+
+			System.out.println(policyNumber);
+			Robot robot = new Robot();
+
+			robot.keyPress(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_F5);
+			robot.keyRelease(KeyEvent.VK_F5);
+			robot.keyRelease(KeyEvent.VK_CONTROL);
+
+			Thread.sleep(1000);
+
+			robot.keyPress(KeyEvent.VK_F5);
+			robot.keyRelease(KeyEvent.VK_F5);
+
+			Thread.sleep(4000);
+
+			System.out.println(policyNumber);
+			fetchingPolicyNumberAndCompletingTheJourneyForTPP();
+
+			robot.keyPress(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_F5);
+			robot.keyRelease(KeyEvent.VK_F5);
+			robot.keyRelease(KeyEvent.VK_CONTROL);
+
+			Thread.sleep(1000);
+
+			robot.keyPress(KeyEvent.VK_F5);
+			robot.keyRelease(KeyEvent.VK_F5);
+
+			Thread.sleep(4000);
+
+			// paymentScreen.click();
+			Thread.sleep(800);
+			ChequeOptionButton.click();
+
+			paymentChequeNumber(1, 1, 4);
+
+			paymentChequeDate();
+
+			paymentChequePayableAt();
+
+			paymentChequeBankName(1, 1, 4);
+			paymentChequeMicr(1, 1, 4);
+
+			Thread.sleep(800);
+			 //prePopulationDocumentVault();
+			Thread.sleep(800);
+			communicationAddressProofFTSP();
+			Thread.sleep(800);
+			identityProofOrDOB();
+			Thread.sleep(800);
+			photographOfProposerUpload();
+			//Thread.sleep(800);
+			//copyOfPAN();
+			Thread.sleep(800);
+			cancelledChequeWithNameRequired();
+			Thread.sleep(800);
+			ecsMandateForm();
+			// Thread.sleep(800);
+			// investorRiskProfile();
+			Thread.sleep(800);
+			factFinder();
+			Thread.sleep(800);
+			prePopulationDocumentVault();
+
+			// vernacularDeclaration();
+			 Thread.sleep(800);
+		}
 
 }
