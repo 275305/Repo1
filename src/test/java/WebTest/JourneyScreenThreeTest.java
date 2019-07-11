@@ -102,7 +102,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			// JourneyScreenOne.jammuKashmir();
 			// JourneyScreenOne.popupProceedButton();
 			//JourneyScreenOne.setPanNumber(1, 1, 1);
-			 JourneyScreenOne.dontHavePAN();
+			JourneyScreenOne.dontHavePAN();
 			JourneyScreenOne.setMobNumber(1, 1, 2);
 			JourneyScreenOne.setEmailId(1, 1, 3);
 			JourneyScreenOne.clickProceed();
@@ -1068,7 +1068,8 @@ public class JourneyScreenThreeTest extends ReusableActions {
 
 			// Maximizing the browser window
 			driver.manage().window().maximize();
-			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+            Thread.sleep(3000);
+			driver.manage().timeouts().implicitlyWait(240, TimeUnit.SECONDS);
 			logger.info("Fulfilment URL opened successfully");
 
 			JourneyScreenSix.switchingBackToMainWindowScreenSix();
@@ -1162,7 +1163,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			driver.manage().window().maximize();
 		    driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 			logger.info("Fulfilment URL opened successfully");
-
+            //some problem
 			JourneyScreenSix.switchingBackToMainWindowScreenSix();
 			// JourneyScreenSix.preferedDate();
 			// JourneyScreenSix.visitType();

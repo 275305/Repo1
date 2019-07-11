@@ -284,11 +284,12 @@ public class JourneyScreenFour extends ReusableActions {
 
 	public static void form60RelatedDetailsIdentityProofNameOptionSelection() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenFour.class);
-		Thread.sleep(200);
+
 		waitTillElementToBeClickable(identityProofName);
 		identityProofName.click();
+		Thread.sleep(1000);
 		waitTillElementToBeClickable(identityProofOption);
-		Thread.sleep(200);
+		Thread.sleep(1000);
 		identityProofOption.click();
 
 	}

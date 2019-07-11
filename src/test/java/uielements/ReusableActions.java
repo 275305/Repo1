@@ -12,6 +12,18 @@ import java.util.List;
 import java.util.Properties;
 import java.util.regex.Pattern;
 
+import javax.activation.DataHandler;
+import javax.mail.BodyPart;
+import javax.mail.Flags;
+import javax.mail.Folder;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Multipart;
+import javax.mail.NoSuchProviderException;
+import javax.mail.Session;
+import javax.mail.Store;
+import javax.mail.search.FlagTerm;
+
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.FormulaEvaluator;
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -35,6 +47,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 
+import com.sun.mail.imap.protocol.FLAGS;
+
 import WebTest.JourneyScreenOneTest;
 import WebTest.JourneyScreenTwoTest;
 import ru.yandex.qatools.allure.annotations.Attachment;
@@ -57,6 +71,8 @@ public class ReusableActions {
 	public static Logger JourneyScreenOnelogger = LoggerFactory.getLogger(JourneyScreenOneTest.class);
 	public static Logger JourneyScreenTwologger = LoggerFactory.getLogger(JourneyScreenTwoTest.class);
 
+	public static String OTP;
+	public static String TinyURL;
 	// Function for Print the steps in allure report
 	@Step("{0}")
 	public static void logStep(String stepName) {
@@ -118,6 +134,7 @@ public class ReusableActions {
 		WebDriverWait wait = new WebDriverWait(driver, 260);
 		WebElement elementloaded = wait.until(ExpectedConditions.elementToBeClickable(element));
 		return elementloaded;
+
 	}
 
 	public static WebElement waitTillElementToBeClickableRefreshed(WebElement element) {
@@ -522,5 +539,130 @@ public class ReusableActions {
 		return null;
 
 	}
+
+
+	//Gmail throu API
+	public static void checkEmail(String validation,String host, String storeType, String user,
+			String password)
+	{
+
+
+		String filter=null;
+		if(validation.equalsIgnoreCase("OTP Validation")) {
+			filter="Pre Issuance otp confirmation";
+		}else if(validation.equalsIgnoreCase("Pre Issuance Verification"))
+		{
+			filter="Pre Issuance Verification";
+		}
+		try {
+
+			//create properties field
+			Properties properties = new Properties();
+			properties.put("mail.pop3.auth", "true");
+			properties.put("mail.pop3.host", host);
+			properties.put("mail.pop3.port", "995");
+			properties.put("mail.pop3.starttls.enable", "true");
+			Session emailSession = Session.getDefaultInstance(properties);
+
+			//create the POP3 store object and connect with the pop server
+			Store store = emailSession.getStore("pop3s");
+
+			store.connect(host, user, password);
+
+			//create the folder object and open it
+			Folder emailFolder = store.getFolder("INBOX");
+
+
+			Message[] messages = null;
+
+			outer:
+				for(int timer =1; timer<=40;timer++) {
+					// retrieve the messages from the folder in an array and print it
+					emailFolder.open(Folder.READ_WRITE);
+					//getting only unseen emails
+					Flags seen = new Flags(Flags.Flag.SEEN);
+					FlagTerm unseenFlagTerm = new FlagTerm(seen, false);
+					messages = emailFolder.search(unseenFlagTerm);
+					//messages = emailFolder.getMessages();
+					System.out.println("messages.length---" + messages.length);
+					if(messages.length==0) {
+						System.out.println("No new messages are found");
+					}else {
+						for (int i = 0, n = messages.length; i < n; i++) {
+							 Message message = messages[i];
+							System.out.println("---------------------------------");
+
+							if( message.getSubject().contains(filter)) {
+								System.out.println("Line Count is "+message.getSubject());
+								Multipart multipart = (Multipart) message.getContent();
+
+								for (int j = 0; j < multipart.getCount(); j++) {
+
+									BodyPart bodyPart = multipart.getBodyPart(j);
+
+									String disposition = bodyPart.getDisposition();
+
+									if (disposition != null && (disposition.equalsIgnoreCase("ATTACHMENT"))) { // BodyPart.ATTACHMENT doesn't work for gmail
+										System.out.println("Mail have some attachment");
+
+										DataHandler handler = bodyPart.getDataHandler();
+										System.out.println("file name : " + handler.getName());
+									}
+									else {
+										System.out.println("Body: "+bodyPart.getContent());
+										String content= bodyPart.getContent().toString();
+										String tinyurl = null;
+										String OTPtext;
+										if(filter.contains("otp")) {
+											OTPtext =content.substring(0, 4);
+											OTP=OTPtext;
+											System.out.println("OTP is : "+ OTP);
+										}else if(filter.contains("Verification")) {
+
+										try {
+											tinyurl = content.substring(content.indexOf("txnId="), content.indexOf("'>"));
+										}catch(Exception e) {
+											tinyurl = content.substring(content.indexOf("txnId="), content.indexOf(" to"));
+										}
+										TinyURL ="https://tinyurl.com/yd3vyvy7/mprobuyer?"+tinyurl;
+										System.out.println(TinyURL);
+									}
+									message.setFlag(FLAGS.Flag.SEEN, true);
+									break outer;
+								}
+							}
+						}else {
+
+							System.out.println("Required -- "+filter+" -- email not reached :  ");
+							Thread.sleep(2000);
+						}
+
+
+					}
+
+				}
+			Thread.sleep(2000);
+			if(timer==40) {
+				System.out.println("Folder aleady open");
+			}else {
+				emailFolder.close(true);
+			}
+		}
+
+		//close the store and folder objects
+		emailFolder.close(false);
+		store.close();
+
+	} catch (NoSuchProviderException e) {
+		e.printStackTrace();
+	} catch (MessagingException e) {
+		e.printStackTrace();
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+}
+
+//gmail closing
+
 
 }
