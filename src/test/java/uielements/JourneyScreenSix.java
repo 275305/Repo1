@@ -41,10 +41,10 @@ public class JourneyScreenSix extends ReusableActions {
 	@FindBy(xpath = "//label[@for='Cheque']")
 	public static WebElement ChequeOptionButton;
 
-	@FindBy(xpath = "//div[@id='FF_PrproposerUploadLightBox']")
+	@FindBy(id = "FF_PrproposerUploadLightBox")
 	public static WebElement addButtonFactFinder;
 
-	@FindBy(xpath = "//div[@id='Ver_Dec_PrproposerUploadLightBox']")
+	@FindBy(id = "Ver_Dec_PrproposerUploadLightBox")
 	public static WebElement addButtonVernacular;
 
 	@FindBy(xpath = "//a[@id='termsAndConditionId']")
@@ -62,7 +62,7 @@ public class JourneyScreenSix extends ReusableActions {
 	@FindBy(xpath = "//span[contains(text(),'Payment')]")
 	public static WebElement paymentScreen;
 
-	@FindBy(xpath = "//button[@id='submitButtonPopup']")
+	@FindBy(id = "submitButtonPopup")
 	public static WebElement submitButtonPopup;
 
 	@FindBy(xpath = "//div[@id='paymentChequeDate_id']")
@@ -103,22 +103,22 @@ public class JourneyScreenSix extends ReusableActions {
 	@FindBy(xpath = "//div[@id='proposer|StandardDoc|Ver_Dec_Pr']")
 	public static WebElement vernacularDeclarationUpload;
 
-	@FindBy(xpath = "//div[@id='BankS_PrproposerUploadLightBox']")
+	@FindBy(id = "BankS_PrproposerUploadLightBox")
 	public static WebElement addButton;
 
-	@FindBy(xpath = "//div[@id='NACH_PrproposerUploadLightBox']")
+	@FindBy(id = "NACH_PrproposerUploadLightBox")
 	public static WebElement addButtonECSMandate;
 
-	@FindBy(xpath = "//div[@id='CHQ_PrproposerUploadLightBox']")
+	@FindBy(id = "CHQ_PrproposerUploadLightBox")
 	public static WebElement cancelledChequeAdd;
 
-	@FindBy(xpath = "//div[@id='Photo_PrproposerUploadLightBox']")
+	@FindBy(id ="Photo_PrproposerUploadLightBox")
 	public static WebElement addButtonPhotograph;
 
-	@FindBy(xpath = "//div[@id='ID_PrproposerUploadLightBox']")
+	@FindBy(id = "ID_PrproposerUploadLightBox")
 	public static WebElement addButtonIdentityProf;
 
-	@FindBy(xpath = "//div[@id='Comm_Add_PrproposerUploadLightBox']")
+	@FindBy(id = "Comm_Add_PrproposerUploadLightBox")
 	public static WebElement addButtonCommunication;
 
 	@FindBy(xpath = "//input[@name='paymentChequeMicr']")
@@ -268,9 +268,10 @@ public class JourneyScreenSix extends ReusableActions {
 	public static void proposerDocument() throws Exception {
 		Thread.sleep(500);
 		proposerDocument.click();
-		Thread.sleep(500);
-		addButton.click();
-
+		Thread.sleep(300);
+		String inputFilePath = System.getProperty("user.dir")+"\\src\\test\\resources\\SkuliImages\\AadharCard.jpg";
+		addButton.sendKeys(inputFilePath);
+		Thread.sleep(10000);
 	}
 
 	public static void communicationAddressProf() throws Exception {
@@ -278,17 +279,22 @@ public class JourneyScreenSix extends ReusableActions {
 		waitTillElementToBeClickable(communicationAddressProf);
 		communicationAddressProf.click();
 		Thread.sleep(500);
-		addButtonCommunication.click();
-
+		String inputFilePath = System.getProperty("user.dir")+"\\src\\test\\resources\\SkuliImages\\AadharCard.jpg";
+		addButtonCommunication.sendKeys(inputFilePath);
+		Thread.sleep(10000);
 	}
 
 	public static void factFinderUpload() throws Exception {
 		Thread.sleep(10000);
 		waitTillElementToBeClickable(factFinderUpload);
-		Thread.sleep(3500);
 		factFinderUpload.click();
 		Thread.sleep(500);
-		addButtonFactFinder.click();
+		String inputFilePath = System.getProperty("user.dir")+"\\src\\test\\resources\\SkuliImages\\AadharCard.jpg";
+		Thread.sleep(3500);
+		addButtonFactFinder.sendKeys(inputFilePath);
+		String inputFilePath2 = System.getProperty("user.dir")+"\\src\\test\\resources\\SkuliImages\\BaadharCard.jpg";
+		Thread.sleep(5000);
+		addButtonFactFinder.sendKeys(inputFilePath2);
 	}
 
 	public static void vernacularUpload() throws Exception {
@@ -297,17 +303,23 @@ public class JourneyScreenSix extends ReusableActions {
 		Thread.sleep(3500);
 		vernacularDeclarationUpload.click();
 		Thread.sleep(500);
-		addButtonVernacular.click();
+		String inputFilePath = System.getProperty("user.dir")+"\\src\\test\\resources\\SkuliImages\\AadharCard.jpg";
+
+		addButtonVernacular.sendKeys(inputFilePath);
 
 	}
 
 	public static void ecsMandateFormUpload() throws Exception {
-		Thread.sleep(10000);
+
 		waitTillElementToBeClickable(ecsMandateFormUpload);
 		Thread.sleep(3500);
 		ecsMandateFormUpload.click();
 		Thread.sleep(500);
-		addButtonECSMandate.click();
+		String inputFilePath = System.getProperty("user.dir")+"\\src\\test\\resources\\SkuliImages\\AadharCard.jpg";
+		Thread.sleep(3500);
+		addButtonECSMandate.sendKeys(inputFilePath);
+		Thread.sleep(10000);
+
 	}
 
 	public static void cancelledChequeWithName() throws Exception {
@@ -316,28 +328,33 @@ public class JourneyScreenSix extends ReusableActions {
 		Thread.sleep(3500);
 		cancelledChequeWithName.click();
 		Thread.sleep(500);
-		cancelledChequeAdd.click();
-
+		String inputFilePath = System.getProperty("user.dir")+"\\src\\test\\resources\\SkuliImages\\AadharCard.jpg";
+		Thread.sleep(3500);
+		cancelledChequeAdd.sendKeys(inputFilePath);
+		Thread.sleep(10000);
 	}
 
 	public static void photographOfProposer() throws Exception {
-		Thread.sleep(10000);
 		waitTillElementToBeClickable(photographOfProposer);
 		Thread.sleep(3500);
 		photographOfProposer.click();
 		Thread.sleep(500);
-		addButtonPhotograph.click();
+		String inputFilePath = System.getProperty("user.dir")+"\\src\\test\\resources\\SkuliImages\\AadharCard.jpg";
+		Thread.sleep(3500);
+		addButtonPhotograph.sendKeys(inputFilePath);
+		Thread.sleep(10000);
 
 	}
 
 	public static void identityProf() throws Exception {
-		Thread.sleep(10000);
 		waitTillElementToBeClickable(identityProf);
 		Thread.sleep(3500);
 		identityProf.click();
 		Thread.sleep(500);
-		addButtonIdentityProf.click();
-
+		String inputFilePath = System.getProperty("user.dir")+"\\src\\test\\resources\\SkuliImages\\AadharCard.jpg";
+		Thread.sleep(3500);
+		addButtonIdentityProf.sendKeys(inputFilePath);
+		Thread.sleep(10000);
 	}
 
 	public static void paymentChequeMicr(int x, int y, int z) throws Exception {
@@ -397,23 +414,23 @@ public class JourneyScreenSix extends ReusableActions {
 
 	public static void prePopulationDocumentVault() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenSix.class);
-		Screen s = new Screen();
-		String filepath = System.getProperty("user.dir");
+//		Screen s = new Screen();
+		//String filepath = System.getProperty("user.dir");
 		// String filepath =
 		// "C:\\Matrix\\mpro-automation\\src\\test\\resources\\SkuliImages\\";
 		// String inputFilePath =
 		// "C:\\Matrix\\mpro-automation\\src\\test\\resources\\SkuliImages\\";
-		String inputFilePath = System.getProperty("user.dir");
-		Pattern openButton = new Pattern(filepath + "SkuliImages\\Open.PNG");
-		Pattern fileName = new Pattern(filepath + "SkuliImages\\ToBeEnterThePath.PNG");
+		//String inputFilePath = System.getProperty("user.dir")+"\\src\\test\\resources\\SkuliImages\\AadharCard.jpg";
+//		Pattern openButton = new Pattern(filepath + "SkuliImages\\Open.PNG");
+//		Pattern fileName = new Pattern(filepath + "SkuliImages\\ToBeEnterThePath.PNG");
 		proposerDocument();
 
-		s.wait(fileName, 80);
-		s.type(fileName, inputFilePath + "AadharCard.jpg");
+//		s.wait(fileName, 80);
+//		s.type(fileName, inputFilePath + "AadharCard.jpg");
+//
+//		s.click(openButton);
 
-		s.click(openButton);
-
-		Thread.sleep(500);
+		Thread.sleep(3000);
 		submitButtonPopup.click();
 
 	}
@@ -435,7 +452,7 @@ public class JourneyScreenSix extends ReusableActions {
 
 		Thread.sleep(800);
 
-		desktopFileUpload();
+		//desktopFileUpload();
 
 		Thread.sleep(500);
 		submitButtonPopup.click();
@@ -449,9 +466,9 @@ public class JourneyScreenSix extends ReusableActions {
 
 		Thread.sleep(800);
 
-		desktopFileUpload();
+		//desktopFileUpload();
 
-		Thread.sleep(500);
+		//.sleep(500);
 		submitButtonPopup.click();
 
 	}
@@ -461,7 +478,7 @@ public class JourneyScreenSix extends ReusableActions {
 
 		photographOfProposer();
 
-		desktopFileUpload();
+		//desktopFileUpload();
 		Thread.sleep(500);
 		submitButtonPopup.click();
 
@@ -472,7 +489,7 @@ public class JourneyScreenSix extends ReusableActions {
 
 		cancelledChequeWithName();
 
-		desktopFileUpload();
+		//desktopFileUpload();
 		Thread.sleep(500);
 		submitButtonPopup.click();
 
@@ -483,7 +500,7 @@ public class JourneyScreenSix extends ReusableActions {
 
 		ecsMandateFormUpload();
 
-		desktopFileUpload();
+		//desktopFileUpload();
 		Thread.sleep(500);
 		submitButtonPopup.click();
 
@@ -495,7 +512,7 @@ public class JourneyScreenSix extends ReusableActions {
 		factFinderUpload();
 
 		// desktopFileUpload();
-		Screen s = new Screen();
+		/*Screen s = new Screen();
 		s.type("C");
 		s.type(Key.DOWN);
 		s.type(Key.ENTER);
@@ -504,7 +521,7 @@ public class JourneyScreenSix extends ReusableActions {
 		s.type(Key.ENTER);
 
 		Thread.sleep(500);
-		// addButtonFactFinder.click();
+		*/ //addButtonFactFinder.click();
 
 		submitButtonPopup.click();
 
@@ -516,7 +533,7 @@ public class JourneyScreenSix extends ReusableActions {
 		vernacularUpload();
 
 		// desktopFileUpload();
-		Screen s = new Screen();
+		/*Screen s = new Screen();
 		s.type("C");
 		s.type(Key.DOWN);
 		s.type(Key.ENTER);
@@ -527,7 +544,7 @@ public class JourneyScreenSix extends ReusableActions {
 		Thread.sleep(500);
 		// addButtonFactFinder.click();
 
-		submitButtonPopup.click();
+		submitButtonPopup.click();*/
 
 	}
 
@@ -618,25 +635,70 @@ public class JourneyScreenSix extends ReusableActions {
 		paymentChequeBankName(1, 1, 4);
 		paymentChequeMicr(1, 1, 4);
 
-		Thread.sleep(800);
+		Thread.sleep(2000);
 		prePopulationDocumentVault();
-		Thread.sleep(800);
+		Thread.sleep(2000);
 		communicationAddressProof();
-		Thread.sleep(800);
+		Thread.sleep(2000);
 		identityProofOrDOB();
-		Thread.sleep(800);
+		Thread.sleep(2000);
 		photographOfProposerUpload();
-		Thread.sleep(800);
+		Thread.sleep(2000);
 		cancelledChequeWithNameRequired();
-		Thread.sleep(800);
+		Thread.sleep(2000);
 
 		ecsMandateForm();
-		Thread.sleep(800);
+		Thread.sleep(2000);
 		factFinder();
-		Thread.sleep(800);
-		//investorRiskProfile();
+		Thread.sleep(2000);
+		investorRiskProfile();
 	//	vernacularDeclaration();
-	//	Thread.sleep(800);
+		Thread.sleep(2000);
+
+		Thread.sleep(2000);
+	}
+	public static void investorRiskProfile() throws Exception
+	{
+		PageFactory.initElements(driver, JourneyScreenSix.class);
+
+		investorRiskProfileUpload();
+
+		// desktopFileUpload();
+		/*Screen s = new Screen();
+		// s.type("C");
+		// s.type(Key.DOWN);
+		// s.type(Key.ENTER);
+
+		s.type("\"BaadharCard.jpg\" \"AadharCard.jpg\" ");
+		s.type(Key.ENTER);
+
+		Thread.sleep(500);*/
+		// addButtonFactFinder.click();
+
+		submitButtonPopup.click();
+		Thread.sleep(3000);
+
+	}
+
+	@FindBy(xpath = "//div[@id='proposer|StandardDoc|IRP_Pr']")
+	public static WebElement investorRiskProf;
+
+	@FindBy(id = "IRP_PrproposerUploadLightBox")
+	public static WebElement addButtonInvestorRiskProfile;
+
+	public static void investorRiskProfileUpload() throws Exception {
+		Thread.sleep(10000);
+		waitTillElementToBeClickable(investorRiskProf);
+		Thread.sleep(3500);
+		investorRiskProf.click();
+		Thread.sleep(500);
+		String inputFilePath = System.getProperty("user.dir")+"\\src\\test\\resources\\SkuliImages\\AadharCard.jpg";
+		addButtonInvestorRiskProfile.sendKeys(inputFilePath);
+		Thread.sleep(5000);
+		String inputFilePath2 = System.getProperty("user.dir")+"\\src\\test\\resources\\SkuliImages\\BaadharCard.jpg";
+		addButtonInvestorRiskProfile.sendKeys(inputFilePath2);
+		Thread.sleep(3000);
+
 	}
 
 	public static void closingTestTrial() throws Exception {
@@ -675,7 +737,6 @@ public class JourneyScreenSix extends ReusableActions {
 		driver.findElement(By.xpath("//th[(text()=" + policyNumber + ")]")).click();
 		waitTillElementToBeClickable(paymetPage);
 		Thread.sleep(1500);
-
 	}
 
 	public static void desktopFileUploading() throws Exception {
@@ -725,11 +786,12 @@ public class JourneyScreenSix extends ReusableActions {
 		// copyOfPANCard();
 
 		// desktopFileUpload();
-		Screen s = new Screen();
+		//Screen s = new Screen();
+		String inputFilePath = System.getProperty("user.dir")+"SkuliImages\\Open.PNG";
 
-		String filepath = "C:\\Matrix\\mpro-automation\\src\\test\\resources\\SkuliImages\\";
-		Pattern filename = new Pattern(filepath + "Open.PNG");
-		s.wait(filename, 230);
+		//String filepath = "C:\\Matrix\\mpro-automation\\src\\test\\resources\\SkuliImages\\";
+		//Pattern filename = new Pattern(filepath + "Open.PNG");
+		/*s.wait(filename, 230);
 
 		s.type("check"); // s.wait(230); s.type(Key.DOWN); s.wait();
 
@@ -740,7 +802,7 @@ public class JourneyScreenSix extends ReusableActions {
 		s.type("\"BaadharCard.jpg\" \"AadharCard.jpg\" ");
 		s.type(Key.ENTER);
 
-		Thread.sleep(500); // addButtonFactFinder.click();
+		Thread.sleep(500);*/ // addButtonFactFinder.click();
 
 		submitButtonPopup.click();
 

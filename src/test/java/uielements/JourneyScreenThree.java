@@ -2327,7 +2327,7 @@ public class JourneyScreenThree extends ReusableActions {
 		driver.get(ReusableActions.TinyURL);
 		driver.manage().window().maximize();
 
-		Thread.sleep(700);
+		Thread.sleep(3000);
 
 		String str = driver.getCurrentUrl();
 		System.out.println(str);
