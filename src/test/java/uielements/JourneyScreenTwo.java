@@ -439,6 +439,9 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//*[@id='menu-permanentProofType']/div[2]/ul/li[6]")
 	static WebElement proofTypeDropDownValue;
 
+	/*@FindBy(xpath = "//li[contains(text(),'liId_Letter issued')]")
+	static WebElement proofTypeDropDownValue;*/
+
 	@FindBy(xpath = "//li[@id='liId_Utility bill not more than 2 months (electricity, telephone, post-paid mobile, piped gas, water bill)']")
 	static WebElement proofTypeDropDownValueProposerCommunication;
 
@@ -5922,8 +5925,8 @@ public class JourneyScreenTwo extends ReusableActions {
 		selectByDropdownNeedOfInsur();
 		selectByDropdownLifeStge();
 		// arrowScrollDownFunctionToScrollDown();
-		//premiumPayementTermSPSP();
-		//policyTermSPSP();
+		premiumPayementTermSPSP();
+		policyTermSPSP();
 		JourneyScreenFour.arrowDownFunctionToScrollDown();
 		modeOfPaymentSPSP();
 		chieldDateBirthProductDetails();

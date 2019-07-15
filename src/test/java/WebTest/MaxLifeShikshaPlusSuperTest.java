@@ -59,7 +59,7 @@ public class MaxLifeShikshaPlusSuperTest extends ReusableActions {
 			JourneyScreenTwo.fillingAllTheFeildForSPSP();
 			screenJourneyFromThreeTillEnd();
 			screenJourneyFromFourTillEnd();
-			// posvBackFlowTillTPPPush();
+			posvBackFlowTillTPPPush();
 
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
@@ -70,7 +70,7 @@ public class MaxLifeShikshaPlusSuperTest extends ReusableActions {
 
 	// For Premium Payment term 5 for AnnualModeOfPayment
 	/* dynamic Fund Allocation Yes */
-	@Test(priority = 2, enabled = false)
+	@Test(priority = 2, enabled = true)
 	public void pdfConfigrationSPSPUlipGeneratingPdfDFA() throws Exception {
 
 		try {
@@ -82,7 +82,7 @@ public class MaxLifeShikshaPlusSuperTest extends ReusableActions {
 			JourneyScreenTwo.fillingAllTheFeildForSPSPDynamicFund();
 			screenJourneyFromThreeTillEnd();
 			screenJourneyFromFourTillEnd();
-			// posvBackFlowTillTPPPush();
+			posvBackFlowTillTPPPush();
 
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
@@ -158,7 +158,7 @@ public class MaxLifeShikshaPlusSuperTest extends ReusableActions {
 
 	// For Premium Payment term 5 for Monthly ModeOfPayment
 		/* choose Your Fund */
-		@Test(priority = 6, enabled = true)
+		@Test(priority = 6, enabled = false)
 		public void pdfConfigrationSPSPUlipGeneratingPdfCYFMonthly() throws Exception {
 			try {
 				JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
@@ -217,10 +217,8 @@ public class MaxLifeShikshaPlusSuperTest extends ReusableActions {
 	public static void posvBackFlowTillTPPPush() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
-			// JourneyScreenThree.gmailFunctionalitySmartTermPlan();
+
 			JourneyScreenThree.handle_windowSAP();
-			// JourneyScreenThreeTest.usingPolicyNumberToFillScreenSixTPPPush();
-			//JourneyScreenThree.handle_windowWLS();
 
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());

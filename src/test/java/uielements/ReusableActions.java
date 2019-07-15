@@ -546,8 +546,6 @@ public class ReusableActions {
 	public static void checkEmail(String validation,String host, String storeType, String user,
 			String password)
 	{
-
-
 		String filter=null;
 		if(validation.equalsIgnoreCase("OTP Validation")) {
 			filter="Pre Issuance otp confirmation";
@@ -572,7 +570,6 @@ public class ReusableActions {
 
 			//create the folder object and open it
 			Folder emailFolder = store.getFolder("INBOX");
-
 
 			Message[] messages = null;
 

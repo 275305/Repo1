@@ -203,7 +203,12 @@ public class JourneyScreenSix extends ReusableActions {
 	public static void fetchingPolicyNumberAndCompletingTheJourneyForTPP() throws Exception {
 		Thread.sleep(2800);
 		HomePage.clickDashboard();
+		/*15-07-19 added 2 line for driver refresh*/
+          driver.navigate().refresh();
+          Thread.sleep(3000);
+
 		waitTillElementToBeClickable(policyTranactionSearchBox);
+		Thread.sleep(5000);
 		driver.findElement(By.xpath("//input[@id='policyTranactionSearchBox']")).sendKeys(str2);
 		Thread.sleep(500);
 		driver.findElement(By.xpath("//label[@for='policyNumber']")).click();
@@ -591,7 +596,8 @@ public class JourneyScreenSix extends ReusableActions {
 	public static void switchingBackToMainWindowScreenSix() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenSix.class);
 		Thread.sleep(1000);
-
+		driver.navigate().refresh();
+		Thread.sleep(2000);
 		System.out.println(policyNumber);
 		Robot robot = new Robot();
 
@@ -660,21 +666,7 @@ public class JourneyScreenSix extends ReusableActions {
 	public static void investorRiskProfile() throws Exception
 	{
 		PageFactory.initElements(driver, JourneyScreenSix.class);
-
 		investorRiskProfileUpload();
-
-		// desktopFileUpload();
-		/*Screen s = new Screen();
-		// s.type("C");
-		// s.type(Key.DOWN);
-		// s.type(Key.ENTER);
-
-		s.type("\"BaadharCard.jpg\" \"AadharCard.jpg\" ");
-		s.type(Key.ENTER);
-
-		Thread.sleep(500);*/
-		// addButtonFactFinder.click();
-
 		submitButtonPopup.click();
 		Thread.sleep(3000);
 

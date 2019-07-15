@@ -2274,48 +2274,12 @@ public class JourneyScreenThree extends ReusableActions {
 	}
 
 	public static void gmailFunctionalitySmartTermPlan() throws Exception {
-		// ((JavascriptExecutor) driver).executeScript("window.open()");
-		// ArrayList<String> tabs = new
-		// ArrayList<String>(driver.getWindowHandles());
-		// driver.switchTo().window(tabs.get(1));
-		// driver.get("https://mail.google.com");
-		// setUsername(1, 10, 3);
-		// nextButton.click();
-		// Thread.sleep(800);
-		// setPassword(1, 11, 3);
-		// Thread.sleep(800);
-		// passwordNextButton.click();
-		// Thread.sleep(800);
-		//
-		// waitTillElementToBeClickableLongWait(checkBoxAll);
-		// checkBoxAll.click();
-		//
-		// waitTillElementToBeClickable(deleteButton);
-		// Thread.sleep(1800);
-		// deleteButton.click();
-		// Thread.sleep(1800);
-		//
-		// waitTillElementToBeClickableLongWait(preInsuranceVerificationLinkMail);
-		// Thread.sleep(700);
-		//
-		// preInsuranceVerificationLinkMail.click();
-		// System.out.println("clicked");
-		//
-		// // Actions actionObject = new Actions(driver);
-		// //
-		// actionObject.keyDown(Keys.CONTROL).sendKeys(Keys.F5).keyUp(Keys.CONTROL).perform();
-		//
-		// waitTillElementToBeClickableLongWait(preverificationLink);
-		// Thread.sleep(700);
-		//
-		// String link = preverificationLink.getText();
-		// // driver.close();
+
 		String host = "pop.gmail.com";// change accordingly
 		String mailStoreType = "pop3";
 		String username = "pmaxlife071@gmail.com";// change accordingly
 		String password = "max@1234";// change accordingly
-		// String username = "monoamc@gmail.com";// change accordingly
-		// String password = "amc@1234";// change accordingly
+
 		String validation = "Pre Issuance Verification";
 		ReusableActions.checkEmail(validation, host, mailStoreType, username, password);
 		ChromeOptions opt = new ChromeOptions();
@@ -2368,7 +2332,7 @@ public class JourneyScreenThree extends ReusableActions {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//label[@for=\"radio-four\"]")).click();
 		Thread.sleep(1000);
-		 driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
+		driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//label[@for=\"radio-2\"]")).click();
 		Thread.sleep(1000);
@@ -2378,8 +2342,8 @@ public class JourneyScreenThree extends ReusableActions {
 		driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@id='generateOTP_btn']")).click();
-		// Thread.sleep(1000);
-		// driver.close();
+		 Thread.sleep(1000);
+
 
 		validation = "OTP Validation";
 		ReusableActions.checkEmail(validation, host, mailStoreType, username, password);
@@ -2398,16 +2362,6 @@ public class JourneyScreenThree extends ReusableActions {
 		Thread.sleep(800);
 		driver.findElement(By.xpath("//button[@id='submitbutton']")).click();
 		Thread.sleep(1800);
-		/*
-		 * robot.keyPress(KeyEvent.VK_ALT); robot.keyPress(KeyEvent.VK_TAB);
-		 * robot.keyRelease(KeyEvent.VK_TAB); robot.keyRelease(KeyEvent.VK_ALT);
-		 *
-		 * Thread.sleep(500);
-		 *
-		 * robot.keyPress(KeyEvent.VK_CONTROL); robot.keyPress(KeyEvent.VK_TAB);
-		 * robot.keyRelease(KeyEvent.VK_TAB);
-		 * robot.keyRelease(KeyEvent.VK_CONTROL);
-		 */
 
 		driver.close();
 
@@ -3804,14 +3758,19 @@ public class JourneyScreenThree extends ReusableActions {
 		String current_window = driver.getWindowHandle();
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(tabs.get(1));
-		//gmailFunctionalitySAP();
-		JourneyScreenThree.gmailFunctionalitySmartTermPlan();
 
+		JourneyScreenThree.gmailFunctionalitySmartTermPlan();
 		driver.close();
 		driver.switchTo().window(current_window);
 
+		/* added driver refresh*/
+		driver.navigate().refresh();
+		Thread.sleep(5000);
+
 		JourneyScreenThreeTest.usingPolicyNumberToFillScreenSixTPPPushSuperTermPlan();
-		driver.close();
+
+		/* comment on driver close 15-07-19 */
+		//driver.close();
 	}
 
 	public static void handle_windowWLS() throws Exception {
