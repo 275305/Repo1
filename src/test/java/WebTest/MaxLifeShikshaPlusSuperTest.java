@@ -70,7 +70,7 @@ public class MaxLifeShikshaPlusSuperTest extends ReusableActions {
 
 	// For Premium Payment term 5 for AnnualModeOfPayment
 	/* dynamic Fund Allocation Yes */
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 2, enabled = false)
 	public void pdfConfigrationSPSPUlipGeneratingPdfDFA() throws Exception {
 
 		try {
@@ -104,7 +104,7 @@ public class MaxLifeShikshaPlusSuperTest extends ReusableActions {
 			JourneyScreenTwo.fillingAllTheFeildForSPSPChooseYourFundYes();
 			screenJourneyFromThreeTillEnd();
 			screenJourneyFromFourTillEnd();
-			// posvBackFlowTillTPPPush();
+			posvBackFlowTillTPPPush();
 
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
@@ -113,7 +113,7 @@ public class MaxLifeShikshaPlusSuperTest extends ReusableActions {
 	}
 
 	// For Premium Payment term 5 for Semi-AnnualModeOfPayment
-	/* choose Your Fund */
+	/* choose Your Fund with semi Annual */
 	@Test(priority = 4, enabled = false)
 	public void pdfConfigrationSPSPUlipGeneratingPdfCYFSemiAnnual() throws Exception {
 
@@ -126,7 +126,7 @@ public class MaxLifeShikshaPlusSuperTest extends ReusableActions {
 			JourneyScreenTwo.fillingAllTheFeildForSPSPChooseYourFundYes();
 			screenJourneyFromThreeTillEnd();
 			screenJourneyFromFourTillEnd();
-			// posvBackFlowTillTPPPush();
+			posvBackFlowTillTPPPush();
 
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
@@ -135,10 +135,9 @@ public class MaxLifeShikshaPlusSuperTest extends ReusableActions {
 	}
 
 	// For Premium Payment term 5 for Quarterly ModeOfPayment
-	/* choose Your Fund */
+	/* choose Your Fund  with Quaterly */
 	@Test(priority = 5, enabled = false)
 	public void pdfConfigrationSPSPUlipGeneratingPdfCYFQuarterly() throws Exception {
-
 		try {
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
 			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
@@ -148,7 +147,7 @@ public class MaxLifeShikshaPlusSuperTest extends ReusableActions {
 			JourneyScreenTwo.fillingAllTheFeildForSPSPChooseYourFundYes();
 			screenJourneyFromThreeTillEnd();
 			screenJourneyFromFourTillEnd();
-			//posvBackFlowTillTPPPush();
+			posvBackFlowTillTPPPush();
 
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
@@ -157,8 +156,8 @@ public class MaxLifeShikshaPlusSuperTest extends ReusableActions {
 	}
 
 	// For Premium Payment term 5 for Monthly ModeOfPayment
-		/* choose Your Fund */
-		@Test(priority = 6, enabled = false)
+		/* choose Your Fund with monthly*/
+		@Test(priority = 6, enabled = true)
 		public void pdfConfigrationSPSPUlipGeneratingPdfCYFMonthly() throws Exception {
 			try {
 				JourneyScreenThreeTest.ScreenOneTestIndianFuntn();

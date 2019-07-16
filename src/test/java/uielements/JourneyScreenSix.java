@@ -585,6 +585,7 @@ public class JourneyScreenSix extends ReusableActions {
 		termsNConditionClose.click();
 		Thread.sleep(1000);
 		finalSubmitButton.click();
+		Thread.sleep(1000);
 
 	}
 
