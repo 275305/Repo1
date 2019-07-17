@@ -3754,19 +3754,8 @@ public class JourneyScreenThree extends ReusableActions {
 
 	// Added Changes on 20-06-2019
 	public static void handle_windowSAP() throws Exception {
-		/* commented on 16-07-19 */
-		//((JavascriptExecutor) driver).executeScript("window.open()");
-		//String current_window = driver.getWindowHandle();
-		//ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-		//driver.switchTo().window(tabs.get(1));
 
 		JourneyScreenThree.gmailFunctionalitySmartTermPlan();
-
-		/* commented on 16-07-19 */
-		//driver.close();
-		/* commented on 16-07-19 */
-		//driver.switchTo().window(current_window);
-
 		/* added driver refresh*/
 		driver.navigate().refresh();
 		Thread.sleep(5000);

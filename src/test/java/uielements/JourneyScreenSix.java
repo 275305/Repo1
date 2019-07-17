@@ -634,15 +634,15 @@ public class JourneyScreenSix extends ReusableActions {
 		ChequeOptionButton.click();
 
 		paymentChequeNumber(1, 1, 4);
-
+		Thread.sleep(1000);
 		paymentChequeDate();
-
+		Thread.sleep(1000);
 		paymentChequePayableAt();
-
-		paymentChequeBankName(1, 1, 4);
-		paymentChequeMicr(1, 1, 4);
-
 		Thread.sleep(2000);
+		paymentChequeBankName(1, 1, 4);
+		Thread.sleep(2000);
+		paymentChequeMicr(1, 1, 4);
+		Thread.sleep(3000);
 		prePopulationDocumentVault();
 		Thread.sleep(2000);
 		communicationAddressProof();
@@ -658,7 +658,7 @@ public class JourneyScreenSix extends ReusableActions {
 		Thread.sleep(2000);
 		factFinder();
 		Thread.sleep(2000);
-		investorRiskProfile();
+		//investorRiskProfile();
 	//	vernacularDeclaration();
 		Thread.sleep(2000);
 

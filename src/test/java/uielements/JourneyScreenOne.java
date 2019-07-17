@@ -1272,6 +1272,7 @@ public class JourneyScreenOne extends ReusableActions {
 
 	}
 
+
 	// Enter Passport Number Number
 	public static void setPassportNumber(String strPassportNumber) throws Exception {
 

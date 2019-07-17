@@ -439,8 +439,14 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//*[@id='menu-permanentProofType']/div[2]/ul/li[6]")
 	static WebElement proofTypeDropDownValue;
 
-	/*@FindBy(xpath = "//li[contains(text(),'liId_Letter issued')]")
-	static WebElement proofTypeDropDownValue;*/
+	@FindBy(xpath = "//li[@id='liId_Job-card issued by NREGA']")
+	static WebElement proofTypeDropDownValueNrega;
+
+
+	/*
+	 * @FindBy(xpath = "//li[contains(text(),'liId_Letter issued')]") static
+	 * WebElement proofTypeDropDownValue;
+	 */
 
 	@FindBy(xpath = "//li[@id='liId_Utility bill not more than 2 months (electricity, telephone, post-paid mobile, piped gas, water bill)']")
 	static WebElement proofTypeDropDownValueProposerCommunication;
@@ -481,6 +487,10 @@ public class JourneyScreenTwo extends ReusableActions {
 	/* XPath for Shiksha Plus Super Plan */
 	@FindBy(xpath = "//li[@id='liId_Max Life Shiksha Plus Super']")
 	static WebElement maxLifeShikshaPlusSuperPlan;
+
+	/* XPath for Life Perfect Partner Super Plan */
+	@FindBy(xpath = "//li[@id='liId_Max Life Life Perfect Partner Super']")
+	static WebElement maxLifeLifePerfectPartnerPlan;
 
 	/* XPath for Platinum Wealth Plan */
 	@FindBy(xpath = "//li[@id='liId_Max Life Platinum Wealth Plan']")
@@ -600,8 +610,14 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//div[@id='premiumPaymentTerm_id']")
 	static WebElement premiumPaymentTermSPSP;
 
+	@FindBy(xpath = "//div[@id='premiumPaymentTerm_id']")
+	static WebElement premiumPaymentTermLLPP;
+
 	@FindBy(xpath = "//li[@id='liId_5']")
 	static WebElement valueAtpremiumPaymentTermSPSP;
+
+	@FindBy(xpath = "//li[@id='liId_7']")
+	static WebElement valueAtpremiumPaymentTermLLPP;
 
 	// Xpath for premium Payment Term dropdown
 	/*
@@ -737,6 +753,9 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//*[@id='menu-policyTerm']/div[2]/ul/li[1]")
 	static WebElement policyTermFTSPOption;
 
+	@FindBy(xpath = "//*[@id='menu-policyTerm']/div[2]/ul/li[1]")
+	static WebElement policyTermLLPPOption;
+
 	@FindBy(xpath = ".//*[@id='menu-policyTerm']/div[2]/ul/li[1]")
 	static WebElement policyTerm1stOptionSAP;
 
@@ -773,6 +792,9 @@ public class JourneyScreenTwo extends ReusableActions {
 	@FindBy(xpath = "//*[@id='menu-modeOfPayment']/div[2]/ul/li[1]")
 	static WebElement modeOfPayment1stOption;
 
+	@FindBy(xpath = "//li[@id='liId_Annual']")
+	static WebElement modeOfPayment1stOptionLLPP;
+
 	@FindBy(xpath = "//*[@id='menu-modeOfPayment']/div[2]/ul/li[2]")
 	static WebElement modeOfPaymentSemiAnnual;
 
@@ -784,6 +806,10 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	@FindBy(xpath = ".//*[@id='menu-dividendOption']/div[2]/ul/li[1]")
 	static WebElement divident1stOption;
+
+	/* select Cash Value from Dropdown */
+	@FindBy(xpath = "//li[@id='liId_Cash']")
+	static WebElement divident1stOptionLPPS;
 
 	@FindBy(xpath = "//div[@id='modeOfPayment_id']")
 	static WebElement modeOfPaymentSTP;
@@ -809,6 +835,9 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	@FindBy(xpath = "//div[@id='modeOfPayment_id']")
 	static WebElement modeOfPaymentFTSP;
+
+	@FindBy(xpath = "//div[@id='modeOfPayment_id']")
+	static WebElement modeOfPaymentLLPP;
 
 	// XPATH for Quaterly Mode of payment
 	@FindBy(xpath = "//li[@id='liId_Quarterly']")
@@ -860,6 +889,9 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	@FindBy(xpath = "//div[@id='policyTerm_id']")
 	static WebElement policyTermDropDownFTSP;
+
+	@FindBy(xpath = "//div[@id='policyTerm_id']")
+	static WebElement policyTermDropDownLLPP;
 
 	@FindBy(xpath = "//div[@id='sumAssuredOption_id']")
 	static WebElement sumAssuredOptionSTP;
@@ -944,6 +976,27 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	@FindBy(xpath = "//div[@id='dividendOption_id']")
 	static WebElement dividendOptionWLSDropDown;
+
+	/* XPath for Devident Fund */
+	@FindBy(xpath = "//div[@id='dividendOption_id']")
+	static WebElement dividendOptionLPPSDropDown;
+
+	/* XPath for Rider Details Accidental */
+	@FindBy(xpath = "//input[@name='isAccidentalDeathAndDismembermentRider']")
+	static WebElement AccidentalDeathCheckBoxLPPS;
+
+	/* XPath for Rider Details Accidental */
+	@FindBy(xpath = "//label[contains(text(),'Amount')]")
+	static WebElement ammountLabelRiderDetailsLPPS;
+
+
+	/* XPath for Rider Details Term Plus Rider */
+	@FindBy(xpath = "//input[@name='isTermPlusRider']")
+	static WebElement TermPlusRiderCheckBoxLPPS;
+
+	/* XPath for Rider Details WOP Plus Rider */
+	@FindBy(xpath = "//input[@name='isWOPPlusRider']")
+	static WebElement WOPPlusRiderCheckBoxLPPS;
 
 	@FindBy(xpath = "//div[@id='sumAssuredOption_id']")
 	static WebElement sumAssuredOption;
@@ -1039,6 +1092,16 @@ public class JourneyScreenTwo extends ReusableActions {
 		proofTypeDropDownValue.click();
 		Thread.sleep(3000);
 	}
+	public static void selectByDropdownNrega() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenTwo.class);
+		waitTillElementToBeClickable(proofTypeDropDown);
+		proofTypeDropDown.click();
+		Thread.sleep(1000);
+		proofTypeDropDownValueNrega.click();
+		Thread.sleep(1000);
+		arrowDownFunctionToScrollDownMidPage();
+	}
+
 
 	public static void selectByDropdownProposerCommunication() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
@@ -1300,6 +1363,14 @@ public class JourneyScreenTwo extends ReusableActions {
 		premiumPaymentTermSPSP.click();
 		waitTillElementToBeClickable(valueAtpremiumPaymentTermSPSP);
 		valueAtpremiumPaymentTermSPSP.click();
+		Thread.sleep(2000);
+	}
+
+	public static void premiumPayementTermLPPS() throws Exception {
+		waitTillElementToBeClickable(premiumPaymentTermLLPP);
+		premiumPaymentTermLLPP.click();
+		waitTillElementToBeClickable(valueAtpremiumPaymentTermLLPP);
+		valueAtpremiumPaymentTermLLPP.click();
 		Thread.sleep(2000);
 	}
 
@@ -1696,6 +1767,16 @@ public class JourneyScreenTwo extends ReusableActions {
 		Thread.sleep(300);
 	}
 
+	public static void policyTermLPPS() throws Exception {
+		waitTillElementToBeClickable(policyTermDropDownLLPP);
+		policyTermDropDownLLPP.click();
+		waitTillElementToBeClickable(policyTermLLPPOption);
+		policyTermLLPPOption.click();
+		Thread.sleep(2000);
+		outsideClick.click();
+		Thread.sleep(300);
+	}
+
 	public static void sumAssuredOptionSTP() throws Exception {
 		waitTillElementToBeClickable(sumAssuredOptionSTP);
 		sumAssuredOptionSTP.click();
@@ -1822,6 +1903,16 @@ public class JourneyScreenTwo extends ReusableActions {
 		Thread.sleep(2000);
 
 	}
+
+	/* Shiksha Plus Super Drop Down */
+	public static void selectByDropdownLPPS() throws InterruptedException {
+		productNm.click();
+		Thread.sleep(1000);
+		maxLifeLifePerfectPartnerPlan.click();
+		Thread.sleep(2000);
+
+	}
+
 	/* Platinum wealth plan Drop Down */
 	public static void selectByDropdownPWP() throws InterruptedException {
 		productNm.click();
@@ -1831,11 +1922,11 @@ public class JourneyScreenTwo extends ReusableActions {
 		premiumTypeDropdown.click();
 		Thread.sleep(1000);
 		premiumTypeDropdownValue.click();
-        Thread.sleep(1000);
-        premiumPaymentTermDropDown.click();
-        Thread.sleep(1000);
-        premiumPaymentTermDropDownValue.click();
-        Thread.sleep(1000);
+		Thread.sleep(1000);
+		premiumPaymentTermDropDown.click();
+		Thread.sleep(1000);
+		premiumPaymentTermDropDownValue.click();
+		Thread.sleep(1000);
 
 	}
 
@@ -2309,6 +2400,16 @@ public class JourneyScreenTwo extends ReusableActions {
 		Thread.sleep(2000);
 	}
 
+	public static void modeOfPaymentLPPS() throws Exception {
+		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Thread.sleep(400);
+		waitTillElementToBeClickable(modeOfPaymentLLPP);
+		modeOfPaymentLLPP.click();
+		waitTillElementToBeClickable(modeOfPayment1stOptionLLPP);
+		modeOfPayment1stOptionLLPP.click();
+		Thread.sleep(2000);
+	}
+
 	public static void modeOfPaymentSPSPSemiAnnual() throws Exception {
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		Thread.sleep(400);
@@ -2377,6 +2478,129 @@ public class JourneyScreenTwo extends ReusableActions {
 		waitTillElementToBeClickable(divident1stOption);
 		divident1stOption.click();
 		Thread.sleep(2000);
+
+	}
+
+	public static void dividentOptionLPPS() throws Exception {
+		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		waitTillElementToBeClickable(dividendOptionLPPSDropDown);
+		dividendOptionLPPSDropDown.click();
+		waitTillElementToBeClickable(divident1stOptionLPPS);
+		divident1stOptionLPPS.click();
+		Thread.sleep(2000);
+
+	}
+
+	public static void arrowDown() {
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.ARROW_DOWN).build().perform();
+
+	}
+
+	public static void riderDetailsWOPLPPS() throws Exception {
+		/*;
+		AccidentalDeathCheckBoxLPPS.click();*/
+
+
+		/*
+		 *
+		 * TermPlusRiderCheckBoxLPPS.click();
+		 * Thread.sleep(1000)
+		 */
+
+
+
+		  WOPPlusRiderCheckBoxLPPS.click();
+		  Thread.sleep(1000);
+
+		JourneyScreenTwo.clickSubmitButton();
+		Thread.sleep(5000);
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		System.out.println(tabs.size());
+
+		if (tabs.size() == 2) {
+			ifConditionForTabSizeTwoPDFIllustrationSelectingLifestyleScreen();
+
+		}
+
+		else {
+			Assert.fail("Either PDF is not generating or Loading time is too much for STP");
+
+		}
+	}
+
+	public static void riderDetailsAccidentalLPPS() throws Exception {
+
+		AccidentalDeathCheckBoxLPPS.click();
+		Thread.sleep(1000);
+		ammountLabelRiderDetails();
+
+		/*
+		 * waitTillElementToBeClickable(TermPlusRiderCheckBoxLPPS);
+		 * TermPlusRiderCheckBoxLPPS.click();
+		 */
+
+		// waitTillElementToBeClickable(WOPPlusRiderCheckBoxLPPS);
+		/*
+		 * WOPPlusRiderCheckBoxLPPS.click(); Thread.sleep(2000);
+		 */
+		JourneyScreenTwo.clickSubmitButton();
+		Thread.sleep(5000);
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		System.out.println(tabs.size());
+
+		if (tabs.size() == 2) {
+			ifConditionForTabSizeTwoPDFIllustrationSelectingLifestyleScreen();
+
+		}
+
+		else {
+			Assert.fail("Either PDF is not generating or Loading time is too much for STP");
+
+		}
+	}
+
+	public static void riderDetailsLPPSTermPlusRider() throws Exception {
+
+		ammountLabelRiderDetails();
+
+		/*
+		 * waitTillElementToBeClickable(TermPlusRiderCheckBoxLPPS);
+		 * TermPlusRiderCheckBoxLPPS.click();
+		 */
+
+		// waitTillElementToBeClickable(WOPPlusRiderCheckBoxLPPS);
+		/*
+		 * WOPPlusRiderCheckBoxLPPS.click(); Thread.sleep(2000);
+		 */
+		JourneyScreenTwo.clickSubmitButton();
+		Thread.sleep(5000);
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		System.out.println(tabs.size());
+
+		if (tabs.size() == 2) {
+			ifConditionForTabSizeTwoPDFIllustrationSelectingLifestyleScreen();
+
+		}
+
+		else {
+			Assert.fail("Either PDF is not generating or Loading time is too much for STP");
+
+		}
+	}
+
+
+	public static void ammountLabelRiderDetails() throws Exception {
+
+		setAmmountRiderDetails(1, 1, 11);
+		Thread.sleep(1000);
+
+	}
+	public static void setAmmountRiderDetails(int x, int y, int z) throws Exception {
+
+		// type(PreIssuancetxtfld, strPreIssuance);
+		ammountLabelRiderDetailsLPPS.clear();
+		type(ammountLabelRiderDetailsLPPS, readingdata(x, y, z));
 
 	}
 
@@ -4058,24 +4282,22 @@ public class JourneyScreenTwo extends ReusableActions {
 		}
 	}
 
+	public static void fillingAllTheFeildForLPPS() throws Exception {
+
+		File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
+		FileInputStream fileInputStream = new FileInputStream(file);
+		XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
+		XSSFSheet sheet = hssfWorkbook.getSheetAt(8);
+		String premiumCommitmentFromExcell = getColumnDataAsPerTheForLoopRow(sheet, 1, 7);
+		premiumCommitment.clear();
+		premiumCommitment.sendKeys(premiumCommitmentFromExcell);
+
+	}
+
 	public static void premiumCommitmentDesiredAnnualIncomeAnnualIncome(int x, int y, int z) throws Exception {
 
 		annualIncome.clear();
 		type(annualIncome, readingdata(x, y, z));
-
-		JourneyScreenTwo.clickSubmitButton();
-		Thread.sleep(14000);
-		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-		System.out.println(tabs.size());
-
-		if (tabs.size() == 2) {
-			ifConditionForTabSizeTwoPDFIllustrationSelectingLifestyleScreen();
-		}
-
-		else {
-			Assert.fail("Either PDF is not generating or Loading time is too much for STP");
-
-		}
 
 	}
 
@@ -5932,6 +6154,16 @@ public class JourneyScreenTwo extends ReusableActions {
 		chieldDateBirthProductDetails();
 	}
 
+	public static void fillingAllTheRequiredFeildsForLPPSAnnual() throws Exception {
+		selectByDropdownNeedOfInsur();
+		selectByDropdownLifeStge();
+		premiumPayementTermLPPS();
+		policyTermLPPS();
+		JourneyScreenFour.arrowDownFunctionToScrollDown();
+		modeOfPaymentLPPS();
+
+	}
+
 	public static void fillingAllTheRequiredFeildsForSPSPSemiAnnual() throws Exception {
 		selectByDropdownNeedOfInsur();
 		selectByDropdownLifeStge();
@@ -6732,4 +6964,18 @@ public class JourneyScreenTwo extends ReusableActions {
 
 		}
 	}
+
+	public static void arrowDownFunctionToScrollDownPage(){
+
+	JavascriptExecutor jse = (JavascriptExecutor)driver;
+	jse.executeScript("window.scrollBy(0,750)");
+
+	}
+	public static void arrowDownFunctionToScrollDownMidPage(){
+
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("window.scrollBy(0,350)");
+
+		}
+
 }

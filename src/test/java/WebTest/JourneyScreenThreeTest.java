@@ -106,7 +106,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			JourneyScreenOne.setMobNumber(1, 1, 2);
 			JourneyScreenOne.setEmailId(1, 1, 3);
 			JourneyScreenOne.clickProceed();
-			// JourneyScreenOne.setPreIssuanceNumber(1, 1, 4);
+			//JourneyScreenOne.setPreIssuanceNumber(1, 1, 4);
 
 		} catch (Exception e) {
 			logger.error("Test case failed: " + e.getMessage());
@@ -131,7 +131,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			JourneyScreenTwo.setFirstName(3, 1, 0);
 			JourneyScreenTwo.setLastName(3, 1, 1);
 			JourneyScreenTwo.setDateBirthPersonalDetails();
-			JourneyScreenTwo.selectByDropdown();
+			JourneyScreenTwo.selectByDropdownNrega();
 			Thread.sleep(1000);
 			JourneyScreenTwo.setHouseNo(3, 1, 3);
 			JourneyScreenTwo.setRoadNo(3, 1, 4);
@@ -554,6 +554,21 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			JourneyScreenThree.selectNomineeGender();
 			JourneyScreenThree.relationshipWithNomineeOptionSelection();
 			JourneyScreenThree.childNameWithNominee(4,1,15);
+		} catch (Exception e) {
+			logger.error("Test case failed " + e.getMessage());
+			throw e;
+
+		}
+	}
+	public static void nomineeDetailsWithoutChilsSelection() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenThree.class);
+		try {
+
+			JourneyScreenThree.fillingNomineeName(4, 1, 6);
+			JourneyScreenTwo.setDateBirthNomineeDetails();
+			JourneyScreenThree.selectNomineeGender();
+			JourneyScreenThree.relationshipWithNomineeOptionSelection();
+			//JourneyScreenThree.childNameWithNominee(4,1,15);
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
 			throw e;
