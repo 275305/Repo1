@@ -5,7 +5,8 @@
 
 	<test name="testngTest">
 
-		<classes>
+	
+	<classes>
 			<class name="WebTest.MaxLifeShikshaPlusSuperTest"></class>
 
 		</classes>

@@ -44,74 +44,187 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 			throw e;
 		}
 	}
-	/*Annual with WOP*/
+	/* Mode of Payment(Annual)+Dividend Option(cash) */
 	@Test(priority = 1, enabled = false)
-	public void pdfConfigrationLPPSTraditionGeneratingPdfAnnual() throws Exception {
-
+	public void LPPS_Tradition_GeneratingPdf_Annual_Cash() throws Exception {
 		try {
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
 			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
-            JourneyScreenTwo.traditional();
-            JourneyScreenTwo.selectByDropdownLPPS();
-            JourneyScreenTwo.fillingAllTheRequiredFeildsForLPPSAnnual();
-            JourneyScreenTwo.fillingAllTheFeildForLPPS();
-            JourneyScreenTwo.dividentOptionLPPS();
-            JourneyScreenTwo.arrowDownFunctionToScrollDownPage();
-            JourneyScreenTwo.riderDetailsWOPLPPS();
-            screenJourneyFromThreeTillEnd();
+			JourneyScreenTwo.traditional();
+			JourneyScreenTwo.selectByDropdownLPPS();
+			JourneyScreenTwo.fillingAllTheRequiredFeildsForLPPSAnnual();
+			JourneyScreenTwo.fillingAllTheFeildForLPPS();
+			JourneyScreenTwo.dividentOptionLPPS();
+			JourneyScreenTwo.arrowDownFunctionToScrollDownPage();
+			JourneyScreenTwo.saveProceedPDFGeneration();
+			screenJourneyFromThreeTillEnd();
 			screenJourneyFromFourTillEnd();
 			posvBackFlowTillTPPPush();
 
-		}catch(Exception e){
-			logger.error("Test case Failed"+ e.getMessage());
+		} catch (Exception e) {
+			logger.error("Test case Failed" + e.getMessage());
 		}
 	}
-      /*Accidental with semi-Annual*/
-	@Test(priority = 2, enabled = true)
-	public void pdfConfigrationLPPSTraditionGeneratingPdfSemmiAnnual() throws Exception {
 
+	/* Mode of Payment(Semi_Annual)+Dividend Option(cash) */
+	@Test(priority = 2, enabled = false)
+	public void LPPS_Tradition_GeneratingPdf_SemiAnnual_Cash() throws Exception {
 		try {
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
 			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
-            JourneyScreenTwo.traditional();
-            JourneyScreenTwo.selectByDropdownLPPS();
-            JourneyScreenTwo.fillingAllTheRequiredFeildsForLPPSAnnual();
-            JourneyScreenTwo.fillingAllTheFeildForLPPS();
-            JourneyScreenTwo.dividentOptionLPPS();
-            JourneyScreenTwo.arrowDownFunctionToScrollDownPage();
-            JourneyScreenTwo.riderDetailsAccidentalLPPS();
-            screenJourneyFromThreeTillEnd();
+			JourneyScreenTwo.traditional();
+			JourneyScreenTwo.selectByDropdownLPPS();
+			JourneyScreenTwo.fillingAllTheRequiredFeildsFor_SemiAnnualLPPS();
+			JourneyScreenTwo.fillingAllTheFeildForLPPS();
+			JourneyScreenTwo.dividentOptionLPPS();
+			JourneyScreenTwo.arrowDownFunctionToScrollDownPage();
+			JourneyScreenTwo.saveProceedPDFGeneration();
+			screenJourneyFromThreeTillEnd();
 			screenJourneyFromFourTillEnd();
 			posvBackFlowTillTPPPush();
-
-
-		}catch(Exception e){
-			logger.error("Test case Failed"+ e.getMessage());
+		} catch (Exception e) {
+			logger.error("Test case Failed" + e.getMessage());
 		}
 	}
 
-
+	/* Mode of Payment(Quarterly)+Dividend Option(cash) */
 	@Test(priority = 3, enabled = false)
-	public void pdfConfigrationLPPSTraditionGeneratingPdfQuaterly() throws Exception {
+	public void LPPS_Tradition_GeneratingPdf_Quarterly_Cash() throws Exception {
+		try {
+			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
+			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
+			JourneyScreenTwo.traditional();
+			JourneyScreenTwo.selectByDropdownLPPS();
+			JourneyScreenTwo.fillingAllTheRequiredFeildsFor_QuarterlyLPPS();
+			JourneyScreenTwo.fillingAllTheFeildForLPPS();
+			JourneyScreenTwo.dividentOptionLPPS();
+			JourneyScreenTwo.arrowDownFunctionToScrollDownPage();
+			JourneyScreenTwo.saveProceedPDFGeneration();
+			screenJourneyFromThreeTillEnd();
+			screenJourneyFromFourTillEnd();
+			posvBackFlowTillTPPPush();
+		} catch (Exception e) {
+			logger.error("Test case Failed" + e.getMessage());
+		}
+	}
+
+
+	/* Mode of Payment(Monthly)+Dividend Option(cash) */
+	@Test(priority = 4, enabled = true)
+	public void LPPS_Tradition_GeneratingPdf_Monthly_Cash() throws Exception {
+		try {
+			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
+			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
+			JourneyScreenTwo.traditional();
+			JourneyScreenTwo.selectByDropdownLPPS();
+			JourneyScreenTwo.fillingAllTheRequiredFeildsFor_MonthalyLPPS();
+			JourneyScreenTwo.fillingAllTheFeildForLPPS();
+			JourneyScreenTwo.dividentOptionLPPS();
+			JourneyScreenTwo.arrowDownFunctionToScrollDownPage();
+			JourneyScreenTwo.saveProceedPDFGeneration();
+			screenJourneyFromThreeTillEnd();
+			screenJourneyFromFourTillEnd();
+			posvBackFlowTillTPPPush();
+		} catch (Exception e) {
+			logger.error("Test case Failed" + e.getMessage());
+		}
+	}
+
+	/* Mode of Payment(Annual)+Dividend Option(PUA) */
+	@Test(priority = 5, enabled = false)
+	public void LPPS_Tradition_GeneratingPdf_Annual_PUA() throws Exception {
+		try {
+			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
+			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
+			JourneyScreenTwo.traditional();
+			JourneyScreenTwo.selectByDropdownLPPS();
+			JourneyScreenTwo.fillingAllTheRequiredFeildsForLPPSAnnual();
+			JourneyScreenTwo.fillingAllTheFeildForLPPS();
+			JourneyScreenTwo.dividentOption_PUA_LPPS();
+			JourneyScreenTwo.arrowDownFunctionToScrollDownPage();
+			JourneyScreenTwo.saveProceedPDFGeneration();
+			screenJourneyFromThreeTillEnd();
+			screenJourneyFromFourTillEnd();
+			posvBackFlowTillTPPPush();
+
+		} catch (Exception e) {
+			logger.error("Test case Failed" + e.getMessage());
+		}
+	}
+
+	/* Mode of Payment(Annual)+Dividend Option(cash)+RiderDetails(Accidental) */
+	@Test(priority = 7, enabled = false)
+	public void LPPSTraditionGeneratingPdfAnnualCashAccidental() throws Exception {
 
 		try {
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
 			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
-            JourneyScreenTwo.traditional();
-            JourneyScreenTwo.selectByDropdownLPPS();
-            JourneyScreenTwo.fillingAllTheRequiredFeildsForLPPSAnnual();
-            JourneyScreenTwo.fillingAllTheFeildForLPPS();
-            JourneyScreenTwo.dividentOptionLPPS();
-            JourneyScreenTwo.arrowDownFunctionToScrollDownPage();
-            JourneyScreenTwo.riderDetailsLPPSTermPlusRider();
+			JourneyScreenTwo.traditional();
+			JourneyScreenTwo.selectByDropdownLPPS();
+			JourneyScreenTwo.fillingAllTheRequiredFeildsForLPPSAnnual();
+			JourneyScreenTwo.fillingAllTheFeildForLPPS();
+			JourneyScreenTwo.dividentOptionLPPS();
+			JourneyScreenTwo.arrowDownFunctionToScrollDownPage();
+			JourneyScreenTwo.riderDetailsAccidentalLPPS();
+			screenJourneyFromThreeTillEnd();
+			screenJourneyFromFourTillEnd();
+			posvBackFlowTillTPPPush();
 
-
-		}catch(Exception e){
-			logger.error("Test case Failed"+ e.getMessage());
+		} catch (Exception e) {
+			logger.error("Test case Failed" + e.getMessage());
 		}
 	}
 
-	/* / Added  on 17-07-19 / */
+
+	/* Mode of Payment(Annual)+Dividend Option(cash) */
+	@Test(priority = 8, enabled = false)
+	public void LPPS_Tradition_GeneratingPdf_Annual_Cash_TermPlus() throws Exception {
+
+		try {
+			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
+			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
+			JourneyScreenTwo.traditional();
+			JourneyScreenTwo.selectByDropdownLPPS();
+			JourneyScreenTwo.fillingAllTheRequiredFeildsForLPPSAnnual();
+			JourneyScreenTwo.fillingAllTheFeildForLPPS();
+			JourneyScreenTwo.dividentOptionLPPS();
+			JourneyScreenTwo.arrowDownFunctionToScrollDownPage();
+			JourneyScreenTwo.riderDetailsLPPSTermPlusRider();
+			//screenJourneyFromThreeTillEnd();
+			//screenJourneyFromFourTillEnd();
+			//posvBackFlowTillTPPPush();
+
+		} catch (Exception e) {
+			logger.error("Test case Failed" + e.getMessage());
+		}
+	}
+
+	/* Mode of Payment(Annual)+Dividend Option(cash)+RiderDetails(WOP) */
+	@Test(priority = 9, enabled = false)
+	public void LPPSTraditionGeneratingPdfAnnualCashWOP() throws Exception {
+
+		try {
+			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
+			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
+			JourneyScreenTwo.traditional();
+			JourneyScreenTwo.selectByDropdownLPPS();
+			JourneyScreenTwo.fillingAllTheRequiredFeildsForLPPSAnnual();
+			JourneyScreenTwo.fillingAllTheFeildForLPPS();
+			JourneyScreenTwo.dividentOptionLPPS();
+			JourneyScreenTwo.arrowDownFunctionToScrollDownPage();
+			JourneyScreenTwo.riderDetailsWOPLPPS();
+			screenJourneyFromThreeTillEnd();
+			screenJourneyFromFourTillEnd();
+			posvBackFlowTillTPPPush();
+
+		} catch (Exception e) {
+			logger.error("Test case Failed" + e.getMessage());
+		}
+	}
+
+
+
+	/* / Added on 17-07-19 / */
 	public static void screenJourneyFromThreeTillEnd() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -141,7 +254,7 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 			JourneyScreenFour.selectCriminalChargesNo();
 			JourneyScreenFour.feetInchesKgsSelectionToMoveToScreen5POSV();
 			JourneyScreenThree.agreePopupToProceedToSendPreIssuranceVerificationLinkToCustomer();
-		    JourneyScreenSix.fetchingProposalNumberFromUI();
+			JourneyScreenSix.fetchingProposalNumberFromUI();
 
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
@@ -162,6 +275,5 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 
 		}
 	}
-
 
 }

@@ -793,7 +793,18 @@ public class JourneyScreenTwo extends ReusableActions {
 	static WebElement modeOfPayment1stOption;
 
 	@FindBy(xpath = "//li[@id='liId_Annual']")
-	static WebElement modeOfPayment1stOptionLLPP;
+	static WebElement modeOfPaymentAnnualLLPP;
+
+
+	@FindBy(xpath = "//li[@id='liId_Semi-Annual']")
+	static WebElement modeOfPaymentSemiAnnualLLPP;
+
+	@FindBy(xpath = "//li[@id='liId_Quarterly']")
+	static WebElement modeOfPaymentQuarterlyLLPP;
+
+	@FindBy(xpath = "//li[@id='liId_Monthly']")
+	static WebElement modeOfPaymentMonthlyLLPP;
+
 
 	@FindBy(xpath = "//*[@id='menu-modeOfPayment']/div[2]/ul/li[2]")
 	static WebElement modeOfPaymentSemiAnnual;
@@ -810,6 +821,10 @@ public class JourneyScreenTwo extends ReusableActions {
 	/* select Cash Value from Dropdown */
 	@FindBy(xpath = "//li[@id='liId_Cash']")
 	static WebElement divident1stOptionLPPS;
+
+	/* select PUA Value from Dropdown */
+	@FindBy(xpath = "//li[@id='liId_PUA']")
+	static WebElement dividentPUALPPS;
 
 	@FindBy(xpath = "//div[@id='modeOfPayment_id']")
 	static WebElement modeOfPaymentSTP;
@@ -986,9 +1001,8 @@ public class JourneyScreenTwo extends ReusableActions {
 	static WebElement AccidentalDeathCheckBoxLPPS;
 
 	/* XPath for Rider Details Accidental */
-	@FindBy(xpath = "//label[contains(text(),'Amount')]")
+	@FindBy(xpath = "//input[@name='accidentalDeathAddAmount']")
 	static WebElement ammountLabelRiderDetailsLPPS;
-
 
 	/* XPath for Rider Details Term Plus Rider */
 	@FindBy(xpath = "//input[@name='isTermPlusRider']")
@@ -2401,13 +2415,35 @@ public class JourneyScreenTwo extends ReusableActions {
 	}
 
 	public static void modeOfPaymentLPPS() throws Exception {
-		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		Thread.sleep(400);
 		waitTillElementToBeClickable(modeOfPaymentLLPP);
 		modeOfPaymentLLPP.click();
-		waitTillElementToBeClickable(modeOfPayment1stOptionLLPP);
-		modeOfPayment1stOptionLLPP.click();
+		waitTillElementToBeClickable(modeOfPaymentAnnualLLPP);
+		modeOfPaymentAnnualLLPP.click();
 		Thread.sleep(2000);
+	}
+
+	public static void modeOfPaymentSemiAnnualLPPS() throws Exception {
+		waitTillElementToBeClickable(modeOfPaymentLLPP);
+		modeOfPaymentLLPP.click();
+		waitTillElementToBeClickable(modeOfPaymentSemiAnnualLLPP);
+		modeOfPaymentSemiAnnualLLPP.click();
+		Thread.sleep(2000);
+	}
+
+	public static void modeOfPaymentQuarterlyLPPS() throws Exception {
+		waitTillElementToBeClickable(modeOfPaymentLLPP);
+		modeOfPaymentLLPP.click();
+		waitTillElementToBeClickable(modeOfPaymentQuarterlyLLPP);
+		modeOfPaymentQuarterlyLLPP.click();
+		Thread.sleep(2000);
+	}
+	public static void modeOfPaymentMonthlyLPPS() throws Exception {
+		waitTillElementToBeClickable(modeOfPaymentLLPP);
+		modeOfPaymentLLPP.click();
+		waitTillElementToBeClickable(modeOfPaymentMonthlyLLPP);
+		modeOfPaymentMonthlyLLPP.click();
+		Thread.sleep(2000);
+		ReusableActions.escapeFunction();
 	}
 
 	public static void modeOfPaymentSPSPSemiAnnual() throws Exception {
@@ -2488,6 +2524,14 @@ public class JourneyScreenTwo extends ReusableActions {
 		waitTillElementToBeClickable(divident1stOptionLPPS);
 		divident1stOptionLPPS.click();
 		Thread.sleep(2000);
+	}
+	public static void dividentOption_PUA_LPPS() throws Exception {
+		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		waitTillElementToBeClickable(dividendOptionLPPSDropDown);
+		dividendOptionLPPSDropDown.click();
+		waitTillElementToBeClickable(dividentPUALPPS);
+		dividentPUALPPS.click();
+		Thread.sleep(2000);
 
 	}
 
@@ -2545,7 +2589,7 @@ public class JourneyScreenTwo extends ReusableActions {
 		 * WOPPlusRiderCheckBoxLPPS.click(); Thread.sleep(2000);
 		 */
 		JourneyScreenTwo.clickSubmitButton();
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 		System.out.println(tabs.size());
 
@@ -2563,17 +2607,7 @@ public class JourneyScreenTwo extends ReusableActions {
 	public static void riderDetailsLPPSTermPlusRider() throws Exception {
 
 		ammountLabelRiderDetails();
-
-		/*
-		 * waitTillElementToBeClickable(TermPlusRiderCheckBoxLPPS);
-		 * TermPlusRiderCheckBoxLPPS.click();
-		 */
-
-		// waitTillElementToBeClickable(WOPPlusRiderCheckBoxLPPS);
-		/*
-		 * WOPPlusRiderCheckBoxLPPS.click(); Thread.sleep(2000);
-		 */
-		JourneyScreenTwo.clickSubmitButton();
+		JourneyScreenOne.clickProceed();
 		Thread.sleep(5000);
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 		System.out.println(tabs.size());
@@ -2591,11 +2625,20 @@ public class JourneyScreenTwo extends ReusableActions {
 
 
 	public static void ammountLabelRiderDetails() throws Exception {
+		File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
+		FileInputStream fileInputStream = new FileInputStream(file);
+		XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
+		XSSFSheet sheet = hssfWorkbook.getSheetAt(1);
+		String premiumCommitmentFromExcell = getColumnDataAsPerTheForLoopRow(sheet, 1, 11);
+		ammountLabelRiderDetailsLPPS.clear();
+		ammountLabelRiderDetailsLPPS.sendKeys(premiumCommitmentFromExcell);
+	}
+	/*public static void ammountLabelRiderDetails() throws Exception {
 
 		setAmmountRiderDetails(1, 1, 11);
 		Thread.sleep(1000);
 
-	}
+	}*/
 	public static void setAmmountRiderDetails(int x, int y, int z) throws Exception {
 
 		// type(PreIssuancetxtfld, strPreIssuance);
@@ -3750,7 +3793,7 @@ public class JourneyScreenTwo extends ReusableActions {
 			}
 		}
 		driver.switchTo().window(parent);
-		Thread.sleep(14000);
+		Thread.sleep(12000);
 	}
 
 	/**
@@ -6164,6 +6207,34 @@ public class JourneyScreenTwo extends ReusableActions {
 
 	}
 
+	public static void fillingAllTheRequiredFeildsFor_SemiAnnualLPPS() throws Exception {
+		selectByDropdownNeedOfInsur();
+		selectByDropdownLifeStge();
+		premiumPayementTermLPPS();
+		policyTermLPPS();
+		JourneyScreenFour.arrowDownFunctionToScrollDown();
+		modeOfPaymentSemiAnnualLPPS();
+
+	}
+
+	public static void fillingAllTheRequiredFeildsFor_QuarterlyLPPS() throws Exception {
+		selectByDropdownNeedOfInsur();
+		selectByDropdownLifeStge();
+		premiumPayementTermLPPS();
+		policyTermLPPS();
+		JourneyScreenFour.arrowDownFunctionToScrollDown();
+		modeOfPaymentQuarterlyLPPS();
+
+	}
+	public static void fillingAllTheRequiredFeildsFor_MonthalyLPPS() throws Exception {
+		selectByDropdownNeedOfInsur();
+		selectByDropdownLifeStge();
+		premiumPayementTermLPPS();
+		policyTermLPPS();
+		JourneyScreenFour.arrowDownFunctionToScrollDown();
+		modeOfPaymentMonthlyLPPS();
+	}
+
 	public static void fillingAllTheRequiredFeildsForSPSPSemiAnnual() throws Exception {
 		selectByDropdownNeedOfInsur();
 		selectByDropdownLifeStge();
@@ -6977,5 +7048,23 @@ public class JourneyScreenTwo extends ReusableActions {
 		jse.executeScript("window.scrollBy(0,350)");
 
 		}
+
+	public static void saveProceedPDFGeneration() throws Exception{
+
+		JourneyScreenOne.clickProceed();
+		Thread.sleep(5000);
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		System.out.println(tabs.size());
+
+		if (tabs.size() == 2) {
+			ifConditionForTabSizeTwoPDFIllustrationSelectingLifestyleScreen();
+
+		}
+
+		else {
+			Assert.fail("Either PDF is not generating or Loading time is too much for STP");
+
+		}
+	}
 
 }
