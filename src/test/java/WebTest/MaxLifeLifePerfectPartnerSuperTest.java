@@ -44,6 +44,7 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 			throw e;
 		}
 	}
+
 	/* Mode of Payment(Annual)+Dividend Option(cash) */
 	@Test(priority = 1, enabled = false)
 	public void LPPS_Tradition_GeneratingPdf_Annual_Cash() throws Exception {
@@ -108,9 +109,8 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 		}
 	}
 
-
 	/* Mode of Payment(Monthly)+Dividend Option(cash) */
-	@Test(priority = 4, enabled = true)
+	@Test(priority = 4, enabled = false)
 	public void LPPS_Tradition_GeneratingPdf_Monthly_Cash() throws Exception {
 		try {
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
@@ -152,6 +152,28 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 		}
 	}
 
+	/* Mode of Payment(Annual)+Dividend Option(PremiumOffset) */
+	@Test(priority = 6, enabled = false)
+	public void LPPS_Tradition_GeneratingPdf_Annual_PremiumOffset() throws Exception {
+		try {
+			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
+			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
+			JourneyScreenTwo.traditional();
+			JourneyScreenTwo.selectByDropdownLPPS();
+			JourneyScreenTwo.fillingAllTheRequiredFeildsForLPPSAnnual();
+			JourneyScreenTwo.fillingAllTheFeildForLPPS();
+			JourneyScreenTwo.dividentOption_PremiumOffset_LPPS();
+			JourneyScreenTwo.arrowDownFunctionToScrollDownPage();
+			JourneyScreenTwo.saveProceedPDFGeneration();
+			screenJourneyFromThreeTillEnd();
+			screenJourneyFromFourTillEnd();
+			posvBackFlowTillTPPPush();
+
+		} catch (Exception e) {
+			logger.error("Test case Failed" + e.getMessage());
+		}
+	}
+
 	/* Mode of Payment(Annual)+Dividend Option(cash)+RiderDetails(Accidental) */
 	@Test(priority = 7, enabled = false)
 	public void LPPSTraditionGeneratingPdfAnnualCashAccidental() throws Exception {
@@ -175,11 +197,9 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 		}
 	}
 
-
-	/* Mode of Payment(Annual)+Dividend Option(cash) */
+	/* Mode of Payment(Annual)+Dividend Option(cash)+TermPlusRider */
 	@Test(priority = 8, enabled = false)
 	public void LPPS_Tradition_GeneratingPdf_Annual_Cash_TermPlus() throws Exception {
-
 		try {
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
 			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
@@ -190,9 +210,9 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 			JourneyScreenTwo.dividentOptionLPPS();
 			JourneyScreenTwo.arrowDownFunctionToScrollDownPage();
 			JourneyScreenTwo.riderDetailsLPPSTermPlusRider();
-			//screenJourneyFromThreeTillEnd();
-			//screenJourneyFromFourTillEnd();
-			//posvBackFlowTillTPPPush();
+			screenJourneyFromThreeTillEnd();
+			screenJourneyFromFourTillEnd();
+			posvBackFlowTillTPPPush();
 
 		} catch (Exception e) {
 			logger.error("Test case Failed" + e.getMessage());
@@ -201,8 +221,7 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 
 	/* Mode of Payment(Annual)+Dividend Option(cash)+RiderDetails(WOP) */
 	@Test(priority = 9, enabled = false)
-	public void LPPSTraditionGeneratingPdfAnnualCashWOP() throws Exception {
-
+	public void LPPSTraditionGeneratingPdfAnnual_Cash_WOP() throws Exception {
 		try {
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
 			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
@@ -222,13 +241,38 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 		}
 	}
 
+	/*
+	 * Mode of Payment(Annual)+Dividend
+	 * Option(cash)+RiderDetails(Accidental+Term plus rider+WOP)
+	 * no able to upload the document at screen six
+	 */
+	@Test(priority = 10, enabled = false)
+	public void LPPSTraditionGeneratingPdfAnnual_Cash_Accidental_TermPlus_WOP() throws Exception {
+		try {
+			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
+			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
+			JourneyScreenTwo.traditional();
+			JourneyScreenTwo.selectByDropdownLPPS();
+			JourneyScreenTwo.fillingAllTheRequiredFeildsForLPPSAnnual();
+			JourneyScreenTwo.fillingAllTheFeildForLPPS();
+			JourneyScreenTwo.dividentOptionLPPS();
+			JourneyScreenTwo.arrowDownFunctionToScrollDownPage();
 
+			JourneyScreenTwo.riderDetailsAccidentalTermPlusWOP();
+			screenJourneyFromThreeTillEnd();
+			screenJourneyFromFourTillEnd();
+			posvBackFlowTillTPPPush();
+
+		} catch (Exception e) {
+			logger.error("Test case Failed" + e.getMessage());
+		}
+	}
 
 	/* / Added on 17-07-19 / */
 	public static void screenJourneyFromThreeTillEnd() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
-			JourneyScreenThreeTest.proposerPersonalDetailsSection(); //
+			JourneyScreenThreeTest.proposerPersonalDetailsSection();
 			// JourneyScreenTwo.proposerPersonalDetailsIncome();
 			JourneyScreenThreeTest.nomineeDetailsWithoutChilsSelection();
 			JourneyScreenThreeTest.bankDetailsSectionFillingData();

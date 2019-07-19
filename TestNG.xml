@@ -5,20 +5,14 @@
 
 	<test name="testngTest">
 
-	
-	<classes>
-			<class name="WebTest.MaxLifeShikshaPlusSuperTest"></class>
 
+		<classes>
+		   <class name="WebTest.MaxLifeLifePerfectPartnerSuperTest" />
+			<!-- <class name="WebTest.MaxLifeShikshaPlusSuperTest" /> -->
+			<!-- <class name="WebTest.JourneyScreenFourTest" /> -->
+			<!-- <class name="WebTest.ScenariosOfSmartTermPlanRegressionTest" /> -->
+			<!-- <class name="WebTest.JourneyScreenTwoTest" /> -->
 		</classes>
-
-		<!-- <classes> <class name="WebTest.JourneyScreenFourTest"></class> </classes> -->
-
-
-		<!-- <classes> <class name="WebTest.ScenariosOfSmartTermPlanRegressionTest" 
-			/> </classes> -->
-
-
-		<!-- <classes> <class name="WebTest.JourneyScreenTwoTest" /> </classes> -->
 	</test>
 
 </suite>
