@@ -21,6 +21,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -7103,5 +7104,25 @@ public class JourneyScreenTwo extends ReusableActions {
 
 		}
 	}
+	public static void getInitDriver() throws Exception{
+
+		final String PATH = System.getProperty("user.dir");
+		System.setProperty(AppConstant.INPUT_CHROME_DRIVER, PATH + AppConstant.INPUT_WEB_DRIVER);
+		driver = new ChromeDriver();
+		prop = ReusableActions.readProperties();
+		driver.get(prop.getProperty("SampleURL"));
+		LoginPage.verifyloginpage();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+		logger.info("Fulfilment URL opened successfully");
+
+		LoginPage.logintest(prop.getProperty("username"), prop.getProperty("password"));
+		logger.info("User logged in successfully");
+		HomePage.clickNewApp();
+		JourneyScreenOne.isIndianSelected();
+		JourneyScreenOne.isSelfSelected();
+		JourneyScreenOne.isProceedEnabled();
+	}
+
 
 }

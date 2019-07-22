@@ -3762,7 +3762,7 @@ public class JourneyScreenThree extends ReusableActions {
 
 		JourneyScreenThreeTest.usingPolicyNumberToFillScreenSixTPPPushSuperTermPlan();
 
-		/* comment on driver close 15-07-19 */
+		/* comment on at driver close 22-07-19 */
 		//driver.close();
 	}
 

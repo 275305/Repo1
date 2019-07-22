@@ -46,7 +46,7 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 	}
 
 	/* Mode of Payment(Annual)+Dividend Option(cash) */
-	@Test(priority = 1, enabled = false)
+	@Test(priority = 1, enabled = true)
 	public void LPPS_Tradition_GeneratingPdf_Annual_Cash() throws Exception {
 		try {
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
@@ -63,14 +63,21 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 			posvBackFlowTillTPPPush();
 
 		} catch (Exception e) {
+
+			driver.close();
 			logger.error("Test case Failed" + e.getMessage());
+			throw e;
+		}
+		finally{
+			driver.close();
 		}
 	}
 
 	/* Mode of Payment(Semi_Annual)+Dividend Option(cash) */
-	@Test(priority = 2, enabled = false)
+	@Test(priority = 2, enabled = true)
 	public void LPPS_Tradition_GeneratingPdf_SemiAnnual_Cash() throws Exception {
 		try {
+			JourneyScreenTwo.getInitDriver();
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
 			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
 			JourneyScreenTwo.traditional();
@@ -84,14 +91,20 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 			screenJourneyFromFourTillEnd();
 			posvBackFlowTillTPPPush();
 		} catch (Exception e) {
+			driver.close();
 			logger.error("Test case Failed" + e.getMessage());
+			throw e;
+		}
+		finally{
+			driver.close();
 		}
 	}
 
 	/* Mode of Payment(Quarterly)+Dividend Option(cash) */
-	@Test(priority = 3, enabled = false)
+	@Test(priority = 3, enabled = true)
 	public void LPPS_Tradition_GeneratingPdf_Quarterly_Cash() throws Exception {
 		try {
+			JourneyScreenTwo.getInitDriver();
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
 			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
 			JourneyScreenTwo.traditional();
@@ -105,14 +118,20 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 			screenJourneyFromFourTillEnd();
 			posvBackFlowTillTPPPush();
 		} catch (Exception e) {
+			driver.close();
 			logger.error("Test case Failed" + e.getMessage());
+			throw e;
+		}
+		finally{
+			driver.close();
 		}
 	}
 
 	/* Mode of Payment(Monthly)+Dividend Option(cash) */
-	@Test(priority = 4, enabled = false)
+	@Test(priority = 4, enabled = true)
 	public void LPPS_Tradition_GeneratingPdf_Monthly_Cash() throws Exception {
 		try {
+			JourneyScreenTwo.getInitDriver();
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
 			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
 			JourneyScreenTwo.traditional();
@@ -126,14 +145,20 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 			screenJourneyFromFourTillEnd();
 			posvBackFlowTillTPPPush();
 		} catch (Exception e) {
+			driver.close();
 			logger.error("Test case Failed" + e.getMessage());
+			throw e;
+		}
+		finally{
+			driver.close();
 		}
 	}
 
 	/* Mode of Payment(Annual)+Dividend Option(PUA) */
-	@Test(priority = 5, enabled = false)
+	@Test(priority = 5, enabled = true)
 	public void LPPS_Tradition_GeneratingPdf_Annual_PUA() throws Exception {
 		try {
+            JourneyScreenTwo.getInitDriver();
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
 			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
 			JourneyScreenTwo.traditional();
@@ -148,14 +173,20 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 			posvBackFlowTillTPPPush();
 
 		} catch (Exception e) {
+			driver.close();
 			logger.error("Test case Failed" + e.getMessage());
+			throw e;
+		}
+		finally{
+			driver.close();
 		}
 	}
 
 	/* Mode of Payment(Annual)+Dividend Option(PremiumOffset) */
-	@Test(priority = 6, enabled = false)
+	@Test(priority = 6, enabled = true)
 	public void LPPS_Tradition_GeneratingPdf_Annual_PremiumOffset() throws Exception {
 		try {
+			JourneyScreenTwo.getInitDriver();
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
 			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
 			JourneyScreenTwo.traditional();
@@ -170,15 +201,21 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 			posvBackFlowTillTPPPush();
 
 		} catch (Exception e) {
+			driver.close();
 			logger.error("Test case Failed" + e.getMessage());
+			throw e;
+		}
+		finally{
+			driver.close();
 		}
 	}
 
 	/* Mode of Payment(Annual)+Dividend Option(cash)+RiderDetails(Accidental) */
-	@Test(priority = 7, enabled = false)
+	@Test(priority = 7, enabled = true)
 	public void LPPSTraditionGeneratingPdfAnnualCashAccidental() throws Exception {
 
 		try {
+			JourneyScreenTwo.getInitDriver();
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
 			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
 			JourneyScreenTwo.traditional();
@@ -193,14 +230,20 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 			posvBackFlowTillTPPPush();
 
 		} catch (Exception e) {
+			driver.close();
 			logger.error("Test case Failed" + e.getMessage());
+			throw e;
+		}
+		finally{
+			driver.close();
 		}
 	}
 
 	/* Mode of Payment(Annual)+Dividend Option(cash)+TermPlusRider */
-	@Test(priority = 8, enabled = false)
+	@Test(priority = 8, enabled = true)
 	public void LPPS_Tradition_GeneratingPdf_Annual_Cash_TermPlus() throws Exception {
 		try {
+			JourneyScreenTwo.getInitDriver();
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
 			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
 			JourneyScreenTwo.traditional();
@@ -215,14 +258,20 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 			posvBackFlowTillTPPPush();
 
 		} catch (Exception e) {
+			driver.close();
 			logger.error("Test case Failed" + e.getMessage());
+			throw e;
+		}
+		finally{
+			driver.close();
 		}
 	}
 
 	/* Mode of Payment(Annual)+Dividend Option(cash)+RiderDetails(WOP) */
-	@Test(priority = 9, enabled = false)
+	@Test(priority = 9, enabled = true)
 	public void LPPSTraditionGeneratingPdfAnnual_Cash_WOP() throws Exception {
 		try {
+			JourneyScreenTwo.getInitDriver();
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
 			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
 			JourneyScreenTwo.traditional();
@@ -237,7 +286,12 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 			posvBackFlowTillTPPPush();
 
 		} catch (Exception e) {
+			driver.close();
 			logger.error("Test case Failed" + e.getMessage());
+			throw e;
+		}
+		finally{
+			driver.close();
 		}
 	}
 
@@ -246,9 +300,10 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 	 * Option(cash)+RiderDetails(Accidental+Term plus rider+WOP)
 	 * no able to upload the document at screen six
 	 */
-	@Test(priority = 10, enabled = false)
+	@Test(priority = 10, enabled = true)
 	public void LPPSTraditionGeneratingPdfAnnual_Cash_Accidental_TermPlus_WOP() throws Exception {
 		try {
+			JourneyScreenTwo.getInitDriver();
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
 			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
 			JourneyScreenTwo.traditional();
@@ -264,7 +319,12 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 			posvBackFlowTillTPPPush();
 
 		} catch (Exception e) {
+			driver.close();
 			logger.error("Test case Failed" + e.getMessage());
+			throw e;
+		}
+		finally{
+			driver.close();
 		}
 	}
 
