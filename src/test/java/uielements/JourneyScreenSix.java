@@ -1019,4 +1019,80 @@ public class JourneyScreenSix extends ReusableActions {
 			Thread.sleep(800);
 		}
 
+		//For MIAP
+		public static void switchingBackToMainWindowScreenSixMIAP() throws Exception {
+			PageFactory.initElements(driver, JourneyScreenSix.class);
+			Thread.sleep(1000);
+
+			System.out.println(policyNumber);
+			Robot robot = new Robot();
+
+			robot.keyPress(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_F5);
+			robot.keyRelease(KeyEvent.VK_F5);
+			robot.keyRelease(KeyEvent.VK_CONTROL);
+
+			Thread.sleep(1000);
+
+			robot.keyPress(KeyEvent.VK_F5);
+			robot.keyRelease(KeyEvent.VK_F5);
+
+			Thread.sleep(4000);
+
+			System.out.println(policyNumber);
+			fetchingPolicyNumberAndCompletingTheJourneyForTPP();
+
+			robot.keyPress(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_F5);
+			robot.keyRelease(KeyEvent.VK_F5);
+			robot.keyRelease(KeyEvent.VK_CONTROL);
+
+			Thread.sleep(1000);
+
+			robot.keyPress(KeyEvent.VK_F5);
+			robot.keyRelease(KeyEvent.VK_F5);
+
+			Thread.sleep(4000);
+
+			// paymentScreen.click();
+			Thread.sleep(800);
+			ChequeOptionButton.click();
+
+			paymentChequeNumber(1, 1, 4);
+
+			paymentChequeDate();
+
+			paymentChequePayableAt();
+
+			paymentChequeBankName(1, 1, 4);
+			paymentChequeMicr(1, 1, 4);
+
+			Thread.sleep(800);
+			
+			robot.keyPress(KeyEvent.VK_F5);
+			robot.keyRelease(KeyEvent.VK_F5);
+			// prePopulationDocumentVault();
+			Thread.sleep(800);
+			communicationAddressProofFTSP();
+			Thread.sleep(800);
+			identityProofOrDOB();
+			Thread.sleep(800);
+			photographOfProposerUpload();
+			Thread.sleep(800);
+//			copyOfPAN();
+//			Thread.sleep(800);
+			cancelledChequeWithNameRequired();
+			Thread.sleep(800);
+			ecsMandateForm();
+			// Thread.sleep(800);
+			// investorRiskProfile();
+			Thread.sleep(800);
+			factFinder();
+			Thread.sleep(800);
+			//ecsMandateForm2();
+			prePopulationDocumentVault();
+			// vernacularDeclaration();
+			// Thread.sleep(80l0);
+		}
+		
 }

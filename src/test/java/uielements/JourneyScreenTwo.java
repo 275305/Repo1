@@ -4510,10 +4510,11 @@ public class JourneyScreenTwo extends ReusableActions {
 		System.out.println("\n Total num of rows found " + totalNumOfRows);
 
 		/* for (int rowNum = 1; rowNum < totalNumOfRows; rowNum++) { */
-		/*
-		 * for (int rowNum = 1; rowNum < 2; rowNum++) {
-		 * validatingErrorMsgForSAP(sheet, rowNum); }
-		 */
+		
+		 for (int rowNum = 1; rowNum < 2; rowNum++) {
+		 validatingErrorMsgForSAP(sheet, rowNum); 
+		 }
+		 
 		hssfWorkbook.close();
 		return false;
 	}

@@ -3777,5 +3777,124 @@ public class JourneyScreenThree extends ReusableActions {
 		JourneyScreenThreeTest.usingPolicyNumberToFillScreenSixTPPPushWLS();
 		driver.close();
 	}
+	
+	public static void handle_windowMIAP() throws Exception {
+		/*((JavascriptExecutor) driver).executeScript("window.open()");
+		String current_window = driver.getWindowHandle();
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		driver.switchTo().window(tabs.get(1));*/
+
+		gmailFunctionalityMIAP();
+
+		//driver.close();
+
+		//driver.switchTo().window(current_window);
+		JourneyScreenThreeTest.usingPolicyNumberToFillScreenSixTPPPushMIAP();
+
+	}
+	//For MIAP Gmail
+		public static void gmailFunctionalityMIAP() throws Exception {
+		
+			
+			String host = "pop.gmail.com";// change accordingly
+			String mailStoreType = "pop3";
+			String username = "priya.video365@gmail.com";// change accordingly
+			String password = "Priya@123456";// change accordingly
+			String validation = "Pre Issuance Verification";
+			ReusableActions.checkEmail(validation,host, mailStoreType, username, password);
+			ChromeOptions opt = new ChromeOptions();
+			opt.addArguments("--incognito");
+			DesiredCapabilities caps = DesiredCapabilities.chrome();
+			caps.setCapability(ChromeOptions.CAPABILITY, opt);
+
+			//WebDriver driver = new ChromeDriver(caps);
+			driver.get(ReusableActions.TinyURL);
+			
+			
+			driver.manage().window().maximize();
+
+			Thread.sleep(700);
+
+			String str = driver.getCurrentUrl();
+			System.out.println(str);
+
+			Thread.sleep(500);
+			driver.findElement(By.xpath("//label[@for=\"radio-two\"]")).click();
+			Thread.sleep(500);
+			driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
+			Thread.sleep(500);
+			driver.findElement(By.xpath("//label[@for=\"radio-eight\"]")).click();
+			Thread.sleep(500);
+			driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
+			Thread.sleep(500);
+
+			driver.findElement(By.xpath("//label[@for=\"radio-two\"]")).click();
+			Thread.sleep(500);
+			driver.findElement(By.xpath("//label[@for=\"radio-four\"]")).click();
+			Thread.sleep(500);
+			driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
+			Thread.sleep(500);
+			driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
+			Thread.sleep(500);
+
+			driver.findElement(By.xpath("//label[@for=\"radio-two\"]")).click();
+			Thread.sleep(500);
+			driver.findElement(By.xpath("//label[@for=\"radio-four\"]")).click();
+			Thread.sleep(500);
+			driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
+			Thread.sleep(500);
+			driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
+			Thread.sleep(1000);
+
+			driver.findElement(By.xpath("//label[@for=\"radio-two\"]")).click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//label[@for=\"radio-four\"]")).click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//label[@for=\"radio-2\"]")).click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//label[@for=\"radio-10\"]")).click();
+			Thread.sleep(1000);
+
+			driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
+			Thread.sleep(500);
+
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//button[@id='generateOTP_btn']")).click();
+			Thread.sleep(2000);
+
+			
+			
+			
+			validation = "OTP Validation";
+			ReusableActions.checkEmail(validation,host, mailStoreType, username, password);
+			String[] OtpValue = ReusableActions.OTP.trim().split("");
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//input[@id='codeBox1']")).sendKeys(OtpValue[0].trim());
+			Thread.sleep(800);
+			driver.findElement(By.xpath("//input[@id='codeBox2']")).sendKeys(OtpValue[1].trim());
+			Thread.sleep(800);
+			driver.findElement(By.xpath("//input[@id='codeBox3']")).sendKeys(OtpValue[2].trim());
+			Thread.sleep(800);
+			driver.findElement(By.xpath("//input[@id='codeBox4']")).sendKeys(OtpValue[3].trim());
+			Thread.sleep(800);
+			driver.findElement(By.xpath("//label[@class='cstm-check-label']")).click();
+			Thread.sleep(800);
+			driver.findElement(By.xpath("//button[@id='submitbutton']")).click();
+			Thread.sleep(1800);
+			/*
+			 * robot.keyPress(KeyEvent.VK_ALT); robot.keyPress(KeyEvent.VK_TAB);
+			 * robot.keyRelease(KeyEvent.VK_TAB); robot.keyRelease(KeyEvent.VK_ALT);
+			 * 
+			 * Thread.sleep(500);
+			 * 
+			 * robot.keyPress(KeyEvent.VK_CONTROL); robot.keyPress(KeyEvent.VK_TAB);
+			 * robot.keyRelease(KeyEvent.VK_TAB); robot.keyRelease(KeyEvent.VK_CONTROL);
+			 */
+
+			driver.close();
+
+		}
 
 }

@@ -553,7 +553,7 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			JourneyScreenTwo.setDateBirthNomineeDetails();
 			JourneyScreenThree.selectNomineeGender();
 			JourneyScreenThree.relationshipWithNomineeOptionSelection();
-			JourneyScreenThree.childNameWithNominee(4,1,15);
+			//JourneyScreenThree.childNameWithNominee(4,1,15);
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
 			throw e;
@@ -1216,5 +1216,40 @@ public class JourneyScreenThreeTest extends ReusableActions {
 
 		}
 	}
+	//for MIAP TPPpush
+	
+		public static void usingPolicyNumberToFillScreenSixTPPPushMIAP() throws Exception {
+			PageFactory.initElements(driver, POSVFlowForSAPMIAP.class);
+			try {
+
+				//checkAlert();
+				// driver.close();
+				prop = ReusableActions.readProperties();
+				driver.get(prop.getProperty("SampleURL"));
+				LoginPage.verifyloginpage();
+
+				// Maximizing the browser window
+				driver.manage().window().maximize();
+				driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+				logger.info("Fulfilment URL opened successfully");
+
+				JourneyScreenSix.switchingBackToMainWindowScreenSixMIAP();
+				// JourneyScreenSix.preferedDate();
+				// JourneyScreenSix.visitType();
+				// JourneyScreenSix.medicalCentreSelection();
+				JourneyScreenSix.termsAndCondition();
+				Thread.sleep(1000);
+				//driver.close();
+				// JourneyScreenThree.capture_window_ids();
+
+			} // driver.findElement(By.xpath("//a[contains(text(),'Logout')]")).click();
+
+			catch (Exception e) {
+				logger.error("Test case failed " + e.getMessage());
+				throw e;
+
+			}
+		}
+		
 
 }

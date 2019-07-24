@@ -2,12 +2,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="MainTestSuite">
-
 	<test name="testngTest">
-
-
 		<classes>
-		   <class name="WebTest.MaxLifeLifePerfectPartnerSuperTest" />
+             <class name="WebTest.MaxLifeSavingsAdvantagePlanTest"/>
+			<!-- <class name="WebTest.MaxLifeFastTrackSuperPlanTest" /> -->
+			<!-- <class name="WebTest.MaxLifeLifePerfectPartnerSuperTest" /> -->
 			<!-- <class name="WebTest.MaxLifeShikshaPlusSuperTest" /> -->
 			<!-- <class name="WebTest.JourneyScreenFourTest" /> -->
 			<!-- <class name="WebTest.ScenariosOfSmartTermPlanRegressionTest" /> -->

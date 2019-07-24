@@ -111,7 +111,7 @@ public class MaxLifeSmartTermPlanTest extends ReusableActions {
 	}
 
 	// Illustration for all rider of regular pay
-	@Test(priority = 3, enabled = false)
+	@Test(priority = 3, enabled = true)
 	public static void allRiderRegularPay() throws Exception
 	{
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
