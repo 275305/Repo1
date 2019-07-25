@@ -8,7 +8,6 @@ import org.testng.annotations.Test;
 
 import uielements.HomePage;
 import uielements.JourneyScreenFour;
-import uielements.JourneyScreenOne;
 import uielements.JourneyScreenSix;
 import uielements.JourneyScreenThree;
 import uielements.JourneyScreenTwo;
@@ -17,7 +16,11 @@ import uielements.RegressionSuit;
 import uielements.ReusableActions;
 import util.AppConstant;
 
-public class MaxLifeSuperTermPlanTest extends ReusableActions {
+public class MaxLifePlatinumWealthPlanTest extends ReusableActions {
+
+
+	// TC -01 Verify the by default status of Nationality, Policy for and Proceed
+	// button on Journey Screen one
 
 	@Test(priority = 0, enabled = true)
 	public void loginApplicationTest() throws Exception {
@@ -42,6 +45,7 @@ public class MaxLifeSuperTermPlanTest extends ReusableActions {
 			throw e;
 		}
 	}
+
 
 	public static void loginNewBrowser() throws Exception {
 		try {
@@ -69,25 +73,6 @@ public class MaxLifeSuperTermPlanTest extends ReusableActions {
 		}
 	}
 
-	public static void CheckproductConfigrationSTPGeneratingPdf() throws Exception {
-		PageFactory.initElements(driver, JourneyScreenTwo.class);
-		try {
-			// alwaysCloseAllChildTabs();
-			// HomePage.clickDashboard();
-			HomePage.clickNewApp();
-			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
-			JourneyScreenOne.clickProceed();
-			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
-			JourneyScreenTwo.traditional();
-			JourneyScreenTwo.selectByDropdownSTP();
-
-		} catch (Exception e) {
-			logger.error("Test case failed " + e.getMessage());
-			throw e;
-
-		}
-	}
-
 	public static void screenJourneyFromThreeTillEnd() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -110,7 +95,12 @@ public class MaxLifeSuperTermPlanTest extends ReusableActions {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
 
-			JourneyScreenFour.arrowDownFunctionToScrollDownTillBottom();
+			// JourneyScreenFour.form60RelatedDetailsIdentityProofNameOptionSelection();
+			// JourneyScreenFour.setIdentityProofNumberValidation(0, 1, 6);
+			// JourneyScreenFour.identityProofIssuingAuthority();
+			// JourneyScreenFour.iAmExemptFromTheRequirementOfPANUnderTheFollowingProvisionsOfTheITAct1961();
+
+			JourneyScreenFour.arrowDownFunctionToScrollDownTillBottomFastTrack();
 			JourneyScreenFour.criticalIllnessNoOption();
 			JourneyScreenFour.hazardousActivitiesNo();
 			JourneyScreenFour.selectCriminalChargesNo();
@@ -130,7 +120,7 @@ public class MaxLifeSuperTermPlanTest extends ReusableActions {
 		try {
 
 			// JourneyScreenThree.gmailFunctionalitySmartTermPlan();
-			JourneyScreenThree.handle_windowSuperTermPlan();
+			JourneyScreenThree.handle_windowPWP();
 			// JourneyScreenThreeTest.usingPolicyNumberToFillScreenSixTPPPush();
 
 		} catch (Exception e) {
@@ -141,17 +131,21 @@ public class MaxLifeSuperTermPlanTest extends ReusableActions {
 	}
 
 	@Test(priority = 1, enabled = true)
-	public static void levelSumAssuredTppPush() throws Exception {
+	public void singlePayPremiumTypeTppPush() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
+
 			loginNewBrowser();
-			CheckproductConfigrationSTPGeneratingPdf();
-			JourneyScreenTwo.needOfInsurLifeStagePremiumPaymentPolicyTerm();
-			JourneyScreenTwo.levelSumAssuredOption();
-			JourneyScreenTwo.nonSmokerDividentAdjustmentModeOfPaymentWOP();
-
-			JourneyScreenTwo.checkPOSVforSTPPremiumCommitment(3, 4, 11);
-
+			alwaysCloseAllChildTabs();
+			// HomePage.clickDashboard();
+			HomePage.clickNewApp();
+			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
+			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
+			JourneyScreenTwo.ulip();
+			JourneyScreenTwo.selectByDropdownPWP();
+			JourneyScreenTwo.needOfInsuLifeStage();
+			JourneyScreenTwo.premiumTypeSingle();
+			JourneyScreenTwo.PremiumPaymentTermAndAllFeilds();
 			screenJourneyFromThreeTillEnd();
 			screenJourneyFromFourTillEnd();
 			posvBackFlowTillTPPPush();
@@ -166,49 +160,56 @@ public class MaxLifeSuperTermPlanTest extends ReusableActions {
 		finally {
 			driver.close();
 		}
-
 	}
 
 	@Test(priority = 2, enabled = true)
-	public static void increasingSumAssuredTppPush() throws Exception {
+	public void limitedPayPremiumTypeTppPush() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
 
 			loginNewBrowser();
-			CheckproductConfigrationSTPGeneratingPdf();
-			JourneyScreenTwo.needOfInsurLifeStagePremiumPaymentPolicyTerm();
-			JourneyScreenTwo.IncreasingLevelSumAssuredOption();
-			JourneyScreenTwo.nonSmokerDividentAdjustmentModeOfPaymentWOP();
-			JourneyScreenTwo.checkPOSVforSTPPremiumCommitment(3, 4, 11);
-
+			alwaysCloseAllChildTabs();
+			// HomePage.clickDashboard();
+			HomePage.clickNewApp();
+			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
+			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
+			JourneyScreenTwo.ulip();
+			JourneyScreenTwo.selectByDropdownPWP();
+			JourneyScreenTwo.needOfInsuLifeStage();
+			JourneyScreenTwo.premiumTypeLimited();
+			JourneyScreenTwo.PremiumPaymentTermAndAllFeilds();
 			screenJourneyFromThreeTillEnd();
 			screenJourneyFromFourTillEnd();
 			posvBackFlowTillTPPPush();
+
 		} catch (Exception e) {
 			driver.close();
 			logger.error("Test case failed " + e.getMessage());
 			throw e;
 
 		}
+
 		finally {
 			driver.close();
 		}
 	}
 
 	@Test(priority = 3, enabled = true)
-	public static void premiumPaymentTerm10TppPush() throws Exception {
+	public void regularPayPremiumTypeTppPush() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
+
 			loginNewBrowser();
-			CheckproductConfigrationSTPGeneratingPdf();
-
-			JourneyScreenTwo.needOfInsuranceLifeStage();
-			JourneyScreenTwo.premiumPaymentTerm10();
-			JourneyScreenTwo.policyTermSumAssuredSmokerDividentAdjustmentModeOfPaymentWOP();
-
-
-			JourneyScreenTwo.checkPOSVforSTPPremiumCommitment(3, 4, 11);
-
+			alwaysCloseAllChildTabs();
+			// HomePage.clickDashboard();
+			HomePage.clickNewApp();
+			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
+			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
+			JourneyScreenTwo.ulip();
+			JourneyScreenTwo.selectByDropdownPWP();
+			JourneyScreenTwo.needOfInsuLifeStage();
+			JourneyScreenTwo.premiumTypeLRegular();
+			JourneyScreenTwo.PremiumPaymentTermAndAllFeilds();
 			screenJourneyFromThreeTillEnd();
 			screenJourneyFromFourTillEnd();
 			posvBackFlowTillTPPPush();
@@ -223,22 +224,26 @@ public class MaxLifeSuperTermPlanTest extends ReusableActions {
 		finally {
 			driver.close();
 		}
-
 	}
 
+
+
 	@Test(priority = 4, enabled = true)
-	public static void premiumPaymentTerm16TppPush() throws Exception {
+	public void limitedPayAnnualModeOfPaymentTppPush() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
+
 			loginNewBrowser();
-			CheckproductConfigrationSTPGeneratingPdf();
-
-			JourneyScreenTwo.needOfInsuranceLifeStage();
-			JourneyScreenTwo.premiumPaymentTerm16();
-			JourneyScreenTwo.policyTermSumAssuredSmokerDividentAdjustmentModeOfPaymentWOP();
-
-			JourneyScreenTwo.checkPOSVforSTPPremiumCommitment(3, 4, 11);
-
+			alwaysCloseAllChildTabs();
+			// HomePage.clickDashboard();
+			HomePage.clickNewApp();
+			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
+			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
+			JourneyScreenTwo.ulip();
+			JourneyScreenTwo.selectByDropdownPWP();
+			JourneyScreenTwo.needOfInsuLifeStagePremiumTypeANDTermPolicyTerm();
+			JourneyScreenTwo.annualModeOfPaymentPWP();
+			JourneyScreenTwo.fillingAllTheFeildForPWP();
 			screenJourneyFromThreeTillEnd();
 			screenJourneyFromFourTillEnd();
 			posvBackFlowTillTPPPush();
@@ -253,22 +258,24 @@ public class MaxLifeSuperTermPlanTest extends ReusableActions {
 		finally {
 			driver.close();
 		}
-
 	}
 
 	@Test(priority = 5, enabled = true)
-	public static void annualModeOfPaymentTppPush() throws Exception {
+	public void limitedPaySemiAnnualModeOfPaymentTppPush() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
+
 			loginNewBrowser();
-			CheckproductConfigrationSTPGeneratingPdf();
-
-			JourneyScreenTwo.fillingAllTheRequiredFeilds();
-			JourneyScreenTwo.annualMode();
-			JourneyScreenTwo.wopPlusRider();
-
-			JourneyScreenTwo.checkPOSVforSTPPremiumCommitment(3, 4, 11);
-
+			alwaysCloseAllChildTabs();
+			// HomePage.clickDashboard();
+			HomePage.clickNewApp();
+			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
+			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
+			JourneyScreenTwo.ulip();
+			JourneyScreenTwo.selectByDropdownPWP();
+			JourneyScreenTwo.needOfInsuLifeStagePremiumTypeANDTermPolicyTerm();
+			JourneyScreenTwo.modeOfPaymentSTPSemiAnnual();
+			JourneyScreenTwo.fillingAllTheFeildForPWP();
 			screenJourneyFromThreeTillEnd();
 			screenJourneyFromFourTillEnd();
 			posvBackFlowTillTPPPush();
@@ -283,28 +290,29 @@ public class MaxLifeSuperTermPlanTest extends ReusableActions {
 		finally {
 			driver.close();
 		}
-
 	}
 
 	@Test(priority = 6, enabled = true)
-	public static void semiAnnualModeOfPaymentTppPush() throws Exception {
+	public void limitedPayQuatterlyModeOfPaymentTppPush() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
+
 			loginNewBrowser();
-			CheckproductConfigrationSTPGeneratingPdf();
-
-			JourneyScreenTwo.fillingAllTheRequiredFeilds();
-			JourneyScreenTwo.modeOfPaymentSTPSemiAnnual();
-			JourneyScreenTwo.wopPlusRider();
-
-			JourneyScreenTwo.checkPOSVforSTPPremiumCommitment(3, 4, 11);
-
+			alwaysCloseAllChildTabs();
+			// HomePage.clickDashboard();
+			HomePage.clickNewApp();
+			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
+			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
+			JourneyScreenTwo.ulip();
+			JourneyScreenTwo.selectByDropdownPWP();
+			JourneyScreenTwo.needOfInsuLifeStagePremiumTypeANDTermPolicyTerm();
+			JourneyScreenTwo.modeOfPaymentSTPQuaterly();
+			JourneyScreenTwo.fillingAllTheFeildForPWP();
 			screenJourneyFromThreeTillEnd();
 			screenJourneyFromFourTillEnd();
 			posvBackFlowTillTPPPush();
 
 		} catch (Exception e) {
-			driver.close();
 			logger.error("Test case failed " + e.getMessage());
 			throw e;
 
@@ -313,51 +321,24 @@ public class MaxLifeSuperTermPlanTest extends ReusableActions {
 		finally {
 			driver.close();
 		}
-
 	}
 
 	@Test(priority = 7, enabled = true)
-	public static void quarterlyModeOfPaymentTppPush() throws Exception {
+	public void limitedPayMonthlyModeOfPaymentTppPush() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
+
 			loginNewBrowser();
-			CheckproductConfigrationSTPGeneratingPdf();
-
-			JourneyScreenTwo.fillingAllTheRequiredFeilds();
-			JourneyScreenTwo.modeOfPaymentSTPQuaterly();
-			JourneyScreenTwo.wopPlusRider();
-
-			JourneyScreenTwo.checkPOSVforSTPPremiumCommitment(3, 4, 11);
-
-			screenJourneyFromThreeTillEnd();
-			screenJourneyFromFourTillEnd();
-			posvBackFlowTillTPPPush();
-
-		} catch (Exception e) {
-			driver.close();
-			logger.error("Test case failed " + e.getMessage());
-			throw e;
-
-		}
-
-		finally {
-			driver.close();
-		}
-
-	}
-
-	@Test(priority = 8, enabled = true)
-	public static void monthlyModeOfPaymentTppPush() throws Exception {
-		PageFactory.initElements(driver, JourneyScreenTwo.class);
-		try {
-			loginNewBrowser();
-			CheckproductConfigrationSTPGeneratingPdf();
-
-			JourneyScreenTwo.fillingAllTheRequiredFeilds();
+			alwaysCloseAllChildTabs();
+			// HomePage.clickDashboard();
+			HomePage.clickNewApp();
+			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
+			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
+			JourneyScreenTwo.ulip();
+			JourneyScreenTwo.selectByDropdownPWP();
+			JourneyScreenTwo.needOfInsuLifeStagePremiumTypeANDTermPolicyTerm();
 			JourneyScreenTwo.modeOfPaymentSTPMonthly();
-			JourneyScreenTwo.wopPlusRider();
-
-			JourneyScreenTwo.checkPOSVforSTPPremiumCommitment(3, 4, 11);
+			JourneyScreenTwo.fillingAllTheFeildForPWP();
 			screenJourneyFromThreeTillEnd();
 			screenJourneyFromFourTillEnd();
 			posvBackFlowTillTPPPush();
@@ -372,6 +353,7 @@ public class MaxLifeSuperTermPlanTest extends ReusableActions {
 		finally {
 			driver.close();
 		}
-
 	}
+
 }
+

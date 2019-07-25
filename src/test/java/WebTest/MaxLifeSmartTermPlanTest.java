@@ -1,4 +1,5 @@
 package WebTest;
+
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,36 +12,32 @@ import uielements.JourneyScreenSix;
 import uielements.JourneyScreenThree;
 import uielements.JourneyScreenTwo;
 import uielements.LoginPage;
+import uielements.RegressionSuit;
 import uielements.ReusableActions;
 import util.AppConstant;
 
 public class MaxLifeSmartTermPlanTest extends ReusableActions {
 
 	@Test(priority = 0, enabled = true)
-	public void Indian() throws Exception {
+	public void loginApplicationTest() throws Exception {
 		try {
+			PageFactory.initElements(driver, RegressionSuit.class);
 			final String PATH = System.getProperty("user.dir");
 			System.setProperty(AppConstant.INPUT_CHROME_DRIVER, PATH + AppConstant.INPUT_WEB_DRIVER);
 			driver = new ChromeDriver();
 			prop = ReusableActions.readProperties();
-
 			driver.get(prop.getProperty("SampleURL"));
 			LoginPage.verifyloginpage();
-
 			// Maximizing the browser window
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 			logger.info("Fulfilment URL opened successfully");
-
 			LoginPage.logintest(prop.getProperty("username"), prop.getProperty("password"));
 			logger.info("User logged in successfully");
-			/*HomePage.clickNewApp();
-			JourneyScreenOne.isIndianSelected();
-			JourneyScreenOne.isSelfSelected();
-			JourneyScreenOne.isProceedEnabled();*/
-
 		} catch (Exception e) {
+
 			logger.error("Test case failed: " + e.getMessage());
+
 			throw e;
 		}
 	}
@@ -90,12 +87,12 @@ public class MaxLifeSmartTermPlanTest extends ReusableActions {
 	}
 
 	// Illustration for all rider of limited pay
-	@Test(priority = 2, enabled = false)
+	@Test(priority = 2, enabled = true)
 	public static void allRiderLimitedPayPremiumType() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
 			alwaysCloseAllChildTabs();
-			HomePage.clickDashboard();
+			// HomePage.clickDashboard();
 			HomePage.clickNewApp();
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
 			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
@@ -133,7 +130,7 @@ public class MaxLifeSmartTermPlanTest extends ReusableActions {
 	}
 
 	// Illustration for all rider of pay till 60
-	@Test(priority = 4, enabled = false)
+	@Test(priority = 4, enabled = true)
 	public static void allRiderPayTill60() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -155,7 +152,7 @@ public class MaxLifeSmartTermPlanTest extends ReusableActions {
 
 	// checking illustration generation for all death beneifit options for pay till
 	// 60 premium type
-	@Test(priority = 5, enabled = false)
+	@Test(priority = 5, enabled = true)
 	public static void deathBenefitAllOptionForPayTill60() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -177,7 +174,7 @@ public class MaxLifeSmartTermPlanTest extends ReusableActions {
 
 	// checking illustration generation for all death beneifit options for pay
 	// premium type
-	@Test(priority = 6, enabled = false)
+	@Test(priority = 6, enabled = true)
 	public static void deathBenefitAllOptionForSinglePay() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -200,7 +197,7 @@ public class MaxLifeSmartTermPlanTest extends ReusableActions {
 	// checking illustration generation for all death beneifit options for limited
 	// pay
 	// premium type
-	@Test(priority = 7, enabled = false)
+	@Test(priority = 7, enabled = true)
 	public static void deathBenefitAllOptionForLimitedPay() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -223,7 +220,7 @@ public class MaxLifeSmartTermPlanTest extends ReusableActions {
 	// checking illustration generation for all death beneifit options for regular
 	// pay
 	// premium type
-	@Test(priority = 8, enabled = false)
+	@Test(priority = 8, enabled = true)
 	public static void deathBenefitAllOptionForRegularPay() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -244,7 +241,7 @@ public class MaxLifeSmartTermPlanTest extends ReusableActions {
 	}
 
 	// Illustration for all premium type of limited pay
-	@Test(priority = 9, enabled = false)
+	@Test(priority = 9, enabled = true)
 	public static void allPremiumPaymentTermLimitedPayPremiumType() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -265,7 +262,7 @@ public class MaxLifeSmartTermPlanTest extends ReusableActions {
 	}
 
 	// Illustration for all premium type of regular pay
-	@Test(priority = 10, enabled = false)
+	@Test(priority = 10, enabled = true)
 	public static void allPremiumPaymentTermRegularPayPremiumType() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -396,19 +393,26 @@ public class MaxLifeSmartTermPlanTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 16, enabled = true)
+	@Test(priority = 1, enabled = true)
 	public static void checkproductConfigrationSmartTermPlanGeneratingPdfTppPush() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
 			alwaysCloseAllChildTabs();
 
 			genertaingPDFForTppPush();
-			JourneyScreenThreeTest.proposerPersonalDetailsSection();
+			JourneyScreenThreeTest.proposerPersonalDetailsSection(); //
 			// JourneyScreenTwo.proposerPersonalDetailsIncome();
 			JourneyScreenThreeTest.nomineeDetailsWithoutDependentSelection();
 			JourneyScreenThreeTest.bankDetailsSectionFillingData();
 			JourneyScreenThree.fillingAnnualIncomeTOProceed();
 			Thread.sleep(1000);
+
+			/*
+			 * JourneyScreenFour.form60RelatedDetailsIdentityProofNameOptionSelection();
+			 * JourneyScreenFour.setIdentityProofNumberValidation(0, 1, 6);
+			 * JourneyScreenFour.identityProofIssuingAuthority(); JourneyScreenFour.
+			 * iAmExemptFromTheRequirementOfPANUnderTheFollowingProvisionsOfTheITAct1961();
+			 */
 
 			JourneyScreenFour.arrowDownFunctionToScrollDownTillBottomFastTrack();
 			JourneyScreenFour.criticalIllnessNoOption();
@@ -416,7 +420,7 @@ public class MaxLifeSmartTermPlanTest extends ReusableActions {
 			JourneyScreenFour.selectCriminalChargesNo();
 			JourneyScreenFour.feetInchesKgsSelectionToMoveToScreen5POSV();
 			JourneyScreenThree.agreePopupToProceedToSendPreIssuranceVerificationLinkToCustomer();
-
+			// JourneyScreenThree.proceedButtonLifestyle();
 			JourneyScreenSix.fetchingProposalNumberFromUI();
 
 			JourneyScreenThree.gmailFunctionalitySmartTermPlan();
@@ -430,9 +434,9 @@ public class MaxLifeSmartTermPlanTest extends ReusableActions {
 		}
 	}
 
-
-
-	@Test(priority = 17, enabled = false)
+	
+	
+	@Test(priority = 1, enabled = false)
 	public static void testing() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -450,5 +454,5 @@ public class MaxLifeSmartTermPlanTest extends ReusableActions {
 
 		}
 	}
-
+	
 }
