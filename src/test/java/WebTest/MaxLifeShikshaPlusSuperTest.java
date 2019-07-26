@@ -47,7 +47,7 @@ public class MaxLifeShikshaPlusSuperTest extends ReusableActions {
 
 	// For Premium Payment term 5 for AnnualModeOfPayment
 	/* Systematic Transfer Plan */
-	@Test(priority = 1, enabled = false)
+	@Test(priority = 1, enabled = true)
 	public void pdfConfigrationSPSPUlipGeneratingPdfoption5() throws Exception {
 
 		try {
@@ -157,7 +157,7 @@ public class MaxLifeShikshaPlusSuperTest extends ReusableActions {
 
 	// For Premium Payment term 5 for Monthly ModeOfPayment
 		/* choose Your Fund with monthly*/
-		@Test(priority = 6, enabled = true)
+		@Test(priority = 6, enabled = false)
 		public void pdfConfigrationSPSPUlipGeneratingPdfCYFMonthly() throws Exception {
 			try {
 				JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
@@ -180,7 +180,7 @@ public class MaxLifeShikshaPlusSuperTest extends ReusableActions {
 		try {
 			JourneyScreenThreeTest.proposerPersonalDetailsSection(); //
 			// JourneyScreenTwo.proposerPersonalDetailsIncome();
-			JourneyScreenThreeTest.nomineeDetailsWithoutDependentSelection();
+			JourneyScreenThreeTest.nomineeDetailsWithoutDependentSelectionchild();
 			JourneyScreenThreeTest.bankDetailsSectionFillingData();
 			JourneyScreenThree.fillingAnnualIncomeTOProceed();
 			Thread.sleep(1000);

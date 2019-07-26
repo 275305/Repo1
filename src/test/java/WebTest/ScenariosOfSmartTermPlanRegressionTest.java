@@ -49,7 +49,7 @@ public class ScenariosOfSmartTermPlanRegressionTest extends ReusableActions {
 	public static void singlePayLifeCoverForm1PDFGenration() throws Exception {
 		// alwaysCloseAllChildTabs();
 		HomePage.clickNewApp();
-		JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
+		JourneyScreenThreeTest.ScreenOneTestIndianFuntnPan();
 		JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
 		JourneyScreenTwo.traditional();
 		JourneyScreenTwo.selectByDropdownSmartTermPlan();

@@ -93,7 +93,7 @@ public class MaxLifeWholeLifeSuperTest extends ReusableActions {
 		}
 	}
 
-	// @Test(priority = 2, enabled = true)
+	// @Test(priority = 2, enabled = false)
 	public static void CheckproductConfigrationWLSGeneratingPdf() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -137,10 +137,10 @@ public class MaxLifeWholeLifeSuperTest extends ReusableActions {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
 
-			// JourneyScreenFour.form60RelatedDetailsIdentityProofNameOptionSelection();
-			// JourneyScreenFour.setIdentityProofNumberValidation(0, 1, 6);
-			// JourneyScreenFour.identityProofIssuingAuthority();
-			// JourneyScreenFour.iAmExemptFromTheRequirementOfPANUnderTheFollowingProvisionsOfTheITAct1961();
+			 JourneyScreenFour.form60RelatedDetailsIdentityProofNameOptionSelection();
+			 JourneyScreenFour.setIdentityProofNumberValidation(0, 1, 6);
+			 JourneyScreenFour.identityProofIssuingAuthority();
+			 JourneyScreenFour.iAmExemptFromTheRequirementOfPANUnderTheFollowingProvisionsOfTheITAct1961();
 
 			JourneyScreenFour.arrowDownFunctionToScrollDownTillBottomFastTrack();
 			JourneyScreenFour.criticalIllnessNoOption();
@@ -163,8 +163,11 @@ public class MaxLifeWholeLifeSuperTest extends ReusableActions {
 
 
 			// JourneyScreenThree.gmailFunctionalitySmartTermPlan();
-			JourneyScreenThree.handle_windowWLS();
+			//JourneyScreenThree.handle_windowWLS();
 			// JourneyScreenThreeTest.usingPolicyNumberToFillScreenSixTPPPush();
+			
+			JourneyScreenThree.handle_windowSAP();
+			
 
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
@@ -178,7 +181,7 @@ public class MaxLifeWholeLifeSuperTest extends ReusableActions {
 	public static void premiumPaymentTerm10WLSGeneratingPdfAndTppPush() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
-			loginNewBrowser();
+			//loginNewBrowser();
 			alwaysCloseAllChildTabs();
 			CheckproductConfigrationWLSGeneratingPdf();
 			JourneyScreenTwo.premiumPaymanetTerm10();
@@ -186,6 +189,7 @@ public class MaxLifeWholeLifeSuperTest extends ReusableActions {
 			JourneyScreenTwo.checkPOSVforWLSAnnualIncome(3, 4, 11);
 			screenJourneyFromThreeTillEnd();
 			screenJourneyFromFourTillEnd();
+			//posvBackFlowTillTPPPush();
 			posvBackFlowTillTPPPush();
 		} catch (Exception e) {
 			driver.close();
@@ -197,7 +201,7 @@ public class MaxLifeWholeLifeSuperTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 3, enabled = true)
+	@Test(priority = 3, enabled = false)
 	public static void premiumPaymentTerm15WLSGeneratingPdfAndTppPush() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -223,7 +227,7 @@ public class MaxLifeWholeLifeSuperTest extends ReusableActions {
 
 	}
 
-	@Test(priority = 4, enabled = true)
+	@Test(priority = 4, enabled = false)
 	public static void premiumPaymentTerm20WLSGeneratingPdfAndTppPush() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -246,7 +250,7 @@ public class MaxLifeWholeLifeSuperTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 5, enabled = true)
+	@Test(priority = 5, enabled = false)
 	public static void modeOfPaymentAnnualWLSTppPush() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -281,7 +285,7 @@ public class MaxLifeWholeLifeSuperTest extends ReusableActions {
 	}
 
 
-	@Test(priority = 6, enabled = true)
+	@Test(priority = 6, enabled = false)
 	public static void modeOfPaymentSemiAnnualWLSTppPush() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -311,7 +315,7 @@ public class MaxLifeWholeLifeSuperTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 7, enabled = true)
+	@Test(priority = 7, enabled = false)
 	public static void modeOfPaymentQuarterlyWLSTppPush() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -343,7 +347,7 @@ public class MaxLifeWholeLifeSuperTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 8, enabled = true)
+	@Test(priority = 8, enabled = false)
 	public static void modeOfPaymentMonthlyWLSTppPush() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {

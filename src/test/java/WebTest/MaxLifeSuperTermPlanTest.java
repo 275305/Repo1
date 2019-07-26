@@ -109,8 +109,14 @@ public class MaxLifeSuperTermPlanTest extends ReusableActions {
 	public static void screenJourneyFromFourTillEnd() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
-
-			JourneyScreenFour.arrowDownFunctionToScrollDownTillBottom();
+             /*added 5 method 26-07-19 */
+			 JourneyScreenFour.form60RelatedDetailsIdentityProofNameOptionSelection();
+			 JourneyScreenFour.setIdentityProofNumberValidation(0, 1, 6);
+			 JourneyScreenFour.identityProofIssuingAuthority();
+			 JourneyScreenFour.iAmExemptFromTheRequirementOfPANUnderTheFollowingProvisionsOfTheITAct1961();
+			 JourneyScreenFour.arrowDownFunctionToScrollDownTillBottomFastTrack();
+			 
+			//JourneyScreenFour.arrowDownFunctionToScrollDownTillBottom();
 			JourneyScreenFour.criticalIllnessNoOption();
 			JourneyScreenFour.hazardousActivitiesNo();
 			JourneyScreenFour.selectCriminalChargesNo();
@@ -169,7 +175,7 @@ public class MaxLifeSuperTermPlanTest extends ReusableActions {
 
 	}
 
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 2, enabled = false)
 	public static void increasingSumAssuredTppPush() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -195,7 +201,7 @@ public class MaxLifeSuperTermPlanTest extends ReusableActions {
 		}
 	}
 
-	@Test(priority = 3, enabled = true)
+	@Test(priority = 3, enabled = false)
 	public static void premiumPaymentTerm10TppPush() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -226,7 +232,7 @@ public class MaxLifeSuperTermPlanTest extends ReusableActions {
 
 	}
 
-	@Test(priority = 4, enabled = true)
+	@Test(priority = 4, enabled = false)
 	public static void premiumPaymentTerm16TppPush() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -256,7 +262,7 @@ public class MaxLifeSuperTermPlanTest extends ReusableActions {
 
 	}
 
-	@Test(priority = 5, enabled = true)
+	@Test(priority = 5, enabled = false)
 	public static void annualModeOfPaymentTppPush() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -286,7 +292,7 @@ public class MaxLifeSuperTermPlanTest extends ReusableActions {
 
 	}
 
-	@Test(priority = 6, enabled = true)
+	@Test(priority = 6, enabled = false)
 	public static void semiAnnualModeOfPaymentTppPush() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -316,7 +322,7 @@ public class MaxLifeSuperTermPlanTest extends ReusableActions {
 
 	}
 
-	@Test(priority = 7, enabled = true)
+	@Test(priority = 7, enabled = false)
 	public static void quarterlyModeOfPaymentTppPush() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -346,7 +352,7 @@ public class MaxLifeSuperTermPlanTest extends ReusableActions {
 
 	}
 
-	@Test(priority = 8, enabled = true)
+	@Test(priority = 8, enabled = false)
 	public static void monthlyModeOfPaymentTppPush() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {

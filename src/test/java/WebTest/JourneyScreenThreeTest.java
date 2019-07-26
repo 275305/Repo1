@@ -113,6 +113,26 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			throw e;
 		}
 	}
+	public static void ScreenOneTestIndianFuntnPan() throws Exception {
+		try {
+
+			// JourneyScreenOne.setAadhar(1,1,0);
+			// JourneyScreenOne.clickDonthaveAadhar();
+			// JourneyScreenOne.neverApplied();
+			// JourneyScreenOne.jammuKashmir();
+			// JourneyScreenOne.popupProceedButton();
+			JourneyScreenOne.setPanNumber(1, 1, 1);
+			//JourneyScreenOne.dontHavePAN();
+			JourneyScreenOne.setMobNumber(1, 1, 2);
+			JourneyScreenOne.setEmailId(1, 1, 3);
+			JourneyScreenOne.clickProceed();
+			//JourneyScreenOne.setPreIssuanceNumber(1, 1, 4);
+
+		} catch (Exception e) {
+			logger.error("Test case failed: " + e.getMessage());
+			throw e;
+		}
+	}
 
 	@Test(priority = 3, enabled = false)
 	public void screenTwoProceedButtonEnablility() throws Exception {
@@ -554,6 +574,21 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			JourneyScreenThree.selectNomineeGender();
 			JourneyScreenThree.relationshipWithNomineeOptionSelection();
 			//JourneyScreenThree.childNameWithNominee(4,1,15);
+		} catch (Exception e) {
+			logger.error("Test case failed " + e.getMessage());
+			throw e;
+
+		}
+	}
+	public static void nomineeDetailsWithoutDependentSelectionchild() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenThree.class);
+		try {
+
+			JourneyScreenThree.fillingNomineeName(4, 1, 6);
+			JourneyScreenTwo.setDateBirthNomineeDetails();
+			JourneyScreenThree.selectNomineeGender();
+			JourneyScreenThree.relationshipWithNomineeOptionSelection();
+			JourneyScreenThree.childNameWithNominee(4,1,15);
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
 			throw e;
@@ -1199,13 +1234,16 @@ public class JourneyScreenThreeTest extends ReusableActions {
 			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 			logger.info("Fulfilment URL opened successfully");
 
-			JourneyScreenSix.switchingBackToMainWindowScreenSixWLS();
+			/*comment on 1 method */
+			//JourneyScreenSix.switchingBackToMainWindowScreenSixWLS();
+			JourneyScreenSix.switchingBackToMainWindowScreenSix();
 			// JourneyScreenSix.preferedDate();
 			// JourneyScreenSix.visitType();
 			// JourneyScreenSix.medicalCentreSelection();
 			JourneyScreenSix.termsAndCondition();
 			Thread.sleep(1000);
-			driver.close();
+			/* close driver 26-07-19*/
+			//driver.close();
 			// JourneyScreenThree.capture_window_ids();
 
 		} // driver.findElement(By.xpath("//a[contains(text(),'Logout')]")).click();

@@ -265,7 +265,7 @@ public class MaxLifeMonthlyIncomeAdvantagePlanTest extends ReusableActions {
 		}
 	}
 
-	@Test(description = "For PremiumPaymentTerm :12 and PaymentMode:Quaterly till TPP Push", priority = 6, enabled = true)
+	@Test(description = "For PremiumPaymentTerm :12 and PaymentMode:Quaterly till TPP Push", priority = 6, enabled = false)
 	public static void premiumPaymentTerm12TPPPush() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -279,27 +279,26 @@ public class MaxLifeMonthlyIncomeAdvantagePlanTest extends ReusableActions {
 			JourneyScreenTwo.premiumPaymentTerm12();
 			screenJourneyFromThreeTillEnd();
 			screenJourneyFromFourTillEnd();
-			
 			posvBackFlowTillTPPPush();
 
 			// driver.close();
 		} 
 		catch (Exception e) {
-			driver.close();
+			//driver.close();
 			logger.error("Test case failed " + e.getMessage());
 			// driver.close();
 			throw e;
 
 		} finally {
-			driver.close();
+			//driver.close();
 		}
 	}
 
-	@Test(description = "For PremiumPaymentTerm :15 and PaymentMode:Annual till TPP Push", priority = 7, enabled = false)
+	@Test(description = "For PremiumPaymentTerm :15 and PaymentMode:Annual till TPP Push", priority = 7, enabled = true)
 	public static void premiumPaymentTerm15TPPPush() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
-			loginNewBrowser();
+			//loginNewBrowser();
 			alwaysCloseAllChildTabs();
 			HomePage.clickNewApp();
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
@@ -312,19 +311,19 @@ public class MaxLifeMonthlyIncomeAdvantagePlanTest extends ReusableActions {
 			posvBackFlowTillTPPPush();
 
 		} catch (Exception e) {
-			driver.close();
+			//driver.close();
 			logger.error("Test case failed " + e.getMessage());
 			// driver.close();
 			throw e;
 
-		} finally {
+		} /*finally {
 			driver.close();
 		}
-
+*/
 	}
 	
 
-	@Test(description = "For PremiumPaymentTerm :12 and PaymentMode:Quaterly and Rider: ADDR till TPP Push", priority = 8, enabled = true)
+	@Test(description = "For PremiumPaymentTerm :12 and PaymentMode:Quaterly and Rider: ADDR till TPP Push", priority = 8, enabled = false)
 	public static void premiumPaymentTerm12TPPPushwithADDrider() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -353,7 +352,7 @@ public class MaxLifeMonthlyIncomeAdvantagePlanTest extends ReusableActions {
 		}
 	}
 	//
-	@Test(description = "For PremiumPaymentTerm :15 and PaymentMode:Annual Rider:TermPlus till TPP Push", priority = 9, enabled = true)
+	@Test(description = "For PremiumPaymentTerm :15 and PaymentMode:Annual Rider:TermPlus till TPP Push", priority = 9, enabled = false)
 	public static void premiumPaymentTerm15TPPPushwithTermPlusRider() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
@@ -380,7 +379,7 @@ public class MaxLifeMonthlyIncomeAdvantagePlanTest extends ReusableActions {
 		}
 	}
 
-		@Test(description = "For PremiumPaymentTerm :15 and PaymentMode:Annual Rider:All till TPP Push", priority = 10, enabled = true)
+		@Test(description = "For PremiumPaymentTerm :15 and PaymentMode:Annual Rider:All till TPP Push", priority = 10, enabled = false)
 		public static void premiumPaymentTerm15TPPPushwithAllRider() throws Exception {
 			PageFactory.initElements(driver, JourneyScreenTwo.class);
 			try {

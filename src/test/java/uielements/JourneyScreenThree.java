@@ -3798,8 +3798,8 @@ public class JourneyScreenThree extends ReusableActions {
 			
 			String host = "pop.gmail.com";// change accordingly
 			String mailStoreType = "pop3";
-			String username = "priya.video365@gmail.com";// change accordingly
-			String password = "Priya@123456";// change accordingly
+			String username = "pmaxlife071@gmail.com";// change accordingly
+			String password = "max@1234";// change accordingly
 			String validation = "Pre Issuance Verification";
 			ReusableActions.checkEmail(validation,host, mailStoreType, username, password);
 			ChromeOptions opt = new ChromeOptions();
@@ -3807,42 +3807,42 @@ public class JourneyScreenThree extends ReusableActions {
 			DesiredCapabilities caps = DesiredCapabilities.chrome();
 			caps.setCapability(ChromeOptions.CAPABILITY, opt);
 
-			//WebDriver driver = new ChromeDriver(caps);
+			WebDriver driver = new ChromeDriver(caps);
 			driver.get(ReusableActions.TinyURL);
 			
 			
 			driver.manage().window().maximize();
 
-			Thread.sleep(700);
+			Thread.sleep(2000);
 
 			String str = driver.getCurrentUrl();
 			System.out.println(str);
 
-			Thread.sleep(500);
+			Thread.sleep(1000);
 			driver.findElement(By.xpath("//label[@for=\"radio-two\"]")).click();
-			Thread.sleep(500);
+			Thread.sleep(1000);
 			driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
-			Thread.sleep(500);
+			Thread.sleep(1000);
 			driver.findElement(By.xpath("//label[@for=\"radio-eight\"]")).click();
-			Thread.sleep(500);
+			Thread.sleep(1000);
 			driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
-			Thread.sleep(500);
+			Thread.sleep(1000);
 
 			driver.findElement(By.xpath("//label[@for=\"radio-two\"]")).click();
-			Thread.sleep(500);
+			Thread.sleep(1000);
 			driver.findElement(By.xpath("//label[@for=\"radio-four\"]")).click();
-			Thread.sleep(500);
+			Thread.sleep(1000);
 			driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
-			Thread.sleep(500);
+			Thread.sleep(1000);
 			driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
-			Thread.sleep(500);
+			Thread.sleep(1000);
 
 			driver.findElement(By.xpath("//label[@for=\"radio-two\"]")).click();
-			Thread.sleep(500);
+			Thread.sleep(1000);
 			driver.findElement(By.xpath("//label[@for=\"radio-four\"]")).click();
-			Thread.sleep(500);
+			Thread.sleep(1000);
 			driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
-			Thread.sleep(500);
+			Thread.sleep(1000);
 			driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
 			Thread.sleep(1000);
 
@@ -3858,7 +3858,7 @@ public class JourneyScreenThree extends ReusableActions {
 			Thread.sleep(1000);
 
 			driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
-			Thread.sleep(500);
+			Thread.sleep(1000);
 
 			Thread.sleep(1000);
 			driver.findElement(By.xpath("//button[@id='generateOTP_btn']")).click();
@@ -3872,17 +3872,17 @@ public class JourneyScreenThree extends ReusableActions {
 			String[] OtpValue = ReusableActions.OTP.trim().split("");
 			Thread.sleep(2000);
 			driver.findElement(By.xpath("//input[@id='codeBox1']")).sendKeys(OtpValue[0].trim());
-			Thread.sleep(800);
+			Thread.sleep(1000);
 			driver.findElement(By.xpath("//input[@id='codeBox2']")).sendKeys(OtpValue[1].trim());
-			Thread.sleep(800);
+			Thread.sleep(1000);
 			driver.findElement(By.xpath("//input[@id='codeBox3']")).sendKeys(OtpValue[2].trim());
-			Thread.sleep(800);
+			Thread.sleep(1000);
 			driver.findElement(By.xpath("//input[@id='codeBox4']")).sendKeys(OtpValue[3].trim());
-			Thread.sleep(800);
+			Thread.sleep(1000);
 			driver.findElement(By.xpath("//label[@class='cstm-check-label']")).click();
-			Thread.sleep(800);
+			Thread.sleep(1000);
 			driver.findElement(By.xpath("//button[@id='submitbutton']")).click();
-			Thread.sleep(1800);
+			Thread.sleep(2000);
 			/*
 			 * robot.keyPress(KeyEvent.VK_ALT); robot.keyPress(KeyEvent.VK_TAB);
 			 * robot.keyRelease(KeyEvent.VK_TAB); robot.keyRelease(KeyEvent.VK_ALT);
@@ -3898,22 +3898,22 @@ public class JourneyScreenThree extends ReusableActions {
 		}
 		public static void handle_windowPWP() throws Exception
 		{
-			((JavascriptExecutor) driver).executeScript("window.open()");
+			/*((JavascriptExecutor) driver).executeScript("window.open()");
 			String current_window = driver.getWindowHandle();
 			ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-			driver.switchTo().window(tabs.get(1));
+			driver.switchTo().window(tabs.get(1));*/
 			// deleteMailAsPerSubject();
 			gmailFunctionalityPWP();
-			driver.close();
-			driver.switchTo().window(current_window);
+			//driver.close();
+			//driver.switchTo().window(current_window);
 			JourneyScreenThreeTest.usingPolicyNumberToFillScreenSixTPPPushWLS();
 			// driver.close();
 		}
 		public static void gmailFunctionalityPWP() throws Exception {
 			String host = "pop.gmail.com";// change accordingly
 			String mailStoreType = "pop3";
-			String username = "mprotest4@gmail.com";// change accordingly
-			String password = "qwerty@123";// change accordingly
+			String username = "pmaxlife071@gmail.com";// change accordingly
+			String password = "max@1234";// change accordingly
 			String validation = "Pre Issuance Verification";
 			ReusableActions.checkEmail(validation, host, mailStoreType, username, password);
 			ChromeOptions opt = new ChromeOptions();
@@ -4008,17 +4008,17 @@ public class JourneyScreenThree extends ReusableActions {
 		}
 		public static void handle_windowSuperTermPlan() throws Exception {
 			try {
-			((JavascriptExecutor) driver).executeScript("window.open()");
+			/*((JavascriptExecutor) driver).executeScript("window.open()");
 			String current_window = driver.getWindowHandle();
 			ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-			driver.switchTo().window(tabs.get(1));
+			driver.switchTo().window(tabs.get(1));*/
 				// deleteMail obj=new deleteMail();
 
 
 			gmailFunctionalitySuperTermPlan();
-				deleteMail.delete();
-			driver.close();
-			driver.switchTo().window(current_window);
+				//deleteMail.delete();
+			//driver.close();
+			//driver.switchTo().window(current_window);
 			JourneyScreenThreeTest.usingPolicyNumberToFillScreenSixTPPPushSuperTermPlan();
 			// driver.close();
 			} catch (Exception e) {
@@ -4031,8 +4031,8 @@ public class JourneyScreenThree extends ReusableActions {
 
 			String host = "pop.gmail.com";// change accordingly
 			String mailStoreType = "pop3";
-			String username = "mprotest4@gmail.com";// change accordingly
-			String password = "qwerty@123";// change accordingly
+			String username = "pmaxlife071@gmail.com";// change accordingly
+			String password = "max@1234";// change accordingly
 			String validation = "Pre Issuance Verification";
 			ReusableActions.checkEmail(validation, host, mailStoreType, username, password);
 			ChromeOptions opt = new ChromeOptions();
@@ -4127,6 +4127,20 @@ public class JourneyScreenThree extends ReusableActions {
 
 			driver.close();
 
+		}
+		public static void handle_window() throws Exception {
+			((JavascriptExecutor) driver).executeScript("window.open()");
+			String current_window = driver.getWindowHandle();
+			ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+			driver.switchTo().window(tabs.get(1));
+			// deleteMailAsPerSubject();
+			gmailFunctionalitySmartTermPlan();
+
+			driver.close();
+
+			driver.switchTo().window(current_window);
+			JourneyScreenThreeTest.usingPolicyNumberToFillScreenSixTPPPush();
+			driver.close();
 		}
 
 
