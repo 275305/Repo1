@@ -596,6 +596,15 @@ public class JourneyScreenSix extends ReusableActions {
 
 	public static void switchingBackToMainWindowScreenSix() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenSix.class);
+		/* document varification */
+		/*driver.findElement(By.xpath("//span[contains(text(),'Verification')]")).click();
+		Thread.sleep(1000);
+		driver.navigate().refresh();
+		Thread.sleep(2000);
+		JourneyScreenFour.toCheckCustomerStatusIsPending();
+         driver.findElement(By.xpath("//span[contains(text(),' Payment')]")).click();
+		Thread.sleep(2000);*/
+		
 		Thread.sleep(1000);
 		driver.navigate().refresh();
 		Thread.sleep(2000);
@@ -611,9 +620,12 @@ public class JourneyScreenSix extends ReusableActions {
 
 		robot.keyPress(KeyEvent.VK_F5);
 		robot.keyRelease(KeyEvent.VK_F5);
-
 		Thread.sleep(4000);
-
+		
+		/* verify the verification status */
+		
+		
+		/*-----------------------------*/
 		System.out.println(policyNumber);
 		fetchingPolicyNumberAndCompletingTheJourneyForTPP();
 

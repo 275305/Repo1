@@ -74,7 +74,7 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 	}
 
 	/* Mode of Payment(Semi_Annual)+Dividend Option(cash) */
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 2, enabled = false)
 	public void LPPS_Tradition_GeneratingPdf_SemiAnnual_Cash() throws Exception {
 		try {
 			JourneyScreenTwo.getInitDriver();
@@ -101,7 +101,7 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 	}
 
 	/* Mode of Payment(Quarterly)+Dividend Option(cash) */
-	@Test(priority = 3, enabled = true)
+	@Test(priority = 3, enabled = false)
 	public void LPPS_Tradition_GeneratingPdf_Quarterly_Cash() throws Exception {
 		try {
 			JourneyScreenTwo.getInitDriver();
@@ -128,7 +128,7 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 	}
 
 	/* Mode of Payment(Monthly)+Dividend Option(cash) */
-	@Test(priority = 4, enabled = true)
+	@Test(priority = 4, enabled = false)
 	public void LPPS_Tradition_GeneratingPdf_Monthly_Cash() throws Exception {
 		try {
 			JourneyScreenTwo.getInitDriver();
@@ -155,7 +155,7 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 	}
 
 	/* Mode of Payment(Annual)+Dividend Option(PUA) */
-	@Test(priority = 5, enabled = true)
+	@Test(priority = 5, enabled = false)
 	public void LPPS_Tradition_GeneratingPdf_Annual_PUA() throws Exception {
 		try {
             JourneyScreenTwo.getInitDriver();
@@ -183,7 +183,7 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 	}
 
 	/* Mode of Payment(Annual)+Dividend Option(PremiumOffset) */
-	@Test(priority = 6, enabled = true)
+	@Test(priority = 6, enabled = false)
 	public void LPPS_Tradition_GeneratingPdf_Annual_PremiumOffset() throws Exception {
 		try {
 			JourneyScreenTwo.getInitDriver();
@@ -211,7 +211,7 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 	}
 
 	/* Mode of Payment(Annual)+Dividend Option(cash)+RiderDetails(Accidental) */
-	@Test(priority = 7, enabled = true)
+	@Test(priority = 7, enabled = false)
 	public void LPPSTraditionGeneratingPdfAnnualCashAccidental() throws Exception {
 
 		try {
@@ -240,7 +240,7 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 	}
 
 	/* Mode of Payment(Annual)+Dividend Option(cash)+TermPlusRider */
-	@Test(priority = 8, enabled = true)
+	@Test(priority = 8, enabled = false)
 	public void LPPS_Tradition_GeneratingPdf_Annual_Cash_TermPlus() throws Exception {
 		try {
 			JourneyScreenTwo.getInitDriver();
@@ -268,7 +268,7 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 	}
 
 	/* Mode of Payment(Annual)+Dividend Option(cash)+RiderDetails(WOP) */
-	@Test(priority = 9, enabled = true)
+	@Test(priority = 9, enabled = false)
 	public void LPPSTraditionGeneratingPdfAnnual_Cash_WOP() throws Exception {
 		try {
 			JourneyScreenTwo.getInitDriver();
@@ -300,7 +300,7 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 	 * Option(cash)+RiderDetails(Accidental+Term plus rider+WOP)
 	 * no able to upload the document at screen six
 	 */
-	@Test(priority = 10, enabled = true)
+	@Test(priority = 10, enabled = false)
 	public void LPPSTraditionGeneratingPdfAnnual_Cash_Accidental_TermPlus_WOP() throws Exception {
 		try {
 			JourneyScreenTwo.getInitDriver();

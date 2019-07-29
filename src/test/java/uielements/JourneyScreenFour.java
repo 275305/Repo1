@@ -1,5 +1,7 @@
 package uielements;
 
+import static org.testng.Assert.assertEquals;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,6 +18,14 @@ import org.testng.Assert;
 import util.AppConstant;
 
 public class JourneyScreenFour extends ReusableActions {
+	
+	@FindBy(xpath = "//div[contains(text(),'Pre-Issuance Verification Link sent to the Customer - Status Pending')]")
+	static WebElement varificationLinksentoCustomerScreenfour;
+	
+	@FindBy(xpath = "//div[contains(text(),'Document Rule Is Pending!')]")
+	static WebElement documentRulePendingScreensix;
+	
+	
 	@FindBy(xpath = "//div[@id='identityProof_id']")
 	static WebElement identityProofName;
 
@@ -831,5 +841,37 @@ public class JourneyScreenFour extends ReusableActions {
 		Thread.sleep(400);
 		// Proceedbtn.click();
 	}
-
+	
+	 public static void toCheckCustomerStatusIsPending()  {
+		 
+		 try {
+		 String ExpectedText="Pre-Issuance Verification Link sent to the Customer - Status Pending";
+		 String ActualText=varificationLinksentoCustomerScreenfour.getText();
+		 if(ExpectedText.contentEquals(ActualText)) {
+			 logger.info("Test Case :Pre-Issuance Verification Link sent to the Customer - Status Pending");
+			 
+			 }
+		 else {
+			 logger.info("Test case :Pre-Issuance Verification Link sent to the Customer - Status Positive");
+		    }  
+		 Thread.sleep(2000);
+		
+	        }catch(Exception e) {
+		       logger.info("Test case evaluation at screen five");
+	       }
+	 
+	 }
+ public static void toCheckDocumentRuleIsPending() {
+		 
+		 String ExpectedText="Document Rule Is Pending!";
+		 String ActualText=documentRulePendingScreensix.getText();
+		 if(ExpectedText.contentEquals(ActualText)) {
+			 logger.info("Test Case :Document Rule Is Pending!");
+			 
+			 }
+		 else
+			 logger.info("Test Case :Document Uploaded going contineously");
+			
+		}
+          
 }

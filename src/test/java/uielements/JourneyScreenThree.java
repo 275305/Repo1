@@ -852,7 +852,15 @@ public class JourneyScreenThree extends ReusableActions {
 
 	@FindBy(xpath = "//label[contains(@for, 'InsurerCriminalChargesYes')]")
 	static WebElement InsurerCriminalChargesYesInsurersDetails;
+	
+	@FindBy(xpath = "//span[contains(text(),'Verification')]")
+	static WebElement varificationTabScreenFive;
+	
+	@FindBy(xpath = "//span[contains(text(),' Payment')]")
+	static WebElement paymentTabScreenSix;
+	
 
+	
 	public static void nomineeGender() throws Exception {
 		click(nomineeGender);
 	}
@@ -2289,6 +2297,7 @@ public class JourneyScreenThree extends ReusableActions {
 
 		WebDriver driver = new ChromeDriver(caps);
 		driver.get(ReusableActions.TinyURL);
+		//Thread.sleep(2000);
 		driver.manage().window().maximize();
 
 		Thread.sleep(3000);
@@ -3762,6 +3771,51 @@ public class JourneyScreenThree extends ReusableActions {
 
 		JourneyScreenThreeTest.usingPolicyNumberToFillScreenSixTPPPushSuperTermPlan();
 
+		/* comment on at driver close 22-07-19 */
+		//driver.close();
+	}
+	
+	public static void handle_windowLPPSVarification() throws Exception {
+
+		JourneyScreenThree.gmailFunctionalitySmartTermPlan();
+		/* added driver refresh*/
+		/*driver.navigate().refresh();
+		Thread.sleep(5000);*/
+		
+		/* verify the verification status pending or not  */
+		//driver.findElement(By.xpath("//span[contains(text(),'Verification')]")).click();
+		click(varificationTabScreenFive);
+		/*driver.navigate().refresh();
+		Thread.sleep(5000);
+		ReusableActions.tabReload();
+		Thread.sleep(1000);*/
+		JourneyScreenFour.toCheckCustomerStatusIsPending();
+		//driver.findElement(By.xpath("//span[contains(text(),' Payment')]")).click();
+		//click(paymentTabScreenSix);
+		//JourneyScreenThreeTest.usingPolicyNumberToFillScreenSixTPPPushSuperTermPlan();
+       
+		/* comment on at driver close 22-07-19 */
+		//driver.close();
+	}
+	public static void handle_windowLPPSDocument() throws Exception {
+
+		JourneyScreenThree.gmailFunctionalitySmartTermPlan();
+		/* added driver refresh*/
+		/*driver.navigate().refresh();
+		Thread.sleep(5000);*/
+		
+		/* verify the verification status pending or not  */
+		//driver.findElement(By.xpath("//span[contains(text(),'Verification')]")).click();
+		click(varificationTabScreenFive);
+		/*driver.navigate().refresh();
+		Thread.sleep(5000);
+		ReusableActions.tabReload();
+		Thread.sleep(1000);*/
+		JourneyScreenFour.toCheckCustomerStatusIsPending();
+		//driver.findElement(By.xpath("//span[contains(text(),' Payment')]")).click();
+		click(paymentTabScreenSix);
+		//JourneyScreenThreeTest.usingPolicyNumberToFillScreenSixTPPPushSuperTermPlan();
+       
 		/* comment on at driver close 22-07-19 */
 		//driver.close();
 	}

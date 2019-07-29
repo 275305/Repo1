@@ -1,5 +1,6 @@
 package uielements;
 
+import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.io.File;
@@ -73,6 +74,7 @@ public class ReusableActions {
 
 	public static String OTP;
 	public static String TinyURL;
+
 	// Function for Print the steps in allure report
 	@Step("{0}")
 	public static void logStep(String stepName) {
@@ -130,7 +132,6 @@ public class ReusableActions {
 		return elementloaded;
 	}
 
-
 	public static WebElement waitTillElementToBeClickable(WebElement element) {
 		WebDriverWait wait = new WebDriverWait(driver, 260);
 		WebElement elementloaded = wait.until(ExpectedConditions.elementToBeClickable(element));
@@ -140,9 +141,11 @@ public class ReusableActions {
 
 	public static WebElement waitTillElementToBeClickableRefreshed(WebElement element) {
 		WebDriverWait wait = new WebDriverWait(driver, 260);
-		WebElement elementloaded = wait.until(ExpectedConditions.refreshed(ExpectedConditions.elementToBeClickable(element)));
+		WebElement elementloaded = wait
+				.until(ExpectedConditions.refreshed(ExpectedConditions.elementToBeClickable(element)));
 		return elementloaded;
 	}
+
 	public static WebElement waitTillElementToBeClickableLongWait(WebElement element) {
 		WebDriverWait wait = new WebDriverWait(driver, 660);
 		WebElement elementloaded = wait.until(ExpectedConditions.elementToBeClickable(element));
@@ -250,20 +253,21 @@ public class ReusableActions {
 
 	public static String getColumnDataAsPerTheForLoopRow(XSSFSheet sheet, int rowNum, int column) {
 		XSSFCell cellpremiumCommitment = sheet.getRow(rowNum).getCell(column);
-		//String premiumCommitmentFromExcell = cellpremiumCommitment.getStringCellValue();
+		// String premiumCommitmentFromExcell =
+		// cellpremiumCommitment.getStringCellValue();
 		DataFormatter formatter = new DataFormatter();
 		String premiumCommitmentFromExcell = formatter.formatCellValue(sheet.getRow(rowNum).getCell(column));
 		return premiumCommitmentFromExcell;
 	}
 
 	/*
-	 * public static void captureScreenShot(WebDriver ldriver) { // Take
-	 * screenshot and store as a file format File src = ((TakesScreenshot)
-	 * ldriver).getScreenshotAs(OutputType.FILE); try { // now copy the
-	 * screenshot to desired location using copyFile method
+	 * public static void captureScreenShot(WebDriver ldriver) { // Take screenshot
+	 * and store as a file format File src = ((TakesScreenshot)
+	 * ldriver).getScreenshotAs(OutputType.FILE); try { // now copy the screenshot
+	 * to desired location using copyFile method
 	 *
-	 * FileUtils.copyFile(src, new File("C:/selenium/" +
-	 * System.currentTimeMillis() + ".png")); } catch (IOException e)
+	 * FileUtils.copyFile(src, new File("C:/selenium/" + System.currentTimeMillis()
+	 * + ".png")); } catch (IOException e)
 	 *
 	 * { System.out.println(e.getMessage()); } }
 	 */
@@ -420,8 +424,8 @@ public class ReusableActions {
 		XSSFSheet sheet = hssfWorkbook.getSheetAt(2);
 		/*
 		 * int lastRow = sheet.getLastRowNum(); while (lastRow >= 0 &&
-		 * sheet.getRow(lastRow).getCell(0) == null) { lastRow--; } int
-		 * columnSize = lastRow + 1;
+		 * sheet.getRow(lastRow).getCell(0) == null) { lastRow--; } int columnSize =
+		 * lastRow + 1;
 		 */
 		List<String> expectedResultForDropDown = new ArrayList<String>();
 		for (int i = 1; i < columnSize; i++) {
@@ -444,8 +448,8 @@ public class ReusableActions {
 		XSSFSheet sheet = hssfWorkbook.getSheetAt(SheetNo);
 		/*
 		 * int lastRow = sheet.getLastRowNum(); while (lastRow >= 0 &&
-		 * sheet.getRow(lastRow).getCell(0) == null) { lastRow--; } int
-		 * columnSize = lastRow + 1;
+		 * sheet.getRow(lastRow).getCell(0) == null) { lastRow--; } int columnSize =
+		 * lastRow + 1;
 		 */
 		List<String> expectedResultForDropDown = new ArrayList<String>();
 		for (int i = 1; i < columnSize; i++) {
@@ -515,6 +519,14 @@ public class ReusableActions {
 		robot.keyPress(KeyEvent.VK_CONTROL);
 		robot.keyPress(KeyEvent.VK_W);
 	}
+	
+	public static void tabReload() throws Exception {
+		Robot r= new Robot();
+		r.keyPress(KeyEvent.VK_F5);
+		r.keyRelease(KeyEvent.VK_F5);
+		Thread.sleep(2000);
+		
+	}
 
 	public static void alwaysCloseAllChildTabs() throws Exception {
 
@@ -541,21 +553,17 @@ public class ReusableActions {
 
 	}
 
-
-	//Gmail throu API
-	public static void checkEmail(String validation,String host, String storeType, String user,
-			String password)
-	{
-		String filter=null;
-		if(validation.equalsIgnoreCase("OTP Validation")) {
-			filter="Pre Issuance otp confirmation";
-		}else if(validation.equalsIgnoreCase("Pre Issuance Verification"))
-		{
-			filter="Pre Issuance Verification";
+	// Gmail throu API
+	public static void checkEmail(String validation, String host, String storeType, String user, String password) {
+		String filter = null;
+		if (validation.equalsIgnoreCase("OTP Validation")) {
+			filter = "Pre Issuance otp confirmation";
+		} else if (validation.equalsIgnoreCase("Pre Issuance Verification")) {
+			filter = "Pre Issuance Verification";
 		}
 		try {
 
-			//create properties field
+			// create properties field
 			Properties properties = new Properties();
 			properties.put("mail.pop3.auth", "true");
 			properties.put("mail.pop3.host", host);
@@ -563,104 +571,105 @@ public class ReusableActions {
 			properties.put("mail.pop3.starttls.enable", "true");
 			Session emailSession = Session.getDefaultInstance(properties);
 
-			//create the POP3 store object and connect with the pop server
+			// create the POP3 store object and connect with the pop server
 			Store store = emailSession.getStore("pop3s");
 
 			store.connect(host, user, password);
 
-			//create the folder object and open it
+			// create the folder object and open it
 			Folder emailFolder = store.getFolder("INBOX");
 
 			Message[] messages = null;
 
-			outer:
-				for(int timer =1; timer<=40;timer++) {
-					// retrieve the messages from the folder in an array and print it
-					emailFolder.open(Folder.READ_WRITE);
-					//getting only unseen emails
-					Flags seen = new Flags(Flags.Flag.SEEN);
-					FlagTerm unseenFlagTerm = new FlagTerm(seen, false);
-					messages = emailFolder.search(unseenFlagTerm);
-					//messages = emailFolder.getMessages();
-					System.out.println("messages.length---" + messages.length);
-					if(messages.length==0) {
-						System.out.println("No new messages are found");
-					}else {
-						for (int i = 0, n = messages.length; i < n; i++) {
-							 Message message = messages[i];
-							System.out.println("---------------------------------");
+			outer: for (int timer = 1; timer <= 40; timer++) {
+				// retrieve the messages from the folder in an array and print it
+				emailFolder.open(Folder.READ_WRITE);
+				// getting only unseen emails
+				Flags seen = new Flags(Flags.Flag.SEEN);
+				FlagTerm unseenFlagTerm = new FlagTerm(seen, false);
+				messages = emailFolder.search(unseenFlagTerm);
+				// messages = emailFolder.getMessages();
+				System.out.println("messages.length---" + messages.length);
+				if (messages.length == 0) {
+					System.out.println("No new messages are found");
+				} else {
+					for (int i = 0, n = messages.length; i < n; i++) {
+						Message message = messages[i];
+						System.out.println("---------------------------------");
 
-							if( message.getSubject().contains(filter)) {
-								System.out.println("Line Count is "+message.getSubject());
-								Multipart multipart = (Multipart) message.getContent();
+						if (message.getSubject().contains(filter)) {
+							System.out.println("Line Count is " + message.getSubject());
+							Multipart multipart = (Multipart) message.getContent();
 
-								for (int j = 0; j < multipart.getCount(); j++) {
+							for (int j = 0; j < multipart.getCount(); j++) {
 
-									BodyPart bodyPart = multipart.getBodyPart(j);
+								BodyPart bodyPart = multipart.getBodyPart(j);
 
-									String disposition = bodyPart.getDisposition();
+								String disposition = bodyPart.getDisposition();
 
-									if (disposition != null && (disposition.equalsIgnoreCase("ATTACHMENT"))) { // BodyPart.ATTACHMENT doesn't work for gmail
-										System.out.println("Mail have some attachment");
+								if (disposition != null && (disposition.equalsIgnoreCase("ATTACHMENT"))) { // BodyPart.ATTACHMENT
+																											// doesn't
+																											// work for
+																											// gmail
+									System.out.println("Mail have some attachment");
 
-										DataHandler handler = bodyPart.getDataHandler();
-										System.out.println("file name : " + handler.getName());
-									}
-									else {
-										System.out.println("Body: "+bodyPart.getContent());
-										String content= bodyPart.getContent().toString();
-										String tinyurl = null;
-										String OTPtext;
-										if(filter.contains("otp")) {
-											OTPtext =content.substring(0, 4);
-											OTP=OTPtext;
-											System.out.println("OTP is : "+ OTP);
-										}else if(filter.contains("Verification")) {
+									DataHandler handler = bodyPart.getDataHandler();
+									System.out.println("file name : " + handler.getName());
+								} else {
+									System.out.println("Body: " + bodyPart.getContent());
+									String content = bodyPart.getContent().toString();
+									String tinyurl = null;
+									String OTPtext;
+									if (filter.contains("otp")) {
+										OTPtext = content.substring(0, 4);
+										OTP = OTPtext;
+										System.out.println("OTP is : " + OTP);
+									} else if (filter.contains("Verification")) {
 
 										try {
-											tinyurl = content.substring(content.indexOf("txnId="), content.indexOf("'>"));
-										}catch(Exception e) {
-											tinyurl = content.substring(content.indexOf("txnId="), content.indexOf(" to"));
+											tinyurl = content.substring(content.indexOf("txnId="),
+													content.indexOf("'>"));
+										} catch (Exception e) {
+											tinyurl = content.substring(content.indexOf("txnId="),
+													content.indexOf(" to"));
 										}
-										TinyURL ="https://tinyurl.com/yd3vyvy7/mprobuyer?"+tinyurl;
+										TinyURL = "https://tinyurl.com/yd3vyvy7/mprobuyer?" + tinyurl;
 										System.out.println(TinyURL);
 									}
 									message.setFlag(FLAGS.Flag.SEEN, true);
 									break outer;
 								}
 							}
-						}else {
+						} else {
 
-							System.out.println("Required -- "+filter+" -- email not reached :  ");
+							System.out.println("Required -- " + filter + " -- email not reached :  ");
 							Thread.sleep(2000);
 						}
-
 
 					}
 
 				}
-			Thread.sleep(2000);
-			if(timer==40) {
-				System.out.println("Folder aleady open");
-			}else {
-				emailFolder.close(true);
+				Thread.sleep(2000);
+				if (timer == 40) {
+					System.out.println("Folder aleady open");
+				} else {
+					emailFolder.close(true);
+				}
 			}
+
+			// close the store and folder objects
+			emailFolder.close(false);
+			store.close();
+
+		} catch (NoSuchProviderException e) {
+			e.printStackTrace();
+		} catch (MessagingException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-
-		//close the store and folder objects
-		emailFolder.close(false);
-		store.close();
-
-	} catch (NoSuchProviderException e) {
-		e.printStackTrace();
-	} catch (MessagingException e) {
-		e.printStackTrace();
-	} catch (Exception e) {
-		e.printStackTrace();
 	}
-}
 
-//gmail closing
-
+	// gmail closing
 
 }
