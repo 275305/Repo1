@@ -14,9 +14,17 @@ import org.openqa.selenium.support.PageFactory;
 import org.sikuli.script.Key;
 import org.sikuli.script.Pattern;
 import org.sikuli.script.Screen;
+import org.testng.Assert;
 
 public class JourneyScreenSix extends ReusableActions {
-
+	
+	@FindBy(xpath = "//span[contains(text(),'Medical Sum Assured(₹) :')]")
+	static WebElement medicalSumAssuranceSixPage;
+	
+	
+	@FindBy(xpath = "//div[@size='11']")
+	static WebElement proposerDocuemntsixPage;
+	
 	@FindBy(xpath = "//span[contains(text(),'Payment')]")
 	static WebElement paymetPage;
 
@@ -40,7 +48,11 @@ public class JourneyScreenSix extends ReusableActions {
 
 	@FindBy(xpath = "//label[@for='Cheque']")
 	public static WebElement ChequeOptionButton;
-
+	
+	@FindBy(xpath = "//input[@id='Cheque']")
+	public static WebElement ChequeRadioButtonSixPage;
+	
+	
 	@FindBy(id = "FF_PrproposerUploadLightBox")
 	public static WebElement addButtonFactFinder;
 
@@ -561,6 +573,15 @@ public class JourneyScreenSix extends ReusableActions {
 		}
 		Thread.sleep(400);
 	}
+	
+	public static void arrowDownFunctionToScrollDownMSA_FSA() throws Exception {
+		Thread.sleep(400);
+		for (int i = 1; i < 20; i++) {
+			Actions action = new Actions(driver);
+			action.sendKeys(Keys.ARROW_DOWN).build().perform();
+		}
+		Thread.sleep(400);
+	}
 
 	public static void termsAndCondition() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenSix.class);
@@ -586,6 +607,28 @@ public class JourneyScreenSix extends ReusableActions {
 		Thread.sleep(1000);
 		finalSubmitButton.click();
 		Thread.sleep(3000);
+
+	}
+
+	public static void termsAndConditionMSA_FSA() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenSix.class);
+		waitTillElementToBeClickable(outsideClick);
+		Thread.sleep(1000);
+		outsideClick.click();
+		Thread.sleep(800);
+		arrowDownFunctionToScrollDownMSA_FSA();
+		Thread.sleep(800);
+		/* to verify the value of MSA and FSA */
+		
+		 //driver.findElement(By.xpath(""))
+		String msaText=medicalSumAssuranceSixPage.getText();
+		
+		//medicalSumAssuranceSixPage.getCssValue();
+		
+		String msaValue1= medicalSumAssuranceSixPage.getAttribute("textContent");
+		String msaValue2= medicalSumAssuranceSixPage.getAttribute("innerHTML");
+		
+		/*termsAndConditionId.click();*/
 
 	}
 
@@ -674,6 +717,139 @@ public class JourneyScreenSix extends ReusableActions {
 	//	vernacularDeclaration();
 		Thread.sleep(2000);
 
+		Thread.sleep(2000);
+	}
+	
+	public static void switchingBackToMainWindowScreenSixMSA_FSA() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenSix.class);
+				
+		Thread.sleep(1000);
+		driver.navigate().refresh();
+		Thread.sleep(2000);
+		System.out.println(policyNumber);
+		Robot robot = new Robot();
+
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_F5);
+		robot.keyRelease(KeyEvent.VK_F5);
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+
+		Thread.sleep(1000);
+
+		robot.keyPress(KeyEvent.VK_F5);
+		robot.keyRelease(KeyEvent.VK_F5);
+		Thread.sleep(4000);
+		
+		/* verify the verification status */
+		
+		
+		/*-----------------------------*/
+		System.out.println(policyNumber);
+		fetchingPolicyNumberAndCompletingTheJourneyForTPP();
+
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_F5);
+		robot.keyRelease(KeyEvent.VK_F5);
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+
+		Thread.sleep(1000);
+
+		robot.keyPress(KeyEvent.VK_F5);
+		robot.keyRelease(KeyEvent.VK_F5);
+
+		Thread.sleep(4000);
+
+		// paymentScreen.click();
+		Thread.sleep(800);
+		ChequeOptionButton.click();
+         Thread.sleep(1000);
+		paymentChequeNumber(1, 1, 4);
+		Thread.sleep(1000);
+		paymentChequeDate();
+		Thread.sleep(1000);
+		paymentChequePayableAt();
+		Thread.sleep(2000);
+		paymentChequeBankName(1, 1, 4);
+		Thread.sleep(2000);
+		paymentChequeMicr(1, 1, 4);
+		Thread.sleep(3000);
+		prePopulationDocumentVault();
+		Thread.sleep(2000);
+		communicationAddressProof();
+		Thread.sleep(2000);
+		identityProofOrDOB();
+		Thread.sleep(2000);
+		photographOfProposerUpload();
+		Thread.sleep(2000);
+		cancelledChequeWithNameRequired();
+		Thread.sleep(2000);
+
+		ecsMandateForm();
+		Thread.sleep(2000);
+		factFinder();
+		Thread.sleep(2000);
+		//investorRiskProfile();
+	//	vernacularDeclaration();
+		Thread.sleep(2000);
+
+		Thread.sleep(2000);
+	}
+	
+	public static void switchingBackToMainWindowScreenSixDocumentRule() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenSix.class);
+				
+		Thread.sleep(1000);
+		driver.navigate().refresh();
+		Thread.sleep(2000);
+		System.out.println(policyNumber);
+		Robot robot = new Robot();
+
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_F5);
+		robot.keyRelease(KeyEvent.VK_F5);
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+
+		Thread.sleep(1000);
+
+		robot.keyPress(KeyEvent.VK_F5);
+		robot.keyRelease(KeyEvent.VK_F5);
+		Thread.sleep(4000);
+		
+		/* verify the verification status */
+		/*-----------------------------*/
+		System.out.println(policyNumber);
+		fetchingPolicyNumberAndCompletingTheJourneyForTPP();
+
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_F5);
+		robot.keyRelease(KeyEvent.VK_F5);
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+
+		Thread.sleep(1000);
+
+		robot.keyPress(KeyEvent.VK_F5);
+		robot.keyRelease(KeyEvent.VK_F5);
+
+		Thread.sleep(4000);
+
+		// paymentScreen.click();
+		Thread.sleep(800);
+		ChequeOptionButton.click();
+
+		paymentChequeNumber(1, 1, 4);
+		Thread.sleep(1000);
+		paymentChequeDate();
+		Thread.sleep(1000);
+		paymentChequePayableAt();
+		Thread.sleep(2000);
+		paymentChequeBankName(1, 1, 4);
+		Thread.sleep(2000);
+		paymentChequeMicr(1, 1, 4);
+		Thread.sleep(3000);
+		
+		/* verify the document status */
+		JourneyScreenSix.documentRule();
+			
 		Thread.sleep(2000);
 	}
 	public static void investorRiskProfile() throws Exception
@@ -1107,4 +1283,17 @@ public class JourneyScreenSix extends ReusableActions {
 			// Thread.sleep(80l0);
 		}
 		
+		public static void documentRule() {
+			try {
+			String ExpectedValue="Proposer Documents";
+			String ActualValue=proposerDocuemntsixPage.getText();
+			if(ExpectedValue.contentEquals(ActualValue))
+			  logger.info("Test Case:Proposer Document is ready to upload");
+			else
+			 Assert.fail("Test Case:Document Rule is pending");
+				 }
+			catch(Exception e) {
+			Assert.fail("Document Rule is pending");
+		    }
+		}
 }

@@ -2376,6 +2376,102 @@ public class JourneyScreenThree extends ReusableActions {
 
 	}
 
+	public static void gmailFunctionalitySmartTermPlanMSA_FSA() throws Exception {
+
+		String host = "pop.gmail.com";// change accordingly
+		String mailStoreType = "pop3";
+		String username = "pmaxlife071@gmail.com";// change accordingly
+		String password = "max@1234";// change accordingly
+
+		String validation = "Pre Issuance Verification";
+		ReusableActions.checkEmail(validation, host, mailStoreType, username, password);
+		ChromeOptions opt = new ChromeOptions();
+		opt.addArguments("--incognito");
+		DesiredCapabilities caps = DesiredCapabilities.chrome();
+		caps.setCapability(ChromeOptions.CAPABILITY, opt);
+
+		WebDriver driver = new ChromeDriver(caps);
+		driver.get(ReusableActions.TinyURL);
+		//Thread.sleep(2000);
+		driver.manage().window().maximize();
+
+		Thread.sleep(3000);
+
+		String str = driver.getCurrentUrl();
+		System.out.println(str);
+
+		// Page one questions
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-two\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-eight\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
+		Thread.sleep(500);
+
+		// Page two questions
+		driver.findElement(By.xpath("//label[@for=\"radio-two\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-four\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
+		Thread.sleep(500);
+
+		// Page three questions
+		driver.findElement(By.xpath("//label[@for=\"radio-two\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-four\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
+		Thread.sleep(1000);
+
+		// Page Four questions
+		driver.findElement(By.xpath("//label[@for=\"radio-two\"]")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//label[@for=\"radio-four\"]")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//label[@for=\"radio-six\"]")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//label[@for=\"radio-2\"]")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//label[@for=\"radio-10\"]")).click();
+		Thread.sleep(1000);
+
+		driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[@id='generateOTP_btn']")).click();
+		 Thread.sleep(1000);
+
+
+		validation = "OTP Validation";
+		ReusableActions.checkEmail(validation, host, mailStoreType, username, password);
+		String[] OtpValue = ReusableActions.OTP.trim().split("");
+
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//input[@id='codeBox1']")).sendKeys(OtpValue[0].trim());
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//input[@id='codeBox2']")).sendKeys(OtpValue[1].trim());
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//input[@id='codeBox3']")).sendKeys(OtpValue[2].trim());
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//input[@id='codeBox4']")).sendKeys(OtpValue[3].trim());
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//label[@class='cstm-check-label']")).click();
+		Thread.sleep(800);
+		driver.findElement(By.xpath("//button[@id='submitbutton']")).click();
+		Thread.sleep(1800);
+
+		driver.close();
+
+	}
+
+
 	public static void deletingAllInboxMail() throws Exception {
 		((JavascriptExecutor) driver).executeScript("window.open()");
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
@@ -3775,34 +3871,53 @@ public class JourneyScreenThree extends ReusableActions {
 		//driver.close();
 	}
 	
+	public static void handle_windowSAPMSA_FSA() throws Exception {
+
+		JourneyScreenThree.gmailFunctionalitySmartTermPlanMSA_FSA();
+		/* added driver refresh*/
+		driver.navigate().refresh();
+		Thread.sleep(5000);
+
+		JourneyScreenThreeTest.usingPolicyNumberToFillScreenSixTPPPushSuperTermPlanMSA_FSA();
+
+		/* comment on at driver close 22-07-19 */
+		//driver.close();
+	}
+	
+	public static void handle_windowSAPDocumentRule() throws Exception {
+
+		JourneyScreenThree.gmailFunctionalitySmartTermPlan();
+		/* added driver refresh*/
+		driver.navigate().refresh();
+		Thread.sleep(5000);
+
+		JourneyScreenThreeTest.usingPolicyNumberToFillScreenSixTPPPushSuperTermPlanDocumentRule();
+
+		/* comment on at driver close 22-07-19 */
+		//driver.close();
+	}
+	
 	public static void handle_windowLPPSVarification() throws Exception {
 
 		JourneyScreenThree.gmailFunctionalitySmartTermPlan();
 		/* added driver refresh*/
-		/*driver.navigate().refresh();
-		Thread.sleep(5000);*/
-		
-		/* verify the verification status pending or not  */
-		//driver.findElement(By.xpath("//span[contains(text(),'Verification')]")).click();
-		click(varificationTabScreenFive);
-		/*driver.navigate().refresh();
+		driver.navigate().refresh();
+		Thread.sleep(5000);
+			
+		driver.navigate().refresh();
 		Thread.sleep(5000);
 		ReusableActions.tabReload();
-		Thread.sleep(1000);*/
+		Thread.sleep(3000);
 		JourneyScreenFour.toCheckCustomerStatusIsPending();
-		//driver.findElement(By.xpath("//span[contains(text(),' Payment')]")).click();
-		//click(paymentTabScreenSix);
-		//JourneyScreenThreeTest.usingPolicyNumberToFillScreenSixTPPPushSuperTermPlan();
-       
-		/* comment on at driver close 22-07-19 */
-		//driver.close();
+		Thread.sleep(2000);
+		
 	}
 	public static void handle_windowLPPSDocument() throws Exception {
 
 		JourneyScreenThree.gmailFunctionalitySmartTermPlan();
 		/* added driver refresh*/
-		/*driver.navigate().refresh();
-		Thread.sleep(5000);*/
+		driver.navigate().refresh();
+		Thread.sleep(5000);
 		
 		/* verify the verification status pending or not  */
 		//driver.findElement(By.xpath("//span[contains(text(),'Verification')]")).click();
@@ -3811,10 +3926,10 @@ public class JourneyScreenThree extends ReusableActions {
 		Thread.sleep(5000);
 		ReusableActions.tabReload();
 		Thread.sleep(1000);*/
-		JourneyScreenFour.toCheckCustomerStatusIsPending();
+		//JourneyScreenFour.toCheckCustomerStatusIsPending();
 		//driver.findElement(By.xpath("//span[contains(text(),' Payment')]")).click();
 		click(paymentTabScreenSix);
-		//JourneyScreenThreeTest.usingPolicyNumberToFillScreenSixTPPPushSuperTermPlan();
+		JourneyScreenThreeTest.usingPolicyNumberToFillScreenSixTPPPushSuperTermPlan();
        
 		/* comment on at driver close 22-07-19 */
 		//driver.close();

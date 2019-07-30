@@ -1219,6 +1219,59 @@ public class JourneyScreenThreeTest extends ReusableActions {
 		}
 
 		}
+	
+	public static void usingPolicyNumberToFillScreenSixTPPPushSuperTermPlanMSA_FSA() throws Exception {
+		PageFactory.initElements(driver, POSVFlowForSAPMIAP.class);
+		try {
+			checkAlert();
+			prop = ReusableActions.readProperties();
+			driver.get(prop.getProperty("SampleURL"));
+			LoginPage.verifyloginpage();
+			// Maximizing the browser window
+			driver.manage().window().maximize();
+		    driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+			logger.info("Fulfilment URL opened successfully");
+            //some problem
+			JourneyScreenSix.switchingBackToMainWindowScreenSixMSA_FSA();
+			/*comment on 30-07-19 */
+			JourneyScreenSix.termsAndConditionMSA_FSA();
+			Thread.sleep(1000);
+			/* comment on driver close 15-07-19 */
+			//driver.close();
+		}
+
+		catch (Exception e) {
+			logger.error("Test case failed " + e.getMessage());
+			throw e;
+		}
+
+		}
+	
+	public static void usingPolicyNumberToFillScreenSixTPPPushSuperTermPlanDocumentRule() throws Exception {
+		PageFactory.initElements(driver, POSVFlowForSAPMIAP.class);
+		try {
+			checkAlert();
+			prop = ReusableActions.readProperties();
+			driver.get(prop.getProperty("SampleURL"));
+			LoginPage.verifyloginpage();
+			// Maximizing the browser window
+			driver.manage().window().maximize();
+		    driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+			logger.info("Fulfilment URL opened successfully");
+            //some problem
+			JourneyScreenSix.switchingBackToMainWindowScreenSixDocumentRule();
+			//JourneyScreenSix.termsAndCondition();
+			Thread.sleep(1000);
+			/* comment on driver close 15-07-19 */
+			//driver.close();
+		}
+
+		catch (Exception e) {
+			logger.error("Test case failed " + e.getMessage());
+			throw e;
+		}
+
+		}
 	public static void usingPolicyNumberToFillScreenSixTPPPushWLS() throws Exception {
 		PageFactory.initElements(driver, POSVFlowForSAPMIAP.class);
 		try {

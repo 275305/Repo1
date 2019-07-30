@@ -46,8 +46,8 @@ public class ToCheckDocumentRuleIsPending extends ReusableActions{
 		}
 	}
 	
-	
-	@Test(priority = 1, enabled = true)
+	/*Test case for To verify POSV back flow link Pending */
+	@Test(priority = 1, enabled = false)
 	public void verificationLinksentToCustomerStatusPending() throws Exception {
 		try {
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
@@ -60,16 +60,18 @@ public class ToCheckDocumentRuleIsPending extends ReusableActions{
 			JourneyScreenTwo.arrowDownFunctionToScrollDownPage();
 			JourneyScreenTwo.saveProceedPDFGeneration();
 			screenJourneyFromThreeTillEnd();
-			screenJourneyFromFourTillEndPage();
+			screenJourneyFromFourTillEndPageVarification();
 			posvBackFlowTillTPPPushStatus();
-			//JourneyScreenFour.toCheckCustomerStatusIsPending();
+			//driver.close();
+			
 		}catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
 			throw e;
 		    }
-}
+       }
+	/*Test case for To verify DocumentRule Pending */
 	@Test(priority = 2, enabled = false)
-	public void documentRuleIsPending() throws Exception {
+	public void verifyDocumentRulePending() throws Exception {
 		try {
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
 			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
@@ -81,17 +83,60 @@ public class ToCheckDocumentRuleIsPending extends ReusableActions{
 			JourneyScreenTwo.arrowDownFunctionToScrollDownPage();
 			JourneyScreenTwo.saveProceedPDFGeneration();
 			screenJourneyFromThreeTillEnd();
-			posvBackFlowTillTPPPushDocument();
-			//screenJourneyFromFourTillEndPayment();
-			//JourneyScreenFour.toCheckDocumentRuleIsPending();
-		}catch (Exception e) {
+			screenJourneyFromFourTillEnd();
+			posvBackFlowTillTPPPushDocumentRule();
+
+		} catch (Exception e) {
+
+			driver.close();
+			logger.error("Test case Failed" + e.getMessage());
+			throw e;
+		}
+		finally{
+			driver.close();
+		}
+	}
+
+	/*Test case for To verify MSA and FSA */
+	@Test(priority = 3, enabled = true)
+	public void LPPS_Tradition_GeneratingPdf_Annual_Cash() throws Exception {
+		try {
+			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
+			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
+			JourneyScreenTwo.traditional();
+			JourneyScreenTwo.selectByDropdownLPPS();
+			JourneyScreenTwo.fillingAllTheRequiredFeildsForLPPSAnnual();
+			JourneyScreenTwo.fillingAllTheFeildForLPPS();
+			JourneyScreenTwo.dividentOptionLPPS();
+			JourneyScreenTwo.arrowDownFunctionToScrollDownPage();
+			JourneyScreenTwo.saveProceedPDFGeneration();
+			screenJourneyFromThreeTillEnd();
+			screenJourneyFromFourTillEnd();
+			posvBackFlowTillTPPPushMSA_FSA();
+
+		} catch (Exception e) {
+
+			driver.close();
+			logger.error("Test case Failed" + e.getMessage());
+			throw e;
+		}
+		finally{
+			driver.close();
+		}
+	}
+	public static void posvBackFlowTillTPPPushMSA_FSA() throws Exception {
+		PageFactory.initElements(driver, JourneyScreenTwo.class);
+		try {
+
+			JourneyScreenThree.handle_windowSAPMSA_FSA();
+
+		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
 			throw e;
-		    }
-}
-	
-	
 
+		}
+	}
+	
 public static void screenJourneyFromThreeTillEnd() throws Exception {
 	PageFactory.initElements(driver, JourneyScreenTwo.class);
 	try {
@@ -147,6 +192,27 @@ public static void screenJourneyFromFourTillEndPage() throws Exception {
 	}
 }
 
+public static void screenJourneyFromFourTillEndPageVarification() throws Exception {
+	PageFactory.initElements(driver, JourneyScreenTwo.class);
+	try {
+		JourneyScreenFour.form60RelatedDetailsIdentityProofNameOptionSelection();
+		JourneyScreenFour.setIdentityProofNumberValidation(0, 1, 6);
+		JourneyScreenFour.identityProofIssuingAuthority();
+		JourneyScreenFour.iAmExemptFromTheRequirementOfPANUnderTheFollowingProvisionsOfTheITAct1961();
+		JourneyScreenFour.arrowDownFunctionToScrollDownTillBottomFastTrack();
+		JourneyScreenFour.criticalIllnessNoOption();
+		JourneyScreenFour.hazardousActivitiesNo();
+		JourneyScreenFour.selectCriminalChargesNo();
+		JourneyScreenFour.feetInchesKgsSelectionToMoveToScreen5POSV();
+		JourneyScreenThree.agreePopupToProceedToSendPreIssuranceVerificationLinkToCustomer();
+		//JourneyScreenSix.fetchingProposalNumberFromUI();
+
+	} catch (Exception e) {
+		logger.error("Test case failed " + e.getMessage());
+		throw e;
+	}
+}
+
 public static void screenJourneyFromFourTillEndPayment() throws Exception {
 	PageFactory.initElements(driver, JourneyScreenTwo.class);
 	try {
@@ -170,13 +236,12 @@ public static void screenJourneyFromFourTillEndPayment() throws Exception {
 public static void posvBackFlowTillTPPPushStatus() throws Exception {
 	PageFactory.initElements(driver, JourneyScreenTwo.class);
 	try {
-
+  
 		JourneyScreenThree.handle_windowLPPSVarification();
 
 	} catch (Exception e) {
 		logger.error("Test case failed " + e.getMessage());
 		throw e;
-
 	}
 }
 
@@ -185,6 +250,19 @@ public static void posvBackFlowTillTPPPushDocument() throws Exception {
 	try {
 
 		JourneyScreenThree.handle_windowLPPSDocument();
+
+	} catch (Exception e) {
+		logger.error("Test case failed " + e.getMessage());
+		throw e;
+
+	}
+}
+
+public static void posvBackFlowTillTPPPushDocumentRule() throws Exception {
+	PageFactory.initElements(driver, JourneyScreenTwo.class);
+	try {
+
+		JourneyScreenThree.handle_windowSAPDocumentRule();
 
 	} catch (Exception e) {
 		logger.error("Test case failed " + e.getMessage());

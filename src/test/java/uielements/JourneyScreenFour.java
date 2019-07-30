@@ -19,8 +19,11 @@ import util.AppConstant;
 
 public class JourneyScreenFour extends ReusableActions {
 	
-	@FindBy(xpath = "//div[contains(text(),'Pre-Issuance Verification Link sent to the Customer - Status Pending')]")
+	@FindBy(xpath = "//h4[contains(text(),'Pre-Issuance Verification Link sent to the Customer - Status Pending')]")
 	static WebElement varificationLinksentoCustomerScreenfour;
+	
+	@FindBy(xpath = "//div[contains(text(),'Pre-Issuance Verification Link sent to the Customer - Status Positive')]")
+	static WebElement varificationLinksentoCustomerPositiveScreenfour;
 	
 	@FindBy(xpath = "//div[contains(text(),'Document Rule Is Pending!')]")
 	static WebElement documentRulePendingScreensix;
@@ -842,25 +845,20 @@ public class JourneyScreenFour extends ReusableActions {
 		// Proceedbtn.click();
 	}
 	
-	 public static void toCheckCustomerStatusIsPending()  {
+	 public static void toCheckCustomerStatusIsPending() throws Exception  {
 		 
-		 try {
-		 String ExpectedText="Pre-Issuance Verification Link sent to the Customer - Status Pending";
-		 String ActualText=varificationLinksentoCustomerScreenfour.getText();
+		 //PageFactory.initElements(driver, JourneyScreenFour.class);
+		 
+		 String ExpectedText="Pre-Issuance Verification Link sent to the Customer - Status Positive";
+		 String ActualText=varificationLinksentoCustomerPositiveScreenfour.getText();
 		 if(ExpectedText.contentEquals(ActualText)) {
-			 logger.info("Test Case :Pre-Issuance Verification Link sent to the Customer - Status Pending");
-			 
-			 }
+			 logger.info("Test Case :Pre-Issuance Verification Link sent to the Customer - Status Positive");
+				 }
 		 else {
-			 logger.info("Test case :Pre-Issuance Verification Link sent to the Customer - Status Positive");
+			 Assert.fail("Test case :Pre-Issuance Verification Link sent to the Customer - Status Pending");
 		    }  
 		 Thread.sleep(2000);
-		
-	        }catch(Exception e) {
-		       logger.info("Test case evaluation at screen five");
-	       }
-	 
-	 }
+			 }
  public static void toCheckDocumentRuleIsPending() {
 		 
 		 String ExpectedText="Document Rule Is Pending!";
