@@ -46,8 +46,8 @@ public class ToCheckDocumentRuleIsPending extends ReusableActions{
 		}
 	}
 	
-	/*Test case for To verify POSV back flow link Pending */
-	@Test(priority = 1, enabled = false)
+	/*Test case for To verify POSV back flow link Status */
+	@Test(priority = 1, enabled = true)
 	public void verificationLinksentToCustomerStatusPending() throws Exception {
 		try {
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
@@ -62,15 +62,19 @@ public class ToCheckDocumentRuleIsPending extends ReusableActions{
 			screenJourneyFromThreeTillEnd();
 			screenJourneyFromFourTillEndPageVarification();
 			posvBackFlowTillTPPPushStatus();
-			//driver.close();
+			
 			
 		}catch (Exception e) {
+			driver.close();
 			logger.error("Test case failed " + e.getMessage());
 			throw e;
 		    }
+		finally{
+			driver.close();
+		}
        }
 	/*Test case for To verify DocumentRule Pending */
-	@Test(priority = 2, enabled = false)
+	@Test(priority = 2, enabled = true)
 	public void verifyDocumentRulePending() throws Exception {
 		try {
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
@@ -99,7 +103,7 @@ public class ToCheckDocumentRuleIsPending extends ReusableActions{
 
 	/*Test case for To verify MSA and FSA */
 	@Test(priority = 3, enabled = true)
-	public void LPPS_Tradition_GeneratingPdf_Annual_Cash() throws Exception {
+	public void MSA_FSAVarificationSixScreen() throws Exception {
 		try {
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
 			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
@@ -115,7 +119,6 @@ public class ToCheckDocumentRuleIsPending extends ReusableActions{
 			posvBackFlowTillTPPPushMSA_FSA();
 
 		} catch (Exception e) {
-
 			driver.close();
 			logger.error("Test case Failed" + e.getMessage());
 			throw e;

@@ -3877,7 +3877,6 @@ public class JourneyScreenThree extends ReusableActions {
 		/* added driver refresh*/
 		driver.navigate().refresh();
 		Thread.sleep(5000);
-
 		JourneyScreenThreeTest.usingPolicyNumberToFillScreenSixTPPPushSuperTermPlanMSA_FSA();
 
 		/* comment on at driver close 22-07-19 */
