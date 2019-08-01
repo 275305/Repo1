@@ -18,8 +18,11 @@ import org.testng.Assert;
 
 public class JourneyScreenSix extends ReusableActions {
 
-	@FindBy(xpath = "//span[contains(text(),'Medical Sum Assured(₹) :')]")
-	static WebElement medicalSumAssuranceSixPage;
+	@FindBy(xpath = "//div[@class='Screen6__listMedical__3xxkG']")
+	static WebElement medicalSumAssuranceTextValueSixPage;
+
+	@FindBy(xpath = "//div[@class='Screen6__listMedical__3xxkG']")
+	static WebElement MSA_FSASixPage;
 
 	/*
 	 * @FindBy(xpath = "//div[contains(text(),'Not yet calculated')]") static
@@ -216,10 +219,10 @@ public class JourneyScreenSix extends ReusableActions {
 	public static void fetchingPolicyNumberAndCompletingTheJourneyForTPP() throws Exception {
 		Thread.sleep(2800);
 		HomePage.clickDashboard();
+		Thread.sleep(1000);
 		/* 15-07-19 added 2 line for driver refresh */
 		driver.navigate().refresh();
 		Thread.sleep(3000);
-
 		waitTillElementToBeClickable(policyTranactionSearchBox);
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//input[@id='policyTranactionSearchBox']")).sendKeys(str2);
@@ -1289,12 +1292,16 @@ public class JourneyScreenSix extends ReusableActions {
 	}
 
 	public static void toVerifyMSA_FSAValue() {
+		
 		try {
-			String actualValue = medicalSumAssuranceSixPage.getAttribute("value");
+			String actualMSA_FSAValue = medicalSumAssuranceTextValueSixPage.getText();
+			String[] MSA_FSATextValue = actualMSA_FSAValue.split("\\:+");
+			
+			String splitedMSA_FSAActualValue = MSA_FSATextValue[1];
+			logger.info("Splited Value of Medical Sum Assured & Financial Sum Assured"+splitedMSA_FSAActualValue);
 			String expectedValue = "Not yet calculated";
-
-			if (actualValue.contentEquals(expectedValue))
-				logger.info("Test Case: MSA_FSA Not yet calculated");
+			if (splitedMSA_FSAActualValue.contentEquals(expectedValue))
+				Assert.fail("Test Case: MSA_FSA Not yet calculated");
 			else
 				logger.info("Test Case: MSA_FSA value populated sucessfully");
 
