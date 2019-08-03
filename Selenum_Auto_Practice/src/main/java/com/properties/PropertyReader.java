@@ -7,13 +7,16 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class PropertyReader {
 
 	private final String propertyFilePath = "configs\\Configration.properties";
 	BufferedReader br;
-	private Properties properties;
+	private static Properties properties;
 
 	public PropertyReader() {
 
@@ -32,6 +35,17 @@ public class PropertyReader {
 		}
 
 	}// constructor close
+	
+
+	public static String alertUrl() {
+		String alertUrl = properties.getProperty("alertUrl");
+		return alertUrl;
+	}
+
+	public static String windowUrl() {
+		String windowUrl = properties.getProperty("windowUrl");
+		return windowUrl;
+	}
 
 	public String getUploadUrl() {
 		String urlUpload = properties.getProperty("urlUpload");
@@ -57,7 +71,8 @@ public class PropertyReader {
 			throw new RuntimeException("driverPath not specified in configration.properties file");
 	}
 
-	public long getImplicitExplicitWait() {
+	
+	public static long getImplicitExplicitWait() {
 		String implicitWait = properties.getProperty("implicitlywait");
 		if (implicitWait != null)
 			return Long.parseLong(implicitWait);
@@ -78,12 +93,15 @@ public class PropertyReader {
 		return properties.getProperty("chooseFileTab");
 
 	}
-    public String chooseCheckBox() {
-    	return properties.getProperty("chooseCheckBox");
-    }
-    public String submitFileTab() {
-    	return properties.getProperty("submitFileTab");
-    }
+
+	public String chooseCheckBox() {
+		return properties.getProperty("chooseCheckBox");
+	}
+
+	public String submitFileTab() {
+		return properties.getProperty("submitFileTab");
+	}
+
 	public List<WebElement> roundtrep() {
 		String str1 = properties.getProperty("roundtrip");
 

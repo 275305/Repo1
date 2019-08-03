@@ -5,7 +5,8 @@
     <classes>
       <class name="com.guru.alerts.SimpleAlertMessageHandling">
         <methods>
-          <include name="alertMessageHandling"/>
+          <include name="alertAcceptDissmiss"/>
+          <include name="alertGetText"/>
         </methods>
       </class> <!-- com.guru.alerts.SimpleAlertMessageHandling -->
     </classes>
