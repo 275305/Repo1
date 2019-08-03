@@ -21,9 +21,10 @@ public class DuplicateCharecter {
 			}
 
 			if (c > 1 && arr[i] != ' ')
-				System.out.println(arr[i] + " : " + c);
+				System.out.print(arr[i] + " = " + c+" ,");
 			c = 0;
 		}
+		System.out.println();
 
 	}
 

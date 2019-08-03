@@ -16,10 +16,13 @@ public class UniqueCharecter {
 					c = c + 1;
 										
 				}
+			for(int k=0;k<=c;k++){
+				System.out.println(arr[k]);
 			}
-			if(c==1)
-				System.out.println(arr[i] + " " + c);
-			c=0;
+			/*if(c==1)
+				System.out.print(arr[j] + " " + c);
+			c=0;*/
+			}
 		}
 
 	}

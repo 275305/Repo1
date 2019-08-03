@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="JenkinsSuite" duration-ms="28726" started-at="2019-05-23T15:32:39Z" finished-at="2019-05-23T15:33:08Z">
+  <suite name="Default suite" duration-ms="8862" started-at="2019-08-03T07:18:15Z" finished-at="2019-08-03T07:18:24Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="28726" started-at="2019-05-23T15:32:39Z" finished-at="2019-05-23T15:33:08Z">
-      <class name="com.compile.surefire.jenkins.DriverTestByJenkins">
-        <test-method status="PASS" signature="getChromeBrowser()[pri:0, instance:com.compile.surefire.jenkins.DriverTestByJenkins@462d5aee]" name="getChromeBrowser" duration-ms="27641" started-at="2019-05-23T15:32:39Z" finished-at="2019-05-23T15:33:07Z">
+    <test name="Default test" duration-ms="8862" started-at="2019-08-03T07:18:15Z" finished-at="2019-08-03T07:18:24Z">
+      <class name="com.guru.alerts.SimpleAlertMessageHandling">
+        <test-method status="PASS" signature="startBrowser()[pri:0, instance:com.guru.alerts.SimpleAlertMessageHandling@46daef40]" name="startBrowser" duration-ms="8076" started-at="2019-08-03T07:18:15Z" finished-at="2019-08-03T07:18:23Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getChromeBrowser -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.compile.surefire.jenkins.DriverTestByJenkins@462d5aee]" name="afterTest" is-config="true" duration-ms="1044" started-at="2019-05-23T15:33:07Z" finished-at="2019-05-23T15:33:08Z">
+        </test-method> <!-- startBrowser -->
+        <test-method status="PASS" signature="alertGetText()[pri:1, instance:com.guru.alerts.SimpleAlertMessageHandling@46daef40]" name="alertGetText" duration-ms="194" started-at="2019-08-03T07:18:23Z" finished-at="2019-08-03T07:18:23Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterTest -->
-      </class> <!-- com.compile.surefire.jenkins.DriverTestByJenkins -->
-    </test> <!-- Test -->
-  </suite> <!-- JenkinsSuite -->
+        </test-method> <!-- alertGetText -->
+        <test-method status="PASS" signature="alertAcceptDissmiss()[pri:2, instance:com.guru.alerts.SimpleAlertMessageHandling@46daef40]" name="alertAcceptDissmiss" duration-ms="563" started-at="2019-08-03T07:18:23Z" finished-at="2019-08-03T07:18:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- alertAcceptDissmiss -->
+      </class> <!-- com.guru.alerts.SimpleAlertMessageHandling -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

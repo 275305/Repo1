@@ -13,9 +13,9 @@ public class GeckoDriverQuere {
 	 * you can use FF version 53 and above with geckodriver V0.18.0 for Selenium
 	 * 3.4.0 E:\Pradeep_Pracite_Purpose2\Firefoxv18\geckodriver.exe
 	 */
-
+	private String driverPath = "https://www.google.com/";
 	private WebDriver driver;
-	private PropertyReader reader;
+    private PropertyReader reader;
 
 	@BeforeClass
 	public void startBrowser() {
