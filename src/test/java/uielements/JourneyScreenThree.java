@@ -1048,7 +1048,7 @@ public class JourneyScreenThree extends ReusableActions {
 	public static void waitForNumberOfWindowsToEqual(final int numberOfWindows) {
 		new WebDriverWait(driver, 20) {
 		}.until(new ExpectedCondition<Boolean>() {
-			@Override
+			
 			public Boolean apply(WebDriver driver) {
 				return (driver.getWindowHandles().size() == numberOfWindows);
 			}

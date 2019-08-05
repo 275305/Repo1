@@ -75,11 +75,11 @@ public class MaxLifeSavingsAdvantagePlanTest extends ReusableActions {
 		}
 	}
 	
-	@Test(priority = 1, enabled = false)
+	@Test(priority = 1, enabled = true)
 	public void CheckproductConfigrationSAPGeneratingPdf() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
-			alwaysCloseAllChildTabs();
+			//alwaysCloseAllChildTabs();
 			// HomePage.clickDashboard();
 			HomePage.clickNewApp();
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
@@ -89,6 +89,9 @@ public class MaxLifeSavingsAdvantagePlanTest extends ReusableActions {
 			JourneyScreenTwo.fillingAllTheRequiredFeildsForSAP();
 			JourneyScreenTwo.premiumCommitmentSAPCheckingMultipleDataForErrorMessage();
 			screenJourneyFromThreeTillEnd();
+			screenJourneyFromFourTillEnd();
+			posvBackFlowTillTPPPush();
+			
 
 		} catch (Exception e) {
 			logger.error("Test case failed " + e.getMessage());
@@ -98,7 +101,7 @@ public class MaxLifeSavingsAdvantagePlanTest extends ReusableActions {
 	}
 
 	// TC- for SinglePay premium
-	@Test(description="For SinglePay premium",priority = 2, enabled = true)
+	@Test(description="For SinglePay premium",priority = 2, enabled = false)
 	public void CheckproductConfigrationSAPGeneratingPdfforSinglePremium() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {

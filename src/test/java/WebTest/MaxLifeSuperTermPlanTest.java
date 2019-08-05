@@ -340,14 +340,14 @@ public class MaxLifeSuperTermPlanTest extends ReusableActions {
 			posvBackFlowTillTPPPush();
 
 		} catch (Exception e) {
-			driver.close();
+			//driver.close();
 			logger.error("Test case failed " + e.getMessage());
 			throw e;
 
 		}
 
 		finally {
-			driver.close();
+			//driver.close();
 		}
 
 	}

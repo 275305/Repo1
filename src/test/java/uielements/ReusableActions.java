@@ -236,9 +236,10 @@ public class ReusableActions {
 
 	}
 
+	/* comment on 5 Line*/
 	public static void waitTillPageLoaded(WebDriver driver) {
 		ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
-			@Override
+			
 			public Boolean apply(WebDriver driver) {
 				return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
 			}

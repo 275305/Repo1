@@ -44,11 +44,11 @@ public class MaxLifeSmartTermPlanTest extends ReusableActions {
 
 
 	// illustration verification for all premium type with WOP rider
-	@Test(priority = 1, enabled = false)
+	@Test(priority = 1, enabled = true)
 	public static void CheckproductConfigrationSmartTermPlanGeneratingPdfForAllPremiumType() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
-			alwaysCloseAllChildTabs();
+			//alwaysCloseAllChildTabs();
 			// HomePage.clickDashboard();
 			HomePage.clickNewApp();
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntnPan();
@@ -94,7 +94,7 @@ public class MaxLifeSmartTermPlanTest extends ReusableActions {
 	}
 
 	// Illustration for all rider of limited pay
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 2, enabled = false)
 	public static void allRiderLimitedPayPremiumType() throws Exception {
 		PageFactory.initElements(driver, JourneyScreenTwo.class);
 		try {
