@@ -47,7 +47,7 @@ public class ToCheckDocumentRuleIsPendingTest extends ReusableActions {
 	}
 
 	/* Test case for To verify POSV back flow link Status */
-	@Test(priority = 1, enabled = false)
+	@Test(priority = 1, enabled = true)
 	public void verificationLinksentToCustomerStatusPending() throws Exception {
 		try {
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
@@ -64,11 +64,11 @@ public class ToCheckDocumentRuleIsPendingTest extends ReusableActions {
 			posvBackFlowTillTPPPushStatus();
 
 		} catch (Exception e) {
-			driver.close();
+			//driver.close();
 			logger.error("Test case failed " + e.getMessage());
 			throw e;
 		} finally {
-			driver.close();
+			//driver.close();
 		}
 	}
 
@@ -100,7 +100,7 @@ public class ToCheckDocumentRuleIsPendingTest extends ReusableActions {
 	}
 
 	/* Test case for To verify MSA and FSA */
-	@Test(priority = 3, enabled = true)
+	@Test(priority = 3, enabled = false)
 	public void MSA_FSAVarificationSixScreen() throws Exception {
 		try {
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
