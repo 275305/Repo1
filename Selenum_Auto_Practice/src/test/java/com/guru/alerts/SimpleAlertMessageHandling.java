@@ -46,14 +46,14 @@ public class SimpleAlertMessageHandling {
 	}
 
 	@Test(priority = 1, enabled = true)
-	public void alertGetText() {
+	public void alertGetText() throws Exception {
 		
 		try{
 		custmerIdTextDemoSiteGuru = driver.findElement(By.xpath("//input[@name='cusid']"));
 		
-			ReadExcelFile.readExcel_Files(2, 1, 0);
-		
-		custmerIdTextDemoSiteGuru.sendKeys(ReadExcelFile.readExcel_Files(2, 1, 0));
+			String data=ReadExcelFile.readExcel_Files(2, 1, 0);
+		 Thread.sleep(3000);
+		custmerIdTextDemoSiteGuru.sendKeys(data);
 		submitButtonDemoSiteGuru = driver.findElement(By.xpath("//input[@name='submit']"));
 		submitButtonDemoSiteGuru.click();
 

@@ -19,7 +19,7 @@ import com.reusable.constant.ReusableConstant;
 
 public class ReadExcelFile {
 	private String path;
-	private String data;
+	private static String data;
 	private static XSSFWorkbook workbook;
 	private static XSSFSheet sheet;
 	private XSSFRow row;
@@ -33,10 +33,30 @@ public class ReadExcelFile {
 	private static final Logger logger = Logger.getLogger(SimpleAlertMessageHandling.class.getName());
 	// Reading Excel File and get the data
 
-	@Test
-	public static String readExcel_Files(int sheetNo, int row, int col) throws IOException {
-
-		try {
+	
+	public static String readExcel_Files(int sheetno, int rownum, int colnum) throws IOException {
+		
+		try{
+		File file = new File(System.getProperty(ReusableConstant.USER_DIR) + ReusableConstant.READ_EXCEL_FILE);
+		FileInputStream fileInputStream = new FileInputStream(file);
+		XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
+		XSSFSheet sheet = hssfWorkbook.getSheetAt(sheetno);
+		XSSFCell cell = sheet.getRow(rownum).getCell(colnum);
+		DataFormatter df = new DataFormatter();
+		String data = df.formatCellValue(cell);
+		hssfWorkbook.close();
+		return data;
+		  }
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return data;
+	}
+}	
+		
+		
+		/*try {
 			String path = System.getProperty("user.dir");
 			String excelFile = path + ReusableConstant.READ_EXCEL_FILE;
 			
@@ -59,7 +79,7 @@ public class ReadExcelFile {
 			 e.printStackTrace();
 
 		}
-		return null;
+		return null;*/
 
 		// end
 		/*
@@ -85,5 +105,5 @@ public class ReadExcelFile {
 		 */
 		// return excelData;
 
-	}
-}
+	
+
