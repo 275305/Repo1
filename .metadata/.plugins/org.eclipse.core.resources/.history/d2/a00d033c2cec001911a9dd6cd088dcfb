@@ -1,0 +1,7 @@
+#url=https://demoqa.com/
+url=https://accounts.google.com/
+driver=C:\\E\\Pradeep\\CoreJavaPractice\\seleniumConcept\\lib\\chromedriver.exe
+wait=30
+emailtext=pmaxlife071@gmail.com
+emailpassword=max@1234
+emailtextvalue=1,1,1

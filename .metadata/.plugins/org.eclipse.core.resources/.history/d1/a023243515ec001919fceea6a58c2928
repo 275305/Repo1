@@ -1,0 +1,16 @@
+package tests;
+
+public class ReusableTest {
+
+	public static String readingdata(int sheetno, int rownum, int colnum) throws Exception {
+		file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
+		fileInputStream = new FileInputStream(file);
+		hssfWorkbook = new XSSFWorkbook(fileInputStream);
+		sheet = hssfWorkbook.getSheetAt(sheetno);
+		cell = sheet.getRow(rownum).getCell(colnum);
+		df = new DataFormatter();
+		data = df.formatCellValue(cell);
+		hssfWorkbook.close();
+		return data;
+	}
+}

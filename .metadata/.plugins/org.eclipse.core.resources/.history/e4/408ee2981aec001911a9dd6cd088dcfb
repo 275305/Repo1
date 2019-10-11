@@ -1,0 +1,99 @@
+package pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
+
+public class GmailLoginPage {
+
+	WebDriver driver;
+
+	public GmailLoginPage(WebDriver driver) {
+		super();
+		this.driver = driver;
+	}
+
+	/* x-path for email-id */
+	@FindBy(xpath = "//input[@type='email']")
+	WebElement emailText;
+
+	// span[contains(text(),'Next')]
+	@FindBy(xpath = "//span[contains(text(),'Next')]")
+	WebElement nextButton;
+	
+	////div[@id='passwordNext']
+	@FindBy(xpath="//span[@class='CwaK9']//span[text()='Next']")
+	WebElement nextPassBtn;
+
+	/* x-path for email password */
+	@FindBy(xpath = "//input[@name='password']")
+	WebElement emailPassword;
+
+	public void setMobNumber(int x, int y, int z) throws Exception {
+		// type(MobNumtxtfld, strMobNumber);
+		emailText.clear();
+		type(emailText, readingdata(x, y, z));
+		String mobileNumberPassedFromExcel = emailText.getAttribute("value");
+		int size = mobileNumberPassedFromExcel.length();
+		if (size == 10 && !mobileNumberPassedFromExcel.contains("A") && mobileNumberPassedFromExcel.contains("9")
+				&& !mobileNumberPassedFromExcel.contains("@")) {
+			//logger.info(
+					//"Test case pass:- As Mobile number feild length is 10 and accepting only numeric value,not accepting special character and alphabets ");
+		} else {
+			Assert.fail(
+					"Test case fail:-As either Mobile number feild length is not 10 or not accepting only numeric value,accepting special character or alphabets");
+		}
+
+	}
+	public static void type(WebElement textbox, String inputdata) throws Exception {
+		Thread.sleep(2000);
+		for (int i = 0; i <= 15; i++) {
+			try {
+				textbox.clear();
+				textbox.sendKeys(inputdata);
+				break;
+
+			} catch (Exception e) {
+				if (i == 15) {
+					throw e;
+
+				} else {
+					Thread.sleep(2000);
+				}
+			}
+		}
+	}
+	private Object readingdata(int x, int y, int z) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	// enter the email id
+	public void emailText(String emailtext) {
+		/*
+		 * Actions actions = new Actions(driver);
+		 * actions.moveToElement(emailText);
+		 * actions.click().sendKeys(emailtext); //actions.sendKeys();
+		 * actions.build().perform();
+		 */
+		try {
+			emailText.sendKeys(emailtext);
+			nextButton.click();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	// enter the password
+	public void emailPassword(String emailtext) {
+		try {
+			emailPassword.sendKeys(emailtext);
+			nextPassBtn.click();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}
