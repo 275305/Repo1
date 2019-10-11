@@ -1,0 +1,15 @@
+package com.string.java;
+
+public class CountDistinctChar {
+	
+	public static void main(String[] args) {
+		String Str="HYDERABAD GREAT";
+		distinctCountChar(Str);
+	}
+
+	private static void distinctCountChar(String str) {
+		int len=str.length();
+		System.out.println(len);
+	}
+
+}

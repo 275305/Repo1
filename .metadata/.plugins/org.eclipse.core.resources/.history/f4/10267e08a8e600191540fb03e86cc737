@@ -1,0 +1,19 @@
+package com.string.java;
+
+public class Stringpalindrome {
+
+	public static void main(String[] args) {
+  int i,j;
+		String strRev = "abcd";
+		char arr[] = strRev.toCharArray();
+		int len = arr.length;
+		for (i = len - 1; i < strRev.length(); i--) {
+			while()
+			
+			if(arr[i]==arr[j]){
+			System.out.println(arr[i]);
+			}
+		}
+	}
+
+}

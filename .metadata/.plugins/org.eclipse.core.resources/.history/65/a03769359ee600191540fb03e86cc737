@@ -1,0 +1,39 @@
+package com.string.java;
+
+import java.util.Scanner;
+
+public class RemoveDuplicate {
+
+	public static void main(String[] args) {
+		
+		String strOrig =new String("abcabc");
+		//sc.nextLine();
+
+      String str="abcabcabc";
+		char str1[]=str.toCharArray();
+       int len=str.length();
+       
+		removeDuplicate(str1,len);
+	}
+
+	private static String removeDuplicate(char[] str1, int len) {
+		int j,k=0;
+		
+		for (int i = 0; i < len; i++) {
+	   for (j = 0; j < i; j++)
+	   {
+		if (str1[i]==str1[j] ) 
+		{
+		break;
+			 }
+			}	
+		if(str1[i]==str1[j]){
+		   str1[k++]=str1[i];
+		  }
+		
+		}	
+		
+		return null;
+	
+		}
+}

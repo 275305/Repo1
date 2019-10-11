@@ -1,0 +1,65 @@
+package com.string.java;
+
+import java.util.Scanner;
+
+public class RemoveDuplicate {
+
+	public static void main(String[] args) {
+		
+		String strOrig =new String("abcabc");
+		//sc.nextLine();
+
+      String str="abcabcabc";
+		char str1[]=str.toCharArray();
+       int len=str.length();
+       
+		removeDuplicate(str1,len);
+	}
+
+	private static String removeDuplicate(char[] str1, int len) {
+		
+		
+		for (int i = 0; i < len; i++) {
+	   for (int j = 0; j < i; j++) {
+		if (str1[i]==str1[j] ) {
+		
+			
+				}
+				
+			}	
+		
+		
+		}	
+		/*Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the String");
+		String strOrig =new String("abcabc");
+				//sc.nextLine();
+		String str2=new String();
+		char arr[] = strOrig.toCharArray();
+
+		for (int i = 0; i < strOrig.length(); i++) {
+			for (int j = 0; j < strOrig.length(); j++) {
+				if (strOrig.charAt(i) !=strOrig.charAt(j) ) {
+				  str2=str2+strOrig.charAt(i); 	
+				}
+			}
+		}
+		System.out.println(str2);
+	*/
+		/*String input = new String("abbc");
+        String output = new String();
+
+        for (int i = 0; i < input.length(); i++) {
+            for (int j = 0; j < output.length(); j++) {
+                if (input.charAt(i) != output.charAt(j)) {
+                    output = output + input.charAt(i);
+                }
+            }
+        }
+        System.out.println(output);
+
+      }*/
+		return null;
+	
+		}
+}

@@ -1,0 +1,11 @@
+package com.string.java;
+
+public class RemoveDuplicateChar {
+	
+	public static void main(String[] args) {
+	
+		String str="abcdabcd";
+		
+	}
+
+}

@@ -1,0 +1,10 @@
+package com.string.java;
+
+public class CountDistinctChar {
+	
+	public static void main(String[] args) {
+		String Str="Hyderabad is the Great Place";
+		distinctCountChar(Str);
+	}
+
+}

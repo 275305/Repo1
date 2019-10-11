@@ -1,0 +1,15 @@
+package pages;
+
+import org.openqa.selenium.WebDriver;
+
+public class GmailLogin {
+	
+	WebDriver driver;
+
+	public GmailLogin(WebDriver driver) {
+		super();
+		this.driver = driver;
+	}
+	
+
+}

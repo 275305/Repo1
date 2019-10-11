@@ -1,0 +1,19 @@
+package tests;
+
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import pages.GmailLoginPage;
+import pages.PropertyReader;
+
+public class GmailLoginTest {
+	
+	//reader.getEmailText()
+	PropertyReader reader=new PropertyReader();
+	
+	public void gmailLoginTest(){
+		PageFactory.initElements(driver, GmailLoginPage.class);
+		
+	}
+
+}

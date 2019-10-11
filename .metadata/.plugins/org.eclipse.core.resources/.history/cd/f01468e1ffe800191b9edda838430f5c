@@ -1,0 +1,12 @@
+package com.string.java;
+
+public class RevereSamePlace {
+	
+	public static void main(String[] args) {
+		
+		String strOrg="this is hyderabad";
+		
+		
+	}
+
+}
