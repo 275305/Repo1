@@ -20,7 +20,7 @@ public class GmailLoginPage {
 
 	/* x-path for email-id */
 	@FindBy(xpath = "//input[@type='email']")
-	static 	WebElement emailText;
+	static WebElement emailText;
 
 	// span[contains(text(),'Next')]
 	@FindBy(xpath = "//span[contains(text(),'Next')]")
@@ -28,54 +28,41 @@ public class GmailLoginPage {
 
 	//// div[@id='passwordNext']
 	@FindBy(xpath = "//span[@class='CwaK9']//span[text()='Next']")
-	WebElement nextPassBtn;
+	static WebElement nextPassBtn;
 
 	/* x-path for email password */
 	@FindBy(xpath = "//input[@name='password']")
-	WebElement emailPassword;
+	static WebElement emailPassword;
 
-	public static void setEmailID(int x, int y, int z) throws Exception {
-		// type(MobNumtxtfld, strMobNumber);
+	public static void setEmailIDGmailLoginPage(int sheet, int row, int column) throws Exception {
 		emailText.clear();
-		ReusableTest.readingdata(x, y, z);
-		//type(emailText, ReusableTest.readingdata(x, y, z));
-		/*//String mobileNumberPassedFromExcel = emailText.getAttribute("value");
-		int size = mobileNumberPassedFromExcel.length();
-		if (size == 10 && !mobileNumberPassedFromExcel.contains("A") && mobileNumberPassedFromExcel.contains("9")
-				&& !mobileNumberPassedFromExcel.contains("@")) {
-			LOGGER.info(
-					"Test case pass:- As Mobile number feild length is 10 and accepting only numeric value,not accepting special character and alphabets ");
-		} else {
-			Assert.fail(
-					"Test case fail:-As either Mobile number feild length is not 10 or not accepting only numeric value,accepting special character or alphabets");
-		}*/
-
+		type(emailText, ReusableTest.readingdata(sheet, row, column));
 	}
 
-	public static void type(WebElement textbox, String inputdata) throws Exception {
+	public static void setPasswordGmailLoginPage(int sheet, int row, int column) throws Exception {
 		Thread.sleep(2000);
+		emailPassword.clear();
+		type(emailPassword, ReusableTest.readingdata(sheet, row, column));
+	}
+
+	public static void type(WebElement textbox, String inputDataFromExcel) {
+
 		for (int i = 0; i <= 15; i++) {
 			try {
 				textbox.clear();
-				textbox.sendKeys(inputdata);
+				textbox.sendKeys(inputDataFromExcel);
 				break;
 
 			} catch (Exception e) {
-				if (i == 15) {
-					throw e;
 
-				} else {
-					Thread.sleep(2000);
-				}
 			}
 		}
 	}
 
 	// enter the email id
-	public void emailIdTextGmailLoginPage(int sheetNo,int columnNo,int rowNo) {
+	public void emailIdTextGmailLoginPage(int sheetNo, int columnNo, int rowNo) {
 		try {
-			GmailLoginPage.setEmailID(sheetNo, columnNo, rowNo);
-			//emailText.sendKeys(emailtext);
+			GmailLoginPage.setEmailIDGmailLoginPage(sheetNo, columnNo, rowNo);
 			nextButton.click();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -83,17 +70,13 @@ public class GmailLoginPage {
 	}
 
 	// enter the password
-	public void emailPassword(String emailtext) {
+	public void emailPasswordGmailLoginPage(int sheetNo, int columnNo, int rowNo) {
 		try {
-			emailPassword.sendKeys(emailtext);
-			nextPassBtn.click();
+			GmailLoginPage.setPasswordGmailLoginPage(sheetNo, columnNo, rowNo);
+			nextButton.click();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	public static void emailIdTextGmailLoginPage(String emailCellValue) {
-		
-		
-	}
 }

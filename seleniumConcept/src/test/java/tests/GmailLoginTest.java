@@ -16,7 +16,7 @@ public class GmailLoginTest extends LaunchBrowser {
 	PropertyReader reader = new PropertyReader();
 
 	@Test(priority = 0)
-	public void gmailLoginTest() {
+	public void gmailLoginEmailTest() {
 		GmailLoginPage gmailPage = PageFactory.initElements(driver, GmailLoginPage.class);
 		try {
 			int sheet = 0, row = 0, column = 0;
@@ -30,10 +30,30 @@ public class GmailLoginTest extends LaunchBrowser {
 			}
 
 			gmailPage.emailIdTextGmailLoginPage(sheet, row, column);
-			// gmailPage.emailText(reader.getEmailText());
-			// gmailPage.emailPassword(reader.getEmailPassword());
+
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	@Test(priority = 1)
+	public void gmailLoginPasswordTest() {
+		GmailLoginPage gmailPage = PageFactory.initElements(driver, GmailLoginPage.class);
+		try {
+			int sheet = 0, row = 0, column = 0;
+			List<Integer> list = reader.getPasswordValue();
+			Iterator<Integer> itr = list.iterator();
+
+			while (itr.hasNext()) {
+				sheet = itr.next();
+				row = itr.next();
+				column = itr.next();
+			}
+
+			gmailPage.emailPasswordGmailLoginPage(sheet, row, column);
+
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 

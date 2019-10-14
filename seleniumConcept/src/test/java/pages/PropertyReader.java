@@ -84,7 +84,7 @@ public class PropertyReader {
 			throw new RuntimeException("gmailPassword is not specify in the configration file");
 	}
 
-	@SuppressWarnings("unused")
+	/* Email value config.properties file at GmailPage */
 	public List<Integer> getEmailTextValue() {
 		String emailTextValue = properties.getProperty("emailtextvalue");
 		String strArr[] = emailTextValue.split(",");
@@ -99,6 +99,7 @@ public class PropertyReader {
 			throw new RuntimeException("emailID is not specify in the configration file");
 	}
 
+	/* Password value from config.properties file at GmailPage */
 	public List<Integer> getPasswordValue() {
 		String emailPasswordValue = properties.getProperty("emailPasswordValue");
 		String strArr[] = emailPasswordValue.split(",");
