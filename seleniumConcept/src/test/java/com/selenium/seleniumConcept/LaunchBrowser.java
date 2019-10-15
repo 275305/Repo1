@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
 import pages.PropertyReader;
 
 public class LaunchBrowser{
-	protected WebDriver driver;
+	protected static WebDriver driver;
     
 	PropertyReader reader=new PropertyReader();
 	@BeforeTest

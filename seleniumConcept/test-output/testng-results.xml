@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="8368" started-at="2019-10-14T13:30:45Z" finished-at="2019-10-14T13:30:53Z">
+  <suite name="Default suite" duration-ms="8436" started-at="2019-10-15T13:41:01Z" finished-at="2019-10-15T13:41:10Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="8368" started-at="2019-10-14T13:30:45Z" finished-at="2019-10-14T13:30:53Z">
+    <test name="Default test" duration-ms="8436" started-at="2019-10-15T13:41:01Z" finished-at="2019-10-15T13:41:10Z">
       <class name="tests.GmailLoginTest">
-        <test-method status="PASS" signature="initBrowser()[pri:0, instance:tests.GmailLoginTest@5e025e70]" name="initBrowser" is-config="true" duration-ms="5402" started-at="2019-10-14T19:00:45Z" finished-at="2019-10-14T19:00:50Z">
+        <test-method status="PASS" signature="initBrowser()[pri:0, instance:tests.GmailLoginTest@7cf10a6f]" name="initBrowser" is-config="true" duration-ms="5302" started-at="2019-10-15T19:11:01Z" finished-at="2019-10-15T19:11:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initBrowser -->
-        <test-method status="PASS" signature="gmailLoginEmailTest()[pri:0, instance:tests.GmailLoginTest@5e025e70]" name="gmailLoginEmailTest" duration-ms="771" started-at="2019-10-14T19:00:50Z" finished-at="2019-10-14T19:00:51Z">
+        <test-method status="PASS" signature="gmailLoginEmailTest()[pri:0, instance:tests.GmailLoginTest@7cf10a6f]" name="gmailLoginEmailTest" duration-ms="826" started-at="2019-10-15T19:11:07Z" finished-at="2019-10-15T19:11:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- gmailLoginEmailTest -->
-        <test-method status="PASS" signature="gmailLoginPasswordTest()[pri:0, instance:tests.GmailLoginTest@5e025e70]" name="gmailLoginPasswordTest" duration-ms="2186" started-at="2019-10-14T19:00:51Z" finished-at="2019-10-14T19:00:53Z">
+        <test-method status="PASS" signature="gmailLoginPasswordTest()[pri:0, instance:tests.GmailLoginTest@7cf10a6f]" name="gmailLoginPasswordTest" duration-ms="2295" started-at="2019-10-15T19:11:07Z" finished-at="2019-10-15T19:11:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- gmailLoginPasswordTest -->

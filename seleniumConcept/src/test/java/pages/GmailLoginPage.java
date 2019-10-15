@@ -7,11 +7,12 @@ import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
 import tests.ReusableTest;
+import util.ReusableActions;
 
 public class GmailLoginPage {
 
 	WebDriver driver;
-	private static final Logger LOGGER = Logger.getLogger(GmailLoginPage.class.getName());
+	private static final Logger lOGGER = Logger.getLogger(GmailLoginPage.class.getName());
 
 	public GmailLoginPage(WebDriver driver) {
 		super();
@@ -36,13 +37,13 @@ public class GmailLoginPage {
 
 	public static void setEmailIDGmailLoginPage(int sheet, int row, int column) throws Exception {
 		emailText.clear();
-		type(emailText, ReusableTest.readingdata(sheet, row, column));
+		type(emailText, ReusableActions.readingdata(sheet, row, column));
 	}
 
 	public static void setPasswordGmailLoginPage(int sheet, int row, int column) throws Exception {
 		Thread.sleep(2000);
 		emailPassword.clear();
-		type(emailPassword, ReusableTest.readingdata(sheet, row, column));
+		type(emailPassword, ReusableActions.readingdata(sheet, row, column));
 	}
 
 	public static void type(WebElement textbox, String inputDataFromExcel) {
@@ -54,28 +55,35 @@ public class GmailLoginPage {
 				break;
 
 			} catch (Exception e) {
-
+				lOGGER.info("Test case failed"+ e.getMessage());
+				throw e;
 			}
 		}
 	}
 
 	// enter the email id
-	public void emailIdTextGmailLoginPage(int sheetNo, int columnNo, int rowNo) {
+	public void emailIdTextGmailLoginPage(int sheetNo, int columnNo, int rowNo) throws Exception {
 		try {
 			GmailLoginPage.setEmailIDGmailLoginPage(sheetNo, columnNo, rowNo);
+			lOGGER.info("Email Id Entered Sucessfully");
 			nextButton.click();
+			lOGGER.info("navigate to the next page");
 		} catch (Exception e) {
-			e.printStackTrace();
+			lOGGER.info("Test case failed"+e.getMessage());
+			throw e;
 		}
 	}
 
 	// enter the password
-	public void emailPasswordGmailLoginPage(int sheetNo, int columnNo, int rowNo) {
+	public void emailPasswordGmailLoginPage(int sheetNo, int columnNo, int rowNo) throws Exception {
 		try {
 			GmailLoginPage.setPasswordGmailLoginPage(sheetNo, columnNo, rowNo);
+			lOGGER.info("Password entered Sucessfully");
 			nextButton.click();
+			lOGGER.info("navigate to the next page");
 		} catch (Exception e) {
-			e.printStackTrace();
+			lOGGER.info("Test case failed"+e.getMessage());
+			throw e;
 		}
 	}
 

@@ -1,0 +1,13 @@
+package com.selenium.seleniumConcept;
+
+
+
+public interface LanchBrowserI{
+	
+	 default void initAsBrowser1(){
+		System.out.println("this is an interface");
+	}
+	
+	
+	
+}

@@ -1,0 +1,10 @@
+package com.selenium.seleniumConcept;
+
+
+
+public interface LanchBrowserI{
+	
+	public void initBrowser(){
+		System.out.println("");
+	}
+}

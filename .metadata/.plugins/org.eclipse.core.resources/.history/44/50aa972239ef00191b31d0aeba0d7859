@@ -1,0 +1,8 @@
+package com.interfac;
+
+public class Address {
+
+	public void nameOfEmp(){
+		
+	}
+}

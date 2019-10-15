@@ -1,0 +1,11 @@
+package com.interfac;
+
+public class Address {
+    	
+	public static void Address() {
+		Employee.addressEmp();
+		System.out.println("Pradeep Hyderabad");
+		
+	
+	}
+}

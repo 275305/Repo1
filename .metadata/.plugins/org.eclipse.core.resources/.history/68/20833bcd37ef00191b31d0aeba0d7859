@@ -1,0 +1,8 @@
+package com.selenium.seleniumConcept;
+
+
+
+public interface LanchBrowserI extends LaunchBrowser{
+	
+	public void initBrowser();
+}

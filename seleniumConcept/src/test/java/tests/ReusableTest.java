@@ -2,18 +2,36 @@ package tests;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeTest;
 
-
-
+import pages.PropertyReader;
 import util.AppConstant;
 
 public class ReusableTest {
 
+protected static WebDriver driver;
+    
+	/*PropertyReader reader=new PropertyReader();
+	@BeforeTest
+	public void initBrowser() {
+		//String PATH = System.getProperty("user.dir");
+		//PATH + "\\lib\\chromedriver.exe"
+		System.setProperty("webdriver.chrome.driver",reader.getChromeDriver());
+		driver = new ChromeDriver();
+		String url = reader.getApplicationUrl();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(reader.getImplicitWait(), TimeUnit.SECONDS);
+		driver.get(url);
+			}
+	
 	public static String readingdata(int sheetno, int rownum, int colnum) throws Exception {
 		File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
 		FileInputStream fileInputStream = new FileInputStream(file);
@@ -24,5 +42,5 @@ public class ReusableTest {
 		String data = df.formatCellValue(cell);
 		hssfWorkbook.close();
 		return data;
-	}
+	}*/
 }

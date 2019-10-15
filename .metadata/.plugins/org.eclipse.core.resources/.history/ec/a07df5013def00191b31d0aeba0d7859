@@ -1,0 +1,13 @@
+package com.selenium.seleniumConcept;
+
+
+
+public interface LanchBrowserI{
+	
+	public static void initBrowser1(){
+		
+	}
+	
+	
+	
+}
