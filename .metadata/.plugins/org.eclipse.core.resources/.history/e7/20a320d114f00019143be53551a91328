@@ -1,0 +1,19 @@
+package com.string.java;
+
+import java.util.Scanner;
+
+public class PrimeTest {
+	
+	
+	public static void main(String[] args) {
+		
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter the string");
+		 int number=sc.nextInt();
+		 
+		 for(int i=0;i<=number;i++){
+			 
+		 }
+	}
+
+}

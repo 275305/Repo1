@@ -3245,3 +3245,5 @@ Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Could not find
 2019-10-16 15:49:56,484 [Worker-60] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 0 sec
 2019-10-16 15:49:56,947 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2019-10-16 15:49:56,958 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\E\Pradeep\CoreJavaPractice\seleniumConcept\src\main\resources
+2019-10-16 15:49:56,964 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-10-16 15:49:56,970 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\E\Pradeep\CoreJavaPractice\seleniumConcept\src\test\resources
