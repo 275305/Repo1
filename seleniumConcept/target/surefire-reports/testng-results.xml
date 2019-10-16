@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Gmail Test Suite " duration-ms="8855" started-at="2019-10-16T10:27:26Z" finished-at="2019-10-16T10:27:35Z">
+    <groups>
+    </groups>
+    <test name="TestA" duration-ms="8855" started-at="2019-10-16T10:27:26Z" finished-at="2019-10-16T10:27:35Z">
+      <class name="tests.GmailLoginTest">
+        <test-method status="PASS" signature="initBrowser()[pri:0, instance:tests.GmailLoginTest@9629756]" name="initBrowser" is-config="true" duration-ms="5822" started-at="2019-10-16T15:57:26Z" finished-at="2019-10-16T15:57:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initBrowser -->
+        <test-method status="PASS" signature="gmailLoginEmailTest()[pri:0, instance:tests.GmailLoginTest@9629756]" name="gmailLoginEmailTest" duration-ms="780" started-at="2019-10-16T15:57:32Z" finished-at="2019-10-16T15:57:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- gmailLoginEmailTest -->
+        <test-method status="PASS" signature="gmailLoginPasswordTest()[pri:0, instance:tests.GmailLoginTest@9629756]" name="gmailLoginPasswordTest" duration-ms="2246" started-at="2019-10-16T15:57:33Z" finished-at="2019-10-16T15:57:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- gmailLoginPasswordTest -->
+      </class> <!-- tests.GmailLoginTest -->
+    </test> <!-- TestA -->
+  </suite> <!-- Gmail Test Suite  -->
+</testng-results>
