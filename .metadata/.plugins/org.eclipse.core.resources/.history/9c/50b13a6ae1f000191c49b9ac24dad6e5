@@ -1,0 +1,14 @@
+package com.interfac;
+
+public class OverLoad {
+	
+	int a,b;
+	public void sum(int a, int b){
+		
+	}
+	
+	public void sum(int b, float a){
+		
+	}
+
+}

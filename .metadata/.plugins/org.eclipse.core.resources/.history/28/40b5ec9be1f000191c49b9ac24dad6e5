@@ -1,0 +1,21 @@
+package com.interfac;
+
+public class OverLoad {
+	
+	int a,b;
+	public static void sum(int a, int b){
+		
+	}
+	
+	public static void sum(int b, float a){
+		
+	}
+
+	public static void sum(int a, double b){
+		
+	}
+	
+	public static void main(String[] args) {
+		OverLoad.sum(10, 20);
+	}
+}

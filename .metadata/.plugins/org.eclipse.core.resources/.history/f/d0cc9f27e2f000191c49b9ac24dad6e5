@@ -1,0 +1,14 @@
+package com.interfac;
+
+public class OverRide {
+	
+	public void sum(){
+		
+	}
+
+}
+
+
+class TestClass{
+	
+}

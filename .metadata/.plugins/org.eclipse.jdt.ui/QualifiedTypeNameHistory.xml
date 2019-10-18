@@ -40,4 +40,6 @@
 <fullyQualifiedTypeName name="util.ReusableActions"/>
 <fullyQualifiedTypeName name="pages.GmailLoginPage"/>
 <fullyQualifiedTypeName name="org.apache.log4j.Logger"/>
+<fullyQualifiedTypeName name="com.interfac.OverLoad"/>
+<fullyQualifiedTypeName name="com.interfac.OverRide"/>
 </qualifiedTypeNameHistroy>

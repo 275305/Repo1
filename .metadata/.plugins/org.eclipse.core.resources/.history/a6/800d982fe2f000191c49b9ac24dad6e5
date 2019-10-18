@@ -1,0 +1,16 @@
+package com.interfac;
+
+public class OverRide {
+	
+	public void sum(int a,int b){
+		
+	}
+
+}
+
+
+class TestClass{
+	
+	public void 
+	
+}
