@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="tests.GmailLoginTest">
+      <class name="tests.AlertGuruTest">
         <methods>
-          <include name="gmailLoginPasswordTest"/>
-          <include name="gmailLoginEmailTest"/>
+          <include name="getCustomerIDGuru99Page"/>
+          <include name="initBrowser"/>
         </methods>
-      </class> <!-- tests.GmailLoginTest -->
+      </class> <!-- tests.AlertGuruTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

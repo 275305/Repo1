@@ -1,0 +1,25 @@
+package pages;
+
+import org.apache.log4j.Logger;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class AlertGuruPage {
+
+	WebDriver driver;
+	private static final Logger lOGGER = Logger.getLogger(AlertGuruPage.class.getName());
+	public AlertGuruPage(WebDriver driver) {
+		super();
+		this.driver = driver;
+	}
+
+	@FindBy(xpath="//input[@name='cusid']")
+	WebElement custIdGuru;
+	
+	public void custIdTextBoxGuru99Page(){
+		custIdGuru.sendKeys("53920");
+	}
+	
+	
+}

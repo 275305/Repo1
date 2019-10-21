@@ -1,0 +1,37 @@
+package pages;
+
+import org.apache.log4j.Logger;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class AlertGuruPage {
+
+	WebDriver driver;
+	private static final Logger lOGGER = Logger.getLogger(AlertGuruPage.class.getName());
+	public AlertGuruPage(WebDriver driver) {
+		super();
+		this.driver = driver;
+	}
+
+	@FindBy(xpath="//input[@name='cusid']")
+	WebElement custIdGuru;
+	
+	public void custIdTextBoxGuru99Page(){
+		custIdGuru.sendKeys("53920");
+	}
+	
+	public void emailIdTextGmailLoginPage(int sheetNo, int columnNo, int rowNo) throws Exception {
+		try {
+			GmailLoginPage.setEmailIDGmailLoginPage(sheetNo, columnNo, rowNo);
+			lOGGER.info("Email Id Entered Sucessfully");
+			nextButton.click();
+			lOGGER.info("navigate to the next page");
+		} catch (Exception e) {
+			lOGGER.info("Test case failed"+e.getMessage());
+			throw e;
+		}
+	}
+	
+	
+}

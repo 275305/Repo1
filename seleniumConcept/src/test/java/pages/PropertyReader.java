@@ -98,6 +98,8 @@ public class PropertyReader {
 		else
 			throw new RuntimeException("emailID is not specify in the configration file");
 	}
+	
+	
 
 	/* Password value from config.properties file at GmailPage */
 	public List<Integer> getPasswordValue() {
@@ -111,6 +113,21 @@ public class PropertyReader {
 			return Arrays.asList(sheet, row, column);
 		else
 			throw new RuntimeException("gmailPassword is not specify in the configration file");
+	}
+	
+	/* CustomerId  value from config.properties file at Guru99Page */
+	public List<Integer> getCutomerIdTextValueatGuru99Page() {
+		String custIdTextValue = properties.getProperty("cutomerIdsheetvalue");
+		String strArr[] = custIdTextValue.split(",");
+
+		int sheet = Integer.parseInt(strArr[0]);
+		int row = Integer.parseInt(strArr[1]);
+		int column = Integer.parseInt(strArr[2]);
+
+		if (sheet != '@' && row != '@' && column != '@')
+			return Arrays.asList(sheet, row, column);
+		else
+			throw new RuntimeException("emailID is not specify in the configration file");
 	}
 
 }

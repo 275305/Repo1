@@ -1,0 +1,11 @@
+package tests;
+
+public class AlertGuruTest {
+
+	
+	@Test
+	public void getAlert(){
+		
+		
+	}
+}

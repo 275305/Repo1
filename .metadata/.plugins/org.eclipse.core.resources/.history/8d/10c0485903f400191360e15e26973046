@@ -1,0 +1,18 @@
+package pages;
+
+import org.apache.log4j.Logger;
+import org.openqa.selenium.WebDriver;
+
+public class AlertGuruPage {
+
+	WebDriver driver;
+	private static final Logger lOGGER = Logger.getLogger(AlertGuruPage.class.getName());
+	public AlertGuruPage(WebDriver driver) {
+		super();
+		this.driver = driver;
+	}
+
+	
+	
+	
+}
