@@ -1,9 +1,0 @@
-package com.interfac;
-
-public interface Employee {
-
-	Address addr=null;
-	public static void addressEmp(){
-		
-	}
-}

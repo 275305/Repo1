@@ -1,0 +1,12 @@
+package tests;
+
+public class HuskHomeTest {
+	
+	
+	@Test
+	public void homePageHusk(){
+		
+	}
+	
+
+}

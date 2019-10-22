@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="6650" started-at="2019-10-21T13:53:15Z" finished-at="2019-10-21T13:53:22Z">
+  <suite name="Default suite" duration-ms="8353" started-at="2019-10-22T11:44:31Z" finished-at="2019-10-22T11:44:39Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="6650" started-at="2019-10-21T13:53:15Z" finished-at="2019-10-21T13:53:22Z">
-      <class name="tests.AlertGuruTest">
-        <test-method status="PASS" signature="initBrowser()[pri:0, instance:tests.AlertGuruTest@4de8b406]" name="initBrowser" is-config="true" duration-ms="6009" started-at="2019-10-21T19:23:15Z" finished-at="2019-10-21T19:23:21Z">
+    <test name="Default test" duration-ms="8353" started-at="2019-10-22T11:44:31Z" finished-at="2019-10-22T11:44:39Z">
+      <class name="tests.HuskHomeTest">
+        <test-method status="PASS" signature="initBrowser()[pri:0, instance:tests.HuskHomeTest@4de8b406]" name="initBrowser" is-config="true" duration-ms="8311" started-at="2019-10-22T17:14:31Z" finished-at="2019-10-22T17:14:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initBrowser -->
-        <test-method status="PASS" signature="getCustomerIDGuru99Page()[pri:0, instance:tests.AlertGuruTest@4de8b406]" name="getCustomerIDGuru99Page" duration-ms="633" started-at="2019-10-21T19:23:21Z" finished-at="2019-10-21T19:23:22Z">
+        <test-method status="PASS" signature="homePageHusk()[pri:0, instance:tests.HuskHomeTest@4de8b406]" name="homePageHusk" duration-ms="31" started-at="2019-10-22T17:14:39Z" finished-at="2019-10-22T17:14:39Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getCustomerIDGuru99Page -->
-      </class> <!-- tests.AlertGuruTest -->
+        </test-method> <!-- homePageHusk -->
+      </class> <!-- tests.HuskHomeTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -36,10 +36,11 @@
 <fullyQualifiedTypeName name="org.testng.annotations.BeforeTest"/>
 <fullyQualifiedTypeName name="com.selenium.seleniumConcept.LaunchBrowser"/>
 <fullyQualifiedTypeName name="tests.ReusableTest"/>
-<fullyQualifiedTypeName name="util.ReusableActions"/>
 <fullyQualifiedTypeName name="pages.GmailLoginPage"/>
 <fullyQualifiedTypeName name="org.apache.log4j.Logger"/>
 <fullyQualifiedTypeName name="com.interfac.OverLoad"/>
 <fullyQualifiedTypeName name="com.interfac.OverRide"/>
 <fullyQualifiedTypeName name="org.openqa.selenium.support.FindBy"/>
+<fullyQualifiedTypeName name="util.ReusableActions"/>
+<fullyQualifiedTypeName name="org.apache.log4j.PropertyConfigurator"/>
 </qualifiedTypeNameHistroy>

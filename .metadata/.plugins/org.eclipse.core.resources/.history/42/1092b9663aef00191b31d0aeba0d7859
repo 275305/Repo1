@@ -1,8 +1,0 @@
-package com.interfac;
-
-public class Address implements Employee{
-
-	public void nameOfEmp(){
-		System.out.println("Pradeep Hyderabad");
-	}
-}

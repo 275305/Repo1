@@ -1,0 +1,20 @@
+package tests;
+
+import org.apache.log4j.Logger;
+import org.testng.annotations.Test;
+
+import pages.PropertyReader;
+import util.ReusableActions;
+
+public class HuskHomeTest extends ReusableActions {
+
+	PropertyReader reader = new PropertyReader();
+	private static final Logger lOGGER = Logger.getLogger(HuskHomeTest.class);
+
+	@Test(priority = 0, enabled = true)
+	public void homePageHusk() {
+		lOGGER.info("loggin page started");
+		System.out.println("login page started");
+	}
+
+}
