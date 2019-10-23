@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="8353" started-at="2019-10-22T11:44:31Z" finished-at="2019-10-22T11:44:39Z">
+  <suite name="Default suite" duration-ms="13072" started-at="2019-10-23T08:15:08Z" finished-at="2019-10-23T08:15:21Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="8353" started-at="2019-10-22T11:44:31Z" finished-at="2019-10-22T11:44:39Z">
+    <test name="Default test" duration-ms="13072" started-at="2019-10-23T08:15:08Z" finished-at="2019-10-23T08:15:21Z">
       <class name="tests.HuskHomeTest">
-        <test-method status="PASS" signature="initBrowser()[pri:0, instance:tests.HuskHomeTest@4de8b406]" name="initBrowser" is-config="true" duration-ms="8311" started-at="2019-10-22T17:14:31Z" finished-at="2019-10-22T17:14:39Z">
+        <test-method status="PASS" signature="initBrowser()[pri:0, instance:tests.HuskHomeTest@4de8b406]" name="initBrowser" is-config="true" duration-ms="6351" started-at="2019-10-23T13:45:08Z" finished-at="2019-10-23T13:45:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initBrowser -->
-        <test-method status="PASS" signature="homePageHusk()[pri:0, instance:tests.HuskHomeTest@4de8b406]" name="homePageHusk" duration-ms="31" started-at="2019-10-22T17:14:39Z" finished-at="2019-10-22T17:14:39Z">
+        <test-method status="PASS" signature="homePageHusk()[pri:0, instance:tests.HuskHomeTest@4de8b406]" name="homePageHusk" duration-ms="6692" started-at="2019-10-23T13:45:14Z" finished-at="2019-10-23T13:45:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- homePageHusk -->

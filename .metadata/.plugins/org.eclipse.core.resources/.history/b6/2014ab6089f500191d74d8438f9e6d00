@@ -1,0 +1,48 @@
+package com.huskpower.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class HuskHomePage {
+
+	WebDriver driver;
+
+	public HuskHomePage(WebDriver driver) {
+		super();
+		this.driver = driver;
+	}
+
+	/* x-path for DashBoard */
+	@FindBy(xpath = "//span[contains(text(),'Dashboard')]")
+	static WebElement dashBoardTab;
+
+	/* x-path for global plants for dashboard */
+	@FindBy(xpath = "//div[contains(text(),'Global Plants')]")
+	static WebElement globalPlantsDropDownDashboard;
+
+	/* x-path for India dropDown in Global plants at dashboard */
+	@FindBy(xpath = "//a[@role='option']//span[contains(text(),'India')]")
+	static WebElement indiaDropDownGlobalPlantDashboard;
+	
+	/*x-path for Bihar Tab at dashBoard*/
+	@FindBy(xpath="//div[@id='plants-grid']//span[contains(text(),'Bihar')]")
+	static WebElement biharTabDashBoard;
+
+	/* method for Dashboard */
+	public static void dashBoardTab() {
+		dashBoardTab.click();
+	}
+
+	/* method for globalPlantsDropDown at Dashboard */
+	public static void globalPlantsDropDownDashBoard() throws Exception {
+		globalPlantsDropDownDashboard.click();
+		Thread.sleep(2000);
+	}
+
+	/* method for India DropDown at Dashboard */
+	public static void indiaDropDownGlobalPlantDashboard() throws InterruptedException {
+		indiaDropDownGlobalPlantDashboard.click();
+		Thread.sleep(4000);
+	}
+}

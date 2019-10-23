@@ -1,0 +1,30 @@
+package pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class HuskHomePage {
+
+	WebDriver driver;
+
+	public HuskHomePage(WebDriver driver) {
+		super();
+		this.driver = driver;
+	}
+     /*X-path for DashBoard*/
+	@FindBy(xpath = "//span[contains(text(),'Dashboard')]")
+	static WebElement dashBoardTab;
+	
+	@FindBy(xpath="//div[contains(text(),'Global Plants')]")
+	static WebElement globalPlantsDropDownDashboard;
+	
+	public static void dashBoardTab() {
+		dashBoardTab.click();
+	}
+	
+	public static void globalPlantsDropDownDashBoard(){
+	globalPlantsDropDownDashboard.click();	
+	}
+
+}

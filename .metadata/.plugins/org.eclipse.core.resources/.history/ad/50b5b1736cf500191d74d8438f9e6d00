@@ -1,0 +1,41 @@
+package pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class HuskHomePage {
+
+	WebDriver driver;
+
+	public HuskHomePage(WebDriver driver) {
+		super();
+		this.driver = driver;
+	}
+
+	/* x-path for DashBoard */
+	@FindBy(xpath = "//span[contains(text(),'Dashboard')]")
+	static WebElement dashBoardTab;
+
+	/* x-path for global plants for dashboard */
+	@FindBy(xpath = "//div[contains(text(),'Global Plants')]")
+	static WebElement globalPlantsDropDownDashboard;
+
+	/* x-path for India dropDown in Global plants at dashboard */
+	@FindBy(xpath = "//a[@role='option']//span[contains(text(),'India')]")
+	static WebElement indiaDropDownGlobalPlantDashboard;
+
+	/* method for Dashboard */
+	public static void dashBoardTab() {
+		dashBoardTab.click();
+	}
+
+	/* method for globalPlantsDropDownatDashboard */
+	public static void globalPlantsDropDownDashBoard() {
+		globalPlantsDropDownDashboard.click();
+	}
+
+	public static void indiaDropDownGlobalPlantDashboard() {
+
+	}
+}

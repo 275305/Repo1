@@ -97,3 +97,1279 @@ java -ea -javaagent:C:\Users\Monocept\.m2\repository/org/aspectj/aspectjweaver/1
   Class:     org.testng.remote.RemoteTestNG
   Args:      -serport 51963 -d C:\E\Pradeep\CoreJavaPractice\seleniumConcept\test-output C:\Users\Monocept\AppData\Local\Temp\testng-eclipse--1923543337\testng-customsuite.xml
 java -ea -javaagent:C:\Users\Monocept\.m2\repository/org/aspectj/aspectjweaver/1.8.6/aspectjweaver-1.8.6.jar -classpath C:\Users\Monocept\Downloads\eclipse\eclipse\plugins\org.testng.eclipse_6.9.10.201512240000\lib\testng-remote.jar:C:\E\Pradeep\CoreJavaPractice\seleniumConcept\target\test-classes:C:\E\Pradeep\CoreJavaPractice\seleniumConcept\target\classes:C:\Users\Monocept\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar:C:\Users\Monocept\.m2\repository\org\testng\testng\6.8\testng-6.8.jar:C:\Users\Monocept\.m2\repository\org\beanshell\bsh\2.0b4\bsh-2.0b4.jar:C:\Users\Monocept\.m2\repository\com\beust\jcommander\1.27\jcommander-1.27.jar:C:\Users\Monocept\.m2\repository\org\yaml\snakeyaml\1.6\snakeyaml-1.6.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-java\2.41.0\selenium-java-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\2.41.0\selenium-chrome-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\2.41.0\selenium-remote-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\cglib\cglib-nodep\2.1_3\cglib-nodep-2.1_3.jar:C:\Users\Monocept\.m2\repository\org\json\json\20080701\json-20080701.jar:C:\Users\Monocept\.m2\repository\com\google\guava\guava\15.0\guava-15.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-htmlunit-driver\2.41.0\selenium-htmlunit-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\net\sourceforge\htmlunit\htmlunit\2.13\htmlunit-2.13.jar:C:\Users\Monocept\.m2\repository\xalan\xalan\2.7.1\xalan-2.7.1.jar:C:\Users\Monocept\.m2\repository\xalan\serializer\2.7.1\serializer-2.7.1.jar:C:\Users\Monocept\.m2\repository\commons-collections\commons-collections\3.2.1\commons-collections-3.2.1.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-lang3\3.1\commons-lang3-3.1.jar:C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpmime\4.3.1\httpmime-4.3.1.jar:C:\Users\Monocept\.m2\repository\net\sourceforge\htmlunit\htmlunit-core-js\2.13\htmlunit-core-js-2.13.jar:C:\Users\Monocept\.m2\repository\xerces\xercesImpl\2.11.0\xercesImpl-2.11.0.jar:C:\Users\Monocept\.m2\repository\xml-apis\xml-apis\1.4.01\xml-apis-1.4.01.jar:C:\Users\Monocept\.m2\repository\net\sourceforge\nekohtml\nekohtml\1.9.19\nekohtml-1.9.19.jar:C:\Users\Monocept\.m2\repository\net\sourceforge\cssparser\cssparser\0.9.11\cssparser-0.9.11.jar:C:\Users\Monocept\.m2\repository\org\w3c\css\sac\1.3\sac-1.3.jar:C:\Users\Monocept\.m2\repository\commons-logging\commons-logging\1.1.3\commons-logging-1.1.3.jar:C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-websocket\8.1.12.v20130726\jetty-websocket-8.1.12.v20130726.jar:C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-util\8.1.12.v20130726\jetty-util-8.1.12.v20130726.jar:C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-io\8.1.12.v20130726\jetty-io-8.1.12.v20130726.jar:C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-http\8.1.12.v20130726\jetty-http-8.1.12.v20130726.jar:C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpclient\4.3.1\httpclient-4.3.1.jar:C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpcore\4.3\httpcore-4.3.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\2.41.0\selenium-firefox-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\commons-io\commons-io\2.2\commons-io-2.2.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-exec\1.1\commons-exec-1.1.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\2.41.0\selenium-ie-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\net\java\dev\jna\jna\3.4.0\jna-3.4.0.jar:C:\Users\Monocept\.m2\repository\net\java\dev\jna\platform\3.4.0\platform-3.4.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\2.41.0\selenium-safari-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-support\2.41.0\selenium-support-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-api\2.41.0\selenium-api-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\webbitserver\webbit\0.4.14\webbit-0.4.14.jar:C:\Users\Monocept\.m2\repository\io\netty\netty\3.5.2.Final\netty-3.5.2.Final.jar:C:\Users\Monocept\.m2\repository\org\apache\poi\poi\4.1.0\poi-4.1.0.jar:C:\Users\Monocept\.m2\repository\commons-codec\commons-codec\1.12\commons-codec-1.12.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-collections4\4.3\commons-collections4-4.3.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar:C:\Users\Monocept\.m2\repository\org\apache\poi\poi-ooxml\4.1.0\poi-ooxml-4.1.0.jar:C:\Users\Monocept\.m2\repository\org\apache\poi\poi-ooxml-schemas\4.1.0\poi-ooxml-schemas-4.1.0.jar:C:\Users\Monocept\.m2\repository\org\apache\xmlbeans\xmlbeans\3.1.0\xmlbeans-3.1.0.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-compress\1.18\commons-compress-1.18.jar:C:\Users\Monocept\.m2\repository\com\github\virtuald\curvesapi\1.06\curvesapi-1.06.jar:C:\Users\Monocept\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar:C:\Users\Monocept\.m2\repository\org\aspectj\aspectjweaver\1.8.6\aspectjweaver-1.8.6.jar org.testng.remote.RemoteTestNG -serport 51963 -d C:\E\Pradeep\CoreJavaPractice\seleniumConcept\test-output C:\Users\Monocept\AppData\Local\Temp\testng-eclipse--1923543337\testng-customsuite.xml
+!SESSION 2019-10-23 13:04:14.816 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_221
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2019-10-23 13:04:44.360
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Monocept'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2019-10-23 13:04:46.863
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-10-23 13:14:08.513
+!MESSAGE Failed to download org.eclipse.recommenders:index::zip:0.0.0
+!STACK 0
+org.eclipse.aether.resolution.ArtifactResolutionException: Could not find artifact org.eclipse.recommenders:index:zip:0.0.0-SNAPSHOT in models (http://download.eclipse.org/recommenders/models/mars/)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:444)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:246)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:223)
+	at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:294)
+	at org.eclipse.recommenders.models.ModelRepository.resolveInternal(ModelRepository.java:192)
+	at org.eclipse.recommenders.models.ModelRepository.resolve(ModelRepository.java:174)
+	at org.eclipse.recommenders.internal.models.rcp.EclipseModelRepository.resolve(EclipseModelRepository.java:165)
+	at org.eclipse.recommenders.internal.models.rcp.DownloadModelArchiveJob.run(DownloadModelArchiveJob.java:76)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Could not find artifact org.eclipse.recommenders:index:zip:0.0.0-SNAPSHOT in models (http://download.eclipse.org/recommenders/models/mars/)
+	at org.eclipse.aether.connector.basic.ArtifactTransportListener.transferFailed(ArtifactTransportListener.java:39)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run(BasicRepositoryConnector.java:355)
+	at org.eclipse.aether.util.concurrency.RunnableErrorForwarder$1.run(RunnableErrorForwarder.java:67)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector$DirectExecutor.execute(BasicRepositoryConnector.java:581)
+	at org.eclipse.aether.connector.basic.BasicRepositoryConnector.get(BasicRepositoryConnector.java:249)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads(DefaultArtifactResolver.java:520)
+	at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:421)
+	... 8 more
+
+!ENTRY org.eclipse.recommenders.models.rcp 1 0 2019-10-23 13:14:08.524
+!MESSAGE org.eclipse.recommenders:index::zip:0.0.0 could not be resolved from the model repositories. Are you offline?
+
+!ENTRY org.testng.eclipse 1 0 2019-10-23 13:30:34.204
+!MESSAGE [TestNGLaunchConfigurationDelegate] Launching:
+  Classpath: C:\Users\Monocept\Downloads\eclipse\eclipse\plugins\org.testng.eclipse_6.9.10.201512240000\lib\testng-remote.jar C:\E\Pradeep\CoreJavaPractice\seleniumConcept\target\test-classes C:\E\Pradeep\CoreJavaPractice\seleniumConcept\target\classes C:\Users\Monocept\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar C:\Users\Monocept\.m2\repository\org\testng\testng\6.8\testng-6.8.jar C:\Users\Monocept\.m2\repository\org\beanshell\bsh\2.0b4\bsh-2.0b4.jar C:\Users\Monocept\.m2\repository\com\beust\jcommander\1.27\jcommander-1.27.jar C:\Users\Monocept\.m2\repository\org\yaml\snakeyaml\1.6\snakeyaml-1.6.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-java\2.41.0\selenium-java-2.41.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\2.41.0\selenium-chrome-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\2.41.0\selenium-remote-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\cglib\cglib-nodep\2.1_3\cglib-nodep-2.1_3.jar C:\Users\Monocept\.m2\repository\org\json\json\20080701\json-20080701.jar C:\Users\Monocept\.m2\repository\com\google\guava\guava\15.0\guava-15.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-htmlunit-driver\2.41.0\selenium-htmlunit-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\net\sourceforge\htmlunit\htmlunit\2.13\htmlunit-2.13.jar C:\Users\Monocept\.m2\repository\xalan\xalan\2.7.1\xalan-2.7.1.jar C:\Users\Monocept\.m2\repository\xalan\serializer\2.7.1\serializer-2.7.1.jar C:\Users\Monocept\.m2\repository\commons-collections\commons-collections\3.2.1\commons-collections-3.2.1.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-lang3\3.1\commons-lang3-3.1.jar C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpmime\4.3.1\httpmime-4.3.1.jar C:\Users\Monocept\.m2\repository\net\sourceforge\htmlunit\htmlunit-core-js\2.13\htmlunit-core-js-2.13.jar C:\Users\Monocept\.m2\repository\xerces\xercesImpl\2.11.0\xercesImpl-2.11.0.jar C:\Users\Monocept\.m2\repository\xml-apis\xml-apis\1.4.01\xml-apis-1.4.01.jar C:\Users\Monocept\.m2\repository\net\sourceforge\nekohtml\nekohtml\1.9.19\nekohtml-1.9.19.jar C:\Users\Monocept\.m2\repository\net\sourceforge\cssparser\cssparser\0.9.11\cssparser-0.9.11.jar C:\Users\Monocept\.m2\repository\org\w3c\css\sac\1.3\sac-1.3.jar C:\Users\Monocept\.m2\repository\commons-logging\commons-logging\1.1.3\commons-logging-1.1.3.jar C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-websocket\8.1.12.v20130726\jetty-websocket-8.1.12.v20130726.jar C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-util\8.1.12.v20130726\jetty-util-8.1.12.v20130726.jar C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-io\8.1.12.v20130726\jetty-io-8.1.12.v20130726.jar C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-http\8.1.12.v20130726\jetty-http-8.1.12.v20130726.jar C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpclient\4.3.1\httpclient-4.3.1.jar C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpcore\4.3\httpcore-4.3.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\2.41.0\selenium-firefox-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\commons-io\commons-io\2.2\commons-io-2.2.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-exec\1.1\commons-exec-1.1.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\2.41.0\selenium-ie-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\net\java\dev\jna\jna\3.4.0\jna-3.4.0.jar C:\Users\Monocept\.m2\repository\net\java\dev\jna\platform\3.4.0\platform-3.4.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\2.41.0\selenium-safari-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-support\2.41.0\selenium-support-2.41.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-api\2.41.0\selenium-api-2.41.0.jar C:\Users\Monocept\.m2\repository\org\webbitserver\webbit\0.4.14\webbit-0.4.14.jar C:\Users\Monocept\.m2\repository\io\netty\netty\3.5.2.Final\netty-3.5.2.Final.jar C:\Users\Monocept\.m2\repository\org\apache\poi\poi\4.1.0\poi-4.1.0.jar C:\Users\Monocept\.m2\repository\commons-codec\commons-codec\1.12\commons-codec-1.12.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-collections4\4.3\commons-collections4-4.3.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar C:\Users\Monocept\.m2\repository\org\apache\poi\poi-ooxml\4.1.0\poi-ooxml-4.1.0.jar C:\Users\Monocept\.m2\repository\org\apache\poi\poi-ooxml-schemas\4.1.0\poi-ooxml-schemas-4.1.0.jar C:\Users\Monocept\.m2\repository\org\apache\xmlbeans\xmlbeans\3.1.0\xmlbeans-3.1.0.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-compress\1.18\commons-compress-1.18.jar C:\Users\Monocept\.m2\repository\com\github\virtuald\curvesapi\1.06\curvesapi-1.06.jar C:\Users\Monocept\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar C:\Users\Monocept\.m2\repository\org\aspectj\aspectjweaver\1.8.6\aspectjweaver-1.8.6.jar
+  VMArgs:    -ea -javaagent:C:\Users\Monocept\.m2\repository/org/aspectj/aspectjweaver/1.8.6/aspectjweaver-1.8.6.jar
+  Class:     org.testng.remote.RemoteTestNG
+  Args:      -serport 53710 -d C:\E\Pradeep\CoreJavaPractice\seleniumConcept\test-output C:\Users\Monocept\AppData\Local\Temp\testng-eclipse-897760556\testng-customsuite.xml
+java -ea -javaagent:C:\Users\Monocept\.m2\repository/org/aspectj/aspectjweaver/1.8.6/aspectjweaver-1.8.6.jar -classpath C:\Users\Monocept\Downloads\eclipse\eclipse\plugins\org.testng.eclipse_6.9.10.201512240000\lib\testng-remote.jar:C:\E\Pradeep\CoreJavaPractice\seleniumConcept\target\test-classes:C:\E\Pradeep\CoreJavaPractice\seleniumConcept\target\classes:C:\Users\Monocept\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar:C:\Users\Monocept\.m2\repository\org\testng\testng\6.8\testng-6.8.jar:C:\Users\Monocept\.m2\repository\org\beanshell\bsh\2.0b4\bsh-2.0b4.jar:C:\Users\Monocept\.m2\repository\com\beust\jcommander\1.27\jcommander-1.27.jar:C:\Users\Monocept\.m2\repository\org\yaml\snakeyaml\1.6\snakeyaml-1.6.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-java\2.41.0\selenium-java-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\2.41.0\selenium-chrome-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\2.41.0\selenium-remote-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\cglib\cglib-nodep\2.1_3\cglib-nodep-2.1_3.jar:C:\Users\Monocept\.m2\repository\org\json\json\20080701\json-20080701.jar:C:\Users\Monocept\.m2\repository\com\google\guava\guava\15.0\guava-15.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-htmlunit-driver\2.41.0\selenium-htmlunit-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\net\sourceforge\htmlunit\htmlunit\2.13\htmlunit-2.13.jar:C:\Users\Monocept\.m2\repository\xalan\xalan\2.7.1\xalan-2.7.1.jar:C:\Users\Monocept\.m2\repository\xalan\serializer\2.7.1\serializer-2.7.1.jar:C:\Users\Monocept\.m2\repository\commons-collections\commons-collections\3.2.1\commons-collections-3.2.1.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-lang3\3.1\commons-lang3-3.1.jar:C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpmime\4.3.1\httpmime-4.3.1.jar:C:\Users\Monocept\.m2\repository\net\sourceforge\htmlunit\htmlunit-core-js\2.13\htmlunit-core-js-2.13.jar:C:\Users\Monocept\.m2\repository\xerces\xercesImpl\2.11.0\xercesImpl-2.11.0.jar:C:\Users\Monocept\.m2\repository\xml-apis\xml-apis\1.4.01\xml-apis-1.4.01.jar:C:\Users\Monocept\.m2\repository\net\sourceforge\nekohtml\nekohtml\1.9.19\nekohtml-1.9.19.jar:C:\Users\Monocept\.m2\repository\net\sourceforge\cssparser\cssparser\0.9.11\cssparser-0.9.11.jar:C:\Users\Monocept\.m2\repository\org\w3c\css\sac\1.3\sac-1.3.jar:C:\Users\Monocept\.m2\repository\commons-logging\commons-logging\1.1.3\commons-logging-1.1.3.jar:C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-websocket\8.1.12.v20130726\jetty-websocket-8.1.12.v20130726.jar:C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-util\8.1.12.v20130726\jetty-util-8.1.12.v20130726.jar:C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-io\8.1.12.v20130726\jetty-io-8.1.12.v20130726.jar:C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-http\8.1.12.v20130726\jetty-http-8.1.12.v20130726.jar:C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpclient\4.3.1\httpclient-4.3.1.jar:C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpcore\4.3\httpcore-4.3.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\2.41.0\selenium-firefox-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\commons-io\commons-io\2.2\commons-io-2.2.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-exec\1.1\commons-exec-1.1.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\2.41.0\selenium-ie-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\net\java\dev\jna\jna\3.4.0\jna-3.4.0.jar:C:\Users\Monocept\.m2\repository\net\java\dev\jna\platform\3.4.0\platform-3.4.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\2.41.0\selenium-safari-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-support\2.41.0\selenium-support-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-api\2.41.0\selenium-api-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\webbitserver\webbit\0.4.14\webbit-0.4.14.jar:C:\Users\Monocept\.m2\repository\io\netty\netty\3.5.2.Final\netty-3.5.2.Final.jar:C:\Users\Monocept\.m2\repository\org\apache\poi\poi\4.1.0\poi-4.1.0.jar:C:\Users\Monocept\.m2\repository\commons-codec\commons-codec\1.12\commons-codec-1.12.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-collections4\4.3\commons-collections4-4.3.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar:C:\Users\Monocept\.m2\repository\org\apache\poi\poi-ooxml\4.1.0\poi-ooxml-4.1.0.jar:C:\Users\Monocept\.m2\repository\org\apache\poi\poi-ooxml-schemas\4.1.0\poi-ooxml-schemas-4.1.0.jar:C:\Users\Monocept\.m2\repository\org\apache\xmlbeans\xmlbeans\3.1.0\xmlbeans-3.1.0.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-compress\1.18\commons-compress-1.18.jar:C:\Users\Monocept\.m2\repository\com\github\virtuald\curvesapi\1.06\curvesapi-1.06.jar:C:\Users\Monocept\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar:C:\Users\Monocept\.m2\repository\org\aspectj\aspectjweaver\1.8.6\aspectjweaver-1.8.6.jar org.testng.remote.RemoteTestNG -serport 53710 -d C:\E\Pradeep\CoreJavaPractice\seleniumConcept\test-output C:\Users\Monocept\AppData\Local\Temp\testng-eclipse-897760556\testng-customsuite.xml
+
+!ENTRY org.testng.eclipse 1 0 2019-10-23 13:32:15.842
+!MESSAGE [TestNGLaunchConfigurationDelegate] Launching:
+  Classpath: C:\Users\Monocept\Downloads\eclipse\eclipse\plugins\org.testng.eclipse_6.9.10.201512240000\lib\testng-remote.jar C:\E\Pradeep\CoreJavaPractice\seleniumConcept\target\test-classes C:\E\Pradeep\CoreJavaPractice\seleniumConcept\target\classes C:\Users\Monocept\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar C:\Users\Monocept\.m2\repository\org\testng\testng\6.8\testng-6.8.jar C:\Users\Monocept\.m2\repository\org\beanshell\bsh\2.0b4\bsh-2.0b4.jar C:\Users\Monocept\.m2\repository\com\beust\jcommander\1.27\jcommander-1.27.jar C:\Users\Monocept\.m2\repository\org\yaml\snakeyaml\1.6\snakeyaml-1.6.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-java\2.41.0\selenium-java-2.41.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\2.41.0\selenium-chrome-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\2.41.0\selenium-remote-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\cglib\cglib-nodep\2.1_3\cglib-nodep-2.1_3.jar C:\Users\Monocept\.m2\repository\org\json\json\20080701\json-20080701.jar C:\Users\Monocept\.m2\repository\com\google\guava\guava\15.0\guava-15.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-htmlunit-driver\2.41.0\selenium-htmlunit-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\net\sourceforge\htmlunit\htmlunit\2.13\htmlunit-2.13.jar C:\Users\Monocept\.m2\repository\xalan\xalan\2.7.1\xalan-2.7.1.jar C:\Users\Monocept\.m2\repository\xalan\serializer\2.7.1\serializer-2.7.1.jar C:\Users\Monocept\.m2\repository\commons-collections\commons-collections\3.2.1\commons-collections-3.2.1.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-lang3\3.1\commons-lang3-3.1.jar C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpmime\4.3.1\httpmime-4.3.1.jar C:\Users\Monocept\.m2\repository\net\sourceforge\htmlunit\htmlunit-core-js\2.13\htmlunit-core-js-2.13.jar C:\Users\Monocept\.m2\repository\xerces\xercesImpl\2.11.0\xercesImpl-2.11.0.jar C:\Users\Monocept\.m2\repository\xml-apis\xml-apis\1.4.01\xml-apis-1.4.01.jar C:\Users\Monocept\.m2\repository\net\sourceforge\nekohtml\nekohtml\1.9.19\nekohtml-1.9.19.jar C:\Users\Monocept\.m2\repository\net\sourceforge\cssparser\cssparser\0.9.11\cssparser-0.9.11.jar C:\Users\Monocept\.m2\repository\org\w3c\css\sac\1.3\sac-1.3.jar C:\Users\Monocept\.m2\repository\commons-logging\commons-logging\1.1.3\commons-logging-1.1.3.jar C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-websocket\8.1.12.v20130726\jetty-websocket-8.1.12.v20130726.jar C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-util\8.1.12.v20130726\jetty-util-8.1.12.v20130726.jar C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-io\8.1.12.v20130726\jetty-io-8.1.12.v20130726.jar C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-http\8.1.12.v20130726\jetty-http-8.1.12.v20130726.jar C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpclient\4.3.1\httpclient-4.3.1.jar C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpcore\4.3\httpcore-4.3.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\2.41.0\selenium-firefox-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\commons-io\commons-io\2.2\commons-io-2.2.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-exec\1.1\commons-exec-1.1.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\2.41.0\selenium-ie-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\net\java\dev\jna\jna\3.4.0\jna-3.4.0.jar C:\Users\Monocept\.m2\repository\net\java\dev\jna\platform\3.4.0\platform-3.4.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\2.41.0\selenium-safari-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-support\2.41.0\selenium-support-2.41.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-api\2.41.0\selenium-api-2.41.0.jar C:\Users\Monocept\.m2\repository\org\webbitserver\webbit\0.4.14\webbit-0.4.14.jar C:\Users\Monocept\.m2\repository\io\netty\netty\3.5.2.Final\netty-3.5.2.Final.jar C:\Users\Monocept\.m2\repository\org\apache\poi\poi\4.1.0\poi-4.1.0.jar C:\Users\Monocept\.m2\repository\commons-codec\commons-codec\1.12\commons-codec-1.12.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-collections4\4.3\commons-collections4-4.3.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar C:\Users\Monocept\.m2\repository\org\apache\poi\poi-ooxml\4.1.0\poi-ooxml-4.1.0.jar C:\Users\Monocept\.m2\repository\org\apache\poi\poi-ooxml-schemas\4.1.0\poi-ooxml-schemas-4.1.0.jar C:\Users\Monocept\.m2\repository\org\apache\xmlbeans\xmlbeans\3.1.0\xmlbeans-3.1.0.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-compress\1.18\commons-compress-1.18.jar C:\Users\Monocept\.m2\repository\com\github\virtuald\curvesapi\1.06\curvesapi-1.06.jar C:\Users\Monocept\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar C:\Users\Monocept\.m2\repository\org\aspectj\aspectjweaver\1.8.6\aspectjweaver-1.8.6.jar
+  VMArgs:    -ea -javaagent:C:\Users\Monocept\.m2\repository/org/aspectj/aspectjweaver/1.8.6/aspectjweaver-1.8.6.jar
+  Class:     org.testng.remote.RemoteTestNG
+  Args:      -serport 53828 -d C:\E\Pradeep\CoreJavaPractice\seleniumConcept\test-output C:\Users\Monocept\AppData\Local\Temp\testng-eclipse-1982168492\testng-customsuite.xml
+java -ea -javaagent:C:\Users\Monocept\.m2\repository/org/aspectj/aspectjweaver/1.8.6/aspectjweaver-1.8.6.jar -classpath C:\Users\Monocept\Downloads\eclipse\eclipse\plugins\org.testng.eclipse_6.9.10.201512240000\lib\testng-remote.jar:C:\E\Pradeep\CoreJavaPractice\seleniumConcept\target\test-classes:C:\E\Pradeep\CoreJavaPractice\seleniumConcept\target\classes:C:\Users\Monocept\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar:C:\Users\Monocept\.m2\repository\org\testng\testng\6.8\testng-6.8.jar:C:\Users\Monocept\.m2\repository\org\beanshell\bsh\2.0b4\bsh-2.0b4.jar:C:\Users\Monocept\.m2\repository\com\beust\jcommander\1.27\jcommander-1.27.jar:C:\Users\Monocept\.m2\repository\org\yaml\snakeyaml\1.6\snakeyaml-1.6.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-java\2.41.0\selenium-java-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\2.41.0\selenium-chrome-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\2.41.0\selenium-remote-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\cglib\cglib-nodep\2.1_3\cglib-nodep-2.1_3.jar:C:\Users\Monocept\.m2\repository\org\json\json\20080701\json-20080701.jar:C:\Users\Monocept\.m2\repository\com\google\guava\guava\15.0\guava-15.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-htmlunit-driver\2.41.0\selenium-htmlunit-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\net\sourceforge\htmlunit\htmlunit\2.13\htmlunit-2.13.jar:C:\Users\Monocept\.m2\repository\xalan\xalan\2.7.1\xalan-2.7.1.jar:C:\Users\Monocept\.m2\repository\xalan\serializer\2.7.1\serializer-2.7.1.jar:C:\Users\Monocept\.m2\repository\commons-collections\commons-collections\3.2.1\commons-collections-3.2.1.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-lang3\3.1\commons-lang3-3.1.jar:C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpmime\4.3.1\httpmime-4.3.1.jar:C:\Users\Monocept\.m2\repository\net\sourceforge\htmlunit\htmlunit-core-js\2.13\htmlunit-core-js-2.13.jar:C:\Users\Monocept\.m2\repository\xerces\xercesImpl\2.11.0\xercesImpl-2.11.0.jar:C:\Users\Monocept\.m2\repository\xml-apis\xml-apis\1.4.01\xml-apis-1.4.01.jar:C:\Users\Monocept\.m2\repository\net\sourceforge\nekohtml\nekohtml\1.9.19\nekohtml-1.9.19.jar:C:\Users\Monocept\.m2\repository\net\sourceforge\cssparser\cssparser\0.9.11\cssparser-0.9.11.jar:C:\Users\Monocept\.m2\repository\org\w3c\css\sac\1.3\sac-1.3.jar:C:\Users\Monocept\.m2\repository\commons-logging\commons-logging\1.1.3\commons-logging-1.1.3.jar:C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-websocket\8.1.12.v20130726\jetty-websocket-8.1.12.v20130726.jar:C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-util\8.1.12.v20130726\jetty-util-8.1.12.v20130726.jar:C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-io\8.1.12.v20130726\jetty-io-8.1.12.v20130726.jar:C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-http\8.1.12.v20130726\jetty-http-8.1.12.v20130726.jar:C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpclient\4.3.1\httpclient-4.3.1.jar:C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpcore\4.3\httpcore-4.3.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\2.41.0\selenium-firefox-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\commons-io\commons-io\2.2\commons-io-2.2.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-exec\1.1\commons-exec-1.1.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\2.41.0\selenium-ie-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\net\java\dev\jna\jna\3.4.0\jna-3.4.0.jar:C:\Users\Monocept\.m2\repository\net\java\dev\jna\platform\3.4.0\platform-3.4.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\2.41.0\selenium-safari-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-support\2.41.0\selenium-support-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-api\2.41.0\selenium-api-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\webbitserver\webbit\0.4.14\webbit-0.4.14.jar:C:\Users\Monocept\.m2\repository\io\netty\netty\3.5.2.Final\netty-3.5.2.Final.jar:C:\Users\Monocept\.m2\repository\org\apache\poi\poi\4.1.0\poi-4.1.0.jar:C:\Users\Monocept\.m2\repository\commons-codec\commons-codec\1.12\commons-codec-1.12.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-collections4\4.3\commons-collections4-4.3.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar:C:\Users\Monocept\.m2\repository\org\apache\poi\poi-ooxml\4.1.0\poi-ooxml-4.1.0.jar:C:\Users\Monocept\.m2\repository\org\apache\poi\poi-ooxml-schemas\4.1.0\poi-ooxml-schemas-4.1.0.jar:C:\Users\Monocept\.m2\repository\org\apache\xmlbeans\xmlbeans\3.1.0\xmlbeans-3.1.0.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-compress\1.18\commons-compress-1.18.jar:C:\Users\Monocept\.m2\repository\com\github\virtuald\curvesapi\1.06\curvesapi-1.06.jar:C:\Users\Monocept\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar:C:\Users\Monocept\.m2\repository\org\aspectj\aspectjweaver\1.8.6\aspectjweaver-1.8.6.jar org.testng.remote.RemoteTestNG -serport 53828 -d C:\E\Pradeep\CoreJavaPractice\seleniumConcept\test-output C:\Users\Monocept\AppData\Local\Temp\testng-eclipse-1982168492\testng-customsuite.xml
+
+!ENTRY org.testng.eclipse 1 0 2019-10-23 13:41:54.803
+!MESSAGE [TestNGLaunchConfigurationDelegate] Launching:
+  Classpath: C:\Users\Monocept\Downloads\eclipse\eclipse\plugins\org.testng.eclipse_6.9.10.201512240000\lib\testng-remote.jar C:\E\Pradeep\CoreJavaPractice\seleniumConcept\target\test-classes C:\E\Pradeep\CoreJavaPractice\seleniumConcept\target\classes C:\Users\Monocept\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar C:\Users\Monocept\.m2\repository\org\testng\testng\6.8\testng-6.8.jar C:\Users\Monocept\.m2\repository\org\beanshell\bsh\2.0b4\bsh-2.0b4.jar C:\Users\Monocept\.m2\repository\com\beust\jcommander\1.27\jcommander-1.27.jar C:\Users\Monocept\.m2\repository\org\yaml\snakeyaml\1.6\snakeyaml-1.6.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-java\2.41.0\selenium-java-2.41.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\2.41.0\selenium-chrome-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\2.41.0\selenium-remote-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\cglib\cglib-nodep\2.1_3\cglib-nodep-2.1_3.jar C:\Users\Monocept\.m2\repository\org\json\json\20080701\json-20080701.jar C:\Users\Monocept\.m2\repository\com\google\guava\guava\15.0\guava-15.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-htmlunit-driver\2.41.0\selenium-htmlunit-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\net\sourceforge\htmlunit\htmlunit\2.13\htmlunit-2.13.jar C:\Users\Monocept\.m2\repository\xalan\xalan\2.7.1\xalan-2.7.1.jar C:\Users\Monocept\.m2\repository\xalan\serializer\2.7.1\serializer-2.7.1.jar C:\Users\Monocept\.m2\repository\commons-collections\commons-collections\3.2.1\commons-collections-3.2.1.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-lang3\3.1\commons-lang3-3.1.jar C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpmime\4.3.1\httpmime-4.3.1.jar C:\Users\Monocept\.m2\repository\net\sourceforge\htmlunit\htmlunit-core-js\2.13\htmlunit-core-js-2.13.jar C:\Users\Monocept\.m2\repository\xerces\xercesImpl\2.11.0\xercesImpl-2.11.0.jar C:\Users\Monocept\.m2\repository\xml-apis\xml-apis\1.4.01\xml-apis-1.4.01.jar C:\Users\Monocept\.m2\repository\net\sourceforge\nekohtml\nekohtml\1.9.19\nekohtml-1.9.19.jar C:\Users\Monocept\.m2\repository\net\sourceforge\cssparser\cssparser\0.9.11\cssparser-0.9.11.jar C:\Users\Monocept\.m2\repository\org\w3c\css\sac\1.3\sac-1.3.jar C:\Users\Monocept\.m2\repository\commons-logging\commons-logging\1.1.3\commons-logging-1.1.3.jar C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-websocket\8.1.12.v20130726\jetty-websocket-8.1.12.v20130726.jar C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-util\8.1.12.v20130726\jetty-util-8.1.12.v20130726.jar C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-io\8.1.12.v20130726\jetty-io-8.1.12.v20130726.jar C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-http\8.1.12.v20130726\jetty-http-8.1.12.v20130726.jar C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpclient\4.3.1\httpclient-4.3.1.jar C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpcore\4.3\httpcore-4.3.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\2.41.0\selenium-firefox-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\commons-io\commons-io\2.2\commons-io-2.2.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-exec\1.1\commons-exec-1.1.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\2.41.0\selenium-ie-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\net\java\dev\jna\jna\3.4.0\jna-3.4.0.jar C:\Users\Monocept\.m2\repository\net\java\dev\jna\platform\3.4.0\platform-3.4.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\2.41.0\selenium-safari-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-support\2.41.0\selenium-support-2.41.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-api\2.41.0\selenium-api-2.41.0.jar C:\Users\Monocept\.m2\repository\org\webbitserver\webbit\0.4.14\webbit-0.4.14.jar C:\Users\Monocept\.m2\repository\io\netty\netty\3.5.2.Final\netty-3.5.2.Final.jar C:\Users\Monocept\.m2\repository\org\apache\poi\poi\4.1.0\poi-4.1.0.jar C:\Users\Monocept\.m2\repository\commons-codec\commons-codec\1.12\commons-codec-1.12.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-collections4\4.3\commons-collections4-4.3.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar C:\Users\Monocept\.m2\repository\org\apache\poi\poi-ooxml\4.1.0\poi-ooxml-4.1.0.jar C:\Users\Monocept\.m2\repository\org\apache\poi\poi-ooxml-schemas\4.1.0\poi-ooxml-schemas-4.1.0.jar C:\Users\Monocept\.m2\repository\org\apache\xmlbeans\xmlbeans\3.1.0\xmlbeans-3.1.0.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-compress\1.18\commons-compress-1.18.jar C:\Users\Monocept\.m2\repository\com\github\virtuald\curvesapi\1.06\curvesapi-1.06.jar C:\Users\Monocept\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar C:\Users\Monocept\.m2\repository\org\aspectj\aspectjweaver\1.8.6\aspectjweaver-1.8.6.jar
+  VMArgs:    -ea -javaagent:C:\Users\Monocept\.m2\repository/org/aspectj/aspectjweaver/1.8.6/aspectjweaver-1.8.6.jar
+  Class:     org.testng.remote.RemoteTestNG
+  Args:      -serport 54751 -d C:\E\Pradeep\CoreJavaPractice\seleniumConcept\test-output C:\Users\Monocept\AppData\Local\Temp\testng-eclipse--2045234686\testng-customsuite.xml
+java -ea -javaagent:C:\Users\Monocept\.m2\repository/org/aspectj/aspectjweaver/1.8.6/aspectjweaver-1.8.6.jar -classpath C:\Users\Monocept\Downloads\eclipse\eclipse\plugins\org.testng.eclipse_6.9.10.201512240000\lib\testng-remote.jar:C:\E\Pradeep\CoreJavaPractice\seleniumConcept\target\test-classes:C:\E\Pradeep\CoreJavaPractice\seleniumConcept\target\classes:C:\Users\Monocept\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar:C:\Users\Monocept\.m2\repository\org\testng\testng\6.8\testng-6.8.jar:C:\Users\Monocept\.m2\repository\org\beanshell\bsh\2.0b4\bsh-2.0b4.jar:C:\Users\Monocept\.m2\repository\com\beust\jcommander\1.27\jcommander-1.27.jar:C:\Users\Monocept\.m2\repository\org\yaml\snakeyaml\1.6\snakeyaml-1.6.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-java\2.41.0\selenium-java-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\2.41.0\selenium-chrome-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\2.41.0\selenium-remote-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\cglib\cglib-nodep\2.1_3\cglib-nodep-2.1_3.jar:C:\Users\Monocept\.m2\repository\org\json\json\20080701\json-20080701.jar:C:\Users\Monocept\.m2\repository\com\google\guava\guava\15.0\guava-15.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-htmlunit-driver\2.41.0\selenium-htmlunit-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\net\sourceforge\htmlunit\htmlunit\2.13\htmlunit-2.13.jar:C:\Users\Monocept\.m2\repository\xalan\xalan\2.7.1\xalan-2.7.1.jar:C:\Users\Monocept\.m2\repository\xalan\serializer\2.7.1\serializer-2.7.1.jar:C:\Users\Monocept\.m2\repository\commons-collections\commons-collections\3.2.1\commons-collections-3.2.1.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-lang3\3.1\commons-lang3-3.1.jar:C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpmime\4.3.1\httpmime-4.3.1.jar:C:\Users\Monocept\.m2\repository\net\sourceforge\htmlunit\htmlunit-core-js\2.13\htmlunit-core-js-2.13.jar:C:\Users\Monocept\.m2\repository\xerces\xercesImpl\2.11.0\xercesImpl-2.11.0.jar:C:\Users\Monocept\.m2\repository\xml-apis\xml-apis\1.4.01\xml-apis-1.4.01.jar:C:\Users\Monocept\.m2\repository\net\sourceforge\nekohtml\nekohtml\1.9.19\nekohtml-1.9.19.jar:C:\Users\Monocept\.m2\repository\net\sourceforge\cssparser\cssparser\0.9.11\cssparser-0.9.11.jar:C:\Users\Monocept\.m2\repository\org\w3c\css\sac\1.3\sac-1.3.jar:C:\Users\Monocept\.m2\repository\commons-logging\commons-logging\1.1.3\commons-logging-1.1.3.jar:C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-websocket\8.1.12.v20130726\jetty-websocket-8.1.12.v20130726.jar:C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-util\8.1.12.v20130726\jetty-util-8.1.12.v20130726.jar:C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-io\8.1.12.v20130726\jetty-io-8.1.12.v20130726.jar:C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-http\8.1.12.v20130726\jetty-http-8.1.12.v20130726.jar:C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpclient\4.3.1\httpclient-4.3.1.jar:C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpcore\4.3\httpcore-4.3.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\2.41.0\selenium-firefox-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\commons-io\commons-io\2.2\commons-io-2.2.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-exec\1.1\commons-exec-1.1.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\2.41.0\selenium-ie-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\net\java\dev\jna\jna\3.4.0\jna-3.4.0.jar:C:\Users\Monocept\.m2\repository\net\java\dev\jna\platform\3.4.0\platform-3.4.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\2.41.0\selenium-safari-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-support\2.41.0\selenium-support-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-api\2.41.0\selenium-api-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\webbitserver\webbit\0.4.14\webbit-0.4.14.jar:C:\Users\Monocept\.m2\repository\io\netty\netty\3.5.2.Final\netty-3.5.2.Final.jar:C:\Users\Monocept\.m2\repository\org\apache\poi\poi\4.1.0\poi-4.1.0.jar:C:\Users\Monocept\.m2\repository\commons-codec\commons-codec\1.12\commons-codec-1.12.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-collections4\4.3\commons-collections4-4.3.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar:C:\Users\Monocept\.m2\repository\org\apache\poi\poi-ooxml\4.1.0\poi-ooxml-4.1.0.jar:C:\Users\Monocept\.m2\repository\org\apache\poi\poi-ooxml-schemas\4.1.0\poi-ooxml-schemas-4.1.0.jar:C:\Users\Monocept\.m2\repository\org\apache\xmlbeans\xmlbeans\3.1.0\xmlbeans-3.1.0.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-compress\1.18\commons-compress-1.18.jar:C:\Users\Monocept\.m2\repository\com\github\virtuald\curvesapi\1.06\curvesapi-1.06.jar:C:\Users\Monocept\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar:C:\Users\Monocept\.m2\repository\org\aspectj\aspectjweaver\1.8.6\aspectjweaver-1.8.6.jar org.testng.remote.RemoteTestNG -serport 54751 -d C:\E\Pradeep\CoreJavaPractice\seleniumConcept\test-output C:\Users\Monocept\AppData\Local\Temp\testng-eclipse--2045234686\testng-customsuite.xml
+
+!ENTRY org.testng.eclipse 1 0 2019-10-23 13:44:15.137
+!MESSAGE [TestNGLaunchConfigurationDelegate] Launching:
+  Classpath: C:\Users\Monocept\Downloads\eclipse\eclipse\plugins\org.testng.eclipse_6.9.10.201512240000\lib\testng-remote.jar C:\E\Pradeep\CoreJavaPractice\seleniumConcept\target\test-classes C:\E\Pradeep\CoreJavaPractice\seleniumConcept\target\classes C:\Users\Monocept\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar C:\Users\Monocept\.m2\repository\org\testng\testng\6.8\testng-6.8.jar C:\Users\Monocept\.m2\repository\org\beanshell\bsh\2.0b4\bsh-2.0b4.jar C:\Users\Monocept\.m2\repository\com\beust\jcommander\1.27\jcommander-1.27.jar C:\Users\Monocept\.m2\repository\org\yaml\snakeyaml\1.6\snakeyaml-1.6.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-java\2.41.0\selenium-java-2.41.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\2.41.0\selenium-chrome-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\2.41.0\selenium-remote-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\cglib\cglib-nodep\2.1_3\cglib-nodep-2.1_3.jar C:\Users\Monocept\.m2\repository\org\json\json\20080701\json-20080701.jar C:\Users\Monocept\.m2\repository\com\google\guava\guava\15.0\guava-15.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-htmlunit-driver\2.41.0\selenium-htmlunit-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\net\sourceforge\htmlunit\htmlunit\2.13\htmlunit-2.13.jar C:\Users\Monocept\.m2\repository\xalan\xalan\2.7.1\xalan-2.7.1.jar C:\Users\Monocept\.m2\repository\xalan\serializer\2.7.1\serializer-2.7.1.jar C:\Users\Monocept\.m2\repository\commons-collections\commons-collections\3.2.1\commons-collections-3.2.1.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-lang3\3.1\commons-lang3-3.1.jar C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpmime\4.3.1\httpmime-4.3.1.jar C:\Users\Monocept\.m2\repository\net\sourceforge\htmlunit\htmlunit-core-js\2.13\htmlunit-core-js-2.13.jar C:\Users\Monocept\.m2\repository\xerces\xercesImpl\2.11.0\xercesImpl-2.11.0.jar C:\Users\Monocept\.m2\repository\xml-apis\xml-apis\1.4.01\xml-apis-1.4.01.jar C:\Users\Monocept\.m2\repository\net\sourceforge\nekohtml\nekohtml\1.9.19\nekohtml-1.9.19.jar C:\Users\Monocept\.m2\repository\net\sourceforge\cssparser\cssparser\0.9.11\cssparser-0.9.11.jar C:\Users\Monocept\.m2\repository\org\w3c\css\sac\1.3\sac-1.3.jar C:\Users\Monocept\.m2\repository\commons-logging\commons-logging\1.1.3\commons-logging-1.1.3.jar C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-websocket\8.1.12.v20130726\jetty-websocket-8.1.12.v20130726.jar C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-util\8.1.12.v20130726\jetty-util-8.1.12.v20130726.jar C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-io\8.1.12.v20130726\jetty-io-8.1.12.v20130726.jar C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-http\8.1.12.v20130726\jetty-http-8.1.12.v20130726.jar C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpclient\4.3.1\httpclient-4.3.1.jar C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpcore\4.3\httpcore-4.3.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\2.41.0\selenium-firefox-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\commons-io\commons-io\2.2\commons-io-2.2.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-exec\1.1\commons-exec-1.1.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\2.41.0\selenium-ie-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\net\java\dev\jna\jna\3.4.0\jna-3.4.0.jar C:\Users\Monocept\.m2\repository\net\java\dev\jna\platform\3.4.0\platform-3.4.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\2.41.0\selenium-safari-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-support\2.41.0\selenium-support-2.41.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-api\2.41.0\selenium-api-2.41.0.jar C:\Users\Monocept\.m2\repository\org\webbitserver\webbit\0.4.14\webbit-0.4.14.jar C:\Users\Monocept\.m2\repository\io\netty\netty\3.5.2.Final\netty-3.5.2.Final.jar C:\Users\Monocept\.m2\repository\org\apache\poi\poi\4.1.0\poi-4.1.0.jar C:\Users\Monocept\.m2\repository\commons-codec\commons-codec\1.12\commons-codec-1.12.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-collections4\4.3\commons-collections4-4.3.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar C:\Users\Monocept\.m2\repository\org\apache\poi\poi-ooxml\4.1.0\poi-ooxml-4.1.0.jar C:\Users\Monocept\.m2\repository\org\apache\poi\poi-ooxml-schemas\4.1.0\poi-ooxml-schemas-4.1.0.jar C:\Users\Monocept\.m2\repository\org\apache\xmlbeans\xmlbeans\3.1.0\xmlbeans-3.1.0.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-compress\1.18\commons-compress-1.18.jar C:\Users\Monocept\.m2\repository\com\github\virtuald\curvesapi\1.06\curvesapi-1.06.jar C:\Users\Monocept\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar C:\Users\Monocept\.m2\repository\org\aspectj\aspectjweaver\1.8.6\aspectjweaver-1.8.6.jar
+  VMArgs:    -ea -javaagent:C:\Users\Monocept\.m2\repository/org/aspectj/aspectjweaver/1.8.6/aspectjweaver-1.8.6.jar
+  Class:     org.testng.remote.RemoteTestNG
+  Args:      -serport 55012 -d C:\E\Pradeep\CoreJavaPractice\seleniumConcept\test-output C:\Users\Monocept\AppData\Local\Temp\testng-eclipse-1124958333\testng-customsuite.xml
+java -ea -javaagent:C:\Users\Monocept\.m2\repository/org/aspectj/aspectjweaver/1.8.6/aspectjweaver-1.8.6.jar -classpath C:\Users\Monocept\Downloads\eclipse\eclipse\plugins\org.testng.eclipse_6.9.10.201512240000\lib\testng-remote.jar:C:\E\Pradeep\CoreJavaPractice\seleniumConcept\target\test-classes:C:\E\Pradeep\CoreJavaPractice\seleniumConcept\target\classes:C:\Users\Monocept\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar:C:\Users\Monocept\.m2\repository\org\testng\testng\6.8\testng-6.8.jar:C:\Users\Monocept\.m2\repository\org\beanshell\bsh\2.0b4\bsh-2.0b4.jar:C:\Users\Monocept\.m2\repository\com\beust\jcommander\1.27\jcommander-1.27.jar:C:\Users\Monocept\.m2\repository\org\yaml\snakeyaml\1.6\snakeyaml-1.6.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-java\2.41.0\selenium-java-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\2.41.0\selenium-chrome-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\2.41.0\selenium-remote-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\cglib\cglib-nodep\2.1_3\cglib-nodep-2.1_3.jar:C:\Users\Monocept\.m2\repository\org\json\json\20080701\json-20080701.jar:C:\Users\Monocept\.m2\repository\com\google\guava\guava\15.0\guava-15.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-htmlunit-driver\2.41.0\selenium-htmlunit-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\net\sourceforge\htmlunit\htmlunit\2.13\htmlunit-2.13.jar:C:\Users\Monocept\.m2\repository\xalan\xalan\2.7.1\xalan-2.7.1.jar:C:\Users\Monocept\.m2\repository\xalan\serializer\2.7.1\serializer-2.7.1.jar:C:\Users\Monocept\.m2\repository\commons-collections\commons-collections\3.2.1\commons-collections-3.2.1.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-lang3\3.1\commons-lang3-3.1.jar:C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpmime\4.3.1\httpmime-4.3.1.jar:C:\Users\Monocept\.m2\repository\net\sourceforge\htmlunit\htmlunit-core-js\2.13\htmlunit-core-js-2.13.jar:C:\Users\Monocept\.m2\repository\xerces\xercesImpl\2.11.0\xercesImpl-2.11.0.jar:C:\Users\Monocept\.m2\repository\xml-apis\xml-apis\1.4.01\xml-apis-1.4.01.jar:C:\Users\Monocept\.m2\repository\net\sourceforge\nekohtml\nekohtml\1.9.19\nekohtml-1.9.19.jar:C:\Users\Monocept\.m2\repository\net\sourceforge\cssparser\cssparser\0.9.11\cssparser-0.9.11.jar:C:\Users\Monocept\.m2\repository\org\w3c\css\sac\1.3\sac-1.3.jar:C:\Users\Monocept\.m2\repository\commons-logging\commons-logging\1.1.3\commons-logging-1.1.3.jar:C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-websocket\8.1.12.v20130726\jetty-websocket-8.1.12.v20130726.jar:C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-util\8.1.12.v20130726\jetty-util-8.1.12.v20130726.jar:C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-io\8.1.12.v20130726\jetty-io-8.1.12.v20130726.jar:C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-http\8.1.12.v20130726\jetty-http-8.1.12.v20130726.jar:C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpclient\4.3.1\httpclient-4.3.1.jar:C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpcore\4.3\httpcore-4.3.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\2.41.0\selenium-firefox-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\commons-io\commons-io\2.2\commons-io-2.2.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-exec\1.1\commons-exec-1.1.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\2.41.0\selenium-ie-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\net\java\dev\jna\jna\3.4.0\jna-3.4.0.jar:C:\Users\Monocept\.m2\repository\net\java\dev\jna\platform\3.4.0\platform-3.4.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\2.41.0\selenium-safari-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-support\2.41.0\selenium-support-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-api\2.41.0\selenium-api-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\webbitserver\webbit\0.4.14\webbit-0.4.14.jar:C:\Users\Monocept\.m2\repository\io\netty\netty\3.5.2.Final\netty-3.5.2.Final.jar:C:\Users\Monocept\.m2\repository\org\apache\poi\poi\4.1.0\poi-4.1.0.jar:C:\Users\Monocept\.m2\repository\commons-codec\commons-codec\1.12\commons-codec-1.12.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-collections4\4.3\commons-collections4-4.3.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar:C:\Users\Monocept\.m2\repository\org\apache\poi\poi-ooxml\4.1.0\poi-ooxml-4.1.0.jar:C:\Users\Monocept\.m2\repository\org\apache\poi\poi-ooxml-schemas\4.1.0\poi-ooxml-schemas-4.1.0.jar:C:\Users\Monocept\.m2\repository\org\apache\xmlbeans\xmlbeans\3.1.0\xmlbeans-3.1.0.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-compress\1.18\commons-compress-1.18.jar:C:\Users\Monocept\.m2\repository\com\github\virtuald\curvesapi\1.06\curvesapi-1.06.jar:C:\Users\Monocept\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar:C:\Users\Monocept\.m2\repository\org\aspectj\aspectjweaver\1.8.6\aspectjweaver-1.8.6.jar org.testng.remote.RemoteTestNG -serport 55012 -d C:\E\Pradeep\CoreJavaPractice\seleniumConcept\test-output C:\Users\Monocept\AppData\Local\Temp\testng-eclipse-1124958333\testng-customsuite.xml
+
+!ENTRY org.testng.eclipse 1 0 2019-10-23 13:45:08.049
+!MESSAGE [TestNGLaunchConfigurationDelegate] Launching:
+  Classpath: C:\Users\Monocept\Downloads\eclipse\eclipse\plugins\org.testng.eclipse_6.9.10.201512240000\lib\testng-remote.jar C:\E\Pradeep\CoreJavaPractice\seleniumConcept\target\test-classes C:\E\Pradeep\CoreJavaPractice\seleniumConcept\target\classes C:\Users\Monocept\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar C:\Users\Monocept\.m2\repository\org\testng\testng\6.8\testng-6.8.jar C:\Users\Monocept\.m2\repository\org\beanshell\bsh\2.0b4\bsh-2.0b4.jar C:\Users\Monocept\.m2\repository\com\beust\jcommander\1.27\jcommander-1.27.jar C:\Users\Monocept\.m2\repository\org\yaml\snakeyaml\1.6\snakeyaml-1.6.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-java\2.41.0\selenium-java-2.41.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\2.41.0\selenium-chrome-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\2.41.0\selenium-remote-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\cglib\cglib-nodep\2.1_3\cglib-nodep-2.1_3.jar C:\Users\Monocept\.m2\repository\org\json\json\20080701\json-20080701.jar C:\Users\Monocept\.m2\repository\com\google\guava\guava\15.0\guava-15.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-htmlunit-driver\2.41.0\selenium-htmlunit-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\net\sourceforge\htmlunit\htmlunit\2.13\htmlunit-2.13.jar C:\Users\Monocept\.m2\repository\xalan\xalan\2.7.1\xalan-2.7.1.jar C:\Users\Monocept\.m2\repository\xalan\serializer\2.7.1\serializer-2.7.1.jar C:\Users\Monocept\.m2\repository\commons-collections\commons-collections\3.2.1\commons-collections-3.2.1.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-lang3\3.1\commons-lang3-3.1.jar C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpmime\4.3.1\httpmime-4.3.1.jar C:\Users\Monocept\.m2\repository\net\sourceforge\htmlunit\htmlunit-core-js\2.13\htmlunit-core-js-2.13.jar C:\Users\Monocept\.m2\repository\xerces\xercesImpl\2.11.0\xercesImpl-2.11.0.jar C:\Users\Monocept\.m2\repository\xml-apis\xml-apis\1.4.01\xml-apis-1.4.01.jar C:\Users\Monocept\.m2\repository\net\sourceforge\nekohtml\nekohtml\1.9.19\nekohtml-1.9.19.jar C:\Users\Monocept\.m2\repository\net\sourceforge\cssparser\cssparser\0.9.11\cssparser-0.9.11.jar C:\Users\Monocept\.m2\repository\org\w3c\css\sac\1.3\sac-1.3.jar C:\Users\Monocept\.m2\repository\commons-logging\commons-logging\1.1.3\commons-logging-1.1.3.jar C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-websocket\8.1.12.v20130726\jetty-websocket-8.1.12.v20130726.jar C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-util\8.1.12.v20130726\jetty-util-8.1.12.v20130726.jar C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-io\8.1.12.v20130726\jetty-io-8.1.12.v20130726.jar C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-http\8.1.12.v20130726\jetty-http-8.1.12.v20130726.jar C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpclient\4.3.1\httpclient-4.3.1.jar C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpcore\4.3\httpcore-4.3.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\2.41.0\selenium-firefox-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\commons-io\commons-io\2.2\commons-io-2.2.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-exec\1.1\commons-exec-1.1.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\2.41.0\selenium-ie-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\net\java\dev\jna\jna\3.4.0\jna-3.4.0.jar C:\Users\Monocept\.m2\repository\net\java\dev\jna\platform\3.4.0\platform-3.4.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\2.41.0\selenium-safari-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-support\2.41.0\selenium-support-2.41.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-api\2.41.0\selenium-api-2.41.0.jar C:\Users\Monocept\.m2\repository\org\webbitserver\webbit\0.4.14\webbit-0.4.14.jar C:\Users\Monocept\.m2\repository\io\netty\netty\3.5.2.Final\netty-3.5.2.Final.jar C:\Users\Monocept\.m2\repository\org\apache\poi\poi\4.1.0\poi-4.1.0.jar C:\Users\Monocept\.m2\repository\commons-codec\commons-codec\1.12\commons-codec-1.12.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-collections4\4.3\commons-collections4-4.3.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar C:\Users\Monocept\.m2\repository\org\apache\poi\poi-ooxml\4.1.0\poi-ooxml-4.1.0.jar C:\Users\Monocept\.m2\repository\org\apache\poi\poi-ooxml-schemas\4.1.0\poi-ooxml-schemas-4.1.0.jar C:\Users\Monocept\.m2\repository\org\apache\xmlbeans\xmlbeans\3.1.0\xmlbeans-3.1.0.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-compress\1.18\commons-compress-1.18.jar C:\Users\Monocept\.m2\repository\com\github\virtuald\curvesapi\1.06\curvesapi-1.06.jar C:\Users\Monocept\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar C:\Users\Monocept\.m2\repository\org\aspectj\aspectjweaver\1.8.6\aspectjweaver-1.8.6.jar
+  VMArgs:    -ea -javaagent:C:\Users\Monocept\.m2\repository/org/aspectj/aspectjweaver/1.8.6/aspectjweaver-1.8.6.jar
+  Class:     org.testng.remote.RemoteTestNG
+  Args:      -serport 55115 -d C:\E\Pradeep\CoreJavaPractice\seleniumConcept\test-output C:\Users\Monocept\AppData\Local\Temp\testng-eclipse--1404118781\testng-customsuite.xml
+java -ea -javaagent:C:\Users\Monocept\.m2\repository/org/aspectj/aspectjweaver/1.8.6/aspectjweaver-1.8.6.jar -classpath C:\Users\Monocept\Downloads\eclipse\eclipse\plugins\org.testng.eclipse_6.9.10.201512240000\lib\testng-remote.jar:C:\E\Pradeep\CoreJavaPractice\seleniumConcept\target\test-classes:C:\E\Pradeep\CoreJavaPractice\seleniumConcept\target\classes:C:\Users\Monocept\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar:C:\Users\Monocept\.m2\repository\org\testng\testng\6.8\testng-6.8.jar:C:\Users\Monocept\.m2\repository\org\beanshell\bsh\2.0b4\bsh-2.0b4.jar:C:\Users\Monocept\.m2\repository\com\beust\jcommander\1.27\jcommander-1.27.jar:C:\Users\Monocept\.m2\repository\org\yaml\snakeyaml\1.6\snakeyaml-1.6.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-java\2.41.0\selenium-java-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\2.41.0\selenium-chrome-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\2.41.0\selenium-remote-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\cglib\cglib-nodep\2.1_3\cglib-nodep-2.1_3.jar:C:\Users\Monocept\.m2\repository\org\json\json\20080701\json-20080701.jar:C:\Users\Monocept\.m2\repository\com\google\guava\guava\15.0\guava-15.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-htmlunit-driver\2.41.0\selenium-htmlunit-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\net\sourceforge\htmlunit\htmlunit\2.13\htmlunit-2.13.jar:C:\Users\Monocept\.m2\repository\xalan\xalan\2.7.1\xalan-2.7.1.jar:C:\Users\Monocept\.m2\repository\xalan\serializer\2.7.1\serializer-2.7.1.jar:C:\Users\Monocept\.m2\repository\commons-collections\commons-collections\3.2.1\commons-collections-3.2.1.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-lang3\3.1\commons-lang3-3.1.jar:C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpmime\4.3.1\httpmime-4.3.1.jar:C:\Users\Monocept\.m2\repository\net\sourceforge\htmlunit\htmlunit-core-js\2.13\htmlunit-core-js-2.13.jar:C:\Users\Monocept\.m2\repository\xerces\xercesImpl\2.11.0\xercesImpl-2.11.0.jar:C:\Users\Monocept\.m2\repository\xml-apis\xml-apis\1.4.01\xml-apis-1.4.01.jar:C:\Users\Monocept\.m2\repository\net\sourceforge\nekohtml\nekohtml\1.9.19\nekohtml-1.9.19.jar:C:\Users\Monocept\.m2\repository\net\sourceforge\cssparser\cssparser\0.9.11\cssparser-0.9.11.jar:C:\Users\Monocept\.m2\repository\org\w3c\css\sac\1.3\sac-1.3.jar:C:\Users\Monocept\.m2\repository\commons-logging\commons-logging\1.1.3\commons-logging-1.1.3.jar:C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-websocket\8.1.12.v20130726\jetty-websocket-8.1.12.v20130726.jar:C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-util\8.1.12.v20130726\jetty-util-8.1.12.v20130726.jar:C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-io\8.1.12.v20130726\jetty-io-8.1.12.v20130726.jar:C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-http\8.1.12.v20130726\jetty-http-8.1.12.v20130726.jar:C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpclient\4.3.1\httpclient-4.3.1.jar:C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpcore\4.3\httpcore-4.3.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\2.41.0\selenium-firefox-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\commons-io\commons-io\2.2\commons-io-2.2.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-exec\1.1\commons-exec-1.1.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\2.41.0\selenium-ie-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\net\java\dev\jna\jna\3.4.0\jna-3.4.0.jar:C:\Users\Monocept\.m2\repository\net\java\dev\jna\platform\3.4.0\platform-3.4.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\2.41.0\selenium-safari-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-support\2.41.0\selenium-support-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-api\2.41.0\selenium-api-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\webbitserver\webbit\0.4.14\webbit-0.4.14.jar:C:\Users\Monocept\.m2\repository\io\netty\netty\3.5.2.Final\netty-3.5.2.Final.jar:C:\Users\Monocept\.m2\repository\org\apache\poi\poi\4.1.0\poi-4.1.0.jar:C:\Users\Monocept\.m2\repository\commons-codec\commons-codec\1.12\commons-codec-1.12.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-collections4\4.3\commons-collections4-4.3.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar:C:\Users\Monocept\.m2\repository\org\apache\poi\poi-ooxml\4.1.0\poi-ooxml-4.1.0.jar:C:\Users\Monocept\.m2\repository\org\apache\poi\poi-ooxml-schemas\4.1.0\poi-ooxml-schemas-4.1.0.jar:C:\Users\Monocept\.m2\repository\org\apache\xmlbeans\xmlbeans\3.1.0\xmlbeans-3.1.0.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-compress\1.18\commons-compress-1.18.jar:C:\Users\Monocept\.m2\repository\com\github\virtuald\curvesapi\1.06\curvesapi-1.06.jar:C:\Users\Monocept\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar:C:\Users\Monocept\.m2\repository\org\aspectj\aspectjweaver\1.8.6\aspectjweaver-1.8.6.jar org.testng.remote.RemoteTestNG -serport 55115 -d C:\E\Pradeep\CoreJavaPractice\seleniumConcept\test-output C:\Users\Monocept\AppData\Local\Temp\testng-eclipse--1404118781\testng-customsuite.xml
+
+!ENTRY org.testng.eclipse 1 0 2019-10-23 15:27:36.348
+!MESSAGE [TestNGLaunchConfigurationDelegate] Launching:
+  Classpath: C:\Users\Monocept\Downloads\eclipse\eclipse\plugins\org.testng.eclipse_6.9.10.201512240000\lib\testng-remote.jar C:\E\Pradeep\CoreJavaPractice\HuskPowerSystem\target\test-classes C:\E\Pradeep\CoreJavaPractice\HuskPowerSystem\target\classes C:\Users\Monocept\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar C:\Users\Monocept\.m2\repository\org\testng\testng\6.8\testng-6.8.jar C:\Users\Monocept\.m2\repository\org\beanshell\bsh\2.0b4\bsh-2.0b4.jar C:\Users\Monocept\.m2\repository\com\beust\jcommander\1.27\jcommander-1.27.jar C:\Users\Monocept\.m2\repository\org\yaml\snakeyaml\1.6\snakeyaml-1.6.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-java\2.41.0\selenium-java-2.41.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\2.41.0\selenium-chrome-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\2.41.0\selenium-remote-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\cglib\cglib-nodep\2.1_3\cglib-nodep-2.1_3.jar C:\Users\Monocept\.m2\repository\org\json\json\20080701\json-20080701.jar C:\Users\Monocept\.m2\repository\com\google\guava\guava\15.0\guava-15.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-htmlunit-driver\2.41.0\selenium-htmlunit-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\net\sourceforge\htmlunit\htmlunit\2.13\htmlunit-2.13.jar C:\Users\Monocept\.m2\repository\xalan\xalan\2.7.1\xalan-2.7.1.jar C:\Users\Monocept\.m2\repository\xalan\serializer\2.7.1\serializer-2.7.1.jar C:\Users\Monocept\.m2\repository\commons-collections\commons-collections\3.2.1\commons-collections-3.2.1.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-lang3\3.1\commons-lang3-3.1.jar C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpmime\4.3.1\httpmime-4.3.1.jar C:\Users\Monocept\.m2\repository\net\sourceforge\htmlunit\htmlunit-core-js\2.13\htmlunit-core-js-2.13.jar C:\Users\Monocept\.m2\repository\xerces\xercesImpl\2.11.0\xercesImpl-2.11.0.jar C:\Users\Monocept\.m2\repository\xml-apis\xml-apis\1.4.01\xml-apis-1.4.01.jar C:\Users\Monocept\.m2\repository\net\sourceforge\nekohtml\nekohtml\1.9.19\nekohtml-1.9.19.jar C:\Users\Monocept\.m2\repository\net\sourceforge\cssparser\cssparser\0.9.11\cssparser-0.9.11.jar C:\Users\Monocept\.m2\repository\org\w3c\css\sac\1.3\sac-1.3.jar C:\Users\Monocept\.m2\repository\commons-logging\commons-logging\1.1.3\commons-logging-1.1.3.jar C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-websocket\8.1.12.v20130726\jetty-websocket-8.1.12.v20130726.jar C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-util\8.1.12.v20130726\jetty-util-8.1.12.v20130726.jar C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-io\8.1.12.v20130726\jetty-io-8.1.12.v20130726.jar C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-http\8.1.12.v20130726\jetty-http-8.1.12.v20130726.jar C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpclient\4.3.1\httpclient-4.3.1.jar C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpcore\4.3\httpcore-4.3.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\2.41.0\selenium-firefox-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\commons-io\commons-io\2.2\commons-io-2.2.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-exec\1.1\commons-exec-1.1.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\2.41.0\selenium-ie-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\net\java\dev\jna\jna\3.4.0\jna-3.4.0.jar C:\Users\Monocept\.m2\repository\net\java\dev\jna\platform\3.4.0\platform-3.4.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\2.41.0\selenium-safari-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-support\2.41.0\selenium-support-2.41.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-api\2.41.0\selenium-api-2.41.0.jar C:\Users\Monocept\.m2\repository\org\webbitserver\webbit\0.4.14\webbit-0.4.14.jar C:\Users\Monocept\.m2\repository\io\netty\netty\3.5.2.Final\netty-3.5.2.Final.jar C:\Users\Monocept\.m2\repository\org\apache\poi\poi\4.1.0\poi-4.1.0.jar C:\Users\Monocept\.m2\repository\commons-codec\commons-codec\1.12\commons-codec-1.12.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-collections4\4.3\commons-collections4-4.3.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar C:\Users\Monocept\.m2\repository\org\apache\poi\poi-ooxml\4.1.0\poi-ooxml-4.1.0.jar C:\Users\Monocept\.m2\repository\org\apache\poi\poi-ooxml-schemas\4.1.0\poi-ooxml-schemas-4.1.0.jar C:\Users\Monocept\.m2\repository\org\apache\xmlbeans\xmlbeans\3.1.0\xmlbeans-3.1.0.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-compress\1.18\commons-compress-1.18.jar C:\Users\Monocept\.m2\repository\com\github\virtuald\curvesapi\1.06\curvesapi-1.06.jar C:\Users\Monocept\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar C:\Users\Monocept\.m2\repository\org\aspectj\aspectjweaver\1.8.6\aspectjweaver-1.8.6.jar
+  VMArgs:    -ea -javaagent:C:\Users\Monocept\.m2\repository/org/aspectj/aspectjweaver/1.8.6/aspectjweaver-1.8.6.jar
+  Class:     org.testng.remote.RemoteTestNG
+  Args:      -serport 58538 -d C:\E\Pradeep\CoreJavaPractice\HuskPowerSystem\test-output C:\Users\Monocept\AppData\Local\Temp\testng-eclipse--1791550901\testng-customsuite.xml
+java -ea -javaagent:C:\Users\Monocept\.m2\repository/org/aspectj/aspectjweaver/1.8.6/aspectjweaver-1.8.6.jar -classpath C:\Users\Monocept\Downloads\eclipse\eclipse\plugins\org.testng.eclipse_6.9.10.201512240000\lib\testng-remote.jar:C:\E\Pradeep\CoreJavaPractice\HuskPowerSystem\target\test-classes:C:\E\Pradeep\CoreJavaPractice\HuskPowerSystem\target\classes:C:\Users\Monocept\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar:C:\Users\Monocept\.m2\repository\org\testng\testng\6.8\testng-6.8.jar:C:\Users\Monocept\.m2\repository\org\beanshell\bsh\2.0b4\bsh-2.0b4.jar:C:\Users\Monocept\.m2\repository\com\beust\jcommander\1.27\jcommander-1.27.jar:C:\Users\Monocept\.m2\repository\org\yaml\snakeyaml\1.6\snakeyaml-1.6.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-java\2.41.0\selenium-java-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\2.41.0\selenium-chrome-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\2.41.0\selenium-remote-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\cglib\cglib-nodep\2.1_3\cglib-nodep-2.1_3.jar:C:\Users\Monocept\.m2\repository\org\json\json\20080701\json-20080701.jar:C:\Users\Monocept\.m2\repository\com\google\guava\guava\15.0\guava-15.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-htmlunit-driver\2.41.0\selenium-htmlunit-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\net\sourceforge\htmlunit\htmlunit\2.13\htmlunit-2.13.jar:C:\Users\Monocept\.m2\repository\xalan\xalan\2.7.1\xalan-2.7.1.jar:C:\Users\Monocept\.m2\repository\xalan\serializer\2.7.1\serializer-2.7.1.jar:C:\Users\Monocept\.m2\repository\commons-collections\commons-collections\3.2.1\commons-collections-3.2.1.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-lang3\3.1\commons-lang3-3.1.jar:C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpmime\4.3.1\httpmime-4.3.1.jar:C:\Users\Monocept\.m2\repository\net\sourceforge\htmlunit\htmlunit-core-js\2.13\htmlunit-core-js-2.13.jar:C:\Users\Monocept\.m2\repository\xerces\xercesImpl\2.11.0\xercesImpl-2.11.0.jar:C:\Users\Monocept\.m2\repository\xml-apis\xml-apis\1.4.01\xml-apis-1.4.01.jar:C:\Users\Monocept\.m2\repository\net\sourceforge\nekohtml\nekohtml\1.9.19\nekohtml-1.9.19.jar:C:\Users\Monocept\.m2\repository\net\sourceforge\cssparser\cssparser\0.9.11\cssparser-0.9.11.jar:C:\Users\Monocept\.m2\repository\org\w3c\css\sac\1.3\sac-1.3.jar:C:\Users\Monocept\.m2\repository\commons-logging\commons-logging\1.1.3\commons-logging-1.1.3.jar:C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-websocket\8.1.12.v20130726\jetty-websocket-8.1.12.v20130726.jar:C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-util\8.1.12.v20130726\jetty-util-8.1.12.v20130726.jar:C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-io\8.1.12.v20130726\jetty-io-8.1.12.v20130726.jar:C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-http\8.1.12.v20130726\jetty-http-8.1.12.v20130726.jar:C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpclient\4.3.1\httpclient-4.3.1.jar:C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpcore\4.3\httpcore-4.3.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\2.41.0\selenium-firefox-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\commons-io\commons-io\2.2\commons-io-2.2.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-exec\1.1\commons-exec-1.1.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\2.41.0\selenium-ie-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\net\java\dev\jna\jna\3.4.0\jna-3.4.0.jar:C:\Users\Monocept\.m2\repository\net\java\dev\jna\platform\3.4.0\platform-3.4.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\2.41.0\selenium-safari-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-support\2.41.0\selenium-support-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-api\2.41.0\selenium-api-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\webbitserver\webbit\0.4.14\webbit-0.4.14.jar:C:\Users\Monocept\.m2\repository\io\netty\netty\3.5.2.Final\netty-3.5.2.Final.jar:C:\Users\Monocept\.m2\repository\org\apache\poi\poi\4.1.0\poi-4.1.0.jar:C:\Users\Monocept\.m2\repository\commons-codec\commons-codec\1.12\commons-codec-1.12.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-collections4\4.3\commons-collections4-4.3.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar:C:\Users\Monocept\.m2\repository\org\apache\poi\poi-ooxml\4.1.0\poi-ooxml-4.1.0.jar:C:\Users\Monocept\.m2\repository\org\apache\poi\poi-ooxml-schemas\4.1.0\poi-ooxml-schemas-4.1.0.jar:C:\Users\Monocept\.m2\repository\org\apache\xmlbeans\xmlbeans\3.1.0\xmlbeans-3.1.0.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-compress\1.18\commons-compress-1.18.jar:C:\Users\Monocept\.m2\repository\com\github\virtuald\curvesapi\1.06\curvesapi-1.06.jar:C:\Users\Monocept\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar:C:\Users\Monocept\.m2\repository\org\aspectj\aspectjweaver\1.8.6\aspectjweaver-1.8.6.jar org.testng.remote.RemoteTestNG -serport 58538 -d C:\E\Pradeep\CoreJavaPractice\HuskPowerSystem\test-output C:\Users\Monocept\AppData\Local\Temp\testng-eclipse--1791550901\testng-customsuite.xml
+!SESSION 2019-10-23 18:43:06.351 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_221
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product -data C:\E\Pradeep\CoreJavaPractice -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2019-10-23 18:43:14.155
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Monocept'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2019-10-23 18:43:16.662
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2019-10-23 18:53:41.650
+!MESSAGE Could not read pom.xml
+!STACK 1
+org.eclipse.core.runtime.CoreException: Could not read pom.xml
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:565)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:574)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refreshPhase2(ProjectRegistryManager.java:541)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:497)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:350)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:297)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:154)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod$1.call(MavenBuilder.java:89)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:86)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:200)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.apache.maven.model.io.ModelParseException: Duplicated tag: 'artifactId' (position: START_TAG seen ...</artifactId>\r\n\t\t\t<artifactId>... @55:16) 
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:130)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:94)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:563)
+	... 24 more
+Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: Duplicated tag: 'artifactId' (position: START_TAG seen ...</artifactId>\r\n\t\t\t<artifactId>... @55:16) 
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.checkFieldWithDuplicate(MavenXpp3Reader.java:114)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseDependency(MavenXpp3Reader.java:1318)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseModel(MavenXpp3Reader.java:2197)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:3807)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:557)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:125)
+	... 26 more
+!SUBENTRY 1 org.eclipse.m2e.core 4 -1 2019-10-23 18:53:41.651
+!MESSAGE Could not read pom.xml
+!STACK 0
+org.apache.maven.model.io.ModelParseException: Duplicated tag: 'artifactId' (position: START_TAG seen ...</artifactId>\r\n\t\t\t<artifactId>... @55:16) 
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:130)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:94)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:563)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:574)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refreshPhase2(ProjectRegistryManager.java:541)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:497)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:350)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:297)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:154)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod$1.call(MavenBuilder.java:89)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:86)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:200)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: Duplicated tag: 'artifactId' (position: START_TAG seen ...</artifactId>\r\n\t\t\t<artifactId>... @55:16) 
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.checkFieldWithDuplicate(MavenXpp3Reader.java:114)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseDependency(MavenXpp3Reader.java:1318)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseModel(MavenXpp3Reader.java:2197)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:3807)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:557)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:125)
+	... 26 more
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2019-10-23 18:53:43.423
+!MESSAGE Could not read pom.xml
+!STACK 1
+org.eclipse.core.runtime.CoreException: Could not read pom.xml
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:565)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:574)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refreshPhase2(ProjectRegistryManager.java:541)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:497)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:350)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:297)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:154)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod$1.call(MavenBuilder.java:89)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:86)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:200)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.apache.maven.model.io.ModelParseException: Duplicated tag: 'artifactId' (position: START_TAG seen ...</artifactId>\r\n\t\t\t<artifactId>... @55:16) 
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:130)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:94)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:563)
+	... 24 more
+Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: Duplicated tag: 'artifactId' (position: START_TAG seen ...</artifactId>\r\n\t\t\t<artifactId>... @55:16) 
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.checkFieldWithDuplicate(MavenXpp3Reader.java:114)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseDependency(MavenXpp3Reader.java:1318)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseModel(MavenXpp3Reader.java:2197)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:3807)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:557)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:125)
+	... 26 more
+!SUBENTRY 1 org.eclipse.m2e.core 4 -1 2019-10-23 18:53:43.423
+!MESSAGE Could not read pom.xml
+!STACK 0
+org.apache.maven.model.io.ModelParseException: Duplicated tag: 'artifactId' (position: START_TAG seen ...</artifactId>\r\n\t\t\t<artifactId>... @55:16) 
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:130)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:94)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:563)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:574)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refreshPhase2(ProjectRegistryManager.java:541)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:497)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:350)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:297)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:154)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod$1.call(MavenBuilder.java:89)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:86)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:200)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: Duplicated tag: 'artifactId' (position: START_TAG seen ...</artifactId>\r\n\t\t\t<artifactId>... @55:16) 
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.checkFieldWithDuplicate(MavenXpp3Reader.java:114)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseDependency(MavenXpp3Reader.java:1318)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseModel(MavenXpp3Reader.java:2197)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:3807)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:557)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:125)
+	... 26 more
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2019-10-23 19:04:40.098
+!MESSAGE failed to load maven project for org.eclipse.ui.part.FileEditorInput(/seleniumConcept/pom.xml)
+!STACK 1
+org.eclipse.core.runtime.CoreException: Could not read maven project
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.readProjectWithDependencies(ProjectRegistryManager.java:804)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager$6.call(ProjectRegistryManager.java:999)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager$6.call(ProjectRegistryManager.java:1)
+	at com.google.common.cache.LocalCache$LocalManualCache$1.load(LocalCache.java:4724)
+	at com.google.common.cache.LocalCache$LoadingValueReference.loadFuture(LocalCache.java:3522)
+	at com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2315)
+	at com.google.common.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2278)
+	at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2193)
+	at com.google.common.cache.LocalCache.get(LocalCache.java:3932)
+	at com.google.common.cache.LocalCache$LocalManualCache.get(LocalCache.java:4721)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.getMavenProject(ProjectRegistryManager.java:997)
+	at org.eclipse.m2e.core.internal.project.registry.MavenProjectFacade.getMavenProject(MavenProjectFacade.java:242)
+	at org.eclipse.m2e.core.ui.internal.actions.SelectionUtil.getMavenProject(SelectionUtil.java:261)
+	at org.eclipse.m2e.editor.pom.MavenPomEditor.readMavenProject(MavenPomEditor.java:729)
+	at org.eclipse.m2e.editor.pom.MavenPomEditor$5.run(MavenPomEditor.java:1050)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Contains: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\E\Pradeep\CoreJavaPractice\seleniumConcept\pom.xml: end tag name </plugins> must match start tag name <plugin> from line 70 (position: TEXT seen ...</plugin>\r\n\r\n\r\n\t\t\t\r\n\t\t</plugins>... @109:13)  @ line 109, column 13
+ for project  at C:\E\Pradeep\CoreJavaPractice\seleniumConcept\pom.xml
+org.apache.maven.project.ProjectBuildingException: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\E\Pradeep\CoreJavaPractice\seleniumConcept\pom.xml: end tag name </plugins> must match start tag name <plugin> from line 70 (position: TEXT seen ...</plugin>\r\n\r\n\r\n\t\t\t\r\n\t\t</plugins>... @109:13)  @ line 109, column 13
+ for project  at C:\E\Pradeep\CoreJavaPractice\seleniumConcept\pom.xml
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:168)
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:119)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readMavenProject(MavenImpl.java:636)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager$5.call(ProjectRegistryManager.java:815)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager$5.call(ProjectRegistryManager.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.execute(ProjectRegistryManager.java:956)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.readProjectWithDependencies(ProjectRegistryManager.java:811)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.readProjectWithDependencies(ProjectRegistryManager.java:794)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager$6.call(ProjectRegistryManager.java:999)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager$6.call(ProjectRegistryManager.java:1)
+	at com.google.common.cache.LocalCache$LocalManualCache$1.load(LocalCache.java:4724)
+	at com.google.common.cache.LocalCache$LoadingValueReference.loadFuture(LocalCache.java:3522)
+	at com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2315)
+	at com.google.common.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2278)
+	at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2193)
+	at com.google.common.cache.LocalCache.get(LocalCache.java:3932)
+	at com.google.common.cache.LocalCache$LocalManualCache.get(LocalCache.java:4721)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.getMavenProject(ProjectRegistryManager.java:997)
+	at org.eclipse.m2e.core.internal.project.registry.MavenProjectFacade.getMavenProject(MavenProjectFacade.java:242)
+	at org.eclipse.m2e.core.ui.internal.actions.SelectionUtil.getMavenProject(SelectionUtil.java:261)
+	at org.eclipse.m2e.editor.pom.MavenPomEditor.readMavenProject(MavenPomEditor.java:729)
+	at org.eclipse.m2e.editor.pom.MavenPomEditor$5.run(MavenPomEditor.java:1050)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.apache.maven.model.building.ModelBuildingException: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\E\Pradeep\CoreJavaPractice\seleniumConcept\pom.xml: end tag name </plugins> must match start tag name <plugin> from line 70 (position: TEXT seen ...</plugin>\r\n\r\n\r\n\t\t\t\r\n\t\t</plugins>... @109:13)  @ line 109, column 13
+
+	at org.apache.maven.model.building.DefaultModelProblemCollector.newModelBuildingException(DefaultModelProblemCollector.java:197)
+	at org.apache.maven.model.building.DefaultModelBuilder.readModel(DefaultModelBuilder.java:575)
+	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:269)
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:161)
+	... 25 more
+!SUBENTRY 1 org.eclipse.m2e.core 4 0 2019-10-23 19:04:40.099
+!MESSAGE Could not read maven project
+!SUBENTRY 2 org.eclipse.m2e.core 4 0 2019-10-23 19:04:40.099
+!MESSAGE 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\E\Pradeep\CoreJavaPractice\seleniumConcept\pom.xml: end tag name </plugins> must match start tag name <plugin> from line 70 (position: TEXT seen ...</plugin>\r\n\r\n\r\n\t\t\t\r\n\t\t</plugins>... @109:13)  @ line 109, column 13
+ for project  at C:\E\Pradeep\CoreJavaPractice\seleniumConcept\pom.xml
+!STACK 0
+org.apache.maven.project.ProjectBuildingException: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\E\Pradeep\CoreJavaPractice\seleniumConcept\pom.xml: end tag name </plugins> must match start tag name <plugin> from line 70 (position: TEXT seen ...</plugin>\r\n\r\n\r\n\t\t\t\r\n\t\t</plugins>... @109:13)  @ line 109, column 13
+ for project  at C:\E\Pradeep\CoreJavaPractice\seleniumConcept\pom.xml
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:168)
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:119)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readMavenProject(MavenImpl.java:636)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager$5.call(ProjectRegistryManager.java:815)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager$5.call(ProjectRegistryManager.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.execute(ProjectRegistryManager.java:956)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.readProjectWithDependencies(ProjectRegistryManager.java:811)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.readProjectWithDependencies(ProjectRegistryManager.java:794)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager$6.call(ProjectRegistryManager.java:999)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager$6.call(ProjectRegistryManager.java:1)
+	at com.google.common.cache.LocalCache$LocalManualCache$1.load(LocalCache.java:4724)
+	at com.google.common.cache.LocalCache$LoadingValueReference.loadFuture(LocalCache.java:3522)
+	at com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2315)
+	at com.google.common.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2278)
+	at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2193)
+	at com.google.common.cache.LocalCache.get(LocalCache.java:3932)
+	at com.google.common.cache.LocalCache$LocalManualCache.get(LocalCache.java:4721)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.getMavenProject(ProjectRegistryManager.java:997)
+	at org.eclipse.m2e.core.internal.project.registry.MavenProjectFacade.getMavenProject(MavenProjectFacade.java:242)
+	at org.eclipse.m2e.core.ui.internal.actions.SelectionUtil.getMavenProject(SelectionUtil.java:261)
+	at org.eclipse.m2e.editor.pom.MavenPomEditor.readMavenProject(MavenPomEditor.java:729)
+	at org.eclipse.m2e.editor.pom.MavenPomEditor$5.run(MavenPomEditor.java:1050)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.apache.maven.model.building.ModelBuildingException: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\E\Pradeep\CoreJavaPractice\seleniumConcept\pom.xml: end tag name </plugins> must match start tag name <plugin> from line 70 (position: TEXT seen ...</plugin>\r\n\r\n\r\n\t\t\t\r\n\t\t</plugins>... @109:13)  @ line 109, column 13
+
+	at org.apache.maven.model.building.DefaultModelProblemCollector.newModelBuildingException(DefaultModelProblemCollector.java:197)
+	at org.apache.maven.model.building.DefaultModelBuilder.readModel(DefaultModelBuilder.java:575)
+	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:269)
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:161)
+	... 25 more
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2019-10-23 19:04:40.246
+!MESSAGE Could not read pom.xml
+!STACK 1
+org.eclipse.core.runtime.CoreException: Could not read pom.xml
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:565)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:574)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refreshPhase2(ProjectRegistryManager.java:541)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:497)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:350)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:297)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:154)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod$1.call(MavenBuilder.java:89)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:86)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:200)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.apache.maven.model.io.ModelParseException: Unrecognised tag: 'plugin' (position: START_TAG seen ...<!-- Allure Reporting -->\r\n\r\n\r\n\r\n\t\t\t<plugin>... @91:12) 
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:130)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:94)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:563)
+	... 24 more
+Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: Unrecognised tag: 'plugin' (position: START_TAG seen ...<!-- Allure Reporting -->\r\n\r\n\r\n\r\n\t\t\t<plugin>... @91:12) 
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.checkUnknownElement(MavenXpp3Reader.java:152)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parsePlugin(MavenXpp3Reader.java:2739)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseBuild(MavenXpp3Reader.java:950)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseModel(MavenXpp3Reader.java:2239)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:3807)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:557)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:125)
+	... 26 more
+!SUBENTRY 1 org.eclipse.m2e.core 4 -1 2019-10-23 19:04:40.247
+!MESSAGE Could not read pom.xml
+!STACK 0
+org.apache.maven.model.io.ModelParseException: Unrecognised tag: 'plugin' (position: START_TAG seen ...<!-- Allure Reporting -->\r\n\r\n\r\n\r\n\t\t\t<plugin>... @91:12) 
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:130)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:94)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:563)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:574)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refreshPhase2(ProjectRegistryManager.java:541)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:497)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:350)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:297)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:154)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod$1.call(MavenBuilder.java:89)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:86)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:200)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: Unrecognised tag: 'plugin' (position: START_TAG seen ...<!-- Allure Reporting -->\r\n\r\n\r\n\r\n\t\t\t<plugin>... @91:12) 
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.checkUnknownElement(MavenXpp3Reader.java:152)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parsePlugin(MavenXpp3Reader.java:2739)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseBuild(MavenXpp3Reader.java:950)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseModel(MavenXpp3Reader.java:2239)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:3807)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:557)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:125)
+	... 26 more
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2019-10-23 19:04:41.839
+!MESSAGE Could not read pom.xml
+!STACK 1
+org.eclipse.core.runtime.CoreException: Could not read pom.xml
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:565)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:574)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refreshPhase2(ProjectRegistryManager.java:541)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:497)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:350)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:297)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:154)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod$1.call(MavenBuilder.java:89)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:86)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:200)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.apache.maven.model.io.ModelParseException: Unrecognised tag: 'plugin' (position: START_TAG seen ...<!-- Allure Reporting -->\r\n\r\n\r\n\r\n\t\t\t<plugin>... @91:12) 
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:130)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:94)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:563)
+	... 24 more
+Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: Unrecognised tag: 'plugin' (position: START_TAG seen ...<!-- Allure Reporting -->\r\n\r\n\r\n\r\n\t\t\t<plugin>... @91:12) 
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.checkUnknownElement(MavenXpp3Reader.java:152)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parsePlugin(MavenXpp3Reader.java:2739)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseBuild(MavenXpp3Reader.java:950)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseModel(MavenXpp3Reader.java:2239)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:3807)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:557)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:125)
+	... 26 more
+!SUBENTRY 1 org.eclipse.m2e.core 4 -1 2019-10-23 19:04:41.840
+!MESSAGE Could not read pom.xml
+!STACK 0
+org.apache.maven.model.io.ModelParseException: Unrecognised tag: 'plugin' (position: START_TAG seen ...<!-- Allure Reporting -->\r\n\r\n\r\n\r\n\t\t\t<plugin>... @91:12) 
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:130)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:94)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:563)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:574)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refreshPhase2(ProjectRegistryManager.java:541)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:497)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:350)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:297)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:154)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod$1.call(MavenBuilder.java:89)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:86)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:200)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: Unrecognised tag: 'plugin' (position: START_TAG seen ...<!-- Allure Reporting -->\r\n\r\n\r\n\r\n\t\t\t<plugin>... @91:12) 
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.checkUnknownElement(MavenXpp3Reader.java:152)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parsePlugin(MavenXpp3Reader.java:2739)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseBuild(MavenXpp3Reader.java:950)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseModel(MavenXpp3Reader.java:2239)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:3807)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:557)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:125)
+	... 26 more
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2019-10-23 19:08:53.802
+!MESSAGE Failed to read Maven project: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\E\Pradeep\CoreJavaPractice\seleniumConcept\pom.xml: end tag name </build> must match start tag name <plugin> from line 70 (position: TEXT seen ...</plugin>\r\n\r\n\r\n\t\t\t\r\n\t\t\r\n\t</build>... @110:10)  @ line 110, column 10
+ for project  at C:\E\Pradeep\CoreJavaPractice\seleniumConcept\pom.xml
+!STACK 0
+org.apache.maven.project.ProjectBuildingException: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\E\Pradeep\CoreJavaPractice\seleniumConcept\pom.xml: end tag name </build> must match start tag name <plugin> from line 70 (position: TEXT seen ...</plugin>\r\n\r\n\r\n\t\t\t\r\n\t\t\r\n\t</build>... @110:10)  @ line 110, column 10
+ for project  at C:\E\Pradeep\CoreJavaPractice\seleniumConcept\pom.xml
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:168)
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:119)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readMavenProject(MavenImpl.java:636)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager$5.call(ProjectRegistryManager.java:815)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager$5.call(ProjectRegistryManager.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.execute(ProjectRegistryManager.java:956)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.readProjectWithDependencies(ProjectRegistryManager.java:811)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.create(ProjectRegistryManager.java:191)
+	at org.eclipse.m2e.core.internal.project.registry.MavenProjectManager.create(MavenProjectManager.java:80)
+	at org.eclipse.m2e.core.ui.internal.actions.SelectionUtil.getMavenProject(SelectionUtil.java:259)
+	at org.eclipse.m2e.editor.pom.MavenPomEditor.readMavenProject(MavenPomEditor.java:729)
+	at org.eclipse.m2e.editor.pom.MavenPomEditor$5.run(MavenPomEditor.java:1050)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.apache.maven.model.building.ModelBuildingException: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\E\Pradeep\CoreJavaPractice\seleniumConcept\pom.xml: end tag name </build> must match start tag name <plugin> from line 70 (position: TEXT seen ...</plugin>\r\n\r\n\r\n\t\t\t\r\n\t\t\r\n\t</build>... @110:10)  @ line 110, column 10
+
+	at org.apache.maven.model.building.DefaultModelProblemCollector.newModelBuildingException(DefaultModelProblemCollector.java:197)
+	at org.apache.maven.model.building.DefaultModelBuilder.readModel(DefaultModelBuilder.java:575)
+	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:269)
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:161)
+	... 15 more
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2019-10-23 19:08:53.941
+!MESSAGE Could not read pom.xml
+!STACK 1
+org.eclipse.core.runtime.CoreException: Could not read pom.xml
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:565)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:574)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refreshPhase2(ProjectRegistryManager.java:541)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:497)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:350)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:297)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:154)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod$1.call(MavenBuilder.java:89)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:86)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:200)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.apache.maven.model.io.ModelParseException: Unrecognised tag: 'plugin' (position: START_TAG seen ...<!-- Allure Reporting -->\r\n\r\n\r\n\r\n\t\t\t<plugin>... @91:12) 
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:130)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:94)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:563)
+	... 24 more
+Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: Unrecognised tag: 'plugin' (position: START_TAG seen ...<!-- Allure Reporting -->\r\n\r\n\r\n\r\n\t\t\t<plugin>... @91:12) 
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.checkUnknownElement(MavenXpp3Reader.java:152)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parsePlugin(MavenXpp3Reader.java:2739)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseBuild(MavenXpp3Reader.java:950)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseModel(MavenXpp3Reader.java:2239)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:3807)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:557)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:125)
+	... 26 more
+!SUBENTRY 1 org.eclipse.m2e.core 4 -1 2019-10-23 19:08:53.941
+!MESSAGE Could not read pom.xml
+!STACK 0
+org.apache.maven.model.io.ModelParseException: Unrecognised tag: 'plugin' (position: START_TAG seen ...<!-- Allure Reporting -->\r\n\r\n\r\n\r\n\t\t\t<plugin>... @91:12) 
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:130)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:94)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:563)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:574)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refreshPhase2(ProjectRegistryManager.java:541)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:497)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:350)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:297)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:154)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod$1.call(MavenBuilder.java:89)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:86)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:200)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: Unrecognised tag: 'plugin' (position: START_TAG seen ...<!-- Allure Reporting -->\r\n\r\n\r\n\r\n\t\t\t<plugin>... @91:12) 
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.checkUnknownElement(MavenXpp3Reader.java:152)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parsePlugin(MavenXpp3Reader.java:2739)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseBuild(MavenXpp3Reader.java:950)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseModel(MavenXpp3Reader.java:2239)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:3807)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:557)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:125)
+	... 26 more
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2019-10-23 19:09:20.343
+!MESSAGE Failed to read Maven project: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\E\Pradeep\CoreJavaPractice\seleniumConcept\pom.xml: end tag name </project> must match start tag name <plugin> from line 70 (position: TEXT seen ...</reporting>\r\n</project>... @130:11)  @ line 130, column 11
+ for project  at C:\E\Pradeep\CoreJavaPractice\seleniumConcept\pom.xml
+!STACK 0
+org.apache.maven.project.ProjectBuildingException: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\E\Pradeep\CoreJavaPractice\seleniumConcept\pom.xml: end tag name </project> must match start tag name <plugin> from line 70 (position: TEXT seen ...</reporting>\r\n</project>... @130:11)  @ line 130, column 11
+ for project  at C:\E\Pradeep\CoreJavaPractice\seleniumConcept\pom.xml
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:168)
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:119)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readMavenProject(MavenImpl.java:636)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager$5.call(ProjectRegistryManager.java:815)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager$5.call(ProjectRegistryManager.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.execute(ProjectRegistryManager.java:956)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.readProjectWithDependencies(ProjectRegistryManager.java:811)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.create(ProjectRegistryManager.java:191)
+	at org.eclipse.m2e.core.internal.project.registry.MavenProjectManager.create(MavenProjectManager.java:80)
+	at org.eclipse.m2e.core.ui.internal.actions.SelectionUtil.getMavenProject(SelectionUtil.java:259)
+	at org.eclipse.m2e.editor.pom.MavenPomEditor.readMavenProject(MavenPomEditor.java:729)
+	at org.eclipse.m2e.editor.pom.MavenPomEditor$5.run(MavenPomEditor.java:1050)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.apache.maven.model.building.ModelBuildingException: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\E\Pradeep\CoreJavaPractice\seleniumConcept\pom.xml: end tag name </project> must match start tag name <plugin> from line 70 (position: TEXT seen ...</reporting>\r\n</project>... @130:11)  @ line 130, column 11
+
+	at org.apache.maven.model.building.DefaultModelProblemCollector.newModelBuildingException(DefaultModelProblemCollector.java:197)
+	at org.apache.maven.model.building.DefaultModelBuilder.readModel(DefaultModelBuilder.java:575)
+	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:269)
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:161)
+	... 15 more
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2019-10-23 19:09:20.499
+!MESSAGE Could not read pom.xml
+!STACK 1
+org.eclipse.core.runtime.CoreException: Could not read pom.xml
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:565)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:574)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refreshPhase2(ProjectRegistryManager.java:541)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:497)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:350)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:297)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:154)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod$1.call(MavenBuilder.java:89)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:86)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:200)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.apache.maven.model.io.ModelParseException: Unrecognised tag: 'plugin' (position: START_TAG seen ...<!-- Allure Reporting -->\r\n\r\n\r\n\r\n\t\t\t<plugin>... @91:12) 
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:130)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:94)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:563)
+	... 24 more
+Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: Unrecognised tag: 'plugin' (position: START_TAG seen ...<!-- Allure Reporting -->\r\n\r\n\r\n\r\n\t\t\t<plugin>... @91:12) 
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.checkUnknownElement(MavenXpp3Reader.java:152)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parsePlugin(MavenXpp3Reader.java:2739)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseBuild(MavenXpp3Reader.java:950)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseModel(MavenXpp3Reader.java:2239)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:3807)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:557)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:125)
+	... 26 more
+!SUBENTRY 1 org.eclipse.m2e.core 4 -1 2019-10-23 19:09:20.499
+!MESSAGE Could not read pom.xml
+!STACK 0
+org.apache.maven.model.io.ModelParseException: Unrecognised tag: 'plugin' (position: START_TAG seen ...<!-- Allure Reporting -->\r\n\r\n\r\n\r\n\t\t\t<plugin>... @91:12) 
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:130)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:94)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:563)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:574)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refreshPhase2(ProjectRegistryManager.java:541)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:497)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:350)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:297)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:154)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod$1.call(MavenBuilder.java:89)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:86)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:200)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: Unrecognised tag: 'plugin' (position: START_TAG seen ...<!-- Allure Reporting -->\r\n\r\n\r\n\r\n\t\t\t<plugin>... @91:12) 
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.checkUnknownElement(MavenXpp3Reader.java:152)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parsePlugin(MavenXpp3Reader.java:2739)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseBuild(MavenXpp3Reader.java:950)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseModel(MavenXpp3Reader.java:2239)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:3807)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:557)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:125)
+	... 26 more
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2019-10-23 19:13:31.308
+!MESSAGE Could not read pom.xml
+!STACK 1
+org.eclipse.core.runtime.CoreException: Could not read pom.xml
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:565)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:574)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refreshPhase2(ProjectRegistryManager.java:541)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:497)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:350)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:297)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:154)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod$1.call(MavenBuilder.java:89)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:86)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:200)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.apache.maven.model.io.ModelParseException: end tag name </plugin> must match start tag name <plugins> from line 59 (position: TEXT seen ...</plugin>\r\n\r\n\r\n\t\t\t</plugin>... @115:13) 
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:130)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:94)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:563)
+	... 24 more
+Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: end tag name </plugin> must match start tag name <plugins> from line 59 (position: TEXT seen ...</plugin>\r\n\r\n\r\n\t\t\t</plugin>... @115:13) 
+	at org.codehaus.plexus.util.xml.pull.MXParser.parseEndTag(MXParser.java:1727)
+	at org.codehaus.plexus.util.xml.pull.MXParser.nextImpl(MXParser.java:1169)
+	at org.codehaus.plexus.util.xml.pull.MXParser.next(MXParser.java:1131)
+	at org.codehaus.plexus.util.xml.pull.MXParser.nextTag(MXParser.java:1118)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseBuild(MavenXpp3Reader.java:946)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseModel(MavenXpp3Reader.java:2239)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:3807)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:557)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:125)
+	... 26 more
+!SUBENTRY 1 org.eclipse.m2e.core 4 -1 2019-10-23 19:13:31.308
+!MESSAGE Could not read pom.xml
+!STACK 0
+org.apache.maven.model.io.ModelParseException: end tag name </plugin> must match start tag name <plugins> from line 59 (position: TEXT seen ...</plugin>\r\n\r\n\r\n\t\t\t</plugin>... @115:13) 
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:130)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:94)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:563)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:574)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refreshPhase2(ProjectRegistryManager.java:541)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:497)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:350)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:297)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:154)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod$1.call(MavenBuilder.java:89)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:86)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:200)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: end tag name </plugin> must match start tag name <plugins> from line 59 (position: TEXT seen ...</plugin>\r\n\r\n\r\n\t\t\t</plugin>... @115:13) 
+	at org.codehaus.plexus.util.xml.pull.MXParser.parseEndTag(MXParser.java:1727)
+	at org.codehaus.plexus.util.xml.pull.MXParser.nextImpl(MXParser.java:1169)
+	at org.codehaus.plexus.util.xml.pull.MXParser.next(MXParser.java:1131)
+	at org.codehaus.plexus.util.xml.pull.MXParser.nextTag(MXParser.java:1118)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseBuild(MavenXpp3Reader.java:946)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseModel(MavenXpp3Reader.java:2239)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:3807)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:557)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:125)
+	... 26 more
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2019-10-23 19:13:32.765
+!MESSAGE Could not read pom.xml
+!STACK 1
+org.eclipse.core.runtime.CoreException: Could not read pom.xml
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:565)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:574)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refreshPhase2(ProjectRegistryManager.java:541)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:497)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:350)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:297)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:154)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod$1.call(MavenBuilder.java:89)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:86)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:200)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.apache.maven.model.io.ModelParseException: end tag name </plugin> must match start tag name <plugins> from line 59 (position: TEXT seen ...</plugin>\r\n\r\n\r\n\t\t\t</plugin>... @115:13) 
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:130)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:94)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:563)
+	... 24 more
+Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: end tag name </plugin> must match start tag name <plugins> from line 59 (position: TEXT seen ...</plugin>\r\n\r\n\r\n\t\t\t</plugin>... @115:13) 
+	at org.codehaus.plexus.util.xml.pull.MXParser.parseEndTag(MXParser.java:1727)
+	at org.codehaus.plexus.util.xml.pull.MXParser.nextImpl(MXParser.java:1169)
+	at org.codehaus.plexus.util.xml.pull.MXParser.next(MXParser.java:1131)
+	at org.codehaus.plexus.util.xml.pull.MXParser.nextTag(MXParser.java:1118)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseBuild(MavenXpp3Reader.java:946)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseModel(MavenXpp3Reader.java:2239)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:3807)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:557)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:125)
+	... 26 more
+!SUBENTRY 1 org.eclipse.m2e.core 4 -1 2019-10-23 19:13:32.766
+!MESSAGE Could not read pom.xml
+!STACK 0
+org.apache.maven.model.io.ModelParseException: end tag name </plugin> must match start tag name <plugins> from line 59 (position: TEXT seen ...</plugin>\r\n\r\n\r\n\t\t\t</plugin>... @115:13) 
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:130)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:94)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:563)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:574)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refreshPhase2(ProjectRegistryManager.java:541)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:497)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:350)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:297)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:154)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod$1.call(MavenBuilder.java:89)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:86)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:200)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: end tag name </plugin> must match start tag name <plugins> from line 59 (position: TEXT seen ...</plugin>\r\n\r\n\r\n\t\t\t</plugin>... @115:13) 
+	at org.codehaus.plexus.util.xml.pull.MXParser.parseEndTag(MXParser.java:1727)
+	at org.codehaus.plexus.util.xml.pull.MXParser.nextImpl(MXParser.java:1169)
+	at org.codehaus.plexus.util.xml.pull.MXParser.next(MXParser.java:1131)
+	at org.codehaus.plexus.util.xml.pull.MXParser.nextTag(MXParser.java:1118)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseBuild(MavenXpp3Reader.java:946)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseModel(MavenXpp3Reader.java:2239)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:3807)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:557)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:125)
+	... 26 more
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2019-10-23 19:13:43.331
+!MESSAGE Failed to read Maven project: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\E\Pradeep\CoreJavaPractice\seleniumConcept\pom.xml: end tag name </plugin> must match start tag name <plugins> from line 59 (position: TEXT seen ...</plugin>\r\n\r\n\r\n\t\t</plugin>... @115:12)  @ line 115, column 12
+ for project  at C:\E\Pradeep\CoreJavaPractice\seleniumConcept\pom.xml
+!STACK 0
+org.apache.maven.project.ProjectBuildingException: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\E\Pradeep\CoreJavaPractice\seleniumConcept\pom.xml: end tag name </plugin> must match start tag name <plugins> from line 59 (position: TEXT seen ...</plugin>\r\n\r\n\r\n\t\t</plugin>... @115:12)  @ line 115, column 12
+ for project  at C:\E\Pradeep\CoreJavaPractice\seleniumConcept\pom.xml
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:168)
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:119)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readMavenProject(MavenImpl.java:636)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager$5.call(ProjectRegistryManager.java:815)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager$5.call(ProjectRegistryManager.java:1)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.execute(ProjectRegistryManager.java:956)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.readProjectWithDependencies(ProjectRegistryManager.java:811)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.create(ProjectRegistryManager.java:191)
+	at org.eclipse.m2e.core.internal.project.registry.MavenProjectManager.create(MavenProjectManager.java:80)
+	at org.eclipse.m2e.core.ui.internal.actions.SelectionUtil.getMavenProject(SelectionUtil.java:259)
+	at org.eclipse.m2e.editor.pom.MavenPomEditor.readMavenProject(MavenPomEditor.java:729)
+	at org.eclipse.m2e.editor.pom.MavenPomEditor$5.run(MavenPomEditor.java:1050)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.apache.maven.model.building.ModelBuildingException: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\E\Pradeep\CoreJavaPractice\seleniumConcept\pom.xml: end tag name </plugin> must match start tag name <plugins> from line 59 (position: TEXT seen ...</plugin>\r\n\r\n\r\n\t\t</plugin>... @115:12)  @ line 115, column 12
+
+	at org.apache.maven.model.building.DefaultModelProblemCollector.newModelBuildingException(DefaultModelProblemCollector.java:197)
+	at org.apache.maven.model.building.DefaultModelBuilder.readModel(DefaultModelBuilder.java:575)
+	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:269)
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:161)
+	... 15 more
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2019-10-23 19:13:43.483
+!MESSAGE Could not read pom.xml
+!STACK 1
+org.eclipse.core.runtime.CoreException: Could not read pom.xml
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:565)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:574)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refreshPhase2(ProjectRegistryManager.java:541)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:497)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:350)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:297)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:154)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod$1.call(MavenBuilder.java:89)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:86)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:200)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.apache.maven.model.io.ModelParseException: end tag name </plugin> must match start tag name <plugins> from line 59 (position: TEXT seen ...</plugin>\r\n\r\n\r\n\t\t</plugin>... @115:12) 
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:130)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:94)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:563)
+	... 24 more
+Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: end tag name </plugin> must match start tag name <plugins> from line 59 (position: TEXT seen ...</plugin>\r\n\r\n\r\n\t\t</plugin>... @115:12) 
+	at org.codehaus.plexus.util.xml.pull.MXParser.parseEndTag(MXParser.java:1727)
+	at org.codehaus.plexus.util.xml.pull.MXParser.nextImpl(MXParser.java:1169)
+	at org.codehaus.plexus.util.xml.pull.MXParser.next(MXParser.java:1131)
+	at org.codehaus.plexus.util.xml.pull.MXParser.nextTag(MXParser.java:1118)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseBuild(MavenXpp3Reader.java:946)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseModel(MavenXpp3Reader.java:2239)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:3807)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:557)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:125)
+	... 26 more
+!SUBENTRY 1 org.eclipse.m2e.core 4 -1 2019-10-23 19:13:43.483
+!MESSAGE Could not read pom.xml
+!STACK 0
+org.apache.maven.model.io.ModelParseException: end tag name </plugin> must match start tag name <plugins> from line 59 (position: TEXT seen ...</plugin>\r\n\r\n\r\n\t\t</plugin>... @115:12) 
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:130)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:94)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:563)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:574)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refreshPhase2(ProjectRegistryManager.java:541)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:497)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:350)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:297)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:154)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod$1.call(MavenBuilder.java:89)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:86)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:200)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: end tag name </plugin> must match start tag name <plugins> from line 59 (position: TEXT seen ...</plugin>\r\n\r\n\r\n\t\t</plugin>... @115:12) 
+	at org.codehaus.plexus.util.xml.pull.MXParser.parseEndTag(MXParser.java:1727)
+	at org.codehaus.plexus.util.xml.pull.MXParser.nextImpl(MXParser.java:1169)
+	at org.codehaus.plexus.util.xml.pull.MXParser.next(MXParser.java:1131)
+	at org.codehaus.plexus.util.xml.pull.MXParser.nextTag(MXParser.java:1118)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseBuild(MavenXpp3Reader.java:946)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseModel(MavenXpp3Reader.java:2239)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:3807)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:557)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:125)
+	... 26 more
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2019-10-23 19:25:44.642
+!MESSAGE Could not read pom.xml
+!STACK 1
+org.eclipse.core.runtime.CoreException: Could not read pom.xml
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:565)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:574)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refreshPhase2(ProjectRegistryManager.java:541)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:497)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:350)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:297)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:154)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod$1.call(MavenBuilder.java:89)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:86)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:200)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.apache.maven.model.io.ModelParseException: Unrecognised tag: 'dependency' (position: START_TAG seen ...<!-- Allure Report TestNg Adapter -->\r\n\t\t<dependency>... @19:15) 
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:130)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:94)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:563)
+	... 24 more
+Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: Unrecognised tag: 'dependency' (position: START_TAG seen ...<!-- Allure Report TestNg Adapter -->\r\n\t\t<dependency>... @19:15) 
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.checkUnknownElement(MavenXpp3Reader.java:152)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseModel(MavenXpp3Reader.java:2267)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:3807)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:557)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:125)
+	... 26 more
+!SUBENTRY 1 org.eclipse.m2e.core 4 -1 2019-10-23 19:25:44.642
+!MESSAGE Could not read pom.xml
+!STACK 0
+org.apache.maven.model.io.ModelParseException: Unrecognised tag: 'dependency' (position: START_TAG seen ...<!-- Allure Report TestNg Adapter -->\r\n\t\t<dependency>... @19:15) 
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:130)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:94)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:563)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:574)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refreshPhase2(ProjectRegistryManager.java:541)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:497)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:350)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:297)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:154)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod$1.call(MavenBuilder.java:89)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:86)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:200)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: Unrecognised tag: 'dependency' (position: START_TAG seen ...<!-- Allure Report TestNg Adapter -->\r\n\t\t<dependency>... @19:15) 
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.checkUnknownElement(MavenXpp3Reader.java:152)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseModel(MavenXpp3Reader.java:2267)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:3807)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:557)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:125)
+	... 26 more
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2019-10-23 19:25:46.100
+!MESSAGE Could not read pom.xml
+!STACK 1
+org.eclipse.core.runtime.CoreException: Could not read pom.xml
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:565)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:574)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refreshPhase2(ProjectRegistryManager.java:541)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:497)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:350)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:297)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:154)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod$1.call(MavenBuilder.java:89)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:86)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:200)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.apache.maven.model.io.ModelParseException: Unrecognised tag: 'dependency' (position: START_TAG seen ...<!-- Allure Report TestNg Adapter -->\r\n\t\t<dependency>... @19:15) 
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:130)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:94)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:563)
+	... 24 more
+Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: Unrecognised tag: 'dependency' (position: START_TAG seen ...<!-- Allure Report TestNg Adapter -->\r\n\t\t<dependency>... @19:15) 
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.checkUnknownElement(MavenXpp3Reader.java:152)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseModel(MavenXpp3Reader.java:2267)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:3807)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:557)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:125)
+	... 26 more
+!SUBENTRY 1 org.eclipse.m2e.core 4 -1 2019-10-23 19:25:46.100
+!MESSAGE Could not read pom.xml
+!STACK 0
+org.apache.maven.model.io.ModelParseException: Unrecognised tag: 'dependency' (position: START_TAG seen ...<!-- Allure Report TestNg Adapter -->\r\n\t\t<dependency>... @19:15) 
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:130)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:94)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:563)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readModel(MavenImpl.java:574)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refreshPhase2(ProjectRegistryManager.java:541)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:497)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:350)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:297)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.getProjectFacade(MavenBuilder.java:154)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod$1.call(MavenBuilder.java:89)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder$BuildMethod.execute(MavenBuilder.java:86)
+	at org.eclipse.m2e.core.internal.builder.MavenBuilder.build(MavenBuilder.java:200)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: Unrecognised tag: 'dependency' (position: START_TAG seen ...<!-- Allure Report TestNg Adapter -->\r\n\t\t<dependency>... @19:15) 
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.checkUnknownElement(MavenXpp3Reader.java:152)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.parseModel(MavenXpp3Reader.java:2267)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:3807)
+	at org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(MavenXpp3Reader.java:557)
+	at org.apache.maven.model.io.DefaultModelReader.read(DefaultModelReader.java:125)
+	... 26 more
+
+!ENTRY org.testng.eclipse 1 0 2019-10-23 19:28:39.467
+!MESSAGE [TestNGLaunchConfigurationDelegate] Launching:
+  Classpath: C:\Users\Monocept\Downloads\eclipse\eclipse\plugins\org.testng.eclipse_6.9.10.201512240000\lib\testng-remote.jar C:\E\Pradeep\CoreJavaPractice\HuskPowerSystem\target\test-classes C:\E\Pradeep\CoreJavaPractice\HuskPowerSystem\target\classes C:\Users\Monocept\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar C:\Users\Monocept\.m2\repository\org\testng\testng\6.8\testng-6.8.jar C:\Users\Monocept\.m2\repository\org\beanshell\bsh\2.0b4\bsh-2.0b4.jar C:\Users\Monocept\.m2\repository\com\beust\jcommander\1.27\jcommander-1.27.jar C:\Users\Monocept\.m2\repository\org\yaml\snakeyaml\1.6\snakeyaml-1.6.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-java\2.41.0\selenium-java-2.41.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\2.41.0\selenium-chrome-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\2.41.0\selenium-remote-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\cglib\cglib-nodep\2.1_3\cglib-nodep-2.1_3.jar C:\Users\Monocept\.m2\repository\org\json\json\20080701\json-20080701.jar C:\Users\Monocept\.m2\repository\com\google\guava\guava\15.0\guava-15.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-htmlunit-driver\2.41.0\selenium-htmlunit-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\net\sourceforge\htmlunit\htmlunit\2.13\htmlunit-2.13.jar C:\Users\Monocept\.m2\repository\xalan\xalan\2.7.1\xalan-2.7.1.jar C:\Users\Monocept\.m2\repository\xalan\serializer\2.7.1\serializer-2.7.1.jar C:\Users\Monocept\.m2\repository\commons-collections\commons-collections\3.2.1\commons-collections-3.2.1.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-lang3\3.1\commons-lang3-3.1.jar C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpmime\4.3.1\httpmime-4.3.1.jar C:\Users\Monocept\.m2\repository\net\sourceforge\htmlunit\htmlunit-core-js\2.13\htmlunit-core-js-2.13.jar C:\Users\Monocept\.m2\repository\xerces\xercesImpl\2.11.0\xercesImpl-2.11.0.jar C:\Users\Monocept\.m2\repository\xml-apis\xml-apis\1.4.01\xml-apis-1.4.01.jar C:\Users\Monocept\.m2\repository\net\sourceforge\nekohtml\nekohtml\1.9.19\nekohtml-1.9.19.jar C:\Users\Monocept\.m2\repository\net\sourceforge\cssparser\cssparser\0.9.11\cssparser-0.9.11.jar C:\Users\Monocept\.m2\repository\org\w3c\css\sac\1.3\sac-1.3.jar C:\Users\Monocept\.m2\repository\commons-logging\commons-logging\1.1.3\commons-logging-1.1.3.jar C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-websocket\8.1.12.v20130726\jetty-websocket-8.1.12.v20130726.jar C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-util\8.1.12.v20130726\jetty-util-8.1.12.v20130726.jar C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-io\8.1.12.v20130726\jetty-io-8.1.12.v20130726.jar C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-http\8.1.12.v20130726\jetty-http-8.1.12.v20130726.jar C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpclient\4.3.1\httpclient-4.3.1.jar C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpcore\4.3\httpcore-4.3.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\2.41.0\selenium-firefox-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\commons-io\commons-io\2.2\commons-io-2.2.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-exec\1.1\commons-exec-1.1.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\2.41.0\selenium-ie-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\net\java\dev\jna\jna\3.4.0\jna-3.4.0.jar C:\Users\Monocept\.m2\repository\net\java\dev\jna\platform\3.4.0\platform-3.4.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\2.41.0\selenium-safari-driver-2.41.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-support\2.41.0\selenium-support-2.41.0.jar C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-api\2.41.0\selenium-api-2.41.0.jar C:\Users\Monocept\.m2\repository\org\webbitserver\webbit\0.4.14\webbit-0.4.14.jar C:\Users\Monocept\.m2\repository\io\netty\netty\3.5.2.Final\netty-3.5.2.Final.jar C:\Users\Monocept\.m2\repository\org\apache\poi\poi\4.1.0\poi-4.1.0.jar C:\Users\Monocept\.m2\repository\commons-codec\commons-codec\1.12\commons-codec-1.12.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-collections4\4.3\commons-collections4-4.3.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar C:\Users\Monocept\.m2\repository\org\apache\poi\poi-ooxml\4.1.0\poi-ooxml-4.1.0.jar C:\Users\Monocept\.m2\repository\org\apache\poi\poi-ooxml-schemas\4.1.0\poi-ooxml-schemas-4.1.0.jar C:\Users\Monocept\.m2\repository\org\apache\xmlbeans\xmlbeans\3.1.0\xmlbeans-3.1.0.jar C:\Users\Monocept\.m2\repository\org\apache\commons\commons-compress\1.18\commons-compress-1.18.jar C:\Users\Monocept\.m2\repository\com\github\virtuald\curvesapi\1.06\curvesapi-1.06.jar C:\Users\Monocept\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar C:\Users\Monocept\.m2\repository\org\aspectj\aspectjweaver\1.8.6\aspectjweaver-1.8.6.jar
+  VMArgs:    -ea -javaagent:C:\Users\Monocept\.m2\repository/org/aspectj/aspectjweaver/1.8.6/aspectjweaver-1.8.6.jar
+  Class:     org.testng.remote.RemoteTestNG
+  Args:      -serport 58237 -d C:\E\Pradeep\CoreJavaPractice\HuskPowerSystem\test-output C:\Users\Monocept\AppData\Local\Temp\testng-eclipse-1140689839\testng-customsuite.xml
+java -ea -javaagent:C:\Users\Monocept\.m2\repository/org/aspectj/aspectjweaver/1.8.6/aspectjweaver-1.8.6.jar -classpath C:\Users\Monocept\Downloads\eclipse\eclipse\plugins\org.testng.eclipse_6.9.10.201512240000\lib\testng-remote.jar:C:\E\Pradeep\CoreJavaPractice\HuskPowerSystem\target\test-classes:C:\E\Pradeep\CoreJavaPractice\HuskPowerSystem\target\classes:C:\Users\Monocept\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar:C:\Users\Monocept\.m2\repository\org\testng\testng\6.8\testng-6.8.jar:C:\Users\Monocept\.m2\repository\org\beanshell\bsh\2.0b4\bsh-2.0b4.jar:C:\Users\Monocept\.m2\repository\com\beust\jcommander\1.27\jcommander-1.27.jar:C:\Users\Monocept\.m2\repository\org\yaml\snakeyaml\1.6\snakeyaml-1.6.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-java\2.41.0\selenium-java-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\2.41.0\selenium-chrome-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\2.41.0\selenium-remote-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\cglib\cglib-nodep\2.1_3\cglib-nodep-2.1_3.jar:C:\Users\Monocept\.m2\repository\org\json\json\20080701\json-20080701.jar:C:\Users\Monocept\.m2\repository\com\google\guava\guava\15.0\guava-15.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-htmlunit-driver\2.41.0\selenium-htmlunit-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\net\sourceforge\htmlunit\htmlunit\2.13\htmlunit-2.13.jar:C:\Users\Monocept\.m2\repository\xalan\xalan\2.7.1\xalan-2.7.1.jar:C:\Users\Monocept\.m2\repository\xalan\serializer\2.7.1\serializer-2.7.1.jar:C:\Users\Monocept\.m2\repository\commons-collections\commons-collections\3.2.1\commons-collections-3.2.1.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-lang3\3.1\commons-lang3-3.1.jar:C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpmime\4.3.1\httpmime-4.3.1.jar:C:\Users\Monocept\.m2\repository\net\sourceforge\htmlunit\htmlunit-core-js\2.13\htmlunit-core-js-2.13.jar:C:\Users\Monocept\.m2\repository\xerces\xercesImpl\2.11.0\xercesImpl-2.11.0.jar:C:\Users\Monocept\.m2\repository\xml-apis\xml-apis\1.4.01\xml-apis-1.4.01.jar:C:\Users\Monocept\.m2\repository\net\sourceforge\nekohtml\nekohtml\1.9.19\nekohtml-1.9.19.jar:C:\Users\Monocept\.m2\repository\net\sourceforge\cssparser\cssparser\0.9.11\cssparser-0.9.11.jar:C:\Users\Monocept\.m2\repository\org\w3c\css\sac\1.3\sac-1.3.jar:C:\Users\Monocept\.m2\repository\commons-logging\commons-logging\1.1.3\commons-logging-1.1.3.jar:C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-websocket\8.1.12.v20130726\jetty-websocket-8.1.12.v20130726.jar:C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-util\8.1.12.v20130726\jetty-util-8.1.12.v20130726.jar:C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-io\8.1.12.v20130726\jetty-io-8.1.12.v20130726.jar:C:\Users\Monocept\.m2\repository\org\eclipse\jetty\jetty-http\8.1.12.v20130726\jetty-http-8.1.12.v20130726.jar:C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpclient\4.3.1\httpclient-4.3.1.jar:C:\Users\Monocept\.m2\repository\org\apache\httpcomponents\httpcore\4.3\httpcore-4.3.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\2.41.0\selenium-firefox-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\commons-io\commons-io\2.2\commons-io-2.2.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-exec\1.1\commons-exec-1.1.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\2.41.0\selenium-ie-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\net\java\dev\jna\jna\3.4.0\jna-3.4.0.jar:C:\Users\Monocept\.m2\repository\net\java\dev\jna\platform\3.4.0\platform-3.4.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\2.41.0\selenium-safari-driver-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-support\2.41.0\selenium-support-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\seleniumhq\selenium\selenium-api\2.41.0\selenium-api-2.41.0.jar:C:\Users\Monocept\.m2\repository\org\webbitserver\webbit\0.4.14\webbit-0.4.14.jar:C:\Users\Monocept\.m2\repository\io\netty\netty\3.5.2.Final\netty-3.5.2.Final.jar:C:\Users\Monocept\.m2\repository\org\apache\poi\poi\4.1.0\poi-4.1.0.jar:C:\Users\Monocept\.m2\repository\commons-codec\commons-codec\1.12\commons-codec-1.12.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-collections4\4.3\commons-collections4-4.3.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar:C:\Users\Monocept\.m2\repository\org\apache\poi\poi-ooxml\4.1.0\poi-ooxml-4.1.0.jar:C:\Users\Monocept\.m2\repository\org\apache\poi\poi-ooxml-schemas\4.1.0\poi-ooxml-schemas-4.1.0.jar:C:\Users\Monocept\.m2\repository\org\apache\xmlbeans\xmlbeans\3.1.0\xmlbeans-3.1.0.jar:C:\Users\Monocept\.m2\repository\org\apache\commons\commons-compress\1.18\commons-compress-1.18.jar:C:\Users\Monocept\.m2\repository\com\github\virtuald\curvesapi\1.06\curvesapi-1.06.jar:C:\Users\Monocept\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar:C:\Users\Monocept\.m2\repository\org\aspectj\aspectjweaver\1.8.6\aspectjweaver-1.8.6.jar org.testng.remote.RemoteTestNG -serport 58237 -d C:\E\Pradeep\CoreJavaPractice\HuskPowerSystem\test-output C:\Users\Monocept\AppData\Local\Temp\testng-eclipse-1140689839\testng-customsuite.xml

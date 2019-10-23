@@ -31,6 +31,12 @@
 		<list key="issueManagementUrl">
 		</list>
 	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.dialogs.MavenRepositorySearchDialog">
+		<item value="480" key="width"/>
+		<item value="443" key="x"/>
+		<item value="10" key="y"/>
+		<item value="531" key="height"/>
+	</section>
 	<section name="MavenProjectWizardArchetypePage">
 		<item value="All Catalogs" key="catalog"/>
 		<list key="projectNameTemplate">
@@ -56,12 +62,15 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="com.husk.HuskPowerSystem"/>
 			<item value="com.selenium.seleniumConcept"/>
 		</list>
 		<list key="groupId">
+			<item value="com.husk"/>
 			<item value="com.selenium"/>
 		</list>
 		<list key="artifactId">
+			<item value="HuskPowerSystem"/>
 			<item value="seleniumConcept"/>
 		</list>
 		<list key="projectNameTemplate">

@@ -1,0 +1,37 @@
+package com.huskpower.tests;
+
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import com.huskpower.pages.HuskHomePage;
+import com.huskpower.pages.PropertyReader;
+
+import util.ReusableActions;
+
+public class HuskHomeTest extends ReusableActions {
+
+	PropertyReader reader = new PropertyReader();
+	private static final Logger lOGGER = Logger.getLogger(HuskHomeTest.class);
+
+	/* Test cases for dashboard and global plants */
+	@Test(priority = 0, enabled = true)
+	public void homePageHuskDashBoard() throws Exception {
+		PageFactory.initElements(driver, HuskHomePage.class);
+		try {
+			String PATH = System.getProperty("user.dir");
+			PropertyConfigurator.configure(PATH + "\\src\\test\\java\\com\\huskpower\\tests\\log4j.properties");
+			lOGGER.info("loggin page started");
+			System.out.println("login page started");
+			HuskHomePage.dashBoardTab();
+			HuskHomePage.globalPlantsDropDownDashBoard();
+			HuskHomePage.indiaDropDownGlobalPlantDashboard();
+			HuskHomePage.biharTabDashBoard();
+		} catch (Exception e) {
+			lOGGER.info("Test Case Failed:"+e.getMessage());
+			throw e;
+		}
+	}
+
+}
