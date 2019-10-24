@@ -1,0 +1,33 @@
+package com.huskpower.tests;
+
+import org.apache.log4j.Logger;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import com.huskpower.pages.HuskHomePage;
+import com.huskpower.pages.PropertyReader;
+import com.huskpower.pages.SparkMeterDataPage;
+
+import util.ReusableActions;
+
+public class SparkMeterDataTest extends ReusableActions {
+
+	PropertyReader reader = new PropertyReader();
+	private static Logger lOGGER = Logger.getLogger(SparkMeterDataTest.class.getName());
+
+	/* Test cases for read the all url,uname and password from excel sheets */
+	@Test(priority = 0, enabled = true)
+	public void homePageHuskDashBoard() throws Exception {
+		PageFactory.initElements(driver, SparkMeterDataPage.class);
+		try {
+			HuskHomePage.dashBoardTab();
+			HuskHomePage.globalPlantsDropDownDashBoard();
+			HuskHomePage.indiaDropDownGlobalPlantDashboard();
+			HuskHomePage.biharTabDashBoard();
+		} catch (Exception e) {
+			lOGGER.info("Test Case Failed:" + e.getMessage());
+			throw e;
+		}
+	}
+
+}

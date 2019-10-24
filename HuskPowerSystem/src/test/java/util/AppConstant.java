@@ -4,6 +4,8 @@ public class AppConstant {
 
 	public static final String USER_DIR = "user.dir";
 	
+	public static final String SPARK_METER_DATA ="/resource/sparkmeterdata.xlsx";
+	
 	public static final String MASTER_DATA_EXCELL = "/resource/Excel_Reader.xlsx";
 
 	public static final String TEST_DATA_EXCELL = "/src/test/resources/TestData.xlsx";

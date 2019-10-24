@@ -130,4 +130,5 @@ public class PropertyReader {
 			throw new RuntimeException("emailID is not specify in the configration file");
 	}
 
+	
 }

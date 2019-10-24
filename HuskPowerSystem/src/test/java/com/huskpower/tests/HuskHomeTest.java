@@ -1,7 +1,6 @@
 package com.huskpower.tests;
 
 import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
@@ -13,25 +12,34 @@ import util.ReusableActions;
 public class HuskHomeTest extends ReusableActions {
 
 	PropertyReader reader = new PropertyReader();
-	private static final Logger lOGGER = Logger.getLogger(HuskHomeTest.class);
+	private static Logger lOGGER = Logger.getLogger(HuskHomeTest.class.getName());
 
-	/* Test cases for dashboard and global plants */
+	/* Test cases for dash board and global plants */
 	@Test(priority = 0, enabled = true)
 	public void homePageHuskDashBoard() throws Exception {
 		PageFactory.initElements(driver, HuskHomePage.class);
 		try {
-			String PATH = System.getProperty("user.dir");
-			PropertyConfigurator.configure(PATH + "\\src\\test\\java\\com\\huskpower\\tests\\log4j.properties");
-			lOGGER.info("loggin page started");
-			System.out.println("login page started");
 			HuskHomePage.dashBoardTab();
 			HuskHomePage.globalPlantsDropDownDashBoard();
 			HuskHomePage.indiaDropDownGlobalPlantDashboard();
 			HuskHomePage.biharTabDashBoard();
 		} catch (Exception e) {
-			lOGGER.info("Test Case Failed:"+e.getMessage());
+			lOGGER.info("Test Case Failed:" + e.getMessage());
 			throw e;
 		}
+	}
+
+	/* Test cases for Hinber Turkauliya Bihar India */
+	@Test(priority = 1, enabled = true)
+	public void hinberTurkauliyaBiharIndia() throws Exception {
+		try {
+			ReusableActions.scrollDownBiharPlants();
+            HuskHomePage.linkHinberTurkauliyaBiharDashBoard();
+		} catch (Exception e) {
+			lOGGER.info("Test Case Failed:" + e.getMessage());
+			throw e;
+		}
+
 	}
 
 }

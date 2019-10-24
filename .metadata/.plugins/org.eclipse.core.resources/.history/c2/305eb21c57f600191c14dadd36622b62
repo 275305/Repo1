@@ -1,0 +1,17 @@
+package com.huskpower.pages;
+
+import org.apache.log4j.Logger;
+import org.openqa.selenium.WebDriver;
+
+public class SparkMeterDataPage {
+
+	WebDriver driver;
+	private static final Logger lOGGER = Logger.getLogger(HuskHomePage.class);
+	public SparkMeterDataPage(WebDriver driver) {
+		super();
+		this.driver = driver;
+	}
+	
+	
+
+}

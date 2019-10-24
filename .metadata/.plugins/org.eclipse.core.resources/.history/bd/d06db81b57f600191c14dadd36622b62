@@ -1,0 +1,16 @@
+package com.huskpower.pages;
+
+import org.openqa.selenium.WebDriver;
+
+public class SparkMeterDataPage {
+
+	WebDriver driver;
+
+	public SparkMeterDataPage(WebDriver driver) {
+		super();
+		this.driver = driver;
+	}
+	
+	
+
+}

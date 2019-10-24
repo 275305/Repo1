@@ -5,12 +5,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import com.huskpower.tests.HuskHomeTest;
-
 public class HuskHomePage {
 
 	WebDriver driver;
 	private static final Logger lOGGER = Logger.getLogger(HuskHomePage.class);
+
 	public HuskHomePage(WebDriver driver) {
 		super();
 		this.driver = driver;
@@ -20,42 +19,53 @@ public class HuskHomePage {
 	@FindBy(xpath = "//span[contains(text(),'Dashboard')]")
 	static WebElement dashBoardTab;
 
-	/* x-path for global plants for dashboard */
+	/* x-path for global plants for dash board */
 	@FindBy(xpath = "//div[contains(text(),'Global Plants')]")
 	static WebElement globalPlantsDropDownDashboard;
 
-	/* x-path for India dropDown in Global plants at dashboard */
+	/* x-path for India dropDown in Global plants at dash board */
 	@FindBy(xpath = "//a[@role='option']//span[contains(text(),'India')]")
 	static WebElement indiaDropDownGlobalPlantDashboard;
+
+	/* x-path for link of Hinber Turkauliya DashBoard */
+	@FindBy(xpath = "//h2[contains(text(),'HINBR-01-06 | Turkauliya')] ")
+	static WebElement linkHinberTurkauliyaDashBoard;
 
 	/* x-path for Bihar Tab at dashBoard */
 	@FindBy(xpath = "//div[@id='plants-grid']//span[contains(text(),'Bihar')]")
 	static WebElement biharTabDashBoard;
 
-	/* method for Dashboard */
+	/* method for Dash board */
 	public static void dashBoardTab() {
 		dashBoardTab.click();
-		lOGGER.info("dashboard open sucessfully");
+		lOGGER.info("dashboard opened sucessfully");
 	}
 
-	/* method for globalPlantsDropDown at Dashboard */
+	/* method for globalPlantsDropDown at Dash board */
 	public static void globalPlantsDropDownDashBoard() throws Exception {
 		globalPlantsDropDownDashboard.click();
 		lOGGER.info("clicked at the Global Plants at Dshboard");
 		Thread.sleep(2000);
 	}
 
-	/* method for India DropDown at Dashboard */
+	/* method for India DropDown at Dash board */
 	public static void indiaDropDownGlobalPlantDashboard() throws InterruptedException {
 		indiaDropDownGlobalPlantDashboard.click();
-		lOGGER.info("Selected the India from DropDown");
-		Thread.sleep(4000);
+		lOGGER.info("Selected the India from Global plants DropDown");
+		Thread.sleep(3000);
 	}
-	
-	/* method for Bihar Tab at Dashboard */
-	public static void biharTabDashBoard() throws Exception{
+
+	/* method for Bihar Tab at Dash board */
+	public static void biharTabDashBoard() throws Exception {
 		biharTabDashBoard.click();
-		lOGGER.info("");
-		Thread.sleep(2000);
+		lOGGER.info("Selected the Bihar Tab from India Menue");
+		Thread.sleep(3000);
+	}
+
+	/* method for Hinber Turkauliya in Bihar */
+	public static void linkHinberTurkauliyaBiharDashBoard() throws InterruptedException {
+		linkHinberTurkauliyaDashBoard.click();
+		lOGGER.info("Clicked on Hinber Turkauliya in Bihar");
+		Thread.sleep(3000);
 	}
 }

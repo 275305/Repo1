@@ -2,20 +2,16 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="34864" started-at="2019-10-23T13:58:40Z" finished-at="2019-10-23T13:59:14Z">
+  <suite name="Default suite" duration-ms="33119" started-at="2019-10-24T13:55:06Z" finished-at="2019-10-24T13:55:39Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="34864" started-at="2019-10-23T13:58:40Z" finished-at="2019-10-23T13:59:14Z">
-      <class name="com.huskpower.tests.HuskHomeTest">
-        <test-method status="PASS" signature="initBrowser()[pri:0, instance:com.huskpower.tests.HuskHomeTest@4de8b406]" name="initBrowser" is-config="true" duration-ms="10308" started-at="2019-10-23T19:28:40Z" finished-at="2019-10-23T19:28:50Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initBrowser -->
-        <test-method status="PASS" signature="homePageHuskDashBoard()[pri:0, instance:com.huskpower.tests.HuskHomeTest@4de8b406]" name="homePageHuskDashBoard" duration-ms="24547" started-at="2019-10-23T19:28:50Z" finished-at="2019-10-23T19:29:14Z">
+    <test name="Default test" duration-ms="33119" started-at="2019-10-24T13:55:06Z" finished-at="2019-10-24T13:55:39Z">
+      <class name="com.huskpower.tests.SparkMeterDataTest">
+        <test-method status="PASS" signature="homePageHuskDashBoard()[pri:0, instance:com.huskpower.tests.SparkMeterDataTest@174d20a]" name="homePageHuskDashBoard" duration-ms="33111" started-at="2019-10-24T19:25:06Z" finished-at="2019-10-24T19:25:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- homePageHuskDashBoard -->
-      </class> <!-- com.huskpower.tests.HuskHomeTest -->
+      </class> <!-- com.huskpower.tests.SparkMeterDataTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

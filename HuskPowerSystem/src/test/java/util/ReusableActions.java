@@ -10,11 +10,11 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeTest;
@@ -22,13 +22,12 @@ import org.testng.annotations.BeforeTest;
 import com.huskpower.pages.PropertyReader;
 
 public class ReusableActions {
-
 	protected static WebDriver driver;
 	private static final Logger lOGGER = Logger.getLogger(ReusableActions.class.getName());
 	Properties properties;
 	String PATH = System.getProperty("user.dir");
 	private final String propertyFilePath = PATH + "\\config\\configuration.properties";;
-	PropertyReader reader = new PropertyReader();
+	static PropertyReader reader = new PropertyReader();
 
 	public ReusableActions() {
 		BufferedReader reader;
@@ -47,21 +46,29 @@ public class ReusableActions {
 		}
 	}
 
-	@BeforeTest
-	public void initBrowser() {
-		/* String PATH=System.getProperty("user.dir");
-		PropertyConfigurator.configure(PATH+ "\\tests\\log4j.properties");*/
-		System.setProperty("webdriver.chrome.driver", reader.getChromeDriver());
-		driver = new ChromeDriver();
-		String url = reader.getApplicationUrl();
-		driver.manage().window().maximize();
-		lOGGER.info("window is maximized");
-		driver.manage().timeouts().implicitlyWait(reader.getImplicitWait(), TimeUnit.SECONDS);
-		lOGGER.info("used the implecit wait");
-		driver.get(url);
-		lOGGER.info("url passed sucessfully");
+	/* Initialize the Husk Browser */
+	//@BeforeTest
+	public void initializeHuskBrowser() throws Exception {
+
+		try {
+			System.setProperty("webdriver.chrome.driver", reader.getChromeDriver());
+			lOGGER.info("Web Driver initialized sucessfully");
+			driver = new ChromeDriver();
+			String url = reader.getApplicationUrl();
+			driver.manage().window().maximize();
+			Thread.sleep(2000);
+			lOGGER.info("Window is maximized");
+			driver.manage().timeouts().implicitlyWait(reader.getImplicitWait(), TimeUnit.SECONDS);
+			lOGGER.info(" Implecit wait has been used");
+			driver.get(url);
+			lOGGER.info("HuskPowerSystem's url opened sucessfully");
+		} catch (Exception e) {
+			lOGGER.info("Test case Failed:" + e.getMessage());
+			throw e;
+		}
 	}
 
+	/* Reading the data from excel file */
 	public static String readingdata(int sheetno, int rownum, int colnum) throws Exception {
 		File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.MASTER_DATA_EXCELL);
 		FileInputStream fileInputStream = new FileInputStream(file);
@@ -72,6 +79,46 @@ public class ReusableActions {
 		String data = df.formatCellValue(cell);
 		hssfWorkbook.close();
 		return data;
+	}
+	/*reading spark data from excel*/
+	public static String readingSparkdata(int sheetno, int rownum, int colnum) throws Exception {
+		File file = new File(System.getProperty(AppConstant.USER_DIR) + AppConstant.SPARK_METER_DATA);
+		FileInputStream fileInputStream = new FileInputStream(file);
+		XSSFWorkbook hssfWorkbook = new XSSFWorkbook(fileInputStream);
+		Sheet sheet = hssfWorkbook.getSheetAt(sheetno);
+		Cell cell = sheet.getRow(rownum).getCell(colnum);
+		DataFormatter df = new DataFormatter();
+		String data = df.formatCellValue(cell);
+		hssfWorkbook.close();
+		return data;
+	}
+
+	/* Scroll down for Bihar plants */
+	public static void scrollDownBiharPlants() {
+
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,750)");
+
+	}
+	/*Initialize the spark browser*/
+	public static void initializeSparkBrowser(String sparkUrl) throws Exception {
+
+		try {
+			System.setProperty("webdriver.chrome.driver", reader.getChromeDriver());
+			lOGGER.info("Web Driver initialized sucessfully");
+			driver = new ChromeDriver();
+			driver.manage().window().maximize();
+			Thread.sleep(2000);
+			lOGGER.info("Window is maximized");
+			driver.manage().timeouts().implicitlyWait(reader.getImplicitWait(), TimeUnit.SECONDS);
+			lOGGER.info(" Implecit wait has been used");
+			driver.get(sparkUrl);
+			lOGGER.info("Spark's url opened sucessfully");
+			
+		} catch (Exception e) {
+			lOGGER.info("Test case Failed:" + e.getMessage());
+			throw e;
+		}
 	}
 
 }
