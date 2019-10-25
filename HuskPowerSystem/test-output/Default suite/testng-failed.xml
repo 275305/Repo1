@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.huskpower.tests.HuskHomeTest">
+      <class name="com.huskpower.tests.SparkMeterDataTest">
         <methods>
-          <include name="initBrowser"/>
-          <include name="homePageHuskDashBoard"/>
+          <include name="getPasswordFromPropertiesFile"/>
         </methods>
-      </class> <!-- com.huskpower.tests.HuskHomeTest -->
+      </class> <!-- com.huskpower.tests.SparkMeterDataTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

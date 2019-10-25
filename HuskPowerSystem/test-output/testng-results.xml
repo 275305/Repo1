@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="33119" started-at="2019-10-24T13:55:06Z" finished-at="2019-10-24T13:55:39Z">
+  <suite name="Default suite" duration-ms="39616" started-at="2019-10-25T13:51:32Z" finished-at="2019-10-25T13:52:11Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="33119" started-at="2019-10-24T13:55:06Z" finished-at="2019-10-24T13:55:39Z">
+    <test name="Default test" duration-ms="39616" started-at="2019-10-25T13:51:32Z" finished-at="2019-10-25T13:52:11Z">
       <class name="com.huskpower.tests.SparkMeterDataTest">
-        <test-method status="PASS" signature="homePageHuskDashBoard()[pri:0, instance:com.huskpower.tests.SparkMeterDataTest@174d20a]" name="homePageHuskDashBoard" duration-ms="33111" started-at="2019-10-24T19:25:06Z" finished-at="2019-10-24T19:25:39Z">
+        <test-method status="PASS" signature="getUrlValueFromPropertiesFile()[pri:0, instance:com.huskpower.tests.SparkMeterDataTest@174d20a]" name="getUrlValueFromPropertiesFile" duration-ms="12195" started-at="2019-10-25T19:21:32Z" finished-at="2019-10-25T19:21:44Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- homePageHuskDashBoard -->
+        </test-method> <!-- getUrlValueFromPropertiesFile -->
+        <test-method status="PASS" signature="getEmailIDFromPropertiesFile()[pri:0, instance:com.huskpower.tests.SparkMeterDataTest@174d20a]" name="getEmailIDFromPropertiesFile" duration-ms="188" started-at="2019-10-25T19:21:44Z" finished-at="2019-10-25T19:21:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getEmailIDFromPropertiesFile -->
+        <test-method status="PASS" signature="getPasswordFromPropertiesFile()[pri:0, instance:com.huskpower.tests.SparkMeterDataTest@174d20a]" name="getPasswordFromPropertiesFile" duration-ms="114" started-at="2019-10-25T19:21:44Z" finished-at="2019-10-25T19:21:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getPasswordFromPropertiesFile -->
+        <test-method status="PASS" signature="historyTransactionatHomePage()[pri:0, instance:com.huskpower.tests.SparkMeterDataTest@174d20a]" name="historyTransactionatHomePage" duration-ms="27108" started-at="2019-10-25T19:21:44Z" finished-at="2019-10-25T19:22:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- historyTransactionatHomePage -->
       </class> <!-- com.huskpower.tests.SparkMeterDataTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

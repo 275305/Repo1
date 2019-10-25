@@ -100,6 +100,13 @@ public class ReusableActions {
 		jse.executeScript("window.scrollBy(0,750)");
 
 	}
+	/* Scroll down  */
+	public static void scrollDown() {
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript("window.scrollBy(0,750)");
+	}
+	
+	
 	/*Initialize the spark browser*/
 	public static void initializeSparkBrowser(String sparkUrl) throws Exception {
 

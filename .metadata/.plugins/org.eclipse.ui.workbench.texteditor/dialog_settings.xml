@@ -2,15 +2,23 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="false" key="selection"/>
+		<item value="toolBarDropDownTransactionPage" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="toolBarDropDownTransactionPage"/>
+			<item value="emailIdTextBoxSparkMeterCloud"/>
+			<item value="false"/>
+			<item value="loginButtonSparkMasterCloudChanpatiya"/>
+			<item value="login"/>
+			<item value="historyTabHomePage"/>
+			<item value="myGlobalSelsAccountDropDown"/>
 			<item value="true"/>
 		</list>
 		<list key="replacehistory">
+			<item value="true"/>
 			<item value="false"/>
 		</list>
 	</section>

@@ -158,7 +158,7 @@ public class PropertyReader {
 			throw new RuntimeException("emailID is not specify in the configration file");
 	}
 
-	/* spark EmailId value from config.properties file */
+	/* spark Password value from config.properties file */
 	public List<Integer> getSparkPasswordValue() {
 		String sparkpassword = properties.getProperty("sparkpassword");
 		String strArr[] = sparkpassword.split(",");

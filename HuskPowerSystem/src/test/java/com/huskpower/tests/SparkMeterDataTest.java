@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
@@ -40,6 +41,7 @@ public class SparkMeterDataTest extends ReusableActions {
 		}
 
 	}
+
 	/* Test cases for read the EmailId from excel sheets */
 	@Test(priority = 1, enabled = true)
 	public void getEmailIDFromPropertiesFile() throws Exception {
@@ -54,8 +56,7 @@ public class SparkMeterDataTest extends ReusableActions {
 				column = itr.next();
 			}
 
-			String url = SparkMeterDataPage.getSparkDataUrlValueFromExcel(sheet, row, column);
-			ReusableActions.initializeSparkBrowser(url);
+			SparkMeterDataPage.getSparkEmailIdValueFromExcel(sheet, row, column);
 
 		} catch (Exception e) {
 			lOGGER.info("Test case failed" + e.getMessage());
@@ -63,8 +64,9 @@ public class SparkMeterDataTest extends ReusableActions {
 		}
 
 	}
-	/* Test cases for read the EmailId from excel sheets */
-	@Test(priority = 1, enabled = true)
+
+	/* Test cases for read the Password from excel sheets */
+	@Test(priority = 2, enabled = true)
 	public void getPasswordFromPropertiesFile() throws Exception {
 		PageFactory.initElements(driver, SparkMeterDataPage.class);
 		try {
@@ -77,8 +79,7 @@ public class SparkMeterDataTest extends ReusableActions {
 				column = itr.next();
 			}
 
-			String url = SparkMeterDataPage.getSparkDataUrlValueFromExcel(sheet, row, column);
-			ReusableActions.initializeSparkBrowser(url);
+			SparkMeterDataPage.getSparkPasswordValueFromExcel(sheet, row, column);
 
 		} catch (Exception e) {
 			lOGGER.info("Test case failed" + e.getMessage());
@@ -86,4 +87,27 @@ public class SparkMeterDataTest extends ReusableActions {
 		}
 
 	}
+
+	/* Test cases for history and transaction */
+	@Test(priority = 3, enabled = true)
+	public void historyTransactionatHomePage() throws Exception {
+		try {
+			SparkMeterDataPage.loginButtonSparkChanpatiya();
+			SparkMeterDataPage.historyTabHomePage();
+			SparkMeterDataPage.transactionTabHomePage();
+			SparkMeterDataPage.getSparkEmailIdValueFromExcelAgain();
+			SparkMeterDataPage.getSparkPasswordValueFromExcelAgain();
+			SparkMeterDataPage.loginButtonSparkChanpatiya();
+			SparkMeterDataPage.toolBarDropDownTransactionPage();
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+
+	}
+
+	
+	
+
 }
