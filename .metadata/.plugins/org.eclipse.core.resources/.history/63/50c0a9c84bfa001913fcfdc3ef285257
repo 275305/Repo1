@@ -5,7 +5,7 @@
 	<test name="Husk Power System" allow-return-values="true">
 		<classes>
 			<!-- packagename.Testcase class name -->
-			<class name="com.huskpower.tests.SparkMeterDataTest" />
+			<class name="src.test.java.com.huskpower.tests.SparkMeterDataTest" />
 		</classes>
 	</test>
 
