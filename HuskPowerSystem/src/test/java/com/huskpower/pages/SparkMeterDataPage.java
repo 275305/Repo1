@@ -12,57 +12,69 @@ public class SparkMeterDataPage {
 	WebDriver driver;
 	private static final Logger lOGGER = Logger.getLogger(HuskHomePage.class);
 
+	/* Parameterize constructor to initialize web driver */
 	public SparkMeterDataPage(WebDriver driver) {
 		super();
 		this.driver = driver;
 	}
 
-	/* x-path for emailtext text */
+	/* x-path for email text text */
 	@FindBy(xpath = "//input[@name='email']")
 	static WebElement emailIdTextBoxSparkMeterCloud;
 
 	/* x-path for password text */
 	@FindBy(xpath = "//input[@name='password']")
 	static WebElement passwordTextBoxSparkMasterCloud;
-	
-	
-	/* x-path for password text */
+
+	/* x-path for transaction tab */
 	@FindBy(xpath = "//li[@class='toolbar-link']")
 	static WebElement toolBarDropDownTransactionPage;
-	
-	//need
-	
+
+	// need
+
 	/* x-path for login button */
 	@FindBy(xpath = "//button[@type='submit']")
 	static WebElement loginButtonSparkMasterCloudChanpatiya;
 
+	/* x-path for my Global sales Account Drop Down */
 	@FindBy(xpath = "//a[@class='cog']")
 	static WebElement myGlobalSelsAccountDropDown;
 
+	/* x-path for history */
 	@FindBy(xpath = "//span[contains(text(),'History ')]")
 	static WebElement historyTabHomePage;
 
+	/* x-path for transaction */
 	@FindBy(xpath = "//a[@href='/transaction/transactions']")
 	static WebElement transactionTabHomePage;
-	
-	/*x-path for tool bar link at transaction page*/
+
+	/* x-path for tool bar link at transaction page */
 	@FindBy(xpath = "//li[@class='toolbar-link']")
 	static WebElement toolbarLinkTransactionTab;
+
+	/* export All Result Link Transaction Chanpatiya Spark */
+	@FindBy(xpath = "//a[contains(text(),' Export all results (CSV)')]")
+	static WebElement exportAllResultLinkTransactionSparkData;
+
 	
-	/*method for tool bar link at transaction page*/
-	public static void toolbarLinkTransactionTab(){
+	/*exportAllResultLinkTransactionSparkData*/
+	public static void exportAllResultLinkTransactionSparkData(){
+		exportAllResultLinkTransactionSparkData.click();		
+	}
+	
+	/* method for tool bar link at transaction page */
+	public static void toolbarLinkTransactionTab() {
 		toolbarLinkTransactionTab.click();
 	}
-	
-	public static void toolBarDropDownTransactionPage(){
-	toolBarDropDownTransactionPage.click();
+
+	/* method for toolbar at transaction page */
+	public static void toolBarDropDownTransactionPage() {
+		toolBarDropDownTransactionPage.click();
 	}
 
+	/* method for Url to get from excel sheet */
 	public static String getSparkDataUrlValueFromExcel(int sheetNo, int rowNo, int columnNo) throws Exception {
 		try {
-			// SparkMeterDataPage.setSparkDataUrlValueFromExcel(sheetNo,
-			// columnNo, rowNo);
-
 			String urlData = ReusableActions.readingSparkdata(sheetNo, rowNo, columnNo);
 			return urlData;
 
@@ -72,19 +84,18 @@ public class SparkMeterDataPage {
 		}
 	}
 
+	/* method for Email Id to get from excel sheet */
 	public static void getSparkEmailIdValueFromExcel(int sheetNo, int rowNo, int columnNo) throws Exception {
 		try {
 			emailIdTextBoxSparkMeterCloud.clear();
 			type(emailIdTextBoxSparkMeterCloud, ReusableActions.readingSparkdata(sheetNo, rowNo, columnNo));
-			// SparkMeterDataPage.setSparkEmailValueFromExcel(sheetNo, columnNo,
-			// rowNo);
-
 		} catch (Exception e) {
 			lOGGER.info("Test case failed" + e.getMessage());
 			throw e;
 		}
 	}
-	
+
+	/* method for pass the Email ID again reading excel */
 	public static void getSparkEmailIdValueFromExcelAgain() throws Exception {
 		try {
 			emailIdTextBoxSparkMeterCloud.clear();
@@ -94,8 +105,9 @@ public class SparkMeterDataPage {
 			throw e;
 		}
 	}
-	
-	public static void getSparkPasswordValueFromExcelAgain()throws Exception {
+
+	/* method for pass the Password Value again without reading excel */
+	public static void getSparkPasswordValueFromExcelAgain() throws Exception {
 		try {
 			passwordTextBoxSparkMasterCloud.clear();
 			passwordTextBoxSparkMasterCloud.sendKeys("husk@power");
@@ -106,17 +118,18 @@ public class SparkMeterDataPage {
 		}
 	}
 
+	/* method for Password value to get from excel sheet */
 	public static void getSparkPasswordValueFromExcel(int sheetNo, int rowNo, int columnNo) throws Exception {
 		try {
 			passwordTextBoxSparkMasterCloud.clear();
 			type(passwordTextBoxSparkMasterCloud, ReusableActions.readingSparkdata(sheetNo, rowNo, columnNo));
-
 		} catch (Exception e) {
 			lOGGER.info("Test case failed" + e.getMessage());
 			throw e;
 		}
 	}
 
+	/* method for to get the webElement and to get the input from excel */
 	public static void type(WebElement textbox, String inputDataFromExcel) {
 
 		for (int i = 0; i <= 15; i++) {
@@ -124,7 +137,6 @@ public class SparkMeterDataPage {
 				textbox.clear();
 				textbox.sendKeys(inputDataFromExcel);
 				break;
-
 			} catch (Exception e) {
 				lOGGER.info("Test case failed" + e.getMessage());
 				throw e;
@@ -138,16 +150,19 @@ public class SparkMeterDataPage {
 		Thread.sleep(7000);
 	}
 
+	/* method for click the history tab */
 	public static void historyTabHomePage() throws InterruptedException {
 		historyTabHomePage.click();
 		Thread.sleep(2000);
 	}
 
+	/* method for click the transaction tab */
 	public static void transactionTabHomePage() throws InterruptedException {
 		transactionTabHomePage.click();
 		Thread.sleep(7000);
 	}
 
+	/* method to select the my Global Drop down */
 	public static void myGlobalSelsAccountDropDown() throws InterruptedException {
 		myGlobalSelsAccountDropDown.click();
 		Thread.sleep(7000);

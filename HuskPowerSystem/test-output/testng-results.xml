@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="39616" started-at="2019-10-25T13:51:32Z" finished-at="2019-10-25T13:52:11Z">
+  <suite name="Default suite" duration-ms="41325" started-at="2019-10-29T09:19:55Z" finished-at="2019-10-29T09:20:37Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="39616" started-at="2019-10-25T13:51:32Z" finished-at="2019-10-25T13:52:11Z">
+    <test name="Default test" duration-ms="41325" started-at="2019-10-29T09:19:55Z" finished-at="2019-10-29T09:20:37Z">
       <class name="com.huskpower.tests.SparkMeterDataTest">
-        <test-method status="PASS" signature="getUrlValueFromPropertiesFile()[pri:0, instance:com.huskpower.tests.SparkMeterDataTest@174d20a]" name="getUrlValueFromPropertiesFile" duration-ms="12195" started-at="2019-10-25T19:21:32Z" finished-at="2019-10-25T19:21:44Z">
+        <test-method status="PASS" signature="getUrlValueFromPropertiesFile()[pri:0, instance:com.huskpower.tests.SparkMeterDataTest@174d20a]" name="getUrlValueFromPropertiesFile" duration-ms="12774" started-at="2019-10-29T14:49:55Z" finished-at="2019-10-29T14:50:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getUrlValueFromPropertiesFile -->
-        <test-method status="PASS" signature="getEmailIDFromPropertiesFile()[pri:0, instance:com.huskpower.tests.SparkMeterDataTest@174d20a]" name="getEmailIDFromPropertiesFile" duration-ms="188" started-at="2019-10-25T19:21:44Z" finished-at="2019-10-25T19:21:44Z">
+        <test-method status="PASS" signature="getEmailIDFromPropertiesFile()[pri:0, instance:com.huskpower.tests.SparkMeterDataTest@174d20a]" name="getEmailIDFromPropertiesFile" duration-ms="196" started-at="2019-10-29T14:50:08Z" finished-at="2019-10-29T14:50:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getEmailIDFromPropertiesFile -->
-        <test-method status="PASS" signature="getPasswordFromPropertiesFile()[pri:0, instance:com.huskpower.tests.SparkMeterDataTest@174d20a]" name="getPasswordFromPropertiesFile" duration-ms="114" started-at="2019-10-25T19:21:44Z" finished-at="2019-10-25T19:21:44Z">
+        <test-method status="PASS" signature="getPasswordFromPropertiesFile()[pri:0, instance:com.huskpower.tests.SparkMeterDataTest@174d20a]" name="getPasswordFromPropertiesFile" duration-ms="170" started-at="2019-10-29T14:50:08Z" finished-at="2019-10-29T14:50:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getPasswordFromPropertiesFile -->
-        <test-method status="PASS" signature="historyTransactionatHomePage()[pri:0, instance:com.huskpower.tests.SparkMeterDataTest@174d20a]" name="historyTransactionatHomePage" duration-ms="27108" started-at="2019-10-25T19:21:44Z" finished-at="2019-10-25T19:22:11Z">
+        <test-method status="PASS" signature="historyTransactionatHomePage()[pri:0, instance:com.huskpower.tests.SparkMeterDataTest@174d20a]" name="historyTransactionatHomePage" duration-ms="28173" started-at="2019-10-29T14:50:09Z" finished-at="2019-10-29T14:50:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- historyTransactionatHomePage -->

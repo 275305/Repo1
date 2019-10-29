@@ -4,7 +4,6 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
@@ -22,6 +21,8 @@ public class SparkMeterDataTest extends ReusableActions {
 	@Test(priority = 0, enabled = true)
 	public void getUrlValueFromPropertiesFile() throws Exception {
 		PageFactory.initElements(driver, SparkMeterDataPage.class);
+
+		/* read the cell value from property reader class */
 		try {
 			int sheet = 0, row = 0, column = 0;
 			List<Integer> list = reader.getSparkUrlValue();
@@ -31,8 +32,12 @@ public class SparkMeterDataTest extends ReusableActions {
 				row = itr.next();
 				column = itr.next();
 			}
-
+			/*
+			 * reading the url cell value from config.properties file and sending to
+			 * excel sheet
+			 */
 			String url = SparkMeterDataPage.getSparkDataUrlValueFromExcel(sheet, row, column);
+			/* sending the url value to spark browser */
 			ReusableActions.initializeSparkBrowser(url);
 
 		} catch (Exception e) {
@@ -46,6 +51,7 @@ public class SparkMeterDataTest extends ReusableActions {
 	@Test(priority = 1, enabled = true)
 	public void getEmailIDFromPropertiesFile() throws Exception {
 		PageFactory.initElements(driver, SparkMeterDataPage.class);
+		/* read the cell value from property reader class */
 		try {
 			int sheet = 0, row = 0, column = 0;
 			List<Integer> list = reader.getSparkEmailIdValue();
@@ -55,7 +61,10 @@ public class SparkMeterDataTest extends ReusableActions {
 				row = itr.next();
 				column = itr.next();
 			}
-
+			/*
+			 * reading the EmailId value from config.properties file and sending
+			 * to excel sheet
+			 */
 			SparkMeterDataPage.getSparkEmailIdValueFromExcel(sheet, row, column);
 
 		} catch (Exception e) {
@@ -69,6 +78,7 @@ public class SparkMeterDataTest extends ReusableActions {
 	@Test(priority = 2, enabled = true)
 	public void getPasswordFromPropertiesFile() throws Exception {
 		PageFactory.initElements(driver, SparkMeterDataPage.class);
+		/* read the cell value from property reader class */
 		try {
 			int sheet = 0, row = 0, column = 0;
 			List<Integer> list = reader.getSparkPasswordValue();
@@ -78,7 +88,10 @@ public class SparkMeterDataTest extends ReusableActions {
 				row = itr.next();
 				column = itr.next();
 			}
-
+			/*
+			 * reading the password value from config.properties file and
+			 * sending to excel sheet
+			 */
 			SparkMeterDataPage.getSparkPasswordValueFromExcel(sheet, row, column);
 
 		} catch (Exception e) {
@@ -88,7 +101,10 @@ public class SparkMeterDataTest extends ReusableActions {
 
 	}
 
-	/* Test cases for history and transaction */
+	/*
+	 * Test cases for history tab, transaction tab,click tool bar and download
+	 * export link
+	 */
 	@Test(priority = 3, enabled = true)
 	public void historyTransactionatHomePage() throws Exception {
 		try {
@@ -99,15 +115,12 @@ public class SparkMeterDataTest extends ReusableActions {
 			SparkMeterDataPage.getSparkPasswordValueFromExcelAgain();
 			SparkMeterDataPage.loginButtonSparkChanpatiya();
 			SparkMeterDataPage.toolBarDropDownTransactionPage();
-
+			SparkMeterDataPage.exportAllResultLinkTransactionSparkData();
 		} catch (Exception e) {
-
-			e.printStackTrace();
+			lOGGER.info("Test Case failed:" + e.getMessage());
+			throw e;
 		}
 
 	}
-
-	
-	
 
 }
