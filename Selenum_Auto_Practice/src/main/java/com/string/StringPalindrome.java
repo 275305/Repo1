@@ -5,7 +5,7 @@ public class StringPalindrome {
 	public static void main(String[] args) {
 		int c = 0, m;
 
-		String str = "nitin";
+		String str = "madam";
 
 		char[] arr = str.toCharArray();
 		int len = arr.length;
