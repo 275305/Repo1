@@ -2286,7 +2286,7 @@ public class JourneyScreenThree extends ReusableActions {
 		String host = "pop.gmail.com";// change accordingly
 		String mailStoreType = "pop3";
 		String username = "pmaxlife071@gmail.com";// change accordingly
-		String password = "max@1234";// change accordingly
+		String password = "Pmax@4321$";// change accordingly
 
 		String validation = "Pre Issuance Verification";
 		ReusableActions.checkEmail(validation, host, mailStoreType, username, password);

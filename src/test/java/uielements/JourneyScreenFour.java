@@ -109,6 +109,10 @@ public class JourneyScreenFour extends ReusableActions {
 
 	@FindBy(xpath = "//label[contains(@for,'CriminalChargesNo')]")
 	public static WebElement criminalChargesNo;
+	
+	//Last question no
+	@FindBy(xpath="//label[contains(@for,'travelOrResideAbroadNo')]")
+	public static WebElement holidayOfMoreThenFour;
 
 	// input[@id='CriminalChargesNo']
 	@FindBy(xpath = "//div[@id='feet_id']")
@@ -337,6 +341,10 @@ public class JourneyScreenFour extends ReusableActions {
 		Thread.sleep(1000);
 	}
 
+	public static void holidayOfMoreThenCheckBoxScreeFour() throws Exception{
+		holidayOfMoreThenFour.click();
+		Thread.sleep(1000);
+	}
 	public static void setKgsForLifestyle(int x, int y, int z) throws Exception {
 		kgsTextBox.clear();
 		type(kgsTextBox, readingdataTestData(x, y, z));
@@ -546,7 +554,6 @@ public class JourneyScreenFour extends ReusableActions {
 		Thread.sleep(300);
 		JourneyScreenTwo.Savebtn.click();
 		Proceedbtn.click();
-
 	}
 
 	public static void arrowDownFunctionToScrollDownTillBottom() throws Exception {

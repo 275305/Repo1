@@ -5,9 +5,9 @@
 	<test name="testngTest">
 		<classes>
           <!--  <class name="WebTest.ToCheckDocumentRuleIsPendingTest" /> -->
-			<!-- <class name="WebTest.MaxLifeLifePerfectPartnerSuperTest" /> -->
+			<class name="WebTest.MaxLifeLifePerfectPartnerSuperTest" />
 			<!-- <class name="WebTest.MaxLifeShikshaPlusSuperTest" /> -->
-			<class name="WebTest.MaxLifeFastTrackSuperPlanTest" />
+			<!-- <class name="WebTest.MaxLifeFastTrackSuperPlanTest" /> -->
 			<!-- <class name="WebTest.MaxLifeSavingsAdvantagePlanTest" /> --> 
 			<!-- <class name="WebTest.MaxLifeSuperTermPlanTest" /> -->
 

@@ -60,16 +60,17 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 			JourneyScreenTwo.saveProceedPDFGeneration();
 			screenJourneyFromThreeTillEnd();
 			screenJourneyFromFourTillEnd();
+			//we close before tpp push
+			driver.close();
 			posvBackFlowTillTPPPush();
 
 		} catch (Exception e) {
 
-			driver.close();
+			// driver.close();
 			logger.error("Test case Failed" + e.getMessage());
 			throw e;
-		}
-		finally{
-			driver.close();
+		} finally {
+			// driver.close();
 		}
 	}
 
@@ -94,8 +95,7 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 			driver.close();
 			logger.error("Test case Failed" + e.getMessage());
 			throw e;
-		}
-		finally{
+		} finally {
 			driver.close();
 		}
 	}
@@ -121,8 +121,7 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 			driver.close();
 			logger.error("Test case Failed" + e.getMessage());
 			throw e;
-		}
-		finally{
+		} finally {
 			driver.close();
 		}
 	}
@@ -148,8 +147,7 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 			driver.close();
 			logger.error("Test case Failed" + e.getMessage());
 			throw e;
-		}
-		finally{
+		} finally {
 			driver.close();
 		}
 	}
@@ -158,7 +156,7 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 	@Test(priority = 5, enabled = false)
 	public void LPPS_Tradition_GeneratingPdf_Annual_PUA() throws Exception {
 		try {
-            JourneyScreenTwo.getInitDriver();
+			JourneyScreenTwo.getInitDriver();
 			JourneyScreenThreeTest.ScreenOneTestIndianFuntn();
 			JourneyScreenThreeTest.fillingAllTheRequiredFeildForScreen2();
 			JourneyScreenTwo.traditional();
@@ -176,8 +174,7 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 			driver.close();
 			logger.error("Test case Failed" + e.getMessage());
 			throw e;
-		}
-		finally{
+		} finally {
 			driver.close();
 		}
 	}
@@ -204,8 +201,7 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 			driver.close();
 			logger.error("Test case Failed" + e.getMessage());
 			throw e;
-		}
-		finally{
+		} finally {
 			driver.close();
 		}
 	}
@@ -233,8 +229,7 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 			driver.close();
 			logger.error("Test case Failed" + e.getMessage());
 			throw e;
-		}
-		finally{
+		} finally {
 			driver.close();
 		}
 	}
@@ -261,8 +256,7 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 			driver.close();
 			logger.error("Test case Failed" + e.getMessage());
 			throw e;
-		}
-		finally{
+		} finally {
 			driver.close();
 		}
 	}
@@ -289,16 +283,15 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 			driver.close();
 			logger.error("Test case Failed" + e.getMessage());
 			throw e;
-		}
-		finally{
+		} finally {
 			driver.close();
 		}
 	}
 
 	/*
 	 * Mode of Payment(Annual)+Dividend
-	 * Option(cash)+RiderDetails(Accidental+Term plus rider+WOP)
-	 * no able to upload the document at screen six
+	 * Option(cash)+RiderDetails(Accidental+Term plus rider+WOP) no able to
+	 * upload the document at screen six
 	 */
 	@Test(priority = 10, enabled = false)
 	public void LPPSTraditionGeneratingPdfAnnual_Cash_Accidental_TermPlus_WOP() throws Exception {
@@ -322,8 +315,7 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 			driver.close();
 			logger.error("Test case Failed" + e.getMessage());
 			throw e;
-		}
-		finally{
+		} finally {
 			driver.close();
 		}
 	}
@@ -356,6 +348,9 @@ public class MaxLifeLifePerfectPartnerSuperTest extends ReusableActions {
 			JourneyScreenFour.criticalIllnessNoOption();
 			JourneyScreenFour.hazardousActivitiesNo();
 			JourneyScreenFour.selectCriminalChargesNo();
+			//need to screen below
+			JourneyScreenFour.arrowDownFunctionToScrollDown();
+			JourneyScreenFour.holidayOfMoreThenCheckBoxScreeFour();
 			JourneyScreenFour.feetInchesKgsSelectionToMoveToScreen5POSV();
 			JourneyScreenThree.agreePopupToProceedToSendPreIssuranceVerificationLinkToCustomer();
 			JourneyScreenSix.fetchingProposalNumberFromUI();
