@@ -220,7 +220,6 @@ public class ReusableActions {
 		data = df.formatCellValue(cell);
 		hssfWorkbook.close();
 		return data;
-
 	}
 
 	public static String readingdataTestData(int sheetno, int rownum, int colnum) throws Exception {
