@@ -4,11 +4,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class NonRepeatedString {
-
+	// print the non-repeated or unique character 
 	public static void main(String[] args) {
 
-		String str = "hyderabad Telangana";
-
+		String str = "State";
+		System.out.println("Original String is:" + str);
 		char[] arr = str.toCharArray();
 		// convert set to array
 		Set<Character> set = new HashSet<Character>();
@@ -18,7 +18,7 @@ public class NonRepeatedString {
 
 		}
 
-		System.out.print(set);
+		System.out.print("non Repeated Charecter :" +set);
 	}
 
 }

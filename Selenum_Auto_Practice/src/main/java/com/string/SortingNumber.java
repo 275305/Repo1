@@ -7,7 +7,7 @@ import java.util.Set;
 public class SortingNumber {
 	
 	public static void main(String[] args) {
-		Integer arr[]= {8,3,1,5,2,6,9,7};
+		Integer arr[]= {5,4,3,2,1,5,4,3,2,1};
 		
 		Set<Integer> setSort=new HashSet<Integer>(Arrays.asList(arr));
 		

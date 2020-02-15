@@ -6,8 +6,8 @@ import java.util.Collections;
 public class AnagramProgram {
 
 	public static void main(String[] args) {
-		char[] arr1 = { 'a', 'b', 'd', 'c' };
-		char[] arr2 = { 'b', 'c', 'a', 'd' };
+		char[] arr1 = { 'L', 'I', 'S', 'T','E','N'};
+		char[] arr2 = { 'S', 'I', 'l', 'E','N','T' };
 
 		if (angram(arr1, arr2))
 			for (int i = 0; i < arr1.length; i++)

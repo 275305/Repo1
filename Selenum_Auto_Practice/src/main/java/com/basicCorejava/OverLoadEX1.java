@@ -1,24 +1,24 @@
 package com.basicCorejava;
 
 public class OverLoadEX1 {
-	 int a,b;
-	public void bank(int a) {
-		
-		System.out.println(a);
+
+	public void bankDetails(String bankName, String bankAddress) {
+
+		System.out.println(bankName + "" + bankAddress);
 	}
-	
-	public void bank(float b) {
-		System.out.println(b);
-		
+
+	public void bankDetails(int bankPinCode, String bankAddress) {
+
+		System.out.println(bankPinCode + "" + bankAddress);
 	}
-	
-	
+
 	public static void main(String[] args) {
-		
-		OverLoadEX1 obj=new OverLoadEX1();
-		
-		obj.bank(30);
-		
+
+		OverLoadEX1 obj = new OverLoadEX1();
+
+		obj.bankDetails("HDFC", "New Delhi");
+		obj.bankDetails(500081, "NewDelhi");
+
 	}
 
 }

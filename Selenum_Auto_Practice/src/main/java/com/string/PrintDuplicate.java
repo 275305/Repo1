@@ -4,7 +4,7 @@ public class PrintDuplicate {
 
 	public static void main(String[] args) {
 
-		// remove duplicate from array
+		// print  duplicate value from array
 		int c = 0;
 		int arr[] = { 1, 2, 3, 4, 1, 2, 3 };
 

@@ -12,20 +12,17 @@ public class DuplicateCharecter {
 		System.out.println(str);
 		char[] arr = str.toCharArray();
 		System.out.println(arr.length);
-
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = i; j < arr.length; j++) {
 				if (arr[i] == arr[j]) {
 					c = c + 1;
 				}
 			}
-
 			if (c > 1 && arr[i] != ' ')
-				System.out.print(arr[i] + " = " + c+" ,");
+				System.out.print(arr[i] + " = " + c + " ,");
 			c = 0;
 		}
 		System.out.println();
-
 	}
 
 }

@@ -20,9 +20,9 @@ public class Armstrong {
 
 		}
 		if(armStrong==sum)
-		System.out.println("armstrong no is" + sum);
+		System.out.println("armstrong no is: " + sum);
 		else
-			System.out.println("not armstrong number"+sum);
+			System.out.println("not armstrong number: "+sum);
 	}
 
 }
