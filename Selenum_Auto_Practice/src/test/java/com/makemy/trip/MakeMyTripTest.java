@@ -9,6 +9,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -38,11 +39,12 @@ public class MakeMyTripTest {
 		wait = new WebDriverWait(driver, propertyReader.getImplicitExplicitWait());
 	}
 
-	@Test(priority = 0)
+	@Test(priority = 0,enabled=true)
 	public void getSearch() {
+		PageFactory.initElements(driver, MakeMyTripPage.class);
 		//WebElement roundTrip = driver.findElement(By.xpath("//ul[@class='fswTabs latoBlack greyText']/li[2]"));
 		homepage=new MakeMyTripPage(driver); 
-		homepage.roundTripText();
+		/*homepage.roundTripText();
 		//String round=propertyReader.roundTrip();
 		
 		    
@@ -52,9 +54,9 @@ public class MakeMyTripTest {
 		fromInputText.sendKeys(Keys.DELETE);
 		fromInputText.sendKeys("Mumbai");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='From']")));
-	}
+	*/}
 
-	@Test(priority = 1)
+	@Test(priority = 1,enabled=false)
 	public void getFrom() {
 		WebElement toCity = driver.findElement(By.xpath("//label[@for='toCity']"));
 		toCity.click();
@@ -67,7 +69,7 @@ public class MakeMyTripTest {
 
 	// assert the list of web element
 
-	@Test(priority = 2)
+	@Test(priority = 2,enabled=false)
 	public void getListMakeMyTrip() throws InterruptedException {
 
 		WebElement moreTabMakeMyTrip = driver.findElement(By.xpath("//span[@class='darkGreyText']"));
@@ -108,8 +110,9 @@ public class MakeMyTripTest {
 	}
 
 	@AfterClass
-	public void tearDown() {
+	public void tearDown() throws InterruptedException {
 		driver.close();
+		Thread.sleep(6000);
 
 	}
 }

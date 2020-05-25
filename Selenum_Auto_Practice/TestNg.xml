@@ -9,6 +9,7 @@
 <classes>
 <class name="com.parallelTest.ParallelExecution"></class>
 <class name="com.parallelTest.ParallelExecution2"></class>
+
 </classes>
 </test>
 </suite>
