@@ -4,3 +4,26 @@
 [INFO ] 2020-05-26 00:15:59.445 [main] LoginTest - ...Chrome Web Driver Initialised sucessfully..
 [INFO ] 2020-05-26 00:16:14.098 [main] LoginTest - ...Launched the url sucesssfully..
 [INFO ] 2020-05-26 00:16:30.202 [main] LoginTest - ...Clicked at search button sucessfully..
+[INFO ] 2020-05-30 16:45:11.570 [main] LoginTest - ...Chrome Web Driver Initialised sucessfully..
+[INFO ] 2020-05-30 16:45:29.954 [main] LoginTest - ...Launched the url sucesssfully..
+[INFO ] 2020-05-30 16:45:46.381 [main] LoginTest - ...Clicked at search button sucessfully..
+[INFO ] 2020-05-30 16:53:04.274 [main] LoginTest - ...Chrome Web Driver Initialised sucessfully..
+[INFO ] 2020-05-30 16:53:16.384 [main] LoginTest - ...Launched the url sucesssfully..
+[INFO ] 2020-05-30 16:53:33.511 [main] LoginTest - ...Clicked at search button sucessfully..
+[INFO ] 2020-05-30 17:00:43.169 [main] LoginTest - ...Chrome Web Driver Initialised sucessfully..
+[INFO ] 2020-05-30 17:01:00.478 [main] LoginTest - ...Launched the url sucesssfully..
+[INFO ] 2020-05-30 17:01:15.274 [main] LoginTest - ...Clicked at search button sucessfully..
+[INFO ] 2020-05-30 17:01:17.861 [main] LoginTest - ....Clicked at sign in Button successfully...
+[INFO ] 2020-05-30 17:33:01.819 [main] LoginTest - ...Chrome Web Driver Initialised sucessfully..
+[INFO ] 2020-05-30 17:33:16.267 [main] LoginTest - ...Launched the url sucesssfully..
+[INFO ] 2020-05-30 17:33:29.660 [main] LoginTest - ...Clicked at search button sucessfully..
+[INFO ] 2020-05-30 17:33:32.925 [main] LoginTest - ....Clicked at sign in Button successfully...
+[INFO ] 2020-05-30 17:33:33.183 [main] LoginTest - ...UserId Entered sucessfully....
+[INFO ] 2020-05-30 17:33:33.277 [main] LoginTest - ...Password Entered Sucessfully...
+[INFO ] 2020-05-30 17:44:00.096 [main] LoginTest - ...Chrome Web Driver Initialised sucessfully..
+[INFO ] 2020-05-30 17:44:11.242 [main] LoginTest - ...Launched the url sucesssfully..
+[INFO ] 2020-05-30 17:44:25.816 [main] LoginTest - ...Clicked at search button sucessfully..
+[INFO ] 2020-05-30 17:44:29.170 [main] LoginTest - ....Clicked at sign in Button successfully...
+[INFO ] 2020-05-30 17:44:29.353 [main] LoginTest - ...UserId Entered sucessfully....
+[INFO ] 2020-05-30 17:44:29.429 [main] LoginTest - ...Password Entered Sucessfully...
+[INFO ] 2020-05-30 17:44:33.422 [main] LoginTest - ...SignIn btn for Spec User...

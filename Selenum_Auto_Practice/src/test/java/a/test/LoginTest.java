@@ -38,9 +38,25 @@ public class LoginTest {
 	@Test(priority = 0, enabled = true)
 	public void getempId() throws Exception {
 		LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
-		loginPage.getsearchButton_EmpId();
+		LoginPage.getsearchButton_EmpId();
 		logger.info("...Clicked at search button sucessfully..");
 
+	}
+
+	@Test(priority = 1, enabled = true)
+	public void getSignInButton() {
+		LoginPage.getSignInBtnHomepage();
+		logger.info("...Clicked at sign in Button successfully...");
+	}
+
+	@Test(priority = 2, enabled = true)
+	public void getSpecUser_SpecPassword_ExistingUser() {
+		LoginPage.getUserName();
+		logger.info("...UserId Entered sucessfully....");
+		LoginPage.getPassword();
+		logger.info("...Password Entered Sucessfully...");
+		LoginPage.getsignInBtnSpecUser();
+		logger.info("...SignIn btn for Spec User sucessfully...");
 	}
 
 }

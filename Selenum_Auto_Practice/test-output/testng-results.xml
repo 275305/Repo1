@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="30782" started-at="2020-05-25T18:45:59Z" finished-at="2020-05-25T18:46:30Z">
+  <suite name="Default suite" duration-ms="33349" started-at="2020-05-30T12:14:00Z" finished-at="2020-05-30T12:14:33Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="30782" started-at="2020-05-25T18:45:59Z" finished-at="2020-05-25T18:46:30Z">
+    <test name="Default test" duration-ms="33349" started-at="2020-05-30T12:14:00Z" finished-at="2020-05-30T12:14:33Z">
       <class name="a.test.LoginTest">
-        <test-method status="PASS" signature="getInitialValue()[pri:0, instance:a.test.LoginTest@dd0c991]" name="getInitialValue" is-config="true" duration-ms="20916" started-at="2020-05-25T18:45:59Z" finished-at="2020-05-25T18:46:20Z">
+        <test-method status="PASS" signature="getInitialValue()[pri:0, instance:a.test.LoginTest@dd0c991]" name="getInitialValue" is-config="true" duration-ms="17306" started-at="2020-05-30T12:14:00Z" finished-at="2020-05-30T12:14:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getInitialValue -->
-        <test-method status="PASS" signature="getempId()[pri:0, instance:a.test.LoginTest@dd0c991]" name="getempId" duration-ms="9727" started-at="2020-05-25T18:46:20Z" finished-at="2020-05-25T18:46:30Z">
+        <test-method status="PASS" signature="getempId()[pri:0, instance:a.test.LoginTest@dd0c991]" name="getempId" duration-ms="8417" started-at="2020-05-30T12:14:17Z" finished-at="2020-05-30T12:14:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getempId -->
+        <test-method status="PASS" signature="getSignInButton()[pri:1, instance:a.test.LoginTest@dd0c991]" name="getSignInButton" duration-ms="3331" started-at="2020-05-30T12:14:25Z" finished-at="2020-05-30T12:14:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getSignInButton -->
+        <test-method status="PASS" signature="getSpecUser_SpecPassword_ExistingUser()[pri:2, instance:a.test.LoginTest@dd0c991]" name="getSpecUser_SpecPassword_ExistingUser" duration-ms="4249" started-at="2020-05-30T12:14:29Z" finished-at="2020-05-30T12:14:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getSpecUser_SpecPassword_ExistingUser -->
       </class> <!-- a.test.LoginTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
